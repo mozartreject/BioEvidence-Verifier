@@ -1,0 +1,4 @@
+# Source-level tests need the original BiomedicalVerifier environment.
+# Inference uses installed torch, transformers, sentence-transformers, scikit-learn,
+# numpy, joblib, fastapi, uvicorn, Pillow, FAISS, and Ollama; exact versions and
+# external artifacts are documented by the original phase environments.

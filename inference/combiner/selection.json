@@ -1,0 +1,4 @@
+{
+  "selected": "boosted_trees",
+  "policy": "Fixed baseline combiner hyperparameters. No OOF claim: selector was fitted on part of these training claims. Development labels not used."
+}
