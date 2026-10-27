@@ -9,10 +9,11 @@ A research capstone that checks a biomedical claim against retrieved literature 
 | `dashboard/` | Current browser interface and local API bridge |
 | `backend/` | Five-stage API contracts, orchestration, and adapters |
 | `inference/` | Current 35,183-document retrieval, passage selection, evidence checks, combiner, and startup scripts |
-| `phases/` | Selected source files from Phases 2–5 for research context |
+| `phases/` | Selected Phase 1–5 model and training source for research context |
 | `results/` | Small, auditable evaluation summaries and current failure analysis |
 | `assets/` | A synthetic upload test card and a sourced CDC educational graphic |
 | `tests/` | Focused source-level regression tests |
+| [`docs/IMPLEMENTATION_MAP.md`](docs/IMPLEMENTATION_MAP.md) | File-by-file guide for the capstone implementation chapter |
 
 ## Pipeline
 
