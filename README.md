@@ -2,8 +2,6 @@
 
 A research capstone that checks a biomedical claim against retrieved literature and returns **Supported**, **Refuted**, or **Not enough information**, with the passages and model scores visible in a local dashboard.
 
-![Dashboard image input test](assets/image-upload-test.png)
-
 ## What is here
 
 | Directory | Purpose |
