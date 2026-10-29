@@ -1,0 +1,37 @@
+{
+  "source_sha256": {
+    "api_reviewer.py": "08ce0e3afb92028cf6bd805866a4d8acf8a6f1d9112c89a5882272e81b7cfa57",
+    "evidence_sufficiency.py": "f06ae98b9a220807ad2ada82e887f03d6edd50e4c38fe5917bbe46e0086d7daa",
+    "ai_retrieval.py": "dfc213db4a4d6eb2c2af036e6e0c6c798205ea0162f88c3958e47ff4ad338797",
+    "web_evidence.py": "f72371b30a77a4fb67aad011d8b7681371ab2dddae7cbb1783267ab3826e90dd",
+    "dashboard_backend.py": "fdcacdd5fab431280e1bcb61ef54f26eb28abd2e9f0d42f0478249897954a4bf"
+  },
+  "health": {
+    "status": "healthy",
+    "pipeline_ready": true,
+    "mode": "experimental",
+    "pipeline_version": "ai-evidence-review-v1",
+    "verifier_backend": "ai_evidence_review",
+    "evidence_validation": "quoted_evidence_sufficiency_and_ai_scores",
+    "relation_review_model": "qwen2.5:7b",
+    "relation_review_status": "final_decision_not_accuracy_validated",
+    "ai_api_review": {
+      "enabled": true,
+      "model": "qwen2.5:7b",
+      "policy": "final_decision_over_live_pubmed",
+      "accuracy_validated": false,
+      "score_source": "ai_evidence_estimates"
+    },
+    "retrieval": {
+      "document_count": 35183,
+      "live_pubmed_enabled": true,
+      "web_search_enabled": true,
+      "web_provider": "Bing RSS",
+      "final_candidate_limit": 3
+    },
+    "development_accuracy": null,
+    "target_accuracy": null,
+    "accuracy_scope": "Historical unguarded classifier on reused development; current service with relation veto is not accuracy-evaluated",
+    "current_service_accuracy": null
+  }
+}

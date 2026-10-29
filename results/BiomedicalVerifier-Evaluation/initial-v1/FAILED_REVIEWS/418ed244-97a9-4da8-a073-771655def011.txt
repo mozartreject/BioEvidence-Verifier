@@ -1,0 +1,4 @@
+Claim: Eating 12 blueberries daily improves working memory by exactly 18% after nine days.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.08, 'REFUTED': 0.72, 'NEI': 0.2}"}
+Raw response: ../raw/418ed244-97a9-4da8-a073-771655def011.json

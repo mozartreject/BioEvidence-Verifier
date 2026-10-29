@@ -1,0 +1,7 @@
+Claim: Cigarette smoking causes lung cancer.
+Actual verdict: NEI
+Expected candidate label: SUPPORTED
+Request ID: 4d67c507-0ae6-415a-a846-9a1fc0d2f540
+Explanation status: QUARANTINED
+Quarantine reason: NEI explanation must explicitly communicate insufficient/inconclusive evidence
+Raw response: ../raw/4d67c507-0ae6-415a-a846-9a1fc0d2f540.json

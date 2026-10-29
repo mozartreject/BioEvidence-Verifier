@@ -1,0 +1,7 @@
+Claim: Physical activity reduces the risk of type 2 diabetes.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: f89bfb1b-0a35-479a-8a80-d1ba9dc43c6c
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/f89bfb1b-0a35-479a-8a80-d1ba9dc43c6c.json

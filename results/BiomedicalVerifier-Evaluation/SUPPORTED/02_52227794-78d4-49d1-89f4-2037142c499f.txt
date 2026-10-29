@@ -1,0 +1,7 @@
+Claim: Malaria is transmitted by infected female Anopheles mosquitoes.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 52227794-78d4-49d1-89f4-2037142c499f
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/52227794-78d4-49d1-89f4-2037142c499f.json

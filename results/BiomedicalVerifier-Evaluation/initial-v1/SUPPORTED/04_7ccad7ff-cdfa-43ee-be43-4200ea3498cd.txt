@@ -1,0 +1,7 @@
+Claim: Type 1 diabetes is an autoimmune disease.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 7ccad7ff-cdfa-43ee-be43-4200ea3498cd
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/7ccad7ff-cdfa-43ee-be43-4200ea3498cd.json

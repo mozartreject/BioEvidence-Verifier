@@ -1,0 +1,7 @@
+Claim: Cigarette smoking causes lung cancer.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: bb42ee62-e5a7-429c-8c1d-7d935670b00e
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/bb42ee62-e5a7-429c-8c1d-7d935670b00e.json

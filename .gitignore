@@ -19,3 +19,7 @@ backend/audit/
 *.pth
 *.safetensors
 *.bin
+
+# Keep the explicitly requested, bounded evaluation bundle complete.
+!results/BiomedicalVerifier-Evaluation/**/raw/
+!results/BiomedicalVerifier-Evaluation/**/raw/**

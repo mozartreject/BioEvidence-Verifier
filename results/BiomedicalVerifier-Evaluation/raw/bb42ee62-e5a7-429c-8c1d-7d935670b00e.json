@@ -1,0 +1,830 @@
+{
+  "request": {
+    "request_id": "bb42ee62-e5a7-429c-8c1d-7d935670b00e",
+    "claim": "Cigarette smoking causes lung cancer.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:58:24.324833Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:58:24.324935Z",
+      "ended_at_utc": "2026-10-29T02:58:24.866385Z",
+      "latency_ms": 541.4453750000234
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:23714547",
+        "document_id": "pubmed:23714547",
+        "title": "Tobacco and lung cancer: risks, trends, and outcomes in patients with cancer.",
+        "text": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths. Approximately 85% of lung cancers result from smoking, with an additional fraction caused by secondhand smoke exposure in nonsmokers. The risk of lung cancer is dose dependent, but can be dramatically reduced with tobacco cessation, especially if the person discontinues smoking early in life. The increase in lung cancer incidence in different countries around in the world parallels changes in cigarette consumption. Lung cancer risks are not reduced by switching to filters or low-tar/low-nicotine cigarettes. In patients with cancer, continued tobacco use after diagnosis is associated with poor therapeutic outcomes including increased treatment-related toxicity, increased risk of second primary cancer, decreased quality of life, and decreased survival. Tobacco cessation in patients with cancer may improve cancer treatment outcomes, but cessation support is often not provided by oncologists. Reducing the health related effects of tobacco requires coordinated efforts to reduce exposure to tobacco, accurately assess tobacco use in clinical settings, and increase access to tobacco cessation support. Lung cancer screening and coordinated international tobacco control efforts offer the promise to dramatically reduce lung cancer mortality in the coming decades.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/23714547/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 9.124488830566406,
+        "relevance_score": 0.9998910427093506,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:22054876",
+        "document_id": "pubmed:22054876",
+        "title": "Lung cancer: epidemiology, etiology, and prevention.",
+        "text": "Lung cancer is the leading cause of cancer death in the United States and around the world. A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative. Understanding the epidemiology and causal factors of lung cancer can provide additional foundation for disease prevention. This article focuses on modifiable risk factors, including tobacco smoking, occupational carcinogens, diet, and ionizing radiation. It also discusses briefly the molecular and genetic aspects of lung carcinogenesis.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/22054876/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.555248260498047,
+        "relevance_score": 0.9998075366020203,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:26667337",
+        "document_id": "pubmed:26667337",
+        "title": "Epidemiology of Lung Cancer.",
+        "text": "Lung cancer continues to be one of the most common causes of cancer death despite understanding the major cause of the disease: cigarette smoking. Smoking increases lung cancer risk 5- to 10-fold with a clear dose-response relationship. Exposure to environmental tobacco smoke among nonsmokers increases lung cancer risk about 20%. Risks for marijuana and hookah use, and the new e-cigarettes, are yet to be consistently defined and will be important areas for continued research as use of these products increases. Other known environmental risk factors include exposures to radon, asbestos, diesel, and ionizing radiation. Host factors have also been associated with lung cancer risk, including family history of lung cancer, history of chronic obstructive pulmonary disease and infections. Studies to identify genes associated with lung cancer susceptibility have consistently identified chromosomal regions on 15q25, 6p21 and 5p15 associated with lung cancer risk. Risk prediction models for lung cancer typically include age, sex, cigarette smoking intensity and/or duration, medical history, and occupational exposures, however there is not yet a risk prediction model currently recommended for general use. As lung cancer screening becomes more widespread, a validated model will be needed to better define risk groups to inform screening guidelines.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26667337/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.526437759399414,
+        "relevance_score": 0.9998019337654114,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Cigarette smoking causes lung cancer."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:58:24.866439Z",
+      "ended_at_utc": "2026-10-29T02:58:34.060926Z",
+      "latency_ms": 9194.37654099994
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:26667337",
+        "document_id": "pubmed:26667337",
+        "title": "Epidemiology of Lung Cancer.",
+        "text": "Lung cancer continues to be one of the most common causes of cancer death despite understanding the major cause of the disease: cigarette smoking. Smoking increases lung cancer risk 5- to 10-fold with a clear dose-response relationship. Exposure to environmental tobacco smoke among nonsmokers increases lung cancer risk about 20%. Risks for marijuana and hookah use, and the new e-cigarettes, are yet to be consistently defined and will be important areas for continued research as use of these products increases. Other known environmental risk factors include exposures to radon, asbestos, diesel, and ionizing radiation. Host factors have also been associated with lung cancer risk, including family history of lung cancer, history of chronic obstructive pulmonary disease and infections. Studies to identify genes associated with lung cancer susceptibility have consistently identified chromosomal regions on 15q25, 6p21 and 5p15 associated with lung cancer risk. Risk prediction models for lung cancer typically include age, sex, cigarette smoking intensity and/or duration, medical history, and occupational exposures, however there is not yet a risk prediction model currently recommended for general use. As lung cancer screening becomes more widespread, a validated model will be needed to better define risk groups to inform screening guidelines.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26667337/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.526437759399414,
+        "relevance_score": 0.9998019337654114,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6998613536357879,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:23714547",
+        "document_id": "pubmed:23714547",
+        "title": "Tobacco and lung cancer: risks, trends, and outcomes in patients with cancer.",
+        "text": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths. Approximately 85% of lung cancers result from smoking, with an additional fraction caused by secondhand smoke exposure in nonsmokers. The risk of lung cancer is dose dependent, but can be dramatically reduced with tobacco cessation, especially if the person discontinues smoking early in life. The increase in lung cancer incidence in different countries around in the world parallels changes in cigarette consumption. Lung cancer risks are not reduced by switching to filters or low-tar/low-nicotine cigarettes. In patients with cancer, continued tobacco use after diagnosis is associated with poor therapeutic outcomes including increased treatment-related toxicity, increased risk of second primary cancer, decreased quality of life, and decreased survival. Tobacco cessation in patients with cancer may improve cancer treatment outcomes, but cessation support is often not provided by oncologists. Reducing the health related effects of tobacco requires coordinated efforts to reduce exposure to tobacco, accurately assess tobacco use in clinical settings, and increase access to tobacco cessation support. Lung cancer screening and coordinated international tobacco control efforts offer the promise to dramatically reduce lung cancer mortality in the coming decades.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/23714547/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 9.124488830566406,
+        "relevance_score": 0.9998910427093506,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19997820854187012,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:22054876",
+        "document_id": "pubmed:22054876",
+        "title": "Lung cancer: epidemiology, etiology, and prevention.",
+        "text": "Lung cancer is the leading cause of cancer death in the United States and around the world. A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative. Understanding the epidemiology and causal factors of lung cancer can provide additional foundation for disease prevention. This article focuses on modifiable risk factors, including tobacco smoking, occupational carcinogens, diet, and ionizing radiation. It also discusses briefly the molecular and genetic aspects of lung carcinogenesis.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/22054876/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.555248260498047,
+        "relevance_score": 0.9998075366020203,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19996150732040407,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:58:34.060971Z",
+      "ended_at_utc": "2026-10-29T02:58:34.061112Z",
+      "latency_ms": 0.14924999993581878
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "SUPPORTED",
+    "user_facing_verdict": "SUPPORTED",
+    "probabilities": {
+      "refuted": 0.05,
+      "nei": 0.05,
+      "supported": 0.9
+    },
+    "verifier_score": 0.9,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:26667337",
+      "pubmed:23714547",
+      "pubmed:22054876"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "SUPPORTED",
+          "reason": "The evidence consistently refers to tobacco use, primarily cigarette smoking, as the cause of lung cancer. The evidence explicitly states that smoking increases lung cancer risk and is the leading cause of cancer death. The evidence directly mentions lung cancer as the outcome of smoking.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:23714547",
+              "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+            },
+            {
+              "evidence_id": "pubmed:22054876",
+              "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:22054876",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:23714547",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:26667337",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "cancer",
+              "relationship": "causes",
+              "outcome": "lung cancer",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence consistently refers to tobacco use, primarily cigarette smoking, as the cause of lung cancer.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S2"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths.",
+                "claim_fragment": "cancer",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:23714547",
+                    "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+                  },
+                  {
+                    "evidence_id": "pubmed:22054876",
+                    "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence explicitly states that smoking increases lung cancer risk and is the leading cause of cancer death.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S2"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths.",
+                "claim_fragment": "causes",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:23714547",
+                    "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+                  },
+                  {
+                    "evidence_id": "pubmed:22054876",
+                    "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence directly mentions lung cancer as the outcome of smoking.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S2"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths.",
+                "claim_fragment": "lung cancer",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:23714547",
+                    "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+                  },
+                  {
+                    "evidence_id": "pubmed:22054876",
+                    "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:22054876",
+              "pubmed:23714547"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.9,
+            "REFUTED": 0.05,
+            "NEI": 0.05
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The evidence [E1], [E2], and [E3] consistently support that cigarette smoking is a major cause of lung cancer. Studies show a clear dose-response relationship between smoking and lung cancer risk, with smoking increasing the risk 5- to 10-fold. Additionally, the prevalence of lung cancer in different countries correlates with cigarette consumption, and cessation of smoking can significantly reduce lung cancer risk.",
+    "cited_evidence_ids": [
+      "pubmed:26667337",
+      "pubmed:23714547",
+      "pubmed:22054876"
+    ],
+    "grounding": {
+      "semantic_score": 0.7497623562812805,
+      "coverage_score": 0.8129714131355286,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:58:49.695420Z",
+      "ended_at_utc": "2026-10-29T02:58:55.772000Z",
+      "latency_ms": 6076.5035409999655
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "SUPPORTED",
+  "final_user_facing_verdict": "SUPPORTED",
+  "final_verifier_score": 0.9,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:26667337",
+      "document_id": "pubmed:26667337",
+      "title": "Epidemiology of Lung Cancer.",
+      "text": "Lung cancer continues to be one of the most common causes of cancer death despite understanding the major cause of the disease: cigarette smoking. Smoking increases lung cancer risk 5- to 10-fold with a clear dose-response relationship. Exposure to environmental tobacco smoke among nonsmokers increases lung cancer risk about 20%. Risks for marijuana and hookah use, and the new e-cigarettes, are yet to be consistently defined and will be important areas for continued research as use of these products increases. Other known environmental risk factors include exposures to radon, asbestos, diesel, and ionizing radiation. Host factors have also been associated with lung cancer risk, including family history of lung cancer, history of chronic obstructive pulmonary disease and infections. Studies to identify genes associated with lung cancer susceptibility have consistently identified chromosomal regions on 15q25, 6p21 and 5p15 associated with lung cancer risk. Risk prediction models for lung cancer typically include age, sex, cigarette smoking intensity and/or duration, medical history, and occupational exposures, however there is not yet a risk prediction model currently recommended for general use. As lung cancer screening becomes more widespread, a validated model will be needed to better define risk groups to inform screening guidelines.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26667337/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 8.526437759399414,
+      "relevance_score": 0.9998019337654114,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6998613536357879,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:23714547",
+      "document_id": "pubmed:23714547",
+      "title": "Tobacco and lung cancer: risks, trends, and outcomes in patients with cancer.",
+      "text": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths. Approximately 85% of lung cancers result from smoking, with an additional fraction caused by secondhand smoke exposure in nonsmokers. The risk of lung cancer is dose dependent, but can be dramatically reduced with tobacco cessation, especially if the person discontinues smoking early in life. The increase in lung cancer incidence in different countries around in the world parallels changes in cigarette consumption. Lung cancer risks are not reduced by switching to filters or low-tar/low-nicotine cigarettes. In patients with cancer, continued tobacco use after diagnosis is associated with poor therapeutic outcomes including increased treatment-related toxicity, increased risk of second primary cancer, decreased quality of life, and decreased survival. Tobacco cessation in patients with cancer may improve cancer treatment outcomes, but cessation support is often not provided by oncologists. Reducing the health related effects of tobacco requires coordinated efforts to reduce exposure to tobacco, accurately assess tobacco use in clinical settings, and increase access to tobacco cessation support. Lung cancer screening and coordinated international tobacco control efforts offer the promise to dramatically reduce lung cancer mortality in the coming decades.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23714547/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 9.124488830566406,
+      "relevance_score": 0.9998910427093506,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19997820854187012,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:22054876",
+      "document_id": "pubmed:22054876",
+      "title": "Lung cancer: epidemiology, etiology, and prevention.",
+      "text": "Lung cancer is the leading cause of cancer death in the United States and around the world. A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative. Understanding the epidemiology and causal factors of lung cancer can provide additional foundation for disease prevention. This article focuses on modifiable risk factors, including tobacco smoking, occupational carcinogens, diet, and ionizing radiation. It also discusses briefly the molecular and genetic aspects of lung carcinogenesis.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/22054876/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 8.555248260498047,
+      "relevance_score": 0.9998075366020203,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19996150732040407,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "SUPPORTED",
+            "reason": "The evidence consistently refers to tobacco use, primarily cigarette smoking, as the cause of lung cancer. The evidence explicitly states that smoking increases lung cancer risk and is the leading cause of cancer death. The evidence directly mentions lung cancer as the outcome of smoking.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:23714547",
+                "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+              },
+              {
+                "evidence_id": "pubmed:22054876",
+                "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:22054876",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:23714547",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:26667337",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "cancer",
+                "relationship": "causes",
+                "outcome": "lung cancer",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence consistently refers to tobacco use, primarily cigarette smoking, as the cause of lung cancer.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S2"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths.",
+                  "claim_fragment": "cancer",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:23714547",
+                      "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+                    },
+                    {
+                      "evidence_id": "pubmed:22054876",
+                      "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence explicitly states that smoking increases lung cancer risk and is the leading cause of cancer death.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S2"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths.",
+                  "claim_fragment": "causes",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:23714547",
+                      "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+                    },
+                    {
+                      "evidence_id": "pubmed:22054876",
+                      "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence directly mentions lung cancer as the outcome of smoking.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S2"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths.",
+                  "claim_fragment": "lung cancer",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:23714547",
+                      "quote": "Tobacco use, primarily associated with cigarette smoking, is the largest preventable cause of cancer mortality, responsible for approximately one-third of all cancer deaths."
+                    },
+                    {
+                      "evidence_id": "pubmed:22054876",
+                      "quote": "A vast majority of lung cancer deaths are attributable to cigarette smoking, and curbing the rates of cigarette smoking is imperative."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:22054876",
+                "pubmed:23714547"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.9,
+              "REFUTED": 0.05,
+              "NEI": 0.05
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 31447.00212500004,
+  "completed_at_utc": "2026-10-29T02:58:55.772293Z"
+}

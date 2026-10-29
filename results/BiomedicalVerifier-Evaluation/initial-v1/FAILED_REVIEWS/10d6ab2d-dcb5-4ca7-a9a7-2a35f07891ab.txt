@@ -1,0 +1,4 @@
+Claim: Physical activity reduces the risk of type 2 diabetes.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/10d6ab2d-dcb5-4ca7-a9a7-2a35f07891ab.json

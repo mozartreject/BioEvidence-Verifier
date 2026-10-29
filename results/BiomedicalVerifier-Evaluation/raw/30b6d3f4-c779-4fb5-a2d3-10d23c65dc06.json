@@ -1,0 +1,760 @@
+{
+  "request": {
+    "request_id": "30b6d3f4-c779-4fb5-a2d3-10d23c65dc06",
+    "claim": "Brushing teeth at exactly 6:40 a.m. reduces influenza infection risk by exactly 27%.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:26:16.258057Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:26:16.258152Z",
+      "ended_at_utc": "2026-10-29T03:26:17.003696Z",
+      "latency_ms": 745.5392920001032
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:34239181",
+        "document_id": "pubmed:34239181",
+        "title": "Tooth brushing, tooth loss, and risk of upper aerodigestive tract cancer: a cohort study of Japanese dentisits.",
+        "text": "Previous studies have focused on the association between poor oral health and upper aerodigestive tract (UADT) cancer. However, whether toothbrushing and tooth loss are associated with UADT cancer risk is still unclear. Therefore, we investigated the association between toothbrushing or tooth loss and UADT cancer in the Longitudinal Evaluation of Multi-phasic, Odontological, and Nutritional Associations in Dentists (LEMONADE) cohort study. From 2001 to 2006, we recruited 20,445 dentists (mean age \u00b1 standard deviation, 51.8 \u00b1 12.0 years; 1,607 women [7.9%]) and followed for incidence or mortality of UADT cancer through March 2014. Information on lifestyle and oral health was collected by the baseline questionnaire. The Cox proportional hazards model was used to estimate hazard ratios (HRs) for UADT cancer and corresponding 95% confidence intervals (CI) for brushing frequency and tooth loss with adjustment for covariates. During the mean follow-up of 9.5 years, we confirmed 62 incident or fatal cases of UADT cancer. Infrequent toothbrushing (< 2 times/day) was significantly associated with increased risk of UADT cancer (multivariate HR = 2.13, 95% CI: 1.04-4.37). On the contrary, tooth loss was not significantly correlated with UADT cancer risk; multivariate HR was 1.03 (95% CI: 0.41-2.61) for loss of 15-27 teeth and 1.37 (0.50-3.75) for that of 28 teeth compared to tooth loss of 0-14 teeth. In conclusion, Infrequent toothbrushing was significantly associated with the risk of UADT cancer.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34239181/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -3.4103033542633057,
+        "relevance_score": 0.03197500482201576,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:41469640",
+        "document_id": "pubmed:41469640",
+        "title": "Optimal tooth brushing initiation age and frequency for preventing early childhood caries: a systematic review and meta-analysis.",
+        "text": "BACKGROUND: Early childhood caries (ECC) is a prevalent global public health concern. Although daily tooth brushing is a key preventive measure, uncertainty remains regarding the ideal age to initiate tooth brushing and the optimal brushing frequency to minimise ECC risk in preschool children. A systematic review and meta-analysis were conducted to explore the association between tooth brushing practices (initiation age and frequency) and the early childhood caries among children under 6\u00a0years of age.\nMETHODS: We searched three databases (Proquest, Web of Science, and Scopus) for observational studies (2000-2024). Quality was assessed with the Newcastle-Ottawa Scale, and random-effects meta-analyses (DerSimonian-Laird) were conducted. Heterogeneity (I2), publication bias (Egger's test), and sensitivity analyses (outlier exclusion) were performed.\nRESULTS: Thirty-two studies (27 cross-sectional, 5 longitudinal) out of 2833 initially identified records met inclusion criteria. 10 contributed to the brushing initiation meta-analysis and 8 to the frequency analysis. Including all 10 studies, late initiation showed a borderline nonsignificant pooled odds ratio (OR\u2009=\u20091.40, 95%\u202fCI: 0.91-2.16, p\u2009=\u20090.13) with I2\u2009>\u200990%. Excluding one outlier yielded a significant OR\u2009=\u20091.75 (1.50-2.03, p\u2009<\u20090.0001). Brushing\u2009<\u20092\u2009\u00d7\u2009/day was associated with 2.11-fold higher ECC odds (p\u2009=\u20090.0052), also with heterogeneity but no evidence of publication bias (Egger's p\u2009=\u20090.1161).\nCONCLUSIONS: Despite considerable between-study variability, the overall evidence suggests that commencing tooth brushing by 12\u00a0months of age and brushing at least twice daily maybe protective against ECC, highlighting the importance of integrating these practices into early childhood health programs.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41469640/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.601348876953125,
+        "relevance_score": 0.00993852037936449,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:35742362",
+        "document_id": "pubmed:35742362",
+        "title": "Individual, Family, and Socioeconomic Contributors to Dental Caries in Children from Low- and Middle-Income Countries.",
+        "text": "Introduction: Collective evidence on risk factors for dental caries remains elusive in low- and middle-income countries (LMICs). The objective was to conduct a systematic review and meta-analysis on risk factors for dental caries in deciduous or permanent teeth in LMICs. Methods: Studies were identified electronically through databases, including Cochrane Oral Health Group Trials Register, Cochrane Central Register of Controlled Trials, PubMed/MEDLINE, and CINAHL, using \u201cprevalence, dental caries, child, family, socioeconomic, and LMIC\u201d as the keywords. A total of 11 studies fit the inclusion criteria. Quality assessment of the included studies was performed using the Newcastle-Ottawa Scale (NOS). The MedCalc software and Review Manager 5.4.1 were used. Results: From 11,115 participants, 38.7% (95% CI: 28.4\u221249.5%) had caries and 49.68% were female. Among those with caries, 69.74% consumed sugary drinks/sweets (95% CI: 47.84\u221287.73%) and 56.87% (95% CI: 35.39\u221277.08%) had good brushing habits. Sugary drinks had a two times higher likelihood of leading to caries (OR: 2.04, p < 0.001). Good oral hygiene reduced the risk of caries by 35% (OR: 0.65, p < 0.001). Concerning maternal education, only secondary education reduced the likelihood of caries (OR: 0.96), but primary education incurred 25% higher risks (OR: 1.25, p = 0.03). A 65% reduction was computed when caregivers helped children with tooth brushing (OR: 0.35, p = 0.04). Most families had a low socioeconomic status (SES) (35.9%, 95% CI: 16.73\u221257.79), which increased the odds of caries by 52% (OR: 1.52, p < 0.001); a high SES had a 3% higher chance of caries. In the entire sample, 44.44% (95% CI: 27.73\u221261.82%) of individuals had access to dental services or had visited a dental service provider. Conclusion: Our findings demonstrate that high sugar consumption, low maternal education, and low and high socioeconomic status (SES) increased the risk of dental caries in LMICs. Good brushing habits, higher maternal education, help with tooth brushing, and middle SES provided protection against caries across LMIC children. Limiting sugars, improving oral health education, incorporating national fluoride exposure programs, and accounting for sociodemographic limitations are essential for reducing the prevalence of dental caries in these settings.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35742362/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.765883922576904,
+        "relevance_score": 0.008443458937108517,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Brushing teeth at exactly 6:40 a.m. reduces influenza infection risk by exactly 27%."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:26:17.003758Z",
+      "ended_at_utc": "2026-10-29T03:26:30.165336Z",
+      "latency_ms": 13161.419999999907
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:34239181",
+        "document_id": "pubmed:34239181",
+        "title": "Tooth brushing, tooth loss, and risk of upper aerodigestive tract cancer: a cohort study of Japanese dentisits.",
+        "text": "Previous studies have focused on the association between poor oral health and upper aerodigestive tract (UADT) cancer. However, whether toothbrushing and tooth loss are associated with UADT cancer risk is still unclear. Therefore, we investigated the association between toothbrushing or tooth loss and UADT cancer in the Longitudinal Evaluation of Multi-phasic, Odontological, and Nutritional Associations in Dentists (LEMONADE) cohort study. From 2001 to 2006, we recruited 20,445 dentists (mean age \u00b1 standard deviation, 51.8 \u00b1 12.0 years; 1,607 women [7.9%]) and followed for incidence or mortality of UADT cancer through March 2014. Information on lifestyle and oral health was collected by the baseline questionnaire. The Cox proportional hazards model was used to estimate hazard ratios (HRs) for UADT cancer and corresponding 95% confidence intervals (CI) for brushing frequency and tooth loss with adjustment for covariates. During the mean follow-up of 9.5 years, we confirmed 62 incident or fatal cases of UADT cancer. Infrequent toothbrushing (< 2 times/day) was significantly associated with increased risk of UADT cancer (multivariate HR = 2.13, 95% CI: 1.04-4.37). On the contrary, tooth loss was not significantly correlated with UADT cancer risk; multivariate HR was 1.03 (95% CI: 0.41-2.61) for loss of 15-27 teeth and 1.37 (0.50-3.75) for that of 28 teeth compared to tooth loss of 0-14 teeth. In conclusion, Infrequent toothbrushing was significantly associated with the risk of UADT cancer.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34239181/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -3.4103033542633057,
+        "relevance_score": 0.03197500482201576,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.022382503375411034,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:41469640",
+        "document_id": "pubmed:41469640",
+        "title": "Optimal tooth brushing initiation age and frequency for preventing early childhood caries: a systematic review and meta-analysis.",
+        "text": "BACKGROUND: Early childhood caries (ECC) is a prevalent global public health concern. Although daily tooth brushing is a key preventive measure, uncertainty remains regarding the ideal age to initiate tooth brushing and the optimal brushing frequency to minimise ECC risk in preschool children. A systematic review and meta-analysis were conducted to explore the association between tooth brushing practices (initiation age and frequency) and the early childhood caries among children under 6\u00a0years of age.\nMETHODS: We searched three databases (Proquest, Web of Science, and Scopus) for observational studies (2000-2024). Quality was assessed with the Newcastle-Ottawa Scale, and random-effects meta-analyses (DerSimonian-Laird) were conducted. Heterogeneity (I2), publication bias (Egger's test), and sensitivity analyses (outlier exclusion) were performed.\nRESULTS: Thirty-two studies (27 cross-sectional, 5 longitudinal) out of 2833 initially identified records met inclusion criteria. 10 contributed to the brushing initiation meta-analysis and 8 to the frequency analysis. Including all 10 studies, late initiation showed a borderline nonsignificant pooled odds ratio (OR\u2009=\u20091.40, 95%\u202fCI: 0.91-2.16, p\u2009=\u20090.13) with I2\u2009>\u200990%. Excluding one outlier yielded a significant OR\u2009=\u20091.75 (1.50-2.03, p\u2009<\u20090.0001). Brushing\u2009<\u20092\u2009\u00d7\u2009/day was associated with 2.11-fold higher ECC odds (p\u2009=\u20090.0052), also with heterogeneity but no evidence of publication bias (Egger's p\u2009=\u20090.1161).\nCONCLUSIONS: Despite considerable between-study variability, the overall evidence suggests that commencing tooth brushing by 12\u00a0months of age and brushing at least twice daily maybe protective against ECC, highlighting the importance of integrating these practices into early childhood health programs.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41469640/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.601348876953125,
+        "relevance_score": 0.00993852037936449,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.00993852037936449,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:35742362",
+        "document_id": "pubmed:35742362",
+        "title": "Individual, Family, and Socioeconomic Contributors to Dental Caries in Children from Low- and Middle-Income Countries.",
+        "text": "Introduction: Collective evidence on risk factors for dental caries remains elusive in low- and middle-income countries (LMICs). The objective was to conduct a systematic review and meta-analysis on risk factors for dental caries in deciduous or permanent teeth in LMICs. Methods: Studies were identified electronically through databases, including Cochrane Oral Health Group Trials Register, Cochrane Central Register of Controlled Trials, PubMed/MEDLINE, and CINAHL, using \u201cprevalence, dental caries, child, family, socioeconomic, and LMIC\u201d as the keywords. A total of 11 studies fit the inclusion criteria. Quality assessment of the included studies was performed using the Newcastle-Ottawa Scale (NOS). The MedCalc software and Review Manager 5.4.1 were used. Results: From 11,115 participants, 38.7% (95% CI: 28.4\u221249.5%) had caries and 49.68% were female. Among those with caries, 69.74% consumed sugary drinks/sweets (95% CI: 47.84\u221287.73%) and 56.87% (95% CI: 35.39\u221277.08%) had good brushing habits. Sugary drinks had a two times higher likelihood of leading to caries (OR: 2.04, p < 0.001). Good oral hygiene reduced the risk of caries by 35% (OR: 0.65, p < 0.001). Concerning maternal education, only secondary education reduced the likelihood of caries (OR: 0.96), but primary education incurred 25% higher risks (OR: 1.25, p = 0.03). A 65% reduction was computed when caregivers helped children with tooth brushing (OR: 0.35, p = 0.04). Most families had a low socioeconomic status (SES) (35.9%, 95% CI: 16.73\u221257.79), which increased the odds of caries by 52% (OR: 1.52, p < 0.001); a high SES had a 3% higher chance of caries. In the entire sample, 44.44% (95% CI: 27.73\u221261.82%) of individuals had access to dental services or had visited a dental service provider. Conclusion: Our findings demonstrate that high sugar consumption, low maternal education, and low and high socioeconomic status (SES) increased the risk of dental caries in LMICs. Good brushing habits, higher maternal education, help with tooth brushing, and middle SES provided protection against caries across LMIC children. Limiting sugars, improving oral health education, incorporating national fluoride exposure programs, and accounting for sociodemographic limitations are essential for reducing the prevalence of dental caries in these settings.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35742362/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.765883922576904,
+        "relevance_score": 0.008443458937108517,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.008443458937108517,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:26:30.165367Z",
+      "ended_at_utc": "2026-10-29T03:26:30.165450Z",
+      "latency_ms": 0.09029200009535998
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:34239181",
+      "pubmed:41469640",
+      "pubmed:35742362"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cBrushing teeth at exactly 6:40 a.m.\u201d; relationship: \u201creduces\u201d; outcome: \u201cinfluenza infection risk\u201d; qualifiers: \u201cexactly 27%\u201d. The evidence does not mention brushing teeth at exactly 6:40 a.m. as a specific time or duration of tooth brushing. The studies focus on the frequency and initiation age of tooth brushing, not the exact time of day or a  The evidence does not establish a relationship between brushing teeth at a specific time and reducing influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza The evidence does not mention influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza or any other respiratory infections. The evidence does not provide a specific percentage reduction in influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not the exact percentage reduction in risk.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:34239181",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:35742362",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:41469640",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Brushing teeth at exactly 6:40 a.m.",
+              "relationship": "reduces",
+              "outcome": "influenza infection risk",
+              "population": "",
+              "qualifiers": "exactly 27%"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention brushing teeth at exactly 6:40 a.m. as a specific time or duration of tooth brushing. The studies focus on the frequency and initiation age of tooth brushing, not the exact time of day or a ",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Brushing teeth at exactly 6:40 a.m.",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not establish a relationship between brushing teeth at a specific time and reducing influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "reduces",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza or any other respiratory infections.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "influenza infection risk",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide a specific percentage reduction in influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not the exact percentage reduction in risk.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly 27%",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "NEI explanation must explicitly communicate insufficient/inconclusive evidence; Semantic grounding 0.3817 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:26:54.876192Z",
+      "ended_at_utc": "2026-10-29T03:27:16.282866Z",
+      "latency_ms": 21406.40679099988
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:34239181",
+      "document_id": "pubmed:34239181",
+      "title": "Tooth brushing, tooth loss, and risk of upper aerodigestive tract cancer: a cohort study of Japanese dentisits.",
+      "text": "Previous studies have focused on the association between poor oral health and upper aerodigestive tract (UADT) cancer. However, whether toothbrushing and tooth loss are associated with UADT cancer risk is still unclear. Therefore, we investigated the association between toothbrushing or tooth loss and UADT cancer in the Longitudinal Evaluation of Multi-phasic, Odontological, and Nutritional Associations in Dentists (LEMONADE) cohort study. From 2001 to 2006, we recruited 20,445 dentists (mean age \u00b1 standard deviation, 51.8 \u00b1 12.0 years; 1,607 women [7.9%]) and followed for incidence or mortality of UADT cancer through March 2014. Information on lifestyle and oral health was collected by the baseline questionnaire. The Cox proportional hazards model was used to estimate hazard ratios (HRs) for UADT cancer and corresponding 95% confidence intervals (CI) for brushing frequency and tooth loss with adjustment for covariates. During the mean follow-up of 9.5 years, we confirmed 62 incident or fatal cases of UADT cancer. Infrequent toothbrushing (< 2 times/day) was significantly associated with increased risk of UADT cancer (multivariate HR = 2.13, 95% CI: 1.04-4.37). On the contrary, tooth loss was not significantly correlated with UADT cancer risk; multivariate HR was 1.03 (95% CI: 0.41-2.61) for loss of 15-27 teeth and 1.37 (0.50-3.75) for that of 28 teeth compared to tooth loss of 0-14 teeth. In conclusion, Infrequent toothbrushing was significantly associated with the risk of UADT cancer.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34239181/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -3.4103033542633057,
+      "relevance_score": 0.03197500482201576,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.022382503375411034,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:41469640",
+      "document_id": "pubmed:41469640",
+      "title": "Optimal tooth brushing initiation age and frequency for preventing early childhood caries: a systematic review and meta-analysis.",
+      "text": "BACKGROUND: Early childhood caries (ECC) is a prevalent global public health concern. Although daily tooth brushing is a key preventive measure, uncertainty remains regarding the ideal age to initiate tooth brushing and the optimal brushing frequency to minimise ECC risk in preschool children. A systematic review and meta-analysis were conducted to explore the association between tooth brushing practices (initiation age and frequency) and the early childhood caries among children under 6\u00a0years of age.\nMETHODS: We searched three databases (Proquest, Web of Science, and Scopus) for observational studies (2000-2024). Quality was assessed with the Newcastle-Ottawa Scale, and random-effects meta-analyses (DerSimonian-Laird) were conducted. Heterogeneity (I2), publication bias (Egger's test), and sensitivity analyses (outlier exclusion) were performed.\nRESULTS: Thirty-two studies (27 cross-sectional, 5 longitudinal) out of 2833 initially identified records met inclusion criteria. 10 contributed to the brushing initiation meta-analysis and 8 to the frequency analysis. Including all 10 studies, late initiation showed a borderline nonsignificant pooled odds ratio (OR\u2009=\u20091.40, 95%\u202fCI: 0.91-2.16, p\u2009=\u20090.13) with I2\u2009>\u200990%. Excluding one outlier yielded a significant OR\u2009=\u20091.75 (1.50-2.03, p\u2009<\u20090.0001). Brushing\u2009<\u20092\u2009\u00d7\u2009/day was associated with 2.11-fold higher ECC odds (p\u2009=\u20090.0052), also with heterogeneity but no evidence of publication bias (Egger's p\u2009=\u20090.1161).\nCONCLUSIONS: Despite considerable between-study variability, the overall evidence suggests that commencing tooth brushing by 12\u00a0months of age and brushing at least twice daily maybe protective against ECC, highlighting the importance of integrating these practices into early childhood health programs.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/41469640/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -4.601348876953125,
+      "relevance_score": 0.00993852037936449,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.00993852037936449,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:35742362",
+      "document_id": "pubmed:35742362",
+      "title": "Individual, Family, and Socioeconomic Contributors to Dental Caries in Children from Low- and Middle-Income Countries.",
+      "text": "Introduction: Collective evidence on risk factors for dental caries remains elusive in low- and middle-income countries (LMICs). The objective was to conduct a systematic review and meta-analysis on risk factors for dental caries in deciduous or permanent teeth in LMICs. Methods: Studies were identified electronically through databases, including Cochrane Oral Health Group Trials Register, Cochrane Central Register of Controlled Trials, PubMed/MEDLINE, and CINAHL, using \u201cprevalence, dental caries, child, family, socioeconomic, and LMIC\u201d as the keywords. A total of 11 studies fit the inclusion criteria. Quality assessment of the included studies was performed using the Newcastle-Ottawa Scale (NOS). The MedCalc software and Review Manager 5.4.1 were used. Results: From 11,115 participants, 38.7% (95% CI: 28.4\u221249.5%) had caries and 49.68% were female. Among those with caries, 69.74% consumed sugary drinks/sweets (95% CI: 47.84\u221287.73%) and 56.87% (95% CI: 35.39\u221277.08%) had good brushing habits. Sugary drinks had a two times higher likelihood of leading to caries (OR: 2.04, p < 0.001). Good oral hygiene reduced the risk of caries by 35% (OR: 0.65, p < 0.001). Concerning maternal education, only secondary education reduced the likelihood of caries (OR: 0.96), but primary education incurred 25% higher risks (OR: 1.25, p = 0.03). A 65% reduction was computed when caregivers helped children with tooth brushing (OR: 0.35, p = 0.04). Most families had a low socioeconomic status (SES) (35.9%, 95% CI: 16.73\u221257.79), which increased the odds of caries by 52% (OR: 1.52, p < 0.001); a high SES had a 3% higher chance of caries. In the entire sample, 44.44% (95% CI: 27.73\u221261.82%) of individuals had access to dental services or had visited a dental service provider. Conclusion: Our findings demonstrate that high sugar consumption, low maternal education, and low and high socioeconomic status (SES) increased the risk of dental caries in LMICs. Good brushing habits, higher maternal education, help with tooth brushing, and middle SES provided protection against caries across LMIC children. Limiting sugars, improving oral health education, incorporating national fluoride exposure programs, and accounting for sociodemographic limitations are essential for reducing the prevalence of dental caries in these settings.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35742362/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -4.765883922576904,
+      "relevance_score": 0.008443458937108517,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.008443458937108517,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cBrushing teeth at exactly 6:40 a.m.\u201d; relationship: \u201creduces\u201d; outcome: \u201cinfluenza infection risk\u201d; qualifiers: \u201cexactly 27%\u201d. The evidence does not mention brushing teeth at exactly 6:40 a.m. as a specific time or duration of tooth brushing. The studies focus on the frequency and initiation age of tooth brushing, not the exact time of day or a  The evidence does not establish a relationship between brushing teeth at a specific time and reducing influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza The evidence does not mention influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza or any other respiratory infections. The evidence does not provide a specific percentage reduction in influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not the exact percentage reduction in risk.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:34239181",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:35742362",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:41469640",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Brushing teeth at exactly 6:40 a.m.",
+                "relationship": "reduces",
+                "outcome": "influenza infection risk",
+                "population": "",
+                "qualifiers": "exactly 27%"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention brushing teeth at exactly 6:40 a.m. as a specific time or duration of tooth brushing. The studies focus on the frequency and initiation age of tooth brushing, not the exact time of day or a ",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Brushing teeth at exactly 6:40 a.m.",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not establish a relationship between brushing teeth at a specific time and reducing influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "reduces",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not influenza or any other respiratory infections.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "influenza infection risk",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide a specific percentage reduction in influenza infection risk. The studies focus on the association between tooth brushing and dental caries, not the exact percentage reduction in risk.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly 27%",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 60025.21937499978,
+  "completed_at_utc": "2026-10-29T03:27:16.284094Z"
+}

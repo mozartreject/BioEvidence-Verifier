@@ -1,0 +1,7 @@
+Claim: High blood pressure does not increase the risk of stroke.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 0ed02344-3600-43cf-83e0-6c9cc93eea05
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/0ed02344-3600-43cf-83e0-6c9cc93eea05.json

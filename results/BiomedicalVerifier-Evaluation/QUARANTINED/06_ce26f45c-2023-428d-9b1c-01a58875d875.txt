@@ -1,0 +1,5 @@
+Claim: HIV does not attack the immune system.
+Actual verdict: REFUTED
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Semantic grounding 0.3178 below threshold 0.4500
+Raw response: ../raw/ce26f45c-2023-428d-9b1c-01a58875d875.json

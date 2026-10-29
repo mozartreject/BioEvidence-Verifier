@@ -1,0 +1,29 @@
+{
+  "status": "healthy",
+  "pipeline_ready": true,
+  "mode": "experimental",
+  "pipeline_version": "ai-evidence-review-v3",
+  "verifier_backend": "ai_evidence_review",
+  "evidence_validation": "quoted_evidence_sufficiency_and_ai_scores",
+  "relation_review_model": "qwen2.5:7b",
+  "relation_review_status": "final_decision_not_accuracy_validated",
+  "ai_api_review": {
+    "enabled": true,
+    "model": "qwen2.5:7b",
+    "policy": "final_decision_over_live_pubmed",
+    "accuracy_validated": false,
+    "score_source": "ai_evidence_estimates",
+    "score_method": "ai_selected_discrete_distribution_v2"
+  },
+  "retrieval": {
+    "document_count": 35183,
+    "live_pubmed_enabled": true,
+    "web_search_enabled": true,
+    "web_provider": "Bing RSS",
+    "final_candidate_limit": 3
+  },
+  "development_accuracy": null,
+  "target_accuracy": null,
+  "accuracy_scope": "Historical unguarded classifier on reused development; current service with relation veto is not accuracy-evaluated",
+  "current_service_accuracy": null
+}

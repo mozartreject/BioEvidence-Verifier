@@ -1,0 +1,7 @@
+Claim: Insulin does not lower blood glucose.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 830b0704-deca-4d7d-9d6a-6fe07d21ee9c
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/830b0704-deca-4d7d-9d6a-6fe07d21ee9c.json

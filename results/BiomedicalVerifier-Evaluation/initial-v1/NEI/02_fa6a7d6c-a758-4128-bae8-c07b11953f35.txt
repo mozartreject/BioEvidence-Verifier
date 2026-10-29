@@ -1,0 +1,7 @@
+Claim: Malaria is caused by bacteria.
+Actual verdict: NEI
+Expected candidate label: REFUTED
+Request ID: fa6a7d6c-a758-4128-bae8-c07b11953f35
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/fa6a7d6c-a758-4128-bae8-c07b11953f35.json

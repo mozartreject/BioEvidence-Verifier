@@ -1,0 +1,4 @@
+Claim: Tuberculosis is caused by a virus.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/235bd419-33a0-4b13-b5a5-b518a83244a1.json

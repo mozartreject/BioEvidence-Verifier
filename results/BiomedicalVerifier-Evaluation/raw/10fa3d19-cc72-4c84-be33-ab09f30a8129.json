@@ -1,0 +1,830 @@
+{
+  "request": {
+    "request_id": "10fa3d19-cc72-4c84-be33-ab09f30a8129",
+    "claim": "Rabies is caused by a virus.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:35:33.888416Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:35:33.888508Z",
+      "ended_at_utc": "2026-10-29T03:35:34.579350Z",
+      "latency_ms": 690.8361660002811
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:28643547",
+        "document_id": "pubmed:28643547",
+        "title": "Rabies\u00a0-\u00a0epidemiology, pathogenesis, public health concerns and advances in diagnosis and control: a comprehensive review.",
+        "text": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae. It affects all warm-blooded animals and the disease is prevalent throughout the world and endemic in many countries except in Islands like Australia and Antarctica. Over 60,000 peoples die every year due to rabies, while approximately 15 million people receive rabies post-exposure prophylaxis (PEP) annually. Bite of rabid animals and saliva of infected host are mainly responsible for transmission and wildlife like raccoons, skunks, bats and foxes are main reservoirs for rabies. The incubation period is highly variable from 2 weeks to 6 years (avg. 2-3 months). Though severe neurologic signs and fatal outcome, neuropathological lesions are relatively mild. Rabies virus exploits various mechanisms to evade the host immune responses. Being a major zoonosis, precise and rapid diagnosis is important for early treatment and effective prevention and control measures. Traditional rapid Seller's staining and histopathological methods are still in use for diagnosis of rabies. Direct immunofluoroscent test (dFAT) is gold standard test and most commonly recommended for diagnosis of rabies in fresh brain tissues of dogs by both OIE and WHO. Mouse inoculation test (MIT) and polymerase chain reaction (PCR) are superior and used for routine diagnosis. Vaccination with live attenuated or inactivated viruses, DNA and recombinant vaccines can be done in endemic areas. This review describes in detail about epidemiology, transmission, pathogenesis, advances in diagnosis, vaccination and therapeutic approaches along with appropriate prevention and control strategies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/28643547/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.190074920654297,
+        "relevance_score": 0.9997226595878601,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:42113068",
+        "document_id": "pubmed:42113068",
+        "title": "Fatal encephalomyelitis outbreak among dairy cows caused by rabies virus phylogroup-1 with co-occurrence of Chlamydia abortus.",
+        "text": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae. Lyssavirus rabies primarily affects the central nervous system, while, Chlamydia spp. are intracellular bacterial pathogens and occasionally infect nervous system in livestock. In this reported sporadic outbreak, seven cows in an organised dairy farm manifested acute nervous symptoms, hypersalivation, muscle tremors and death along with encephalomyelitis as the predominant post-mortem lesion. Considering the nervous signs in the absence of visible bite marks, diseased animals were initially screened for rabies, bovine herpesvirus type 5 (BoHV-5), listeriosis, chlamydiosis and plant toxicities. Brain samples of all cows were found positive for rabies virus using N gene RT-PCR. The brain samples of morbid animals also showed typical necropsy and histopathological changes indicative of rabies. The virus was further confirmed by nucleotide sequencing of the partial N gene. The phylogenetic analysis indicated involvement of the Lyssavirus rabies strain belonging to genotype I of phylogroup 1, like other Indian rabies viruses, and closely related to the strains detected from the dogs from north India. Interestingly, Chlamydia abortus was also detected by PCR in the brain tissue and pericardial fluid of two animals. However, no specific histopathological lesions attributable to chlamydial infection were observed in brains tissues. The pathological significance of this co-detection remains uncertain. This study is the first report of the co-occurrence of rabies and chlamydiosis in cattle, with unknown clinical significance, and highlights the importance of rabies surveillance in livestock and canine population.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42113068/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.541468620300293,
+        "relevance_score": 0.9994696974754333,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:29188797",
+        "document_id": "pubmed:29188797",
+        "title": "Rabies.",
+        "text": "Rabies is a life-threatening neglected tropical disease: tens of thousands of cases are reported annually in endemic countries (mainly in Africa and Asia), although the actual numbers are most likely underestimated. Rabies is a zoonotic disease that is caused by infection with viruses of the Lyssavirus genus, which are transmitted via the saliva of an infected animal. Dogs are the most important reservoir for rabies viruses, and dog bites account for >99% of human cases. The virus first infects peripheral motor neurons, and symptoms occur after the virus reaches the central nervous system. Once clinical disease develops, it is almost certainly fatal. Primary prevention involves dog vaccination campaigns to reduce the virus reservoir. If exposure occurs, timely post-exposure prophylaxis can prevent the progression to clinical disease and involves appropriate wound care, the administration of rabies immunoglobulin and vaccination. A multifaceted approach for human rabies eradication that involves government support, disease awareness, vaccination of at-risk human populations and, most importantly, dog rabies control is necessary to achieve the WHO goal of reducing the number of cases of dog-mediated human rabies to zero by 2030.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29188797/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.497591495513916,
+        "relevance_score": 0.9994458556175232,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Rabies is caused by a virus."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:35:34.579396Z",
+      "ended_at_utc": "2026-10-29T03:35:53.728459Z",
+      "latency_ms": 19148.81874999992
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:28643547",
+        "document_id": "pubmed:28643547",
+        "title": "Rabies\u00a0-\u00a0epidemiology, pathogenesis, public health concerns and advances in diagnosis and control: a comprehensive review.",
+        "text": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae. It affects all warm-blooded animals and the disease is prevalent throughout the world and endemic in many countries except in Islands like Australia and Antarctica. Over 60,000 peoples die every year due to rabies, while approximately 15 million people receive rabies post-exposure prophylaxis (PEP) annually. Bite of rabid animals and saliva of infected host are mainly responsible for transmission and wildlife like raccoons, skunks, bats and foxes are main reservoirs for rabies. The incubation period is highly variable from 2 weeks to 6 years (avg. 2-3 months). Though severe neurologic signs and fatal outcome, neuropathological lesions are relatively mild. Rabies virus exploits various mechanisms to evade the host immune responses. Being a major zoonosis, precise and rapid diagnosis is important for early treatment and effective prevention and control measures. Traditional rapid Seller's staining and histopathological methods are still in use for diagnosis of rabies. Direct immunofluoroscent test (dFAT) is gold standard test and most commonly recommended for diagnosis of rabies in fresh brain tissues of dogs by both OIE and WHO. Mouse inoculation test (MIT) and polymerase chain reaction (PCR) are superior and used for routine diagnosis. Vaccination with live attenuated or inactivated viruses, DNA and recombinant vaccines can be done in endemic areas. This review describes in detail about epidemiology, transmission, pathogenesis, advances in diagnosis, vaccination and therapeutic approaches along with appropriate prevention and control strategies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/28643547/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.190074920654297,
+        "relevance_score": 0.9997226595878601,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.9997226595878601,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:42113068",
+        "document_id": "pubmed:42113068",
+        "title": "Fatal encephalomyelitis outbreak among dairy cows caused by rabies virus phylogroup-1 with co-occurrence of Chlamydia abortus.",
+        "text": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae. Lyssavirus rabies primarily affects the central nervous system, while, Chlamydia spp. are intracellular bacterial pathogens and occasionally infect nervous system in livestock. In this reported sporadic outbreak, seven cows in an organised dairy farm manifested acute nervous symptoms, hypersalivation, muscle tremors and death along with encephalomyelitis as the predominant post-mortem lesion. Considering the nervous signs in the absence of visible bite marks, diseased animals were initially screened for rabies, bovine herpesvirus type 5 (BoHV-5), listeriosis, chlamydiosis and plant toxicities. Brain samples of all cows were found positive for rabies virus using N gene RT-PCR. The brain samples of morbid animals also showed typical necropsy and histopathological changes indicative of rabies. The virus was further confirmed by nucleotide sequencing of the partial N gene. The phylogenetic analysis indicated involvement of the Lyssavirus rabies strain belonging to genotype I of phylogroup 1, like other Indian rabies viruses, and closely related to the strains detected from the dogs from north India. Interestingly, Chlamydia abortus was also detected by PCR in the brain tissue and pericardial fluid of two animals. However, no specific histopathological lesions attributable to chlamydial infection were observed in brains tissues. The pathological significance of this co-detection remains uncertain. This study is the first report of the co-occurrence of rabies and chlamydiosis in cattle, with unknown clinical significance, and highlights the importance of rabies surveillance in livestock and canine population.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42113068/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.541468620300293,
+        "relevance_score": 0.9994696974754333,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6996287882328033,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:29188797",
+        "document_id": "pubmed:29188797",
+        "title": "Rabies.",
+        "text": "Rabies is a life-threatening neglected tropical disease: tens of thousands of cases are reported annually in endemic countries (mainly in Africa and Asia), although the actual numbers are most likely underestimated. Rabies is a zoonotic disease that is caused by infection with viruses of the Lyssavirus genus, which are transmitted via the saliva of an infected animal. Dogs are the most important reservoir for rabies viruses, and dog bites account for >99% of human cases. The virus first infects peripheral motor neurons, and symptoms occur after the virus reaches the central nervous system. Once clinical disease develops, it is almost certainly fatal. Primary prevention involves dog vaccination campaigns to reduce the virus reservoir. If exposure occurs, timely post-exposure prophylaxis can prevent the progression to clinical disease and involves appropriate wound care, the administration of rabies immunoglobulin and vaccination. A multifaceted approach for human rabies eradication that involves government support, disease awareness, vaccination of at-risk human populations and, most importantly, dog rabies control is necessary to achieve the WHO goal of reducing the number of cases of dog-mediated human rabies to zero by 2030.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29188797/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.497591495513916,
+        "relevance_score": 0.9994458556175232,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19988917112350466,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:35:53.728490Z",
+      "ended_at_utc": "2026-10-29T03:35:56.057988Z",
+      "latency_ms": 2329.5079169997734
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "SUPPORTED",
+    "user_facing_verdict": "SUPPORTED",
+    "probabilities": {
+      "refuted": 0.1,
+      "nei": 0.2,
+      "supported": 0.7
+    },
+    "verifier_score": 0.7,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:28643547",
+      "pubmed:42113068",
+      "pubmed:29188797"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "SUPPORTED",
+          "reason": "The evidence consistently refers to rabies as a viral disease, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rab\u75ab The evidence explicitly states that rabies is caused by a virus, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'R The evidence describes the virus as the cause of rabies, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rabies is",
+          "citations": [
+            {
+              "evidence_id": "pubmed:28643547",
+              "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+            },
+            {
+              "evidence_id": "pubmed:42113068",
+              "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:28643547",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:29188797",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:42113068",
+              "relation": "SUPPORTS",
+              "concrete": true
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Rabies",
+              "relationship": "caused by",
+              "outcome": "a virus.",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence consistently refers to rabies as a viral disease, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rab\u75ab",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.",
+                "claim_fragment": "Rabies",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:28643547",
+                    "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+                  },
+                  {
+                    "evidence_id": "pubmed:42113068",
+                    "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence explicitly states that rabies is caused by a virus, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'R",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.",
+                "claim_fragment": "caused by",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:28643547",
+                    "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+                  },
+                  {
+                    "evidence_id": "pubmed:42113068",
+                    "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence describes the virus as the cause of rabies, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rabies is",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.",
+                "claim_fragment": "a virus.",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:28643547",
+                    "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+                  },
+                  {
+                    "evidence_id": "pubmed:42113068",
+                    "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:28643547",
+              "pubmed:42113068"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.7,
+            "REFUTED": 0.1,
+            "NEI": 0.2
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Rabies is indeed caused by a virus, as evidenced by [E1], [E2], and [E3]. These sources consistently describe rabies as a viral zoonotic disease caused by the rabies virus, which belongs to the genus Lyssavirus and family Rhabdoviridae.",
+    "cited_evidence_ids": [
+      "pubmed:28643547",
+      "pubmed:42113068",
+      "pubmed:29188797"
+    ],
+    "grounding": {
+      "semantic_score": 0.6903290748596191,
+      "coverage_score": 0.701418399810791,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:36:18.917983Z",
+      "ended_at_utc": "2026-10-29T03:36:26.623267Z",
+      "latency_ms": 7705.186499999854
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "SUPPORTED",
+  "final_user_facing_verdict": "SUPPORTED",
+  "final_verifier_score": 0.7,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:28643547",
+      "document_id": "pubmed:28643547",
+      "title": "Rabies\u00a0-\u00a0epidemiology, pathogenesis, public health concerns and advances in diagnosis and control: a comprehensive review.",
+      "text": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae. It affects all warm-blooded animals and the disease is prevalent throughout the world and endemic in many countries except in Islands like Australia and Antarctica. Over 60,000 peoples die every year due to rabies, while approximately 15 million people receive rabies post-exposure prophylaxis (PEP) annually. Bite of rabid animals and saliva of infected host are mainly responsible for transmission and wildlife like raccoons, skunks, bats and foxes are main reservoirs for rabies. The incubation period is highly variable from 2 weeks to 6 years (avg. 2-3 months). Though severe neurologic signs and fatal outcome, neuropathological lesions are relatively mild. Rabies virus exploits various mechanisms to evade the host immune responses. Being a major zoonosis, precise and rapid diagnosis is important for early treatment and effective prevention and control measures. Traditional rapid Seller's staining and histopathological methods are still in use for diagnosis of rabies. Direct immunofluoroscent test (dFAT) is gold standard test and most commonly recommended for diagnosis of rabies in fresh brain tissues of dogs by both OIE and WHO. Mouse inoculation test (MIT) and polymerase chain reaction (PCR) are superior and used for routine diagnosis. Vaccination with live attenuated or inactivated viruses, DNA and recombinant vaccines can be done in endemic areas. This review describes in detail about epidemiology, transmission, pathogenesis, advances in diagnosis, vaccination and therapeutic approaches along with appropriate prevention and control strategies.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28643547/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 8.190074920654297,
+      "relevance_score": 0.9997226595878601,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.9997226595878601,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:42113068",
+      "document_id": "pubmed:42113068",
+      "title": "Fatal encephalomyelitis outbreak among dairy cows caused by rabies virus phylogroup-1 with co-occurrence of Chlamydia abortus.",
+      "text": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae. Lyssavirus rabies primarily affects the central nervous system, while, Chlamydia spp. are intracellular bacterial pathogens and occasionally infect nervous system in livestock. In this reported sporadic outbreak, seven cows in an organised dairy farm manifested acute nervous symptoms, hypersalivation, muscle tremors and death along with encephalomyelitis as the predominant post-mortem lesion. Considering the nervous signs in the absence of visible bite marks, diseased animals were initially screened for rabies, bovine herpesvirus type 5 (BoHV-5), listeriosis, chlamydiosis and plant toxicities. Brain samples of all cows were found positive for rabies virus using N gene RT-PCR. The brain samples of morbid animals also showed typical necropsy and histopathological changes indicative of rabies. The virus was further confirmed by nucleotide sequencing of the partial N gene. The phylogenetic analysis indicated involvement of the Lyssavirus rabies strain belonging to genotype I of phylogroup 1, like other Indian rabies viruses, and closely related to the strains detected from the dogs from north India. Interestingly, Chlamydia abortus was also detected by PCR in the brain tissue and pericardial fluid of two animals. However, no specific histopathological lesions attributable to chlamydial infection were observed in brains tissues. The pathological significance of this co-detection remains uncertain. This study is the first report of the co-occurrence of rabies and chlamydiosis in cattle, with unknown clinical significance, and highlights the importance of rabies surveillance in livestock and canine population.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42113068/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.541468620300293,
+      "relevance_score": 0.9994696974754333,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6996287882328033,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:29188797",
+      "document_id": "pubmed:29188797",
+      "title": "Rabies.",
+      "text": "Rabies is a life-threatening neglected tropical disease: tens of thousands of cases are reported annually in endemic countries (mainly in Africa and Asia), although the actual numbers are most likely underestimated. Rabies is a zoonotic disease that is caused by infection with viruses of the Lyssavirus genus, which are transmitted via the saliva of an infected animal. Dogs are the most important reservoir for rabies viruses, and dog bites account for >99% of human cases. The virus first infects peripheral motor neurons, and symptoms occur after the virus reaches the central nervous system. Once clinical disease develops, it is almost certainly fatal. Primary prevention involves dog vaccination campaigns to reduce the virus reservoir. If exposure occurs, timely post-exposure prophylaxis can prevent the progression to clinical disease and involves appropriate wound care, the administration of rabies immunoglobulin and vaccination. A multifaceted approach for human rabies eradication that involves government support, disease awareness, vaccination of at-risk human populations and, most importantly, dog rabies control is necessary to achieve the WHO goal of reducing the number of cases of dog-mediated human rabies to zero by 2030.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29188797/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.497591495513916,
+      "relevance_score": 0.9994458556175232,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19988917112350466,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "SUPPORTED",
+            "reason": "The evidence consistently refers to rabies as a viral disease, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rab\u75ab The evidence explicitly states that rabies is caused by a virus, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'R The evidence describes the virus as the cause of rabies, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rabies is",
+            "citations": [
+              {
+                "evidence_id": "pubmed:28643547",
+                "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+              },
+              {
+                "evidence_id": "pubmed:42113068",
+                "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:28643547",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:29188797",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:42113068",
+                "relation": "SUPPORTS",
+                "concrete": true
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Rabies",
+                "relationship": "caused by",
+                "outcome": "a virus.",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence consistently refers to rabies as a viral disease, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rab\u75ab",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.",
+                  "claim_fragment": "Rabies",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:28643547",
+                      "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+                    },
+                    {
+                      "evidence_id": "pubmed:42113068",
+                      "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence explicitly states that rabies is caused by a virus, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'R",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.",
+                  "claim_fragment": "caused by",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:28643547",
+                      "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+                    },
+                    {
+                      "evidence_id": "pubmed:42113068",
+                      "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence describes the virus as the cause of rabies, e.g., 'Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.' and 'Rabies is",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae.",
+                  "claim_fragment": "a virus.",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:28643547",
+                      "quote": "Rabies is a zoonotic, fatal and progressive neurological infection caused by rabies virus of the genus Lyssavirus and family Rhabdoviridae."
+                    },
+                    {
+                      "evidence_id": "pubmed:42113068",
+                      "quote": "Rabies is a fatal viral zoonotic disease caused by a neurotropic Rabies virus (Lyssavirus rabies) of the genus Lyssavirus of the family Rhabdoviridae."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:28643547",
+                "pubmed:42113068"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.7,
+              "REFUTED": 0.1,
+              "NEI": 0.2
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 52735.32866599999,
+  "completed_at_utc": "2026-10-29T03:36:26.624493Z"
+}

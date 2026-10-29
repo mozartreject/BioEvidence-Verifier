@@ -1,0 +1,7 @@
+Claim: Exposure to ultraviolet radiation increases the risk of skin cancer.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: d13f8aa4-302b-410e-8fd6-58ac51ae487b
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/d13f8aa4-302b-410e-8fd6-58ac51ae487b.json

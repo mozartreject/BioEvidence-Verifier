@@ -1,0 +1,4 @@
+Claim: Insulin raises blood glucose.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/356ee384-295a-4a99-8a41-7d11f0d8394d.json

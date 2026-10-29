@@ -1,0 +1,7 @@
+Claim: Vitamin D deficiency can cause rickets in children.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 3d0ba371-8ef6-4967-b8ad-a2307dfe7a51
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/3d0ba371-8ef6-4967-b8ad-a2307dfe7a51.json

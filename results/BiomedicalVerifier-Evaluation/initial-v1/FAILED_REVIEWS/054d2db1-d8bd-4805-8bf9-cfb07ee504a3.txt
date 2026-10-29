@@ -1,0 +1,4 @@
+Claim: Sleeping with the bedroom door open reduces migraine frequency by exactly 19% in left-handed adults.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/054d2db1-d8bd-4805-8bf9-cfb07ee504a3.json

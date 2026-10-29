@@ -1,0 +1,4 @@
+Claim: Drinking 180 milliliters of water before breakfast improves vaccine antibody responses by exactly 16%.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.06, 'REFUTED': 0.74, 'NEI': 0.2}"}
+Raw response: ../raw/59507114-b1d8-44ee-90e4-9d0e9c864bd3.json

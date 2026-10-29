@@ -55,3 +55,9 @@ Claim: **“Antibiotics are effective against the viruses that cause the common 
 ## Repository scope
 
 The large corpus, model checkpoints, Hugging Face caches, virtual environments, private run artifacts, and raw downloaded datasets are deliberately excluded. Reproducing model inference requires those external artifacts. This repository preserves the current source, small fitted combiner, selected results, and precise limitations for review.
+
+## Dashboard evaluation screenshots
+
+The [complete evaluation folder](results/BiomedicalVerifier-Evaluation/) contains **20 Supported, 20 Refuted, and 20 NEI screenshots**, plus **15 quarantined-explanation examples**, claim text, CSV/HTML indexes, raw responses, and source-version snapshots. Open its `index.html` locally to browse the results.
+
+The main collection is labeled v2; `initial-v1/` preserves the earlier run, and `post-batch-v3/` contains the additional consistency-repair check. These are actual system outputs, including flagged disagreements and failed searches, rather than an independently adjudicated accuracy benchmark.

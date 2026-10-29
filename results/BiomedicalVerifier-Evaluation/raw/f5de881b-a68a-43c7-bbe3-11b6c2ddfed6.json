@@ -1,0 +1,820 @@
+{
+  "request": {
+    "request_id": "f5de881b-a68a-43c7-bbe3-11b6c2ddfed6",
+    "claim": "Blood platelets do not help blood clotting.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:36:26.634106Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:36:26.634222Z",
+      "ended_at_utc": "2026-10-29T03:36:27.313453Z",
+      "latency_ms": 679.2273750002096
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:40624395",
+        "document_id": "pubmed:40624395",
+        "title": "Platelets as drivers of immunothrombosis in rheumatic diseases.",
+        "text": "Platelets are central players in inflammatory and thrombotic responses that drive the onset and progression of rheumatic diseases. In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage. Although immunothrombosis can help to preserve blood-vessel integrity and promote healing, it becomes harmful when exaggerated or chronic. In rheumatic diseases, such as systemic lupus erythematosus, systemic sclerosis and antiphospholipid syndrome, immunothrombosis contributes to persistent inflammation, abnormal blood-clot formation and long-term damage to the small blood vessels. It has also been implicated in maintaining autoimmune responses to autoantigens released by neutrophils. Platelets are among the first responders to vascular injury and influence the activity of immune cells, particularly neutrophils, by promoting the formation of neutrophil extracellular traps. Platelets express proteins such as P-selectin and the damage-associated molecule high-mobility group box 1 (HMGB1), which have distinct and non-redundant roles, both via direct interactions locally at sites of vascular damage and systemically via the release of extracellular vesicles. Understanding how platelets contribute to vascular inflammation and clotting in autoimmune settings elucidates disease mechanisms and might lead to the identification of new therapeutic targets.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40624395/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.3696506023406982,
+        "relevance_score": 0.9144835472106934,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:18971611",
+        "document_id": "pubmed:18971611",
+        "title": "[Heparin-induced thrombocytopenia].",
+        "text": "In clinical use for over 50 years, heparin is an important and widely used anticoagulant for the prophylaxis or treatment of thromboembolic disease as well as other numerous clinical situations. Ordinarily, heparin prevents clotting and does not affect the platelets, components of the blood that help to form blood clots. However, heparin can also cause heparin-induced thrombocytopenia. Two distinct types of heparin-induced thrombocytopenia can occur: nonimmune and immune mediated. Nonimmune heparin-induced thrombocytopenia, which occurs most frequently, is characterized by a mild decrease in the platelet count and is not harmful. The second type, immune-mediated heparin-induced thrombocytopenia, occurs much less frequently but is dangerous. Immune-mediated heparin-induced thrombocytopenia causes much lower platelet count. Paradoxically, despite a very low platelet count, patients who suffer from heparin-induced thrombocytopenia are at risk for arterial or venous thrombosis. In this review article, there are discussed about pathogenesis of heparin-induced thrombocytopenia, other causes of thrombocytopenia, clinical features, laboratory confirmation of diagnosis, and management of patients (direct thrombin inhibitors, other therapies, duration of therapy, and use of oral anticoagulants). Prognosis and prophylaxis of this life-threatening disorder, which can develop from the use of unfractionated or (less commonly) low-molecular-weight heparin, are also discussed.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18971611/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 1.5901660919189453,
+        "relevance_score": 0.8306394815444946,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:18508453",
+        "document_id": "pubmed:18508453",
+        "title": "Platelets and wound healing.",
+        "text": "Platelets help prevent blood loss at sites of vascular injury. To do this, they adhere, aggregate and form a procoagulant surface favoring thrombin generation and fibrin formation. In addition, platelets express and release substances that promote tissue repair and influence processes such as angiogenesis, inflammation and the immune response. They contain large secretable pools of biologically active proteins, while newly synthesized active metabolites are also released. Although anucleate, activated platelets possess a spliceosome and can synthesize tissue factor and interleukin-1beta. The binding of secreted proteins within a developing fibrin mesh or to the extracellular matrix can create chemotactic gradients favoring the recruitment of stem cells, stimulating cell migration and differentiation, and promoting repair. The therapeutic use of platelets in a fibrin clot has a positive influence in clinical situations requiring rapid healing. Dental implant surgery, orthopaedic surgery, muscle and tendon repair, skin ulcers, hole repair in eye surgery and cardiac surgery are situations where the use of autologous platelets accelerates healing. We now review the ways in which platelets participate in these processes.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18508453/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 1.2531555891036987,
+        "relevance_score": 0.7778456807136536,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Blood platelets do not help blood clotting."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:36:27.313539Z",
+      "ended_at_utc": "2026-10-29T03:36:48.082350Z",
+      "latency_ms": 20768.55875000001
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:40624395",
+        "document_id": "pubmed:40624395",
+        "title": "Platelets as drivers of immunothrombosis in rheumatic diseases.",
+        "text": "Platelets are central players in inflammatory and thrombotic responses that drive the onset and progression of rheumatic diseases. In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage. Although immunothrombosis can help to preserve blood-vessel integrity and promote healing, it becomes harmful when exaggerated or chronic. In rheumatic diseases, such as systemic lupus erythematosus, systemic sclerosis and antiphospholipid syndrome, immunothrombosis contributes to persistent inflammation, abnormal blood-clot formation and long-term damage to the small blood vessels. It has also been implicated in maintaining autoimmune responses to autoantigens released by neutrophils. Platelets are among the first responders to vascular injury and influence the activity of immune cells, particularly neutrophils, by promoting the formation of neutrophil extracellular traps. Platelets express proteins such as P-selectin and the damage-associated molecule high-mobility group box 1 (HMGB1), which have distinct and non-redundant roles, both via direct interactions locally at sites of vascular damage and systemically via the release of extracellular vesicles. Understanding how platelets contribute to vascular inflammation and clotting in autoimmune settings elucidates disease mechanisms and might lead to the identification of new therapeutic targets.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40624395/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.3696506023406982,
+        "relevance_score": 0.9144835472106934,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.18289670944213868,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:18971611",
+        "document_id": "pubmed:18971611",
+        "title": "[Heparin-induced thrombocytopenia].",
+        "text": "In clinical use for over 50 years, heparin is an important and widely used anticoagulant for the prophylaxis or treatment of thromboembolic disease as well as other numerous clinical situations. Ordinarily, heparin prevents clotting and does not affect the platelets, components of the blood that help to form blood clots. However, heparin can also cause heparin-induced thrombocytopenia. Two distinct types of heparin-induced thrombocytopenia can occur: nonimmune and immune mediated. Nonimmune heparin-induced thrombocytopenia, which occurs most frequently, is characterized by a mild decrease in the platelet count and is not harmful. The second type, immune-mediated heparin-induced thrombocytopenia, occurs much less frequently but is dangerous. Immune-mediated heparin-induced thrombocytopenia causes much lower platelet count. Paradoxically, despite a very low platelet count, patients who suffer from heparin-induced thrombocytopenia are at risk for arterial or venous thrombosis. In this review article, there are discussed about pathogenesis of heparin-induced thrombocytopenia, other causes of thrombocytopenia, clinical features, laboratory confirmation of diagnosis, and management of patients (direct thrombin inhibitors, other therapies, duration of therapy, and use of oral anticoagulants). Prognosis and prophylaxis of this life-threatening disorder, which can develop from the use of unfractionated or (less commonly) low-molecular-weight heparin, are also discussed.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18971611/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 1.5901660919189453,
+        "relevance_score": 0.8306394815444946,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.16612789630889893,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:18508453",
+        "document_id": "pubmed:18508453",
+        "title": "Platelets and wound healing.",
+        "text": "Platelets help prevent blood loss at sites of vascular injury. To do this, they adhere, aggregate and form a procoagulant surface favoring thrombin generation and fibrin formation. In addition, platelets express and release substances that promote tissue repair and influence processes such as angiogenesis, inflammation and the immune response. They contain large secretable pools of biologically active proteins, while newly synthesized active metabolites are also released. Although anucleate, activated platelets possess a spliceosome and can synthesize tissue factor and interleukin-1beta. The binding of secreted proteins within a developing fibrin mesh or to the extracellular matrix can create chemotactic gradients favoring the recruitment of stem cells, stimulating cell migration and differentiation, and promoting repair. The therapeutic use of platelets in a fibrin clot has a positive influence in clinical situations requiring rapid healing. Dental implant surgery, orthopaedic surgery, muscle and tendon repair, skin ulcers, hole repair in eye surgery and cardiac surgery are situations where the use of autologous platelets accelerates healing. We now review the ways in which platelets participate in these processes.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18508453/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 1.2531555891036987,
+        "relevance_score": 0.7778456807136536,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.1555691361427307,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:36:48.082400Z",
+      "ended_at_utc": "2026-10-29T03:36:51.406186Z",
+      "latency_ms": 3323.789791999843
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.7000000000000001,
+      "nei": 0.10000000000000002,
+      "supported": 0.20000000000000004
+    },
+    "verifier_score": 0.7000000000000001,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:40624395",
+      "pubmed:18971611",
+      "pubmed:18508453"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence indicates that platelets play a role in blood clotting and are involved in the formation of blood clots, which directly contradicts the claim that they do not help blood clotting.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:40624395",
+              "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:18508453",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:18971611",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:40624395",
+              "relation": "REFUTES",
+              "concrete": true
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Blood platelets",
+              "relationship": "not help",
+              "outcome": "blood clotting",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence discusses platelets in the context of blood clotting and vascular injury, establishing that platelets are involved in these processes.",
+                "sentence_ids": [
+                  "E1S2",
+                  "E2S2"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage.",
+                "claim_fragment": "Blood platelets",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:40624395",
+                    "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+                  },
+                  {
+                    "evidence_id": "pubmed:18971611",
+                    "quote": "Ordinarily, heparin prevents clotting and does not affect the platelets, components of the blood that help to form blood clots."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence indicates that platelets play a role in blood clotting and are involved in the formation of blood clots, which directly contradicts the claim that they do not help blood clotting.",
+                "sentence_ids": [
+                  "E1S2",
+                  "E3S1"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage.",
+                "claim_fragment": "not help",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:40624395",
+                    "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+                  },
+                  {
+                    "evidence_id": "pubmed:18508453",
+                    "quote": "Platelets help prevent blood loss at sites of vascular injury."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence mentions blood clotting and the formation of blood clots, which is the outcome in question.",
+                "sentence_ids": [
+                  "E1S2",
+                  "E3S1"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage.",
+                "claim_fragment": "blood clotting",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:40624395",
+                    "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+                  },
+                  {
+                    "evidence_id": "pubmed:18508453",
+                    "quote": "Platelets help prevent blood loss at sites of vascular injury."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:40624395"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.20000000000000004,
+            "REFUTED": 0.7000000000000001,
+            "NEI": 0.10000000000000002
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Platelets play a crucial role in blood clotting and inflammatory responses, as evidenced by their involvement in immunothrombosis and their contribution to wound healing. [E1] and [E3] highlight the active participation of platelets in these processes, refuting the claim that they do not help blood clotting. [E2] further supports this by explaining the paradoxical risk of thrombosis in heparin-induced thrombocytopenia, where platelet count is low but clotting risk is high.",
+    "cited_evidence_ids": [
+      "pubmed:40624395",
+      "pubmed:18508453",
+      "pubmed:18971611"
+    ],
+    "grounding": {
+      "semantic_score": 0.7006394267082214,
+      "coverage_score": 0.7521779537200928,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:37:09.074504Z",
+      "ended_at_utc": "2026-10-29T03:37:16.926338Z",
+      "latency_ms": 7851.73420800038
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.7000000000000001,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:40624395",
+      "document_id": "pubmed:40624395",
+      "title": "Platelets as drivers of immunothrombosis in rheumatic diseases.",
+      "text": "Platelets are central players in inflammatory and thrombotic responses that drive the onset and progression of rheumatic diseases. In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage. Although immunothrombosis can help to preserve blood-vessel integrity and promote healing, it becomes harmful when exaggerated or chronic. In rheumatic diseases, such as systemic lupus erythematosus, systemic sclerosis and antiphospholipid syndrome, immunothrombosis contributes to persistent inflammation, abnormal blood-clot formation and long-term damage to the small blood vessels. It has also been implicated in maintaining autoimmune responses to autoantigens released by neutrophils. Platelets are among the first responders to vascular injury and influence the activity of immune cells, particularly neutrophils, by promoting the formation of neutrophil extracellular traps. Platelets express proteins such as P-selectin and the damage-associated molecule high-mobility group box 1 (HMGB1), which have distinct and non-redundant roles, both via direct interactions locally at sites of vascular damage and systemically via the release of extracellular vesicles. Understanding how platelets contribute to vascular inflammation and clotting in autoimmune settings elucidates disease mechanisms and might lead to the identification of new therapeutic targets.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/40624395/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 2.3696506023406982,
+      "relevance_score": 0.9144835472106934,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.18289670944213868,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:18971611",
+      "document_id": "pubmed:18971611",
+      "title": "[Heparin-induced thrombocytopenia].",
+      "text": "In clinical use for over 50 years, heparin is an important and widely used anticoagulant for the prophylaxis or treatment of thromboembolic disease as well as other numerous clinical situations. Ordinarily, heparin prevents clotting and does not affect the platelets, components of the blood that help to form blood clots. However, heparin can also cause heparin-induced thrombocytopenia. Two distinct types of heparin-induced thrombocytopenia can occur: nonimmune and immune mediated. Nonimmune heparin-induced thrombocytopenia, which occurs most frequently, is characterized by a mild decrease in the platelet count and is not harmful. The second type, immune-mediated heparin-induced thrombocytopenia, occurs much less frequently but is dangerous. Immune-mediated heparin-induced thrombocytopenia causes much lower platelet count. Paradoxically, despite a very low platelet count, patients who suffer from heparin-induced thrombocytopenia are at risk for arterial or venous thrombosis. In this review article, there are discussed about pathogenesis of heparin-induced thrombocytopenia, other causes of thrombocytopenia, clinical features, laboratory confirmation of diagnosis, and management of patients (direct thrombin inhibitors, other therapies, duration of therapy, and use of oral anticoagulants). Prognosis and prophylaxis of this life-threatening disorder, which can develop from the use of unfractionated or (less commonly) low-molecular-weight heparin, are also discussed.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18971611/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 1.5901660919189453,
+      "relevance_score": 0.8306394815444946,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.16612789630889893,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:18508453",
+      "document_id": "pubmed:18508453",
+      "title": "Platelets and wound healing.",
+      "text": "Platelets help prevent blood loss at sites of vascular injury. To do this, they adhere, aggregate and form a procoagulant surface favoring thrombin generation and fibrin formation. In addition, platelets express and release substances that promote tissue repair and influence processes such as angiogenesis, inflammation and the immune response. They contain large secretable pools of biologically active proteins, while newly synthesized active metabolites are also released. Although anucleate, activated platelets possess a spliceosome and can synthesize tissue factor and interleukin-1beta. The binding of secreted proteins within a developing fibrin mesh or to the extracellular matrix can create chemotactic gradients favoring the recruitment of stem cells, stimulating cell migration and differentiation, and promoting repair. The therapeutic use of platelets in a fibrin clot has a positive influence in clinical situations requiring rapid healing. Dental implant surgery, orthopaedic surgery, muscle and tendon repair, skin ulcers, hole repair in eye surgery and cardiac surgery are situations where the use of autologous platelets accelerates healing. We now review the ways in which platelets participate in these processes.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18508453/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 1.2531555891036987,
+      "relevance_score": 0.7778456807136536,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.1555691361427307,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence indicates that platelets play a role in blood clotting and are involved in the formation of blood clots, which directly contradicts the claim that they do not help blood clotting.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:40624395",
+                "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:18508453",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:18971611",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:40624395",
+                "relation": "REFUTES",
+                "concrete": true
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Blood platelets",
+                "relationship": "not help",
+                "outcome": "blood clotting",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence discusses platelets in the context of blood clotting and vascular injury, establishing that platelets are involved in these processes.",
+                  "sentence_ids": [
+                    "E1S2",
+                    "E2S2"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage.",
+                  "claim_fragment": "Blood platelets",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:40624395",
+                      "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+                    },
+                    {
+                      "evidence_id": "pubmed:18971611",
+                      "quote": "Ordinarily, heparin prevents clotting and does not affect the platelets, components of the blood that help to form blood clots."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence indicates that platelets play a role in blood clotting and are involved in the formation of blood clots, which directly contradicts the claim that they do not help blood clotting.",
+                  "sentence_ids": [
+                    "E1S2",
+                    "E3S1"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage.",
+                  "claim_fragment": "not help",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:40624395",
+                      "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+                    },
+                    {
+                      "evidence_id": "pubmed:18508453",
+                      "quote": "Platelets help prevent blood loss at sites of vascular injury."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence mentions blood clotting and the formation of blood clots, which is the outcome in question.",
+                  "sentence_ids": [
+                    "E1S2",
+                    "E3S1"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage.",
+                  "claim_fragment": "blood clotting",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:40624395",
+                      "quote": "In particular, they regulate immunothrombosis, a defence mechanism in which the immune and blood-clotting systems cooperate to contain infections or vascular damage."
+                    },
+                    {
+                      "evidence_id": "pubmed:18508453",
+                      "quote": "Platelets help prevent blood loss at sites of vascular injury."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:40624395"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.20000000000000004,
+              "REFUTED": 0.7000000000000001,
+              "NEI": 0.10000000000000002
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 50291.87154200008,
+  "completed_at_utc": "2026-10-29T03:37:16.926677Z"
+}

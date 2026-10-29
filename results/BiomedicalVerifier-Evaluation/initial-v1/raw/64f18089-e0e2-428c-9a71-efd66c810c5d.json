@@ -1,0 +1,827 @@
+{
+  "request": {
+    "request_id": "64f18089-e0e2-428c-9a71-efd66c810c5d",
+    "claim": "HIV strengthens the immune system.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:31:06.037444Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:31:06.038475Z",
+      "ended_at_utc": "2026-10-29T02:31:07.219826Z",
+      "latency_ms": 1181.3444170002185
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:19093495",
+        "document_id": "pubmed:19093495",
+        "title": "The interrelationship between nutrition and the immune system in HIV infection: a review.",
+        "text": "Available scientific evidence has revealed that macronutrients and micronutrients are critical for fighting HIV-infection, because they are required by the immune system and major organs to attack infectious pathogens, HIV inclusive. It is believed that weight gain or maintenance might be achieved through good nutrition and has helped to reduce the consequences of wasting in people living with HIV/AIDS. Nutrition has helped to strengthen the immune system and reduce the severity and impact of opportunistic infections in people living with HIV/AIDS. It is known that an immune dysfunction as a result of HIV/AIDS leads to malnutrition and this in turn leads to further immune dysfunction. Various research studies have confirmed that nutrient deficiencies are associated with immune dysfunction and accelerated progression to AIDS. In this review, the interrelationship between nutrition and immune system in HIV infection is presented.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/19093495/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.746893405914307,
+        "relevance_score": 0.9913961291313171,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:26830285",
+        "document_id": "pubmed:26830285",
+        "title": "Novel Imaging Methods for Analysis of Tissue Resident Cells in HIV/SIV.",
+        "text": "The use of advanced tissue-imaging methodologies has greatly facilitated the study of molecular mechanisms and cellular interactions in humans and animal models of disease. Particularly, in HIV research, there is an ever-increasing demand for a comprehensive analysis of immune cell dynamics at tissue level stemming from the need to advance our understanding of those interactions that regulate the generation of adaptive antigen-specific immune responses. The latter is critical for the development of vaccines to elicit broadly neutralizing antibodies as well as for the discovery of novel targets for immuno-therapies to strengthen the cytolytic arm of the immune system at local level. In this review, we focus on current and emerging imaging technologies, discuss their strengths and limitations, and examine how such technologies can inform the development of new treatments and vaccination strategies. We also present some perspective on the future of the technology development.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26830285/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.784229278564453,
+        "relevance_score": 0.9777786135673523,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:6d71fbcae6cabd5edf50",
+        "document_id": "web:6d71fbcae6cabd5edf50",
+        "title": "HIV and AIDS",
+        "text": "Key facts\nHIV remains a major global public health issue, having claimed an estimated 44.2 million lives to date. Transmission is ongoing in all countries globally.\nThere were an estimated 41.0 million people living with HIV at the end of 2025, 64% of whom are in the WHO African Region.\nIn 2025, an estimated 570 000 people died from HIV-related causes and an estimated 1.2 million people acquired HIV.\nThere is no cure for HIV infection. However, with access to effective HIV prevention, diagnosis, treatment and care, including for opportunistic infections, HIV infection has become a manageable chronic health condition, enabling people living with HIV to lead long and healthy lives.\nWHO, the Global Fund and UNAIDS all have global HIV strategies that are aligned with the SDG target 3.3 of ending the HIV epidemic by 2030.\nIn 2025, 88% of people living with HIV knew their HIV status, 89% of people who knew their HIV-positive status were receiving antiretroviral therapy (ART) and 95% of those on ART had suppressed viral loads, close to the \u201c95-95-95\u201d targets.\nOverview\nHuman immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system. Acquired immunodeficiency syndrome (AIDS) occurs at the most advanced stage of infection.\nHIV targets the body\u2019s white blood cells, weakening the immune system. This makes it easier to get sick with diseases like tuberculosis, infections and some cancers.\nHIV is spread from the body fluids of an infected person, including blood, breast milk, semen and vaginal fluids. It is not spread by kisses, hugs or sharing food. It can also spread from a mother to her baby.\nHIV can be prevented and treated with ART. Untreated HIV can progress to AIDS, often after many years.\nWHO now defines Advanced HIV Disease (AHD) as a CD4 cell count of less than 200 cells/mm3 or WHO stage 3 or 4 event in adults and adolescents. All children younger than 5 years of age living with HIV are considered to have advanced HIV disease, regardless of clinical or immunological status.\nSigns and symptoms\nThe signs and symptoms of HIV vary depending on the stage of infection.\nHIV spreads more easily in the first few months after a person is infected, but many are unaware of their status until the later stages. In the first few weeks after being infected people may not experience symptoms. Others may have an influenza-like illness including:\nfever\nheadache\nsore throat.\nThe infection progressively weakens the immune system. This can cause other signs and symptoms:\nswollen lymph nodes\ncough.\nWithout treatment, people living with HIV infection can also develop severe illnesses:\ntuberculosis (TB)\ncancers such as lymphomas and Kaposi's sarcoma.\nHIV can make other infections, such as hepatitis C, hepatitis B and mpox, get worse.\nTransmission\nHIV can be transmitted via the exchange of body fluids from people living with HIV, including blood, breast milk, semen, and vaginal secretions. HIV can also be transmitted to a child during pregnancy and delivery. People cannot become infected with HIV through ordinary day-to-day contact such as kissing, hugging, shaking hands, or sharing personal objects, food or water.\nPeople living with HIV who are taking ART and have an undetectable viral load will not transmit HIV to their sexual partners. Early access to ART and support to remain on treatment is therefore critical not only to improve the health of people living with HIV but also to prevent HIV transmission.\nRisk factors\nBehaviours and conditions that put people at greater risk of contracting HIV include:\nhaving anal or vaginal sex without a condom;\nDiagnosis\nHIV can be diagnosed through rapid diagnostic tests that provide same-day results. This greatly facilitates early diagnosis and linkage with treatment and prevention. People can also use HIV self-tests to test themselves. However, no single test can provide a full HIV positive diagnosis; confirmatory testing is required, conducted by a qualified and trained health worker or community worker. HIV infection can be detected with great accuracy using WHO prequalified tests within a nationally approved testing strategy and algorithm.\nMost widely used HIV diagnostic tests detect antibodies produced by a person as part of their immune response to fight HIV. In most cases, people develop antibodies to HIV within 28 days of infection. During this time, people are in the so-called \u201cwindow period\u201d when they have low levels of antibodies which cannot be detected by many rapid tests, but they may still transmit HIV to others. People who have had a recent high-risk exposure and test negative can have a further test after 28 days.\nFollowing a positive diagnosis, people should be retested before they are enrolled in treatment and care to rule out any potential testing or reporting error. While testing for adolescents and adults has been made simple and efficient, this is not the case for babies born to HIV-positive mothers. For children less than 18 months of age, rapid antibody testing is not sufficient to identify HIV infection \u2013 virological testing must be provided as early as birth or at 6 weeks of age. New technologies are now available to perform this test at the point of care and enable same-day results, which will accelerate appropriate linkage with treatment and care.\nPrevention\nHIV is a preventable disease. The risk of HIV infection can be reduced by:\nusing a male or female condom during sex\nbeing tested for HIV and other sexually transmitted infections\nbeing circumcised if you are a man\nusing harm reduction services if you inject and use drugs.\nPre-exposure prophylaxis (PrEP) is an additional prevention option. It is an antiretroviral (ARV) medication used by HIV-negative people to reduce the risk of HIV acquisition. WHO recommends the following PrEP methods:\noral tenofovir (TDF)-based PrEP\nlong-acting injectable lenacapavir.\nARVs can also be used to prevent mothers from passing HIV to their children.\nPeople taking ART and who have no evidence of virus in the blood will not pass HIV to their sexual partners. Access to testing and ART is an important part of preventing HIV.\nAntiretroviral drugs given to people without HIV can prevent infection\nTreatment\nThere is no cure for HIV infection. It is treated with antiretroviral drugs, which stop the virus from replicating in the body.\nCurrent ART does not cure HIV infection but allows a person\u2019s immune system to get stronger. This helps them to fight other infections.\nART lowers the amount of the virus in a person\u2019s body. This stops symptoms and allows people to live full and healthy lives. People living with HIV who are taking ART and who have no evidence of virus in the blood will not spread the virus to their sexual partners.\nPregnant women with HIV should have access to, and take, ART as soon as possible. This protects the health of the mother and will help prevent HIV transmission to the fetus before birth, or through breast milk.\nMore information on HIV treatments\nWHO response",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/hiv-aids",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -1.1414625644683838,
+        "relevance_score": 0.24205192923545837,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "HIV strengthens the immune system."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:31:07.219945Z",
+      "ended_at_utc": "2026-10-29T02:31:16.386744Z",
+      "latency_ms": 9166.730707999704
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:19093495",
+        "document_id": "pubmed:19093495",
+        "title": "The interrelationship between nutrition and the immune system in HIV infection: a review.",
+        "text": "Available scientific evidence has revealed that macronutrients and micronutrients are critical for fighting HIV-infection, because they are required by the immune system and major organs to attack infectious pathogens, HIV inclusive. It is believed that weight gain or maintenance might be achieved through good nutrition and has helped to reduce the consequences of wasting in people living with HIV/AIDS. Nutrition has helped to strengthen the immune system and reduce the severity and impact of opportunistic infections in people living with HIV/AIDS. It is known that an immune dysfunction as a result of HIV/AIDS leads to malnutrition and this in turn leads to further immune dysfunction. Various research studies have confirmed that nutrient deficiencies are associated with immune dysfunction and accelerated progression to AIDS. In this review, the interrelationship between nutrition and immune system in HIV infection is presented.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/19093495/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.746893405914307,
+        "relevance_score": 0.9913961291313171,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6939772903919219,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:26830285",
+        "document_id": "pubmed:26830285",
+        "title": "Novel Imaging Methods for Analysis of Tissue Resident Cells in HIV/SIV.",
+        "text": "The use of advanced tissue-imaging methodologies has greatly facilitated the study of molecular mechanisms and cellular interactions in humans and animal models of disease. Particularly, in HIV research, there is an ever-increasing demand for a comprehensive analysis of immune cell dynamics at tissue level stemming from the need to advance our understanding of those interactions that regulate the generation of adaptive antigen-specific immune responses. The latter is critical for the development of vaccines to elicit broadly neutralizing antibodies as well as for the discovery of novel targets for immuno-therapies to strengthen the cytolytic arm of the immune system at local level. In this review, we focus on current and emerging imaging technologies, discuss their strengths and limitations, and examine how such technologies can inform the development of new treatments and vaccination strategies. We also present some perspective on the future of the technology development.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26830285/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.784229278564453,
+        "relevance_score": 0.9777786135673523,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19555572271347046,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:6d71fbcae6cabd5edf50",
+        "document_id": "web:6d71fbcae6cabd5edf50",
+        "title": "HIV and AIDS",
+        "text": "Key facts\nHIV remains a major global public health issue, having claimed an estimated 44.2 million lives to date. Transmission is ongoing in all countries globally.\nThere were an estimated 41.0 million people living with HIV at the end of 2025, 64% of whom are in the WHO African Region.\nIn 2025, an estimated 570 000 people died from HIV-related causes and an estimated 1.2 million people acquired HIV.\nThere is no cure for HIV infection. However, with access to effective HIV prevention, diagnosis, treatment and care, including for opportunistic infections, HIV infection has become a manageable chronic health condition, enabling people living with HIV to lead long and healthy lives.\nWHO, the Global Fund and UNAIDS all have global HIV strategies that are aligned with the SDG target 3.3 of ending the HIV epidemic by 2030.\nIn 2025, 88% of people living with HIV knew their HIV status, 89% of people who knew their HIV-positive status were receiving antiretroviral therapy (ART) and 95% of those on ART had suppressed viral loads, close to the \u201c95-95-95\u201d targets.\nOverview\nHuman immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system. Acquired immunodeficiency syndrome (AIDS) occurs at the most advanced stage of infection.\nHIV targets the body\u2019s white blood cells, weakening the immune system. This makes it easier to get sick with diseases like tuberculosis, infections and some cancers.\nHIV is spread from the body fluids of an infected person, including blood, breast milk, semen and vaginal fluids. It is not spread by kisses, hugs or sharing food. It can also spread from a mother to her baby.\nHIV can be prevented and treated with ART. Untreated HIV can progress to AIDS, often after many years.\nWHO now defines Advanced HIV Disease (AHD) as a CD4 cell count of less than 200 cells/mm3 or WHO stage 3 or 4 event in adults and adolescents. All children younger than 5 years of age living with HIV are considered to have advanced HIV disease, regardless of clinical or immunological status.\nSigns and symptoms\nThe signs and symptoms of HIV vary depending on the stage of infection.\nHIV spreads more easily in the first few months after a person is infected, but many are unaware of their status until the later stages. In the first few weeks after being infected people may not experience symptoms. Others may have an influenza-like illness including:\nfever\nheadache\nsore throat.\nThe infection progressively weakens the immune system. This can cause other signs and symptoms:\nswollen lymph nodes\ncough.\nWithout treatment, people living with HIV infection can also develop severe illnesses:\ntuberculosis (TB)\ncancers such as lymphomas and Kaposi's sarcoma.\nHIV can make other infections, such as hepatitis C, hepatitis B and mpox, get worse.\nTransmission\nHIV can be transmitted via the exchange of body fluids from people living with HIV, including blood, breast milk, semen, and vaginal secretions. HIV can also be transmitted to a child during pregnancy and delivery. People cannot become infected with HIV through ordinary day-to-day contact such as kissing, hugging, shaking hands, or sharing personal objects, food or water.\nPeople living with HIV who are taking ART and have an undetectable viral load will not transmit HIV to their sexual partners. Early access to ART and support to remain on treatment is therefore critical not only to improve the health of people living with HIV but also to prevent HIV transmission.\nRisk factors\nBehaviours and conditions that put people at greater risk of contracting HIV include:\nhaving anal or vaginal sex without a condom;\nDiagnosis\nHIV can be diagnosed through rapid diagnostic tests that provide same-day results. This greatly facilitates early diagnosis and linkage with treatment and prevention. People can also use HIV self-tests to test themselves. However, no single test can provide a full HIV positive diagnosis; confirmatory testing is required, conducted by a qualified and trained health worker or community worker. HIV infection can be detected with great accuracy using WHO prequalified tests within a nationally approved testing strategy and algorithm.\nMost widely used HIV diagnostic tests detect antibodies produced by a person as part of their immune response to fight HIV. In most cases, people develop antibodies to HIV within 28 days of infection. During this time, people are in the so-called \u201cwindow period\u201d when they have low levels of antibodies which cannot be detected by many rapid tests, but they may still transmit HIV to others. People who have had a recent high-risk exposure and test negative can have a further test after 28 days.\nFollowing a positive diagnosis, people should be retested before they are enrolled in treatment and care to rule out any potential testing or reporting error. While testing for adolescents and adults has been made simple and efficient, this is not the case for babies born to HIV-positive mothers. For children less than 18 months of age, rapid antibody testing is not sufficient to identify HIV infection \u2013 virological testing must be provided as early as birth or at 6 weeks of age. New technologies are now available to perform this test at the point of care and enable same-day results, which will accelerate appropriate linkage with treatment and care.\nPrevention\nHIV is a preventable disease. The risk of HIV infection can be reduced by:\nusing a male or female condom during sex\nbeing tested for HIV and other sexually transmitted infections\nbeing circumcised if you are a man\nusing harm reduction services if you inject and use drugs.\nPre-exposure prophylaxis (PrEP) is an additional prevention option. It is an antiretroviral (ARV) medication used by HIV-negative people to reduce the risk of HIV acquisition. WHO recommends the following PrEP methods:\noral tenofovir (TDF)-based PrEP\nlong-acting injectable lenacapavir.\nARVs can also be used to prevent mothers from passing HIV to their children.\nPeople taking ART and who have no evidence of virus in the blood will not pass HIV to their sexual partners. Access to testing and ART is an important part of preventing HIV.\nAntiretroviral drugs given to people without HIV can prevent infection\nTreatment\nThere is no cure for HIV infection. It is treated with antiretroviral drugs, which stop the virus from replicating in the body.\nCurrent ART does not cure HIV infection but allows a person\u2019s immune system to get stronger. This helps them to fight other infections.\nART lowers the amount of the virus in a person\u2019s body. This stops symptoms and allows people to live full and healthy lives. People living with HIV who are taking ART and who have no evidence of virus in the blood will not spread the virus to their sexual partners.\nPregnant women with HIV should have access to, and take, ART as soon as possible. This protects the health of the mother and will help prevent HIV transmission to the fetus before birth, or through breast milk.\nMore information on HIV treatments\nWHO response",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/hiv-aids",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -1.1414625644683838,
+        "relevance_score": 0.24205192923545837,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.048410385847091675,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:31:16.386778Z",
+      "ended_at_utc": "2026-10-29T02:31:23.769002Z",
+      "latency_ms": 7382.208750000245
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.85,
+      "nei": 0.05,
+      "supported": 0.1
+    },
+    "verifier_score": 0.85,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:19093495",
+      "pubmed:26830285",
+      "web:6d71fbcae6cabd5edf50"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence explicitly states that HIV weakens the immune system, which contradicts the claim that HIV strengthens the immune system.",
+          "citations": [
+            {
+              "evidence_id": "web:6d71fbcae6cabd5edf50",
+              "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+            },
+            {
+              "evidence_id": "web:6d71fbcae6cabd5edf50",
+              "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:19093495",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:26830285",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:6d71fbcae6cabd5edf50",
+              "relation": "REFUTES",
+              "concrete": true
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v1",
+            "claim_parts": {
+              "subject": "HIV",
+              "relationship": "strengthens",
+              "outcome": "immune system",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "evidence_phrase": "HIV targets the body\u2019s white blood cells, weakening the immune system.",
+                "reason": "The evidence states that HIV targets the immune system, weakening it, which is the opposite of strengthening it.",
+                "sentence_ids": [
+                  "E3S11",
+                  "E3S13"
+                ],
+                "slot": "subject",
+                "claim_fragment": "HIV",
+                "citations": [
+                  {
+                    "evidence_id": "web:6d71fbcae6cabd5edf50",
+                    "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+                  },
+                  {
+                    "evidence_id": "web:6d71fbcae6cabd5edf50",
+                    "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "evidence_phrase": "HIV targets the body\u2019s white blood cells, weakening the immune system.",
+                "reason": "The evidence explicitly states that HIV weakens the immune system, which contradicts the claim that HIV strengthens the immune system.",
+                "sentence_ids": [
+                  "E3S11",
+                  "E3S13"
+                ],
+                "slot": "relationship",
+                "claim_fragment": "strengthens",
+                "citations": [
+                  {
+                    "evidence_id": "web:6d71fbcae6cabd5edf50",
+                    "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+                  },
+                  {
+                    "evidence_id": "web:6d71fbcae6cabd5edf50",
+                    "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "HIV targets the body\u2019s white blood cells, weakening the immune system.",
+                "reason": "The evidence directly states that HIV weakens the immune system, which matches the claim of HIV strengthening the immune system.",
+                "sentence_ids": [
+                  "E3S11",
+                  "E3S13"
+                ],
+                "slot": "outcome",
+                "claim_fragment": "immune system",
+                "citations": [
+                  {
+                    "evidence_id": "web:6d71fbcae6cabd5edf50",
+                    "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+                  },
+                  {
+                    "evidence_id": "web:6d71fbcae6cabd5edf50",
+                    "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "web:6d71fbcae6cabd5edf50"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.1,
+            "REFUTED": 0.85,
+            "NEI": 0.05
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The evidence indicates that HIV weakens the immune system, as it targets and damages white blood cells, making it easier for individuals to get sick with various diseases. [E3] and [E1] both support this by detailing the progression of HIV infection and the importance of a strong immune response to combat the virus. [E2] focuses on imaging technologies for studying immune cell dynamics but does not support the claim that HIV strengthens the immune system.",
+    "cited_evidence_ids": [
+      "pubmed:19093495",
+      "web:6d71fbcae6cabd5edf50"
+    ],
+    "grounding": {
+      "semantic_score": 0.5870001912117004,
+      "coverage_score": 0.6305127143859863,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:31:49.989438Z",
+      "ended_at_utc": "2026-10-29T02:31:59.847784Z",
+      "latency_ms": 9858.258707999994
+    },
+    "warnings": [
+      "Citations in explanation differ from evidence_ids_used"
+    ],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.85,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:19093495",
+      "document_id": "pubmed:19093495",
+      "title": "The interrelationship between nutrition and the immune system in HIV infection: a review.",
+      "text": "Available scientific evidence has revealed that macronutrients and micronutrients are critical for fighting HIV-infection, because they are required by the immune system and major organs to attack infectious pathogens, HIV inclusive. It is believed that weight gain or maintenance might be achieved through good nutrition and has helped to reduce the consequences of wasting in people living with HIV/AIDS. Nutrition has helped to strengthen the immune system and reduce the severity and impact of opportunistic infections in people living with HIV/AIDS. It is known that an immune dysfunction as a result of HIV/AIDS leads to malnutrition and this in turn leads to further immune dysfunction. Various research studies have confirmed that nutrient deficiencies are associated with immune dysfunction and accelerated progression to AIDS. In this review, the interrelationship between nutrition and immune system in HIV infection is presented.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19093495/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 4.746893405914307,
+      "relevance_score": 0.9913961291313171,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6939772903919219,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:26830285",
+      "document_id": "pubmed:26830285",
+      "title": "Novel Imaging Methods for Analysis of Tissue Resident Cells in HIV/SIV.",
+      "text": "The use of advanced tissue-imaging methodologies has greatly facilitated the study of molecular mechanisms and cellular interactions in humans and animal models of disease. Particularly, in HIV research, there is an ever-increasing demand for a comprehensive analysis of immune cell dynamics at tissue level stemming from the need to advance our understanding of those interactions that regulate the generation of adaptive antigen-specific immune responses. The latter is critical for the development of vaccines to elicit broadly neutralizing antibodies as well as for the discovery of novel targets for immuno-therapies to strengthen the cytolytic arm of the immune system at local level. In this review, we focus on current and emerging imaging technologies, discuss their strengths and limitations, and examine how such technologies can inform the development of new treatments and vaccination strategies. We also present some perspective on the future of the technology development.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26830285/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 3.784229278564453,
+      "relevance_score": 0.9777786135673523,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19555572271347046,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:6d71fbcae6cabd5edf50",
+      "document_id": "web:6d71fbcae6cabd5edf50",
+      "title": "HIV and AIDS",
+      "text": "Key facts\nHIV remains a major global public health issue, having claimed an estimated 44.2 million lives to date. Transmission is ongoing in all countries globally.\nThere were an estimated 41.0 million people living with HIV at the end of 2025, 64% of whom are in the WHO African Region.\nIn 2025, an estimated 570 000 people died from HIV-related causes and an estimated 1.2 million people acquired HIV.\nThere is no cure for HIV infection. However, with access to effective HIV prevention, diagnosis, treatment and care, including for opportunistic infections, HIV infection has become a manageable chronic health condition, enabling people living with HIV to lead long and healthy lives.\nWHO, the Global Fund and UNAIDS all have global HIV strategies that are aligned with the SDG target 3.3 of ending the HIV epidemic by 2030.\nIn 2025, 88% of people living with HIV knew their HIV status, 89% of people who knew their HIV-positive status were receiving antiretroviral therapy (ART) and 95% of those on ART had suppressed viral loads, close to the \u201c95-95-95\u201d targets.\nOverview\nHuman immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system. Acquired immunodeficiency syndrome (AIDS) occurs at the most advanced stage of infection.\nHIV targets the body\u2019s white blood cells, weakening the immune system. This makes it easier to get sick with diseases like tuberculosis, infections and some cancers.\nHIV is spread from the body fluids of an infected person, including blood, breast milk, semen and vaginal fluids. It is not spread by kisses, hugs or sharing food. It can also spread from a mother to her baby.\nHIV can be prevented and treated with ART. Untreated HIV can progress to AIDS, often after many years.\nWHO now defines Advanced HIV Disease (AHD) as a CD4 cell count of less than 200 cells/mm3 or WHO stage 3 or 4 event in adults and adolescents. All children younger than 5 years of age living with HIV are considered to have advanced HIV disease, regardless of clinical or immunological status.\nSigns and symptoms\nThe signs and symptoms of HIV vary depending on the stage of infection.\nHIV spreads more easily in the first few months after a person is infected, but many are unaware of their status until the later stages. In the first few weeks after being infected people may not experience symptoms. Others may have an influenza-like illness including:\nfever\nheadache\nsore throat.\nThe infection progressively weakens the immune system. This can cause other signs and symptoms:\nswollen lymph nodes\ncough.\nWithout treatment, people living with HIV infection can also develop severe illnesses:\ntuberculosis (TB)\ncancers such as lymphomas and Kaposi's sarcoma.\nHIV can make other infections, such as hepatitis C, hepatitis B and mpox, get worse.\nTransmission\nHIV can be transmitted via the exchange of body fluids from people living with HIV, including blood, breast milk, semen, and vaginal secretions. HIV can also be transmitted to a child during pregnancy and delivery. People cannot become infected with HIV through ordinary day-to-day contact such as kissing, hugging, shaking hands, or sharing personal objects, food or water.\nPeople living with HIV who are taking ART and have an undetectable viral load will not transmit HIV to their sexual partners. Early access to ART and support to remain on treatment is therefore critical not only to improve the health of people living with HIV but also to prevent HIV transmission.\nRisk factors\nBehaviours and conditions that put people at greater risk of contracting HIV include:\nhaving anal or vaginal sex without a condom;\nDiagnosis\nHIV can be diagnosed through rapid diagnostic tests that provide same-day results. This greatly facilitates early diagnosis and linkage with treatment and prevention. People can also use HIV self-tests to test themselves. However, no single test can provide a full HIV positive diagnosis; confirmatory testing is required, conducted by a qualified and trained health worker or community worker. HIV infection can be detected with great accuracy using WHO prequalified tests within a nationally approved testing strategy and algorithm.\nMost widely used HIV diagnostic tests detect antibodies produced by a person as part of their immune response to fight HIV. In most cases, people develop antibodies to HIV within 28 days of infection. During this time, people are in the so-called \u201cwindow period\u201d when they have low levels of antibodies which cannot be detected by many rapid tests, but they may still transmit HIV to others. People who have had a recent high-risk exposure and test negative can have a further test after 28 days.\nFollowing a positive diagnosis, people should be retested before they are enrolled in treatment and care to rule out any potential testing or reporting error. While testing for adolescents and adults has been made simple and efficient, this is not the case for babies born to HIV-positive mothers. For children less than 18 months of age, rapid antibody testing is not sufficient to identify HIV infection \u2013 virological testing must be provided as early as birth or at 6 weeks of age. New technologies are now available to perform this test at the point of care and enable same-day results, which will accelerate appropriate linkage with treatment and care.\nPrevention\nHIV is a preventable disease. The risk of HIV infection can be reduced by:\nusing a male or female condom during sex\nbeing tested for HIV and other sexually transmitted infections\nbeing circumcised if you are a man\nusing harm reduction services if you inject and use drugs.\nPre-exposure prophylaxis (PrEP) is an additional prevention option. It is an antiretroviral (ARV) medication used by HIV-negative people to reduce the risk of HIV acquisition. WHO recommends the following PrEP methods:\noral tenofovir (TDF)-based PrEP\nlong-acting injectable lenacapavir.\nARVs can also be used to prevent mothers from passing HIV to their children.\nPeople taking ART and who have no evidence of virus in the blood will not pass HIV to their sexual partners. Access to testing and ART is an important part of preventing HIV.\nAntiretroviral drugs given to people without HIV can prevent infection\nTreatment\nThere is no cure for HIV infection. It is treated with antiretroviral drugs, which stop the virus from replicating in the body.\nCurrent ART does not cure HIV infection but allows a person\u2019s immune system to get stronger. This helps them to fight other infections.\nART lowers the amount of the virus in a person\u2019s body. This stops symptoms and allows people to live full and healthy lives. People living with HIV who are taking ART and who have no evidence of virus in the blood will not spread the virus to their sexual partners.\nPregnant women with HIV should have access to, and take, ART as soon as possible. This protects the health of the mother and will help prevent HIV transmission to the fetus before birth, or through breast milk.\nMore information on HIV treatments\nWHO response",
+      "source": "www.who.int",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/hiv-aids",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -1.1414625644683838,
+      "relevance_score": 0.24205192923545837,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.048410385847091675,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v1",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence explicitly states that HIV weakens the immune system, which contradicts the claim that HIV strengthens the immune system.",
+            "citations": [
+              {
+                "evidence_id": "web:6d71fbcae6cabd5edf50",
+                "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+              },
+              {
+                "evidence_id": "web:6d71fbcae6cabd5edf50",
+                "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:19093495",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:26830285",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:6d71fbcae6cabd5edf50",
+                "relation": "REFUTES",
+                "concrete": true
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v1",
+              "claim_parts": {
+                "subject": "HIV",
+                "relationship": "strengthens",
+                "outcome": "immune system",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "HIV targets the body\u2019s white blood cells, weakening the immune system.",
+                  "reason": "The evidence states that HIV targets the immune system, weakening it, which is the opposite of strengthening it.",
+                  "sentence_ids": [
+                    "E3S11",
+                    "E3S13"
+                  ],
+                  "slot": "subject",
+                  "claim_fragment": "HIV",
+                  "citations": [
+                    {
+                      "evidence_id": "web:6d71fbcae6cabd5edf50",
+                      "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+                    },
+                    {
+                      "evidence_id": "web:6d71fbcae6cabd5edf50",
+                      "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "evidence_phrase": "HIV targets the body\u2019s white blood cells, weakening the immune system.",
+                  "reason": "The evidence explicitly states that HIV weakens the immune system, which contradicts the claim that HIV strengthens the immune system.",
+                  "sentence_ids": [
+                    "E3S11",
+                    "E3S13"
+                  ],
+                  "slot": "relationship",
+                  "claim_fragment": "strengthens",
+                  "citations": [
+                    {
+                      "evidence_id": "web:6d71fbcae6cabd5edf50",
+                      "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+                    },
+                    {
+                      "evidence_id": "web:6d71fbcae6cabd5edf50",
+                      "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "HIV targets the body\u2019s white blood cells, weakening the immune system.",
+                  "reason": "The evidence directly states that HIV weakens the immune system, which matches the claim of HIV strengthening the immune system.",
+                  "sentence_ids": [
+                    "E3S11",
+                    "E3S13"
+                  ],
+                  "slot": "outcome",
+                  "claim_fragment": "immune system",
+                  "citations": [
+                    {
+                      "evidence_id": "web:6d71fbcae6cabd5edf50",
+                      "quote": "Human immunodeficiency virus (HIV) is a virus that attacks the body\u2019s immune system."
+                    },
+                    {
+                      "evidence_id": "web:6d71fbcae6cabd5edf50",
+                      "quote": "HIV targets the body\u2019s white blood cells, weakening the immune system."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "web:6d71fbcae6cabd5edf50"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.1,
+              "REFUTED": 0.85,
+              "NEI": 0.05
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 53809.55466700016,
+  "completed_at_utc": "2026-10-29T02:31:59.848345Z"
+}

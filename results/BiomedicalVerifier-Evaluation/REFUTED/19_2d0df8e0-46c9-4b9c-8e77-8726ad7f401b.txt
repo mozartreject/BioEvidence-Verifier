@@ -1,0 +1,7 @@
+Claim: Malaria is not caused by Plasmodium parasites.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 2d0df8e0-46c9-4b9c-8e77-8726ad7f401b
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/2d0df8e0-46c9-4b9c-8e77-8726ad7f401b.json

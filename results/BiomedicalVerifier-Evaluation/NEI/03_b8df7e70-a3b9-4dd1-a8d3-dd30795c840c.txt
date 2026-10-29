@@ -1,0 +1,7 @@
+Claim: Eating 12 blueberries daily improves working memory by exactly 18% after nine days.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: b8df7e70-a3b9-4dd1-a8d3-dd30795c840c
+Explanation status: QUARANTINED
+Quarantine reason: Semantic grounding 0.2909 below threshold 0.4500; Evidence coverage 0.4413 below threshold 0.4500
+Raw response: ../raw/b8df7e70-a3b9-4dd1-a8d3-dd30795c840c.json

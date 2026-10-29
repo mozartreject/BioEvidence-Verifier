@@ -1,0 +1,5 @@
+Claim: Walking for exactly 17 minutes each morning reduces Alzheimer disease incidence by exactly 23% in adults aged 41 to 43.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Semantic grounding 0.3726 below threshold 0.4500
+Raw response: ../raw/512c132d-746c-4676-9c81-54288fa46104.json

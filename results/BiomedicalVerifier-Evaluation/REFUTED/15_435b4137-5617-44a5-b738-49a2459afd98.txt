@@ -1,0 +1,7 @@
+Claim: The heart does not pump blood.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 435b4137-5617-44a5-b738-49a2459afd98
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/435b4137-5617-44a5-b738-49a2459afd98.json

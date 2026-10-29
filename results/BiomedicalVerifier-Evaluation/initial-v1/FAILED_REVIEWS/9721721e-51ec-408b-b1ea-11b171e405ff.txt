@@ -1,0 +1,4 @@
+Claim: Brushing teeth at exactly 6:40 a.m. reduces influenza infection risk by exactly 27%.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.08, 'REFUTED': 0.65, 'NEI': 0.27}"}
+Raw response: ../raw/9721721e-51ec-408b-b1ea-11b171e405ff.json

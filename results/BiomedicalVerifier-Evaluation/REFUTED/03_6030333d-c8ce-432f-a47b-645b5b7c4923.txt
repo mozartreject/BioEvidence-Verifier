@@ -1,0 +1,7 @@
+Claim: Cigarette smoking does not cause chronic obstructive pulmonary disease.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 6030333d-c8ce-432f-a47b-645b5b7c4923
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/6030333d-c8ce-432f-a47b-645b5b7c4923.json

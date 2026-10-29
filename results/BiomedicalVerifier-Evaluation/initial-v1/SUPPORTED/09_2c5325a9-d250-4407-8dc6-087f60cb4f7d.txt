@@ -1,0 +1,7 @@
+Claim: Measles is caused by bacteria.
+Actual verdict: SUPPORTED
+Expected candidate label: REFUTED
+Request ID: 2c5325a9-d250-4407-8dc6-087f60cb4f7d
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/2c5325a9-d250-4407-8dc6-087f60cb4f7d.json

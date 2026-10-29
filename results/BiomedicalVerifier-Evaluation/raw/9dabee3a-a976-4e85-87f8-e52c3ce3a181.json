@@ -1,0 +1,764 @@
+{
+  "request": {
+    "request_id": "9dabee3a-a976-4e85-87f8-e52c3ce3a181",
+    "claim": "Listening to piano music for 13 minutes lowers fasting glucose by exactly 9% in adults aged 28 to 31.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:13:08.128939Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:13:08.129056Z",
+      "ended_at_utc": "2026-10-29T03:13:08.954884Z",
+      "latency_ms": 825.8207500000481
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:1575035",
+        "document_id": "pubmed:1575035",
+        "title": "Transiently evoked otoacoustic emissions in patients with Meni\u00e8re's disease.",
+        "text": "Transiently evoked otoacoustic emissions (TEOAEs) were stimulated using clicks or 1-kHz tone bursts in both ears of 31 patients with unilateral Meniere's disease. Using click stimuli, responses were present in 29/31 of the non-Meniere's ears and in 26/31 of the Meniere's ears. Stimulation using 1-kHz tone bursts produced responses in 30/31 of the non-Meniere's ears and in 28/31 of the Meniere's ears. Audiometric configuration strongly influenced the presence of TEOAEs in the affected ears. In all but 2 ears with average hearing sensitivity (0.5, 1, 2 kHz) poorer than 25 dB HL, responses were present only when accompanied by at least one pure-tone threshold better than 30 dB HL from 0.75 to 2 kHz. In the opposite ears, all of which had essentially normal hearing, responses were approximately 5 dB lower in level and contained fewer spectral peaks in comparison with results obtained from a normative database. Neither age nor pure-tone results could account for these differences. Thus, TEOAEs obtained from patients with Meniere's disease manifest features that may be considered as atypical either in comparison to results from ears with normal hearing or from ears with relatively flat sensorineural hearing losses due to other etiologies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/1575035/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.296403884887695,
+        "relevance_score": 3.375312371645123e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:40016639",
+        "document_id": "pubmed:40016639",
+        "title": "High circulation of pertussis in infants and close contacts in Antananarivo, the capital of Madagascar in Africa, and Cambodia in Asia.",
+        "text": "BACKGROUND: Reliable data on whooping cough, a highly contagious disease sometimes fatal for infants, are largely lacking in low- and middle-income countries.\nMETHODS: We conducted a hospital-based prospective study (PS) on infants, and a household contact-case investigation (CCI) for positive cases throughout Cambodia and in the city of Antananarivo, Madagascar, between 2017 and 2019. The PS, in which Bordetella diagnostics (qPCR) were performed, included infants aged \u22646 months presenting with \u22655 days of cough associated with one pertussis-like symptom. CCI was performed using qPCR and serology regardless of clinical signs.\nRESULTS: In this study, 207 and 173 participants from Cambodia and Antananarivo were respectively enrolled. Respectively 26.1% (54/207) and 22.0% (38/173) of the infants were infected in the cohorts from Cambodia and Antananarivo. Cough longer than 10 days appeared as a risk factor in both countries, as well as coughing spells, apnea and normal pulmonary auscultation, having a coughing contact in Cambodia. In Antananarivo, being clinically well between coughing spells appeared as a risk factor. Five infants, all positive, died during the study. In Cambodia and Antananarivo respectively, 50.9% (118/232) and 67.8% (82/121) of the contact cases were positive. Respectively 94.4% (51/54) and 90.3% (28/31) of the households had at least one positive contact case.\nCONCLUSION: The data show that pertussis circulates at high levels among infants and in their households both in Cambodia and in Antananarivo. Given the vulnerability of youngest infants, who are too young to receive fully primary vaccination, they need to be protected through boosters breaking transmission chains. Molecular diagnosis, as well as trained medical human resources to detect the disease early, are absolutely key to protect populations.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40016639/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.342500686645508,
+        "relevance_score": 3.223257590434514e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:29106871",
+        "document_id": "pubmed:29106871",
+        "title": "Test-retest reliability of speech-evoked auditory brainstem response in healthy children at a low sensation level.",
+        "text": "OBJECTIVE: Auditory brainstem responses evoked by complex stimuli such as speech syllables have been studied in normal subjects and subjects with compromised auditory functions. The stability of speech-evoked auditory brainstem response (speech-ABR) when tested over time has been reported but the literature is limited. The present study was carried out to determine the test-retest reliability of speech-ABR in healthy children at a low sensation level.\nMETHODS: Seventeen healthy children (6 boys, 11 girls) aged from 5 to 9 years (mean\u00a0=\u00a06.8\u00a0\u00b1\u00a03.3 years) were tested in two sessions separated by a 3-month period. The stimulus used was a 40-ms syllable /da/ presented at 30\u00a0dB sensation level.\nRESULTS: As revealed by pair t-test and intra-class correlation (ICC) analyses, peak latencies, peak amplitudes and composite onset measures of speech-ABR were found to be highly replicable. Compared to other parameters, higher ICC values were noted for peak latencies of speech-ABR.\nCONCLUSION: The present study was the first to report the test-retest reliability of speech-ABR recorded at low stimulation levels in healthy children. Due to its good stability, it can be used as an objective indicator for assessing the effectiveness of auditory rehabilitation in hearing-impaired children in future studies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29106871/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.636028289794922,
+        "relevance_score": 2.4033728550421074e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Listening to piano music for 13 minutes lowers fasting glucose by exactly 9% in adults aged 28 to 31."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:13:08.954942Z",
+      "ended_at_utc": "2026-10-29T03:13:18.276933Z",
+      "latency_ms": 9321.880625000176
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:1575035",
+        "document_id": "pubmed:1575035",
+        "title": "Transiently evoked otoacoustic emissions in patients with Meni\u00e8re's disease.",
+        "text": "Transiently evoked otoacoustic emissions (TEOAEs) were stimulated using clicks or 1-kHz tone bursts in both ears of 31 patients with unilateral Meniere's disease. Using click stimuli, responses were present in 29/31 of the non-Meniere's ears and in 26/31 of the Meniere's ears. Stimulation using 1-kHz tone bursts produced responses in 30/31 of the non-Meniere's ears and in 28/31 of the Meniere's ears. Audiometric configuration strongly influenced the presence of TEOAEs in the affected ears. In all but 2 ears with average hearing sensitivity (0.5, 1, 2 kHz) poorer than 25 dB HL, responses were present only when accompanied by at least one pure-tone threshold better than 30 dB HL from 0.75 to 2 kHz. In the opposite ears, all of which had essentially normal hearing, responses were approximately 5 dB lower in level and contained fewer spectral peaks in comparison with results obtained from a normative database. Neither age nor pure-tone results could account for these differences. Thus, TEOAEs obtained from patients with Meniere's disease manifest features that may be considered as atypical either in comparison to results from ears with normal hearing or from ears with relatively flat sensorineural hearing losses due to other etiologies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/1575035/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.296403884887695,
+        "relevance_score": 3.375312371645123e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 2.3627186601515858e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:40016639",
+        "document_id": "pubmed:40016639",
+        "title": "High circulation of pertussis in infants and close contacts in Antananarivo, the capital of Madagascar in Africa, and Cambodia in Asia.",
+        "text": "BACKGROUND: Reliable data on whooping cough, a highly contagious disease sometimes fatal for infants, are largely lacking in low- and middle-income countries.\nMETHODS: We conducted a hospital-based prospective study (PS) on infants, and a household contact-case investigation (CCI) for positive cases throughout Cambodia and in the city of Antananarivo, Madagascar, between 2017 and 2019. The PS, in which Bordetella diagnostics (qPCR) were performed, included infants aged \u22646 months presenting with \u22655 days of cough associated with one pertussis-like symptom. CCI was performed using qPCR and serology regardless of clinical signs.\nRESULTS: In this study, 207 and 173 participants from Cambodia and Antananarivo were respectively enrolled. Respectively 26.1% (54/207) and 22.0% (38/173) of the infants were infected in the cohorts from Cambodia and Antananarivo. Cough longer than 10 days appeared as a risk factor in both countries, as well as coughing spells, apnea and normal pulmonary auscultation, having a coughing contact in Cambodia. In Antananarivo, being clinically well between coughing spells appeared as a risk factor. Five infants, all positive, died during the study. In Cambodia and Antananarivo respectively, 50.9% (118/232) and 67.8% (82/121) of the contact cases were positive. Respectively 94.4% (51/54) and 90.3% (28/31) of the households had at least one positive contact case.\nCONCLUSION: The data show that pertussis circulates at high levels among infants and in their households both in Cambodia and in Antananarivo. Given the vulnerability of youngest infants, who are too young to receive fully primary vaccination, they need to be protected through boosters breaking transmission chains. Molecular diagnosis, as well as trained medical human resources to detect the disease early, are absolutely key to protect populations.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40016639/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.342500686645508,
+        "relevance_score": 3.223257590434514e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 2.2562803133041597e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:29106871",
+        "document_id": "pubmed:29106871",
+        "title": "Test-retest reliability of speech-evoked auditory brainstem response in healthy children at a low sensation level.",
+        "text": "OBJECTIVE: Auditory brainstem responses evoked by complex stimuli such as speech syllables have been studied in normal subjects and subjects with compromised auditory functions. The stability of speech-evoked auditory brainstem response (speech-ABR) when tested over time has been reported but the literature is limited. The present study was carried out to determine the test-retest reliability of speech-ABR in healthy children at a low sensation level.\nMETHODS: Seventeen healthy children (6 boys, 11 girls) aged from 5 to 9 years (mean\u00a0=\u00a06.8\u00a0\u00b1\u00a03.3 years) were tested in two sessions separated by a 3-month period. The stimulus used was a 40-ms syllable /da/ presented at 30\u00a0dB sensation level.\nRESULTS: As revealed by pair t-test and intra-class correlation (ICC) analyses, peak latencies, peak amplitudes and composite onset measures of speech-ABR were found to be highly replicable. Compared to other parameters, higher ICC values were noted for peak latencies of speech-ABR.\nCONCLUSION: The present study was the first to report the test-retest reliability of speech-ABR recorded at low stimulation levels in healthy children. Due to its good stability, it can be used as an objective indicator for assessing the effectiveness of auditory rehabilitation in hearing-impaired children in future studies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29106871/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.636028289794922,
+        "relevance_score": 2.4033728550421074e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 1.682360998529475e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:13:18.276962Z",
+      "ended_at_utc": "2026-10-29T03:13:18.277056Z",
+      "latency_ms": 0.10183399990637554
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.02,
+      "nei": 0.91,
+      "supported": 0.07
+    },
+    "verifier_score": 0.91,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:1575035",
+      "pubmed:40016639",
+      "pubmed:29106871"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cListening to piano music for 13 minutes\u201d; relationship: \u201clowers\u201d; outcome: \u201cfasting glucose by exactly 9%\u201d; population: \u201cadults aged 28 to 31\u201d. The evidence does not mention listening to piano music or any form of music for 13 minutes. The evidence does not discuss any relationship between music listening and glucose levels. The evidence does not mention fasting glucose levels or any changes in glucose levels. The evidence does not mention any specific age group or adults aged 28 to 31.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:1575035",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:29106871",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:40016639",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Listening to piano music for 13 minutes",
+              "relationship": "lowers",
+              "outcome": "fasting glucose by exactly 9%",
+              "population": "adults aged 28 to 31",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention listening to piano music or any form of music for 13 minutes.",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Listening to piano music for 13 minutes",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss any relationship between music listening and glucose levels.",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "lowers",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention fasting glucose levels or any changes in glucose levels.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "fasting glucose by exactly 9%",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention any specific age group or adults aged 28 to 31.",
+                "sentence_ids": [],
+                "slot": "population",
+                "evidence_phrase": "",
+                "claim_fragment": "adults aged 28 to 31",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "population"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.07,
+            "REFUTED": 0.02,
+            "NEI": 0.91
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The provided evidence does not address the claim about listening to piano music lowering fasting glucose levels in adults. [E1] discusses otoacoustic emissions, [E2] examines pertussis circulation, and [E3] investigates the reliability of speech-evoked auditory brainstem response, none of which are relevant to the glucose-lowering effect of music.",
+    "cited_evidence_ids": [
+      "pubmed:1575035",
+      "pubmed:40016639",
+      "pubmed:29106871"
+    ],
+    "grounding": {
+      "semantic_score": 0.5629072189331055,
+      "coverage_score": 0.49269527196884155,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 1,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:13:39.633179Z",
+      "ended_at_utc": "2026-10-29T03:13:55.157550Z",
+      "latency_ms": 15524.166583000124
+    },
+    "warnings": [
+      "NEI semantic validation excluded explicit evidence-absence/insufficiency sentence(s); raw semantic metrics are preserved"
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.91,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:1575035",
+      "document_id": "pubmed:1575035",
+      "title": "Transiently evoked otoacoustic emissions in patients with Meni\u00e8re's disease.",
+      "text": "Transiently evoked otoacoustic emissions (TEOAEs) were stimulated using clicks or 1-kHz tone bursts in both ears of 31 patients with unilateral Meniere's disease. Using click stimuli, responses were present in 29/31 of the non-Meniere's ears and in 26/31 of the Meniere's ears. Stimulation using 1-kHz tone bursts produced responses in 30/31 of the non-Meniere's ears and in 28/31 of the Meniere's ears. Audiometric configuration strongly influenced the presence of TEOAEs in the affected ears. In all but 2 ears with average hearing sensitivity (0.5, 1, 2 kHz) poorer than 25 dB HL, responses were present only when accompanied by at least one pure-tone threshold better than 30 dB HL from 0.75 to 2 kHz. In the opposite ears, all of which had essentially normal hearing, responses were approximately 5 dB lower in level and contained fewer spectral peaks in comparison with results obtained from a normative database. Neither age nor pure-tone results could account for these differences. Thus, TEOAEs obtained from patients with Meniere's disease manifest features that may be considered as atypical either in comparison to results from ears with normal hearing or from ears with relatively flat sensorineural hearing losses due to other etiologies.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/1575035/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.296403884887695,
+      "relevance_score": 3.375312371645123e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 2.3627186601515858e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:40016639",
+      "document_id": "pubmed:40016639",
+      "title": "High circulation of pertussis in infants and close contacts in Antananarivo, the capital of Madagascar in Africa, and Cambodia in Asia.",
+      "text": "BACKGROUND: Reliable data on whooping cough, a highly contagious disease sometimes fatal for infants, are largely lacking in low- and middle-income countries.\nMETHODS: We conducted a hospital-based prospective study (PS) on infants, and a household contact-case investigation (CCI) for positive cases throughout Cambodia and in the city of Antananarivo, Madagascar, between 2017 and 2019. The PS, in which Bordetella diagnostics (qPCR) were performed, included infants aged \u22646 months presenting with \u22655 days of cough associated with one pertussis-like symptom. CCI was performed using qPCR and serology regardless of clinical signs.\nRESULTS: In this study, 207 and 173 participants from Cambodia and Antananarivo were respectively enrolled. Respectively 26.1% (54/207) and 22.0% (38/173) of the infants were infected in the cohorts from Cambodia and Antananarivo. Cough longer than 10 days appeared as a risk factor in both countries, as well as coughing spells, apnea and normal pulmonary auscultation, having a coughing contact in Cambodia. In Antananarivo, being clinically well between coughing spells appeared as a risk factor. Five infants, all positive, died during the study. In Cambodia and Antananarivo respectively, 50.9% (118/232) and 67.8% (82/121) of the contact cases were positive. Respectively 94.4% (51/54) and 90.3% (28/31) of the households had at least one positive contact case.\nCONCLUSION: The data show that pertussis circulates at high levels among infants and in their households both in Cambodia and in Antananarivo. Given the vulnerability of youngest infants, who are too young to receive fully primary vaccination, they need to be protected through boosters breaking transmission chains. Molecular diagnosis, as well as trained medical human resources to detect the disease early, are absolutely key to protect populations.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/40016639/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.342500686645508,
+      "relevance_score": 3.223257590434514e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 2.2562803133041597e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:29106871",
+      "document_id": "pubmed:29106871",
+      "title": "Test-retest reliability of speech-evoked auditory brainstem response in healthy children at a low sensation level.",
+      "text": "OBJECTIVE: Auditory brainstem responses evoked by complex stimuli such as speech syllables have been studied in normal subjects and subjects with compromised auditory functions. The stability of speech-evoked auditory brainstem response (speech-ABR) when tested over time has been reported but the literature is limited. The present study was carried out to determine the test-retest reliability of speech-ABR in healthy children at a low sensation level.\nMETHODS: Seventeen healthy children (6 boys, 11 girls) aged from 5 to 9 years (mean\u00a0=\u00a06.8\u00a0\u00b1\u00a03.3 years) were tested in two sessions separated by a 3-month period. The stimulus used was a 40-ms syllable /da/ presented at 30\u00a0dB sensation level.\nRESULTS: As revealed by pair t-test and intra-class correlation (ICC) analyses, peak latencies, peak amplitudes and composite onset measures of speech-ABR were found to be highly replicable. Compared to other parameters, higher ICC values were noted for peak latencies of speech-ABR.\nCONCLUSION: The present study was the first to report the test-retest reliability of speech-ABR recorded at low stimulation levels in healthy children. Due to its good stability, it can be used as an objective indicator for assessing the effectiveness of auditory rehabilitation in hearing-impaired children in future studies.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29106871/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.636028289794922,
+      "relevance_score": 2.4033728550421074e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 1.682360998529475e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cListening to piano music for 13 minutes\u201d; relationship: \u201clowers\u201d; outcome: \u201cfasting glucose by exactly 9%\u201d; population: \u201cadults aged 28 to 31\u201d. The evidence does not mention listening to piano music or any form of music for 13 minutes. The evidence does not discuss any relationship between music listening and glucose levels. The evidence does not mention fasting glucose levels or any changes in glucose levels. The evidence does not mention any specific age group or adults aged 28 to 31.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:1575035",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:29106871",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:40016639",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Listening to piano music for 13 minutes",
+                "relationship": "lowers",
+                "outcome": "fasting glucose by exactly 9%",
+                "population": "adults aged 28 to 31",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention listening to piano music or any form of music for 13 minutes.",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Listening to piano music for 13 minutes",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss any relationship between music listening and glucose levels.",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "lowers",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention fasting glucose levels or any changes in glucose levels.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "fasting glucose by exactly 9%",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention any specific age group or adults aged 28 to 31.",
+                  "sentence_ids": [],
+                  "slot": "population",
+                  "evidence_phrase": "",
+                  "claim_fragment": "adults aged 28 to 31",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "population"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.07,
+              "REFUTED": 0.02,
+              "NEI": 0.91
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 47029.46091700005,
+  "completed_at_utc": "2026-10-29T03:13:55.159078Z"
+}

@@ -1,0 +1,764 @@
+{
+  "request": {
+    "request_id": "d6cba892-ffaa-4f4a-a723-bc8d11053b9f",
+    "claim": "Wearing blue socks improves insulin sensitivity by exactly 12% after six weeks.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:15:53.704847Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:15:53.704979Z",
+      "ended_at_utc": "2026-10-29T03:15:54.409600Z",
+      "latency_ms": 704.615042000114
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:34023188",
+        "document_id": "pubmed:34023188",
+        "title": "Differences in stabilometric correlates of pain relief after wearing postural insoles for six weeks between chronic nociceptive and neuropathic foot pain. An open-label pilot study.",
+        "text": "OBJECTIVE: The aim of this study was to determine if the use of postural insoles could result in a noticeable reduction in the foot pain intensity in patients with a chronic pain condition, either nociceptive (ankylosing spondylitis, AS) or neuropathic (small fiber neuropathy, SFN).\nMETHOD: In this open-label pilot study, patients were asked to wear postural insoles for a continuous period of 6 weeks. The primary endpoint was the mean daily pain intensity at foot mobilization measured using a visual analogue scale (VAS). The secondary endpoints included global pain intensity scores (at rest or under mobilization), clinical questionnaires on pain and daily functioning (including the Brief Pain Inventory (BPI), the Bath Ankylosing Spondylitis Disease Activity Index (BASDAI), the Neuropathic Pain Symptom Inventory (NPSI) and the DN4 questionnaire), and posturo-podiatric variables assessed on clinical examination or using a baro-stabilometric platform.\nRESULTS: The study was completed by 17 patients with AS and 12 patients with SFN. After wearing postural insoles for 6 weeks, a significant improvement was observed on the primary endpoint (decrease in VAS pain score at the foot during mobilization) in both groups of patients (from 6.4\u202f\u00b1\u202f2.4 to 3.6\u202f\u00b1\u202f2.6 (p\u202f=\u202f0.0004) in the AS group and from 5.7\u202f\u00b1\u202f2.2 to 2.4\u202f\u00b1\u202f1.6 (p\u202f=\u202f0.0003) in the SFN group). Improvement was also observed for all other pain and activity scores (global pain at rest or during mobilization (VAS), BDI, and BASDAI for the AS group or NPSI and DN4 for the SFN group), as well as for posturo-podiatric clinical variables. However, we did not find any difference in any clinical pain score whether the posturo-podiatric clinical outcomes were positive or not. Regarding the stabilometric measures, the only significant change after the intervention was a reduced mean velocity of center of pressure displacement in the AS group only (mVel in mm/s: from 7.4\u202f\u00b1\u202f2.0 vs. 6.7\u202f\u00b1\u202f1.9, p\u202f=\u202f0.017). In addition, the reduction in mVel correlated to that of the BPI score (r\u202f=\u202f0.48, p\u202f=\u202f0.0496).\nCONCLUSION: In both groups of patients, wearing postural insoles for 6 weeks led to a significant decrease in local pain intensity at foot level and to more global analgesic effects and positive posturo-podiatric changes. However, these latter changes did not appear to be strongly associated with pain relief. Nevertheless, an index of a better postural control, i.e. mVel decrease, was found to be related to a reduction of pain interference in daily life activities in AS patients, but not in SFN patients. Therefore, in the context of neuropathic pain, mechanisms other than postural changes likely contribute to the analgesic effects of wearing postural insoles, in contrast to nociceptive pain due to spinal osteoarthritis.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34023188/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.476018905639648,
+        "relevance_score": 0.011250605806708336,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:33559583",
+        "document_id": "pubmed:33559583",
+        "title": "Evaluating Stack Splint Use for Mallet Finger.",
+        "text": "Background: Stack splint is commonly used for mallet finger treatment but patients had a tendency to frequently remove it because of skin complications. We hypothesized that a comprehensively instructed splinting regime would increase patients' compliance and lead to favorable outcomes with fewer skin complications. The aims of this study were to assess the patients' compliance and to evaluate outcomes with that particular splinting regime. Methods: Forty-six consecutive patients were enrolled in this prospective study. They were instructed to wear the Stack splint for 24 hours a day every day in the first six weeks and remove it once a day for 10 minutes to vent. They were told to support distal interphalangeal joint volarly both while wearing the splint and when it was removed. Free movement of proximal interphalangeal joint within the splint was checked after each application. Following whole-day regime for 6 weeks, night splinting continued for 2 more weeks. Range of motion, skin complications, patients' compliance and satisfaction were assessed at last follow-up. Results: There were 26 patients with a mean age of 39.8 and mean follow-up period of 6.7 months. No skin complications or proximal interphalangeal joint stiffness were reported. However, nine patients declared that they wore the splint \u2264 4 weeks, the compliance rate to our regime was 65.4% (17/26). In the 17 fully compliant patients, mean distal interphalangeal joint extension lag was 12.4 and nine of them (52.9%) were satisfied with the outcome. Conclusions: Our both hypotheses failed; comprehensive instructions for the splinting regime did not improve patients' compliance satisfactorily, nor did it lead to favorable outcomes. Although Stack splint has practical points, we no longer use it.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33559583/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -6.187784671783447,
+        "relevance_score": 0.0020501608960330486,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:37194618",
+        "document_id": "pubmed:37194618",
+        "title": "Effects of compression garments on balance in hypermobile Ehlers-Danlos syndrome: a randomized controlled trial.",
+        "text": "PURPOSE: To evaluate the immediate and 4-week effects of compression garments (CG) on balance using a force platform during 8 different visual, static, and dynamic conditions in hypermobile Ehlers-Danlos Syndrome (hEDS) patients.\nMETHODS: Thirty-six participants were randomly assigned to a group: physiotherapy alone (PT, n\u2009=\u200919) or physiotherapy and daily CG wearing for 4\u2009weeks (PT\u2009+\u2009CG, n\u2009=\u200917). Both attended 12 physiotherapy sessions (strengthening, proprioception, and balance exercises) for 4\u2009weeks. Primary outcome: sway velocity of the centre of pressure (COP) measured before, immediately with the CG, and at 4\u2009weeks. Secondary outcomes: ellipse area, Romberg quotient, and pain.\nRESULTS: Sway velocity in dynamic conditions decreased immediately with the CG. After 4\u2009weeks of intervention, sway velocity (95% CI 4.36-39.23, effect size 0.93) and area (95% CI 146-3274, effect size 0.45) on the laterally oscillating platform with eyes-closed improved more in the PT\u2009+\u2009CG group than the PT group. Romberg quotient on foam cushion improved more in the PT\u2009+\u2009CG than the PT group. Pain decreased in both groups after 4\u2009weeks with no between-group difference.\nCONCLUSION: CG combined with physiotherapy improved dynamic balance measured with COP variables significantly more than physiotherapy alone in people with hEDS.\nTRIAL REGISTRATION: NCT03359135.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/37194618/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -6.2968597412109375,
+        "relevance_score": 0.0018386932788416743,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Wearing blue socks improves insulin sensitivity by exactly 12% after six weeks."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:15:54.409673Z",
+      "ended_at_utc": "2026-10-29T03:16:03.502611Z",
+      "latency_ms": 9092.828916999906
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:34023188",
+        "document_id": "pubmed:34023188",
+        "title": "Differences in stabilometric correlates of pain relief after wearing postural insoles for six weeks between chronic nociceptive and neuropathic foot pain. An open-label pilot study.",
+        "text": "OBJECTIVE: The aim of this study was to determine if the use of postural insoles could result in a noticeable reduction in the foot pain intensity in patients with a chronic pain condition, either nociceptive (ankylosing spondylitis, AS) or neuropathic (small fiber neuropathy, SFN).\nMETHOD: In this open-label pilot study, patients were asked to wear postural insoles for a continuous period of 6 weeks. The primary endpoint was the mean daily pain intensity at foot mobilization measured using a visual analogue scale (VAS). The secondary endpoints included global pain intensity scores (at rest or under mobilization), clinical questionnaires on pain and daily functioning (including the Brief Pain Inventory (BPI), the Bath Ankylosing Spondylitis Disease Activity Index (BASDAI), the Neuropathic Pain Symptom Inventory (NPSI) and the DN4 questionnaire), and posturo-podiatric variables assessed on clinical examination or using a baro-stabilometric platform.\nRESULTS: The study was completed by 17 patients with AS and 12 patients with SFN. After wearing postural insoles for 6 weeks, a significant improvement was observed on the primary endpoint (decrease in VAS pain score at the foot during mobilization) in both groups of patients (from 6.4\u202f\u00b1\u202f2.4 to 3.6\u202f\u00b1\u202f2.6 (p\u202f=\u202f0.0004) in the AS group and from 5.7\u202f\u00b1\u202f2.2 to 2.4\u202f\u00b1\u202f1.6 (p\u202f=\u202f0.0003) in the SFN group). Improvement was also observed for all other pain and activity scores (global pain at rest or during mobilization (VAS), BDI, and BASDAI for the AS group or NPSI and DN4 for the SFN group), as well as for posturo-podiatric clinical variables. However, we did not find any difference in any clinical pain score whether the posturo-podiatric clinical outcomes were positive or not. Regarding the stabilometric measures, the only significant change after the intervention was a reduced mean velocity of center of pressure displacement in the AS group only (mVel in mm/s: from 7.4\u202f\u00b1\u202f2.0 vs. 6.7\u202f\u00b1\u202f1.9, p\u202f=\u202f0.017). In addition, the reduction in mVel correlated to that of the BPI score (r\u202f=\u202f0.48, p\u202f=\u202f0.0496).\nCONCLUSION: In both groups of patients, wearing postural insoles for 6 weeks led to a significant decrease in local pain intensity at foot level and to more global analgesic effects and positive posturo-podiatric changes. However, these latter changes did not appear to be strongly associated with pain relief. Nevertheless, an index of a better postural control, i.e. mVel decrease, was found to be related to a reduction of pain interference in daily life activities in AS patients, but not in SFN patients. Therefore, in the context of neuropathic pain, mechanisms other than postural changes likely contribute to the analgesic effects of wearing postural insoles, in contrast to nociceptive pain due to spinal osteoarthritis.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34023188/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.476018905639648,
+        "relevance_score": 0.011250605806708336,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.007875424064695834,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:33559583",
+        "document_id": "pubmed:33559583",
+        "title": "Evaluating Stack Splint Use for Mallet Finger.",
+        "text": "Background: Stack splint is commonly used for mallet finger treatment but patients had a tendency to frequently remove it because of skin complications. We hypothesized that a comprehensively instructed splinting regime would increase patients' compliance and lead to favorable outcomes with fewer skin complications. The aims of this study were to assess the patients' compliance and to evaluate outcomes with that particular splinting regime. Methods: Forty-six consecutive patients were enrolled in this prospective study. They were instructed to wear the Stack splint for 24 hours a day every day in the first six weeks and remove it once a day for 10 minutes to vent. They were told to support distal interphalangeal joint volarly both while wearing the splint and when it was removed. Free movement of proximal interphalangeal joint within the splint was checked after each application. Following whole-day regime for 6 weeks, night splinting continued for 2 more weeks. Range of motion, skin complications, patients' compliance and satisfaction were assessed at last follow-up. Results: There were 26 patients with a mean age of 39.8 and mean follow-up period of 6.7 months. No skin complications or proximal interphalangeal joint stiffness were reported. However, nine patients declared that they wore the splint \u2264 4 weeks, the compliance rate to our regime was 65.4% (17/26). In the 17 fully compliant patients, mean distal interphalangeal joint extension lag was 12.4 and nine of them (52.9%) were satisfied with the outcome. Conclusions: Our both hypotheses failed; comprehensive instructions for the splinting regime did not improve patients' compliance satisfactorily, nor did it lead to favorable outcomes. Although Stack splint has practical points, we no longer use it.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33559583/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -6.187784671783447,
+        "relevance_score": 0.0020501608960330486,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.0020501608960330486,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:37194618",
+        "document_id": "pubmed:37194618",
+        "title": "Effects of compression garments on balance in hypermobile Ehlers-Danlos syndrome: a randomized controlled trial.",
+        "text": "PURPOSE: To evaluate the immediate and 4-week effects of compression garments (CG) on balance using a force platform during 8 different visual, static, and dynamic conditions in hypermobile Ehlers-Danlos Syndrome (hEDS) patients.\nMETHODS: Thirty-six participants were randomly assigned to a group: physiotherapy alone (PT, n\u2009=\u200919) or physiotherapy and daily CG wearing for 4\u2009weeks (PT\u2009+\u2009CG, n\u2009=\u200917). Both attended 12 physiotherapy sessions (strengthening, proprioception, and balance exercises) for 4\u2009weeks. Primary outcome: sway velocity of the centre of pressure (COP) measured before, immediately with the CG, and at 4\u2009weeks. Secondary outcomes: ellipse area, Romberg quotient, and pain.\nRESULTS: Sway velocity in dynamic conditions decreased immediately with the CG. After 4\u2009weeks of intervention, sway velocity (95% CI 4.36-39.23, effect size 0.93) and area (95% CI 146-3274, effect size 0.45) on the laterally oscillating platform with eyes-closed improved more in the PT\u2009+\u2009CG group than the PT group. Romberg quotient on foam cushion improved more in the PT\u2009+\u2009CG than the PT group. Pain decreased in both groups after 4\u2009weeks with no between-group difference.\nCONCLUSION: CG combined with physiotherapy improved dynamic balance measured with COP variables significantly more than physiotherapy alone in people with hEDS.\nTRIAL REGISTRATION: NCT03359135.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/37194618/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -6.2968597412109375,
+        "relevance_score": 0.0018386932788416743,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.0018386932788416743,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:16:03.502655Z",
+      "ended_at_utc": "2026-10-29T03:16:03.502788Z",
+      "latency_ms": 0.1414580001437571
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.02,
+      "nei": 0.91,
+      "supported": 0.07
+    },
+    "verifier_score": 0.91,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:34023188",
+      "pubmed:33559583",
+      "pubmed:37194618"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cweeks\u201d; relationship: \u201cimproves\u201d; outcome: \u201cinsulin sensitivity\u201d; qualifiers: \u201cexactly 12% after six weeks\u201d. The evidence does not mention blue socks or any type of socks, nor does it discuss the duration of six weeks or any specific duration. The studies focus on different interventions and outcomes, such as postural insoles,\u6808 The evidence does not provide any information about the relationship between wearing blue socks and insulin sensitivity. The studies focus on different interventions and outcomes, such as postural insoles, stack splints, The evidence does not discuss insulin sensitivity or any related outcomes. The studies focus on pain relief, compliance with splinting, and balance in hypermobile Ehlers-Danlos syndrome, The evidence does not provide any information about the exact percentage or the duration of six weeks. The studies focus on different interventions and outcomes, such as postural insoles, stack splints, and balance in h",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:33559583",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:34023188",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:37194618",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "weeks",
+              "relationship": "improves",
+              "outcome": "insulin sensitivity",
+              "population": "",
+              "qualifiers": "exactly 12% after six weeks"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention blue socks or any type of socks, nor does it discuss the duration of six weeks or any specific duration. The studies focus on different interventions and outcomes, such as postural insoles,\u6808",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "weeks",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any information about the relationship between wearing blue socks and insulin sensitivity. The studies focus on different interventions and outcomes, such as postural insoles, stack splints,",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "improves",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss insulin sensitivity or any related outcomes. The studies focus on pain relief, compliance with splinting, and balance in hypermobile Ehlers-Danlos syndrome,",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "insulin sensitivity",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any information about the exact percentage or the duration of six weeks. The studies focus on different interventions and outcomes, such as postural insoles, stack splints, and balance in h",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly 12% after six weeks",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.07,
+            "REFUTED": 0.02,
+            "NEI": 0.91
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The provided evidence does not address the claim about blue socks and insulin sensitivity. [E1] discusses the use of postural insoles for pain relief in chronic pain conditions, [E2] evaluates the use of stack splints for mallet finger, and [E3] examines the effects of compression garments on balance in hypermobile Ehlers-Danlos syndrome. None of these studies pertain to the effects of blue socks on insulin sensitivity.",
+    "cited_evidence_ids": [
+      "pubmed:34023188",
+      "pubmed:33559583",
+      "pubmed:37194618"
+    ],
+    "grounding": {
+      "semantic_score": 0.6717885732650757,
+      "coverage_score": 0.5363632440567017,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:16:28.151217Z",
+      "ended_at_utc": "2026-10-29T03:16:38.094027Z",
+      "latency_ms": 9942.685457999914
+    },
+    "warnings": [
+      "NEI semantic validation excluded explicit evidence-absence/insufficiency sentence(s); raw semantic metrics are preserved"
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.91,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:34023188",
+      "document_id": "pubmed:34023188",
+      "title": "Differences in stabilometric correlates of pain relief after wearing postural insoles for six weeks between chronic nociceptive and neuropathic foot pain. An open-label pilot study.",
+      "text": "OBJECTIVE: The aim of this study was to determine if the use of postural insoles could result in a noticeable reduction in the foot pain intensity in patients with a chronic pain condition, either nociceptive (ankylosing spondylitis, AS) or neuropathic (small fiber neuropathy, SFN).\nMETHOD: In this open-label pilot study, patients were asked to wear postural insoles for a continuous period of 6 weeks. The primary endpoint was the mean daily pain intensity at foot mobilization measured using a visual analogue scale (VAS). The secondary endpoints included global pain intensity scores (at rest or under mobilization), clinical questionnaires on pain and daily functioning (including the Brief Pain Inventory (BPI), the Bath Ankylosing Spondylitis Disease Activity Index (BASDAI), the Neuropathic Pain Symptom Inventory (NPSI) and the DN4 questionnaire), and posturo-podiatric variables assessed on clinical examination or using a baro-stabilometric platform.\nRESULTS: The study was completed by 17 patients with AS and 12 patients with SFN. After wearing postural insoles for 6 weeks, a significant improvement was observed on the primary endpoint (decrease in VAS pain score at the foot during mobilization) in both groups of patients (from 6.4\u202f\u00b1\u202f2.4 to 3.6\u202f\u00b1\u202f2.6 (p\u202f=\u202f0.0004) in the AS group and from 5.7\u202f\u00b1\u202f2.2 to 2.4\u202f\u00b1\u202f1.6 (p\u202f=\u202f0.0003) in the SFN group). Improvement was also observed for all other pain and activity scores (global pain at rest or during mobilization (VAS), BDI, and BASDAI for the AS group or NPSI and DN4 for the SFN group), as well as for posturo-podiatric clinical variables. However, we did not find any difference in any clinical pain score whether the posturo-podiatric clinical outcomes were positive or not. Regarding the stabilometric measures, the only significant change after the intervention was a reduced mean velocity of center of pressure displacement in the AS group only (mVel in mm/s: from 7.4\u202f\u00b1\u202f2.0 vs. 6.7\u202f\u00b1\u202f1.9, p\u202f=\u202f0.017). In addition, the reduction in mVel correlated to that of the BPI score (r\u202f=\u202f0.48, p\u202f=\u202f0.0496).\nCONCLUSION: In both groups of patients, wearing postural insoles for 6 weeks led to a significant decrease in local pain intensity at foot level and to more global analgesic effects and positive posturo-podiatric changes. However, these latter changes did not appear to be strongly associated with pain relief. Nevertheless, an index of a better postural control, i.e. mVel decrease, was found to be related to a reduction of pain interference in daily life activities in AS patients, but not in SFN patients. Therefore, in the context of neuropathic pain, mechanisms other than postural changes likely contribute to the analgesic effects of wearing postural insoles, in contrast to nociceptive pain due to spinal osteoarthritis.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34023188/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -4.476018905639648,
+      "relevance_score": 0.011250605806708336,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.007875424064695834,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:33559583",
+      "document_id": "pubmed:33559583",
+      "title": "Evaluating Stack Splint Use for Mallet Finger.",
+      "text": "Background: Stack splint is commonly used for mallet finger treatment but patients had a tendency to frequently remove it because of skin complications. We hypothesized that a comprehensively instructed splinting regime would increase patients' compliance and lead to favorable outcomes with fewer skin complications. The aims of this study were to assess the patients' compliance and to evaluate outcomes with that particular splinting regime. Methods: Forty-six consecutive patients were enrolled in this prospective study. They were instructed to wear the Stack splint for 24 hours a day every day in the first six weeks and remove it once a day for 10 minutes to vent. They were told to support distal interphalangeal joint volarly both while wearing the splint and when it was removed. Free movement of proximal interphalangeal joint within the splint was checked after each application. Following whole-day regime for 6 weeks, night splinting continued for 2 more weeks. Range of motion, skin complications, patients' compliance and satisfaction were assessed at last follow-up. Results: There were 26 patients with a mean age of 39.8 and mean follow-up period of 6.7 months. No skin complications or proximal interphalangeal joint stiffness were reported. However, nine patients declared that they wore the splint \u2264 4 weeks, the compliance rate to our regime was 65.4% (17/26). In the 17 fully compliant patients, mean distal interphalangeal joint extension lag was 12.4 and nine of them (52.9%) were satisfied with the outcome. Conclusions: Our both hypotheses failed; comprehensive instructions for the splinting regime did not improve patients' compliance satisfactorily, nor did it lead to favorable outcomes. Although Stack splint has practical points, we no longer use it.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33559583/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -6.187784671783447,
+      "relevance_score": 0.0020501608960330486,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.0020501608960330486,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:37194618",
+      "document_id": "pubmed:37194618",
+      "title": "Effects of compression garments on balance in hypermobile Ehlers-Danlos syndrome: a randomized controlled trial.",
+      "text": "PURPOSE: To evaluate the immediate and 4-week effects of compression garments (CG) on balance using a force platform during 8 different visual, static, and dynamic conditions in hypermobile Ehlers-Danlos Syndrome (hEDS) patients.\nMETHODS: Thirty-six participants were randomly assigned to a group: physiotherapy alone (PT, n\u2009=\u200919) or physiotherapy and daily CG wearing for 4\u2009weeks (PT\u2009+\u2009CG, n\u2009=\u200917). Both attended 12 physiotherapy sessions (strengthening, proprioception, and balance exercises) for 4\u2009weeks. Primary outcome: sway velocity of the centre of pressure (COP) measured before, immediately with the CG, and at 4\u2009weeks. Secondary outcomes: ellipse area, Romberg quotient, and pain.\nRESULTS: Sway velocity in dynamic conditions decreased immediately with the CG. After 4\u2009weeks of intervention, sway velocity (95% CI 4.36-39.23, effect size 0.93) and area (95% CI 146-3274, effect size 0.45) on the laterally oscillating platform with eyes-closed improved more in the PT\u2009+\u2009CG group than the PT group. Romberg quotient on foam cushion improved more in the PT\u2009+\u2009CG than the PT group. Pain decreased in both groups after 4\u2009weeks with no between-group difference.\nCONCLUSION: CG combined with physiotherapy improved dynamic balance measured with COP variables significantly more than physiotherapy alone in people with hEDS.\nTRIAL REGISTRATION: NCT03359135.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37194618/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -6.2968597412109375,
+      "relevance_score": 0.0018386932788416743,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.0018386932788416743,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cweeks\u201d; relationship: \u201cimproves\u201d; outcome: \u201cinsulin sensitivity\u201d; qualifiers: \u201cexactly 12% after six weeks\u201d. The evidence does not mention blue socks or any type of socks, nor does it discuss the duration of six weeks or any specific duration. The studies focus on different interventions and outcomes, such as postural insoles,\u6808 The evidence does not provide any information about the relationship between wearing blue socks and insulin sensitivity. The studies focus on different interventions and outcomes, such as postural insoles, stack splints, The evidence does not discuss insulin sensitivity or any related outcomes. The studies focus on pain relief, compliance with splinting, and balance in hypermobile Ehlers-Danlos syndrome, The evidence does not provide any information about the exact percentage or the duration of six weeks. The studies focus on different interventions and outcomes, such as postural insoles, stack splints, and balance in h",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:33559583",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:34023188",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:37194618",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "weeks",
+                "relationship": "improves",
+                "outcome": "insulin sensitivity",
+                "population": "",
+                "qualifiers": "exactly 12% after six weeks"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention blue socks or any type of socks, nor does it discuss the duration of six weeks or any specific duration. The studies focus on different interventions and outcomes, such as postural insoles,\u6808",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "weeks",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any information about the relationship between wearing blue socks and insulin sensitivity. The studies focus on different interventions and outcomes, such as postural insoles, stack splints,",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "improves",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss insulin sensitivity or any related outcomes. The studies focus on pain relief, compliance with splinting, and balance in hypermobile Ehlers-Danlos syndrome,",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "insulin sensitivity",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any information about the exact percentage or the duration of six weeks. The studies focus on different interventions and outcomes, such as postural insoles, stack splints, and balance in h",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly 12% after six weeks",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.07,
+              "REFUTED": 0.02,
+              "NEI": 0.91
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 44389.64970799998,
+  "completed_at_utc": "2026-10-29T03:16:38.095133Z"
+}

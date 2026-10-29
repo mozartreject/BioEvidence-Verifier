@@ -1,0 +1,232 @@
+SUPPORTED
+
+1. Malaria is caused by Plasmodium parasites.
+   Request: 6b0fc25c-e411-414e-903a-467aa3ad9b3d
+
+2. Malaria is transmitted by infected female Anopheles mosquitoes.
+   Request: 52227794-78d4-49d1-89f4-2037142c499f
+
+3. Cigarette smoking causes lung cancer.
+   Request: bb42ee62-e5a7-429c-8c1d-7d935670b00e
+
+4. Insulin lowers blood glucose.
+   Request: ffcf576c-43bb-48f1-8ac7-96506ed32f20
+
+5. Type 1 diabetes is an autoimmune disease.
+   Request: ad0de0d5-e833-49d3-8c94-6627ae4d9a7f
+
+6. Tuberculosis is caused by bacteria.
+   Request: bb7aff30-1b8c-44a1-ab80-62e9fe8d04d7
+
+7. Influenza is caused by viruses.
+   Request: 331eb77f-2916-4ca4-9b9d-6f29ea59fe7a
+
+8. HIV attacks the immune system.
+   Request: b5c4d465-2701-4fda-bf9d-c1c393c5ee59
+
+9. High blood pressure increases the risk of stroke.
+   Request: 14b575c4-a0a4-4e42-859c-42b60f8f4fc9
+
+10. Physical activity reduces the risk of type 2 diabetes.
+   Request: f89bfb1b-0a35-479a-8a80-d1ba9dc43c6c
+
+11. Exposure to ultraviolet radiation increases the risk of skin cancer.
+   Request: d13f8aa4-302b-410e-8fd6-58ac51ae487b
+
+12. The human papillomavirus can cause cervical cancer.
+   Request: ef5c4a1d-ec28-4d7a-8567-12f4474006bc
+
+13. Helicobacter pylori infection can cause peptic ulcers.
+   Request: 58bb964a-489b-41d2-a789-3a75aa922211
+
+14. Iron deficiency can cause anemia.
+   Request: cb86472d-a117-4264-9582-5d6887c874cc
+
+15. The liver does not produce bile.
+   Request: eed6e727-fe8e-4cb4-9fcf-3e20d0ac0046
+
+16. Vitamin C deficiency causes scurvy.
+   Request: eee1ff27-0519-4cd2-9400-9b00e6e65267
+
+17. Vitamin D deficiency can cause rickets in children.
+   Request: 3d0ba371-8ef6-4967-b8ad-a2307dfe7a51
+
+18. Rabies is caused by a virus.
+   Request: 10fa3d19-cc72-4c84-be33-ab09f30a8129
+
+19. Coronary artery disease can cause a heart attack.
+   Request: a0cbdd26-73f8-4890-9d08-cab6a6c908d6
+
+20. Obesity increases the risk of type 2 diabetes.
+   Request: cc9e811e-ef3f-4c5b-819d-32caa3cc7624
+
+REFUTED
+
+1. Cigarette smoking does not cause lung cancer.
+   Request: c2157c3d-8b1a-4397-aebc-d55c05d271c2
+
+2. Insulin raises blood glucose.
+   Request: b302ebc7-5154-4fee-ae2e-c22ca71c3bfb
+
+3. Cigarette smoking does not cause chronic obstructive pulmonary disease.
+   Request: 6030333d-c8ce-432f-a47b-645b5b7c4923
+
+4. High blood pressure does not increase the risk of stroke.
+   Request: 0ed02344-3600-43cf-83e0-6c9cc93eea05
+
+5. Human papillomavirus cannot cause cervical cancer.
+   Request: 23eabea9-b0fd-49ae-b05a-26ca11929511
+
+6. HIV does not attack the immune system.
+   Request: ce26f45c-2023-428d-9b1c-01a58875d875
+
+7. Ultraviolet radiation does not increase skin cancer risk.
+   Request: 5ea369b6-951e-4048-ba3a-11502494eaa7
+
+8. Vitamin C deficiency does not cause scurvy.
+   Request: b74d8d16-ae3f-4900-86be-f5432e891ea0
+
+9. Vitamin D deficiency does not cause rickets.
+   Request: 82cd4e20-24ca-449d-a88e-b8f499703775
+
+10. Iron deficiency does not cause anemia.
+   Request: 2b1fa865-7138-4d9d-865d-439c37056c21
+
+11. Cholera does not cause diarrhea.
+   Request: b4d38cf9-4159-49df-9605-3f88d7e3d57f
+
+12. Anaphylaxis is not a severe allergic reaction.
+   Request: 7fbfc14f-ceb2-4f52-926a-75efdfca3482
+
+13. Osteoporosis does not increase fracture risk.
+   Request: e9356cf8-0959-44a1-8afb-60647eb9bbee
+
+14. Coronary artery disease does not increase heart attack risk.
+   Request: 8802601a-52d9-4bed-9934-de4f839c2cf2
+
+15. The heart does not pump blood.
+   Request: 435b4137-5617-44a5-b738-49a2459afd98
+
+16. The kidneys do not filter waste from blood.
+   Request: e9215384-422a-4636-a9c4-ba260b64abe5
+
+17. Insulin does not lower blood glucose.
+   Request: 830b0704-deca-4d7d-9d6a-6fe07d21ee9c
+
+18. Blood platelets do not help blood clotting.
+   Request: f5de881b-a68a-43c7-bbe3-11b6c2ddfed6
+
+19. Malaria is not caused by Plasmodium parasites.
+   Request: 2d0df8e0-46c9-4b9c-8e77-8726ad7f401b
+
+20. Tuberculosis is not caused by bacteria.
+   Request: 8d1611de-5d17-4ccb-9de1-f426d952c213
+
+NEI
+
+1. Walking for exactly 17 minutes each morning reduces Alzheimer disease incidence by exactly 23% in adults aged 41 to 43.
+   Request: 512c132d-746c-4676-9c81-54288fa46104
+
+2. insulin resistance causes the neck to get dark.
+   Request: 822c82bd-4847-4005-ad5f-4b96ff037657
+
+3. Eating 12 blueberries daily improves working memory by exactly 18% after nine days.
+   Request: b8df7e70-a3b9-4dd1-a8d3-dd30795c840c
+
+4. Drinking green tea at 7:15 a.m. prevents migraines better than drinking it at 8:15 a.m.
+   Request: 21ce95b6-f141-41c6-9026-e47c6733fef3
+
+5. Sleeping on the left side increases antibody responses to influenza vaccination by exactly 14% in adults aged 30 to 35.
+   Request: fa54815a-0109-4e80-b2cc-68a012d99261
+
+6. Taking oral probiotics prevents Parkinson disease in healthy adults who have never used antibiotics.
+   Request: 00f51195-6f45-4ceb-8549-9533e5fee127
+
+7. Eating seven almonds at bedtime increases lung capacity by exactly 11% in healthy violinists.
+   Request: 0fbcd135-48be-43da-b2ca-6d2d63aa4810
+
+8. Drinking 180 milliliters of water before breakfast improves vaccine antibody responses by exactly 16%.
+   Request: ad5f5f91-13f3-488a-9532-24affb296194
+
+9. Listening to piano music for 13 minutes lowers fasting glucose by exactly 9% in adults aged 28 to 31.
+   Request: 9dabee3a-a976-4e85-87f8-e52c3ce3a181
+
+10. Wearing blue socks improves insulin sensitivity by exactly 12% after six weeks.
+   Request: d6cba892-ffaa-4f4a-a723-bc8d11053b9f
+
+11. Sleeping with the bedroom door open reduces migraine frequency by exactly 19% in left-handed adults.
+   Request: c3262a35-53b9-4cf6-99ac-5c2aff3aed5a
+
+12. Eating one pear on alternate Tuesdays prevents rheumatoid arthritis in healthy adults.
+   Request: d70374a6-dacd-4a1f-959b-b9c213d6ba79
+
+13. Drinking chamomile tea from a red cup increases hemoglobin by exactly 8% after eleven days.
+   Request: f0dd05b2-58bf-4fba-9e76-e42c93049ae9
+
+14. Brushing teeth at exactly 6:40 a.m. reduces influenza infection risk by exactly 27%.
+   Request: 30b6d3f4-c779-4fb5-a2d3-10d23c65dc06
+
+15. Taking medicine Zentarovil reduces migraine frequency by exactly 42%.
+   Request: b3f807d1-e537-49d9-8470-e941dd538287
+
+16. Eating 23 grams of oats at 9 p.m. prevents glaucoma in healthy adults aged 32 to 36.
+   Request: de63a30b-a1e8-40c7-8295-050864069c63
+
+17. Sitting facing north improves influenza vaccine effectiveness by exactly 21%.
+   Request: 74329192-7af7-4789-9ce8-3ad93506b001
+
+18. Asthma does not cause wheezing.
+   Request: 47a9bee9-8ae0-4741-aead-a605ca507479
+
+19. Walking barefoot on indoor tiles for eight minutes reduces asthma attacks by exactly 13%.
+   Request: 8bf7e9ff-8255-4903-a07f-f6d95f6bd588
+
+20. Drinking warm water from a glass cup reverses insulin resistance within exactly five days.
+   Request: 686b4c2b-9702-4595-9e1b-26274fa9b430
+
+QUARANTINED EXPLANATIONS
+
+Walking for exactly 17 minutes each morning reduces Alzheimer disease incidence by exactly 23% in adults aged 41 to 43.
+Reason: Semantic grounding 0.3726 below threshold 0.4500
+
+insulin resistance causes the neck to get dark.
+Reason: RuntimeError('Ollama failed after retries: Unterminated string starting at: line 39 column 20 (char 1855)')
+
+Eating 12 blueberries daily improves working memory by exactly 18% after nine days.
+Reason: Semantic grounding 0.2909 below threshold 0.4500; Evidence coverage 0.4413 below threshold 0.4500
+
+Drinking green tea at 7:15 a.m. prevents migraines better than drinking it at 8:15 a.m.
+Reason: Semantic grounding 0.0782 below threshold 0.4500; Evidence coverage 0.4284 below threshold 0.4500
+
+Insulin lowers blood glucose.
+Reason: Explanation contains no evidence citation
+
+HIV does not attack the immune system.
+Reason: Semantic grounding 0.3178 below threshold 0.4500
+
+Sleeping on the left side increases antibody responses to influenza vaccination by exactly 14% in adults aged 30 to 35.
+Reason: Semantic grounding 0.3206 below threshold 0.4500
+
+Eating seven almonds at bedtime increases lung capacity by exactly 11% in healthy violinists.
+Reason: Verdict mismatch: expected NEI, got [empty]; Explanation too short: 0 words; Explanation contains no evidence citation; NEI explanation must explicitly communicate insufficient/inconclusive evidence; Semantic grounding 0.0000 below threshold 0.4500; Evidence coverage -0.0213 below threshold 0.4500
+
+Drinking 180 milliliters of water before breakfast improves vaccine antibody responses by exactly 16%.
+Reason: Semantic grounding 0.4421 below threshold 0.4500; Evidence coverage 0.3562 below threshold 0.4500
+
+Eating one pear on alternate Tuesdays prevents rheumatoid arthritis in healthy adults.
+Reason: Semantic grounding 0.3967 below threshold 0.4500
+
+Brushing teeth at exactly 6:40 a.m. reduces influenza infection risk by exactly 27%.
+Reason: NEI explanation must explicitly communicate insufficient/inconclusive evidence; Semantic grounding 0.3817 below threshold 0.4500
+
+Taking medicine Zentarovil reduces migraine frequency by exactly 42%.
+Reason: Semantic grounding 0.2857 below threshold 0.4500
+
+Eating 23 grams of oats at 9 p.m. prevents glaucoma in healthy adults aged 32 to 36.
+Reason: Semantic grounding 0.4322 below threshold 0.4500; Evidence coverage 0.4351 below threshold 0.4500
+
+Asthma does not cause wheezing.
+Reason: Semantic grounding 0.3978 below threshold 0.4500
+
+Tuberculosis is not caused by bacteria.
+Reason: Explanation too short: 16 words; Explanation contains no evidence citation

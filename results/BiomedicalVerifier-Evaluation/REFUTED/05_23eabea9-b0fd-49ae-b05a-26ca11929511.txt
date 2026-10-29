@@ -1,0 +1,7 @@
+Claim: Human papillomavirus cannot cause cervical cancer.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 23eabea9-b0fd-49ae-b05a-26ca11929511
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/23eabea9-b0fd-49ae-b05a-26ca11929511.json

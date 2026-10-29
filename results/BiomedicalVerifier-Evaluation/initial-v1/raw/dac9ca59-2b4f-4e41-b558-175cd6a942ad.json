@@ -1,0 +1,6 @@
+{
+  "detail": {
+    "error": "INFERENCE_FAILED",
+    "message": "AI class estimates failed validation: class_scores must be finite numbers strictly between 0 and 1; retain uncertainty for abstract-only evidence, never exact 0% or 100%"
+  }
+}

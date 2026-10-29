@@ -1,0 +1,829 @@
+{
+  "request": {
+    "request_id": "82cd4e20-24ca-449d-a88e-b8f499703775",
+    "claim": "Vitamin D deficiency does not cause rickets.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:09:17.926754Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:09:17.926862Z",
+      "ended_at_utc": "2026-10-29T03:09:18.500856Z",
+      "latency_ms": 573.9912079998248
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:26138839",
+        "document_id": "pubmed:26138839",
+        "title": "A Practical Approach to Vitamin D Deficiency and Rickets.",
+        "text": "Rickets is a condition in which there is failure of the normal mineralisation (osteomalacia) of growing bone. Whilst osteomalacia may be present in adults, rickets cannot occur. It is generally caused by a lack of mineral supply, which can either occur as a result of the deficiency of calcium (calciopaenic rickets, now known as parathyroid hormone-dependent rickets) or of phosphate (phosphopaenic rickets, now called FGF23-dependent rickets). Renal disorders may also interfere with the process of mineralisation and cause rickets. Only parathyroid hormone-dependent rickets and distal renal tubular disorders will be discussed in this chapter. The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems. Disorders of vitamin D metabolism or responsiveness may also cause similar issues. Distal renal tubular acidosis may also be caused by a variety of metabolic errors similar to those of osteoclasts. One form of distal renal tubular acidosis also causes a type of osteopetrosis. This chapter describes these conditions in detail and sets out a logical approach for treatment.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26138839/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.548249244689941,
+        "relevance_score": 0.9994732737541199,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:11062627",
+        "document_id": "pubmed:11062627",
+        "title": "Vitamin D deficiency rickets in children: prevalence and need for community education.",
+        "text": "Nutritional rickets caused by a deficiency in vitamin D can be a crippling disease and is still prevalent today. Many feel that the vitamin D supplementation present in dairy products prevents any risk of developing vitamin D deficiency rickets. However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children. Educating the medical community and those families at risk is critical to eradicate this preventable disease. Steps can be taken using stages of the Organizational Change Theory to involve school nurses, community health centers, and pediatricians in identifying these high-risk children. With prompt diagnosis and treatment, all symptoms can abate, with healthy bone growth resulting.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/11062627/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.764247417449951,
+        "relevance_score": 0.9988470077514648,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:2b2fbfff4679d52e3b07",
+        "document_id": "web:2b2fbfff4679d52e3b07",
+        "title": "Vitamins & Minerals",
+        "text": "Vitamins & Minerals\nHome /\nHealth Library /\nArticles /\nVitamins and Minerals\nAdvertisement\nAdvertisement\nVitamins and Minerals\nMedically Reviewed. Last updated on 10/01/2025 .\nYour body needs vitamins and minerals to be at its best. And getting the right amount is important. Getting too little or too much of these nutrients can cause unwanted health issues and effects. Make sure you talk to a healthcare provider about how to get the most out of these nutrients and how to use supplements when necessary.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nCare at Cleveland Clinic\nFind a Primary Care Provider\nSchedule an Appointment\nWhat are vitamins and minerals?\nVitamins and minerals are micronutrients, substances your body needs in small amounts to work properly. They\u2019re part of your body\u2019s internal chemistry, a complex system of chemical reactions that keep you alive and functioning.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nMost vitamins and minerals come from foods you eat. But your body can also make some vitamins under the right conditions. You can also get them from dietary supplements or from medical treatments.\nWhile you often hear them mentioned together, vitamins and minerals aren\u2019t the same.\nVitamins : These are all organic compounds. That means their structures all revolve around the elements carbon and hydrogen. Organic compounds are the building blocks of all living things.\nMinerals : These are elements your body uses in their simplest forms. Many minerals are also electrolytes, meaning they can have an electrical charge. Your body builds chemical compounds it needs around many of these. For example, hemoglobin in your blood contains iron.\nMost vitamins and minerals are essential. That means you can\u2019t live without them.\nThere are a few nonessential vitamins. They\u2019re ones your body should be able to make on its own. But sometimes, it can\u2019t. If that\u2019s the case, you\u2019ll need to take supplements. Experts sometimes call these \u201cconditionally essential.\u201d\nEssential vitamins\nThere are 13 essential vitamins:\nA (retinol)\nB1 (thiamin)\nB2 (riboflavin)\nB3 (niacin)\nB5 (pantothenic acid)\nB6 (pyridoxine)\nB7 (biotin)\nB9 (folate)\nB12 (cobalamin)\nC (ascorbic acid)\nD (cholecalciferol)\nE (tocopherol)\nK (phylloquinone or menaquinone)\nAdvertisement\nWhile it isn\u2019t a vitamin, experts often group choline (pronounced \u201cKO-leen\u201d) in with them. It\u2019s an essential micronutrient that works similarly to certain vitamins.\nEssential minerals\nExperts organize minerals by how much of them you need per day. The seven major minerals are the ones you need more of. They include:\nCalcium\nChlorine (comes in chloride form)\nMagnesium\nPhosphorus\nPotassium\nSodium\nSulfur\nSome minerals you only need in tiny amounts. Those are called trace minerals. They include:\nChromium\nCobalt\nCopper\nFluorine (comes in fluoride form)\nIodine (comes in iodide form)\nIron\nManganese\nMolybdenum\nSelenium\nZinc\nTests for vitamin and mineral deficiencies\nSome vitamin and mineral deficiencies show up on standard blood work. Examples include vitamin D, vitamin B12 and iron. Blood tests that check their levels are a common part of an annual checkup.\nYour healthcare provider might also recommend testing vitamin and mineral levels when you have:\nA condition or any risk factors that could cause or contribute to a vitamin or mineral deficiency\nA history of a vitamin or mineral deficiency\nSymptoms that could signal a vitamin or mineral deficiency\nHow do I get vitamins and minerals?\nYou can get vitamins and minerals in a few different ways:\nThey occur naturally in foods . Vitamins and minerals are in just about everything you eat or drink. That\u2019s why experts recommend eating a variety of foods. The variety helps ensure you aren\u2019t missing any vitamins or minerals that your body needs.\nThey\u2019re added to make enriched foods . Some foods have added vitamins or minerals. That helps prevent vitamin deficiencies in large populations. Examples include flour with added vitamin A or iodized salt.\nSupplements and medicines . You can also get vitamins and minerals from supplements or medical treatments. You can take iron supplements or get iron injections if your iron levels are too low.\nIt\u2019s important to remember that supplements aren\u2019t good for you under some conditions. Even ones you can get over the counter can make you sick. Make sure you tell your provider about EVERY supplement you take (no matter how harmless it seems). And it\u2019s best to only take supplements as recommended by your provider.\nExcess vitamins or minerals\nSome vitamins are harmful if your levels go too high. When they\u2019re too high, that\u2019s called hypervitaminosis. For example, vitamin A in high amounts can actually poison you. And if you\u2019re pregnant, too much vitamin A can cause birth defects.\nMinerals can also be dangerous in high amounts. For example, trace elements are those you only need in tiny amounts. Taking too much of them can poison you. For example, chromium, manganese or selenium in excess can cause heavy metal poisoning .\nDeficiencies of vitamins and minerals\nVitamin deficiencies are common, especially in certain areas or for certain reasons. The same goes for mineral deficiencies. How severe they are depends on factors like:\nThe vitamin you\u2019re low in\nWhy you\u2019re low in it\nHow long your levels have been low\nYour age\nYour health history\nSome vitamin or mineral deficiencies can be extremely dangerous or even deadly. That\u2019s one reason why annual checkups are so important. They can catch many of the more serious deficiencies early.\nAdvertisement\nA note from Cleveland Clinic\nVitamins and minerals are part of why nutrition is so important. But you can also get too much of a good thing. Making sure you\u2019re getting all your micronutrients without overdoing it might feel tricky. Fortunately, your healthcare provider can help. They can guide you on how to get all the vitamins and minerals you need.\nAdvertisement\nBetter health starts here\nSign up for our Health Essentials emails for expert guidance on nutrition, fitness, sleep, skin care and more.\nExample email Sign up\nSign up Example email\nExperts You Can Trust\nMedically Reviewed. Last updated on 10/01/2025 .\nLearn more about the Health Library and our editorial process .\nReferences\nCleveland Clinic\u2019s health articles are based on evidence-backed information and review by medical professionals to ensure accuracy, reliability and up-to-date clinical standards.\nView Sources\nExperts You Can Trust\nMedically Reviewed. Last updated on 10/01/2025 .\nReferences\nCleveland Clinic\u2019s health articles are based on evidence-backed information and review by medical professionals to ensure accuracy, reliability and up-to-date clinical standards.\nSchedule an Appointment",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/articles/vitamins-minerals",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.675755500793457,
+        "relevance_score": 6.278349610511214e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Vitamin D deficiency does not cause rickets."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:09:18.500913Z",
+      "ended_at_utc": "2026-10-29T03:09:36.640445Z",
+      "latency_ms": 18139.313208999964
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:26138839",
+        "document_id": "pubmed:26138839",
+        "title": "A Practical Approach to Vitamin D Deficiency and Rickets.",
+        "text": "Rickets is a condition in which there is failure of the normal mineralisation (osteomalacia) of growing bone. Whilst osteomalacia may be present in adults, rickets cannot occur. It is generally caused by a lack of mineral supply, which can either occur as a result of the deficiency of calcium (calciopaenic rickets, now known as parathyroid hormone-dependent rickets) or of phosphate (phosphopaenic rickets, now called FGF23-dependent rickets). Renal disorders may also interfere with the process of mineralisation and cause rickets. Only parathyroid hormone-dependent rickets and distal renal tubular disorders will be discussed in this chapter. The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems. Disorders of vitamin D metabolism or responsiveness may also cause similar issues. Distal renal tubular acidosis may also be caused by a variety of metabolic errors similar to those of osteoclasts. One form of distal renal tubular acidosis also causes a type of osteopetrosis. This chapter describes these conditions in detail and sets out a logical approach for treatment.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26138839/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.548249244689941,
+        "relevance_score": 0.9994732737541199,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.199894654750824,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:11062627",
+        "document_id": "pubmed:11062627",
+        "title": "Vitamin D deficiency rickets in children: prevalence and need for community education.",
+        "text": "Nutritional rickets caused by a deficiency in vitamin D can be a crippling disease and is still prevalent today. Many feel that the vitamin D supplementation present in dairy products prevents any risk of developing vitamin D deficiency rickets. However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children. Educating the medical community and those families at risk is critical to eradicate this preventable disease. Steps can be taken using stages of the Organizational Change Theory to involve school nurses, community health centers, and pediatricians in identifying these high-risk children. With prompt diagnosis and treatment, all symptoms can abate, with healthy bone growth resulting.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/11062627/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.764247417449951,
+        "relevance_score": 0.9988470077514648,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.199769401550293,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "web:2b2fbfff4679d52e3b07",
+        "document_id": "web:2b2fbfff4679d52e3b07",
+        "title": "Vitamins & Minerals",
+        "text": "Vitamins & Minerals\nHome /\nHealth Library /\nArticles /\nVitamins and Minerals\nAdvertisement\nAdvertisement\nVitamins and Minerals\nMedically Reviewed. Last updated on 10/01/2025 .\nYour body needs vitamins and minerals to be at its best. And getting the right amount is important. Getting too little or too much of these nutrients can cause unwanted health issues and effects. Make sure you talk to a healthcare provider about how to get the most out of these nutrients and how to use supplements when necessary.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nCare at Cleveland Clinic\nFind a Primary Care Provider\nSchedule an Appointment\nWhat are vitamins and minerals?\nVitamins and minerals are micronutrients, substances your body needs in small amounts to work properly. They\u2019re part of your body\u2019s internal chemistry, a complex system of chemical reactions that keep you alive and functioning.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nMost vitamins and minerals come from foods you eat. But your body can also make some vitamins under the right conditions. You can also get them from dietary supplements or from medical treatments.\nWhile you often hear them mentioned together, vitamins and minerals aren\u2019t the same.\nVitamins : These are all organic compounds. That means their structures all revolve around the elements carbon and hydrogen. Organic compounds are the building blocks of all living things.\nMinerals : These are elements your body uses in their simplest forms. Many minerals are also electrolytes, meaning they can have an electrical charge. Your body builds chemical compounds it needs around many of these. For example, hemoglobin in your blood contains iron.\nMost vitamins and minerals are essential. That means you can\u2019t live without them.\nThere are a few nonessential vitamins. They\u2019re ones your body should be able to make on its own. But sometimes, it can\u2019t. If that\u2019s the case, you\u2019ll need to take supplements. Experts sometimes call these \u201cconditionally essential.\u201d\nEssential vitamins\nThere are 13 essential vitamins:\nA (retinol)\nB1 (thiamin)\nB2 (riboflavin)\nB3 (niacin)\nB5 (pantothenic acid)\nB6 (pyridoxine)\nB7 (biotin)\nB9 (folate)\nB12 (cobalamin)\nC (ascorbic acid)\nD (cholecalciferol)\nE (tocopherol)\nK (phylloquinone or menaquinone)\nAdvertisement\nWhile it isn\u2019t a vitamin, experts often group choline (pronounced \u201cKO-leen\u201d) in with them. It\u2019s an essential micronutrient that works similarly to certain vitamins.\nEssential minerals\nExperts organize minerals by how much of them you need per day. The seven major minerals are the ones you need more of. They include:\nCalcium\nChlorine (comes in chloride form)\nMagnesium\nPhosphorus\nPotassium\nSodium\nSulfur\nSome minerals you only need in tiny amounts. Those are called trace minerals. They include:\nChromium\nCobalt\nCopper\nFluorine (comes in fluoride form)\nIodine (comes in iodide form)\nIron\nManganese\nMolybdenum\nSelenium\nZinc\nTests for vitamin and mineral deficiencies\nSome vitamin and mineral deficiencies show up on standard blood work. Examples include vitamin D, vitamin B12 and iron. Blood tests that check their levels are a common part of an annual checkup.\nYour healthcare provider might also recommend testing vitamin and mineral levels when you have:\nA condition or any risk factors that could cause or contribute to a vitamin or mineral deficiency\nA history of a vitamin or mineral deficiency\nSymptoms that could signal a vitamin or mineral deficiency\nHow do I get vitamins and minerals?\nYou can get vitamins and minerals in a few different ways:\nThey occur naturally in foods . Vitamins and minerals are in just about everything you eat or drink. That\u2019s why experts recommend eating a variety of foods. The variety helps ensure you aren\u2019t missing any vitamins or minerals that your body needs.\nThey\u2019re added to make enriched foods . Some foods have added vitamins or minerals. That helps prevent vitamin deficiencies in large populations. Examples include flour with added vitamin A or iodized salt.\nSupplements and medicines . You can also get vitamins and minerals from supplements or medical treatments. You can take iron supplements or get iron injections if your iron levels are too low.\nIt\u2019s important to remember that supplements aren\u2019t good for you under some conditions. Even ones you can get over the counter can make you sick. Make sure you tell your provider about EVERY supplement you take (no matter how harmless it seems). And it\u2019s best to only take supplements as recommended by your provider.\nExcess vitamins or minerals\nSome vitamins are harmful if your levels go too high. When they\u2019re too high, that\u2019s called hypervitaminosis. For example, vitamin A in high amounts can actually poison you. And if you\u2019re pregnant, too much vitamin A can cause birth defects.\nMinerals can also be dangerous in high amounts. For example, trace elements are those you only need in tiny amounts. Taking too much of them can poison you. For example, chromium, manganese or selenium in excess can cause heavy metal poisoning .\nDeficiencies of vitamins and minerals\nVitamin deficiencies are common, especially in certain areas or for certain reasons. The same goes for mineral deficiencies. How severe they are depends on factors like:\nThe vitamin you\u2019re low in\nWhy you\u2019re low in it\nHow long your levels have been low\nYour age\nYour health history\nSome vitamin or mineral deficiencies can be extremely dangerous or even deadly. That\u2019s one reason why annual checkups are so important. They can catch many of the more serious deficiencies early.\nAdvertisement\nA note from Cleveland Clinic\nVitamins and minerals are part of why nutrition is so important. But you can also get too much of a good thing. Making sure you\u2019re getting all your micronutrients without overdoing it might feel tricky. Fortunately, your healthcare provider can help. They can guide you on how to get all the vitamins and minerals you need.\nAdvertisement\nBetter health starts here\nSign up for our Health Essentials emails for expert guidance on nutrition, fitness, sleep, skin care and more.\nExample email Sign up\nSign up Example email\nExperts You Can Trust\nMedically Reviewed. Last updated on 10/01/2025 .\nLearn more about the Health Library and our editorial process .\nReferences\nCleveland Clinic\u2019s health articles are based on evidence-backed information and review by medical professionals to ensure accuracy, reliability and up-to-date clinical standards.\nView Sources\nExperts You Can Trust\nMedically Reviewed. Last updated on 10/01/2025 .\nReferences\nCleveland Clinic\u2019s health articles are based on evidence-backed information and review by medical professionals to ensure accuracy, reliability and up-to-date clinical standards.\nSchedule an Appointment",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/articles/vitamins-minerals",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.675755500793457,
+        "relevance_score": 6.278349610511214e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 1.2556699221022428e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:09:36.640491Z",
+      "ended_at_utc": "2026-10-29T03:09:37.667372Z",
+      "latency_ms": 1026.9127089998165
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.8500000000000001,
+      "nei": 0.08000000000000002,
+      "supported": 0.07000000000000002
+    },
+    "verifier_score": 0.8500000000000001,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:26138839",
+      "pubmed:11062627",
+      "web:2b2fbfff4679d52e3b07"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence states that vitamin D deficiency is the most common cause of rickets, which contradicts the claim that it does not cause rickets.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:26138839",
+              "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+            },
+            {
+              "evidence_id": "pubmed:11062627",
+              "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:11062627",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:26138839",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "web:2b2fbfff4679d52e3b07",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Vitamin D deficiency",
+              "relationship": "does not cause",
+              "outcome": "rickets",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence discusses vitamin D deficiency as a cause of rickets.",
+                "sentence_ids": [
+                  "E1S6",
+                  "E2S3"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems.",
+                "claim_fragment": "Vitamin D deficiency",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26138839",
+                    "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+                  },
+                  {
+                    "evidence_id": "pubmed:11062627",
+                    "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence states that vitamin D deficiency is the most common cause of rickets, which contradicts the claim that it does not cause rickets.",
+                "sentence_ids": [
+                  "E1S6",
+                  "E2S3"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems.",
+                "claim_fragment": "does not cause",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26138839",
+                    "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+                  },
+                  {
+                    "evidence_id": "pubmed:11062627",
+                    "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence explicitly mentions rickets as a condition caused by vitamin D deficiency.",
+                "sentence_ids": [
+                  "E1S6",
+                  "E2S3"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems.",
+                "claim_fragment": "rickets",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26138839",
+                    "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+                  },
+                  {
+                    "evidence_id": "pubmed:11062627",
+                    "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:11062627",
+              "pubmed:26138839"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.07000000000000002,
+            "REFUTED": 0.8500000000000001,
+            "NEI": 0.08000000000000002
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Rickets is commonly caused by vitamin D deficiency, as stated in [E1]. Additionally, vitamin D deficiency rickets in children is still prevalent and can be crippling, as highlighted in [E2].",
+    "cited_evidence_ids": [
+      "pubmed:26138839",
+      "pubmed:11062627"
+    ],
+    "grounding": {
+      "semantic_score": 0.7189600467681885,
+      "coverage_score": 0.6663762331008911,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:10:11.108093Z",
+      "ended_at_utc": "2026-10-29T03:10:20.655706Z",
+      "latency_ms": 9547.487374999946
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.8500000000000001,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:26138839",
+      "document_id": "pubmed:26138839",
+      "title": "A Practical Approach to Vitamin D Deficiency and Rickets.",
+      "text": "Rickets is a condition in which there is failure of the normal mineralisation (osteomalacia) of growing bone. Whilst osteomalacia may be present in adults, rickets cannot occur. It is generally caused by a lack of mineral supply, which can either occur as a result of the deficiency of calcium (calciopaenic rickets, now known as parathyroid hormone-dependent rickets) or of phosphate (phosphopaenic rickets, now called FGF23-dependent rickets). Renal disorders may also interfere with the process of mineralisation and cause rickets. Only parathyroid hormone-dependent rickets and distal renal tubular disorders will be discussed in this chapter. The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems. Disorders of vitamin D metabolism or responsiveness may also cause similar issues. Distal renal tubular acidosis may also be caused by a variety of metabolic errors similar to those of osteoclasts. One form of distal renal tubular acidosis also causes a type of osteopetrosis. This chapter describes these conditions in detail and sets out a logical approach for treatment.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26138839/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.548249244689941,
+      "relevance_score": 0.9994732737541199,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.199894654750824,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:11062627",
+      "document_id": "pubmed:11062627",
+      "title": "Vitamin D deficiency rickets in children: prevalence and need for community education.",
+      "text": "Nutritional rickets caused by a deficiency in vitamin D can be a crippling disease and is still prevalent today. Many feel that the vitamin D supplementation present in dairy products prevents any risk of developing vitamin D deficiency rickets. However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children. Educating the medical community and those families at risk is critical to eradicate this preventable disease. Steps can be taken using stages of the Organizational Change Theory to involve school nurses, community health centers, and pediatricians in identifying these high-risk children. With prompt diagnosis and treatment, all symptoms can abate, with healthy bone growth resulting.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11062627/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.764247417449951,
+      "relevance_score": 0.9988470077514648,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.199769401550293,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "web:2b2fbfff4679d52e3b07",
+      "document_id": "web:2b2fbfff4679d52e3b07",
+      "title": "Vitamins & Minerals",
+      "text": "Vitamins & Minerals\nHome /\nHealth Library /\nArticles /\nVitamins and Minerals\nAdvertisement\nAdvertisement\nVitamins and Minerals\nMedically Reviewed. Last updated on 10/01/2025 .\nYour body needs vitamins and minerals to be at its best. And getting the right amount is important. Getting too little or too much of these nutrients can cause unwanted health issues and effects. Make sure you talk to a healthcare provider about how to get the most out of these nutrients and how to use supplements when necessary.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nCare at Cleveland Clinic\nFind a Primary Care Provider\nSchedule an Appointment\nWhat are vitamins and minerals?\nVitamins and minerals are micronutrients, substances your body needs in small amounts to work properly. They\u2019re part of your body\u2019s internal chemistry, a complex system of chemical reactions that keep you alive and functioning.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nMost vitamins and minerals come from foods you eat. But your body can also make some vitamins under the right conditions. You can also get them from dietary supplements or from medical treatments.\nWhile you often hear them mentioned together, vitamins and minerals aren\u2019t the same.\nVitamins : These are all organic compounds. That means their structures all revolve around the elements carbon and hydrogen. Organic compounds are the building blocks of all living things.\nMinerals : These are elements your body uses in their simplest forms. Many minerals are also electrolytes, meaning they can have an electrical charge. Your body builds chemical compounds it needs around many of these. For example, hemoglobin in your blood contains iron.\nMost vitamins and minerals are essential. That means you can\u2019t live without them.\nThere are a few nonessential vitamins. They\u2019re ones your body should be able to make on its own. But sometimes, it can\u2019t. If that\u2019s the case, you\u2019ll need to take supplements. Experts sometimes call these \u201cconditionally essential.\u201d\nEssential vitamins\nThere are 13 essential vitamins:\nA (retinol)\nB1 (thiamin)\nB2 (riboflavin)\nB3 (niacin)\nB5 (pantothenic acid)\nB6 (pyridoxine)\nB7 (biotin)\nB9 (folate)\nB12 (cobalamin)\nC (ascorbic acid)\nD (cholecalciferol)\nE (tocopherol)\nK (phylloquinone or menaquinone)\nAdvertisement\nWhile it isn\u2019t a vitamin, experts often group choline (pronounced \u201cKO-leen\u201d) in with them. It\u2019s an essential micronutrient that works similarly to certain vitamins.\nEssential minerals\nExperts organize minerals by how much of them you need per day. The seven major minerals are the ones you need more of. They include:\nCalcium\nChlorine (comes in chloride form)\nMagnesium\nPhosphorus\nPotassium\nSodium\nSulfur\nSome minerals you only need in tiny amounts. Those are called trace minerals. They include:\nChromium\nCobalt\nCopper\nFluorine (comes in fluoride form)\nIodine (comes in iodide form)\nIron\nManganese\nMolybdenum\nSelenium\nZinc\nTests for vitamin and mineral deficiencies\nSome vitamin and mineral deficiencies show up on standard blood work. Examples include vitamin D, vitamin B12 and iron. Blood tests that check their levels are a common part of an annual checkup.\nYour healthcare provider might also recommend testing vitamin and mineral levels when you have:\nA condition or any risk factors that could cause or contribute to a vitamin or mineral deficiency\nA history of a vitamin or mineral deficiency\nSymptoms that could signal a vitamin or mineral deficiency\nHow do I get vitamins and minerals?\nYou can get vitamins and minerals in a few different ways:\nThey occur naturally in foods . Vitamins and minerals are in just about everything you eat or drink. That\u2019s why experts recommend eating a variety of foods. The variety helps ensure you aren\u2019t missing any vitamins or minerals that your body needs.\nThey\u2019re added to make enriched foods . Some foods have added vitamins or minerals. That helps prevent vitamin deficiencies in large populations. Examples include flour with added vitamin A or iodized salt.\nSupplements and medicines . You can also get vitamins and minerals from supplements or medical treatments. You can take iron supplements or get iron injections if your iron levels are too low.\nIt\u2019s important to remember that supplements aren\u2019t good for you under some conditions. Even ones you can get over the counter can make you sick. Make sure you tell your provider about EVERY supplement you take (no matter how harmless it seems). And it\u2019s best to only take supplements as recommended by your provider.\nExcess vitamins or minerals\nSome vitamins are harmful if your levels go too high. When they\u2019re too high, that\u2019s called hypervitaminosis. For example, vitamin A in high amounts can actually poison you. And if you\u2019re pregnant, too much vitamin A can cause birth defects.\nMinerals can also be dangerous in high amounts. For example, trace elements are those you only need in tiny amounts. Taking too much of them can poison you. For example, chromium, manganese or selenium in excess can cause heavy metal poisoning .\nDeficiencies of vitamins and minerals\nVitamin deficiencies are common, especially in certain areas or for certain reasons. The same goes for mineral deficiencies. How severe they are depends on factors like:\nThe vitamin you\u2019re low in\nWhy you\u2019re low in it\nHow long your levels have been low\nYour age\nYour health history\nSome vitamin or mineral deficiencies can be extremely dangerous or even deadly. That\u2019s one reason why annual checkups are so important. They can catch many of the more serious deficiencies early.\nAdvertisement\nA note from Cleveland Clinic\nVitamins and minerals are part of why nutrition is so important. But you can also get too much of a good thing. Making sure you\u2019re getting all your micronutrients without overdoing it might feel tricky. Fortunately, your healthcare provider can help. They can guide you on how to get all the vitamins and minerals you need.\nAdvertisement\nBetter health starts here\nSign up for our Health Essentials emails for expert guidance on nutrition, fitness, sleep, skin care and more.\nExample email Sign up\nSign up Example email\nExperts You Can Trust\nMedically Reviewed. Last updated on 10/01/2025 .\nLearn more about the Health Library and our editorial process .\nReferences\nCleveland Clinic\u2019s health articles are based on evidence-backed information and review by medical professionals to ensure accuracy, reliability and up-to-date clinical standards.\nView Sources\nExperts You Can Trust\nMedically Reviewed. Last updated on 10/01/2025 .\nReferences\nCleveland Clinic\u2019s health articles are based on evidence-backed information and review by medical professionals to ensure accuracy, reliability and up-to-date clinical standards.\nSchedule an Appointment",
+      "source": "my.clevelandclinic.org",
+      "source_url": "https://my.clevelandclinic.org/health/articles/vitamins-minerals",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.675755500793457,
+      "relevance_score": 6.278349610511214e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 1.2556699221022428e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence states that vitamin D deficiency is the most common cause of rickets, which contradicts the claim that it does not cause rickets.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:26138839",
+                "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+              },
+              {
+                "evidence_id": "pubmed:11062627",
+                "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:11062627",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:26138839",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "web:2b2fbfff4679d52e3b07",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Vitamin D deficiency",
+                "relationship": "does not cause",
+                "outcome": "rickets",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence discusses vitamin D deficiency as a cause of rickets.",
+                  "sentence_ids": [
+                    "E1S6",
+                    "E2S3"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems.",
+                  "claim_fragment": "Vitamin D deficiency",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26138839",
+                      "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+                    },
+                    {
+                      "evidence_id": "pubmed:11062627",
+                      "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence states that vitamin D deficiency is the most common cause of rickets, which contradicts the claim that it does not cause rickets.",
+                  "sentence_ids": [
+                    "E1S6",
+                    "E2S3"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems.",
+                  "claim_fragment": "does not cause",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26138839",
+                      "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+                    },
+                    {
+                      "evidence_id": "pubmed:11062627",
+                      "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence explicitly mentions rickets as a condition caused by vitamin D deficiency.",
+                  "sentence_ids": [
+                    "E1S6",
+                    "E2S3"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems.",
+                  "claim_fragment": "rickets",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26138839",
+                      "quote": "The most common cause of rickets is still vitamin D deficiency, which is also responsible for other problems."
+                    },
+                    {
+                      "evidence_id": "pubmed:11062627",
+                      "quote": "However, a combination of factors such as pigmented skin, inadequate sunlight, breastfeeding past 6 months with no supplementation, and insufficient calcium intake by the nursing mother and her baby often contribute to rickets diagnosed in children."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:11062627",
+                "pubmed:26138839"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.07000000000000002,
+              "REFUTED": 0.8500000000000001,
+              "NEI": 0.08000000000000002
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 62729.43066699986,
+  "completed_at_utc": "2026-10-29T03:10:20.657029Z"
+}

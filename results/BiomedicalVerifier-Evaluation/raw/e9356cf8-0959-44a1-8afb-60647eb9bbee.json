@@ -1,0 +1,830 @@
+{
+  "request": {
+    "request_id": "e9356cf8-0959-44a1-8afb-60647eb9bbee",
+    "claim": "Osteoporosis does not increase fracture risk.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:20:13.238829Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:20:13.238991Z",
+      "ended_at_utc": "2026-10-29T03:20:14.065534Z",
+      "latency_ms": 826.5367500000593
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:28761958",
+        "document_id": "pubmed:28761958",
+        "title": "Osteoporosis.",
+        "text": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk. However, management of osteoporosis and fracture prevention strategies are often not addressed by primary care clinicians, even in older patients with recent fractures. Evidence-based screening strategies will improve identification of patients who are most likely to benefit from drug treatment to prevent fracture. In addition, careful consideration of when pharmacotherapy should be started and choice of medication and duration of treatment will maximize the benefits of fracture prevention while minimizing potential harms of long-term drug exposure.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/28761958/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.7184576988220215,
+        "relevance_score": 0.9995556473731995,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:26236988",
+        "document_id": "pubmed:26236988",
+        "title": "Prediction of fracture risk in patients with osteoporosis: a brief review.",
+        "text": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture. It is often unrecognized until the late stages when fragility fractures have occurred. In adults, early recognition of the disease prior to the occurrence of fractures followed by timely and efficient initiation of appropriate treatment can reduce fracture risk. In this article, we review clinical modalities available to effectively predict fracture risk in patients with osteoporosis. Bone mineral density and presence of clinical risk factors may be combined to provide a more comprehensive osteoporotic fracture risk assessment. Use of FRAX may serve as a general guideline for clinical management and deciding a threshold for cost-effective pharmacological intervention. Elevated bone turnover markers are predictive of high fracture risk and can provide additional clinical information as well.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26236988/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.113063335418701,
+        "relevance_score": 0.9991862177848816,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:fd1031ac7221736fc958",
+        "document_id": "web:fd1031ac7221736fc958",
+        "title": "Osteoporosis Causes, Risk Factors, & Symptoms | NIAMS Lock",
+        "text": "Print\nOverview, Symptoms, & Causes\nDiagnosis, Treatment, & Steps to Take\nResearch & Resources\nOverview of Osteoporosis\nOsteoporosis is a bone disease that develops when bone mineral density and bone mass decreases, or when the structure and strength of bone changes. This can lead to a decrease in bone strength that can increase the risk of fractures (broken bones).\nOsteoporosis is a \u201csilent\u201d disease because you typically do not have symptoms, and you may not even know you have the disease until you break a bone. Osteoporosis is the major cause of fractures in postmenopausal women and in older men. Fractures can occur in any bone but happen most often in bones of the hip, vertebrae in the spine, and wrist.\nHowever, you can take steps to help prevent the disease and fractures by:\nDrinking alcohol in moderation.\nQuitting smoking, or not starting if you don\u2019t smoke.\nTaking your medications, if prescribed, which can help prevent fractures in people who have osteoporosis.\nEating a nutritious diet rich in calcium and vitamin D to help maintain good bone health.\nWho Gets Osteoporosis?\nOsteoporosis affects women and men of all races and ethnic groups. Osteoporosis can occur at any age, although the risk for developing the disease increases as you get older. For many women, the disease begins to develop a year or two before menopause. Other factors to consider include:\nOsteoporosis is most common in non-Hispanic white women and Asian women.\nAfrican American and Hispanic women have a lower risk of developing osteoporosis, but they are still at significant risk.\nAmong men, osteoporosis is more common in non-Hispanic whites.\nCertain medications, such as some cancer medications and glucocorticoid steroids, may increase the risk of developing osteoporosis.\nBecause more women get osteoporosis than men, many men think they are not at risk for the disease. However, both older men and women from all backgrounds are at risk for osteoporosis.\nSome children and teens develop a rare form of idiopathic juvenile osteoporosis. Doctors do not know the cause; however, most children recover without treatment.\nSymptoms of Osteoporosis\nOsteoporosis is called a \u201csilent\u201d disease\u201d because there are typically no symptoms until a bone is broken. Symptoms of vertebral (spine) fracture include severe back pain, loss of height, or spine malformations such as a stooped or hunched posture (kyphosis).\nBones affected by osteoporosis may become so fragile that fractures occur spontaneously or as the result of:\nMinor falls, such as a fall from standing height that would not normally cause a break in a healthy bone.\nNormal stresses such as bending, lifting, or even coughing.\nCauses of Osteoporosis\nOsteoporosis occurs when too much bone mass is lost and changes occur in the structure of bone tissue. Certain risk factors may lead to the development of osteoporosis or can increase the likelihood that you will develop the disease.\nMany people with osteoporosis have several risk factors, but others who develop osteoporosis may not have any specific risk factors. There are some risk factors that you cannot change, and others that you may be able to change. However, by understanding these factors, you may be able to prevent the disease and fractures.\nFactors that may increase your risk for osteoporosis include:\nSex. Your chances of developing osteoporosis are greater if you are a woman. Women have lower peak bone mass and smaller bones than men. However, men are still at risk, especially after the age of 70.\nAge. As you age, bone loss happens more quickly, and new bone growth is slower. Over time, your bones can weaken and your risk for osteoporosis increases.\nBody size. Slender, thin-boned women and men are at greater risk to develop osteoporosis because they have less bone to lose compared to larger boned women and men.\nRace. White and Asian women are at highest risk. African American and Mexican American women have a lower risk. White men are at higher risk than African American and Mexican American men .\nFamily history. Researchers are finding that your risk for osteoporosis and fractures may increase if one of your parents has a history of osteoporosis or hip fracture.\nChanges to hormones. Low levels of certain hormones can increase your chances of developing osteoporosis. For example:\nLow estrogen levels in women after menopause.\nLow levels of estrogen from the abnormal absence of menstrual periods in premenopausal women due to hormone disorders or extreme levels of physical activity.\nLow levels of testosterone in men. Men with conditions that cause low testosterone are at risk for osteoporosis. However, the gradual decrease of testosterone with aging is probably not a major reason for loss of bone.\nDiet. Beginning in childhood and into old age, a diet low in calcium and vitamin D can increase your risk for osteoporosis and fractures. Excessive dieting or poor protein intake may increase your risk for bone loss and osteoporosis.\nOther medical conditions. Some medical conditions that you may be able to treat or manage can increase the risk of osteoporosis, such as other endocrine and hormonal diseases, gastrointestinal diseases, rheumatoid arthritis , certain types of cancer, HIV/AIDS, and anorexia nervosa.\nMedications. Long-term use of certain medications may make you more likely to develop bone loss and osteoporosis, such as:\nGlucocorticoids and adrenocorticotropic hormone, which treat various conditions, such as asthma and rheumatoid arthritis.\nLifestyle. A healthy lifestyle can be important for keeping bones strong. Factors that contribute to bone loss include:\nLow levels of physical activity and prolonged periods of inactivity can contribute to an increased rate of bone loss. They also leave you in poor physical condition, which can increase your risk of falling and breaking a bone.\nChronic heavy drinking of alcohol is a significant risk factor for osteoporosis.\nStudies indicate that smoking is a risk factor for osteoporosis and fracture. Researchers are still studying if the impact of smoking on bone health is from tobacco use alone or if people who smoke have more risk factors for osteoporosis.\nOsteoporosis Related Information\nJuvenile Osteoporosis\nOsteoporosis is a bone disease that develops when the bones get weaker and less dense. When a child or teen develops osteoporosis, the condition is known as juvenile osteoporosis.\nOsteoporosis in Men\nOsteoporosis is a bone disease that develops when bone mineral density and bone mass decreases, or when the quality or structure of bone changes. This can lead to a decrease in bone strength that can increase the risk of broken bones (fractures).\nPregnancy, Breastfeeding, and Bone Health\nPreventing Another Broken Bone\nAfter you break a bone, recovery is your first priority. But you might want to find out whether this broken bone is a sign of osteoporosis.\nDownload PDF\nLearn About Research\nBone Mineral Density Tests: What the Numbers Mean\nOsteoporosis in Men\nPrint",
+        "source": "www.niams.nih.gov",
+        "source_url": "https://www.niams.nih.gov/health-topics/osteoporosis",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.5108642578125,
+        "relevance_score": 0.9985150694847107,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Osteoporosis does not increase fracture risk."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:20:14.065635Z",
+      "ended_at_utc": "2026-10-29T03:20:57.879359Z",
+      "latency_ms": 43813.19108400021
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:26236988",
+        "document_id": "pubmed:26236988",
+        "title": "Prediction of fracture risk in patients with osteoporosis: a brief review.",
+        "text": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture. It is often unrecognized until the late stages when fragility fractures have occurred. In adults, early recognition of the disease prior to the occurrence of fractures followed by timely and efficient initiation of appropriate treatment can reduce fracture risk. In this article, we review clinical modalities available to effectively predict fracture risk in patients with osteoporosis. Bone mineral density and presence of clinical risk factors may be combined to provide a more comprehensive osteoporotic fracture risk assessment. Use of FRAX may serve as a general guideline for clinical management and deciding a threshold for cost-effective pharmacological intervention. Elevated bone turnover markers are predictive of high fracture risk and can provide additional clinical information as well.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26236988/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.113063335418701,
+        "relevance_score": 0.9991862177848816,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6994303524494171,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:28761958",
+        "document_id": "pubmed:28761958",
+        "title": "Osteoporosis.",
+        "text": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk. However, management of osteoporosis and fracture prevention strategies are often not addressed by primary care clinicians, even in older patients with recent fractures. Evidence-based screening strategies will improve identification of patients who are most likely to benefit from drug treatment to prevent fracture. In addition, careful consideration of when pharmacotherapy should be started and choice of medication and duration of treatment will maximize the benefits of fracture prevention while minimizing potential harms of long-term drug exposure.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/28761958/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.7184576988220215,
+        "relevance_score": 0.9995556473731995,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.1999111294746399,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "web:fd1031ac7221736fc958",
+        "document_id": "web:fd1031ac7221736fc958",
+        "title": "Osteoporosis Causes, Risk Factors, & Symptoms | NIAMS Lock",
+        "text": "Print\nOverview, Symptoms, & Causes\nDiagnosis, Treatment, & Steps to Take\nResearch & Resources\nOverview of Osteoporosis\nOsteoporosis is a bone disease that develops when bone mineral density and bone mass decreases, or when the structure and strength of bone changes. This can lead to a decrease in bone strength that can increase the risk of fractures (broken bones).\nOsteoporosis is a \u201csilent\u201d disease because you typically do not have symptoms, and you may not even know you have the disease until you break a bone. Osteoporosis is the major cause of fractures in postmenopausal women and in older men. Fractures can occur in any bone but happen most often in bones of the hip, vertebrae in the spine, and wrist.\nHowever, you can take steps to help prevent the disease and fractures by:\nDrinking alcohol in moderation.\nQuitting smoking, or not starting if you don\u2019t smoke.\nTaking your medications, if prescribed, which can help prevent fractures in people who have osteoporosis.\nEating a nutritious diet rich in calcium and vitamin D to help maintain good bone health.\nWho Gets Osteoporosis?\nOsteoporosis affects women and men of all races and ethnic groups. Osteoporosis can occur at any age, although the risk for developing the disease increases as you get older. For many women, the disease begins to develop a year or two before menopause. Other factors to consider include:\nOsteoporosis is most common in non-Hispanic white women and Asian women.\nAfrican American and Hispanic women have a lower risk of developing osteoporosis, but they are still at significant risk.\nAmong men, osteoporosis is more common in non-Hispanic whites.\nCertain medications, such as some cancer medications and glucocorticoid steroids, may increase the risk of developing osteoporosis.\nBecause more women get osteoporosis than men, many men think they are not at risk for the disease. However, both older men and women from all backgrounds are at risk for osteoporosis.\nSome children and teens develop a rare form of idiopathic juvenile osteoporosis. Doctors do not know the cause; however, most children recover without treatment.\nSymptoms of Osteoporosis\nOsteoporosis is called a \u201csilent\u201d disease\u201d because there are typically no symptoms until a bone is broken. Symptoms of vertebral (spine) fracture include severe back pain, loss of height, or spine malformations such as a stooped or hunched posture (kyphosis).\nBones affected by osteoporosis may become so fragile that fractures occur spontaneously or as the result of:\nMinor falls, such as a fall from standing height that would not normally cause a break in a healthy bone.\nNormal stresses such as bending, lifting, or even coughing.\nCauses of Osteoporosis\nOsteoporosis occurs when too much bone mass is lost and changes occur in the structure of bone tissue. Certain risk factors may lead to the development of osteoporosis or can increase the likelihood that you will develop the disease.\nMany people with osteoporosis have several risk factors, but others who develop osteoporosis may not have any specific risk factors. There are some risk factors that you cannot change, and others that you may be able to change. However, by understanding these factors, you may be able to prevent the disease and fractures.\nFactors that may increase your risk for osteoporosis include:\nSex. Your chances of developing osteoporosis are greater if you are a woman. Women have lower peak bone mass and smaller bones than men. However, men are still at risk, especially after the age of 70.\nAge. As you age, bone loss happens more quickly, and new bone growth is slower. Over time, your bones can weaken and your risk for osteoporosis increases.\nBody size. Slender, thin-boned women and men are at greater risk to develop osteoporosis because they have less bone to lose compared to larger boned women and men.\nRace. White and Asian women are at highest risk. African American and Mexican American women have a lower risk. White men are at higher risk than African American and Mexican American men .\nFamily history. Researchers are finding that your risk for osteoporosis and fractures may increase if one of your parents has a history of osteoporosis or hip fracture.\nChanges to hormones. Low levels of certain hormones can increase your chances of developing osteoporosis. For example:\nLow estrogen levels in women after menopause.\nLow levels of estrogen from the abnormal absence of menstrual periods in premenopausal women due to hormone disorders or extreme levels of physical activity.\nLow levels of testosterone in men. Men with conditions that cause low testosterone are at risk for osteoporosis. However, the gradual decrease of testosterone with aging is probably not a major reason for loss of bone.\nDiet. Beginning in childhood and into old age, a diet low in calcium and vitamin D can increase your risk for osteoporosis and fractures. Excessive dieting or poor protein intake may increase your risk for bone loss and osteoporosis.\nOther medical conditions. Some medical conditions that you may be able to treat or manage can increase the risk of osteoporosis, such as other endocrine and hormonal diseases, gastrointestinal diseases, rheumatoid arthritis , certain types of cancer, HIV/AIDS, and anorexia nervosa.\nMedications. Long-term use of certain medications may make you more likely to develop bone loss and osteoporosis, such as:\nGlucocorticoids and adrenocorticotropic hormone, which treat various conditions, such as asthma and rheumatoid arthritis.\nLifestyle. A healthy lifestyle can be important for keeping bones strong. Factors that contribute to bone loss include:\nLow levels of physical activity and prolonged periods of inactivity can contribute to an increased rate of bone loss. They also leave you in poor physical condition, which can increase your risk of falling and breaking a bone.\nChronic heavy drinking of alcohol is a significant risk factor for osteoporosis.\nStudies indicate that smoking is a risk factor for osteoporosis and fracture. Researchers are still studying if the impact of smoking on bone health is from tobacco use alone or if people who smoke have more risk factors for osteoporosis.\nOsteoporosis Related Information\nJuvenile Osteoporosis\nOsteoporosis is a bone disease that develops when the bones get weaker and less dense. When a child or teen develops osteoporosis, the condition is known as juvenile osteoporosis.\nOsteoporosis in Men\nOsteoporosis is a bone disease that develops when bone mineral density and bone mass decreases, or when the quality or structure of bone changes. This can lead to a decrease in bone strength that can increase the risk of broken bones (fractures).\nPregnancy, Breastfeeding, and Bone Health\nPreventing Another Broken Bone\nAfter you break a bone, recovery is your first priority. But you might want to find out whether this broken bone is a sign of osteoporosis.\nDownload PDF\nLearn About Research\nBone Mineral Density Tests: What the Numbers Mean\nOsteoporosis in Men\nPrint",
+        "source": "www.niams.nih.gov",
+        "source_url": "https://www.niams.nih.gov/health-topics/osteoporosis",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.5108642578125,
+        "relevance_score": 0.9985150694847107,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19970301389694214,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:20:57.879405Z",
+      "ended_at_utc": "2026-10-29T03:21:03.213600Z",
+      "latency_ms": 5334.153958000115
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.8,
+      "nei": 0.1,
+      "supported": 0.1
+    },
+    "verifier_score": 0.8,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:26236988",
+      "pubmed:28761958",
+      "web:fd1031ac7221736fc958"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence explicitly states that osteoporosis increases fracture risk, which directly contradicts the claim that it does not increase fracture risk.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:28761958",
+              "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+            },
+            {
+              "evidence_id": "pubmed:26236988",
+              "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:26236988",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:28761958",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "web:fd1031ac7221736fc958",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Osteoporosis",
+              "relationship": "not",
+              "outcome": "increase fracture risk",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence consistently refers to osteoporosis as a disease that results in increased fracture risk.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk.",
+                "claim_fragment": "Osteoporosis",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:28761958",
+                    "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+                  },
+                  {
+                    "evidence_id": "pubmed:26236988",
+                    "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence explicitly states that osteoporosis increases fracture risk, which directly contradicts the claim that it does not increase fracture risk.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk.",
+                "claim_fragment": "not",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:28761958",
+                    "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+                  },
+                  {
+                    "evidence_id": "pubmed:26236988",
+                    "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence clearly states that osteoporosis results in increased fracture risk.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk.",
+                "claim_fragment": "increase fracture risk",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:28761958",
+                    "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+                  },
+                  {
+                    "evidence_id": "pubmed:26236988",
+                    "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:26236988",
+              "pubmed:28761958"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.1,
+            "REFUTED": 0.8,
+            "NEI": 0.1
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Osteoporosis is characterized by decreased bone mass and increased bone fragility, leading to an increased risk of fractures. [E1] and [E2] explicitly state that osteoporosis is associated with an increased risk of fractures. [E3] further supports this by detailing the symptoms and risk factors of osteoporosis, including the increased risk of fractures.",
+    "cited_evidence_ids": [
+      "pubmed:26236988",
+      "pubmed:28761958",
+      "web:fd1031ac7221736fc958"
+    ],
+    "grounding": {
+      "semantic_score": 0.698771059513092,
+      "coverage_score": 0.723182201385498,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:21:27.946376Z",
+      "ended_at_utc": "2026-10-29T03:21:36.649839Z",
+      "latency_ms": 8703.355458000033
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.8,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:26236988",
+      "document_id": "pubmed:26236988",
+      "title": "Prediction of fracture risk in patients with osteoporosis: a brief review.",
+      "text": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture. It is often unrecognized until the late stages when fragility fractures have occurred. In adults, early recognition of the disease prior to the occurrence of fractures followed by timely and efficient initiation of appropriate treatment can reduce fracture risk. In this article, we review clinical modalities available to effectively predict fracture risk in patients with osteoporosis. Bone mineral density and presence of clinical risk factors may be combined to provide a more comprehensive osteoporotic fracture risk assessment. Use of FRAX may serve as a general guideline for clinical management and deciding a threshold for cost-effective pharmacological intervention. Elevated bone turnover markers are predictive of high fracture risk and can provide additional clinical information as well.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26236988/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.113063335418701,
+      "relevance_score": 0.9991862177848816,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6994303524494171,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:28761958",
+      "document_id": "pubmed:28761958",
+      "title": "Osteoporosis.",
+      "text": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk. However, management of osteoporosis and fracture prevention strategies are often not addressed by primary care clinicians, even in older patients with recent fractures. Evidence-based screening strategies will improve identification of patients who are most likely to benefit from drug treatment to prevent fracture. In addition, careful consideration of when pharmacotherapy should be started and choice of medication and duration of treatment will maximize the benefits of fracture prevention while minimizing potential harms of long-term drug exposure.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28761958/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.7184576988220215,
+      "relevance_score": 0.9995556473731995,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.1999111294746399,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "web:fd1031ac7221736fc958",
+      "document_id": "web:fd1031ac7221736fc958",
+      "title": "Osteoporosis Causes, Risk Factors, & Symptoms | NIAMS Lock",
+      "text": "Print\nOverview, Symptoms, & Causes\nDiagnosis, Treatment, & Steps to Take\nResearch & Resources\nOverview of Osteoporosis\nOsteoporosis is a bone disease that develops when bone mineral density and bone mass decreases, or when the structure and strength of bone changes. This can lead to a decrease in bone strength that can increase the risk of fractures (broken bones).\nOsteoporosis is a \u201csilent\u201d disease because you typically do not have symptoms, and you may not even know you have the disease until you break a bone. Osteoporosis is the major cause of fractures in postmenopausal women and in older men. Fractures can occur in any bone but happen most often in bones of the hip, vertebrae in the spine, and wrist.\nHowever, you can take steps to help prevent the disease and fractures by:\nDrinking alcohol in moderation.\nQuitting smoking, or not starting if you don\u2019t smoke.\nTaking your medications, if prescribed, which can help prevent fractures in people who have osteoporosis.\nEating a nutritious diet rich in calcium and vitamin D to help maintain good bone health.\nWho Gets Osteoporosis?\nOsteoporosis affects women and men of all races and ethnic groups. Osteoporosis can occur at any age, although the risk for developing the disease increases as you get older. For many women, the disease begins to develop a year or two before menopause. Other factors to consider include:\nOsteoporosis is most common in non-Hispanic white women and Asian women.\nAfrican American and Hispanic women have a lower risk of developing osteoporosis, but they are still at significant risk.\nAmong men, osteoporosis is more common in non-Hispanic whites.\nCertain medications, such as some cancer medications and glucocorticoid steroids, may increase the risk of developing osteoporosis.\nBecause more women get osteoporosis than men, many men think they are not at risk for the disease. However, both older men and women from all backgrounds are at risk for osteoporosis.\nSome children and teens develop a rare form of idiopathic juvenile osteoporosis. Doctors do not know the cause; however, most children recover without treatment.\nSymptoms of Osteoporosis\nOsteoporosis is called a \u201csilent\u201d disease\u201d because there are typically no symptoms until a bone is broken. Symptoms of vertebral (spine) fracture include severe back pain, loss of height, or spine malformations such as a stooped or hunched posture (kyphosis).\nBones affected by osteoporosis may become so fragile that fractures occur spontaneously or as the result of:\nMinor falls, such as a fall from standing height that would not normally cause a break in a healthy bone.\nNormal stresses such as bending, lifting, or even coughing.\nCauses of Osteoporosis\nOsteoporosis occurs when too much bone mass is lost and changes occur in the structure of bone tissue. Certain risk factors may lead to the development of osteoporosis or can increase the likelihood that you will develop the disease.\nMany people with osteoporosis have several risk factors, but others who develop osteoporosis may not have any specific risk factors. There are some risk factors that you cannot change, and others that you may be able to change. However, by understanding these factors, you may be able to prevent the disease and fractures.\nFactors that may increase your risk for osteoporosis include:\nSex. Your chances of developing osteoporosis are greater if you are a woman. Women have lower peak bone mass and smaller bones than men. However, men are still at risk, especially after the age of 70.\nAge. As you age, bone loss happens more quickly, and new bone growth is slower. Over time, your bones can weaken and your risk for osteoporosis increases.\nBody size. Slender, thin-boned women and men are at greater risk to develop osteoporosis because they have less bone to lose compared to larger boned women and men.\nRace. White and Asian women are at highest risk. African American and Mexican American women have a lower risk. White men are at higher risk than African American and Mexican American men .\nFamily history. Researchers are finding that your risk for osteoporosis and fractures may increase if one of your parents has a history of osteoporosis or hip fracture.\nChanges to hormones. Low levels of certain hormones can increase your chances of developing osteoporosis. For example:\nLow estrogen levels in women after menopause.\nLow levels of estrogen from the abnormal absence of menstrual periods in premenopausal women due to hormone disorders or extreme levels of physical activity.\nLow levels of testosterone in men. Men with conditions that cause low testosterone are at risk for osteoporosis. However, the gradual decrease of testosterone with aging is probably not a major reason for loss of bone.\nDiet. Beginning in childhood and into old age, a diet low in calcium and vitamin D can increase your risk for osteoporosis and fractures. Excessive dieting or poor protein intake may increase your risk for bone loss and osteoporosis.\nOther medical conditions. Some medical conditions that you may be able to treat or manage can increase the risk of osteoporosis, such as other endocrine and hormonal diseases, gastrointestinal diseases, rheumatoid arthritis , certain types of cancer, HIV/AIDS, and anorexia nervosa.\nMedications. Long-term use of certain medications may make you more likely to develop bone loss and osteoporosis, such as:\nGlucocorticoids and adrenocorticotropic hormone, which treat various conditions, such as asthma and rheumatoid arthritis.\nLifestyle. A healthy lifestyle can be important for keeping bones strong. Factors that contribute to bone loss include:\nLow levels of physical activity and prolonged periods of inactivity can contribute to an increased rate of bone loss. They also leave you in poor physical condition, which can increase your risk of falling and breaking a bone.\nChronic heavy drinking of alcohol is a significant risk factor for osteoporosis.\nStudies indicate that smoking is a risk factor for osteoporosis and fracture. Researchers are still studying if the impact of smoking on bone health is from tobacco use alone or if people who smoke have more risk factors for osteoporosis.\nOsteoporosis Related Information\nJuvenile Osteoporosis\nOsteoporosis is a bone disease that develops when the bones get weaker and less dense. When a child or teen develops osteoporosis, the condition is known as juvenile osteoporosis.\nOsteoporosis in Men\nOsteoporosis is a bone disease that develops when bone mineral density and bone mass decreases, or when the quality or structure of bone changes. This can lead to a decrease in bone strength that can increase the risk of broken bones (fractures).\nPregnancy, Breastfeeding, and Bone Health\nPreventing Another Broken Bone\nAfter you break a bone, recovery is your first priority. But you might want to find out whether this broken bone is a sign of osteoporosis.\nDownload PDF\nLearn About Research\nBone Mineral Density Tests: What the Numbers Mean\nOsteoporosis in Men\nPrint",
+      "source": "www.niams.nih.gov",
+      "source_url": "https://www.niams.nih.gov/health-topics/osteoporosis",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.5108642578125,
+      "relevance_score": 0.9985150694847107,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19970301389694214,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence explicitly states that osteoporosis increases fracture risk, which directly contradicts the claim that it does not increase fracture risk.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:28761958",
+                "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+              },
+              {
+                "evidence_id": "pubmed:26236988",
+                "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:26236988",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:28761958",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "web:fd1031ac7221736fc958",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Osteoporosis",
+                "relationship": "not",
+                "outcome": "increase fracture risk",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence consistently refers to osteoporosis as a disease that results in increased fracture risk.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk.",
+                  "claim_fragment": "Osteoporosis",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:28761958",
+                      "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+                    },
+                    {
+                      "evidence_id": "pubmed:26236988",
+                      "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence explicitly states that osteoporosis increases fracture risk, which directly contradicts the claim that it does not increase fracture risk.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk.",
+                  "claim_fragment": "not",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:28761958",
+                      "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+                    },
+                    {
+                      "evidence_id": "pubmed:26236988",
+                      "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence clearly states that osteoporosis results in increased fracture risk.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk.",
+                  "claim_fragment": "increase fracture risk",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:28761958",
+                      "quote": "Osteoporosis is a common systemic skeletal disorder resulting in bone fragility and increased fracture risk."
+                    },
+                    {
+                      "evidence_id": "pubmed:26236988",
+                      "quote": "Osteoporosis, a well-defined and growing public health problem, is a disease characterized by increased bone turnover and decreased bone mass with associated skeletal fragility, resulting in an increased risk of fracture."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:26236988",
+                "pubmed:28761958"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.1,
+              "REFUTED": 0.8,
+              "NEI": 0.1
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 83410.92774999993,
+  "completed_at_utc": "2026-10-29T03:21:36.650888Z"
+}

@@ -1,0 +1,788 @@
+{
+  "request": {
+    "request_id": "f81f0204-bcbe-4fe4-a870-50d2b1612ba5",
+    "claim": "Tuberculosis is caused by bacteria.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:28:07.378272Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:28:07.378644Z",
+      "ended_at_utc": "2026-10-29T02:28:08.018604Z",
+      "latency_ms": 639.95845799991
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "web:6ea3385657d9e4660976",
+        "document_id": "web:6ea3385657d9e4660976",
+        "title": "Tuberculosis",
+        "text": "Overview\nTB is caused by bacteria (Mycobacterium tuberculosis) and it most often affects the lungs. TB is spread through the air when people with lung TB cough, sneeze or spit. A person needs to inhale only a few germs to become infected.\nEvery year, 10 million people fall ill with tuberculosis (TB). Despite being a preventable and curable disease, 1.5 million people die from TB each year \u2013 making it the world\u2019s top infectious killer.\nTB is the leading cause of death of people with HIV and also a major contributor to antimicrobial resistance.\nMost of the people who fall ill with TB live in low- and middle-income countries, but TB is present all over the world. About half of all people with TB can be found in 8 countries: Bangladesh, China, India, Indonesia, Nigeria, Pakistan, Philippines and\nSouth Africa.\nAbout a quarter of the global population is estimated to have been infected with TB bacteria, but most people will not go on to develop TB disease and some will clear the infection. Those who are infected but not (yet) ill with the disease cannot transmit it.\nPeople infected with TB bacteria have a 5\u201310% lifetime risk of falling ill with TB. Those with compromised immune systems, such as people living with HIV, malnutrition or diabetes, or people who use tobacco, have a higher risk of falling ill.\nSymptoms\nCommon symptoms of TB disease include:\n\u2022 Prolonged cough\n\u2022 Chest pain\n\u2022 Weakness or fatigue\n\u2022 Weight loss\n\u2022 Fever\n\u2022 Night sweats\nOften, these symptoms will be mild for many months, thus leading to delays in seeking care and increasing the risk of spreading the infection to others.\nIf the healthcare provider suspects a patient to have TB disease, they will send the patient for testing. In the case of suspected lung TB disease, patients will be asked to give a sputum sample for testing for TB bacteria. For non-lung TB disease, samples\nof affected body fluids and tissue can be tested. WHO recommends rapid molecular diagnostic tests as initial tests for people showing signs and symptoms of TB. Other diagnostic tools can include sputum smear microscopy and chest X-rays.\nWith TB infection, a person gets infected with TB bacteria that lie inactive in the body. This infection can develop into TB disease if their immune system weakens. People with TB infection do not show any signs or symptoms of TB. To identify TB infection,\nhealthcare providers will screen at-risk patients to rule out active TB, and they may use a skin or blood test to check for TB infection.\nTreatment\nTB disease is curable. It is treated by standard 6 month course of 4 antibiotics. Common drugs include rifampicin and isoniazid. In some cases the TB bacteria does not respond to the standard drugs. In this case, the patient has drug-resistant TB. Treatment\nfor drug-resistant TB is longer and more complex.\nThe course of TB drugs is provided to the patient with information, supervision and support by a health worker or trained volunteer. Without such support, treatment adherence can be difficult. If the treatment is not properly completed, the disease can\nbecome drug-resistant and can spread.\nIn the case of TB infection (where the patient is infected with TB bacteria but not ill), TB preventive treatment can be given to stop the onset of disease. This treatment uses the same drugs for a shorter time. Recent treatment options have shortened\nthe duration to treatment to only 1 or 3 months, as compared to 6 months in the past.\nFact sheets\nTuberculosis\nQuestions and answers\nCoronavirus disease (COVID-19): Tuberculosis\nTuberculosis\nTuberculosis: Systematic screening\nTuberculosis: Extensively drug-resistant tuberculosis (XDR-TB)\nTuberculosis: Multidrug-resistant (MDR-TB) or rifampicin-resistant TB (RR-TB)\nTuberculosis: Public-private mix (PPM) for TB care and control\nGuidelines\nWHO consolidated guidelines on tuberculosis: Module 1: Prevention: tuberculosis preventive treatment\nWHO operational handbook on tuberculosis: Module 1: Prevention: tuberculosis preventive treatment\nWHO consolidated guidelines on tuberculosis Module 2: Screening \u2013 Systematic screening for tuberculosis disease\nWHO operational handbook on tuberculosis Module 2: Screening \u2013 Systematic screening for tuberculosis disease\nWHO consolidated guidelines on tuberculosis Module 3: Diagnosis \u2013 Rapid diagnostics for tuberculosis detection\nWHO operational handbook on tuberculosis Module 3: Diagnosis \u2013 Rapid diagnostics for tuberculosis detection\nWHO Consolidated Guidelines on Tuberculosis, Module 4: Treatment \u2013 Drug-Resistant Tuberculosis Treatment\nWHO Operational Handbook on Tuberculosis, Module 4: Treatment \u2013 Drug-Resistant Tuberculosis Treatment\nWHO consolidated guidelines on tuberculosis Module 5: Management of tuberculosis in children and adolescents\nWHO operational handbook on tuberculosis Module 5: Management of tuberculosis in children and adolescents\nDatabases and tools\nTB Data\nInitiatives and groups\nAlliance of Countries on the Fight Against Tuberculosis\nWHO DG Flagship Initiative on ending TB\nWHO 1+1 Initiative: Global youth movement to end TB\nWHO Civil Society Task Force on Tuberculosis\nGlobal Task Force on TB Impact Measurement\nStrategic and Technical Advisory Group for Tuberculosis (STAG-TB)\nTechnical Advisory Group on Tuberculosis Diagnostics and Laboratory Strengthening\nTechnical Advisory Group on dosing of TB medicines for adults and children\nTuberculosis Vaccine Accelerator Council\nWHO TB Supranational Reference Laboratory Network (SRLN)\nResolutions and decisions\nWHA71.3 Preparation for a high-level meeting of the General Assembly on ending tuberculosis\nWHA69.11 Health in the 2030 Agenda for Sustainable Development\nWHA67.11 Global strategy and targets for tuberculosis prevention, care and control after 2015\nWHA62.15 Prevention and control of multidrug-resistant tuberculosis and extensively drug-resistant tuberculosis\nWHA60.19 Tuberculosis control: progress and long-term planning\nWHA58.11 Sustainable financing for tuberculosis prevention and control\nWHA53.1 Stop Tuberculosis Initiative\nTraining\nEnd TB Course Series\nTechnical work\nGlobal Tuberculosis Programme\nVaccine development",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/health-topics/tuberculosis",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.992879390716553,
+        "relevance_score": 0.9996622800827026,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:26198113",
+        "document_id": "pubmed:26198113",
+        "title": "Tuberculosis: a disease without boundaries.",
+        "text": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains. Although current research in the past four years has provided valuable insight into TB transmission, diagnosis, and treatment, much remains to be discovered to effectively decrease the incidence of and eventually eradicate TB. The disease still puts a strain on public health, being only second to HIV/AIDS in causing high mortality rates. This review will highlight the history of TB as well as provide an overview of the current literature on epidemiology, pathogenesis and the immune response, treatment, and control of TB. In this race to combat a disease that knows no boundaries, it is necessary to have a conceptual and clear understanding of TB overall with the hope of providing better treatment through novel and collaborative research and public health efforts.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26198113/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.223173141479492,
+        "relevance_score": 0.9980210065841675,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:25131367",
+        "document_id": "pubmed:25131367",
+        "title": "[Epidemiology of tuberculosis].",
+        "text": "Tuberculosis is a contagious disease caused by Mycobacterium tuberculosis. It represents, according to World Health Organization (WHO), one of the most leading causes of death worldwide. With nearly 8 million new cases each year and more than 1 million deaths per year, tuberculosis is still a public health problem. Despite of the decrease in incidence, morbidity and mortality remain important partially due to co-infection with human immunodeficiency virus and emergence of resistant bacilli. All WHO regions are not uniformly affected by TB. Africa's region has the highest rates of morbidity and mortality. The epidemiological situation is also worrying in Eastern European countries where the proportion of drug-resistant tuberculosis is increasing. These regional disparities emphasize to develop screening, diagnosis and monitoring to the most vulnerable populations. In this context, the Stop TB program, developed by the WHO and its partner's, aims to reduce the burden of disease in accordance with the global targets set for 2015.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/25131367/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.201395511627197,
+        "relevance_score": 0.9979775547981262,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Tuberculosis is caused by bacteria."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:28:08.018653Z",
+      "ended_at_utc": "2026-10-29T02:28:16.808962Z",
+      "latency_ms": 8790.244750000056
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "web:6ea3385657d9e4660976",
+        "document_id": "web:6ea3385657d9e4660976",
+        "title": "Tuberculosis",
+        "text": "Overview\nTB is caused by bacteria (Mycobacterium tuberculosis) and it most often affects the lungs. TB is spread through the air when people with lung TB cough, sneeze or spit. A person needs to inhale only a few germs to become infected.\nEvery year, 10 million people fall ill with tuberculosis (TB). Despite being a preventable and curable disease, 1.5 million people die from TB each year \u2013 making it the world\u2019s top infectious killer.\nTB is the leading cause of death of people with HIV and also a major contributor to antimicrobial resistance.\nMost of the people who fall ill with TB live in low- and middle-income countries, but TB is present all over the world. About half of all people with TB can be found in 8 countries: Bangladesh, China, India, Indonesia, Nigeria, Pakistan, Philippines and\nSouth Africa.\nAbout a quarter of the global population is estimated to have been infected with TB bacteria, but most people will not go on to develop TB disease and some will clear the infection. Those who are infected but not (yet) ill with the disease cannot transmit it.\nPeople infected with TB bacteria have a 5\u201310% lifetime risk of falling ill with TB. Those with compromised immune systems, such as people living with HIV, malnutrition or diabetes, or people who use tobacco, have a higher risk of falling ill.\nSymptoms\nCommon symptoms of TB disease include:\n\u2022 Prolonged cough\n\u2022 Chest pain\n\u2022 Weakness or fatigue\n\u2022 Weight loss\n\u2022 Fever\n\u2022 Night sweats\nOften, these symptoms will be mild for many months, thus leading to delays in seeking care and increasing the risk of spreading the infection to others.\nIf the healthcare provider suspects a patient to have TB disease, they will send the patient for testing. In the case of suspected lung TB disease, patients will be asked to give a sputum sample for testing for TB bacteria. For non-lung TB disease, samples\nof affected body fluids and tissue can be tested. WHO recommends rapid molecular diagnostic tests as initial tests for people showing signs and symptoms of TB. Other diagnostic tools can include sputum smear microscopy and chest X-rays.\nWith TB infection, a person gets infected with TB bacteria that lie inactive in the body. This infection can develop into TB disease if their immune system weakens. People with TB infection do not show any signs or symptoms of TB. To identify TB infection,\nhealthcare providers will screen at-risk patients to rule out active TB, and they may use a skin or blood test to check for TB infection.\nTreatment\nTB disease is curable. It is treated by standard 6 month course of 4 antibiotics. Common drugs include rifampicin and isoniazid. In some cases the TB bacteria does not respond to the standard drugs. In this case, the patient has drug-resistant TB. Treatment\nfor drug-resistant TB is longer and more complex.\nThe course of TB drugs is provided to the patient with information, supervision and support by a health worker or trained volunteer. Without such support, treatment adherence can be difficult. If the treatment is not properly completed, the disease can\nbecome drug-resistant and can spread.\nIn the case of TB infection (where the patient is infected with TB bacteria but not ill), TB preventive treatment can be given to stop the onset of disease. This treatment uses the same drugs for a shorter time. Recent treatment options have shortened\nthe duration to treatment to only 1 or 3 months, as compared to 6 months in the past.\nFact sheets\nTuberculosis\nQuestions and answers\nCoronavirus disease (COVID-19): Tuberculosis\nTuberculosis\nTuberculosis: Systematic screening\nTuberculosis: Extensively drug-resistant tuberculosis (XDR-TB)\nTuberculosis: Multidrug-resistant (MDR-TB) or rifampicin-resistant TB (RR-TB)\nTuberculosis: Public-private mix (PPM) for TB care and control\nGuidelines\nWHO consolidated guidelines on tuberculosis: Module 1: Prevention: tuberculosis preventive treatment\nWHO operational handbook on tuberculosis: Module 1: Prevention: tuberculosis preventive treatment\nWHO consolidated guidelines on tuberculosis Module 2: Screening \u2013 Systematic screening for tuberculosis disease\nWHO operational handbook on tuberculosis Module 2: Screening \u2013 Systematic screening for tuberculosis disease\nWHO consolidated guidelines on tuberculosis Module 3: Diagnosis \u2013 Rapid diagnostics for tuberculosis detection\nWHO operational handbook on tuberculosis Module 3: Diagnosis \u2013 Rapid diagnostics for tuberculosis detection\nWHO Consolidated Guidelines on Tuberculosis, Module 4: Treatment \u2013 Drug-Resistant Tuberculosis Treatment\nWHO Operational Handbook on Tuberculosis, Module 4: Treatment \u2013 Drug-Resistant Tuberculosis Treatment\nWHO consolidated guidelines on tuberculosis Module 5: Management of tuberculosis in children and adolescents\nWHO operational handbook on tuberculosis Module 5: Management of tuberculosis in children and adolescents\nDatabases and tools\nTB Data\nInitiatives and groups\nAlliance of Countries on the Fight Against Tuberculosis\nWHO DG Flagship Initiative on ending TB\nWHO 1+1 Initiative: Global youth movement to end TB\nWHO Civil Society Task Force on Tuberculosis\nGlobal Task Force on TB Impact Measurement\nStrategic and Technical Advisory Group for Tuberculosis (STAG-TB)\nTechnical Advisory Group on Tuberculosis Diagnostics and Laboratory Strengthening\nTechnical Advisory Group on dosing of TB medicines for adults and children\nTuberculosis Vaccine Accelerator Council\nWHO TB Supranational Reference Laboratory Network (SRLN)\nResolutions and decisions\nWHA71.3 Preparation for a high-level meeting of the General Assembly on ending tuberculosis\nWHA69.11 Health in the 2030 Agenda for Sustainable Development\nWHA67.11 Global strategy and targets for tuberculosis prevention, care and control after 2015\nWHA62.15 Prevention and control of multidrug-resistant tuberculosis and extensively drug-resistant tuberculosis\nWHA60.19 Tuberculosis control: progress and long-term planning\nWHA58.11 Sustainable financing for tuberculosis prevention and control\nWHA53.1 Stop Tuberculosis Initiative\nTraining\nEnd TB Course Series\nTechnical work\nGlobal Tuberculosis Programme\nVaccine development",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/health-topics/tuberculosis",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.992879390716553,
+        "relevance_score": 0.9996622800827026,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19993245601654053,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:26198113",
+        "document_id": "pubmed:26198113",
+        "title": "Tuberculosis: a disease without boundaries.",
+        "text": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains. Although current research in the past four years has provided valuable insight into TB transmission, diagnosis, and treatment, much remains to be discovered to effectively decrease the incidence of and eventually eradicate TB. The disease still puts a strain on public health, being only second to HIV/AIDS in causing high mortality rates. This review will highlight the history of TB as well as provide an overview of the current literature on epidemiology, pathogenesis and the immune response, treatment, and control of TB. In this race to combat a disease that knows no boundaries, it is necessary to have a conceptual and clear understanding of TB overall with the hope of providing better treatment through novel and collaborative research and public health efforts.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26198113/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.223173141479492,
+        "relevance_score": 0.9980210065841675,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.1996042013168335,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:25131367",
+        "document_id": "pubmed:25131367",
+        "title": "[Epidemiology of tuberculosis].",
+        "text": "Tuberculosis is a contagious disease caused by Mycobacterium tuberculosis. It represents, according to World Health Organization (WHO), one of the most leading causes of death worldwide. With nearly 8 million new cases each year and more than 1 million deaths per year, tuberculosis is still a public health problem. Despite of the decrease in incidence, morbidity and mortality remain important partially due to co-infection with human immunodeficiency virus and emergence of resistant bacilli. All WHO regions are not uniformly affected by TB. Africa's region has the highest rates of morbidity and mortality. The epidemiological situation is also worrying in Eastern European countries where the proportion of drug-resistant tuberculosis is increasing. These regional disparities emphasize to develop screening, diagnosis and monitoring to the most vulnerable populations. In this context, the Stop TB program, developed by the WHO and its partner's, aims to reduce the burden of disease in accordance with the global targets set for 2015.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/25131367/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.201395511627197,
+        "relevance_score": 0.9979775547981262,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19959551095962524,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:28:16.809012Z",
+      "ended_at_utc": "2026-10-29T02:28:18.313691Z",
+      "latency_ms": 1504.6991249996609
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "SUPPORTED",
+    "user_facing_verdict": "SUPPORTED",
+    "probabilities": {
+      "refuted": 0.03,
+      "nei": 0.02,
+      "supported": 0.95
+    },
+    "verifier_score": 0.95,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "web:6ea3385657d9e4660976",
+      "pubmed:26198113",
+      "pubmed:25131367"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "SUPPORTED",
+          "reason": "The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis. The source text directly states that tuberculosis is caused by Mycobacterium tuberculosis. The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:26198113",
+              "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:25131367",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:26198113",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "web:6ea3385657d9e4660976",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v1",
+            "claim_parts": {
+              "subject": "Tuberculosis",
+              "relationship": "caused by",
+              "outcome": "bacteria",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains.",
+                "reason": "The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+                "sentence_ids": [
+                  "E2S1"
+                ],
+                "slot": "subject",
+                "claim_fragment": "Tuberculosis",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26198113",
+                    "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains.",
+                "reason": "The source text directly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+                "sentence_ids": [
+                  "E2S1"
+                ],
+                "slot": "relationship",
+                "claim_fragment": "caused by",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26198113",
+                    "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains.",
+                "reason": "The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+                "sentence_ids": [
+                  "E2S1"
+                ],
+                "slot": "outcome",
+                "claim_fragment": "bacteria",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26198113",
+                    "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:26198113"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.95,
+            "REFUTED": 0.03,
+            "NEI": 0.02
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The evidence [E1], [E2], and [E3] all support that tuberculosis is caused by bacteria, specifically Mycobacterium tuberculosis. These sources provide detailed information on the causative agent, transmission, symptoms, and treatment of tuberculosis, confirming its bacterial etiology.",
+    "cited_evidence_ids": [
+      "web:6ea3385657d9e4660976",
+      "pubmed:26198113",
+      "pubmed:25131367"
+    ],
+    "grounding": {
+      "semantic_score": 0.6272717714309692,
+      "coverage_score": 0.6329704523086548,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:28:45.879203Z",
+      "ended_at_utc": "2026-10-29T02:28:55.482939Z",
+      "latency_ms": 9603.662125000028
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "SUPPORTED",
+  "final_user_facing_verdict": "SUPPORTED",
+  "final_verifier_score": 0.95,
+  "evidence": [
+    {
+      "evidence_id": "web:6ea3385657d9e4660976",
+      "document_id": "web:6ea3385657d9e4660976",
+      "title": "Tuberculosis",
+      "text": "Overview\nTB is caused by bacteria (Mycobacterium tuberculosis) and it most often affects the lungs. TB is spread through the air when people with lung TB cough, sneeze or spit. A person needs to inhale only a few germs to become infected.\nEvery year, 10 million people fall ill with tuberculosis (TB). Despite being a preventable and curable disease, 1.5 million people die from TB each year \u2013 making it the world\u2019s top infectious killer.\nTB is the leading cause of death of people with HIV and also a major contributor to antimicrobial resistance.\nMost of the people who fall ill with TB live in low- and middle-income countries, but TB is present all over the world. About half of all people with TB can be found in 8 countries: Bangladesh, China, India, Indonesia, Nigeria, Pakistan, Philippines and\nSouth Africa.\nAbout a quarter of the global population is estimated to have been infected with TB bacteria, but most people will not go on to develop TB disease and some will clear the infection. Those who are infected but not (yet) ill with the disease cannot transmit it.\nPeople infected with TB bacteria have a 5\u201310% lifetime risk of falling ill with TB. Those with compromised immune systems, such as people living with HIV, malnutrition or diabetes, or people who use tobacco, have a higher risk of falling ill.\nSymptoms\nCommon symptoms of TB disease include:\n\u2022 Prolonged cough\n\u2022 Chest pain\n\u2022 Weakness or fatigue\n\u2022 Weight loss\n\u2022 Fever\n\u2022 Night sweats\nOften, these symptoms will be mild for many months, thus leading to delays in seeking care and increasing the risk of spreading the infection to others.\nIf the healthcare provider suspects a patient to have TB disease, they will send the patient for testing. In the case of suspected lung TB disease, patients will be asked to give a sputum sample for testing for TB bacteria. For non-lung TB disease, samples\nof affected body fluids and tissue can be tested. WHO recommends rapid molecular diagnostic tests as initial tests for people showing signs and symptoms of TB. Other diagnostic tools can include sputum smear microscopy and chest X-rays.\nWith TB infection, a person gets infected with TB bacteria that lie inactive in the body. This infection can develop into TB disease if their immune system weakens. People with TB infection do not show any signs or symptoms of TB. To identify TB infection,\nhealthcare providers will screen at-risk patients to rule out active TB, and they may use a skin or blood test to check for TB infection.\nTreatment\nTB disease is curable. It is treated by standard 6 month course of 4 antibiotics. Common drugs include rifampicin and isoniazid. In some cases the TB bacteria does not respond to the standard drugs. In this case, the patient has drug-resistant TB. Treatment\nfor drug-resistant TB is longer and more complex.\nThe course of TB drugs is provided to the patient with information, supervision and support by a health worker or trained volunteer. Without such support, treatment adherence can be difficult. If the treatment is not properly completed, the disease can\nbecome drug-resistant and can spread.\nIn the case of TB infection (where the patient is infected with TB bacteria but not ill), TB preventive treatment can be given to stop the onset of disease. This treatment uses the same drugs for a shorter time. Recent treatment options have shortened\nthe duration to treatment to only 1 or 3 months, as compared to 6 months in the past.\nFact sheets\nTuberculosis\nQuestions and answers\nCoronavirus disease (COVID-19): Tuberculosis\nTuberculosis\nTuberculosis: Systematic screening\nTuberculosis: Extensively drug-resistant tuberculosis (XDR-TB)\nTuberculosis: Multidrug-resistant (MDR-TB) or rifampicin-resistant TB (RR-TB)\nTuberculosis: Public-private mix (PPM) for TB care and control\nGuidelines\nWHO consolidated guidelines on tuberculosis: Module 1: Prevention: tuberculosis preventive treatment\nWHO operational handbook on tuberculosis: Module 1: Prevention: tuberculosis preventive treatment\nWHO consolidated guidelines on tuberculosis Module 2: Screening \u2013 Systematic screening for tuberculosis disease\nWHO operational handbook on tuberculosis Module 2: Screening \u2013 Systematic screening for tuberculosis disease\nWHO consolidated guidelines on tuberculosis Module 3: Diagnosis \u2013 Rapid diagnostics for tuberculosis detection\nWHO operational handbook on tuberculosis Module 3: Diagnosis \u2013 Rapid diagnostics for tuberculosis detection\nWHO Consolidated Guidelines on Tuberculosis, Module 4: Treatment \u2013 Drug-Resistant Tuberculosis Treatment\nWHO Operational Handbook on Tuberculosis, Module 4: Treatment \u2013 Drug-Resistant Tuberculosis Treatment\nWHO consolidated guidelines on tuberculosis Module 5: Management of tuberculosis in children and adolescents\nWHO operational handbook on tuberculosis Module 5: Management of tuberculosis in children and adolescents\nDatabases and tools\nTB Data\nInitiatives and groups\nAlliance of Countries on the Fight Against Tuberculosis\nWHO DG Flagship Initiative on ending TB\nWHO 1+1 Initiative: Global youth movement to end TB\nWHO Civil Society Task Force on Tuberculosis\nGlobal Task Force on TB Impact Measurement\nStrategic and Technical Advisory Group for Tuberculosis (STAG-TB)\nTechnical Advisory Group on Tuberculosis Diagnostics and Laboratory Strengthening\nTechnical Advisory Group on dosing of TB medicines for adults and children\nTuberculosis Vaccine Accelerator Council\nWHO TB Supranational Reference Laboratory Network (SRLN)\nResolutions and decisions\nWHA71.3 Preparation for a high-level meeting of the General Assembly on ending tuberculosis\nWHA69.11 Health in the 2030 Agenda for Sustainable Development\nWHA67.11 Global strategy and targets for tuberculosis prevention, care and control after 2015\nWHA62.15 Prevention and control of multidrug-resistant tuberculosis and extensively drug-resistant tuberculosis\nWHA60.19 Tuberculosis control: progress and long-term planning\nWHA58.11 Sustainable financing for tuberculosis prevention and control\nWHA53.1 Stop Tuberculosis Initiative\nTraining\nEnd TB Course Series\nTechnical work\nGlobal Tuberculosis Programme\nVaccine development",
+      "source": "www.who.int",
+      "source_url": "https://www.who.int/health-topics/tuberculosis",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.992879390716553,
+      "relevance_score": 0.9996622800827026,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19993245601654053,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:26198113",
+      "document_id": "pubmed:26198113",
+      "title": "Tuberculosis: a disease without boundaries.",
+      "text": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains. Although current research in the past four years has provided valuable insight into TB transmission, diagnosis, and treatment, much remains to be discovered to effectively decrease the incidence of and eventually eradicate TB. The disease still puts a strain on public health, being only second to HIV/AIDS in causing high mortality rates. This review will highlight the history of TB as well as provide an overview of the current literature on epidemiology, pathogenesis and the immune response, treatment, and control of TB. In this race to combat a disease that knows no boundaries, it is necessary to have a conceptual and clear understanding of TB overall with the hope of providing better treatment through novel and collaborative research and public health efforts.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26198113/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.223173141479492,
+      "relevance_score": 0.9980210065841675,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.1996042013168335,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:25131367",
+      "document_id": "pubmed:25131367",
+      "title": "[Epidemiology of tuberculosis].",
+      "text": "Tuberculosis is a contagious disease caused by Mycobacterium tuberculosis. It represents, according to World Health Organization (WHO), one of the most leading causes of death worldwide. With nearly 8 million new cases each year and more than 1 million deaths per year, tuberculosis is still a public health problem. Despite of the decrease in incidence, morbidity and mortality remain important partially due to co-infection with human immunodeficiency virus and emergence of resistant bacilli. All WHO regions are not uniformly affected by TB. Africa's region has the highest rates of morbidity and mortality. The epidemiological situation is also worrying in Eastern European countries where the proportion of drug-resistant tuberculosis is increasing. These regional disparities emphasize to develop screening, diagnosis and monitoring to the most vulnerable populations. In this context, the Stop TB program, developed by the WHO and its partner's, aims to reduce the burden of disease in accordance with the global targets set for 2015.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/25131367/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.201395511627197,
+      "relevance_score": 0.9979775547981262,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19959551095962524,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v1",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "SUPPORTED",
+            "reason": "The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis. The source text directly states that tuberculosis is caused by Mycobacterium tuberculosis. The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:26198113",
+                "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:25131367",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:26198113",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "web:6ea3385657d9e4660976",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v1",
+              "claim_parts": {
+                "subject": "Tuberculosis",
+                "relationship": "caused by",
+                "outcome": "bacteria",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains.",
+                  "reason": "The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+                  "sentence_ids": [
+                    "E2S1"
+                  ],
+                  "slot": "subject",
+                  "claim_fragment": "Tuberculosis",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26198113",
+                      "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains.",
+                  "reason": "The source text directly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+                  "sentence_ids": [
+                    "E2S1"
+                  ],
+                  "slot": "relationship",
+                  "claim_fragment": "caused by",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26198113",
+                      "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains.",
+                  "reason": "The source text explicitly states that tuberculosis is caused by Mycobacterium tuberculosis.",
+                  "sentence_ids": [
+                    "E2S1"
+                  ],
+                  "slot": "outcome",
+                  "claim_fragment": "bacteria",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26198113",
+                      "quote": "Tuberculosis (TB) is an airborne disease caused by Mycobacterium tuberculosis (MTB) that usually affects the lungs leading to severe coughing, fever, and chest pains."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:26198113"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.95,
+              "REFUTED": 0.03,
+              "NEI": 0.02
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 48105.65341699976,
+  "completed_at_utc": "2026-10-29T02:28:55.484642Z"
+}

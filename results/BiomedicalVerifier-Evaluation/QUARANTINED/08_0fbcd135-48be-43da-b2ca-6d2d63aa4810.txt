@@ -1,0 +1,5 @@
+Claim: Eating seven almonds at bedtime increases lung capacity by exactly 11% in healthy violinists.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Verdict mismatch: expected NEI, got [empty]; Explanation too short: 0 words; Explanation contains no evidence citation; NEI explanation must explicitly communicate insufficient/inconclusive evidence; Semantic grounding 0.0000 below threshold 0.4500; Evidence coverage -0.0213 below threshold 0.4500
+Raw response: ../raw/0fbcd135-48be-43da-b2ca-6d2d63aa4810.json

@@ -1,0 +1,4 @@
+Claim: Clapping for three minutes before lunch improves iron absorption by exactly 17%.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'No readable evidence was retrieved from the enabled search sources. Try a more specific claim or retry later.'}
+Raw response: ../raw/1452e04a-b025-4efc-88eb-5c6406adb97d.json

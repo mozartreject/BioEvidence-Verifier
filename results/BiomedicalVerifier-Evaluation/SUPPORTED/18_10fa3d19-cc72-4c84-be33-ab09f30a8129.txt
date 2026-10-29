@@ -1,0 +1,7 @@
+Claim: Rabies is caused by a virus.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 10fa3d19-cc72-4c84-be33-ab09f30a8129
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/10fa3d19-cc72-4c84-be33-ab09f30a8129.json

@@ -1,0 +1,5 @@
+Claim: Tuberculosis is not caused by bacteria.
+Actual verdict: REFUTED
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Explanation too short: 16 words; Explanation contains no evidence citation
+Raw response: ../raw/8d1611de-5d17-4ccb-9de1-f426d952c213.json

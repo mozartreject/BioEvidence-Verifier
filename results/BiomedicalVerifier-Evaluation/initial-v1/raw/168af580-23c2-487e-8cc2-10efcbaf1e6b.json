@@ -1,0 +1,796 @@
+{
+  "request": {
+    "request_id": "168af580-23c2-487e-8cc2-10efcbaf1e6b",
+    "claim": "High blood pressure increases the risk of stroke.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:34:10.193397Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:34:10.193469Z",
+      "ended_at_utc": "2026-10-29T02:34:10.660323Z",
+      "latency_ms": 466.8538749997424
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:27434102",
+        "document_id": "pubmed:27434102",
+        "title": "High blood pressure as a risk factor for incident stroke among very old people: a population-based cohort study.",
+        "text": "INTRODUCTION: High blood pressure (BP) increases the risk of stroke, but there is limited evidence from studies including very old people. The aim was to investigate risk factors for incident stroke among very old people.\nMETHODS: A prospective population-based cohort study was performed among participants aged at least 85 years in northern Sweden. The 955 participants were tested at their homes. BP was measured manually after 5-min supine rest. Incident stroke data were collected from medical charts guided by hospital registry, death records, and 5-year reassessments. Cox proportional hazards models were used.\nRESULTS: The stroke incidence was 33.8/1000 person-years (94 stroke events) during a mean follow-up period of 2.9 years. In a comprehensive multivariate model, atrial fibrillation [hazard ratio 1.85, 95% confidence interval (CI) 1.07-3.19] and higher SBP (hazard ratio 1.19, 95% CI 1.08-1.30 per 10-mmHg increase) were associated with incident stroke overall. However, higher SBP was not associated with incident stroke in participants with SBP less than 140\u200ammHg (hazard ratio 0.90, 95% CI 0.53-1.53 per 10-mmHg increase). In additional multivariate models, DBP at least 90\u200ammHg (hazard ratio 2.45, 95% CI 1.47-4.08) and SBP at least 160\u200ammHg (vs. <140\u200ammHg; hazard ratio 2.80, 95% CI 1.53-5.14) were associated with incident stroke. The association between BP and incident stroke was not affected by interactions related to sex, dependence in activities of daily living, or cognitive impairment.\nCONCLUSION: High SBP (\u2265160\u200ammHg) and DBP (\u226590\u200ammHg) and atrial fibrillation appeared to be risk factors for incident stroke among very old people.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/27434102/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.927295684814453,
+        "relevance_score": 0.99986732006073,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:11606150",
+        "document_id": "pubmed:11606150",
+        "title": "Elevated midlife blood pressure increases stroke risk in elderly persons: the Framingham Study.",
+        "text": "BACKGROUND: Stroke risk predictions are traditionally based on current blood pressure (BP). The potential impact of a subject's past BP experience (antecedent BP) is unknown. We assessed the incremental impact of antecedent BP on the risk of ischemic stroke.\nMETHODS: A total of 5197 stroke-free subjects (2330 men) in the community-based Framingham Study cohort were enrolled from September 29, 1948, to April 25, 1953, and followed up to December 31, 1998. We determined the 10-year risk of completed initial ischemic stroke for 60-, 70-, and 80-year-old subjects as a function of their current BP (at baseline), recent antecedent BP (average of readings at biennial examinations 1-9 years before baseline), and remote antecedent BP (average at biennial examinations 10-19 years earlier), with adjustment for smoking and diabetes mellitus. Models incorporating antecedent BP were also adjusted for baseline BP. The effect of each BP component (systolic BP, diastolic BP, and pulse pressure) was assessed separately.\nRESULTS: Four hundred ninety-one ischemic strokes (209 in men) were observed in eligible subjects. The antecedent BP influenced the 10-year stroke risk at the age of 60 years (relative risk per SD increment of recent antecedent systolic BP: women, 1.68 [95% confidence interval, 1.25-2.25]; and men, 1.92 [95% confidence interval, 1.39-2.66]) and at the age of 70 years (relative risk per SD increment of recent antecedent systolic BP: women, 1.66 [95% confidence interval, 1.28-2.14]; and men, 1.30 [95% confidence interval, 0.97-1.75]). This effect was evident for recent and remote antecedent BP, consistent in hypertensive and nonhypertensive subjects, and demonstrable for all BP components.\nCONCLUSIONS: Antecedent BP contributes to the future risk of ischemic stroke. Optimal prevention of late-life stroke will likely require control of midlife BP.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/11606150/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.906079292297363,
+        "relevance_score": 0.9996316432952881,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:42339173",
+        "document_id": "pubmed:42339173",
+        "title": "High systolic blood pressure and stroke: evidence from the NHANES 1999-2023 and global burden of disease 2021.",
+        "text": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke, but trends in disease burden and causal associations related to HSBP in the United States require further investigation using multidimensional approaches. This study aims to elucidate this relationship by utilizing data from the Global Burden of Disease (GBD) database, the National Health and Nutrition Examination Survey (NHANES). This study integrated data from the GBD 2021 database and the NHANES. The GBD data provided macro-level estimates of stroke-related mortality and disability-adjusted life years (DALYs) attributable to various risk factors within the United States. By employing multivariable logistic regression models on individual-level NHANES data, the study assessed the association between HSBP history and stroke risk after adjusting for multiple confounding factors. GBD analysis revealed HSBP as the leading risk factor for U.S. stroke burden in 2021, with an increasing attributable burden since 2010, particularly among the elderly and women. NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51). Elevated SBP was additionally associated with increased all-cause mortality risk in stroke survivors (HR = 1.01). A novel U-shaped relationship emerged: stroke risk decreased below an SBP of 100\u00a0mmHg but increased sharply above this threshold. HSBP is the core driver and modifiable risk factor behind the persistently increasing stroke burden in the United States. The findings of this study highlight the critical importance of HSBP in stroke prevention and management.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42339173/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.702544689178467,
+        "relevance_score": 0.9995484948158264,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "High blood pressure increases the risk of stroke."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:34:10.660359Z",
+      "ended_at_utc": "2026-10-29T02:34:12.063866Z",
+      "latency_ms": 1403.4993750001377
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:27434102",
+        "document_id": "pubmed:27434102",
+        "title": "High blood pressure as a risk factor for incident stroke among very old people: a population-based cohort study.",
+        "text": "INTRODUCTION: High blood pressure (BP) increases the risk of stroke, but there is limited evidence from studies including very old people. The aim was to investigate risk factors for incident stroke among very old people.\nMETHODS: A prospective population-based cohort study was performed among participants aged at least 85 years in northern Sweden. The 955 participants were tested at their homes. BP was measured manually after 5-min supine rest. Incident stroke data were collected from medical charts guided by hospital registry, death records, and 5-year reassessments. Cox proportional hazards models were used.\nRESULTS: The stroke incidence was 33.8/1000 person-years (94 stroke events) during a mean follow-up period of 2.9 years. In a comprehensive multivariate model, atrial fibrillation [hazard ratio 1.85, 95% confidence interval (CI) 1.07-3.19] and higher SBP (hazard ratio 1.19, 95% CI 1.08-1.30 per 10-mmHg increase) were associated with incident stroke overall. However, higher SBP was not associated with incident stroke in participants with SBP less than 140\u200ammHg (hazard ratio 0.90, 95% CI 0.53-1.53 per 10-mmHg increase). In additional multivariate models, DBP at least 90\u200ammHg (hazard ratio 2.45, 95% CI 1.47-4.08) and SBP at least 160\u200ammHg (vs. <140\u200ammHg; hazard ratio 2.80, 95% CI 1.53-5.14) were associated with incident stroke. The association between BP and incident stroke was not affected by interactions related to sex, dependence in activities of daily living, or cognitive impairment.\nCONCLUSION: High SBP (\u2265160\u200ammHg) and DBP (\u226590\u200ammHg) and atrial fibrillation appeared to be risk factors for incident stroke among very old people.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/27434102/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.927295684814453,
+        "relevance_score": 0.99986732006073,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.699907124042511,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:11606150",
+        "document_id": "pubmed:11606150",
+        "title": "Elevated midlife blood pressure increases stroke risk in elderly persons: the Framingham Study.",
+        "text": "BACKGROUND: Stroke risk predictions are traditionally based on current blood pressure (BP). The potential impact of a subject's past BP experience (antecedent BP) is unknown. We assessed the incremental impact of antecedent BP on the risk of ischemic stroke.\nMETHODS: A total of 5197 stroke-free subjects (2330 men) in the community-based Framingham Study cohort were enrolled from September 29, 1948, to April 25, 1953, and followed up to December 31, 1998. We determined the 10-year risk of completed initial ischemic stroke for 60-, 70-, and 80-year-old subjects as a function of their current BP (at baseline), recent antecedent BP (average of readings at biennial examinations 1-9 years before baseline), and remote antecedent BP (average at biennial examinations 10-19 years earlier), with adjustment for smoking and diabetes mellitus. Models incorporating antecedent BP were also adjusted for baseline BP. The effect of each BP component (systolic BP, diastolic BP, and pulse pressure) was assessed separately.\nRESULTS: Four hundred ninety-one ischemic strokes (209 in men) were observed in eligible subjects. The antecedent BP influenced the 10-year stroke risk at the age of 60 years (relative risk per SD increment of recent antecedent systolic BP: women, 1.68 [95% confidence interval, 1.25-2.25]; and men, 1.92 [95% confidence interval, 1.39-2.66]) and at the age of 70 years (relative risk per SD increment of recent antecedent systolic BP: women, 1.66 [95% confidence interval, 1.28-2.14]; and men, 1.30 [95% confidence interval, 0.97-1.75]). This effect was evident for recent and remote antecedent BP, consistent in hypertensive and nonhypertensive subjects, and demonstrable for all BP components.\nCONCLUSIONS: Antecedent BP contributes to the future risk of ischemic stroke. Optimal prevention of late-life stroke will likely require control of midlife BP.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/11606150/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.906079292297363,
+        "relevance_score": 0.9996316432952881,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6997421503067016,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:42339173",
+        "document_id": "pubmed:42339173",
+        "title": "High systolic blood pressure and stroke: evidence from the NHANES 1999-2023 and global burden of disease 2021.",
+        "text": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke, but trends in disease burden and causal associations related to HSBP in the United States require further investigation using multidimensional approaches. This study aims to elucidate this relationship by utilizing data from the Global Burden of Disease (GBD) database, the National Health and Nutrition Examination Survey (NHANES). This study integrated data from the GBD 2021 database and the NHANES. The GBD data provided macro-level estimates of stroke-related mortality and disability-adjusted life years (DALYs) attributable to various risk factors within the United States. By employing multivariable logistic regression models on individual-level NHANES data, the study assessed the association between HSBP history and stroke risk after adjusting for multiple confounding factors. GBD analysis revealed HSBP as the leading risk factor for U.S. stroke burden in 2021, with an increasing attributable burden since 2010, particularly among the elderly and women. NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51). Elevated SBP was additionally associated with increased all-cause mortality risk in stroke survivors (HR = 1.01). A novel U-shaped relationship emerged: stroke risk decreased below an SBP of 100\u00a0mmHg but increased sharply above this threshold. HSBP is the core driver and modifiable risk factor behind the persistently increasing stroke burden in the United States. The findings of this study highlight the critical importance of HSBP in stroke prevention and management.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42339173/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.702544689178467,
+        "relevance_score": 0.9995484948158264,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6996839463710784,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:34:12.063896Z",
+      "ended_at_utc": "2026-10-29T02:34:14.548569Z",
+      "latency_ms": 2484.697207999943
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "SUPPORTED",
+    "user_facing_verdict": "SUPPORTED",
+    "probabilities": {
+      "refuted": 0.08,
+      "nei": 0.07,
+      "supported": 0.85
+    },
+    "verifier_score": 0.85,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:27434102",
+      "pubmed:11606150",
+      "pubmed:42339173"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "SUPPORTED",
+          "reason": "The evidence explicitly states that high systolic blood pressure is a major modifiable risk factor for stroke. The evidence provides a clear positive association between high systolic blood pressure and the risk of stroke, using odds ratio and confidence intervals. The evidence directly states that high systolic blood pressure increases the risk of stroke.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:42339173",
+              "quote": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke, but trends in disease burden and causal associations related to HSBP in the United States require further investigation using multidimensional approaches."
+            },
+            {
+              "evidence_id": "pubmed:42339173",
+              "quote": "NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51)."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:11606150",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:27434102",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:42339173",
+              "relation": "SUPPORTS",
+              "concrete": true
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v1",
+            "claim_parts": {
+              "subject": "High blood pressure",
+              "relationship": "increases the risk of",
+              "outcome": "stroke",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "evidence_phrase": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke",
+                "reason": "The evidence explicitly states that high systolic blood pressure is a major modifiable risk factor for stroke.",
+                "sentence_ids": [
+                  "E3S1"
+                ],
+                "slot": "subject",
+                "claim_fragment": "High blood pressure",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:42339173",
+                    "quote": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke, but trends in disease burden and causal associations related to HSBP in the United States require further investigation using multidimensional approaches."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51).",
+                "reason": "The evidence provides a clear positive association between high systolic blood pressure and the risk of stroke, using odds ratio and confidence intervals.",
+                "sentence_ids": [
+                  "E3S8"
+                ],
+                "slot": "relationship",
+                "claim_fragment": "increases the risk of",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:42339173",
+                    "quote": "NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51)."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51).",
+                "reason": "The evidence directly states that high systolic blood pressure increases the risk of stroke.",
+                "sentence_ids": [
+                  "E3S8"
+                ],
+                "slot": "outcome",
+                "claim_fragment": "stroke",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:42339173",
+                    "quote": "NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51)."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:42339173"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.85,
+            "REFUTED": 0.08,
+            "NEI": 0.07
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "High systolic blood pressure (SBP) is associated with an increased risk of stroke, as evidenced by multiple studies. A population-based cohort study among very old people in Sweden found that higher SBP was associated with incident stroke, particularly when SBP was at least 160 mmHg (hazard ratio 2.80, 95% CI 1.53-5.14) [E1]. Additionally, the Framingham Study showed that elevated midlife blood pressure increases the risk of stroke in elderly persons [E2]. Furthermore, a study using data from the National Health and Nutrition Examination Survey (NHANES) and the Global Burden of Disease (GBD) database found that high systolic blood pressure is a significant risk factor for stroke, with a fully adjusted odds ratio of 1.33 (95% CI: 1.17-1.51) [E3].",
+    "cited_evidence_ids": [
+      "pubmed:27434102",
+      "pubmed:11606150",
+      "pubmed:42339173"
+    ],
+    "grounding": {
+      "semantic_score": 0.7292904853820801,
+      "coverage_score": 0.8568426370620728,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:34:35.298092Z",
+      "ended_at_utc": "2026-10-29T02:34:46.809535Z",
+      "latency_ms": 11511.343167000177
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "SUPPORTED",
+  "final_user_facing_verdict": "SUPPORTED",
+  "final_verifier_score": 0.85,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:27434102",
+      "document_id": "pubmed:27434102",
+      "title": "High blood pressure as a risk factor for incident stroke among very old people: a population-based cohort study.",
+      "text": "INTRODUCTION: High blood pressure (BP) increases the risk of stroke, but there is limited evidence from studies including very old people. The aim was to investigate risk factors for incident stroke among very old people.\nMETHODS: A prospective population-based cohort study was performed among participants aged at least 85 years in northern Sweden. The 955 participants were tested at their homes. BP was measured manually after 5-min supine rest. Incident stroke data were collected from medical charts guided by hospital registry, death records, and 5-year reassessments. Cox proportional hazards models were used.\nRESULTS: The stroke incidence was 33.8/1000 person-years (94 stroke events) during a mean follow-up period of 2.9 years. In a comprehensive multivariate model, atrial fibrillation [hazard ratio 1.85, 95% confidence interval (CI) 1.07-3.19] and higher SBP (hazard ratio 1.19, 95% CI 1.08-1.30 per 10-mmHg increase) were associated with incident stroke overall. However, higher SBP was not associated with incident stroke in participants with SBP less than 140\u200ammHg (hazard ratio 0.90, 95% CI 0.53-1.53 per 10-mmHg increase). In additional multivariate models, DBP at least 90\u200ammHg (hazard ratio 2.45, 95% CI 1.47-4.08) and SBP at least 160\u200ammHg (vs. <140\u200ammHg; hazard ratio 2.80, 95% CI 1.53-5.14) were associated with incident stroke. The association between BP and incident stroke was not affected by interactions related to sex, dependence in activities of daily living, or cognitive impairment.\nCONCLUSION: High SBP (\u2265160\u200ammHg) and DBP (\u226590\u200ammHg) and atrial fibrillation appeared to be risk factors for incident stroke among very old people.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/27434102/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 8.927295684814453,
+      "relevance_score": 0.99986732006073,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.699907124042511,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:11606150",
+      "document_id": "pubmed:11606150",
+      "title": "Elevated midlife blood pressure increases stroke risk in elderly persons: the Framingham Study.",
+      "text": "BACKGROUND: Stroke risk predictions are traditionally based on current blood pressure (BP). The potential impact of a subject's past BP experience (antecedent BP) is unknown. We assessed the incremental impact of antecedent BP on the risk of ischemic stroke.\nMETHODS: A total of 5197 stroke-free subjects (2330 men) in the community-based Framingham Study cohort were enrolled from September 29, 1948, to April 25, 1953, and followed up to December 31, 1998. We determined the 10-year risk of completed initial ischemic stroke for 60-, 70-, and 80-year-old subjects as a function of their current BP (at baseline), recent antecedent BP (average of readings at biennial examinations 1-9 years before baseline), and remote antecedent BP (average at biennial examinations 10-19 years earlier), with adjustment for smoking and diabetes mellitus. Models incorporating antecedent BP were also adjusted for baseline BP. The effect of each BP component (systolic BP, diastolic BP, and pulse pressure) was assessed separately.\nRESULTS: Four hundred ninety-one ischemic strokes (209 in men) were observed in eligible subjects. The antecedent BP influenced the 10-year stroke risk at the age of 60 years (relative risk per SD increment of recent antecedent systolic BP: women, 1.68 [95% confidence interval, 1.25-2.25]; and men, 1.92 [95% confidence interval, 1.39-2.66]) and at the age of 70 years (relative risk per SD increment of recent antecedent systolic BP: women, 1.66 [95% confidence interval, 1.28-2.14]; and men, 1.30 [95% confidence interval, 0.97-1.75]). This effect was evident for recent and remote antecedent BP, consistent in hypertensive and nonhypertensive subjects, and demonstrable for all BP components.\nCONCLUSIONS: Antecedent BP contributes to the future risk of ischemic stroke. Optimal prevention of late-life stroke will likely require control of midlife BP.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11606150/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.906079292297363,
+      "relevance_score": 0.9996316432952881,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6997421503067016,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:42339173",
+      "document_id": "pubmed:42339173",
+      "title": "High systolic blood pressure and stroke: evidence from the NHANES 1999-2023 and global burden of disease 2021.",
+      "text": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke, but trends in disease burden and causal associations related to HSBP in the United States require further investigation using multidimensional approaches. This study aims to elucidate this relationship by utilizing data from the Global Burden of Disease (GBD) database, the National Health and Nutrition Examination Survey (NHANES). This study integrated data from the GBD 2021 database and the NHANES. The GBD data provided macro-level estimates of stroke-related mortality and disability-adjusted life years (DALYs) attributable to various risk factors within the United States. By employing multivariable logistic regression models on individual-level NHANES data, the study assessed the association between HSBP history and stroke risk after adjusting for multiple confounding factors. GBD analysis revealed HSBP as the leading risk factor for U.S. stroke burden in 2021, with an increasing attributable burden since 2010, particularly among the elderly and women. NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51). Elevated SBP was additionally associated with increased all-cause mortality risk in stroke survivors (HR = 1.01). A novel U-shaped relationship emerged: stroke risk decreased below an SBP of 100\u00a0mmHg but increased sharply above this threshold. HSBP is the core driver and modifiable risk factor behind the persistently increasing stroke burden in the United States. The findings of this study highlight the critical importance of HSBP in stroke prevention and management.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42339173/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.702544689178467,
+      "relevance_score": 0.9995484948158264,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6996839463710784,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v1",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "SUPPORTED",
+            "reason": "The evidence explicitly states that high systolic blood pressure is a major modifiable risk factor for stroke. The evidence provides a clear positive association between high systolic blood pressure and the risk of stroke, using odds ratio and confidence intervals. The evidence directly states that high systolic blood pressure increases the risk of stroke.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:42339173",
+                "quote": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke, but trends in disease burden and causal associations related to HSBP in the United States require further investigation using multidimensional approaches."
+              },
+              {
+                "evidence_id": "pubmed:42339173",
+                "quote": "NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51)."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:11606150",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:27434102",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:42339173",
+                "relation": "SUPPORTS",
+                "concrete": true
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v1",
+              "claim_parts": {
+                "subject": "High blood pressure",
+                "relationship": "increases the risk of",
+                "outcome": "stroke",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke",
+                  "reason": "The evidence explicitly states that high systolic blood pressure is a major modifiable risk factor for stroke.",
+                  "sentence_ids": [
+                    "E3S1"
+                  ],
+                  "slot": "subject",
+                  "claim_fragment": "High blood pressure",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:42339173",
+                      "quote": "High systolic blood pressure (HSBP) is a major modifiable risk factor for stroke, but trends in disease burden and causal associations related to HSBP in the United States require further investigation using multidimensional approaches."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51).",
+                  "reason": "The evidence provides a clear positive association between high systolic blood pressure and the risk of stroke, using odds ratio and confidence intervals.",
+                  "sentence_ids": [
+                    "E3S8"
+                  ],
+                  "slot": "relationship",
+                  "claim_fragment": "increases the risk of",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:42339173",
+                      "quote": "NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51)."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51).",
+                  "reason": "The evidence directly states that high systolic blood pressure increases the risk of stroke.",
+                  "sentence_ids": [
+                    "E3S8"
+                  ],
+                  "slot": "outcome",
+                  "claim_fragment": "stroke",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:42339173",
+                      "quote": "NHANES analysis showed that HSBP significantly increased the risk of stroke (fully adjusted OR = 1.33, 95% CI: 1.17-1.51)."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:42339173"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.85,
+              "REFUTED": 0.08,
+              "NEI": 0.07
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 36616.4022920002,
+  "completed_at_utc": "2026-10-29T02:34:46.810143Z"
+}

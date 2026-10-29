@@ -1,0 +1,7 @@
+Claim: Eating 23 grams of oats at 9 p.m. prevents glaucoma in healthy adults aged 32 to 36.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: de63a30b-a1e8-40c7-8295-050864069c63
+Explanation status: QUARANTINED
+Quarantine reason: Semantic grounding 0.4322 below threshold 0.4500; Evidence coverage 0.4351 below threshold 0.4500
+Raw response: ../raw/de63a30b-a1e8-40c7-8295-050864069c63.json

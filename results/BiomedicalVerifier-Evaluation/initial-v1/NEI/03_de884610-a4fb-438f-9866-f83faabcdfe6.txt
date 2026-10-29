@@ -1,0 +1,7 @@
+Claim: Drinking green tea at 7:15 a.m. prevents migraines better than drinking it at 8:15 a.m.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: de884610-a4fb-438f-9866-f83faabcdfe6
+Explanation status: QUARANTINED
+Quarantine reason: Semantic grounding 0.0782 below threshold 0.4500; Evidence coverage 0.4284 below threshold 0.4500
+Raw response: ../raw/de884610-a4fb-438f-9866-f83faabcdfe6.json

@@ -1,0 +1,4 @@
+Claim: Listening to piano music for 13 minutes lowers fasting glucose by exactly 9% in adults aged 28 to 31.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.06, 'REFUTED': 0.74, 'NEI': 0.2}"}
+Raw response: ../raw/a2e3b683-865e-4ce1-9c69-b3682fc48cd5.json

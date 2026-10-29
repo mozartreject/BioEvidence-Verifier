@@ -1,0 +1,7 @@
+Claim: Influenza is caused by viruses.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 331eb77f-2916-4ca4-9b9d-6f29ea59fe7a
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/331eb77f-2916-4ca4-9b9d-6f29ea59fe7a.json

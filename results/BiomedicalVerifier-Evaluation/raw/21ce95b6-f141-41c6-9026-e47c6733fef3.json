@@ -1,0 +1,760 @@
+{
+  "request": {
+    "request_id": "21ce95b6-f141-41c6-9026-e47c6733fef3",
+    "claim": "Drinking green tea at 7:15 a.m. prevents migraines better than drinking it at 8:15 a.m.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:59:33.891340Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:59:33.891428Z",
+      "ended_at_utc": "2026-10-29T02:59:34.580996Z",
+      "latency_ms": 689.5633750000343
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:22198852",
+        "document_id": "pubmed:22198852",
+        "title": "Alcohol dosing and the heart: updating clinical evidence.",
+        "text": "The consequences of heavy or irregular alcohol drinking have long been known. Recently, consistent information has been provided in support of an association between light/moderate alcohol consumption and protection from vascular and all-cause mortality, ischemic stroke, peripheral arterial disease, congestive heart failure, and recurrence of ischemic events. After reviewing the information with respect to major aspects of cardiovascular pathophysiology, to potential confounders and to underlying mechanisms, several concepts emerge. First, the recommended amounts of \"safe alcohol drinking\" in healthy individuals are up to two standard drinks (~20 g/d) for a man and up to one drink (10 g/d) for a nonpregnant woman. The overall balance for young premenopausal women, but not for older women, would be unfavorable for drinking. The risk of cancer would not outweigh potential benefits of alcohol on heart disease. Second, within the frame of a balanced pattern of dietary energy intake, patients with cardiovascular disease who drink alcohol should not exceed one or two standard drinks per day for women or up to two or three drinks per day for men. Third, the low rates of coronary heart disease among the Mediterranean people may be related to their pattern of drinking wine every day during meals. Regular drinking is associated with better outcomes than occasional (binge)/weekly drinking. Fourth, wine (ethanol with antioxidants) exhibits significantly higher anti-inflammatory effects than gin (ethanol without polyphenols), and thus in general wine should be preferred to liquor or beer.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/22198852/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.106474876403809,
+        "relevance_score": 0.00011093282228102908,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:078a45fcf31acf7d6b00",
+        "document_id": "web:078a45fcf31acf7d6b00",
+        "title": "The risks of drinking too much - NHS NHS",
+        "text": "The risks of drinking too much\nRegularly drinking more than 14 units of alcohol a week risks damaging your health.\nThe number of units in a drink is based on the size of the drink and its alcohol strength.\nNew evidence around the health harms from regular drinking has emerged in recent years.\nThere's now a better understanding of the link between drinking and some illnesses, including a range of cancers.\nThe previously held position that some level of alcohol was good for the heart has been revised.\nIt's now thought that the evidence on a protective effect from moderate drinking is less strong than previously thought.\nLow-risk drinking advice\nTo keep health risks from alcohol to a low level if you drink most weeks:\nmen and women are advised not to drink more than 14 units a week on a regular basis\nspread your drinking over 3 or more days if you regularly drink as much as 14 units a week\ntry to have several drink-free days each week\nIf you're pregnant or think you could become pregnant, the safest approach is not to drink alcohol at all to keep risks to your baby to a minimum.\nFind out more about pregnancy and alcohol\nNo \"safe\" drinking level\nIf you drink less than 14 units a week, this is considered low-risk drinking.\nIt's called \"low risk\" rather than \"safe\" because there's no safe drinking level.\nDrinking more than 14 units a week over many years can increase your risk of:\nmouth cancer , throat cancer and breast cancer\nstroke\nheart disease\nliver disease\nbrain damage, which may cause memory loss and changes in your behaviour\nThere's also evidence that regular drinking at high-risk levels can make your mental health worse.\nResearch has found strong links between drinking too much alcohol and self-harming, including suicide.\nThe effects of alcohol on your health will depend on how much you drink. The less you drink, the lower the health risks.\nRead about alcohol units to work out how much alcohol there is in your drinks.\nBinge drinking\nDrinking too much alcohol too quickly on a single occasion is called binge drinking.\nThis means drinking more than 8 units of alcohol in a single session for men, or more than 6 units in a single session for women.\nBinge drinking can increase your risk of:\naccidents resulting in injury, causing death in some cases\nmisjudging risky situations\nlosing self-control, like having unprotected sex or getting involved in violence\nTo reduce your health risks on a single occasion:\nlimit how much you drink\ndrink more slowly\ndrink with food\nalternate your drinks with water or non-alcoholic drinks\nMore in\nAlcohol advice\nPage last reviewed: 10 September 2026\nNext review due: 10 September 2029",
+        "source": "www.nhs.uk",
+        "source_url": "https://www.nhs.uk/live-well/alcohol-advice/the-risks-of-drinking-too-much/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.529083251953125,
+        "relevance_score": 7.27009610272944e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:38514233",
+        "document_id": "pubmed:38514233",
+        "title": "Reducing Alcohol Use to Prevent Cancer Deaths: Estimated Effects Among U.S. Adults.",
+        "text": "INTRODUCTION: The Dietary Guidelines for Americans, 2020-2025 recommends non-drinking or no more than 2 drinks for men or 1 drink for women in a day. However, even at lower levels, alcohol use increases the risk for certain cancers. This study estimated mean annual alcohol-attributable cancer deaths and the number of cancer deaths that could potentially be prevented if all U.S. adults who drank in excess of the Dietary Guidelines had instead consumed alcohol to correspond with typical consumption of those who drink within the recommended limits.\nMETHODS: Among U.S. residents aged \u226520 years, mean annual alcohol-attributable cancer deaths during 2020-2021 that could have been prevented with hypothetical reductions in alcohol use were estimated. Mean daily alcohol consumption prevalence estimates from the 2020-2021 Behavioral Risk Factor Surveillance System, adjusted to per capita alcohol sales to address underreporting of drinking, were applied to relative risks to calculate population-attributable fractions for cancers that can occur from drinking alcohol. Analyses were conducted during February-April 2023.\nRESULTS: In the U.S., an estimated 20,216 cancer deaths were alcohol-attributable/year during 2020-2021 (men: 14,562 [72.0%]; women: 5,654 [28.0%]). Approximately 16,800 deaths (83% of alcohol-attributable cancer deaths, 2.8% of all cancer deaths) could have been prevented/year if adults who drank alcohol in excess of the Dietary Guidelines had instead reduced their consumption to \u22642 drinks/day for men or \u22641 drink/day for women. Approximately 650 additional deaths could have been prevented annually if men consumed 1 drink/day, instead of 2.\nCONCLUSIONS: Implementing evidence-based alcohol policies (e.g., increasing alcohol taxes, regulating alcohol outlet density) to decrease drinking could reduce alcohol-attributable cancers, complementing clinical interventions.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38514233/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.81628131866455,
+        "relevance_score": 5.4553107474930584e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Drinking green tea at 7:15 a.m. prevents migraines better than drinking it at 8:15 a.m."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:59:34.581054Z",
+      "ended_at_utc": "2026-10-29T02:59:34.882842Z",
+      "latency_ms": 301.78895900007774
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:22198852",
+        "document_id": "pubmed:22198852",
+        "title": "Alcohol dosing and the heart: updating clinical evidence.",
+        "text": "The consequences of heavy or irregular alcohol drinking have long been known. Recently, consistent information has been provided in support of an association between light/moderate alcohol consumption and protection from vascular and all-cause mortality, ischemic stroke, peripheral arterial disease, congestive heart failure, and recurrence of ischemic events. After reviewing the information with respect to major aspects of cardiovascular pathophysiology, to potential confounders and to underlying mechanisms, several concepts emerge. First, the recommended amounts of \"safe alcohol drinking\" in healthy individuals are up to two standard drinks (~20 g/d) for a man and up to one drink (10 g/d) for a nonpregnant woman. The overall balance for young premenopausal women, but not for older women, would be unfavorable for drinking. The risk of cancer would not outweigh potential benefits of alcohol on heart disease. Second, within the frame of a balanced pattern of dietary energy intake, patients with cardiovascular disease who drink alcohol should not exceed one or two standard drinks per day for women or up to two or three drinks per day for men. Third, the low rates of coronary heart disease among the Mediterranean people may be related to their pattern of drinking wine every day during meals. Regular drinking is associated with better outcomes than occasional (binge)/weekly drinking. Fourth, wine (ethanol with antioxidants) exhibits significantly higher anti-inflammatory effects than gin (ethanol without polyphenols), and thus in general wine should be preferred to liquor or beer.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/22198852/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.106474876403809,
+        "relevance_score": 0.00011093282228102908,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 7.765297559672035e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:38514233",
+        "document_id": "pubmed:38514233",
+        "title": "Reducing Alcohol Use to Prevent Cancer Deaths: Estimated Effects Among U.S. Adults.",
+        "text": "INTRODUCTION: The Dietary Guidelines for Americans, 2020-2025 recommends non-drinking or no more than 2 drinks for men or 1 drink for women in a day. However, even at lower levels, alcohol use increases the risk for certain cancers. This study estimated mean annual alcohol-attributable cancer deaths and the number of cancer deaths that could potentially be prevented if all U.S. adults who drank in excess of the Dietary Guidelines had instead consumed alcohol to correspond with typical consumption of those who drink within the recommended limits.\nMETHODS: Among U.S. residents aged \u226520 years, mean annual alcohol-attributable cancer deaths during 2020-2021 that could have been prevented with hypothetical reductions in alcohol use were estimated. Mean daily alcohol consumption prevalence estimates from the 2020-2021 Behavioral Risk Factor Surveillance System, adjusted to per capita alcohol sales to address underreporting of drinking, were applied to relative risks to calculate population-attributable fractions for cancers that can occur from drinking alcohol. Analyses were conducted during February-April 2023.\nRESULTS: In the U.S., an estimated 20,216 cancer deaths were alcohol-attributable/year during 2020-2021 (men: 14,562 [72.0%]; women: 5,654 [28.0%]). Approximately 16,800 deaths (83% of alcohol-attributable cancer deaths, 2.8% of all cancer deaths) could have been prevented/year if adults who drank alcohol in excess of the Dietary Guidelines had instead reduced their consumption to \u22642 drinks/day for men or \u22641 drink/day for women. Approximately 650 additional deaths could have been prevented annually if men consumed 1 drink/day, instead of 2.\nCONCLUSIONS: Implementing evidence-based alcohol policies (e.g., increasing alcohol taxes, regulating alcohol outlet density) to decrease drinking could reduce alcohol-attributable cancers, complementing clinical interventions.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38514233/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.81628131866455,
+        "relevance_score": 5.4553107474930584e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 3.8187175232451405e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:078a45fcf31acf7d6b00",
+        "document_id": "web:078a45fcf31acf7d6b00",
+        "title": "The risks of drinking too much - NHS NHS",
+        "text": "The risks of drinking too much\nRegularly drinking more than 14 units of alcohol a week risks damaging your health.\nThe number of units in a drink is based on the size of the drink and its alcohol strength.\nNew evidence around the health harms from regular drinking has emerged in recent years.\nThere's now a better understanding of the link between drinking and some illnesses, including a range of cancers.\nThe previously held position that some level of alcohol was good for the heart has been revised.\nIt's now thought that the evidence on a protective effect from moderate drinking is less strong than previously thought.\nLow-risk drinking advice\nTo keep health risks from alcohol to a low level if you drink most weeks:\nmen and women are advised not to drink more than 14 units a week on a regular basis\nspread your drinking over 3 or more days if you regularly drink as much as 14 units a week\ntry to have several drink-free days each week\nIf you're pregnant or think you could become pregnant, the safest approach is not to drink alcohol at all to keep risks to your baby to a minimum.\nFind out more about pregnancy and alcohol\nNo \"safe\" drinking level\nIf you drink less than 14 units a week, this is considered low-risk drinking.\nIt's called \"low risk\" rather than \"safe\" because there's no safe drinking level.\nDrinking more than 14 units a week over many years can increase your risk of:\nmouth cancer , throat cancer and breast cancer\nstroke\nheart disease\nliver disease\nbrain damage, which may cause memory loss and changes in your behaviour\nThere's also evidence that regular drinking at high-risk levels can make your mental health worse.\nResearch has found strong links between drinking too much alcohol and self-harming, including suicide.\nThe effects of alcohol on your health will depend on how much you drink. The less you drink, the lower the health risks.\nRead about alcohol units to work out how much alcohol there is in your drinks.\nBinge drinking\nDrinking too much alcohol too quickly on a single occasion is called binge drinking.\nThis means drinking more than 8 units of alcohol in a single session for men, or more than 6 units in a single session for women.\nBinge drinking can increase your risk of:\naccidents resulting in injury, causing death in some cases\nmisjudging risky situations\nlosing self-control, like having unprotected sex or getting involved in violence\nTo reduce your health risks on a single occasion:\nlimit how much you drink\ndrink more slowly\ndrink with food\nalternate your drinks with water or non-alcoholic drinks\nMore in\nAlcohol advice\nPage last reviewed: 10 September 2026\nNext review due: 10 September 2029",
+        "source": "www.nhs.uk",
+        "source_url": "https://www.nhs.uk/live-well/alcohol-advice/the-risks-of-drinking-too-much/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.529083251953125,
+        "relevance_score": 7.27009610272944e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 1.454019220545888e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:59:34.882879Z",
+      "ended_at_utc": "2026-10-29T02:59:34.882983Z",
+      "latency_ms": 0.1139169999078149
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:22198852",
+      "pubmed:38514233",
+      "web:078a45fcf31acf7d6b00"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cdrinking it at 8:15 a.m.\u201d; relationship: \u201cbetter than\u201d; outcome: \u201cprevents migraines\u201d; qualifiers: \u201cdrinking it at 8:15 a.m.\u201d. The evidence does not mention drinking green tea at 7:15 a.m. or 8:15 a.m., nor does it discuss migraines or their prevention. The evidence focuses on alcohol consumption and its effects on health, including cancer risk, The evidence does not provide a comparison between different times of drinking, nor does it discuss the relationship between drinking at a specific time and the prevention of migraines or any other health outcomes. The evidence does not discuss the prevention of migraines or any other specific health outcomes related to drinking green tea. It focuses on alcohol consumption and its effects on health, including cancer risk. The evidence does not discuss the specific time of day for drinking green tea or its effects on migraines. The evidence focuses on alcohol consumption and its effects on health, including cancer risk.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:22198852",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:38514233",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:078a45fcf31acf7d6b00",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "drinking it at 8:15 a.m.",
+              "relationship": "better than",
+              "outcome": "prevents migraines",
+              "population": "",
+              "qualifiers": "drinking it at 8:15 a.m."
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention drinking green tea at 7:15 a.m. or 8:15 a.m., nor does it discuss migraines or their prevention. The evidence focuses on alcohol consumption and its effects on health, including cancer risk,",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "drinking it at 8:15 a.m.",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide a comparison between different times of drinking, nor does it discuss the relationship between drinking at a specific time and the prevention of migraines or any other health outcomes.",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "better than",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss the prevention of migraines or any other specific health outcomes related to drinking green tea. It focuses on alcohol consumption and its effects on health, including cancer risk.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "prevents migraines",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss the specific time of day for drinking green tea or its effects on migraines. The evidence focuses on alcohol consumption and its effects on health, including cancer risk.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "drinking it at 8:15 a.m.",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "Semantic grounding 0.0782 below threshold 0.4500; Evidence coverage 0.4284 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:59:57.758825Z",
+      "ended_at_utc": "2026-10-29T03:00:17.911677Z",
+      "latency_ms": 20152.603459000034
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:22198852",
+      "document_id": "pubmed:22198852",
+      "title": "Alcohol dosing and the heart: updating clinical evidence.",
+      "text": "The consequences of heavy or irregular alcohol drinking have long been known. Recently, consistent information has been provided in support of an association between light/moderate alcohol consumption and protection from vascular and all-cause mortality, ischemic stroke, peripheral arterial disease, congestive heart failure, and recurrence of ischemic events. After reviewing the information with respect to major aspects of cardiovascular pathophysiology, to potential confounders and to underlying mechanisms, several concepts emerge. First, the recommended amounts of \"safe alcohol drinking\" in healthy individuals are up to two standard drinks (~20 g/d) for a man and up to one drink (10 g/d) for a nonpregnant woman. The overall balance for young premenopausal women, but not for older women, would be unfavorable for drinking. The risk of cancer would not outweigh potential benefits of alcohol on heart disease. Second, within the frame of a balanced pattern of dietary energy intake, patients with cardiovascular disease who drink alcohol should not exceed one or two standard drinks per day for women or up to two or three drinks per day for men. Third, the low rates of coronary heart disease among the Mediterranean people may be related to their pattern of drinking wine every day during meals. Regular drinking is associated with better outcomes than occasional (binge)/weekly drinking. Fourth, wine (ethanol with antioxidants) exhibits significantly higher anti-inflammatory effects than gin (ethanol without polyphenols), and thus in general wine should be preferred to liquor or beer.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/22198852/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.106474876403809,
+      "relevance_score": 0.00011093282228102908,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 7.765297559672035e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:38514233",
+      "document_id": "pubmed:38514233",
+      "title": "Reducing Alcohol Use to Prevent Cancer Deaths: Estimated Effects Among U.S. Adults.",
+      "text": "INTRODUCTION: The Dietary Guidelines for Americans, 2020-2025 recommends non-drinking or no more than 2 drinks for men or 1 drink for women in a day. However, even at lower levels, alcohol use increases the risk for certain cancers. This study estimated mean annual alcohol-attributable cancer deaths and the number of cancer deaths that could potentially be prevented if all U.S. adults who drank in excess of the Dietary Guidelines had instead consumed alcohol to correspond with typical consumption of those who drink within the recommended limits.\nMETHODS: Among U.S. residents aged \u226520 years, mean annual alcohol-attributable cancer deaths during 2020-2021 that could have been prevented with hypothetical reductions in alcohol use were estimated. Mean daily alcohol consumption prevalence estimates from the 2020-2021 Behavioral Risk Factor Surveillance System, adjusted to per capita alcohol sales to address underreporting of drinking, were applied to relative risks to calculate population-attributable fractions for cancers that can occur from drinking alcohol. Analyses were conducted during February-April 2023.\nRESULTS: In the U.S., an estimated 20,216 cancer deaths were alcohol-attributable/year during 2020-2021 (men: 14,562 [72.0%]; women: 5,654 [28.0%]). Approximately 16,800 deaths (83% of alcohol-attributable cancer deaths, 2.8% of all cancer deaths) could have been prevented/year if adults who drank alcohol in excess of the Dietary Guidelines had instead reduced their consumption to \u22642 drinks/day for men or \u22641 drink/day for women. Approximately 650 additional deaths could have been prevented annually if men consumed 1 drink/day, instead of 2.\nCONCLUSIONS: Implementing evidence-based alcohol policies (e.g., increasing alcohol taxes, regulating alcohol outlet density) to decrease drinking could reduce alcohol-attributable cancers, complementing clinical interventions.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/38514233/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.81628131866455,
+      "relevance_score": 5.4553107474930584e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 3.8187175232451405e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:078a45fcf31acf7d6b00",
+      "document_id": "web:078a45fcf31acf7d6b00",
+      "title": "The risks of drinking too much - NHS NHS",
+      "text": "The risks of drinking too much\nRegularly drinking more than 14 units of alcohol a week risks damaging your health.\nThe number of units in a drink is based on the size of the drink and its alcohol strength.\nNew evidence around the health harms from regular drinking has emerged in recent years.\nThere's now a better understanding of the link between drinking and some illnesses, including a range of cancers.\nThe previously held position that some level of alcohol was good for the heart has been revised.\nIt's now thought that the evidence on a protective effect from moderate drinking is less strong than previously thought.\nLow-risk drinking advice\nTo keep health risks from alcohol to a low level if you drink most weeks:\nmen and women are advised not to drink more than 14 units a week on a regular basis\nspread your drinking over 3 or more days if you regularly drink as much as 14 units a week\ntry to have several drink-free days each week\nIf you're pregnant or think you could become pregnant, the safest approach is not to drink alcohol at all to keep risks to your baby to a minimum.\nFind out more about pregnancy and alcohol\nNo \"safe\" drinking level\nIf you drink less than 14 units a week, this is considered low-risk drinking.\nIt's called \"low risk\" rather than \"safe\" because there's no safe drinking level.\nDrinking more than 14 units a week over many years can increase your risk of:\nmouth cancer , throat cancer and breast cancer\nstroke\nheart disease\nliver disease\nbrain damage, which may cause memory loss and changes in your behaviour\nThere's also evidence that regular drinking at high-risk levels can make your mental health worse.\nResearch has found strong links between drinking too much alcohol and self-harming, including suicide.\nThe effects of alcohol on your health will depend on how much you drink. The less you drink, the lower the health risks.\nRead about alcohol units to work out how much alcohol there is in your drinks.\nBinge drinking\nDrinking too much alcohol too quickly on a single occasion is called binge drinking.\nThis means drinking more than 8 units of alcohol in a single session for men, or more than 6 units in a single session for women.\nBinge drinking can increase your risk of:\naccidents resulting in injury, causing death in some cases\nmisjudging risky situations\nlosing self-control, like having unprotected sex or getting involved in violence\nTo reduce your health risks on a single occasion:\nlimit how much you drink\ndrink more slowly\ndrink with food\nalternate your drinks with water or non-alcoholic drinks\nMore in\nAlcohol advice\nPage last reviewed: 10 September 2026\nNext review due: 10 September 2029",
+      "source": "www.nhs.uk",
+      "source_url": "https://www.nhs.uk/live-well/alcohol-advice/the-risks-of-drinking-too-much/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.529083251953125,
+      "relevance_score": 7.27009610272944e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 1.454019220545888e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cdrinking it at 8:15 a.m.\u201d; relationship: \u201cbetter than\u201d; outcome: \u201cprevents migraines\u201d; qualifiers: \u201cdrinking it at 8:15 a.m.\u201d. The evidence does not mention drinking green tea at 7:15 a.m. or 8:15 a.m., nor does it discuss migraines or their prevention. The evidence focuses on alcohol consumption and its effects on health, including cancer risk, The evidence does not provide a comparison between different times of drinking, nor does it discuss the relationship between drinking at a specific time and the prevention of migraines or any other health outcomes. The evidence does not discuss the prevention of migraines or any other specific health outcomes related to drinking green tea. It focuses on alcohol consumption and its effects on health, including cancer risk. The evidence does not discuss the specific time of day for drinking green tea or its effects on migraines. The evidence focuses on alcohol consumption and its effects on health, including cancer risk.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:22198852",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:38514233",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:078a45fcf31acf7d6b00",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "drinking it at 8:15 a.m.",
+                "relationship": "better than",
+                "outcome": "prevents migraines",
+                "population": "",
+                "qualifiers": "drinking it at 8:15 a.m."
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention drinking green tea at 7:15 a.m. or 8:15 a.m., nor does it discuss migraines or their prevention. The evidence focuses on alcohol consumption and its effects on health, including cancer risk,",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "drinking it at 8:15 a.m.",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide a comparison between different times of drinking, nor does it discuss the relationship between drinking at a specific time and the prevention of migraines or any other health outcomes.",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "better than",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss the prevention of migraines or any other specific health outcomes related to drinking green tea. It focuses on alcohol consumption and its effects on health, including cancer risk.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "prevents migraines",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss the specific time of day for drinking green tea or its effects on migraines. The evidence focuses on alcohol consumption and its effects on health, including cancer risk.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "drinking it at 8:15 a.m.",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 44027.990582999904,
+  "completed_at_utc": "2026-10-29T03:00:17.919944Z"
+}

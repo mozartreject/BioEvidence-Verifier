@@ -1,0 +1,4 @@
+Claim: Cigarette smoking does not cause lung cancer.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'AI class estimates failed validation: class_scores must be finite numbers strictly between 0 and 1; retain uncertainty for abstract-only evidence, never exact 0% or 100%'}
+Raw response: ../raw/dac9ca59-2b4f-4e41-b558-175cd6a942ad.json

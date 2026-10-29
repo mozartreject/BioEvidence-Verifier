@@ -1,0 +1,764 @@
+{
+  "request": {
+    "request_id": "8bf7e9ff-8255-4903-a07f-f6d95f6bd588",
+    "claim": "Walking barefoot on indoor tiles for eight minutes reduces asthma attacks by exactly 13%.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:40:26.565373Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:40:26.565542Z",
+      "ended_at_utc": "2026-10-29T03:40:27.611151Z",
+      "latency_ms": 1045.5998329998692
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "web:2a55fa0fe30be5cf9a1e",
+        "document_id": "web:2a55fa0fe30be5cf9a1e",
+        "title": "Walking for health - NHS NHS",
+        "text": "Walking for health\nWalking is simple, free and one of the easiest ways to get more active, lose weight and become healthier.\nSometimes overlooked as a form of exercise, walking briskly can help you build stamina, burn excess calories and make your heart healthier.\nYou do not have to walk for hours. A brisk 10-minute daily walk has lots of health benefits and counts towards your 150 minutes of weekly exercise, as recommended in the physical activity guidelines for adults aged 19 to 64 .\nBefore you start\nAny shoes or trainers that are comfortable, provide adequate support and do not cause blisters will do.\nIf you're walking to work, you could wear your usual work clothes with a comfy pair of shoes and change shoes when you get into work.\nFor long walks, you may want to take some water, healthy snacks, a spare top, sunscreen and a sun hat in a small backpack.\nIf you start going for longer walks regularly, you may want to invest in a waterproof jacket and some specialist walking shoes for more challenging routes.\nHow do I know if I'm walking fast enough?\nA brisk walk is about 3 miles an hour, which is faster than a stroll.\nYou can tell you're walking briskly if you can still talk but cannot sing the words to a song.\nYou could also try using the free Active 10 app on your smartphone.\nIt tells you when you're walking fast enough and suggests ways to fit in some more brisk walking.\nDownload Active 10 from the NHS Better Health website\nWhat if I'm not very active?\nIf you're not very active but are able to walk, increase your walking distance gradually.\nIf your joints are a problem, check whether your local swimming pool holds exercise classes.\nThe water helps to support your joints while you move and can help you strengthen your muscles.\nIf you cannot leave the house, why not see if one of our free Fitness Studio exercise videos can help.\nStaying motivated\nMake it a habit\nThe easiest way to walk more is to make walking a habit.\nThink of ways to include walking in your daily routine.\nExamples include:\nwalking part of your journey to work\nwalking to the shops\nusing the stairs instead of the lift\nleaving the car behind for short journeys\nwalking the kids to school\ndoing a regular walk with a friend\ngoing for a stroll with family or friends after dinner\nListen to music\nWalking while listening to music or a podcast can take your mind off the effort.\nIt can also get you into a rhythm and help you walk faster.\nYou'll be surprised at how fast the time goes when you're walking to your favourite tunes.\nUse the Active 10 app\nActive 10 allows you to track how much and how fast you have walked.\nTo keep things interesting, it gives you goals to work towards and rewards your progress.\nDownload Active 10 from the NHS Better Health website\nMix it up\nAdd variety to your walks. You do not have to travel to the countryside to find a rewarding walk.\nTowns and cities offer interesting walks, including parks, heritage trails, canal towpaths, riverside paths, commons, woodlands, heaths and nature reserves.\nJoin a walking group\nWalking in a group is a great way to start walking, make new friends and stay motivated.\nRamblers organises group walks for health, leisure and as a means of getting around for people of all ages, backgrounds and levels of fitness.\nFor details of many locally organised walks in towns and cities, as well as the countryside, visit the Ramblers website .\nMore in\nExercise\nPage last reviewed: 15 December 2022\nNext review due: 15 December 2025",
+        "source": "www.nhs.uk",
+        "source_url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.930366516113281,
+        "relevance_score": 0.00035952526377514005,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:11512196",
+        "document_id": "pubmed:11512196",
+        "title": "[Risk factors for increased plantar pressure in type 2 diabetes].",
+        "text": "Diabetic foot ulcers develop at high pressure sites, whereby causal factors for increased plantar pressure are insufficiently investigated. We clinically inspected the feet of 186 Type 2-diabetic patients and measured peripheral neuropathy and plantar pressure during walking. Subjects were assigned into a group with normal (n = 113) and elevated (n = 73) plantar pressure. In patients with elevated plantar pressure body weight was significantly increased (85.4 +/- 12.3 kg vs. 80.7 +/- 13.8), as was plantar pressure increased at the hallux (519 +/- 322 kPa vs. 346 +/- 154), at the metatarsal head I (MTH) I (442 +/- 270 vs. 235 +/- 95) and at the MTH II-V (788 +/- 277 vs. 446 +/- 145). The vibration perception threshold was significantly higher among these patients (21.8 +/- 11.0 Volt vs. 16.7 +/- 9.0), as was the prevalence of hyperkeratosis (69.9% vs. 43.4) and clawed toes (28.8% vs. 15.9). In a multiple regression analysis, hyperkeratosis (Beta = 0.25, p < 0.001) and body weight (Beta = 0.27, p < 0.001) were significant risk factors, but did not describe the whole variation of plantar pressure in the multivariate model. Limited joint mobility (LJM), which was not measured but estimated in the present study, was slightly more prevalent among patients with elevated plantar pressures (46.6 vs. 33.6%). It could be assumed, that LJM, if exactly measured, is a significant risk factor in a multivariate analysis, too.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/11512196/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.470270156860352,
+        "relevance_score": 7.71046252339147e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:12019954",
+        "document_id": "pubmed:12019954",
+        "title": "Effects of aqua-treadmill exercise on selected blood parameters and on heart-rate variability of horses.",
+        "text": "The objectives of the present study were to investigate the effects of Aquatraining of horses (aqua-treadmill exercise; treadmill manufactured by Equitech - L.u.S. Equipment, Warendorf, Germany) on selected blood parameters [lactic acid concentration (mmol/l), haemoglobin content (g/l)] and on heart-rate variability (HRV) [heart rate (beats per min; b.p.m.), standard deviation of all NN-intervals (SDNN; ms), normalized power of the low and high frequency band (LFnorm, Hfnorm; au), % recurrence, % determinism and ratio(corr)]. Seven horses performed six exercise tests with different work loads (walking (x = 1.56 +/- 0.08 m/s) and trotting (x = 2.9 +/- 0.13 m/s): dry, water above the carpus and water above the elbow). The standardized test-protocol was: 5 min warm-up at walk while the water was pumped in, followed by the 20-min exercise period at walk or trot, followed by a 5-min walk while pumping out the water. Blood samples were taken prior to each test at rest in the stable, as well as exactly 5 min after the end of the 20-min exercise period. Electrocardiograms were recorded during rest and the 20-min exercise period. Compared to rest, neither the chosen velocities, the two water levels, nor the dry tests led to a significant increase of the lactic acid concentration in any horse. The haemoglobin content showed a significant increase as a result of exercise. Significant differences could be found between the heart rates at rest and the six exercise tests and between the mean of the levels 'walking' and the mean of the levels 'trotting'. An exercise-induced change of HRV was characterized by a decreasing SDNN, a significantly higher LFnorm (sympathetic influence) combined with a significantly lower HF(norm) power (parasympathetic activity) and a rising degree of order (significantly higher % determinism and nearly unchanged % recurrence) and stability (significantly rising ratio(corr)) of the recurrence plot. In conclusion, the used training-protocol for aqua-treadmill exercises only represents a medium-sized aerobic work load for horses, but the different levels of burden were indicated especially by changes in HRV.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/12019954/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.933857917785645,
+        "relevance_score": 4.850195909966715e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Walking barefoot on indoor tiles for eight minutes reduces asthma attacks by exactly 13%."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:40:27.611253Z",
+      "ended_at_utc": "2026-10-29T03:40:45.382043Z",
+      "latency_ms": 17770.575208999617
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "web:2a55fa0fe30be5cf9a1e",
+        "document_id": "web:2a55fa0fe30be5cf9a1e",
+        "title": "Walking for health - NHS NHS",
+        "text": "Walking for health\nWalking is simple, free and one of the easiest ways to get more active, lose weight and become healthier.\nSometimes overlooked as a form of exercise, walking briskly can help you build stamina, burn excess calories and make your heart healthier.\nYou do not have to walk for hours. A brisk 10-minute daily walk has lots of health benefits and counts towards your 150 minutes of weekly exercise, as recommended in the physical activity guidelines for adults aged 19 to 64 .\nBefore you start\nAny shoes or trainers that are comfortable, provide adequate support and do not cause blisters will do.\nIf you're walking to work, you could wear your usual work clothes with a comfy pair of shoes and change shoes when you get into work.\nFor long walks, you may want to take some water, healthy snacks, a spare top, sunscreen and a sun hat in a small backpack.\nIf you start going for longer walks regularly, you may want to invest in a waterproof jacket and some specialist walking shoes for more challenging routes.\nHow do I know if I'm walking fast enough?\nA brisk walk is about 3 miles an hour, which is faster than a stroll.\nYou can tell you're walking briskly if you can still talk but cannot sing the words to a song.\nYou could also try using the free Active 10 app on your smartphone.\nIt tells you when you're walking fast enough and suggests ways to fit in some more brisk walking.\nDownload Active 10 from the NHS Better Health website\nWhat if I'm not very active?\nIf you're not very active but are able to walk, increase your walking distance gradually.\nIf your joints are a problem, check whether your local swimming pool holds exercise classes.\nThe water helps to support your joints while you move and can help you strengthen your muscles.\nIf you cannot leave the house, why not see if one of our free Fitness Studio exercise videos can help.\nStaying motivated\nMake it a habit\nThe easiest way to walk more is to make walking a habit.\nThink of ways to include walking in your daily routine.\nExamples include:\nwalking part of your journey to work\nwalking to the shops\nusing the stairs instead of the lift\nleaving the car behind for short journeys\nwalking the kids to school\ndoing a regular walk with a friend\ngoing for a stroll with family or friends after dinner\nListen to music\nWalking while listening to music or a podcast can take your mind off the effort.\nIt can also get you into a rhythm and help you walk faster.\nYou'll be surprised at how fast the time goes when you're walking to your favourite tunes.\nUse the Active 10 app\nActive 10 allows you to track how much and how fast you have walked.\nTo keep things interesting, it gives you goals to work towards and rewards your progress.\nDownload Active 10 from the NHS Better Health website\nMix it up\nAdd variety to your walks. You do not have to travel to the countryside to find a rewarding walk.\nTowns and cities offer interesting walks, including parks, heritage trails, canal towpaths, riverside paths, commons, woodlands, heaths and nature reserves.\nJoin a walking group\nWalking in a group is a great way to start walking, make new friends and stay motivated.\nRamblers organises group walks for health, leisure and as a means of getting around for people of all ages, backgrounds and levels of fitness.\nFor details of many locally organised walks in towns and cities, as well as the countryside, visit the Ramblers website .\nMore in\nExercise\nPage last reviewed: 15 December 2022\nNext review due: 15 December 2025",
+        "source": "www.nhs.uk",
+        "source_url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.930366516113281,
+        "relevance_score": 0.00035952526377514005,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 7.190505275502802e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:11512196",
+        "document_id": "pubmed:11512196",
+        "title": "[Risk factors for increased plantar pressure in type 2 diabetes].",
+        "text": "Diabetic foot ulcers develop at high pressure sites, whereby causal factors for increased plantar pressure are insufficiently investigated. We clinically inspected the feet of 186 Type 2-diabetic patients and measured peripheral neuropathy and plantar pressure during walking. Subjects were assigned into a group with normal (n = 113) and elevated (n = 73) plantar pressure. In patients with elevated plantar pressure body weight was significantly increased (85.4 +/- 12.3 kg vs. 80.7 +/- 13.8), as was plantar pressure increased at the hallux (519 +/- 322 kPa vs. 346 +/- 154), at the metatarsal head I (MTH) I (442 +/- 270 vs. 235 +/- 95) and at the MTH II-V (788 +/- 277 vs. 446 +/- 145). The vibration perception threshold was significantly higher among these patients (21.8 +/- 11.0 Volt vs. 16.7 +/- 9.0), as was the prevalence of hyperkeratosis (69.9% vs. 43.4) and clawed toes (28.8% vs. 15.9). In a multiple regression analysis, hyperkeratosis (Beta = 0.25, p < 0.001) and body weight (Beta = 0.27, p < 0.001) were significant risk factors, but did not describe the whole variation of plantar pressure in the multivariate model. Limited joint mobility (LJM), which was not measured but estimated in the present study, was slightly more prevalent among patients with elevated plantar pressures (46.6 vs. 33.6%). It could be assumed, that LJM, if exactly measured, is a significant risk factor in a multivariate analysis, too.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/11512196/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.470270156860352,
+        "relevance_score": 7.71046252339147e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 5.397323766374029e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:12019954",
+        "document_id": "pubmed:12019954",
+        "title": "Effects of aqua-treadmill exercise on selected blood parameters and on heart-rate variability of horses.",
+        "text": "The objectives of the present study were to investigate the effects of Aquatraining of horses (aqua-treadmill exercise; treadmill manufactured by Equitech - L.u.S. Equipment, Warendorf, Germany) on selected blood parameters [lactic acid concentration (mmol/l), haemoglobin content (g/l)] and on heart-rate variability (HRV) [heart rate (beats per min; b.p.m.), standard deviation of all NN-intervals (SDNN; ms), normalized power of the low and high frequency band (LFnorm, Hfnorm; au), % recurrence, % determinism and ratio(corr)]. Seven horses performed six exercise tests with different work loads (walking (x = 1.56 +/- 0.08 m/s) and trotting (x = 2.9 +/- 0.13 m/s): dry, water above the carpus and water above the elbow). The standardized test-protocol was: 5 min warm-up at walk while the water was pumped in, followed by the 20-min exercise period at walk or trot, followed by a 5-min walk while pumping out the water. Blood samples were taken prior to each test at rest in the stable, as well as exactly 5 min after the end of the 20-min exercise period. Electrocardiograms were recorded during rest and the 20-min exercise period. Compared to rest, neither the chosen velocities, the two water levels, nor the dry tests led to a significant increase of the lactic acid concentration in any horse. The haemoglobin content showed a significant increase as a result of exercise. Significant differences could be found between the heart rates at rest and the six exercise tests and between the mean of the levels 'walking' and the mean of the levels 'trotting'. An exercise-induced change of HRV was characterized by a decreasing SDNN, a significantly higher LFnorm (sympathetic influence) combined with a significantly lower HF(norm) power (parasympathetic activity) and a rising degree of order (significantly higher % determinism and nearly unchanged % recurrence) and stability (significantly rising ratio(corr)) of the recurrence plot. In conclusion, the used training-protocol for aqua-treadmill exercises only represents a medium-sized aerobic work load for horses, but the different levels of burden were indicated especially by changes in HRV.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/12019954/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.933857917785645,
+        "relevance_score": 4.850195909966715e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 3.3951371369767e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:40:45.382090Z",
+      "ended_at_utc": "2026-10-29T03:40:51.146039Z",
+      "latency_ms": 5763.921541999935
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "web:2a55fa0fe30be5cf9a1e",
+      "pubmed:11512196",
+      "pubmed:12019954"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cWalking barefoot on indoor tiles for eight minutes\u201d; relationship: \u201creduces\u201d; outcome: \u201casthma attacks\u201d; qualifiers: \u201cexactly 13%\u201d. The evidence does not mention walking barefoot on indoor tiles for eight minutes. The text discusses general walking and exercise benefits, but not the specific claim about barefoot walking on indoor tiles for eight to 1 The evidence does not provide any information about the relationship between walking and asthma attacks. The text focuses on general health benefits of walking, not asthma specifically. The evidence does not discuss asthma attacks or their reduction. The text talks about general health benefits of walking, such as building stamina and burning calories, but does not mention asthma. The evidence does not provide any specific percentage or exact number related to the outcome. The text mentions that a 10-minute brisk walk has health benefits, but does not specify a 13% reduction in asthma attacks.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:11512196",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:12019954",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:2a55fa0fe30be5cf9a1e",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Walking barefoot on indoor tiles for eight minutes",
+              "relationship": "reduces",
+              "outcome": "asthma attacks",
+              "population": "",
+              "qualifiers": "exactly 13%"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention walking barefoot on indoor tiles for eight minutes. The text discusses general walking and exercise benefits, but not the specific claim about barefoot walking on indoor tiles for eight to 1",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Walking barefoot on indoor tiles for eight minutes",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any information about the relationship between walking and asthma attacks. The text focuses on general health benefits of walking, not asthma specifically.",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "reduces",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss asthma attacks or their reduction. The text talks about general health benefits of walking, such as building stamina and burning calories, but does not mention asthma.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "asthma attacks",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any specific percentage or exact number related to the outcome. The text mentions that a 10-minute brisk walk has health benefits, but does not specify a 13% reduction in asthma attacks.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly 13%",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The evidence provided does not address the specific claim about walking barefoot on indoor tiles reducing asthma attacks. [E1] discusses general benefits of walking but does not mention indoor tile walking or asthma. [E2] and [E3] are unrelated, focusing on plantar pressure in diabetes and horse exercise, respectively. Therefore, the evidence is insufficient to support or refute the claim.",
+    "cited_evidence_ids": [
+      "web:2a55fa0fe30be5cf9a1e",
+      "pubmed:11512196",
+      "pubmed:12019954"
+    ],
+    "grounding": {
+      "semantic_score": 0.5058754235506058,
+      "coverage_score": 0.49682173132896423,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:41:22.037163Z",
+      "ended_at_utc": "2026-10-29T03:41:32.832573Z",
+      "latency_ms": 10795.274167000116
+    },
+    "warnings": [
+      "NEI semantic validation excluded explicit evidence-absence/insufficiency sentence(s); raw semantic metrics are preserved"
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "web:2a55fa0fe30be5cf9a1e",
+      "document_id": "web:2a55fa0fe30be5cf9a1e",
+      "title": "Walking for health - NHS NHS",
+      "text": "Walking for health\nWalking is simple, free and one of the easiest ways to get more active, lose weight and become healthier.\nSometimes overlooked as a form of exercise, walking briskly can help you build stamina, burn excess calories and make your heart healthier.\nYou do not have to walk for hours. A brisk 10-minute daily walk has lots of health benefits and counts towards your 150 minutes of weekly exercise, as recommended in the physical activity guidelines for adults aged 19 to 64 .\nBefore you start\nAny shoes or trainers that are comfortable, provide adequate support and do not cause blisters will do.\nIf you're walking to work, you could wear your usual work clothes with a comfy pair of shoes and change shoes when you get into work.\nFor long walks, you may want to take some water, healthy snacks, a spare top, sunscreen and a sun hat in a small backpack.\nIf you start going for longer walks regularly, you may want to invest in a waterproof jacket and some specialist walking shoes for more challenging routes.\nHow do I know if I'm walking fast enough?\nA brisk walk is about 3 miles an hour, which is faster than a stroll.\nYou can tell you're walking briskly if you can still talk but cannot sing the words to a song.\nYou could also try using the free Active 10 app on your smartphone.\nIt tells you when you're walking fast enough and suggests ways to fit in some more brisk walking.\nDownload Active 10 from the NHS Better Health website\nWhat if I'm not very active?\nIf you're not very active but are able to walk, increase your walking distance gradually.\nIf your joints are a problem, check whether your local swimming pool holds exercise classes.\nThe water helps to support your joints while you move and can help you strengthen your muscles.\nIf you cannot leave the house, why not see if one of our free Fitness Studio exercise videos can help.\nStaying motivated\nMake it a habit\nThe easiest way to walk more is to make walking a habit.\nThink of ways to include walking in your daily routine.\nExamples include:\nwalking part of your journey to work\nwalking to the shops\nusing the stairs instead of the lift\nleaving the car behind for short journeys\nwalking the kids to school\ndoing a regular walk with a friend\ngoing for a stroll with family or friends after dinner\nListen to music\nWalking while listening to music or a podcast can take your mind off the effort.\nIt can also get you into a rhythm and help you walk faster.\nYou'll be surprised at how fast the time goes when you're walking to your favourite tunes.\nUse the Active 10 app\nActive 10 allows you to track how much and how fast you have walked.\nTo keep things interesting, it gives you goals to work towards and rewards your progress.\nDownload Active 10 from the NHS Better Health website\nMix it up\nAdd variety to your walks. You do not have to travel to the countryside to find a rewarding walk.\nTowns and cities offer interesting walks, including parks, heritage trails, canal towpaths, riverside paths, commons, woodlands, heaths and nature reserves.\nJoin a walking group\nWalking in a group is a great way to start walking, make new friends and stay motivated.\nRamblers organises group walks for health, leisure and as a means of getting around for people of all ages, backgrounds and levels of fitness.\nFor details of many locally organised walks in towns and cities, as well as the countryside, visit the Ramblers website .\nMore in\nExercise\nPage last reviewed: 15 December 2022\nNext review due: 15 December 2025",
+      "source": "www.nhs.uk",
+      "source_url": "https://www.nhs.uk/live-well/exercise/walking-for-health/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -7.930366516113281,
+      "relevance_score": 0.00035952526377514005,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 7.190505275502802e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:11512196",
+      "document_id": "pubmed:11512196",
+      "title": "[Risk factors for increased plantar pressure in type 2 diabetes].",
+      "text": "Diabetic foot ulcers develop at high pressure sites, whereby causal factors for increased plantar pressure are insufficiently investigated. We clinically inspected the feet of 186 Type 2-diabetic patients and measured peripheral neuropathy and plantar pressure during walking. Subjects were assigned into a group with normal (n = 113) and elevated (n = 73) plantar pressure. In patients with elevated plantar pressure body weight was significantly increased (85.4 +/- 12.3 kg vs. 80.7 +/- 13.8), as was plantar pressure increased at the hallux (519 +/- 322 kPa vs. 346 +/- 154), at the metatarsal head I (MTH) I (442 +/- 270 vs. 235 +/- 95) and at the MTH II-V (788 +/- 277 vs. 446 +/- 145). The vibration perception threshold was significantly higher among these patients (21.8 +/- 11.0 Volt vs. 16.7 +/- 9.0), as was the prevalence of hyperkeratosis (69.9% vs. 43.4) and clawed toes (28.8% vs. 15.9). In a multiple regression analysis, hyperkeratosis (Beta = 0.25, p < 0.001) and body weight (Beta = 0.27, p < 0.001) were significant risk factors, but did not describe the whole variation of plantar pressure in the multivariate model. Limited joint mobility (LJM), which was not measured but estimated in the present study, was slightly more prevalent among patients with elevated plantar pressures (46.6 vs. 33.6%). It could be assumed, that LJM, if exactly measured, is a significant risk factor in a multivariate analysis, too.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11512196/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.470270156860352,
+      "relevance_score": 7.71046252339147e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 5.397323766374029e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:12019954",
+      "document_id": "pubmed:12019954",
+      "title": "Effects of aqua-treadmill exercise on selected blood parameters and on heart-rate variability of horses.",
+      "text": "The objectives of the present study were to investigate the effects of Aquatraining of horses (aqua-treadmill exercise; treadmill manufactured by Equitech - L.u.S. Equipment, Warendorf, Germany) on selected blood parameters [lactic acid concentration (mmol/l), haemoglobin content (g/l)] and on heart-rate variability (HRV) [heart rate (beats per min; b.p.m.), standard deviation of all NN-intervals (SDNN; ms), normalized power of the low and high frequency band (LFnorm, Hfnorm; au), % recurrence, % determinism and ratio(corr)]. Seven horses performed six exercise tests with different work loads (walking (x = 1.56 +/- 0.08 m/s) and trotting (x = 2.9 +/- 0.13 m/s): dry, water above the carpus and water above the elbow). The standardized test-protocol was: 5 min warm-up at walk while the water was pumped in, followed by the 20-min exercise period at walk or trot, followed by a 5-min walk while pumping out the water. Blood samples were taken prior to each test at rest in the stable, as well as exactly 5 min after the end of the 20-min exercise period. Electrocardiograms were recorded during rest and the 20-min exercise period. Compared to rest, neither the chosen velocities, the two water levels, nor the dry tests led to a significant increase of the lactic acid concentration in any horse. The haemoglobin content showed a significant increase as a result of exercise. Significant differences could be found between the heart rates at rest and the six exercise tests and between the mean of the levels 'walking' and the mean of the levels 'trotting'. An exercise-induced change of HRV was characterized by a decreasing SDNN, a significantly higher LFnorm (sympathetic influence) combined with a significantly lower HF(norm) power (parasympathetic activity) and a rising degree of order (significantly higher % determinism and nearly unchanged % recurrence) and stability (significantly rising ratio(corr)) of the recurrence plot. In conclusion, the used training-protocol for aqua-treadmill exercises only represents a medium-sized aerobic work load for horses, but the different levels of burden were indicated especially by changes in HRV.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/12019954/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.933857917785645,
+      "relevance_score": 4.850195909966715e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 3.3951371369767e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cWalking barefoot on indoor tiles for eight minutes\u201d; relationship: \u201creduces\u201d; outcome: \u201casthma attacks\u201d; qualifiers: \u201cexactly 13%\u201d. The evidence does not mention walking barefoot on indoor tiles for eight minutes. The text discusses general walking and exercise benefits, but not the specific claim about barefoot walking on indoor tiles for eight to 1 The evidence does not provide any information about the relationship between walking and asthma attacks. The text focuses on general health benefits of walking, not asthma specifically. The evidence does not discuss asthma attacks or their reduction. The text talks about general health benefits of walking, such as building stamina and burning calories, but does not mention asthma. The evidence does not provide any specific percentage or exact number related to the outcome. The text mentions that a 10-minute brisk walk has health benefits, but does not specify a 13% reduction in asthma attacks.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:11512196",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:12019954",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:2a55fa0fe30be5cf9a1e",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Walking barefoot on indoor tiles for eight minutes",
+                "relationship": "reduces",
+                "outcome": "asthma attacks",
+                "population": "",
+                "qualifiers": "exactly 13%"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention walking barefoot on indoor tiles for eight minutes. The text discusses general walking and exercise benefits, but not the specific claim about barefoot walking on indoor tiles for eight to 1",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Walking barefoot on indoor tiles for eight minutes",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any information about the relationship between walking and asthma attacks. The text focuses on general health benefits of walking, not asthma specifically.",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "reduces",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss asthma attacks or their reduction. The text talks about general health benefits of walking, such as building stamina and burning calories, but does not mention asthma.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "asthma attacks",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any specific percentage or exact number related to the outcome. The text mentions that a 10-minute brisk walk has health benefits, but does not specify a 13% reduction in asthma attacks.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly 13%",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 66267.34016699993,
+  "completed_at_utc": "2026-10-29T03:41:32.833650Z"
+}

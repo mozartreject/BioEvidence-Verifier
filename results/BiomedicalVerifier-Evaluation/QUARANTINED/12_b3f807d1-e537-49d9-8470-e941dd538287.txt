@@ -1,0 +1,5 @@
+Claim: Taking medicine Zentarovil reduces migraine frequency by exactly 42%.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Semantic grounding 0.2857 below threshold 0.4500
+Raw response: ../raw/b3f807d1-e537-49d9-8470-e941dd538287.json

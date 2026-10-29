@@ -1,0 +1,799 @@
+{
+  "request": {
+    "request_id": "cb86472d-a117-4264-9582-5d6887c874cc",
+    "claim": "Iron deficiency can cause anemia.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:27:16.292931Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:27:16.293016Z",
+      "ended_at_utc": "2026-10-29T03:27:16.968112Z",
+      "latency_ms": 675.0927920002141
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:15529613",
+        "document_id": "pubmed:15529613",
+        "title": "Treatment of iron deficiency anemia with Ferro-Folgamma.",
+        "text": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body. The decrease of iron quantity has many causes: insufficient intake of aliments rich in iron (meat, viscera, green vegetables), increased necessities during growth period, pregnancy, erythrocytes hyperregeneration, high-performance sportsmen, increased loss by digestive way, genito-urinary way, respiratory, hemorrhagic syndromes. Clinically, symptoms and signs specific to all types of anemia and those specific to lack of iron occur besides the symptoms and signs of the underlying disease: atrophic glositis, angular stomatitis, sideropenic dysphagia, pica, skin and nails changes. Laboratory investigations useful for diagnosis are: microcytic, hypochromic anemia, decreased serum iron level, total capacity of iron binding increased, medullar iron store absent, good response to iron therapy. Ferro-Folgamma is one of the most indicated medicines in iron deficiency anemia. Due to its components this medicine has many indications: insufficient alimentary intake concerning iron, folic acid, B12 vitamin, vegetarian alimentation, increased needs during growth period, iron deficiency anaemia secondary to chronic hemorrhages, malnutrition, anemias associated with chronic alcohol intake, preventive treatment of iron deficiency anemia and megaloblastic anemia during pregnancy and lactation.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/15529613/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.501490592956543,
+        "relevance_score": 0.9985010623931885,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:32507812",
+        "document_id": "pubmed:32507812",
+        "title": "[Iron metabolism and iron-refractory iron deficiency anemia].",
+        "text": "Hepcidin is a key molecule that regulates iron metabolism in the body. Iron refractory iron deficiency anemia (IRIDA) is a genetic disorder caused by a defect in the TMPRSS6 gene encoding matriptase-2, a transmembrane serine protease that physiologically inhibits hepcidin production. In patients with IRIDA, the iron uptake in the intestine is remarkably reduced, and iron deficiency anemia (IDA) develops. However, in contrast to the ordinary IDA, high hepcidin levels in IRIDA keep the serum ferritin levels normal or sometimes high. Due to the malabsorption of iron in the intestine, IRIDA is refractory to oral iron supplementation, but partially responds to parenteral iron administration. A high hepcidin level gives IRIDA a lot of similarities with anemia of chronic disease, and a differential diagnosis between the two disorders needs careful inspection. Diagnosis of IRIDA needs genetic testing that is hardly available in most facilities, and therefore its clinical features are not fully understood.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32507812/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.39200496673584,
+        "relevance_score": 0.987775444984436,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:1778d6c0884edb4a9d4e",
+        "document_id": "web:1778d6c0884edb4a9d4e",
+        "title": "Iron: What It Is and Health Benefits",
+        "text": "Iron: What It Is and Health Benefits\nAdvertisement\nJuly 25, 2024 / Diet, Food & Fitness / Nutrition\nWhat Iron Does for Your Body\nThe benefits of iron span your whole body, from your blood and your brain to your immune system and more\nImage content: This image is available to view online.\nView image online ( https://assets.clevelandclinic.org/transform/3fa8076a-c7b1-42e9-935d-d732b79f2a8f/foods-with-iron-1667316453 )\nPerson holding up and pointing to bowl of tofu, with assorted protein foods floating around\nWhat is iron?\nIron is an important nutrient in our diets. So critical, in fact, that many foods, from infant formula to breakfast cereals, are commonly fortified with iron to help ensure we get enough of it.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nBut there are risks to getting too much iron.\nHow can you make sure you get the right amount? And why does iron matter so much?\nWe talked with registered dietitian Lisa Reitz, RD, LD, about the benefits of iron and how to make sure you get the right amount of it in your diet.\nIron benefits\nOne of iron\u2019s top jobs is to provide oxygen to your body.\nHere\u2019s how.\nIron helps your body to produce hemoglobin, a protein in your red blood cells . Hemoglobin carries oxygen from your lungs to the rest of your body.\nIron also helps create the protein myoglobin, which provides oxygen to your muscles.\n\u201cWhen we don\u2019t have enough iron, our red blood cells can\u2019t transport oxygen as well,\u201d Reitz says.\nIn fact, people who have an iron deficiency have smaller red blood cells. That\u2019s because their blood has less hemoglobin and less oxygen to plump them up.\nIt\u2019s a domino effect. Too little iron means too little hemoglobin and myoglobin. Too little hemoglobin and myoglobin means too little oxygen coursing through your body. And too little oxygen can spell trouble.\nReitz shares just a few ways that our iron intake affects our health.\nKeeps energy levels up\nYour body uses oxygen for energy. And iron helps make sure your body gets the oxygen it needs to keep your energy levels up.\nAdvertisement\n\u201cSymptoms like fatigue and lightheadedness can have a lot of causes. And having low iron or iron-deficiency anemia is one of them,\u201d Reitz shares. \u201cYour body needs iron to help keep up with the demands of life.\u201d\nAids brain health\nYour brain cells need a steady stream of oxygen-rich blood to function at their best. Iron helps ensure that oxygen-rich blood gets to those cells.\nOxygen is a catalyst that helps your brain do things like build nerves, make and break down chemicals that allow your nerves to communicate, and keep your brain working in tip-top shape.\nSo, when you don\u2019t have enough iron to supply oxygen to your brain, it can cause trouble.\nBoosts immunity\nIron helps keep your body moving and grooving through its daily processes. So, when you have less iron \u2014 and therefore, less oxygen \u2014 flowing through your system, some other tasks can fall by the wayside. That can include things like keeping up your immune system .\n\u201cPeople who have iron deficiency anemia can be less able to fight off certain infections and germs,\u201d Reitz explains. \u201cIf you're not getting enough oxygen through your body, your body has to work harder just to try to keep going with the day to day. And things like your immune system can suffer.\u201d\nThink about it. When you\u2019re overtaxed with work, kids\u2019 after-school commitments and other obligations, the dishes might start to pile up. Or the laundry might go undone. We all make tradeoffs in our lives. And your body does the same.\nHealthier hair\nFor some people, one of the first signs that your iron is low can be a change in your hair . Or more specifically, the loss of it.\nRemember those tradeoffs we make? When your body chooses between sending its limited oxygen supply to your vital organs or your hair follicles, your organs win out.\nLess blood and oxygen to your hair follicles can damage them and cause you to shed more hair.\nHow much iron you need\nHere\u2019s a look at the recommended dietary allowances for iron (in milligrams):\nAge Males Females Pregnancy Lactating Birth to 6 months 0.27 mg 0.27 mg 7 to 12 months 11 mg 11 mg 1 to 3 years 7 mg 7 mg 4 to 8 years 10 mg 10 mg 9 to 13 years 8 mg 8 mg 14 to 18 years 11 mg 15 mg 27 mg 10 mg 19 to 50 years 8 mg 18 mg 27 mg 9 mg 51+ years 8 mg 8 mg Age Birth to 6 months Males 0.27 mg Females 0.27 mg Pregnancy Lactating 7 to 12 months Males 11 mg Females 11 mg Pregnancy Lactating 1 to 3 years Males 7 mg Females 7 mg Pregnancy Lactating 4 to 8 years Males 10 mg Females 10 mg Pregnancy Lactating 9 to 13 years Males 8 mg Females 8 mg Pregnancy Lactating 14 to 18 years Males 11 mg Females 15 mg Pregnancy 27 mg Lactating 10 mg 19 to 50 years Males 8 mg Females 18 mg Pregnancy 27 mg Lactating 9 mg 51+ years Males 8 mg Females 8 mg Pregnancy Lactating\nThe World Health Organization (WHO) calls iron deficiency anemia the most common nutritional deficiency in the world, estimating that it affects 30% of people across the globe. It\u2019s more common in regions where foods aren\u2019t fortified with iron. But it can affect anyone.\nIron deficiency is also more common in people who are pregnant. That\u2019s because, during pregnancy, you create more red blood cells to support healthy fetal development. That means you need more iron to make sure those blood cells get the oxygen they need. A healthy pregnancy diet should include plenty of iron. And be sure to choose a prenatal vitamin with adequate iron\nYou also need more iron during your menstruating years to counteract the loss of blood in each menstrual cycle. People who experience higher-than-average periods may be at risk for iron deficiency.\nAdvertisement\nThe same is true for other people who experience high amounts of blood loss, such as some people living with cancer or people who donate blood often.\nWhat\u2019s more, certain medications, like proton pump inhibitors , commonly used for chronic acid reflux and stomach ulcers, can keep your body from absorbing iron properly, which can leave you at risk for deficiency.\nGetting more iron on your plate\nYour body doesn\u2019t make iron on its own. It has to get it from the foods you eat. Luckily, lots of foods are good sources of iron . Here are some of the top sources:\nTypes of dietary iron\nNot all iron that you get from food is created equally. In fact, the iron you get from animal sources and the kind you get from plant foods are different.\nHeme iron comes from animal sources.\nNon-heme iron comes from plant sources.\nThe difference \u2014 perhaps surprisingly \u2014 has to do with vitamin C . Think of vitamin C as a buddy that helps your body properly use the iron available in your plant foods.\nThat could be foods like:\nAdvertisement\nShould you take an iron supplement?\nAge 13 and younger : 40 mg.\nAdvertisement\nHealth Library\nIron-Deficiency Anemia\nOverview\nHealth Library\nIron-Deficiency Anemia\nOverview",
+        "source": "health.clevelandclinic.org",
+        "source_url": "https://health.clevelandclinic.org/iron",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.665502548217773,
+        "relevance_score": 0.00046850155922584236,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Iron deficiency can cause anemia."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:27:16.968174Z",
+      "ended_at_utc": "2026-10-29T03:27:17.145160Z",
+      "latency_ms": 176.98779200009085
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:15529613",
+        "document_id": "pubmed:15529613",
+        "title": "Treatment of iron deficiency anemia with Ferro-Folgamma.",
+        "text": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body. The decrease of iron quantity has many causes: insufficient intake of aliments rich in iron (meat, viscera, green vegetables), increased necessities during growth period, pregnancy, erythrocytes hyperregeneration, high-performance sportsmen, increased loss by digestive way, genito-urinary way, respiratory, hemorrhagic syndromes. Clinically, symptoms and signs specific to all types of anemia and those specific to lack of iron occur besides the symptoms and signs of the underlying disease: atrophic glositis, angular stomatitis, sideropenic dysphagia, pica, skin and nails changes. Laboratory investigations useful for diagnosis are: microcytic, hypochromic anemia, decreased serum iron level, total capacity of iron binding increased, medullar iron store absent, good response to iron therapy. Ferro-Folgamma is one of the most indicated medicines in iron deficiency anemia. Due to its components this medicine has many indications: insufficient alimentary intake concerning iron, folic acid, B12 vitamin, vegetarian alimentation, increased needs during growth period, iron deficiency anaemia secondary to chronic hemorrhages, malnutrition, anemias associated with chronic alcohol intake, preventive treatment of iron deficiency anemia and megaloblastic anemia during pregnancy and lactation.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/15529613/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.501490592956543,
+        "relevance_score": 0.9985010623931885,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.1997002124786377,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:32507812",
+        "document_id": "pubmed:32507812",
+        "title": "[Iron metabolism and iron-refractory iron deficiency anemia].",
+        "text": "Hepcidin is a key molecule that regulates iron metabolism in the body. Iron refractory iron deficiency anemia (IRIDA) is a genetic disorder caused by a defect in the TMPRSS6 gene encoding matriptase-2, a transmembrane serine protease that physiologically inhibits hepcidin production. In patients with IRIDA, the iron uptake in the intestine is remarkably reduced, and iron deficiency anemia (IDA) develops. However, in contrast to the ordinary IDA, high hepcidin levels in IRIDA keep the serum ferritin levels normal or sometimes high. Due to the malabsorption of iron in the intestine, IRIDA is refractory to oral iron supplementation, but partially responds to parenteral iron administration. A high hepcidin level gives IRIDA a lot of similarities with anemia of chronic disease, and a differential diagnosis between the two disorders needs careful inspection. Diagnosis of IRIDA needs genetic testing that is hardly available in most facilities, and therefore its clinical features are not fully understood.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32507812/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.39200496673584,
+        "relevance_score": 0.987775444984436,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19755508899688723,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:1778d6c0884edb4a9d4e",
+        "document_id": "web:1778d6c0884edb4a9d4e",
+        "title": "Iron: What It Is and Health Benefits",
+        "text": "Iron: What It Is and Health Benefits\nAdvertisement\nJuly 25, 2024 / Diet, Food & Fitness / Nutrition\nWhat Iron Does for Your Body\nThe benefits of iron span your whole body, from your blood and your brain to your immune system and more\nImage content: This image is available to view online.\nView image online ( https://assets.clevelandclinic.org/transform/3fa8076a-c7b1-42e9-935d-d732b79f2a8f/foods-with-iron-1667316453 )\nPerson holding up and pointing to bowl of tofu, with assorted protein foods floating around\nWhat is iron?\nIron is an important nutrient in our diets. So critical, in fact, that many foods, from infant formula to breakfast cereals, are commonly fortified with iron to help ensure we get enough of it.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nBut there are risks to getting too much iron.\nHow can you make sure you get the right amount? And why does iron matter so much?\nWe talked with registered dietitian Lisa Reitz, RD, LD, about the benefits of iron and how to make sure you get the right amount of it in your diet.\nIron benefits\nOne of iron\u2019s top jobs is to provide oxygen to your body.\nHere\u2019s how.\nIron helps your body to produce hemoglobin, a protein in your red blood cells . Hemoglobin carries oxygen from your lungs to the rest of your body.\nIron also helps create the protein myoglobin, which provides oxygen to your muscles.\n\u201cWhen we don\u2019t have enough iron, our red blood cells can\u2019t transport oxygen as well,\u201d Reitz says.\nIn fact, people who have an iron deficiency have smaller red blood cells. That\u2019s because their blood has less hemoglobin and less oxygen to plump them up.\nIt\u2019s a domino effect. Too little iron means too little hemoglobin and myoglobin. Too little hemoglobin and myoglobin means too little oxygen coursing through your body. And too little oxygen can spell trouble.\nReitz shares just a few ways that our iron intake affects our health.\nKeeps energy levels up\nYour body uses oxygen for energy. And iron helps make sure your body gets the oxygen it needs to keep your energy levels up.\nAdvertisement\n\u201cSymptoms like fatigue and lightheadedness can have a lot of causes. And having low iron or iron-deficiency anemia is one of them,\u201d Reitz shares. \u201cYour body needs iron to help keep up with the demands of life.\u201d\nAids brain health\nYour brain cells need a steady stream of oxygen-rich blood to function at their best. Iron helps ensure that oxygen-rich blood gets to those cells.\nOxygen is a catalyst that helps your brain do things like build nerves, make and break down chemicals that allow your nerves to communicate, and keep your brain working in tip-top shape.\nSo, when you don\u2019t have enough iron to supply oxygen to your brain, it can cause trouble.\nBoosts immunity\nIron helps keep your body moving and grooving through its daily processes. So, when you have less iron \u2014 and therefore, less oxygen \u2014 flowing through your system, some other tasks can fall by the wayside. That can include things like keeping up your immune system .\n\u201cPeople who have iron deficiency anemia can be less able to fight off certain infections and germs,\u201d Reitz explains. \u201cIf you're not getting enough oxygen through your body, your body has to work harder just to try to keep going with the day to day. And things like your immune system can suffer.\u201d\nThink about it. When you\u2019re overtaxed with work, kids\u2019 after-school commitments and other obligations, the dishes might start to pile up. Or the laundry might go undone. We all make tradeoffs in our lives. And your body does the same.\nHealthier hair\nFor some people, one of the first signs that your iron is low can be a change in your hair . Or more specifically, the loss of it.\nRemember those tradeoffs we make? When your body chooses between sending its limited oxygen supply to your vital organs or your hair follicles, your organs win out.\nLess blood and oxygen to your hair follicles can damage them and cause you to shed more hair.\nHow much iron you need\nHere\u2019s a look at the recommended dietary allowances for iron (in milligrams):\nAge Males Females Pregnancy Lactating Birth to 6 months 0.27 mg 0.27 mg 7 to 12 months 11 mg 11 mg 1 to 3 years 7 mg 7 mg 4 to 8 years 10 mg 10 mg 9 to 13 years 8 mg 8 mg 14 to 18 years 11 mg 15 mg 27 mg 10 mg 19 to 50 years 8 mg 18 mg 27 mg 9 mg 51+ years 8 mg 8 mg Age Birth to 6 months Males 0.27 mg Females 0.27 mg Pregnancy Lactating 7 to 12 months Males 11 mg Females 11 mg Pregnancy Lactating 1 to 3 years Males 7 mg Females 7 mg Pregnancy Lactating 4 to 8 years Males 10 mg Females 10 mg Pregnancy Lactating 9 to 13 years Males 8 mg Females 8 mg Pregnancy Lactating 14 to 18 years Males 11 mg Females 15 mg Pregnancy 27 mg Lactating 10 mg 19 to 50 years Males 8 mg Females 18 mg Pregnancy 27 mg Lactating 9 mg 51+ years Males 8 mg Females 8 mg Pregnancy Lactating\nThe World Health Organization (WHO) calls iron deficiency anemia the most common nutritional deficiency in the world, estimating that it affects 30% of people across the globe. It\u2019s more common in regions where foods aren\u2019t fortified with iron. But it can affect anyone.\nIron deficiency is also more common in people who are pregnant. That\u2019s because, during pregnancy, you create more red blood cells to support healthy fetal development. That means you need more iron to make sure those blood cells get the oxygen they need. A healthy pregnancy diet should include plenty of iron. And be sure to choose a prenatal vitamin with adequate iron\nYou also need more iron during your menstruating years to counteract the loss of blood in each menstrual cycle. People who experience higher-than-average periods may be at risk for iron deficiency.\nAdvertisement\nThe same is true for other people who experience high amounts of blood loss, such as some people living with cancer or people who donate blood often.\nWhat\u2019s more, certain medications, like proton pump inhibitors , commonly used for chronic acid reflux and stomach ulcers, can keep your body from absorbing iron properly, which can leave you at risk for deficiency.\nGetting more iron on your plate\nYour body doesn\u2019t make iron on its own. It has to get it from the foods you eat. Luckily, lots of foods are good sources of iron . Here are some of the top sources:\nTypes of dietary iron\nNot all iron that you get from food is created equally. In fact, the iron you get from animal sources and the kind you get from plant foods are different.\nHeme iron comes from animal sources.\nNon-heme iron comes from plant sources.\nThe difference \u2014 perhaps surprisingly \u2014 has to do with vitamin C . Think of vitamin C as a buddy that helps your body properly use the iron available in your plant foods.\nThat could be foods like:\nAdvertisement\nShould you take an iron supplement?\nAge 13 and younger : 40 mg.\nAdvertisement\nHealth Library\nIron-Deficiency Anemia\nOverview\nHealth Library\nIron-Deficiency Anemia\nOverview",
+        "source": "health.clevelandclinic.org",
+        "source_url": "https://health.clevelandclinic.org/iron",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.665502548217773,
+        "relevance_score": 0.00046850155922584236,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 9.370031184516848e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:27:17.145195Z",
+      "ended_at_utc": "2026-10-29T03:27:17.145300Z",
+      "latency_ms": 0.11533400038388208
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "SUPPORTED",
+    "user_facing_verdict": "SUPPORTED",
+    "probabilities": {
+      "refuted": 0.05,
+      "nei": 0.05,
+      "supported": 0.9
+    },
+    "verifier_score": 0.9,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:15529613",
+      "pubmed:32507812",
+      "web:1778d6c0884edb4a9d4e"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "SUPPORTED",
+          "reason": "The evidence discusses iron deficiency and its relation to anemia, establishing that iron deficiency can cause anemia. The evidence explicitly states that iron deficiency anemia is caused by a decrease in iron in the body, establishing a causal relationship. The evidence directly mentions iron deficiency anemia and its characteristics, establishing that anemia is the outcome of iron deficiency.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:15529613",
+              "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:15529613",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:32507812",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:1778d6c0884edb4a9d4e",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Iron deficiency",
+              "relationship": "cause",
+              "outcome": "anemia",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence discusses iron deficiency and its relation to anemia, establishing that iron deficiency can cause anemia.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E3S26"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body.",
+                "claim_fragment": "Iron deficiency",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:15529613",
+                    "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+                  },
+                  {
+                    "evidence_id": "web:1778d6c0884edb4a9d4e",
+                    "quote": "Iron also helps create the protein myoglobin, which provides oxygen to your muscles."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence explicitly states that iron deficiency anemia is caused by a decrease in iron in the body, establishing a causal relationship.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body.",
+                "claim_fragment": "cause",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:15529613",
+                    "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence directly mentions iron deficiency anemia and its characteristics, establishing that anemia is the outcome of iron deficiency.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body.",
+                "claim_fragment": "anemia",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:15529613",
+                    "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:15529613"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.9,
+            "REFUTED": 0.05,
+            "NEI": 0.05
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Iron deficiency anemia is described in [E1] as a condition where hemoglobin synthesis is impaired due to a decrease in body iron. This deficiency can lead to smaller red blood cells and reduced oxygen-carrying capacity, impacting energy levels, brain function, and immune health. [E3] further supports this by explaining that iron is essential for producing hemoglobin, which is crucial for oxygen transport, and that iron deficiency can result in anemia, fatigue, and other health issues.",
+    "cited_evidence_ids": [
+      "pubmed:15529613",
+      "web:1778d6c0884edb4a9d4e"
+    ],
+    "grounding": {
+      "semantic_score": 0.6049034595489502,
+      "coverage_score": 0.7297743558883667,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:27:45.499879Z",
+      "ended_at_utc": "2026-10-29T03:27:57.490648Z",
+      "latency_ms": 11990.61754200011
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "SUPPORTED",
+  "final_user_facing_verdict": "SUPPORTED",
+  "final_verifier_score": 0.9,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:15529613",
+      "document_id": "pubmed:15529613",
+      "title": "Treatment of iron deficiency anemia with Ferro-Folgamma.",
+      "text": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body. The decrease of iron quantity has many causes: insufficient intake of aliments rich in iron (meat, viscera, green vegetables), increased necessities during growth period, pregnancy, erythrocytes hyperregeneration, high-performance sportsmen, increased loss by digestive way, genito-urinary way, respiratory, hemorrhagic syndromes. Clinically, symptoms and signs specific to all types of anemia and those specific to lack of iron occur besides the symptoms and signs of the underlying disease: atrophic glositis, angular stomatitis, sideropenic dysphagia, pica, skin and nails changes. Laboratory investigations useful for diagnosis are: microcytic, hypochromic anemia, decreased serum iron level, total capacity of iron binding increased, medullar iron store absent, good response to iron therapy. Ferro-Folgamma is one of the most indicated medicines in iron deficiency anemia. Due to its components this medicine has many indications: insufficient alimentary intake concerning iron, folic acid, B12 vitamin, vegetarian alimentation, increased needs during growth period, iron deficiency anaemia secondary to chronic hemorrhages, malnutrition, anemias associated with chronic alcohol intake, preventive treatment of iron deficiency anemia and megaloblastic anemia during pregnancy and lactation.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/15529613/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.501490592956543,
+      "relevance_score": 0.9985010623931885,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.1997002124786377,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:32507812",
+      "document_id": "pubmed:32507812",
+      "title": "[Iron metabolism and iron-refractory iron deficiency anemia].",
+      "text": "Hepcidin is a key molecule that regulates iron metabolism in the body. Iron refractory iron deficiency anemia (IRIDA) is a genetic disorder caused by a defect in the TMPRSS6 gene encoding matriptase-2, a transmembrane serine protease that physiologically inhibits hepcidin production. In patients with IRIDA, the iron uptake in the intestine is remarkably reduced, and iron deficiency anemia (IDA) develops. However, in contrast to the ordinary IDA, high hepcidin levels in IRIDA keep the serum ferritin levels normal or sometimes high. Due to the malabsorption of iron in the intestine, IRIDA is refractory to oral iron supplementation, but partially responds to parenteral iron administration. A high hepcidin level gives IRIDA a lot of similarities with anemia of chronic disease, and a differential diagnosis between the two disorders needs careful inspection. Diagnosis of IRIDA needs genetic testing that is hardly available in most facilities, and therefore its clinical features are not fully understood.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32507812/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 4.39200496673584,
+      "relevance_score": 0.987775444984436,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19755508899688723,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:1778d6c0884edb4a9d4e",
+      "document_id": "web:1778d6c0884edb4a9d4e",
+      "title": "Iron: What It Is and Health Benefits",
+      "text": "Iron: What It Is and Health Benefits\nAdvertisement\nJuly 25, 2024 / Diet, Food & Fitness / Nutrition\nWhat Iron Does for Your Body\nThe benefits of iron span your whole body, from your blood and your brain to your immune system and more\nImage content: This image is available to view online.\nView image online ( https://assets.clevelandclinic.org/transform/3fa8076a-c7b1-42e9-935d-d732b79f2a8f/foods-with-iron-1667316453 )\nPerson holding up and pointing to bowl of tofu, with assorted protein foods floating around\nWhat is iron?\nIron is an important nutrient in our diets. So critical, in fact, that many foods, from infant formula to breakfast cereals, are commonly fortified with iron to help ensure we get enough of it.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nBut there are risks to getting too much iron.\nHow can you make sure you get the right amount? And why does iron matter so much?\nWe talked with registered dietitian Lisa Reitz, RD, LD, about the benefits of iron and how to make sure you get the right amount of it in your diet.\nIron benefits\nOne of iron\u2019s top jobs is to provide oxygen to your body.\nHere\u2019s how.\nIron helps your body to produce hemoglobin, a protein in your red blood cells . Hemoglobin carries oxygen from your lungs to the rest of your body.\nIron also helps create the protein myoglobin, which provides oxygen to your muscles.\n\u201cWhen we don\u2019t have enough iron, our red blood cells can\u2019t transport oxygen as well,\u201d Reitz says.\nIn fact, people who have an iron deficiency have smaller red blood cells. That\u2019s because their blood has less hemoglobin and less oxygen to plump them up.\nIt\u2019s a domino effect. Too little iron means too little hemoglobin and myoglobin. Too little hemoglobin and myoglobin means too little oxygen coursing through your body. And too little oxygen can spell trouble.\nReitz shares just a few ways that our iron intake affects our health.\nKeeps energy levels up\nYour body uses oxygen for energy. And iron helps make sure your body gets the oxygen it needs to keep your energy levels up.\nAdvertisement\n\u201cSymptoms like fatigue and lightheadedness can have a lot of causes. And having low iron or iron-deficiency anemia is one of them,\u201d Reitz shares. \u201cYour body needs iron to help keep up with the demands of life.\u201d\nAids brain health\nYour brain cells need a steady stream of oxygen-rich blood to function at their best. Iron helps ensure that oxygen-rich blood gets to those cells.\nOxygen is a catalyst that helps your brain do things like build nerves, make and break down chemicals that allow your nerves to communicate, and keep your brain working in tip-top shape.\nSo, when you don\u2019t have enough iron to supply oxygen to your brain, it can cause trouble.\nBoosts immunity\nIron helps keep your body moving and grooving through its daily processes. So, when you have less iron \u2014 and therefore, less oxygen \u2014 flowing through your system, some other tasks can fall by the wayside. That can include things like keeping up your immune system .\n\u201cPeople who have iron deficiency anemia can be less able to fight off certain infections and germs,\u201d Reitz explains. \u201cIf you're not getting enough oxygen through your body, your body has to work harder just to try to keep going with the day to day. And things like your immune system can suffer.\u201d\nThink about it. When you\u2019re overtaxed with work, kids\u2019 after-school commitments and other obligations, the dishes might start to pile up. Or the laundry might go undone. We all make tradeoffs in our lives. And your body does the same.\nHealthier hair\nFor some people, one of the first signs that your iron is low can be a change in your hair . Or more specifically, the loss of it.\nRemember those tradeoffs we make? When your body chooses between sending its limited oxygen supply to your vital organs or your hair follicles, your organs win out.\nLess blood and oxygen to your hair follicles can damage them and cause you to shed more hair.\nHow much iron you need\nHere\u2019s a look at the recommended dietary allowances for iron (in milligrams):\nAge Males Females Pregnancy Lactating Birth to 6 months 0.27 mg 0.27 mg 7 to 12 months 11 mg 11 mg 1 to 3 years 7 mg 7 mg 4 to 8 years 10 mg 10 mg 9 to 13 years 8 mg 8 mg 14 to 18 years 11 mg 15 mg 27 mg 10 mg 19 to 50 years 8 mg 18 mg 27 mg 9 mg 51+ years 8 mg 8 mg Age Birth to 6 months Males 0.27 mg Females 0.27 mg Pregnancy Lactating 7 to 12 months Males 11 mg Females 11 mg Pregnancy Lactating 1 to 3 years Males 7 mg Females 7 mg Pregnancy Lactating 4 to 8 years Males 10 mg Females 10 mg Pregnancy Lactating 9 to 13 years Males 8 mg Females 8 mg Pregnancy Lactating 14 to 18 years Males 11 mg Females 15 mg Pregnancy 27 mg Lactating 10 mg 19 to 50 years Males 8 mg Females 18 mg Pregnancy 27 mg Lactating 9 mg 51+ years Males 8 mg Females 8 mg Pregnancy Lactating\nThe World Health Organization (WHO) calls iron deficiency anemia the most common nutritional deficiency in the world, estimating that it affects 30% of people across the globe. It\u2019s more common in regions where foods aren\u2019t fortified with iron. But it can affect anyone.\nIron deficiency is also more common in people who are pregnant. That\u2019s because, during pregnancy, you create more red blood cells to support healthy fetal development. That means you need more iron to make sure those blood cells get the oxygen they need. A healthy pregnancy diet should include plenty of iron. And be sure to choose a prenatal vitamin with adequate iron\nYou also need more iron during your menstruating years to counteract the loss of blood in each menstrual cycle. People who experience higher-than-average periods may be at risk for iron deficiency.\nAdvertisement\nThe same is true for other people who experience high amounts of blood loss, such as some people living with cancer or people who donate blood often.\nWhat\u2019s more, certain medications, like proton pump inhibitors , commonly used for chronic acid reflux and stomach ulcers, can keep your body from absorbing iron properly, which can leave you at risk for deficiency.\nGetting more iron on your plate\nYour body doesn\u2019t make iron on its own. It has to get it from the foods you eat. Luckily, lots of foods are good sources of iron . Here are some of the top sources:\nTypes of dietary iron\nNot all iron that you get from food is created equally. In fact, the iron you get from animal sources and the kind you get from plant foods are different.\nHeme iron comes from animal sources.\nNon-heme iron comes from plant sources.\nThe difference \u2014 perhaps surprisingly \u2014 has to do with vitamin C . Think of vitamin C as a buddy that helps your body properly use the iron available in your plant foods.\nThat could be foods like:\nAdvertisement\nShould you take an iron supplement?\nAge 13 and younger : 40 mg.\nAdvertisement\nHealth Library\nIron-Deficiency Anemia\nOverview\nHealth Library\nIron-Deficiency Anemia\nOverview",
+      "source": "health.clevelandclinic.org",
+      "source_url": "https://health.clevelandclinic.org/iron",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -7.665502548217773,
+      "relevance_score": 0.00046850155922584236,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 9.370031184516848e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "SUPPORTED",
+            "reason": "The evidence discusses iron deficiency and its relation to anemia, establishing that iron deficiency can cause anemia. The evidence explicitly states that iron deficiency anemia is caused by a decrease in iron in the body, establishing a causal relationship. The evidence directly mentions iron deficiency anemia and its characteristics, establishing that anemia is the outcome of iron deficiency.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:15529613",
+                "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:15529613",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:32507812",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:1778d6c0884edb4a9d4e",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Iron deficiency",
+                "relationship": "cause",
+                "outcome": "anemia",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence discusses iron deficiency and its relation to anemia, establishing that iron deficiency can cause anemia.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E3S26"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body.",
+                  "claim_fragment": "Iron deficiency",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:15529613",
+                      "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+                    },
+                    {
+                      "evidence_id": "web:1778d6c0884edb4a9d4e",
+                      "quote": "Iron also helps create the protein myoglobin, which provides oxygen to your muscles."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence explicitly states that iron deficiency anemia is caused by a decrease in iron in the body, establishing a causal relationship.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body.",
+                  "claim_fragment": "cause",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:15529613",
+                      "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence directly mentions iron deficiency anemia and its characteristics, establishing that anemia is the outcome of iron deficiency.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body.",
+                  "claim_fragment": "anemia",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:15529613",
+                      "quote": "Iron deficiency anemia is a hypochromic anemia in which hemoglobin poor synthesis is due to a decrease in the amount of iron in the body."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:15529613"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.9,
+              "REFUTED": 0.05,
+              "NEI": 0.05
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 41198.80987500028,
+  "completed_at_utc": "2026-10-29T03:27:57.492317Z"
+}

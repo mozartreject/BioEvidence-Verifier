@@ -1,0 +1,7 @@
+Claim: Iron deficiency can cause anemia.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: cb86472d-a117-4264-9582-5d6887c874cc
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/cb86472d-a117-4264-9582-5d6887c874cc.json

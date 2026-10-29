@@ -1,0 +1,7 @@
+Claim: Osteoporosis does not increase fracture risk.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: e9356cf8-0959-44a1-8afb-60647eb9bbee
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/e9356cf8-0959-44a1-8afb-60647eb9bbee.json

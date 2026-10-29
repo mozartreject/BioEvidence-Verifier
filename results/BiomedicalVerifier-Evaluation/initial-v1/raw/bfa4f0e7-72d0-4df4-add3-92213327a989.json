@@ -1,0 +1,6 @@
+{
+  "detail": {
+    "error": "INFERENCE_FAILED",
+    "message": "Evidence audit could not be validated: Claim-slot match has no exact source witness"
+  }
+}

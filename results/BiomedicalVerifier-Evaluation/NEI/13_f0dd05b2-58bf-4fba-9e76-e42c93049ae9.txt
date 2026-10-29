@@ -1,0 +1,7 @@
+Claim: Drinking chamomile tea from a red cup increases hemoglobin by exactly 8% after eleven days.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: f0dd05b2-58bf-4fba-9e76-e42c93049ae9
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/f0dd05b2-58bf-4fba-9e76-e42c93049ae9.json

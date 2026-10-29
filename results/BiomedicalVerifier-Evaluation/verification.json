@@ -1,0 +1,52 @@
+{
+  "verified_at": "2026-10-29T09:21:15.133357+05:30",
+  "requested_class_screenshots": {
+    "SUPPORTED": 20,
+    "REFUTED": 20,
+    "NEI": 20
+  },
+  "image_format": "JPEG",
+  "unique_class_image_hashes": 60,
+  "quarantine_screenshots": 15,
+  "runs_attempted": 62,
+  "failed_reviews": 2,
+  "all_accepted_raw_responses_and_claims_verified": true,
+  "automated_repair_tests_passed": 30,
+  "live_repair_regressions_completed": 5,
+  "pipeline_version": "ai-evidence-review-v2",
+  "candidate_disagreements": [
+    {
+      "request_id": "eed6e727-fe8e-4cb4-9fcf-3e20d0ac0046",
+      "claim": "The liver does not produce bile.",
+      "candidate": "REFUTED",
+      "actual": "SUPPORTED"
+    },
+    {
+      "request_id": "1452e04a-b025-4efc-88eb-5c6406adb97d",
+      "claim": "Clapping for three minutes before lunch improves iron absorption by exactly 17%.",
+      "candidate": "NEI",
+      "actual": "FAILED_REVIEW"
+    },
+    {
+      "request_id": "47a9bee9-8ae0-4741-aead-a605ca507479",
+      "claim": "Asthma does not cause wheezing.",
+      "candidate": "REFUTED",
+      "actual": "NEI"
+    },
+    {
+      "request_id": "51cba76b-fafd-41c7-9067-1c818ff2823b",
+      "claim": "Changing pillowcases every 36 hours prevents type 1 diabetes in adults.",
+      "candidate": "NEI",
+      "actual": "FAILED_REVIEW"
+    }
+  ],
+  "post_batch_consistency_repair": {
+    "version": "ai-evidence-review-v3",
+    "automated_tests_passed": 31,
+    "request_id": "ad82d831-71ba-4944-8ed1-dd599797ef12",
+    "http_status": 201,
+    "before": "SUPPORTED",
+    "after": "REFUTED",
+    "original_collection_preserved": true
+  }
+}

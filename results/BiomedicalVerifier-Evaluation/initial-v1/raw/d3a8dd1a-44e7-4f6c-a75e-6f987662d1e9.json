@@ -1,0 +1,792 @@
+{
+  "request": {
+    "request_id": "d3a8dd1a-44e7-4f6c-a75e-6f987662d1e9",
+    "claim": "Exposure to ultraviolet radiation increases the risk of skin cancer.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:38:16.080888Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:38:16.081089Z",
+      "ended_at_utc": "2026-10-29T02:38:17.132292Z",
+      "latency_ms": 1051.1956660002397
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:18410798",
+        "document_id": "pubmed:18410798",
+        "title": "Cutaneous ultraviolet exposure and its relationship to the development of skin cancer.",
+        "text": "Skin cancer is becoming an increasingly important public health problem. Multiple studies have now demonstrated a relationship between ultraviolet exposure and increased risk of developing skin cancer. However, the specifics of that association are somewhat different for malignant melanoma, basal cell carcinoma, and squamous cell carcinoma. A better understanding of the mechanisms that allow cutaneous ultraviolet radiation to induce neoplasia will result in the development of better future sun-protection agents and strategies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18410798/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 10.067121505737305,
+        "relevance_score": 0.9999575614929199,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:35973164",
+        "document_id": "pubmed:35973164",
+        "title": "Workplace exposure to UV radiation and strategies to minimize cancer risk.",
+        "text": "BACKGROUND: Workplace exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer. The evidence for beneficial effects of solar UV exposure in reducing the risks for other cancers is increasing. The intensity of UV radiation at the Earth's surface is dependent on latitude, but even in northern European countries exposure can be high enough for outdoor work to cause skin cancer.\nGROWING POINTS: Awareness of the health risks and benefits of occupational solar UV exposure is poor. Actions to reduce the risk of skin cancer have been identified and employers should recognize their responsibility to actively manage these risks. There is evidence for reduced risks for breast, ovarian and colorectal cancer and possibly other cancers linked to solar UV exposure.\nSOURCES OF DATA: This narrative review draws on published scientific articles and material designed to assist identifying strategies to protect workers from solar UV exposure.\nAREAS OF AGREEMENT: Solar UV exposure can be harmful. Wavelengths in the UVB range are more effective in causing erythema and DNA damage. Solar UV is the main source of vitamin D for most people. Primary and secondary prevention for skin cancer can potentially eliminate these risks but the evidence for effectiveness is limited.\nAREAS OF CONTROVERSY: Potential health benefits of UV exposure, particularly for reduced cancer risk. Determining and communicating optimal exposure to maximize health benefits. The risk of non-melanoma skin cancers may be more than doubled for some workers in temperate latitudes.\nAREAS TIMELY FOR DEVELOPING RESEARCH: Exposure-response epidemiological studies; studies of the health benefits of occupational UV exposure; studies of the effectiveness of intervention strategies to prevent skin cancer. Use of low-cost UV sensors in workplaces.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35973164/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 9.396173477172852,
+        "relevance_score": 0.9999169111251831,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:21199599",
+        "document_id": "pubmed:21199599",
+        "title": "Ultraviolet radiation.",
+        "text": "The major source of ultraviolet radiation is solar radiation or sunlight. However, exposure to artificial sources particularly through tanning salons is becoming more important in terms of human health effects, as use of these facilities by young people, has increased. The International Agency for Research on Cancer has noted that there is sufficient evidence from studies in animals and in man to establish ultraviolet radiation as a human carcinogen. Skin cancer has been the most commonly studied cancer site with respect to UV radiation. The nature and timing of sun exposure appear to be important determinants of both the degree of risk and the type of skin cancer. Cutaneous malignant melanoma and basal cell cancer are much more strongly related to measures of intermittent ultraviolet exposure (particularly those of childhood or adolescence) than to measures of cumulative exposure. In contrast, squamous cell cancer is more strongly related to constant or cumulative sun exposure. Lip cancer is causally related to lifetime sun exposure. It has been estimated that solar ultraviolet radiation accounts for approximately 93 percent of skin cancers and about half of lip cancers. This translates to approximately 4,500 life-threatening cancers (cutaneous malignant melanoma) per year in Canada, as well as 65,000 less serious cancers (basal cell cancer, squamous cell cancer and lip cancer). Appropriate clothing use, care not to sunburn and judicious use of sunscreens could prevent at least half of these and save approximately 450 lives per year. In addition, physician and public education programs can significantly increase the proportion of melanomas diagnosed early. Lesions that have not yet penetrated deeply are associated with a mortality rate of less than five percent. Several recent studies suggest a possible inverse relationship between ultraviolet radiation exposure and risk of non-Hodgkin lymphoma, colon, breast and prostate cancer, and investigators have speculated that this might be due to the higher serum levels of vitamin D stimulated by high lifetime sun exposure. Further, studies conducted within cohorts using stored pre-diagnostic serum suggest that those with high levels of vitamin D have lower incidence rates of a number of malignancies, particularly colon cancer. However, since serum vitamin D levels can be raised through the use of supplements without increasing risk for skin lip and other known UV-related cancers, changes to health policy with regard to exposure are not merited at this point. Further research is needed in this area.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/21199599/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.825590133666992,
+        "relevance_score": 0.9998531341552734,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Exposure to ultraviolet radiation increases the risk of skin cancer."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:38:17.132415Z",
+      "ended_at_utc": "2026-10-29T02:38:23.318089Z",
+      "latency_ms": 6185.599583000112
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:18410798",
+        "document_id": "pubmed:18410798",
+        "title": "Cutaneous ultraviolet exposure and its relationship to the development of skin cancer.",
+        "text": "Skin cancer is becoming an increasingly important public health problem. Multiple studies have now demonstrated a relationship between ultraviolet exposure and increased risk of developing skin cancer. However, the specifics of that association are somewhat different for malignant melanoma, basal cell carcinoma, and squamous cell carcinoma. A better understanding of the mechanisms that allow cutaneous ultraviolet radiation to induce neoplasia will result in the development of better future sun-protection agents and strategies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18410798/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 10.067121505737305,
+        "relevance_score": 0.9999575614929199,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6999702930450439,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:35973164",
+        "document_id": "pubmed:35973164",
+        "title": "Workplace exposure to UV radiation and strategies to minimize cancer risk.",
+        "text": "BACKGROUND: Workplace exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer. The evidence for beneficial effects of solar UV exposure in reducing the risks for other cancers is increasing. The intensity of UV radiation at the Earth's surface is dependent on latitude, but even in northern European countries exposure can be high enough for outdoor work to cause skin cancer.\nGROWING POINTS: Awareness of the health risks and benefits of occupational solar UV exposure is poor. Actions to reduce the risk of skin cancer have been identified and employers should recognize their responsibility to actively manage these risks. There is evidence for reduced risks for breast, ovarian and colorectal cancer and possibly other cancers linked to solar UV exposure.\nSOURCES OF DATA: This narrative review draws on published scientific articles and material designed to assist identifying strategies to protect workers from solar UV exposure.\nAREAS OF AGREEMENT: Solar UV exposure can be harmful. Wavelengths in the UVB range are more effective in causing erythema and DNA damage. Solar UV is the main source of vitamin D for most people. Primary and secondary prevention for skin cancer can potentially eliminate these risks but the evidence for effectiveness is limited.\nAREAS OF CONTROVERSY: Potential health benefits of UV exposure, particularly for reduced cancer risk. Determining and communicating optimal exposure to maximize health benefits. The risk of non-melanoma skin cancers may be more than doubled for some workers in temperate latitudes.\nAREAS TIMELY FOR DEVELOPING RESEARCH: Exposure-response epidemiological studies; studies of the health benefits of occupational UV exposure; studies of the effectiveness of intervention strategies to prevent skin cancer. Use of low-cost UV sensors in workplaces.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35973164/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 9.396173477172852,
+        "relevance_score": 0.9999169111251831,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6999418377876281,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:21199599",
+        "document_id": "pubmed:21199599",
+        "title": "Ultraviolet radiation.",
+        "text": "The major source of ultraviolet radiation is solar radiation or sunlight. However, exposure to artificial sources particularly through tanning salons is becoming more important in terms of human health effects, as use of these facilities by young people, has increased. The International Agency for Research on Cancer has noted that there is sufficient evidence from studies in animals and in man to establish ultraviolet radiation as a human carcinogen. Skin cancer has been the most commonly studied cancer site with respect to UV radiation. The nature and timing of sun exposure appear to be important determinants of both the degree of risk and the type of skin cancer. Cutaneous malignant melanoma and basal cell cancer are much more strongly related to measures of intermittent ultraviolet exposure (particularly those of childhood or adolescence) than to measures of cumulative exposure. In contrast, squamous cell cancer is more strongly related to constant or cumulative sun exposure. Lip cancer is causally related to lifetime sun exposure. It has been estimated that solar ultraviolet radiation accounts for approximately 93 percent of skin cancers and about half of lip cancers. This translates to approximately 4,500 life-threatening cancers (cutaneous malignant melanoma) per year in Canada, as well as 65,000 less serious cancers (basal cell cancer, squamous cell cancer and lip cancer). Appropriate clothing use, care not to sunburn and judicious use of sunscreens could prevent at least half of these and save approximately 450 lives per year. In addition, physician and public education programs can significantly increase the proportion of melanomas diagnosed early. Lesions that have not yet penetrated deeply are associated with a mortality rate of less than five percent. Several recent studies suggest a possible inverse relationship between ultraviolet radiation exposure and risk of non-Hodgkin lymphoma, colon, breast and prostate cancer, and investigators have speculated that this might be due to the higher serum levels of vitamin D stimulated by high lifetime sun exposure. Further, studies conducted within cohorts using stored pre-diagnostic serum suggest that those with high levels of vitamin D have lower incidence rates of a number of malignancies, particularly colon cancer. However, since serum vitamin D levels can be raised through the use of supplements without increasing risk for skin lip and other known UV-related cancers, changes to health policy with regard to exposure are not merited at this point. Further research is needed in this area.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/21199599/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.825590133666992,
+        "relevance_score": 0.9998531341552734,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6998971939086913,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:38:23.318145Z",
+      "ended_at_utc": "2026-10-29T02:38:26.883800Z",
+      "latency_ms": 3565.6567089999953
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.15,
+      "nei": 0.6,
+      "supported": 0.25
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:18410798",
+      "pubmed:35973164",
+      "pubmed:21199599"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "No single source establishes the complete claim with its subject, outcome and qualifiers together. Related findings from different studies cannot be combined into proof.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:18410798",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:21199599",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:35973164",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v1",
+            "claim_parts": {
+              "subject": "Exposure to ultraviolet radiation",
+              "relationship": "increases the risk",
+              "outcome": "skin cancer",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "evidence_phrase": "exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer",
+                "reason": "The evidence explicitly states that exposure to UV radiation causes skin cancer.",
+                "sentence_ids": [
+                  "E2S1"
+                ],
+                "slot": "subject",
+                "claim_fragment": "Exposure to ultraviolet radiation",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:35973164",
+                    "quote": "BACKGROUND: Workplace exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "increased risk of developing skin cancer",
+                "reason": "The evidence directly states that there is an increased risk of developing skin cancer due to UV exposure.",
+                "sentence_ids": [
+                  "E1S2",
+                  "E3S9"
+                ],
+                "slot": "relationship",
+                "claim_fragment": "increases the risk",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:18410798",
+                    "quote": "Multiple studies have now demonstrated a relationship between ultraviolet exposure and increased risk of developing skin cancer."
+                  },
+                  {
+                    "evidence_id": "pubmed:21199599",
+                    "quote": "It has been estimated that solar ultraviolet radiation accounts for approximately 93 percent of skin cancers and about half of lip cancers."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "skin cancer",
+                "reason": "The evidence explicitly mentions skin cancer as the outcome associated with UV exposure.",
+                "sentence_ids": [
+                  "E1S2",
+                  "E2S1"
+                ],
+                "slot": "outcome",
+                "claim_fragment": "skin cancer",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:18410798",
+                    "quote": "Multiple studies have now demonstrated a relationship between ultraviolet exposure and increased risk of developing skin cancer."
+                  },
+                  {
+                    "evidence_id": "pubmed:35973164",
+                    "quote": "BACKGROUND: Workplace exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.25,
+            "REFUTED": 0.15,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "Semantic grounding 0.4159 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:38:43.586708Z",
+      "ended_at_utc": "2026-10-29T02:39:02.648281Z",
+      "latency_ms": 19061.329874999956
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:18410798",
+      "document_id": "pubmed:18410798",
+      "title": "Cutaneous ultraviolet exposure and its relationship to the development of skin cancer.",
+      "text": "Skin cancer is becoming an increasingly important public health problem. Multiple studies have now demonstrated a relationship between ultraviolet exposure and increased risk of developing skin cancer. However, the specifics of that association are somewhat different for malignant melanoma, basal cell carcinoma, and squamous cell carcinoma. A better understanding of the mechanisms that allow cutaneous ultraviolet radiation to induce neoplasia will result in the development of better future sun-protection agents and strategies.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18410798/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 10.067121505737305,
+      "relevance_score": 0.9999575614929199,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6999702930450439,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:35973164",
+      "document_id": "pubmed:35973164",
+      "title": "Workplace exposure to UV radiation and strategies to minimize cancer risk.",
+      "text": "BACKGROUND: Workplace exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer. The evidence for beneficial effects of solar UV exposure in reducing the risks for other cancers is increasing. The intensity of UV radiation at the Earth's surface is dependent on latitude, but even in northern European countries exposure can be high enough for outdoor work to cause skin cancer.\nGROWING POINTS: Awareness of the health risks and benefits of occupational solar UV exposure is poor. Actions to reduce the risk of skin cancer have been identified and employers should recognize their responsibility to actively manage these risks. There is evidence for reduced risks for breast, ovarian and colorectal cancer and possibly other cancers linked to solar UV exposure.\nSOURCES OF DATA: This narrative review draws on published scientific articles and material designed to assist identifying strategies to protect workers from solar UV exposure.\nAREAS OF AGREEMENT: Solar UV exposure can be harmful. Wavelengths in the UVB range are more effective in causing erythema and DNA damage. Solar UV is the main source of vitamin D for most people. Primary and secondary prevention for skin cancer can potentially eliminate these risks but the evidence for effectiveness is limited.\nAREAS OF CONTROVERSY: Potential health benefits of UV exposure, particularly for reduced cancer risk. Determining and communicating optimal exposure to maximize health benefits. The risk of non-melanoma skin cancers may be more than doubled for some workers in temperate latitudes.\nAREAS TIMELY FOR DEVELOPING RESEARCH: Exposure-response epidemiological studies; studies of the health benefits of occupational UV exposure; studies of the effectiveness of intervention strategies to prevent skin cancer. Use of low-cost UV sensors in workplaces.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35973164/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 9.396173477172852,
+      "relevance_score": 0.9999169111251831,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6999418377876281,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:21199599",
+      "document_id": "pubmed:21199599",
+      "title": "Ultraviolet radiation.",
+      "text": "The major source of ultraviolet radiation is solar radiation or sunlight. However, exposure to artificial sources particularly through tanning salons is becoming more important in terms of human health effects, as use of these facilities by young people, has increased. The International Agency for Research on Cancer has noted that there is sufficient evidence from studies in animals and in man to establish ultraviolet radiation as a human carcinogen. Skin cancer has been the most commonly studied cancer site with respect to UV radiation. The nature and timing of sun exposure appear to be important determinants of both the degree of risk and the type of skin cancer. Cutaneous malignant melanoma and basal cell cancer are much more strongly related to measures of intermittent ultraviolet exposure (particularly those of childhood or adolescence) than to measures of cumulative exposure. In contrast, squamous cell cancer is more strongly related to constant or cumulative sun exposure. Lip cancer is causally related to lifetime sun exposure. It has been estimated that solar ultraviolet radiation accounts for approximately 93 percent of skin cancers and about half of lip cancers. This translates to approximately 4,500 life-threatening cancers (cutaneous malignant melanoma) per year in Canada, as well as 65,000 less serious cancers (basal cell cancer, squamous cell cancer and lip cancer). Appropriate clothing use, care not to sunburn and judicious use of sunscreens could prevent at least half of these and save approximately 450 lives per year. In addition, physician and public education programs can significantly increase the proportion of melanomas diagnosed early. Lesions that have not yet penetrated deeply are associated with a mortality rate of less than five percent. Several recent studies suggest a possible inverse relationship between ultraviolet radiation exposure and risk of non-Hodgkin lymphoma, colon, breast and prostate cancer, and investigators have speculated that this might be due to the higher serum levels of vitamin D stimulated by high lifetime sun exposure. Further, studies conducted within cohorts using stored pre-diagnostic serum suggest that those with high levels of vitamin D have lower incidence rates of a number of malignancies, particularly colon cancer. However, since serum vitamin D levels can be raised through the use of supplements without increasing risk for skin lip and other known UV-related cancers, changes to health policy with regard to exposure are not merited at this point. Further research is needed in this area.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/21199599/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 8.825590133666992,
+      "relevance_score": 0.9998531341552734,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6998971939086913,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v1",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "No single source establishes the complete claim with its subject, outcome and qualifiers together. Related findings from different studies cannot be combined into proof.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:18410798",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:21199599",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:35973164",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v1",
+              "claim_parts": {
+                "subject": "Exposure to ultraviolet radiation",
+                "relationship": "increases the risk",
+                "outcome": "skin cancer",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer",
+                  "reason": "The evidence explicitly states that exposure to UV radiation causes skin cancer.",
+                  "sentence_ids": [
+                    "E2S1"
+                  ],
+                  "slot": "subject",
+                  "claim_fragment": "Exposure to ultraviolet radiation",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:35973164",
+                      "quote": "BACKGROUND: Workplace exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "increased risk of developing skin cancer",
+                  "reason": "The evidence directly states that there is an increased risk of developing skin cancer due to UV exposure.",
+                  "sentence_ids": [
+                    "E1S2",
+                    "E3S9"
+                  ],
+                  "slot": "relationship",
+                  "claim_fragment": "increases the risk",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:18410798",
+                      "quote": "Multiple studies have now demonstrated a relationship between ultraviolet exposure and increased risk of developing skin cancer."
+                    },
+                    {
+                      "evidence_id": "pubmed:21199599",
+                      "quote": "It has been estimated that solar ultraviolet radiation accounts for approximately 93 percent of skin cancers and about half of lip cancers."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "skin cancer",
+                  "reason": "The evidence explicitly mentions skin cancer as the outcome associated with UV exposure.",
+                  "sentence_ids": [
+                    "E1S2",
+                    "E2S1"
+                  ],
+                  "slot": "outcome",
+                  "claim_fragment": "skin cancer",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:18410798",
+                      "quote": "Multiple studies have now demonstrated a relationship between ultraviolet exposure and increased risk of developing skin cancer."
+                    },
+                    {
+                      "evidence_id": "pubmed:35973164",
+                      "quote": "BACKGROUND: Workplace exposure to solar ultraviolet (UV) causes malignant melanoma and non-melanoma skin cancer."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.25,
+              "REFUTED": 0.15,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 46568.96379199998,
+  "completed_at_utc": "2026-10-29T02:39:02.650556Z"
+}

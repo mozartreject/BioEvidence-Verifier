@@ -1,0 +1,4 @@
+Claim: Influenza is caused by viruses.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/bfa4f0e7-72d0-4df4-add3-92213327a989.json

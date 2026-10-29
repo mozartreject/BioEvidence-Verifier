@@ -1,0 +1,802 @@
+{
+  "request": {
+    "request_id": "512c132d-746c-4676-9c81-54288fa46104",
+    "claim": "Walking for exactly 17 minutes each morning reduces Alzheimer disease incidence by exactly 23% in adults aged 41 to 43.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:51:41.904877Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:51:41.904967Z",
+      "ended_at_utc": "2026-10-29T02:51:42.463825Z",
+      "latency_ms": 558.8544160000026
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:32485633",
+        "document_id": "pubmed:32485633",
+        "title": "Effect of hippotherapy on walking performance and gait parameters in people with multiple sclerosis.",
+        "text": "BACKGROUND: Walking dysfunction is one of the most common symptoms of multiple sclerosis (MS).\nOBJECTIVE: To evaluate the effects of an 8-week hippotherapy intervention on walking performance and spatiotemporal gait parameters in people with relapsing-remitting MS; and to examine whether the effects of hippotherapy on walking performance are mediated by changes in spatiotemporal gait parameters.\nMETHODS: Participants were assigned into a hippotherapy intervention group (n\u00a0=\u00a017) or a control group (n\u00a0=\u00a016). The intervention included 16 sessions of 30-minutes of hippotherapy conducted twice a week. Participants underwent the 25-foot walk test (T25FW) and 6-minute walk test (6MWT), as primary outcomes, and spatiotemporal gait evaluation using GaitRite system, as secondary outcomes, before and after intervention. The data were examined using mixed model ANOVA with Bonferroni post hoc. Mediation analysis was conducted as per Baron and Kenny's criteria.\nRESULTS: Compared with control, the intervention group significantly increased 6MWT distance (+9.70%, p<0.001) and decreased T25FW time (-15.86%, p<0.001).Regarding spatiotemporal gait parameters, the intervention group exhibited significantly greater improvements in most variables (\u0394% from 3.66 and 41.43%; all p<0.005) than control. Only balance time (p\u00a0=\u00a00.043), stance time (p\u00a0=\u00a00.031), and absolute (p\u00a0=\u00a00.004) and relative (p\u00a0=\u00a00.017) double support time were identified as significant mediators of the effects of hippotherapy on walking performance evaluated by T25FW. There was no significant mediator for 6MWT (all p>0.05).\nCONCLUSION: Hippotherapy improved walking performance and spatiotemporal gait parameters in people with relapsing-remitting MS, and changes in walking performance, evaluated by T25FW, were partially driven by reduction in stance time and double support time and increase in balance time. Hippotherapy may be a useful complimentary treatment approach for improving walking in people with MS.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32485633/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.901450157165527,
+        "relevance_score": 0.007380909286439419,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:15351379",
+        "document_id": "pubmed:15351379",
+        "title": "Physiological measures of therapeutic response to interferon beta-1a treatment in remitting-relapsing MS.",
+        "text": "OBJECTIVE: This pilot study was designed to determine the effects of interferon beta-1a (IFNB) therapy (Avonex) on cortically evoked motor potentials (MEPs) during resting and fatigued states in individuals with multiple sclerosis (MS).\nMETHODS: Eight women with relapsing-remitting MS (mean age 36) and mean Expanded Disability Status Scale (EDSS) score of 3.1 were evaluated before and after 3, 6, and 12 months of IFNB therapy. At each test period, MEPs were recorded at rest and following a fatigue paradigm (3 min maximal contraction). Effects of IFNB on neurological and functional (7.7 m walk and 10 s finger tapping) status and fatigue were also examined.\nRESULTS: Recovery from post-exercise depression of MEP amplitudes (PED) was 41, 43, and 43.5% faster at 3, 6, and 12 months, respectively, compared to baseline (P < 0.05). Percent reduction of MEP amplitude was significantly less at 6 months (P < 0.05) The majority of subjects (5/8 at 3 months; 6/8 at 6 and 12 months) reported decreased physical fatigue. Functional improvements were observed for walk and finger tapping scores after 3 months of IFNB treatment. MEP latencies were unchanged over the course of the intervention.\nCONCLUSIONS: Results indicate that IFNB therapy may improve the rate of recovery from central fatigue.\nSIGNIFICANCE: Transcranial magnetic stimulation (TMS) may have promise as an objective physiological tool to evaluate disease activity and treatment responses in MS.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/15351379/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.93979549407959,
+        "relevance_score": 0.00035615244996733963,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:33621665",
+        "document_id": "pubmed:33621665",
+        "title": "Dynamic sagittal alignment and compensation strategies in adult spinal deformity during walking.",
+        "text": "BACKGROUND CONTEXT: Radiographic evaluation in adult spinal deformity (ASD) offers no information on spinopelvic alignment and compensation during dynamic conditions. Motion analysis offers the potential to bridge the gap between static radiographic and dynamic alignment measurement, increasing our understanding on how ASD impacts function.\nPURPOSE: This study aimed to explore the changes in sagittal alignment and compensation strategies in ASD between upright standing and walking, compared to control subjects and within different sagittal alignment groups. Ten patients were measured pre- and six months postoperatively to explore the impact of surgical alignment correction on gait.\nSTUDY DESIGN: Prospective study.\nSAMPLE SIZE: Full protocol: 58 ASD and 20 controls; Spinal kinematic analysis: 43 ASD and 18 controls; Postoperative analysis: 10 ASD.\nOUTCOME MEASURES: Standing and walking sagittal spinopelvic (thoracic kyphosis (TK), lumbar lordosis (LL), sagittal vertical axis (SVA), pelvis), and lower limb kinematics, spinopelvic changes between standing and walking (\u2206 ie, difference between mean dynamic and static angle), lower limb kinetics, spatiotemporal parameters, balance (BESTest), patient-reported outcome scores (SRS-22r, ODI, and FES-I) and radiographic parameters.\nMETHODS: Motion analysis was used to assess the standing and walking spinopelvic and lower limb kinematics, as well as the lower limb kinetics during walking. All parameters were compared between controls and patients with ASD, divided in three groups based on their sagittal alignment (ASD 1: decompensated sagittal malalignment; ASD 2: compensated sagittal malalignment; ASD 3: scoliosis and normal sagittal alignment). Ten patients were reassessed 6 months after spinal corrective surgery. Continuous kinematic and kinetic data were analyzed through statistical parametric mapping.\nRESULTS: All patient groups walked with increased forward trunk tilt (\u2206SVA=41.43 mm, p<.001) in combination with anterior pelvic tilt (\u2206Pelvis=2.58\u00b0, p<.001) compared to standing, as was also observed in controls (\u2206SVA=37.86 mm, p<.001; \u2206Pelvis=1.62\u00b0, p=.012). Patients walked with increased SVA, in combination with decreased LL and alterations in lower limb kinematics during terminal stance and initial swing, as well as altered spatiotemporal parameters. Subgroup analysis could link these alterations in gait to sagittal spinopelvic malalignment (ASD 1 and 2). After surgical correction, lower limb kinematics and spatiotemporal parameters during gait were not significantly improved.\nCONCLUSIONS: To compensate for increased trunk tilt and pelvic anteversion during walking, patients with sagittal malalignment show altered lower limb gait patterns, which have previously been associated with increased risk of falling and secondary lower limb pathology. Since surgical correction of the deformity did not lead to gait improvements, further research on the underlying mechanisms is necessary to improve our understanding of how ASD impacts function.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33621665/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.953784942626953,
+        "relevance_score": 0.0003512064868118614,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Walking for exactly 17 minutes each morning reduces Alzheimer disease incidence by exactly 23% in adults aged 41 to 43."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:51:42.463992Z",
+      "ended_at_utc": "2026-10-29T02:51:56.084743Z",
+      "latency_ms": 13620.588249999997
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:32485633",
+        "document_id": "pubmed:32485633",
+        "title": "Effect of hippotherapy on walking performance and gait parameters in people with multiple sclerosis.",
+        "text": "BACKGROUND: Walking dysfunction is one of the most common symptoms of multiple sclerosis (MS).\nOBJECTIVE: To evaluate the effects of an 8-week hippotherapy intervention on walking performance and spatiotemporal gait parameters in people with relapsing-remitting MS; and to examine whether the effects of hippotherapy on walking performance are mediated by changes in spatiotemporal gait parameters.\nMETHODS: Participants were assigned into a hippotherapy intervention group (n\u00a0=\u00a017) or a control group (n\u00a0=\u00a016). The intervention included 16 sessions of 30-minutes of hippotherapy conducted twice a week. Participants underwent the 25-foot walk test (T25FW) and 6-minute walk test (6MWT), as primary outcomes, and spatiotemporal gait evaluation using GaitRite system, as secondary outcomes, before and after intervention. The data were examined using mixed model ANOVA with Bonferroni post hoc. Mediation analysis was conducted as per Baron and Kenny's criteria.\nRESULTS: Compared with control, the intervention group significantly increased 6MWT distance (+9.70%, p<0.001) and decreased T25FW time (-15.86%, p<0.001).Regarding spatiotemporal gait parameters, the intervention group exhibited significantly greater improvements in most variables (\u0394% from 3.66 and 41.43%; all p<0.005) than control. Only balance time (p\u00a0=\u00a00.043), stance time (p\u00a0=\u00a00.031), and absolute (p\u00a0=\u00a00.004) and relative (p\u00a0=\u00a00.017) double support time were identified as significant mediators of the effects of hippotherapy on walking performance evaluated by T25FW. There was no significant mediator for 6MWT (all p>0.05).\nCONCLUSION: Hippotherapy improved walking performance and spatiotemporal gait parameters in people with relapsing-remitting MS, and changes in walking performance, evaluated by T25FW, were partially driven by reduction in stance time and double support time and increase in balance time. Hippotherapy may be a useful complimentary treatment approach for improving walking in people with MS.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32485633/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -4.901450157165527,
+        "relevance_score": 0.007380909286439419,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.007380909286439419,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:15351379",
+        "document_id": "pubmed:15351379",
+        "title": "Physiological measures of therapeutic response to interferon beta-1a treatment in remitting-relapsing MS.",
+        "text": "OBJECTIVE: This pilot study was designed to determine the effects of interferon beta-1a (IFNB) therapy (Avonex) on cortically evoked motor potentials (MEPs) during resting and fatigued states in individuals with multiple sclerosis (MS).\nMETHODS: Eight women with relapsing-remitting MS (mean age 36) and mean Expanded Disability Status Scale (EDSS) score of 3.1 were evaluated before and after 3, 6, and 12 months of IFNB therapy. At each test period, MEPs were recorded at rest and following a fatigue paradigm (3 min maximal contraction). Effects of IFNB on neurological and functional (7.7 m walk and 10 s finger tapping) status and fatigue were also examined.\nRESULTS: Recovery from post-exercise depression of MEP amplitudes (PED) was 41, 43, and 43.5% faster at 3, 6, and 12 months, respectively, compared to baseline (P < 0.05). Percent reduction of MEP amplitude was significantly less at 6 months (P < 0.05) The majority of subjects (5/8 at 3 months; 6/8 at 6 and 12 months) reported decreased physical fatigue. Functional improvements were observed for walk and finger tapping scores after 3 months of IFNB treatment. MEP latencies were unchanged over the course of the intervention.\nCONCLUSIONS: Results indicate that IFNB therapy may improve the rate of recovery from central fatigue.\nSIGNIFICANCE: Transcranial magnetic stimulation (TMS) may have promise as an objective physiological tool to evaluate disease activity and treatment responses in MS.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/15351379/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.93979549407959,
+        "relevance_score": 0.00035615244996733963,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.00035615244996733963,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:33621665",
+        "document_id": "pubmed:33621665",
+        "title": "Dynamic sagittal alignment and compensation strategies in adult spinal deformity during walking.",
+        "text": "BACKGROUND CONTEXT: Radiographic evaluation in adult spinal deformity (ASD) offers no information on spinopelvic alignment and compensation during dynamic conditions. Motion analysis offers the potential to bridge the gap between static radiographic and dynamic alignment measurement, increasing our understanding on how ASD impacts function.\nPURPOSE: This study aimed to explore the changes in sagittal alignment and compensation strategies in ASD between upright standing and walking, compared to control subjects and within different sagittal alignment groups. Ten patients were measured pre- and six months postoperatively to explore the impact of surgical alignment correction on gait.\nSTUDY DESIGN: Prospective study.\nSAMPLE SIZE: Full protocol: 58 ASD and 20 controls; Spinal kinematic analysis: 43 ASD and 18 controls; Postoperative analysis: 10 ASD.\nOUTCOME MEASURES: Standing and walking sagittal spinopelvic (thoracic kyphosis (TK), lumbar lordosis (LL), sagittal vertical axis (SVA), pelvis), and lower limb kinematics, spinopelvic changes between standing and walking (\u2206 ie, difference between mean dynamic and static angle), lower limb kinetics, spatiotemporal parameters, balance (BESTest), patient-reported outcome scores (SRS-22r, ODI, and FES-I) and radiographic parameters.\nMETHODS: Motion analysis was used to assess the standing and walking spinopelvic and lower limb kinematics, as well as the lower limb kinetics during walking. All parameters were compared between controls and patients with ASD, divided in three groups based on their sagittal alignment (ASD 1: decompensated sagittal malalignment; ASD 2: compensated sagittal malalignment; ASD 3: scoliosis and normal sagittal alignment). Ten patients were reassessed 6 months after spinal corrective surgery. Continuous kinematic and kinetic data were analyzed through statistical parametric mapping.\nRESULTS: All patient groups walked with increased forward trunk tilt (\u2206SVA=41.43 mm, p<.001) in combination with anterior pelvic tilt (\u2206Pelvis=2.58\u00b0, p<.001) compared to standing, as was also observed in controls (\u2206SVA=37.86 mm, p<.001; \u2206Pelvis=1.62\u00b0, p=.012). Patients walked with increased SVA, in combination with decreased LL and alterations in lower limb kinematics during terminal stance and initial swing, as well as altered spatiotemporal parameters. Subgroup analysis could link these alterations in gait to sagittal spinopelvic malalignment (ASD 1 and 2). After surgical correction, lower limb kinematics and spatiotemporal parameters during gait were not significantly improved.\nCONCLUSIONS: To compensate for increased trunk tilt and pelvic anteversion during walking, patients with sagittal malalignment show altered lower limb gait patterns, which have previously been associated with increased risk of falling and secondary lower limb pathology. Since surgical correction of the deformity did not lead to gait improvements, further research on the underlying mechanisms is necessary to improve our understanding of how ASD impacts function.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33621665/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.953784942626953,
+        "relevance_score": 0.0003512064868118614,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.0003512064868118614,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:51:56.084795Z",
+      "ended_at_utc": "2026-10-29T02:51:56.084945Z",
+      "latency_ms": 0.15750000000025466
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:32485633",
+      "pubmed:15351379",
+      "pubmed:33621665"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cWalking for exactly 17 minutes each morning\u201d; relationship: \u201creduces\u201d; outcome: \u201cAlzheimer disease incidence\u201d; qualifiers: \u201cexactly 23%\u201d. The evidence does not mention walking for exactly 17 minutes each morning or any specific duration of walking in adults aged 41 to 43. The studies focus on different interventions and populations, such as hippotherapy, a The evidence does not establish a relationship between walking and Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as hippotherapy and interferon beta-1a treatment for MS. The evidence does not mention Alzheimer disease incidence or any specific reduction in incidence. The studies focus on different outcomes, such as walking performance and gait parameters in MS patients, and physiological The evidence does not provide any specific percentage or exact number for the reduction in Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as walking performance and gait para",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:15351379",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:32485633",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:33621665",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Walking for exactly 17 minutes each morning",
+              "relationship": "reduces",
+              "outcome": "Alzheimer disease incidence",
+              "population": "adults aged 41 to 43",
+              "qualifiers": "exactly 23%"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention walking for exactly 17 minutes each morning or any specific duration of walking in adults aged 41 to 43. The studies focus on different interventions and populations, such as hippotherapy, a",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Walking for exactly 17 minutes each morning",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not establish a relationship between walking and Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as hippotherapy and interferon beta-1a treatment for MS.",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "reduces",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention Alzheimer disease incidence or any specific reduction in incidence. The studies focus on different outcomes, such as walking performance and gait parameters in MS patients, and physiological",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "Alzheimer disease incidence",
+                "citations": []
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence mentions adults with multiple sclerosis (MS), which is a specific population, but it does not specifically mention adults aged 41 to 43. However, the population is close enough to match the claim.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "population",
+                "evidence_phrase": "BACKGROUND: Walking dysfunction is one of the most common symptoms of multiple sclerosis (MS).",
+                "claim_fragment": "adults aged 41 to 43",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:32485633",
+                    "quote": "BACKGROUND: Walking dysfunction is one of the most common symptoms of multiple sclerosis (MS)."
+                  },
+                  {
+                    "evidence_id": "pubmed:15351379",
+                    "quote": "OBJECTIVE: This pilot study was designed to determine the effects of interferon beta-1a (IFNB) therapy (Avonex) on cortically evoked motor potentials (MEPs) during resting and fatigued states in individuals with multiple sclerosis (MS)."
+                  }
+                ]
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any specific percentage or exact number for the reduction in Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as walking performance and gait para",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly 23%",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "Semantic grounding 0.3726 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:52:29.279324Z",
+      "ended_at_utc": "2026-10-29T02:52:51.001613Z",
+      "latency_ms": 21722.021624999998
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:32485633",
+      "document_id": "pubmed:32485633",
+      "title": "Effect of hippotherapy on walking performance and gait parameters in people with multiple sclerosis.",
+      "text": "BACKGROUND: Walking dysfunction is one of the most common symptoms of multiple sclerosis (MS).\nOBJECTIVE: To evaluate the effects of an 8-week hippotherapy intervention on walking performance and spatiotemporal gait parameters in people with relapsing-remitting MS; and to examine whether the effects of hippotherapy on walking performance are mediated by changes in spatiotemporal gait parameters.\nMETHODS: Participants were assigned into a hippotherapy intervention group (n\u00a0=\u00a017) or a control group (n\u00a0=\u00a016). The intervention included 16 sessions of 30-minutes of hippotherapy conducted twice a week. Participants underwent the 25-foot walk test (T25FW) and 6-minute walk test (6MWT), as primary outcomes, and spatiotemporal gait evaluation using GaitRite system, as secondary outcomes, before and after intervention. The data were examined using mixed model ANOVA with Bonferroni post hoc. Mediation analysis was conducted as per Baron and Kenny's criteria.\nRESULTS: Compared with control, the intervention group significantly increased 6MWT distance (+9.70%, p<0.001) and decreased T25FW time (-15.86%, p<0.001).Regarding spatiotemporal gait parameters, the intervention group exhibited significantly greater improvements in most variables (\u0394% from 3.66 and 41.43%; all p<0.005) than control. Only balance time (p\u00a0=\u00a00.043), stance time (p\u00a0=\u00a00.031), and absolute (p\u00a0=\u00a00.004) and relative (p\u00a0=\u00a00.017) double support time were identified as significant mediators of the effects of hippotherapy on walking performance evaluated by T25FW. There was no significant mediator for 6MWT (all p>0.05).\nCONCLUSION: Hippotherapy improved walking performance and spatiotemporal gait parameters in people with relapsing-remitting MS, and changes in walking performance, evaluated by T25FW, were partially driven by reduction in stance time and double support time and increase in balance time. Hippotherapy may be a useful complimentary treatment approach for improving walking in people with MS.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32485633/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -4.901450157165527,
+      "relevance_score": 0.007380909286439419,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.007380909286439419,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:15351379",
+      "document_id": "pubmed:15351379",
+      "title": "Physiological measures of therapeutic response to interferon beta-1a treatment in remitting-relapsing MS.",
+      "text": "OBJECTIVE: This pilot study was designed to determine the effects of interferon beta-1a (IFNB) therapy (Avonex) on cortically evoked motor potentials (MEPs) during resting and fatigued states in individuals with multiple sclerosis (MS).\nMETHODS: Eight women with relapsing-remitting MS (mean age 36) and mean Expanded Disability Status Scale (EDSS) score of 3.1 were evaluated before and after 3, 6, and 12 months of IFNB therapy. At each test period, MEPs were recorded at rest and following a fatigue paradigm (3 min maximal contraction). Effects of IFNB on neurological and functional (7.7 m walk and 10 s finger tapping) status and fatigue were also examined.\nRESULTS: Recovery from post-exercise depression of MEP amplitudes (PED) was 41, 43, and 43.5% faster at 3, 6, and 12 months, respectively, compared to baseline (P < 0.05). Percent reduction of MEP amplitude was significantly less at 6 months (P < 0.05) The majority of subjects (5/8 at 3 months; 6/8 at 6 and 12 months) reported decreased physical fatigue. Functional improvements were observed for walk and finger tapping scores after 3 months of IFNB treatment. MEP latencies were unchanged over the course of the intervention.\nCONCLUSIONS: Results indicate that IFNB therapy may improve the rate of recovery from central fatigue.\nSIGNIFICANCE: Transcranial magnetic stimulation (TMS) may have promise as an objective physiological tool to evaluate disease activity and treatment responses in MS.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/15351379/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -7.93979549407959,
+      "relevance_score": 0.00035615244996733963,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.00035615244996733963,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:33621665",
+      "document_id": "pubmed:33621665",
+      "title": "Dynamic sagittal alignment and compensation strategies in adult spinal deformity during walking.",
+      "text": "BACKGROUND CONTEXT: Radiographic evaluation in adult spinal deformity (ASD) offers no information on spinopelvic alignment and compensation during dynamic conditions. Motion analysis offers the potential to bridge the gap between static radiographic and dynamic alignment measurement, increasing our understanding on how ASD impacts function.\nPURPOSE: This study aimed to explore the changes in sagittal alignment and compensation strategies in ASD between upright standing and walking, compared to control subjects and within different sagittal alignment groups. Ten patients were measured pre- and six months postoperatively to explore the impact of surgical alignment correction on gait.\nSTUDY DESIGN: Prospective study.\nSAMPLE SIZE: Full protocol: 58 ASD and 20 controls; Spinal kinematic analysis: 43 ASD and 18 controls; Postoperative analysis: 10 ASD.\nOUTCOME MEASURES: Standing and walking sagittal spinopelvic (thoracic kyphosis (TK), lumbar lordosis (LL), sagittal vertical axis (SVA), pelvis), and lower limb kinematics, spinopelvic changes between standing and walking (\u2206 ie, difference between mean dynamic and static angle), lower limb kinetics, spatiotemporal parameters, balance (BESTest), patient-reported outcome scores (SRS-22r, ODI, and FES-I) and radiographic parameters.\nMETHODS: Motion analysis was used to assess the standing and walking spinopelvic and lower limb kinematics, as well as the lower limb kinetics during walking. All parameters were compared between controls and patients with ASD, divided in three groups based on their sagittal alignment (ASD 1: decompensated sagittal malalignment; ASD 2: compensated sagittal malalignment; ASD 3: scoliosis and normal sagittal alignment). Ten patients were reassessed 6 months after spinal corrective surgery. Continuous kinematic and kinetic data were analyzed through statistical parametric mapping.\nRESULTS: All patient groups walked with increased forward trunk tilt (\u2206SVA=41.43 mm, p<.001) in combination with anterior pelvic tilt (\u2206Pelvis=2.58\u00b0, p<.001) compared to standing, as was also observed in controls (\u2206SVA=37.86 mm, p<.001; \u2206Pelvis=1.62\u00b0, p=.012). Patients walked with increased SVA, in combination with decreased LL and alterations in lower limb kinematics during terminal stance and initial swing, as well as altered spatiotemporal parameters. Subgroup analysis could link these alterations in gait to sagittal spinopelvic malalignment (ASD 1 and 2). After surgical correction, lower limb kinematics and spatiotemporal parameters during gait were not significantly improved.\nCONCLUSIONS: To compensate for increased trunk tilt and pelvic anteversion during walking, patients with sagittal malalignment show altered lower limb gait patterns, which have previously been associated with increased risk of falling and secondary lower limb pathology. Since surgical correction of the deformity did not lead to gait improvements, further research on the underlying mechanisms is necessary to improve our understanding of how ASD impacts function.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33621665/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -7.953784942626953,
+      "relevance_score": 0.0003512064868118614,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.0003512064868118614,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cWalking for exactly 17 minutes each morning\u201d; relationship: \u201creduces\u201d; outcome: \u201cAlzheimer disease incidence\u201d; qualifiers: \u201cexactly 23%\u201d. The evidence does not mention walking for exactly 17 minutes each morning or any specific duration of walking in adults aged 41 to 43. The studies focus on different interventions and populations, such as hippotherapy, a The evidence does not establish a relationship between walking and Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as hippotherapy and interferon beta-1a treatment for MS. The evidence does not mention Alzheimer disease incidence or any specific reduction in incidence. The studies focus on different outcomes, such as walking performance and gait parameters in MS patients, and physiological The evidence does not provide any specific percentage or exact number for the reduction in Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as walking performance and gait para",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:15351379",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:32485633",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:33621665",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Walking for exactly 17 minutes each morning",
+                "relationship": "reduces",
+                "outcome": "Alzheimer disease incidence",
+                "population": "adults aged 41 to 43",
+                "qualifiers": "exactly 23%"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention walking for exactly 17 minutes each morning or any specific duration of walking in adults aged 41 to 43. The studies focus on different interventions and populations, such as hippotherapy, a",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Walking for exactly 17 minutes each morning",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not establish a relationship between walking and Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as hippotherapy and interferon beta-1a treatment for MS.",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "reduces",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention Alzheimer disease incidence or any specific reduction in incidence. The studies focus on different outcomes, such as walking performance and gait parameters in MS patients, and physiological",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Alzheimer disease incidence",
+                  "citations": []
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence mentions adults with multiple sclerosis (MS), which is a specific population, but it does not specifically mention adults aged 41 to 43. However, the population is close enough to match the claim.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "population",
+                  "evidence_phrase": "BACKGROUND: Walking dysfunction is one of the most common symptoms of multiple sclerosis (MS).",
+                  "claim_fragment": "adults aged 41 to 43",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:32485633",
+                      "quote": "BACKGROUND: Walking dysfunction is one of the most common symptoms of multiple sclerosis (MS)."
+                    },
+                    {
+                      "evidence_id": "pubmed:15351379",
+                      "quote": "OBJECTIVE: This pilot study was designed to determine the effects of interferon beta-1a (IFNB) therapy (Avonex) on cortically evoked motor potentials (MEPs) during resting and fatigued states in individuals with multiple sclerosis (MS)."
+                    }
+                  ]
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any specific percentage or exact number for the reduction in Alzheimer disease incidence. The studies focus on different outcomes and interventions, such as walking performance and gait para",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly 23%",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 69096.39083399999,
+  "completed_at_utc": "2026-10-29T02:52:51.002188Z"
+}

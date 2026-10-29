@@ -1,0 +1,7 @@
+Claim: Obesity protects against type 2 diabetes.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 05e3d2a9-50ad-4a32-9f56-9bc152a5883f
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/05e3d2a9-50ad-4a32-9f56-9bc152a5883f.json

@@ -1,0 +1,794 @@
+{
+  "request": {
+    "request_id": "47a9bee9-8ae0-4741-aead-a605ca507479",
+    "claim": "Asthma does not cause wheezing.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:39:00.046316Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:39:00.046386Z",
+      "ended_at_utc": "2026-10-29T03:39:00.718780Z",
+      "latency_ms": 672.3917089998395
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:38700922",
+        "document_id": "pubmed:38700922",
+        "title": "All That Wheezes Is Not Asthma.",
+        "text": "Wheezing is a high pitched, whistling sound generated when air flows through narrowed airways and is often equated with asthma. However, wheezing may be a presenting symptom of various other conditions including structural lesions of the airways, foreign body aspiration, pulmonary infections as well as cardiac causes. Underlying etiology of wheezing may also vary with age. Detailed history, physical examination, and laboratory investigations are often required to identify the underlying etiology of wheezing. Additional studies may sometimes be needed to accurately identify the underlying etiology such as pulmonary function test or spirometry, chest radiography (chest X-ray), and bronchoscopy. This review article discusses the common causes of wheezing encountered in clinical practice. [Pediatr Ann. 2024;53(5):e189-e194.].",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38700922/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.067096710205078,
+        "relevance_score": 0.9991480112075806,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:17908773",
+        "document_id": "pubmed:17908773",
+        "title": "Pseudo-asthma: when cough, wheezing, and dyspnea are not asthma.",
+        "text": "Although asthma is the most common cause of cough, wheeze, and dyspnea in children and adults, asthma is often attributed inappropriately to symptoms from other causes. Cough that is misdiagnosed as asthma can occur with pertussis, cystic fibrosis, primary ciliary dyskinesia, airway abnormalities such as tracheomalacia and bronchomalacia, chronic purulent or suppurative bronchitis in young children, and habit-cough syndrome. The respiratory sounds that occur with the upper airway obstruction caused by the various manifestations of the vocal cord dysfunction syndrome or the less common exercise-induced laryngomalacia are often mischaracterized as wheezing and attributed to asthma. The perception of dyspnea is a prominent symptom of hyperventilation attacks. This can occur in those with or without asthma, and patients with asthma may not readily distinguish the perceived dyspnea of a hyperventilation attack from the acute airway obstruction of asthma. Dyspnea on exertion, in the absence of other symptoms of asthma or an unequivocal response to albuterol, is most likely a result of other causes. Most common is the dyspnea associated with normal exercise limitation, but causes of dyspnea on exertion can include other physiologic abnormalities including exercise-induced vocal cord dysfunction, exercise-induced laryngomalacia, exercise-induced hyperventilation, and exercise-induced supraventricular tachycardia. A careful history, attention to the nature of the respiratory sounds that are present, spirometry, exercise testing, and blood-gas measurement provide useful data to sort out the various causes and avoid inappropriate treatment of these pseudo-asthma clinical manifestations.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/17908773/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.70968770980835,
+        "relevance_score": 0.9987824559211731,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:aeda1a2a7e52231f810f",
+        "document_id": "web:aeda1a2a7e52231f810f",
+        "title": "Asthma: Types, Causes, Symptoms, Diagnosis & Treatment",
+        "text": "Asthma: Types, Causes, Symptoms, Diagnosis & Treatment\nHome /\nDiseases & Conditions /\nAsthma\nAdvertisement\nAdvertisement\nAsthma\nMedically Reviewed. Last updated on 06/18/2025 .\nAsthma is a condition that causes your airways to swell, narrow and fill with mucus. This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing. Common asthma triggers include allergies (like pets or pollen), smoke, cold weather, exercise, strong smells and stress. Asthma attacks can be fatal if not treated.\nAdvertisement\nCare at Cleveland Clinic\nAsthma Treatment for Adults\nFind a Doctor and Specialists\nAsthma Treatment for Children\nFind a Pediatric Doctor and Specialists\nMake an Appointment\nContents What Is Asthma? Symptoms and Causes Diagnosis and Tests Management and Treatment Outlook / Prognosis\nWhat Is Asthma?\nImage content: This image is available to view online.\nView image online ( https://my.clevelandclinic.org/-/scassets/images/org/health/articles/6424-asthma )\nAsthma triggers like allergies, cold, stress, smells or exercise cause your airways to tighten, swell and fill with mucus.\nAsthma is a condition that causes long-term (chronic) inflammation in your airways . The inflammation makes them react to certain triggers, like pollen, exercise or cold air. During these attacks , your airways narrow ( bronchospasm ), swell up and fill with mucus . This makes it hard to breathe or causes you to cough or wheeze. Without treatment, these flare-ups can be fatal.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nMillions of people in the U.S. and around the world have asthma. It can start in childhood or develop when you\u2019re an adult. It\u2019s sometimes called bronchial asthma.\nTypes of asthma\nTypes of asthma include:\nAllergic asthma : when allergies trigger asthma symptoms\nCough-variant asthma : when your only asthma symptom is a cough\nExercise-induced asthma : when exercise triggers asthma symptoms\nOccupational asthma : when substances you breathe in at work cause you to develop asthma or trigger asthma attacks\nAsthma-COPD overlap syndrome (ACOS) : when you have both asthma and COPD (chronic obstructive pulmonary disease)\nSymptoms and Causes\nView video online ( https://cdnapisec.kaltura.com/p/2207941/sp/220794100/playManifest/entryId/1_m8hom1mo/flavorId/1_5f3sgelj/format/url/protocol/https/a.mp4 )\nNeha Solanki, MD, shares what causes asthma and if patients can outgrow it.\nNeha Solanki, MD, shares what causes asthma and if patients can outgrow it.\nSymptoms of asthma\nSymptoms of asthma include:\nShortness of breath\nWheezing\nChest tightness, pain or pressure\nCough\nYou might have asthma most of the time (persistent asthma). Or you might feel fine in between asthma attacks (intermittent asthma).\nAsthma causes\nExperts aren\u2019t sure what causes asthma. But you might be at a higher risk if you:\nLive with allergies or eczema (atopy)\nWere exposed to toxins, fumes or secondhand or thirdhand smoke (residue left behind after smoking), especially early in life\nHave a biological parent with allergies or asthma\nExperienced repeated respiratory infections (like RSV ) as a child\nAsthma triggers\nAsthma triggers are anything that causes asthma symptoms or makes them worse. You might have one specific trigger or many. Common triggers include:\nAdvertisement\nToxins in the air : factory emissions, car exhaust, wildfire smoke\nAsthma triggers can bring on an attack right away. Or it might take hours or days for an attack to start after you\u2019re exposure to a trigger.\nComplications of asthma\nAsthma can cause severe flare-ups that don\u2019t get better with treatment ( status asthmaticus ). This can be fatal if you can\u2019t get enough oxygen to your organs and tissues.\nDiagnosis and Tests\nHow doctors diagnose asthma\nAn allergist or pulmonologist diagnoses asthma by asking about your symptoms and performing lung function tests . They\u2019ll ask about your personal and family medical history. It can be helpful to let them know what makes asthma symptoms worse and if anything helps you feel better.\nTests\nYour provider might determine how well your lungs are working and rule out other conditions with:\nAllergy blood tests or skin tests : These can determine if an allergy is triggering your asthma symptoms.\nBlood count : Providers can look at eosinophil and immunoglobulin E (IgE) levels and target them for treatment if they\u2019re elevated. Eosinophils and IgE can be elevated in certain types of asthma.\nSpirometry : This is a common lung function test that measures how well air flows through your lungs.\nManagement and Treatment\nWhat is the best way to manage asthma?\nThe best way to manage asthma is to avoid any known triggers and use medications to keep your airways open. Your provider might prescribe:\nMaintenance inhalers : These usually contain inhaled steroids that reduce inflammation. Sometimes, they\u2019re combined with different types of bronchodilators (medicines that open your airways).\nA rescue inhaler : Fast-acting \u201crescue\u201d inhalers can help during an asthma attack. They contain a bronchodilator that quickly opens your airways, like albuterol .\nA nebulizer : Nebulizers spray a fine mist of medication through a mask on your face. You might use a nebulizer instead of an inhaler for some medications.\nLeukotriene modifiers : Your provider might prescribe a daily pill to help reduce asthma symptoms and your risk of an asthma attack.\nOral steroids : Your provider might prescribe a short course of oral steroids for a flare-up.\nAntihistamines : Your provider might recommend cetirizine (Zyrtec \u00ae ), loratadine (Claritin \u00ae ), fexofenadine (Allegra \u00ae ) or other allergy medications if you have allergic asthma.\nBiologic therapy : Treatments like monoclonal antibodies might help severe asthma.\nAdvertisement\nAsthma action plan\nYour healthcare provider will work with you to develop an asthma action plan . This plan tells you how and when to use your medicines. It also tells you what to do when you have certain symptoms and when to seek emergency care. Ask your healthcare provider to walk you through it.\nWhen should I see my healthcare provider?\nTalk to your healthcare provider if you\u2019re having frequent asthma attacks or feel like your symptoms aren\u2019t manageable. Make sure you understand your asthma action plan and when to go to the emergency room.\nUse your rescue inhaler, then call 911 (or your local emergency number) if you\u2019re having a severe asthma attack or are experiencing these symptoms:\nAnxiety or panic\nCoughing that won\u2019t stop\nSevere wheezing when you breathe\nDifficulty talking or swallowing\nCare at Cleveland Clinic\nAsthma Treatment for Adults\nFind a Doctor and Specialists\nAsthma Treatment for Children\nFind a Pediatric Doctor and Specialists\nOutlook / Prognosis\nWhat can I expect if I have asthma?\nMost people with asthma can manage their symptoms. Asthma management means you:\nAd",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/diseases/6424-asthma",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.424748420715332,
+        "relevance_score": 0.9881645441055298,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Asthma does not cause wheezing."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:39:00.718831Z",
+      "ended_at_utc": "2026-10-29T03:39:20.142775Z",
+      "latency_ms": 19423.70945799985
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:17908773",
+        "document_id": "pubmed:17908773",
+        "title": "Pseudo-asthma: when cough, wheezing, and dyspnea are not asthma.",
+        "text": "Although asthma is the most common cause of cough, wheeze, and dyspnea in children and adults, asthma is often attributed inappropriately to symptoms from other causes. Cough that is misdiagnosed as asthma can occur with pertussis, cystic fibrosis, primary ciliary dyskinesia, airway abnormalities such as tracheomalacia and bronchomalacia, chronic purulent or suppurative bronchitis in young children, and habit-cough syndrome. The respiratory sounds that occur with the upper airway obstruction caused by the various manifestations of the vocal cord dysfunction syndrome or the less common exercise-induced laryngomalacia are often mischaracterized as wheezing and attributed to asthma. The perception of dyspnea is a prominent symptom of hyperventilation attacks. This can occur in those with or without asthma, and patients with asthma may not readily distinguish the perceived dyspnea of a hyperventilation attack from the acute airway obstruction of asthma. Dyspnea on exertion, in the absence of other symptoms of asthma or an unequivocal response to albuterol, is most likely a result of other causes. Most common is the dyspnea associated with normal exercise limitation, but causes of dyspnea on exertion can include other physiologic abnormalities including exercise-induced vocal cord dysfunction, exercise-induced laryngomalacia, exercise-induced hyperventilation, and exercise-induced supraventricular tachycardia. A careful history, attention to the nature of the respiratory sounds that are present, spirometry, exercise testing, and blood-gas measurement provide useful data to sort out the various causes and avoid inappropriate treatment of these pseudo-asthma clinical manifestations.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/17908773/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.70968770980835,
+        "relevance_score": 0.9987824559211731,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6991477191448211,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:38700922",
+        "document_id": "pubmed:38700922",
+        "title": "All That Wheezes Is Not Asthma.",
+        "text": "Wheezing is a high pitched, whistling sound generated when air flows through narrowed airways and is often equated with asthma. However, wheezing may be a presenting symptom of various other conditions including structural lesions of the airways, foreign body aspiration, pulmonary infections as well as cardiac causes. Underlying etiology of wheezing may also vary with age. Detailed history, physical examination, and laboratory investigations are often required to identify the underlying etiology of wheezing. Additional studies may sometimes be needed to accurately identify the underlying etiology such as pulmonary function test or spirometry, chest radiography (chest X-ray), and bronchoscopy. This review article discusses the common causes of wheezing encountered in clinical practice. [Pediatr Ann. 2024;53(5):e189-e194.].",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38700922/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.067096710205078,
+        "relevance_score": 0.9991480112075806,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19982960224151614,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:aeda1a2a7e52231f810f",
+        "document_id": "web:aeda1a2a7e52231f810f",
+        "title": "Asthma: Types, Causes, Symptoms, Diagnosis & Treatment",
+        "text": "Asthma: Types, Causes, Symptoms, Diagnosis & Treatment\nHome /\nDiseases & Conditions /\nAsthma\nAdvertisement\nAdvertisement\nAsthma\nMedically Reviewed. Last updated on 06/18/2025 .\nAsthma is a condition that causes your airways to swell, narrow and fill with mucus. This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing. Common asthma triggers include allergies (like pets or pollen), smoke, cold weather, exercise, strong smells and stress. Asthma attacks can be fatal if not treated.\nAdvertisement\nCare at Cleveland Clinic\nAsthma Treatment for Adults\nFind a Doctor and Specialists\nAsthma Treatment for Children\nFind a Pediatric Doctor and Specialists\nMake an Appointment\nContents What Is Asthma? Symptoms and Causes Diagnosis and Tests Management and Treatment Outlook / Prognosis\nWhat Is Asthma?\nImage content: This image is available to view online.\nView image online ( https://my.clevelandclinic.org/-/scassets/images/org/health/articles/6424-asthma )\nAsthma triggers like allergies, cold, stress, smells or exercise cause your airways to tighten, swell and fill with mucus.\nAsthma is a condition that causes long-term (chronic) inflammation in your airways . The inflammation makes them react to certain triggers, like pollen, exercise or cold air. During these attacks , your airways narrow ( bronchospasm ), swell up and fill with mucus . This makes it hard to breathe or causes you to cough or wheeze. Without treatment, these flare-ups can be fatal.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nMillions of people in the U.S. and around the world have asthma. It can start in childhood or develop when you\u2019re an adult. It\u2019s sometimes called bronchial asthma.\nTypes of asthma\nTypes of asthma include:\nAllergic asthma : when allergies trigger asthma symptoms\nCough-variant asthma : when your only asthma symptom is a cough\nExercise-induced asthma : when exercise triggers asthma symptoms\nOccupational asthma : when substances you breathe in at work cause you to develop asthma or trigger asthma attacks\nAsthma-COPD overlap syndrome (ACOS) : when you have both asthma and COPD (chronic obstructive pulmonary disease)\nSymptoms and Causes\nView video online ( https://cdnapisec.kaltura.com/p/2207941/sp/220794100/playManifest/entryId/1_m8hom1mo/flavorId/1_5f3sgelj/format/url/protocol/https/a.mp4 )\nNeha Solanki, MD, shares what causes asthma and if patients can outgrow it.\nNeha Solanki, MD, shares what causes asthma and if patients can outgrow it.\nSymptoms of asthma\nSymptoms of asthma include:\nShortness of breath\nWheezing\nChest tightness, pain or pressure\nCough\nYou might have asthma most of the time (persistent asthma). Or you might feel fine in between asthma attacks (intermittent asthma).\nAsthma causes\nExperts aren\u2019t sure what causes asthma. But you might be at a higher risk if you:\nLive with allergies or eczema (atopy)\nWere exposed to toxins, fumes or secondhand or thirdhand smoke (residue left behind after smoking), especially early in life\nHave a biological parent with allergies or asthma\nExperienced repeated respiratory infections (like RSV ) as a child\nAsthma triggers\nAsthma triggers are anything that causes asthma symptoms or makes them worse. You might have one specific trigger or many. Common triggers include:\nAdvertisement\nToxins in the air : factory emissions, car exhaust, wildfire smoke\nAsthma triggers can bring on an attack right away. Or it might take hours or days for an attack to start after you\u2019re exposure to a trigger.\nComplications of asthma\nAsthma can cause severe flare-ups that don\u2019t get better with treatment ( status asthmaticus ). This can be fatal if you can\u2019t get enough oxygen to your organs and tissues.\nDiagnosis and Tests\nHow doctors diagnose asthma\nAn allergist or pulmonologist diagnoses asthma by asking about your symptoms and performing lung function tests . They\u2019ll ask about your personal and family medical history. It can be helpful to let them know what makes asthma symptoms worse and if anything helps you feel better.\nTests\nYour provider might determine how well your lungs are working and rule out other conditions with:\nAllergy blood tests or skin tests : These can determine if an allergy is triggering your asthma symptoms.\nBlood count : Providers can look at eosinophil and immunoglobulin E (IgE) levels and target them for treatment if they\u2019re elevated. Eosinophils and IgE can be elevated in certain types of asthma.\nSpirometry : This is a common lung function test that measures how well air flows through your lungs.\nManagement and Treatment\nWhat is the best way to manage asthma?\nThe best way to manage asthma is to avoid any known triggers and use medications to keep your airways open. Your provider might prescribe:\nMaintenance inhalers : These usually contain inhaled steroids that reduce inflammation. Sometimes, they\u2019re combined with different types of bronchodilators (medicines that open your airways).\nA rescue inhaler : Fast-acting \u201crescue\u201d inhalers can help during an asthma attack. They contain a bronchodilator that quickly opens your airways, like albuterol .\nA nebulizer : Nebulizers spray a fine mist of medication through a mask on your face. You might use a nebulizer instead of an inhaler for some medications.\nLeukotriene modifiers : Your provider might prescribe a daily pill to help reduce asthma symptoms and your risk of an asthma attack.\nOral steroids : Your provider might prescribe a short course of oral steroids for a flare-up.\nAntihistamines : Your provider might recommend cetirizine (Zyrtec \u00ae ), loratadine (Claritin \u00ae ), fexofenadine (Allegra \u00ae ) or other allergy medications if you have allergic asthma.\nBiologic therapy : Treatments like monoclonal antibodies might help severe asthma.\nAdvertisement\nAsthma action plan\nYour healthcare provider will work with you to develop an asthma action plan . This plan tells you how and when to use your medicines. It also tells you what to do when you have certain symptoms and when to seek emergency care. Ask your healthcare provider to walk you through it.\nWhen should I see my healthcare provider?\nTalk to your healthcare provider if you\u2019re having frequent asthma attacks or feel like your symptoms aren\u2019t manageable. Make sure you understand your asthma action plan and when to go to the emergency room.\nUse your rescue inhaler, then call 911 (or your local emergency number) if you\u2019re having a severe asthma attack or are experiencing these symptoms:\nAnxiety or panic\nCoughing that won\u2019t stop\nSevere wheezing when you breathe\nDifficulty talking or swallowing\nCare at Cleveland Clinic\nAsthma Treatment for Adults\nFind a Doctor and Specialists\nAsthma Treatment for Children\nFind a Pediatric Doctor and Specialists\nOutlook / Prognosis\nWhat can I expect if I have asthma?\nMost people with asthma can manage their symptoms. Asthma management means you:\nAd",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/diseases/6424-asthma",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.424748420715332,
+        "relevance_score": 0.9881645441055298,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19763290882110596,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:39:20.142804Z",
+      "ended_at_utc": "2026-10-29T03:39:26.584708Z",
+      "latency_ms": 6441.870084000129
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.4,
+      "nei": 0.55,
+      "supported": 0.05
+    },
+    "verifier_score": 0.55,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:17908773",
+      "pubmed:38700922",
+      "web:aeda1a2a7e52231f810f"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "No single source establishes the complete claim with its subject, outcome and qualifiers together. Related findings from different studies cannot be combined into proof.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:17908773",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:38700922",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:aeda1a2a7e52231f810f",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Asthma",
+              "relationship": "not cause",
+              "outcome": "wheezing",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence discusses asthma as a condition that can cause wheezing, among other symptoms. For example, sentence E3S11 mentions 'Asthma is a condition that causes long-term (chronic) inflammation in your airways. The...",
+                "sentence_ids": [
+                  "E3S10",
+                  "E3S11"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "Asthma is a condition that causes your airways to swell, narrow and fill with mucus.",
+                "claim_fragment": "Asthma",
+                "citations": [
+                  {
+                    "evidence_id": "web:aeda1a2a7e52231f810f",
+                    "quote": "Asthma is a condition that causes your airways to swell, narrow and fill with mucus."
+                  },
+                  {
+                    "evidence_id": "web:aeda1a2a7e52231f810f",
+                    "quote": "This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence suggests that wheezing can be caused by various conditions, not just asthma. For example, sentence E1S2 states 'However, wheezing may be a presenting symptom of various other conditions including structural",
+                "sentence_ids": [
+                  "E1S2",
+                  "E2S1"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "However, wheezing may be a presenting symptom of various other conditions including structural lesions of the airways, foreign body aspiration, pulmonary infections as well as cardiac causes.",
+                "claim_fragment": "not cause",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:38700922",
+                    "quote": "However, wheezing may be a presenting symptom of various other conditions including structural lesions of the airways, foreign body aspiration, pulmonary infections as well as cardiac causes."
+                  },
+                  {
+                    "evidence_id": "pubmed:17908773",
+                    "quote": "Although asthma is the most common cause of cough, wheeze, and dyspnea in children and adults, asthma is often attributed inappropriately to symptoms from other causes."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence mentions wheezing as a symptom of asthma, for example, sentence E3S11 states 'Symptoms of asthma include: Shortness of breath, Wheezing, Chest tightness, pain or pressure, Cough'.",
+                "sentence_ids": [
+                  "E3S11"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing.",
+                "claim_fragment": "wheezing",
+                "citations": [
+                  {
+                    "evidence_id": "web:aeda1a2a7e52231f810f",
+                    "quote": "This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.05,
+            "REFUTED": 0.4,
+            "NEI": 0.55
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "Semantic grounding 0.3978 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:39:59.382872Z",
+      "ended_at_utc": "2026-10-29T03:40:26.545268Z",
+      "latency_ms": 27162.063999999646
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.55,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:17908773",
+      "document_id": "pubmed:17908773",
+      "title": "Pseudo-asthma: when cough, wheezing, and dyspnea are not asthma.",
+      "text": "Although asthma is the most common cause of cough, wheeze, and dyspnea in children and adults, asthma is often attributed inappropriately to symptoms from other causes. Cough that is misdiagnosed as asthma can occur with pertussis, cystic fibrosis, primary ciliary dyskinesia, airway abnormalities such as tracheomalacia and bronchomalacia, chronic purulent or suppurative bronchitis in young children, and habit-cough syndrome. The respiratory sounds that occur with the upper airway obstruction caused by the various manifestations of the vocal cord dysfunction syndrome or the less common exercise-induced laryngomalacia are often mischaracterized as wheezing and attributed to asthma. The perception of dyspnea is a prominent symptom of hyperventilation attacks. This can occur in those with or without asthma, and patients with asthma may not readily distinguish the perceived dyspnea of a hyperventilation attack from the acute airway obstruction of asthma. Dyspnea on exertion, in the absence of other symptoms of asthma or an unequivocal response to albuterol, is most likely a result of other causes. Most common is the dyspnea associated with normal exercise limitation, but causes of dyspnea on exertion can include other physiologic abnormalities including exercise-induced vocal cord dysfunction, exercise-induced laryngomalacia, exercise-induced hyperventilation, and exercise-induced supraventricular tachycardia. A careful history, attention to the nature of the respiratory sounds that are present, spirometry, exercise testing, and blood-gas measurement provide useful data to sort out the various causes and avoid inappropriate treatment of these pseudo-asthma clinical manifestations.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/17908773/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.70968770980835,
+      "relevance_score": 0.9987824559211731,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6991477191448211,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:38700922",
+      "document_id": "pubmed:38700922",
+      "title": "All That Wheezes Is Not Asthma.",
+      "text": "Wheezing is a high pitched, whistling sound generated when air flows through narrowed airways and is often equated with asthma. However, wheezing may be a presenting symptom of various other conditions including structural lesions of the airways, foreign body aspiration, pulmonary infections as well as cardiac causes. Underlying etiology of wheezing may also vary with age. Detailed history, physical examination, and laboratory investigations are often required to identify the underlying etiology of wheezing. Additional studies may sometimes be needed to accurately identify the underlying etiology such as pulmonary function test or spirometry, chest radiography (chest X-ray), and bronchoscopy. This review article discusses the common causes of wheezing encountered in clinical practice. [Pediatr Ann. 2024;53(5):e189-e194.].",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/38700922/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.067096710205078,
+      "relevance_score": 0.9991480112075806,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19982960224151614,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:aeda1a2a7e52231f810f",
+      "document_id": "web:aeda1a2a7e52231f810f",
+      "title": "Asthma: Types, Causes, Symptoms, Diagnosis & Treatment",
+      "text": "Asthma: Types, Causes, Symptoms, Diagnosis & Treatment\nHome /\nDiseases & Conditions /\nAsthma\nAdvertisement\nAdvertisement\nAsthma\nMedically Reviewed. Last updated on 06/18/2025 .\nAsthma is a condition that causes your airways to swell, narrow and fill with mucus. This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing. Common asthma triggers include allergies (like pets or pollen), smoke, cold weather, exercise, strong smells and stress. Asthma attacks can be fatal if not treated.\nAdvertisement\nCare at Cleveland Clinic\nAsthma Treatment for Adults\nFind a Doctor and Specialists\nAsthma Treatment for Children\nFind a Pediatric Doctor and Specialists\nMake an Appointment\nContents What Is Asthma? Symptoms and Causes Diagnosis and Tests Management and Treatment Outlook / Prognosis\nWhat Is Asthma?\nImage content: This image is available to view online.\nView image online ( https://my.clevelandclinic.org/-/scassets/images/org/health/articles/6424-asthma )\nAsthma triggers like allergies, cold, stress, smells or exercise cause your airways to tighten, swell and fill with mucus.\nAsthma is a condition that causes long-term (chronic) inflammation in your airways . The inflammation makes them react to certain triggers, like pollen, exercise or cold air. During these attacks , your airways narrow ( bronchospasm ), swell up and fill with mucus . This makes it hard to breathe or causes you to cough or wheeze. Without treatment, these flare-ups can be fatal.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nMillions of people in the U.S. and around the world have asthma. It can start in childhood or develop when you\u2019re an adult. It\u2019s sometimes called bronchial asthma.\nTypes of asthma\nTypes of asthma include:\nAllergic asthma : when allergies trigger asthma symptoms\nCough-variant asthma : when your only asthma symptom is a cough\nExercise-induced asthma : when exercise triggers asthma symptoms\nOccupational asthma : when substances you breathe in at work cause you to develop asthma or trigger asthma attacks\nAsthma-COPD overlap syndrome (ACOS) : when you have both asthma and COPD (chronic obstructive pulmonary disease)\nSymptoms and Causes\nView video online ( https://cdnapisec.kaltura.com/p/2207941/sp/220794100/playManifest/entryId/1_m8hom1mo/flavorId/1_5f3sgelj/format/url/protocol/https/a.mp4 )\nNeha Solanki, MD, shares what causes asthma and if patients can outgrow it.\nNeha Solanki, MD, shares what causes asthma and if patients can outgrow it.\nSymptoms of asthma\nSymptoms of asthma include:\nShortness of breath\nWheezing\nChest tightness, pain or pressure\nCough\nYou might have asthma most of the time (persistent asthma). Or you might feel fine in between asthma attacks (intermittent asthma).\nAsthma causes\nExperts aren\u2019t sure what causes asthma. But you might be at a higher risk if you:\nLive with allergies or eczema (atopy)\nWere exposed to toxins, fumes or secondhand or thirdhand smoke (residue left behind after smoking), especially early in life\nHave a biological parent with allergies or asthma\nExperienced repeated respiratory infections (like RSV ) as a child\nAsthma triggers\nAsthma triggers are anything that causes asthma symptoms or makes them worse. You might have one specific trigger or many. Common triggers include:\nAdvertisement\nToxins in the air : factory emissions, car exhaust, wildfire smoke\nAsthma triggers can bring on an attack right away. Or it might take hours or days for an attack to start after you\u2019re exposure to a trigger.\nComplications of asthma\nAsthma can cause severe flare-ups that don\u2019t get better with treatment ( status asthmaticus ). This can be fatal if you can\u2019t get enough oxygen to your organs and tissues.\nDiagnosis and Tests\nHow doctors diagnose asthma\nAn allergist or pulmonologist diagnoses asthma by asking about your symptoms and performing lung function tests . They\u2019ll ask about your personal and family medical history. It can be helpful to let them know what makes asthma symptoms worse and if anything helps you feel better.\nTests\nYour provider might determine how well your lungs are working and rule out other conditions with:\nAllergy blood tests or skin tests : These can determine if an allergy is triggering your asthma symptoms.\nBlood count : Providers can look at eosinophil and immunoglobulin E (IgE) levels and target them for treatment if they\u2019re elevated. Eosinophils and IgE can be elevated in certain types of asthma.\nSpirometry : This is a common lung function test that measures how well air flows through your lungs.\nManagement and Treatment\nWhat is the best way to manage asthma?\nThe best way to manage asthma is to avoid any known triggers and use medications to keep your airways open. Your provider might prescribe:\nMaintenance inhalers : These usually contain inhaled steroids that reduce inflammation. Sometimes, they\u2019re combined with different types of bronchodilators (medicines that open your airways).\nA rescue inhaler : Fast-acting \u201crescue\u201d inhalers can help during an asthma attack. They contain a bronchodilator that quickly opens your airways, like albuterol .\nA nebulizer : Nebulizers spray a fine mist of medication through a mask on your face. You might use a nebulizer instead of an inhaler for some medications.\nLeukotriene modifiers : Your provider might prescribe a daily pill to help reduce asthma symptoms and your risk of an asthma attack.\nOral steroids : Your provider might prescribe a short course of oral steroids for a flare-up.\nAntihistamines : Your provider might recommend cetirizine (Zyrtec \u00ae ), loratadine (Claritin \u00ae ), fexofenadine (Allegra \u00ae ) or other allergy medications if you have allergic asthma.\nBiologic therapy : Treatments like monoclonal antibodies might help severe asthma.\nAdvertisement\nAsthma action plan\nYour healthcare provider will work with you to develop an asthma action plan . This plan tells you how and when to use your medicines. It also tells you what to do when you have certain symptoms and when to seek emergency care. Ask your healthcare provider to walk you through it.\nWhen should I see my healthcare provider?\nTalk to your healthcare provider if you\u2019re having frequent asthma attacks or feel like your symptoms aren\u2019t manageable. Make sure you understand your asthma action plan and when to go to the emergency room.\nUse your rescue inhaler, then call 911 (or your local emergency number) if you\u2019re having a severe asthma attack or are experiencing these symptoms:\nAnxiety or panic\nCoughing that won\u2019t stop\nSevere wheezing when you breathe\nDifficulty talking or swallowing\nCare at Cleveland Clinic\nAsthma Treatment for Adults\nFind a Doctor and Specialists\nAsthma Treatment for Children\nFind a Pediatric Doctor and Specialists\nOutlook / Prognosis\nWhat can I expect if I have asthma?\nMost people with asthma can manage their symptoms. Asthma management means you:\nAd",
+      "source": "my.clevelandclinic.org",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/6424-asthma",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 4.424748420715332,
+      "relevance_score": 0.9881645441055298,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19763290882110596,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "No single source establishes the complete claim with its subject, outcome and qualifiers together. Related findings from different studies cannot be combined into proof.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:17908773",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:38700922",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:aeda1a2a7e52231f810f",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Asthma",
+                "relationship": "not cause",
+                "outcome": "wheezing",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence discusses asthma as a condition that can cause wheezing, among other symptoms. For example, sentence E3S11 mentions 'Asthma is a condition that causes long-term (chronic) inflammation in your airways. The...",
+                  "sentence_ids": [
+                    "E3S10",
+                    "E3S11"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "Asthma is a condition that causes your airways to swell, narrow and fill with mucus.",
+                  "claim_fragment": "Asthma",
+                  "citations": [
+                    {
+                      "evidence_id": "web:aeda1a2a7e52231f810f",
+                      "quote": "Asthma is a condition that causes your airways to swell, narrow and fill with mucus."
+                    },
+                    {
+                      "evidence_id": "web:aeda1a2a7e52231f810f",
+                      "quote": "This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence suggests that wheezing can be caused by various conditions, not just asthma. For example, sentence E1S2 states 'However, wheezing may be a presenting symptom of various other conditions including structural",
+                  "sentence_ids": [
+                    "E1S2",
+                    "E2S1"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "However, wheezing may be a presenting symptom of various other conditions including structural lesions of the airways, foreign body aspiration, pulmonary infections as well as cardiac causes.",
+                  "claim_fragment": "not cause",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:38700922",
+                      "quote": "However, wheezing may be a presenting symptom of various other conditions including structural lesions of the airways, foreign body aspiration, pulmonary infections as well as cardiac causes."
+                    },
+                    {
+                      "evidence_id": "pubmed:17908773",
+                      "quote": "Although asthma is the most common cause of cough, wheeze, and dyspnea in children and adults, asthma is often attributed inappropriately to symptoms from other causes."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence mentions wheezing as a symptom of asthma, for example, sentence E3S11 states 'Symptoms of asthma include: Shortness of breath, Wheezing, Chest tightness, pain or pressure, Cough'.",
+                  "sentence_ids": [
+                    "E3S11"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing.",
+                  "claim_fragment": "wheezing",
+                  "citations": [
+                    {
+                      "evidence_id": "web:aeda1a2a7e52231f810f",
+                      "quote": "This can make it hard to breathe or cause other symptoms, like chest tightness, cough and wheezing."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.05,
+              "REFUTED": 0.4,
+              "NEI": 0.55
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 86499.86149999996,
+  "completed_at_utc": "2026-10-29T03:40:26.547295Z"
+}

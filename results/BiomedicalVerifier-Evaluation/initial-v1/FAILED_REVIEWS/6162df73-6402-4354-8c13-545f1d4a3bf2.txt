@@ -1,0 +1,4 @@
+Claim: Wearing blue socks improves insulin sensitivity by exactly 12% after six weeks.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.08, 'REFUTED': 0.65, 'NEI': 0.27}"}
+Raw response: ../raw/6162df73-6402-4354-8c13-545f1d4a3bf2.json

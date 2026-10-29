@@ -1,0 +1,7 @@
+Claim: High blood pressure increases the risk of stroke.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 14b575c4-a0a4-4e42-859c-42b60f8f4fc9
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/14b575c4-a0a4-4e42-859c-42b60f8f4fc9.json

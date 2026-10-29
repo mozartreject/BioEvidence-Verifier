@@ -1,0 +1,7 @@
+Claim: Tuberculosis is caused by bacteria.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: f81f0204-bcbe-4fe4-a870-50d2b1612ba5
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/f81f0204-bcbe-4fe4-a870-50d2b1612ba5.json

@@ -1,0 +1,62 @@
+{
+  "detail": {
+    "error": "EVIDENCE_VALIDATION_FAILED",
+    "message": "The AI review could not be validated. No accepted result is available.",
+    "reason": "Evidence validation failed: Evidence audit could not be validated: Claim-slot match has no exact source witness",
+    "retryable": false,
+    "diagnostics": {
+      "claim": "Changing pillowcases every 36 hours prevents type 1 diabetes in adults.",
+      "accepted_verdict": null,
+      "classification_status": "REJECTED",
+      "proposed_verdict": null,
+      "proposed_scores": {},
+      "failure_stage": "Evidence consistency check",
+      "explanation": "Evidence validation failed: Evidence audit could not be validated: Claim-slot match has no exact source witness",
+      "scientific_meaning": "This is a failure of this pipeline to justify an answer, not evidence of scientific uncertainty about the claim.",
+      "retrieval": {
+        "corpus_documents": null,
+        "live_search": true,
+        "selected_documents": 3
+      },
+      "evidence": [
+        {
+          "evidence_id": "pubmed:38972477",
+          "title": "Changing Glucose Levels During the Menstrual Cycle as Observed in Adults in the Type 1 Diabetes Exercise Initiative Study.",
+          "text": "OBJECTIVES: Evidence suggests that glucose levels in menstruating females with type 1 diabetes change throughout the menstrual cycle, reaching a peak during the luteal phase. The Type 1 Diabetes Exercise Initiative (T1DEXI) study provided the opportunity to assess glycemic metrics between early and late phases of the menstrual cycle, and whether differences could be explained by exercise, insulin, and carbohydrate intake.\nMETHODS: One hundred seventy-nine women were included in our analysis. Glycemic metrics, carbohydrate intake, insulin requirements, and exercise habits during the early vs late phases of their menstrual cycles (i.e. 2 to 4 days after vs 2 to 4 days before reported menstruation start date) were compared.\nRESULTS: Mean glucose increased from 8.2\u00b11.5 mmol/L (148\u00b127\u00a0mg/dL) during the early follicular phase to 8.6\u00b11.6 mmol/L (155\u00b129\u00a0mg/dL) during the late luteal phase (p<0.001). Mean percent time in range (3.9 to 10.0 mmol/L [70 to 180\u00a0mg/dL]) decreased from 73\u00b117% to 70\u00b118% (p=0.002), and median percent time >10.0 mmol/L (>180\u00a0mg/dL) increased from 21% to 23% (p<0.001). Median total daily insulin requirements increased from 37.4 units during the early follicular phase to 38.5 units during the late luteal phase (p=0.02) and mean daily carbohydrate consumption increased slightly from 127\u00b147 g to 133\u00b147 g (p=0.05); however, the difference in mean glucose during early follicular vs late luteal phase was not explained by differences in exercise duration, total daily insulin units, or reported carbohydrate intake.\nCONCLUSIONS: Glucose levels during the late luteal phase were higher than those of the early follicular phase of the menstrual cycle. These glycemic changes suggest that glucose management for women with type 1 diabetes may need to be fine-tuned within the context of their menstrual cycles.",
+          "source": "pubmed",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/38972477/",
+          "probabilities": {},
+          "pairwise_label": null,
+          "relevance": 0.3343680799007416
+        },
+        {
+          "evidence_id": "pubmed:29284562",
+          "title": "Optimizing Glycemic Control in Adults With Type 1 or Type 2 Diabetes Attending a Multidisciplinary Foot Clinic.",
+          "text": "OBJECTIVES: To determine the impact of a diabetes nurse educator (DNE) on glycemic control in a multidisciplinary diabetes foot (MDF) clinic.\nMETHODS: A prospective cohort trial to measure the impact of a DNE on glycemic control was conducted in an MDF clinic. Change in glycated hemoglobin (A1C) levels over time was measured against the percentage of patient visits (PPVs) accompanied by a glucose meter and/or diary.\nRESULTS: Increasing PPVs were significantly associated with decline in A1C levels in females. Every 10% increase in PPVs resulted in a 0.18% decrease in A1C levels (p<0.0001). To achieve a clinically important decrease of 1% in A1C levels, a 56% increase in PPVs was required. Increased A1C levels were significantly associated with higher baseline A1C levels (p<0.001) and increased hospital days for foot complications (p<0.0052).\nCONCLUSIONS: Regular, face-to-face contact with a DNE in an MDF clinic has a positive impact on glycemic control in females.",
+          "source": "pubmed",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/29284562/",
+          "probabilities": {},
+          "pairwise_label": null,
+          "relevance": 0.016570115461945534
+        },
+        {
+          "evidence_id": "pubmed:40122461",
+          "title": "Temporal Trends in the Rates of Foot Complications and Lower Extremity Amputation Related to Type 1 and Type 2 Diabetes in Adults in Selected Canadian Provinces.",
+          "text": "OBJECTIVE: Our aim in this study was to identify the contemporary annual incidence rates of hospitalization for diabetes-related foot complication (DFC) and lower extremity amputation in Canada.\nMETHODS: The time frame of this study was April 2011 to March 2022. The population included people at least 20 years of age throughout Canada, except for Qu\u00e9bec. From the Canadian Institute for Health Information Discharge Abstract Database of acute care hospitalizations, a person's 1) first DFC, 2) first diabetes-related major amputation, and 3) first diabetes-related major or minor amputation were identified. Using population data from Statistics Canada, age- and sex-adjusted annual rates were calculated for each of these events. Regression models for temporal trends in these rates were fitted for the full population and by province or territory.\nRESULTS: Over the 11-year study period, there were 20,886 first major amputations, 41,643 first major or minor amputations, and 48,526 first DFCs. The average incidence rates across years for major amputation, major or minor amputation, and DFC were 8.8, 17.5, and 20.3 per 100,000 population, respectively. The major amputation rate decreased over time (-0.06 per year [95% confidence interval -0.11 to -0.01]), but there was no change over time for other events. A declining rate for major amputations was observed in Ontario, Manitoba, and Saskatchewan, but not in the other provinces or territories.\nCONCLUSIONS: The national rate of major amputation related to diabetes has decreased, but the burden of DFCs requiring hospitalization has not. These contemporary data support the need to strengthen foot screening and limb preservation efforts for people living with diabetes across Canada.",
+          "source": "pubmed",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/40122461/",
+          "probabilities": {},
+          "pairwise_label": null,
+          "relevance": 0.0042877113446593285
+        }
+      ],
+      "relation_review": null,
+      "limitations": [
+        "Passage scores and relevance are uncalibrated model outputs.",
+        "Retrieved papers may be incomplete or irrelevant.",
+        "A rejected proposed verdict is not a verified answer."
+      ],
+      "image_analysis": null
+    }
+  }
+}

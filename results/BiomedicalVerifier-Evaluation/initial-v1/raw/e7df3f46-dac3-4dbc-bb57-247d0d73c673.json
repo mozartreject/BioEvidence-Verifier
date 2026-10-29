@@ -1,0 +1,6 @@
+{
+  "detail": {
+    "error": "INFERENCE_FAILED",
+    "message": "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.05, 'REFUTED': 0.8, 'NEI': 0.15}"
+  }
+}

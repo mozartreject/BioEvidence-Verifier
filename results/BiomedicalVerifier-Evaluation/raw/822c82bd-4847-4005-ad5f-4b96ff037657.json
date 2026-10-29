@@ -1,0 +1,740 @@
+{
+  "request": {
+    "request_id": "822c82bd-4847-4005-ad5f-4b96ff037657",
+    "claim": "insulin resistance causes the neck to get dark.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:53:31.411964Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:53:31.412020Z",
+      "ended_at_utc": "2026-10-29T02:53:31.882859Z",
+      "latency_ms": 470.836625000004
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "web:3f5c7a6fe4d196e0aa56",
+        "document_id": "web:3f5c7a6fe4d196e0aa56",
+        "title": "Insulin Basics | ADA",
+        "text": "Health & Wellness\nInsulin Basics for Diabetes\nKey Takeaways\nThere are different types of insulin depending on how quickly they work, when they peak and how long they last.\nInsulin is available in different strengths; the most common is U-100.\nAll insulin available in the United States is manufactured in a laboratory, but animal insulin can still be imported for personal use.\nInsulin Basics\nThe insulin your body makes is made by the beta cells inside your pancreas. Your beta cells are found in clusters of cells in your pancreas called the Islets of Langerhans. When you eat, your beta cells release insulin to help your body use blood glucose (blood sugar) as fuel for energy right away or store it for later use.\nWhat are the most common forms of insulin?\nThere are different types of insulin and different ways to take it. Insulin can be taken as a liquid by injection or by using an insulin pump. It can also be inhaled in powder form through a special device. Insulin can\u2019t be taken as a pill because your stomach acid would break it down like food.\nLiquid insulin comes in different strengths. The most common type used is U-100, which means it has 100 units of insulin in each milliliter. Stronger insulins, like U-500, can be used if you have severe insulin resistance. All insulins made in the United States are analog insulins, meaning that they\u2019re synthetic forms of human insulin.\nInsulin powder comes in cartridges of units, but the strength isn\u2019t exactly the same as the liquid U-100 insulin. Read more about a recent study with inhaled insulin for children and teens here inhaled insulin study in children and adolescents . Inhaled insulin is FDA-approved for adults and children aged 6 and older living with diabetes.\nAnimal insulin , made from beef or pork, was once commonly used, but is no longer made in the U.S. If you need to take animal insulin, talk with your doctor about options to have it imported.\nWhat types of insulin are there and how do they work?\nTypes of Insulin\nThe different types of insulin are based on how quickly it starts working (onset) , when insulin is at its maximum strength (peak) , and how long the insulin stays active in your body (duration). Rapid-Acting\nOnset: about 15 minutes\nPeak: about 1\u20132 hours\nDuration: about 2\u20134 hours Rapid-Acting Inhaled\nOnset: about 10\u201315 minutes\nPeak: about 30 minutes\nDuration: about 1.5\u20133 hours Short-Acting\nOnset: about 30\u201360 minutes\nPeak: about 2\u20133 hours\nDuration: about 3\u20136 hours Intermediate-Acting\nOnset: about 2-4 hours\nPeak: about 4\u201312 hours\nDuration: about 12\u201318 hours Long-Acting\nOnset: about 1.5\u20134 hours\nPeak: No peak\nDuration: about 24 hours Ultra Long-Acting\nOnset: about 6 hours\nPeak: No peak\nDuration: about 36+ hours\nWhat is the difference between bolus and basal insulin?\nBolus insulin is taken to cover rising blood glucose levels, usually from meals.\nBasal insulin, sometimes called background insulin, is insulin that works through the day and night to manage blood glucose. Basal insulin can be rapid-acting insulin delivered steadily with an insulin pump, or long-acting insulins that have longer onsets and durations.\nThe Bottom Line\nYou can find more information about insulin on our Insulin Routines page .\nTalk to your healthcare team about the insulin and delivery options that will work best for your treatment plan. Be sure to discuss your risk for low blood glucose (hypoglycemia) and how to manage ketones as part of your plan.\nCheck Out the New Consumer Guide\nTechnology has become an essential part of diabetes management. Compare and learn about continuous glucose monitors (CGMs), insulin pumps, blood glucose meters, and more in the new Consumer Guide!\nVisit the Consumer Guide\nGive Today and Change lives!\nWith your support, the American Diabetes Association\u00ae can continue our lifesaving work to make breakthroughs in research and provide people with the resources they need to fight diabetes.\nGive Today\nAdvertisement\nx\nAdd diabetes.org as a preferred source on Google.",
+        "source": "diabetes.org",
+        "source_url": "https://diabetes.org/health-wellness/medication/insulin-basics",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.661811828613281,
+        "relevance_score": 0.00017304049106314778,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:54b015a50395d208431b",
+        "document_id": "web:54b015a50395d208431b",
+        "title": "Role of Insulin in Health and Disease: An Update - PMC\n         Lock",
+        "text": ". 2021 Jun 15;22(12):6403. doi: 10.3390/ijms22126403\nRole of Insulin in Health and Disease: An Update\nMd Saidur Rahman\n1, *\nAbstract\nInsulin is a polypeptide hormone mainly secreted by \u03b2 cells in the islets of Langerhans of the pancreas. The hormone potentially coordinates with glucagon to modulate blood glucose levels; insulin acts via an anabolic pathway, while glucagon performs catabolic functions. Insulin regulates glucose levels in the bloodstream and induces glucose storage in the liver, muscles, and adipose tissue, resulting in overall weight gain. The modulation of a wide range of physiological processes by insulin makes its synthesis and levels critical in the onset and progression of several chronic diseases. Although clinical and basic research has made significant progress in understanding the role of insulin in several pathophysiological processes, many aspects of these functions have yet to be elucidated. This review provides an update on insulin secretion and regulation, and its physiological roles and functions in different organs and cells, and implications to overall health. We cast light on recent advances in insulin-signaling targeted therapies, the protective effects of insulin signaling activators against disease, and recommendations and directions for future research.\nKeywords: insulin, health, disease, homeostasis, regulation, glucose\n1. Introduction\nInsulin, a hormone composed of 51 amino acids, plays important roles in glucose homeostasis, cell growth, and metabolism. The isolation and purification of insulin in Toronto from 1921\u20131922 was pioneered by Dr. Frederick Banting [ 1 ]. Since its discovery, researchers have intensified efforts towards improving the quality of insulin. The discovery of insulin has also triggered the discovery of other hormones such as glucagon [ 2 ]. Insulin, upon discovery, represents lifesaving therapeutic for people suffering from diabetes. This hormone was previously believed to be solely produced by \u03b2 cells of the pancreas; however, recent evidence has shown that low concentrations are also found in certain neurons of the central nervous system [ 3 ]. Although the biosynthesis and secretion of insulin are controlled by circulating glucose levels, the concentrations required to initiate the two processes differ [ 4 , 5 ]. While glucose concentrations above 5 mM are required to initiate insulin secretion, fluctuations within 2 mM to 4 mM stimulate its biosynthesis [ 4 ]. The metabolism of glucose is triggered by food intake, leading to simultaneously increased \u03b2 cell insulin production and decreased \u03b1 cell glucagon secretion to bring serum glucose levels back to normal [ 5 ]. Following secretion, insulin systemically circulates and is distributed to hepatocytes, which are prompted to store glucose in the form of glycogen. Skeletal muscle cells and adipocytes, the other major targets of circulating insulin, also take up glucose, thereby reducing the blood glucose concentration to baseline [ 6 ]. As with other protein hormones, insulin triggers glucose uptake, skeletal muscle protein synthesis, glycogenesis, and lipogenesis via the tyrosine kinase receptor pathway [ 7 , 8 ]. The insulin receptors present in the plasma membrane act enzymatically to transmit phosphates from ATP to tyrosine residues on intracellular target proteins [ 8 ]. Following the binding of insulin to the \u03b1 subunits, the \u03b2 subunits phosphorylate and, consequently, activate the receptor\u2019s catalytic function [ 8 ]. The activated receptor also phosphorylates several intracellular proteins that regulate the metabolic activities of insulin, cell growth, and cell differentiation-related gene expression [ 9 , 10 ].\nTo date, the main focus of research has been to investigate the role of insulin in the onset and progression of pathological conditions and chronic diseases, such as diabetes. The literature shows that insulin deficiency makes it impossible for cells to use glucose as an energy source [ 6 ]; consequently, high-glucose concentrations in the bloodstream lead to a condition known as hyperglycemia [ 6 ]. Prolonged hyperglycemia leads to diabetes mellitus and can cause health complications such as nervous system damage and dysfunction of the eyes and kidneys. Similarly, a cell\u2019s inability to use glucose as an energy source that results from the lack of insulin can trigger reliance on fat stores as the only energy supply. The continuous dependence on fat may induce the release of ketones into the bloodstream and lead to the chronic condition of ketoacidosis [ 11 ].\nIn addition to its role in diabetes, the recent literature indicates that insulin acts on several key organs in the body, including the brain, heart, kidney, bone, skin, and hair follicles, to perform important physiological roles. Insulin aids bone formation and attenuates osteoporosis-related inflammation [ 12 ], acts on the central nervous system [ 13 , 14 ], and performs pro- and anti-atherogenic functions in the vascular system [ 15 ]. Recent advances in insulin research have led to insulin-signaling targeted therapies and insulin-signaling activators being used as protective measures against several diseases. Clinical and laboratory studies have indicated that metformin, an insulin-receptor activator, has properties that protect the kidneys from injury [ 3 ]. Similarly, sulfonylurea, through its activities on enhanced insulin secretion via their actions on pancreatic \u03b2 cells, augmented insulin secretion [ 4 ]. Currently available forms of insulin include insulin mixtures, concentrated insulins, and insulins with alternate routes of administration, providing several options for people living with diabetes. Exogenous insulins are now available in the form of rapid-acting, short-acting, intermediate-acting, and long-acting [ 16 ]. This article provides an updated review of insulin secretion and regulation, its physiological roles in body organs, the health consequences of insulin deficiency, and recent advances in insulin-signaling targeted therapies.\n2. Regulation of Insulin Secretion\nThe phosphorylation of glucose by the enzyme glucokinase (GCK) is the first step in glucose metabolism. Glucose phosphorylation by GCK is related to insulin secretion; therefore, GCK gene dysfunction or aberration leads to decreased glucose-mediated insulin release and glucose intolerance or diabetes [ 24 ]. A major understanding of insulin secretion is derived from the research using rodent models, whereas few studies have been described in humans [ 19 ].\n3. Insulin Signaling Pathways\nAfter being secreted from pancreatic \u03b2 cells and circulating through the body, insulin binds to insulin receptors (IRs) on target cell membranes. This results in the phosphorylation of insulin receptor substrate (IRS) and the subsequent activation of two primary signaling pathways, viz. the phosphoinositide3-kinase (PI3K)/protein kinase B (Akt) pathway and the mitogen-activated protein kinase (MAPK) pathway ( Figure 1 ).",
+        "source": "pmc.ncbi.nlm.nih.gov",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8232639/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.96902847290039,
+        "relevance_score": 0.00012727559078484774,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:11381d61aa044ddc0171",
+        "document_id": "web:11381d61aa044ddc0171",
+        "title": "Insulin: What It Is, What It Does, How To Take It & Side Effects",
+        "text": "Insulin: What It Is, What It Does, How To Take It & Side Effects\nHome /\nBody Systems & Organs /\nInsulin\nAdvertisement\nAdvertisement\nInsulin\nMedically Reviewed. Last updated on 01/17/2024 .\nInsulin is an essential hormone. It helps your body turn food into energy and manages your blood sugar levels. If you have diabetes, your body can\u2019t make enough insulin or can\u2019t use it properly. Your healthcare provider can prescribe manufactured insulin that you take through an injection (shot), injectable pen or pump. Inhalable insulin is also an option.\nAdvertisement\nOverview\nWhat is insulin?\nInsulin is a naturally occurring hormone your pancreas makes that\u2019s essential for allowing your body to use sugar (glucose) for energy. If your pancreas doesn\u2019t make enough insulin or your body doesn\u2019t use insulin properly, it leads to high blood sugar levels (hyperglycemia) . This results in diabetes .\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nThere are also manufactured types of insulin that people with diabetes use to manage the condition.\nCare at Cleveland Clinic\nFunction\nWhat does insulin do?\nInsulin moves glucose from your blood into cells all over your body. Glucose comes from both the food and drinks you consume and your body\u2019s natural release of stored glucose ( glycogen ). Glucose is your body\u2019s main \u2014 and preferred \u2014 source of energy.\nAll of your body\u2019s cells need energy. Think of insulin as the key that opens the doors of the cells in your body. Once insulin opens your cell doors, glucose can leave your bloodstream and move into your cells where you use it for energy.\nWithout enough insulin, glucose can\u2019t get into your cells and instead builds up in your blood. This leads to high blood sugar and diabetes. A total lack of insulin for a prolonged time leads to a life-threatening complication called diabetes-related ketoacidosis (DKA) .\nDoes insulin lower or raise blood sugar?\nInsulin lowers your blood sugar level. Glucagon (another hormone) naturally raises it. Your body uses these two hormones to balance out your blood sugar level to keep it in a healthy range.\nIf you have diabetes, too much (manufactured) insulin can lead to low blood sugar (hypoglycemia) . In this case, you may need to consume sugar to raise your blood sugar level. There are manufactured forms of glucagon available with a prescription for emergency use to treat severe low blood sugar. Talk to your healthcare provider or diabetes care and education specialist to find out if glucagon should be included in your treatment plan.\nAdvertisement\nAnatomy\nWhere is insulin produced?\nYour pancreas produces insulin. More specifically, beta cells in the islets of Langerhans in the pancreas make the hormone. This is the endocrine function of your pancreas, meaning it releases insulin directly into your bloodstream.\nYour pancreas also has an exocrine function \u2014 it releases enzymes into certain ducts to help with digestion .\nConditions and Disorders\nWhat conditions involve issues with insulin?\nMany conditions can develop when you have a lack of natural insulin or too much.\nDiabetes and a lack of insulin\nDiabetes results from a lack of functional insulin, which leads to high blood sugar.\nDamage to your pancreas causes certain types of diabetes, like:\nType 1 diabetes : This is an autoimmune condition in which your immune system attacks the insulin-producing cells in your pancreas. It eventually results in a total lack of natural insulin.\nType 3c diabetes (secondary or pancreatogenic diabetes) : This condition develops when your pancreas experiences damage that affects its ability to produce insulin. Conditions like chronic pancreatitis and cystic fibrosis can lead to pancreas damage that causes diabetes. Having your pancreas removed ( pancreatectomy ) also results in Type 3c diabetes.\nLatent autoimmune diabetes in adults (LADA) : Like Type 1 diabetes, LADA also results from an autoimmune reaction, but it develops much more slowly than Type 1. People diagnosed with LADA are usually over the age of 30.\nInsulin resistance is the other major cause of diabetes. This happens when cells in your muscles , fat and liver don\u2019t respond as they should to insulin. Insulin resistance can lead to conditions like:\nPrediabetes : Prediabetes happens when you have elevated blood sugar levels, but they\u2019re not high enough to be considered Type 2 diabetes. Insulin resistance is the main cause.\nType 2 diabetes : This condition happens when insulin resistance is too strong for your pancreas to overcome, resulting in high blood sugar.\nGestational diabetes : This condition can develop during pregnancy . Researchers believe the placenta releases hormones that cause insulin resistance. If your pancreas can\u2019t overcome this resistance, it leads to gestational diabetes. It typically goes away after you deliver your baby.\nThere\u2019s also a genetic form of diabetes called maturity-onset diabetes of the young (MODY) . MODY, also called monogenic diabetes, happens due to an inherited genetic mutation (change) that affects how your body makes and uses insulin.\nExcess insulin\nA rare tumor called an insulinoma makes your pancreas produce excess insulin. This causes you to have frequent \u2014 and sometimes severe \u2014 low blood sugar. Most insulinomas are curable with surgery.\nAdvertisement\nCare\nWhat are the types of insulin for diabetes?\nThere are many different types of insulin. Most types are injectable , either through a needle, pen or pump . There\u2019s also inhalable insulin . If you have diabetes, your provider will work with you to prescribe the right type(s) for you and adjust the dosage when your needs change.\nThe main types of insulin based on how fast they work and how long they last include:\nAdvertisement\nWhat are the side effects of insulin?\nWhat are the sites of injection for insulin?\nAdvertisement\nSome people \u2014 but not all \u2014 with Type 2 diabetes need insulin to best manage the condition.\nThere are several other types of medications for Type 2 diabetes, like oral medications and GLP-1 agonist injections . These medications combat insulin resistance in different ways. If insulin resistance is severe, these medications may not be enough to maintain healthy blood sugar levels. This is when you\u2019d need insulin.\nHow long can a person with diabetes go without insulin?\nAlberta Health Services (CA). Insulin Injection Areas ( https://myhealth.alberta.ca/Health/pages/conditions.aspx?hwid=aa128295 ) . Last reviewed 3/1/2023. Accessed 1/17/2024.\nCenters for Disease Control and Prevention (U.S.). Insulin Resistance and Diabetes ( https://www.cdc.gov/diabetes/basics/insulin-resistance.html ) . Last reviewed 6/20/2022. Accessed 1/17/2024.\nEndocrine Society. Hormone Health Network. Diabetes Treatments ( https://www.endocrine.org/patient-engagement/endocrine-library/diabetes-treatments ) . Last updated 1/24/2022. Accessed 1/17/2024.\nAd",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/body/22601-insulin",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.492752075195312,
+        "relevance_score": 7.539063517469913e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "insulin resistance causes the neck to get dark."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:53:31.882900Z",
+      "ended_at_utc": "2026-10-29T02:53:31.922584Z",
+      "latency_ms": 39.68608299999232
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "web:3f5c7a6fe4d196e0aa56",
+        "document_id": "web:3f5c7a6fe4d196e0aa56",
+        "title": "Insulin Basics | ADA",
+        "text": "Health & Wellness\nInsulin Basics for Diabetes\nKey Takeaways\nThere are different types of insulin depending on how quickly they work, when they peak and how long they last.\nInsulin is available in different strengths; the most common is U-100.\nAll insulin available in the United States is manufactured in a laboratory, but animal insulin can still be imported for personal use.\nInsulin Basics\nThe insulin your body makes is made by the beta cells inside your pancreas. Your beta cells are found in clusters of cells in your pancreas called the Islets of Langerhans. When you eat, your beta cells release insulin to help your body use blood glucose (blood sugar) as fuel for energy right away or store it for later use.\nWhat are the most common forms of insulin?\nThere are different types of insulin and different ways to take it. Insulin can be taken as a liquid by injection or by using an insulin pump. It can also be inhaled in powder form through a special device. Insulin can\u2019t be taken as a pill because your stomach acid would break it down like food.\nLiquid insulin comes in different strengths. The most common type used is U-100, which means it has 100 units of insulin in each milliliter. Stronger insulins, like U-500, can be used if you have severe insulin resistance. All insulins made in the United States are analog insulins, meaning that they\u2019re synthetic forms of human insulin.\nInsulin powder comes in cartridges of units, but the strength isn\u2019t exactly the same as the liquid U-100 insulin. Read more about a recent study with inhaled insulin for children and teens here inhaled insulin study in children and adolescents . Inhaled insulin is FDA-approved for adults and children aged 6 and older living with diabetes.\nAnimal insulin , made from beef or pork, was once commonly used, but is no longer made in the U.S. If you need to take animal insulin, talk with your doctor about options to have it imported.\nWhat types of insulin are there and how do they work?\nTypes of Insulin\nThe different types of insulin are based on how quickly it starts working (onset) , when insulin is at its maximum strength (peak) , and how long the insulin stays active in your body (duration). Rapid-Acting\nOnset: about 15 minutes\nPeak: about 1\u20132 hours\nDuration: about 2\u20134 hours Rapid-Acting Inhaled\nOnset: about 10\u201315 minutes\nPeak: about 30 minutes\nDuration: about 1.5\u20133 hours Short-Acting\nOnset: about 30\u201360 minutes\nPeak: about 2\u20133 hours\nDuration: about 3\u20136 hours Intermediate-Acting\nOnset: about 2-4 hours\nPeak: about 4\u201312 hours\nDuration: about 12\u201318 hours Long-Acting\nOnset: about 1.5\u20134 hours\nPeak: No peak\nDuration: about 24 hours Ultra Long-Acting\nOnset: about 6 hours\nPeak: No peak\nDuration: about 36+ hours\nWhat is the difference between bolus and basal insulin?\nBolus insulin is taken to cover rising blood glucose levels, usually from meals.\nBasal insulin, sometimes called background insulin, is insulin that works through the day and night to manage blood glucose. Basal insulin can be rapid-acting insulin delivered steadily with an insulin pump, or long-acting insulins that have longer onsets and durations.\nThe Bottom Line\nYou can find more information about insulin on our Insulin Routines page .\nTalk to your healthcare team about the insulin and delivery options that will work best for your treatment plan. Be sure to discuss your risk for low blood glucose (hypoglycemia) and how to manage ketones as part of your plan.\nCheck Out the New Consumer Guide\nTechnology has become an essential part of diabetes management. Compare and learn about continuous glucose monitors (CGMs), insulin pumps, blood glucose meters, and more in the new Consumer Guide!\nVisit the Consumer Guide\nGive Today and Change lives!\nWith your support, the American Diabetes Association\u00ae can continue our lifesaving work to make breakthroughs in research and provide people with the resources they need to fight diabetes.\nGive Today\nAdvertisement\nx\nAdd diabetes.org as a preferred source on Google.",
+        "source": "diabetes.org",
+        "source_url": "https://diabetes.org/health-wellness/medication/insulin-basics",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.661811828613281,
+        "relevance_score": 0.00017304049106314778,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 3.4608098212629555e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:54b015a50395d208431b",
+        "document_id": "web:54b015a50395d208431b",
+        "title": "Role of Insulin in Health and Disease: An Update - PMC\n         Lock",
+        "text": ". 2021 Jun 15;22(12):6403. doi: 10.3390/ijms22126403\nRole of Insulin in Health and Disease: An Update\nMd Saidur Rahman\n1, *\nAbstract\nInsulin is a polypeptide hormone mainly secreted by \u03b2 cells in the islets of Langerhans of the pancreas. The hormone potentially coordinates with glucagon to modulate blood glucose levels; insulin acts via an anabolic pathway, while glucagon performs catabolic functions. Insulin regulates glucose levels in the bloodstream and induces glucose storage in the liver, muscles, and adipose tissue, resulting in overall weight gain. The modulation of a wide range of physiological processes by insulin makes its synthesis and levels critical in the onset and progression of several chronic diseases. Although clinical and basic research has made significant progress in understanding the role of insulin in several pathophysiological processes, many aspects of these functions have yet to be elucidated. This review provides an update on insulin secretion and regulation, and its physiological roles and functions in different organs and cells, and implications to overall health. We cast light on recent advances in insulin-signaling targeted therapies, the protective effects of insulin signaling activators against disease, and recommendations and directions for future research.\nKeywords: insulin, health, disease, homeostasis, regulation, glucose\n1. Introduction\nInsulin, a hormone composed of 51 amino acids, plays important roles in glucose homeostasis, cell growth, and metabolism. The isolation and purification of insulin in Toronto from 1921\u20131922 was pioneered by Dr. Frederick Banting [ 1 ]. Since its discovery, researchers have intensified efforts towards improving the quality of insulin. The discovery of insulin has also triggered the discovery of other hormones such as glucagon [ 2 ]. Insulin, upon discovery, represents lifesaving therapeutic for people suffering from diabetes. This hormone was previously believed to be solely produced by \u03b2 cells of the pancreas; however, recent evidence has shown that low concentrations are also found in certain neurons of the central nervous system [ 3 ]. Although the biosynthesis and secretion of insulin are controlled by circulating glucose levels, the concentrations required to initiate the two processes differ [ 4 , 5 ]. While glucose concentrations above 5 mM are required to initiate insulin secretion, fluctuations within 2 mM to 4 mM stimulate its biosynthesis [ 4 ]. The metabolism of glucose is triggered by food intake, leading to simultaneously increased \u03b2 cell insulin production and decreased \u03b1 cell glucagon secretion to bring serum glucose levels back to normal [ 5 ]. Following secretion, insulin systemically circulates and is distributed to hepatocytes, which are prompted to store glucose in the form of glycogen. Skeletal muscle cells and adipocytes, the other major targets of circulating insulin, also take up glucose, thereby reducing the blood glucose concentration to baseline [ 6 ]. As with other protein hormones, insulin triggers glucose uptake, skeletal muscle protein synthesis, glycogenesis, and lipogenesis via the tyrosine kinase receptor pathway [ 7 , 8 ]. The insulin receptors present in the plasma membrane act enzymatically to transmit phosphates from ATP to tyrosine residues on intracellular target proteins [ 8 ]. Following the binding of insulin to the \u03b1 subunits, the \u03b2 subunits phosphorylate and, consequently, activate the receptor\u2019s catalytic function [ 8 ]. The activated receptor also phosphorylates several intracellular proteins that regulate the metabolic activities of insulin, cell growth, and cell differentiation-related gene expression [ 9 , 10 ].\nTo date, the main focus of research has been to investigate the role of insulin in the onset and progression of pathological conditions and chronic diseases, such as diabetes. The literature shows that insulin deficiency makes it impossible for cells to use glucose as an energy source [ 6 ]; consequently, high-glucose concentrations in the bloodstream lead to a condition known as hyperglycemia [ 6 ]. Prolonged hyperglycemia leads to diabetes mellitus and can cause health complications such as nervous system damage and dysfunction of the eyes and kidneys. Similarly, a cell\u2019s inability to use glucose as an energy source that results from the lack of insulin can trigger reliance on fat stores as the only energy supply. The continuous dependence on fat may induce the release of ketones into the bloodstream and lead to the chronic condition of ketoacidosis [ 11 ].\nIn addition to its role in diabetes, the recent literature indicates that insulin acts on several key organs in the body, including the brain, heart, kidney, bone, skin, and hair follicles, to perform important physiological roles. Insulin aids bone formation and attenuates osteoporosis-related inflammation [ 12 ], acts on the central nervous system [ 13 , 14 ], and performs pro- and anti-atherogenic functions in the vascular system [ 15 ]. Recent advances in insulin research have led to insulin-signaling targeted therapies and insulin-signaling activators being used as protective measures against several diseases. Clinical and laboratory studies have indicated that metformin, an insulin-receptor activator, has properties that protect the kidneys from injury [ 3 ]. Similarly, sulfonylurea, through its activities on enhanced insulin secretion via their actions on pancreatic \u03b2 cells, augmented insulin secretion [ 4 ]. Currently available forms of insulin include insulin mixtures, concentrated insulins, and insulins with alternate routes of administration, providing several options for people living with diabetes. Exogenous insulins are now available in the form of rapid-acting, short-acting, intermediate-acting, and long-acting [ 16 ]. This article provides an updated review of insulin secretion and regulation, its physiological roles in body organs, the health consequences of insulin deficiency, and recent advances in insulin-signaling targeted therapies.\n2. Regulation of Insulin Secretion\nThe phosphorylation of glucose by the enzyme glucokinase (GCK) is the first step in glucose metabolism. Glucose phosphorylation by GCK is related to insulin secretion; therefore, GCK gene dysfunction or aberration leads to decreased glucose-mediated insulin release and glucose intolerance or diabetes [ 24 ]. A major understanding of insulin secretion is derived from the research using rodent models, whereas few studies have been described in humans [ 19 ].\n3. Insulin Signaling Pathways\nAfter being secreted from pancreatic \u03b2 cells and circulating through the body, insulin binds to insulin receptors (IRs) on target cell membranes. This results in the phosphorylation of insulin receptor substrate (IRS) and the subsequent activation of two primary signaling pathways, viz. the phosphoinositide3-kinase (PI3K)/protein kinase B (Akt) pathway and the mitogen-activated protein kinase (MAPK) pathway ( Figure 1 ).",
+        "source": "pmc.ncbi.nlm.nih.gov",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8232639/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.96902847290039,
+        "relevance_score": 0.00012727559078484774,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 2.545511815696955e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:11381d61aa044ddc0171",
+        "document_id": "web:11381d61aa044ddc0171",
+        "title": "Insulin: What It Is, What It Does, How To Take It & Side Effects",
+        "text": "Insulin: What It Is, What It Does, How To Take It & Side Effects\nHome /\nBody Systems & Organs /\nInsulin\nAdvertisement\nAdvertisement\nInsulin\nMedically Reviewed. Last updated on 01/17/2024 .\nInsulin is an essential hormone. It helps your body turn food into energy and manages your blood sugar levels. If you have diabetes, your body can\u2019t make enough insulin or can\u2019t use it properly. Your healthcare provider can prescribe manufactured insulin that you take through an injection (shot), injectable pen or pump. Inhalable insulin is also an option.\nAdvertisement\nOverview\nWhat is insulin?\nInsulin is a naturally occurring hormone your pancreas makes that\u2019s essential for allowing your body to use sugar (glucose) for energy. If your pancreas doesn\u2019t make enough insulin or your body doesn\u2019t use insulin properly, it leads to high blood sugar levels (hyperglycemia) . This results in diabetes .\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nThere are also manufactured types of insulin that people with diabetes use to manage the condition.\nCare at Cleveland Clinic\nFunction\nWhat does insulin do?\nInsulin moves glucose from your blood into cells all over your body. Glucose comes from both the food and drinks you consume and your body\u2019s natural release of stored glucose ( glycogen ). Glucose is your body\u2019s main \u2014 and preferred \u2014 source of energy.\nAll of your body\u2019s cells need energy. Think of insulin as the key that opens the doors of the cells in your body. Once insulin opens your cell doors, glucose can leave your bloodstream and move into your cells where you use it for energy.\nWithout enough insulin, glucose can\u2019t get into your cells and instead builds up in your blood. This leads to high blood sugar and diabetes. A total lack of insulin for a prolonged time leads to a life-threatening complication called diabetes-related ketoacidosis (DKA) .\nDoes insulin lower or raise blood sugar?\nInsulin lowers your blood sugar level. Glucagon (another hormone) naturally raises it. Your body uses these two hormones to balance out your blood sugar level to keep it in a healthy range.\nIf you have diabetes, too much (manufactured) insulin can lead to low blood sugar (hypoglycemia) . In this case, you may need to consume sugar to raise your blood sugar level. There are manufactured forms of glucagon available with a prescription for emergency use to treat severe low blood sugar. Talk to your healthcare provider or diabetes care and education specialist to find out if glucagon should be included in your treatment plan.\nAdvertisement\nAnatomy\nWhere is insulin produced?\nYour pancreas produces insulin. More specifically, beta cells in the islets of Langerhans in the pancreas make the hormone. This is the endocrine function of your pancreas, meaning it releases insulin directly into your bloodstream.\nYour pancreas also has an exocrine function \u2014 it releases enzymes into certain ducts to help with digestion .\nConditions and Disorders\nWhat conditions involve issues with insulin?\nMany conditions can develop when you have a lack of natural insulin or too much.\nDiabetes and a lack of insulin\nDiabetes results from a lack of functional insulin, which leads to high blood sugar.\nDamage to your pancreas causes certain types of diabetes, like:\nType 1 diabetes : This is an autoimmune condition in which your immune system attacks the insulin-producing cells in your pancreas. It eventually results in a total lack of natural insulin.\nType 3c diabetes (secondary or pancreatogenic diabetes) : This condition develops when your pancreas experiences damage that affects its ability to produce insulin. Conditions like chronic pancreatitis and cystic fibrosis can lead to pancreas damage that causes diabetes. Having your pancreas removed ( pancreatectomy ) also results in Type 3c diabetes.\nLatent autoimmune diabetes in adults (LADA) : Like Type 1 diabetes, LADA also results from an autoimmune reaction, but it develops much more slowly than Type 1. People diagnosed with LADA are usually over the age of 30.\nInsulin resistance is the other major cause of diabetes. This happens when cells in your muscles , fat and liver don\u2019t respond as they should to insulin. Insulin resistance can lead to conditions like:\nPrediabetes : Prediabetes happens when you have elevated blood sugar levels, but they\u2019re not high enough to be considered Type 2 diabetes. Insulin resistance is the main cause.\nType 2 diabetes : This condition happens when insulin resistance is too strong for your pancreas to overcome, resulting in high blood sugar.\nGestational diabetes : This condition can develop during pregnancy . Researchers believe the placenta releases hormones that cause insulin resistance. If your pancreas can\u2019t overcome this resistance, it leads to gestational diabetes. It typically goes away after you deliver your baby.\nThere\u2019s also a genetic form of diabetes called maturity-onset diabetes of the young (MODY) . MODY, also called monogenic diabetes, happens due to an inherited genetic mutation (change) that affects how your body makes and uses insulin.\nExcess insulin\nA rare tumor called an insulinoma makes your pancreas produce excess insulin. This causes you to have frequent \u2014 and sometimes severe \u2014 low blood sugar. Most insulinomas are curable with surgery.\nAdvertisement\nCare\nWhat are the types of insulin for diabetes?\nThere are many different types of insulin. Most types are injectable , either through a needle, pen or pump . There\u2019s also inhalable insulin . If you have diabetes, your provider will work with you to prescribe the right type(s) for you and adjust the dosage when your needs change.\nThe main types of insulin based on how fast they work and how long they last include:\nAdvertisement\nWhat are the side effects of insulin?\nWhat are the sites of injection for insulin?\nAdvertisement\nSome people \u2014 but not all \u2014 with Type 2 diabetes need insulin to best manage the condition.\nThere are several other types of medications for Type 2 diabetes, like oral medications and GLP-1 agonist injections . These medications combat insulin resistance in different ways. If insulin resistance is severe, these medications may not be enough to maintain healthy blood sugar levels. This is when you\u2019d need insulin.\nHow long can a person with diabetes go without insulin?\nAlberta Health Services (CA). Insulin Injection Areas ( https://myhealth.alberta.ca/Health/pages/conditions.aspx?hwid=aa128295 ) . Last reviewed 3/1/2023. Accessed 1/17/2024.\nCenters for Disease Control and Prevention (U.S.). Insulin Resistance and Diabetes ( https://www.cdc.gov/diabetes/basics/insulin-resistance.html ) . Last reviewed 6/20/2022. Accessed 1/17/2024.\nEndocrine Society. Hormone Health Network. Diabetes Treatments ( https://www.endocrine.org/patient-engagement/endocrine-library/diabetes-treatments ) . Last updated 1/24/2022. Accessed 1/17/2024.\nAd",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/body/22601-insulin",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.492752075195312,
+        "relevance_score": 7.539063517469913e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 1.5078127034939826e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:53:31.922612Z",
+      "ended_at_utc": "2026-10-29T02:53:31.922696Z",
+      "latency_ms": 0.09216600000172548
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "web:3f5c7a6fe4d196e0aa56",
+      "web:54b015a50395d208431b",
+      "web:11381d61aa044ddc0171"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cinsulin resistance\u201d; relationship: \u201ccauses\u201d; outcome: \u201cthe neck to get dark\u201d. The subject of the text is insulin, a hormone that regulates blood sugar levels and is crucial for energy metabolism in the body. It is primarily produced by the beta cells in the pancreas and is essential for the body's The relationship between the sentences is not clearly stated. The text discusses the role of insulin in the body, its production, and its effects on blood sugar levels, but the relationships between the sentences are not The outcome or consequences of insulin deficiency or excess are not explicitly stated. The text mentions that insulin deficiency leads to diabetes, but it does not provide specific outcomes or consequences of insulin",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "web:11381d61aa044ddc0171",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:3f5c7a6fe4d196e0aa56",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:54b015a50395d208431b",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "insulin resistance",
+              "relationship": "causes",
+              "outcome": "the neck to get dark",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The subject of the text is insulin, a hormone that regulates blood sugar levels and is crucial for energy metabolism in the body. It is primarily produced by the beta cells in the pancreas and is essential for the body's",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "insulin resistance",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The relationship between the sentences is not clearly stated. The text discusses the role of insulin in the body, its production, and its effects on blood sugar levels, but the relationships between the sentences are not",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "causes",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The outcome or consequences of insulin deficiency or excess are not explicitly stated. The text mentions that insulin deficiency leads to diabetes, but it does not provide specific outcomes or consequences of insulin",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "the neck to get dark",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": "RuntimeError('Ollama failed after retries: Unterminated string starting at: line 39 column 20 (char 1855)')",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:54:07.500638Z",
+      "ended_at_utc": "2026-10-29T02:54:59.200854Z",
+      "latency_ms": 51699.577000000005
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "web:3f5c7a6fe4d196e0aa56",
+      "document_id": "web:3f5c7a6fe4d196e0aa56",
+      "title": "Insulin Basics | ADA",
+      "text": "Health & Wellness\nInsulin Basics for Diabetes\nKey Takeaways\nThere are different types of insulin depending on how quickly they work, when they peak and how long they last.\nInsulin is available in different strengths; the most common is U-100.\nAll insulin available in the United States is manufactured in a laboratory, but animal insulin can still be imported for personal use.\nInsulin Basics\nThe insulin your body makes is made by the beta cells inside your pancreas. Your beta cells are found in clusters of cells in your pancreas called the Islets of Langerhans. When you eat, your beta cells release insulin to help your body use blood glucose (blood sugar) as fuel for energy right away or store it for later use.\nWhat are the most common forms of insulin?\nThere are different types of insulin and different ways to take it. Insulin can be taken as a liquid by injection or by using an insulin pump. It can also be inhaled in powder form through a special device. Insulin can\u2019t be taken as a pill because your stomach acid would break it down like food.\nLiquid insulin comes in different strengths. The most common type used is U-100, which means it has 100 units of insulin in each milliliter. Stronger insulins, like U-500, can be used if you have severe insulin resistance. All insulins made in the United States are analog insulins, meaning that they\u2019re synthetic forms of human insulin.\nInsulin powder comes in cartridges of units, but the strength isn\u2019t exactly the same as the liquid U-100 insulin. Read more about a recent study with inhaled insulin for children and teens here inhaled insulin study in children and adolescents . Inhaled insulin is FDA-approved for adults and children aged 6 and older living with diabetes.\nAnimal insulin , made from beef or pork, was once commonly used, but is no longer made in the U.S. If you need to take animal insulin, talk with your doctor about options to have it imported.\nWhat types of insulin are there and how do they work?\nTypes of Insulin\nThe different types of insulin are based on how quickly it starts working (onset) , when insulin is at its maximum strength (peak) , and how long the insulin stays active in your body (duration). Rapid-Acting\nOnset: about 15 minutes\nPeak: about 1\u20132 hours\nDuration: about 2\u20134 hours Rapid-Acting Inhaled\nOnset: about 10\u201315 minutes\nPeak: about 30 minutes\nDuration: about 1.5\u20133 hours Short-Acting\nOnset: about 30\u201360 minutes\nPeak: about 2\u20133 hours\nDuration: about 3\u20136 hours Intermediate-Acting\nOnset: about 2-4 hours\nPeak: about 4\u201312 hours\nDuration: about 12\u201318 hours Long-Acting\nOnset: about 1.5\u20134 hours\nPeak: No peak\nDuration: about 24 hours Ultra Long-Acting\nOnset: about 6 hours\nPeak: No peak\nDuration: about 36+ hours\nWhat is the difference between bolus and basal insulin?\nBolus insulin is taken to cover rising blood glucose levels, usually from meals.\nBasal insulin, sometimes called background insulin, is insulin that works through the day and night to manage blood glucose. Basal insulin can be rapid-acting insulin delivered steadily with an insulin pump, or long-acting insulins that have longer onsets and durations.\nThe Bottom Line\nYou can find more information about insulin on our Insulin Routines page .\nTalk to your healthcare team about the insulin and delivery options that will work best for your treatment plan. Be sure to discuss your risk for low blood glucose (hypoglycemia) and how to manage ketones as part of your plan.\nCheck Out the New Consumer Guide\nTechnology has become an essential part of diabetes management. Compare and learn about continuous glucose monitors (CGMs), insulin pumps, blood glucose meters, and more in the new Consumer Guide!\nVisit the Consumer Guide\nGive Today and Change lives!\nWith your support, the American Diabetes Association\u00ae can continue our lifesaving work to make breakthroughs in research and provide people with the resources they need to fight diabetes.\nGive Today\nAdvertisement\nx\nAdd diabetes.org as a preferred source on Google.",
+      "source": "diabetes.org",
+      "source_url": "https://diabetes.org/health-wellness/medication/insulin-basics",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -8.661811828613281,
+      "relevance_score": 0.00017304049106314778,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 3.4608098212629555e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:54b015a50395d208431b",
+      "document_id": "web:54b015a50395d208431b",
+      "title": "Role of Insulin in Health and Disease: An Update - PMC\n         Lock",
+      "text": ". 2021 Jun 15;22(12):6403. doi: 10.3390/ijms22126403\nRole of Insulin in Health and Disease: An Update\nMd Saidur Rahman\n1, *\nAbstract\nInsulin is a polypeptide hormone mainly secreted by \u03b2 cells in the islets of Langerhans of the pancreas. The hormone potentially coordinates with glucagon to modulate blood glucose levels; insulin acts via an anabolic pathway, while glucagon performs catabolic functions. Insulin regulates glucose levels in the bloodstream and induces glucose storage in the liver, muscles, and adipose tissue, resulting in overall weight gain. The modulation of a wide range of physiological processes by insulin makes its synthesis and levels critical in the onset and progression of several chronic diseases. Although clinical and basic research has made significant progress in understanding the role of insulin in several pathophysiological processes, many aspects of these functions have yet to be elucidated. This review provides an update on insulin secretion and regulation, and its physiological roles and functions in different organs and cells, and implications to overall health. We cast light on recent advances in insulin-signaling targeted therapies, the protective effects of insulin signaling activators against disease, and recommendations and directions for future research.\nKeywords: insulin, health, disease, homeostasis, regulation, glucose\n1. Introduction\nInsulin, a hormone composed of 51 amino acids, plays important roles in glucose homeostasis, cell growth, and metabolism. The isolation and purification of insulin in Toronto from 1921\u20131922 was pioneered by Dr. Frederick Banting [ 1 ]. Since its discovery, researchers have intensified efforts towards improving the quality of insulin. The discovery of insulin has also triggered the discovery of other hormones such as glucagon [ 2 ]. Insulin, upon discovery, represents lifesaving therapeutic for people suffering from diabetes. This hormone was previously believed to be solely produced by \u03b2 cells of the pancreas; however, recent evidence has shown that low concentrations are also found in certain neurons of the central nervous system [ 3 ]. Although the biosynthesis and secretion of insulin are controlled by circulating glucose levels, the concentrations required to initiate the two processes differ [ 4 , 5 ]. While glucose concentrations above 5 mM are required to initiate insulin secretion, fluctuations within 2 mM to 4 mM stimulate its biosynthesis [ 4 ]. The metabolism of glucose is triggered by food intake, leading to simultaneously increased \u03b2 cell insulin production and decreased \u03b1 cell glucagon secretion to bring serum glucose levels back to normal [ 5 ]. Following secretion, insulin systemically circulates and is distributed to hepatocytes, which are prompted to store glucose in the form of glycogen. Skeletal muscle cells and adipocytes, the other major targets of circulating insulin, also take up glucose, thereby reducing the blood glucose concentration to baseline [ 6 ]. As with other protein hormones, insulin triggers glucose uptake, skeletal muscle protein synthesis, glycogenesis, and lipogenesis via the tyrosine kinase receptor pathway [ 7 , 8 ]. The insulin receptors present in the plasma membrane act enzymatically to transmit phosphates from ATP to tyrosine residues on intracellular target proteins [ 8 ]. Following the binding of insulin to the \u03b1 subunits, the \u03b2 subunits phosphorylate and, consequently, activate the receptor\u2019s catalytic function [ 8 ]. The activated receptor also phosphorylates several intracellular proteins that regulate the metabolic activities of insulin, cell growth, and cell differentiation-related gene expression [ 9 , 10 ].\nTo date, the main focus of research has been to investigate the role of insulin in the onset and progression of pathological conditions and chronic diseases, such as diabetes. The literature shows that insulin deficiency makes it impossible for cells to use glucose as an energy source [ 6 ]; consequently, high-glucose concentrations in the bloodstream lead to a condition known as hyperglycemia [ 6 ]. Prolonged hyperglycemia leads to diabetes mellitus and can cause health complications such as nervous system damage and dysfunction of the eyes and kidneys. Similarly, a cell\u2019s inability to use glucose as an energy source that results from the lack of insulin can trigger reliance on fat stores as the only energy supply. The continuous dependence on fat may induce the release of ketones into the bloodstream and lead to the chronic condition of ketoacidosis [ 11 ].\nIn addition to its role in diabetes, the recent literature indicates that insulin acts on several key organs in the body, including the brain, heart, kidney, bone, skin, and hair follicles, to perform important physiological roles. Insulin aids bone formation and attenuates osteoporosis-related inflammation [ 12 ], acts on the central nervous system [ 13 , 14 ], and performs pro- and anti-atherogenic functions in the vascular system [ 15 ]. Recent advances in insulin research have led to insulin-signaling targeted therapies and insulin-signaling activators being used as protective measures against several diseases. Clinical and laboratory studies have indicated that metformin, an insulin-receptor activator, has properties that protect the kidneys from injury [ 3 ]. Similarly, sulfonylurea, through its activities on enhanced insulin secretion via their actions on pancreatic \u03b2 cells, augmented insulin secretion [ 4 ]. Currently available forms of insulin include insulin mixtures, concentrated insulins, and insulins with alternate routes of administration, providing several options for people living with diabetes. Exogenous insulins are now available in the form of rapid-acting, short-acting, intermediate-acting, and long-acting [ 16 ]. This article provides an updated review of insulin secretion and regulation, its physiological roles in body organs, the health consequences of insulin deficiency, and recent advances in insulin-signaling targeted therapies.\n2. Regulation of Insulin Secretion\nThe phosphorylation of glucose by the enzyme glucokinase (GCK) is the first step in glucose metabolism. Glucose phosphorylation by GCK is related to insulin secretion; therefore, GCK gene dysfunction or aberration leads to decreased glucose-mediated insulin release and glucose intolerance or diabetes [ 24 ]. A major understanding of insulin secretion is derived from the research using rodent models, whereas few studies have been described in humans [ 19 ].\n3. Insulin Signaling Pathways\nAfter being secreted from pancreatic \u03b2 cells and circulating through the body, insulin binds to insulin receptors (IRs) on target cell membranes. This results in the phosphorylation of insulin receptor substrate (IRS) and the subsequent activation of two primary signaling pathways, viz. the phosphoinositide3-kinase (PI3K)/protein kinase B (Akt) pathway and the mitogen-activated protein kinase (MAPK) pathway ( Figure 1 ).",
+      "source": "pmc.ncbi.nlm.nih.gov",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8232639/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -8.96902847290039,
+      "relevance_score": 0.00012727559078484774,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 2.545511815696955e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:11381d61aa044ddc0171",
+      "document_id": "web:11381d61aa044ddc0171",
+      "title": "Insulin: What It Is, What It Does, How To Take It & Side Effects",
+      "text": "Insulin: What It Is, What It Does, How To Take It & Side Effects\nHome /\nBody Systems & Organs /\nInsulin\nAdvertisement\nAdvertisement\nInsulin\nMedically Reviewed. Last updated on 01/17/2024 .\nInsulin is an essential hormone. It helps your body turn food into energy and manages your blood sugar levels. If you have diabetes, your body can\u2019t make enough insulin or can\u2019t use it properly. Your healthcare provider can prescribe manufactured insulin that you take through an injection (shot), injectable pen or pump. Inhalable insulin is also an option.\nAdvertisement\nOverview\nWhat is insulin?\nInsulin is a naturally occurring hormone your pancreas makes that\u2019s essential for allowing your body to use sugar (glucose) for energy. If your pancreas doesn\u2019t make enough insulin or your body doesn\u2019t use insulin properly, it leads to high blood sugar levels (hyperglycemia) . This results in diabetes .\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nThere are also manufactured types of insulin that people with diabetes use to manage the condition.\nCare at Cleveland Clinic\nFunction\nWhat does insulin do?\nInsulin moves glucose from your blood into cells all over your body. Glucose comes from both the food and drinks you consume and your body\u2019s natural release of stored glucose ( glycogen ). Glucose is your body\u2019s main \u2014 and preferred \u2014 source of energy.\nAll of your body\u2019s cells need energy. Think of insulin as the key that opens the doors of the cells in your body. Once insulin opens your cell doors, glucose can leave your bloodstream and move into your cells where you use it for energy.\nWithout enough insulin, glucose can\u2019t get into your cells and instead builds up in your blood. This leads to high blood sugar and diabetes. A total lack of insulin for a prolonged time leads to a life-threatening complication called diabetes-related ketoacidosis (DKA) .\nDoes insulin lower or raise blood sugar?\nInsulin lowers your blood sugar level. Glucagon (another hormone) naturally raises it. Your body uses these two hormones to balance out your blood sugar level to keep it in a healthy range.\nIf you have diabetes, too much (manufactured) insulin can lead to low blood sugar (hypoglycemia) . In this case, you may need to consume sugar to raise your blood sugar level. There are manufactured forms of glucagon available with a prescription for emergency use to treat severe low blood sugar. Talk to your healthcare provider or diabetes care and education specialist to find out if glucagon should be included in your treatment plan.\nAdvertisement\nAnatomy\nWhere is insulin produced?\nYour pancreas produces insulin. More specifically, beta cells in the islets of Langerhans in the pancreas make the hormone. This is the endocrine function of your pancreas, meaning it releases insulin directly into your bloodstream.\nYour pancreas also has an exocrine function \u2014 it releases enzymes into certain ducts to help with digestion .\nConditions and Disorders\nWhat conditions involve issues with insulin?\nMany conditions can develop when you have a lack of natural insulin or too much.\nDiabetes and a lack of insulin\nDiabetes results from a lack of functional insulin, which leads to high blood sugar.\nDamage to your pancreas causes certain types of diabetes, like:\nType 1 diabetes : This is an autoimmune condition in which your immune system attacks the insulin-producing cells in your pancreas. It eventually results in a total lack of natural insulin.\nType 3c diabetes (secondary or pancreatogenic diabetes) : This condition develops when your pancreas experiences damage that affects its ability to produce insulin. Conditions like chronic pancreatitis and cystic fibrosis can lead to pancreas damage that causes diabetes. Having your pancreas removed ( pancreatectomy ) also results in Type 3c diabetes.\nLatent autoimmune diabetes in adults (LADA) : Like Type 1 diabetes, LADA also results from an autoimmune reaction, but it develops much more slowly than Type 1. People diagnosed with LADA are usually over the age of 30.\nInsulin resistance is the other major cause of diabetes. This happens when cells in your muscles , fat and liver don\u2019t respond as they should to insulin. Insulin resistance can lead to conditions like:\nPrediabetes : Prediabetes happens when you have elevated blood sugar levels, but they\u2019re not high enough to be considered Type 2 diabetes. Insulin resistance is the main cause.\nType 2 diabetes : This condition happens when insulin resistance is too strong for your pancreas to overcome, resulting in high blood sugar.\nGestational diabetes : This condition can develop during pregnancy . Researchers believe the placenta releases hormones that cause insulin resistance. If your pancreas can\u2019t overcome this resistance, it leads to gestational diabetes. It typically goes away after you deliver your baby.\nThere\u2019s also a genetic form of diabetes called maturity-onset diabetes of the young (MODY) . MODY, also called monogenic diabetes, happens due to an inherited genetic mutation (change) that affects how your body makes and uses insulin.\nExcess insulin\nA rare tumor called an insulinoma makes your pancreas produce excess insulin. This causes you to have frequent \u2014 and sometimes severe \u2014 low blood sugar. Most insulinomas are curable with surgery.\nAdvertisement\nCare\nWhat are the types of insulin for diabetes?\nThere are many different types of insulin. Most types are injectable , either through a needle, pen or pump . There\u2019s also inhalable insulin . If you have diabetes, your provider will work with you to prescribe the right type(s) for you and adjust the dosage when your needs change.\nThe main types of insulin based on how fast they work and how long they last include:\nAdvertisement\nWhat are the side effects of insulin?\nWhat are the sites of injection for insulin?\nAdvertisement\nSome people \u2014 but not all \u2014 with Type 2 diabetes need insulin to best manage the condition.\nThere are several other types of medications for Type 2 diabetes, like oral medications and GLP-1 agonist injections . These medications combat insulin resistance in different ways. If insulin resistance is severe, these medications may not be enough to maintain healthy blood sugar levels. This is when you\u2019d need insulin.\nHow long can a person with diabetes go without insulin?\nAlberta Health Services (CA). Insulin Injection Areas ( https://myhealth.alberta.ca/Health/pages/conditions.aspx?hwid=aa128295 ) . Last reviewed 3/1/2023. Accessed 1/17/2024.\nCenters for Disease Control and Prevention (U.S.). Insulin Resistance and Diabetes ( https://www.cdc.gov/diabetes/basics/insulin-resistance.html ) . Last reviewed 6/20/2022. Accessed 1/17/2024.\nEndocrine Society. Hormone Health Network. Diabetes Treatments ( https://www.endocrine.org/patient-engagement/endocrine-library/diabetes-treatments ) . Last updated 1/24/2022. Accessed 1/17/2024.\nAd",
+      "source": "my.clevelandclinic.org",
+      "source_url": "https://my.clevelandclinic.org/health/body/22601-insulin",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.492752075195312,
+      "relevance_score": 7.539063517469913e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 1.5078127034939826e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cinsulin resistance\u201d; relationship: \u201ccauses\u201d; outcome: \u201cthe neck to get dark\u201d. The subject of the text is insulin, a hormone that regulates blood sugar levels and is crucial for energy metabolism in the body. It is primarily produced by the beta cells in the pancreas and is essential for the body's The relationship between the sentences is not clearly stated. The text discusses the role of insulin in the body, its production, and its effects on blood sugar levels, but the relationships between the sentences are not The outcome or consequences of insulin deficiency or excess are not explicitly stated. The text mentions that insulin deficiency leads to diabetes, but it does not provide specific outcomes or consequences of insulin",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "web:11381d61aa044ddc0171",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:3f5c7a6fe4d196e0aa56",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:54b015a50395d208431b",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "insulin resistance",
+                "relationship": "causes",
+                "outcome": "the neck to get dark",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The subject of the text is insulin, a hormone that regulates blood sugar levels and is crucial for energy metabolism in the body. It is primarily produced by the beta cells in the pancreas and is essential for the body's",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "insulin resistance",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The relationship between the sentences is not clearly stated. The text discusses the role of insulin in the body, its production, and its effects on blood sugar levels, but the relationships between the sentences are not",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "causes",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The outcome or consequences of insulin deficiency or excess are not explicitly stated. The text mentions that insulin deficiency leads to diabetes, but it does not provide specific outcomes or consequences of insulin",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "the neck to get dark",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 87790.11041699996,
+  "completed_at_utc": "2026-10-29T02:54:59.203189Z"
+}

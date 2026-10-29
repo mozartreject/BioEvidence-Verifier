@@ -1,0 +1,7 @@
+Claim: The human papillomavirus can cause cervical cancer.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 3fdef64c-4c7d-409c-aab4-f044a4e3558f
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/3fdef64c-4c7d-409c-aab4-f044a4e3558f.json

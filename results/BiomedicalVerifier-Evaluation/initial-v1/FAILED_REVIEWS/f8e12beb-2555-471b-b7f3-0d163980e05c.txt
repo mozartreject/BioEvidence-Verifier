@@ -1,0 +1,4 @@
+Claim: High blood pressure reduces the risk of stroke.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/f8e12beb-2555-471b-b7f3-0d163980e05c.json

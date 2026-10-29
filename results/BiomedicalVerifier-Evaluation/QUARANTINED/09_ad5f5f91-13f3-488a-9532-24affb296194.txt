@@ -1,0 +1,5 @@
+Claim: Drinking 180 milliliters of water before breakfast improves vaccine antibody responses by exactly 16%.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Semantic grounding 0.4421 below threshold 0.4500; Evidence coverage 0.3562 below threshold 0.4500
+Raw response: ../raw/ad5f5f91-13f3-488a-9532-24affb296194.json

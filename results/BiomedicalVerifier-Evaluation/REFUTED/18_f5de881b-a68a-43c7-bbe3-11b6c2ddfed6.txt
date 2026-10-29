@@ -1,0 +1,7 @@
+Claim: Blood platelets do not help blood clotting.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: f5de881b-a68a-43c7-bbe3-11b6c2ddfed6
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/f5de881b-a68a-43c7-bbe3-11b6c2ddfed6.json

@@ -1,0 +1,837 @@
+{
+  "request": {
+    "request_id": "830b0704-deca-4d7d-9d6a-6fe07d21ee9c",
+    "claim": "Insulin does not lower blood glucose.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:33:18.129548Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:33:18.129615Z",
+      "ended_at_utc": "2026-10-29T03:33:18.589447Z",
+      "latency_ms": 459.8301670002911
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:26020765",
+        "document_id": "pubmed:26020765",
+        "title": "Is Insulin Action in the Brain Relevant in Regulating Blood Glucose in Humans?",
+        "text": "PURPOSE: In addition to its direct action on the liver to lower hepatic glucose production, insulin action in the central nervous system (CNS) also lowers hepatic glucose production in rodents after 4 hours. Although CNS insulin action (CNSIA) modulates hepatic glycogen synthesis in dogs, it has no net effect on hepatic glucose output over a 4-hour period. The role of CNSIA in regulating plasma glucose has recently been examined in humans and is the focus of this review.\nMETHODS AND RESULTS: Intransal insulin (INI) administration increases CNS insulin concentration. Hence, INI can address whether CNSIA regulates plasma glucose concentration in humans. We and three other groups have sought to answer this question, with differing conclusions. Here we will review the critical aspects of each study, including its design, which may explain these discordant conclusions.\nCONCLUSIONS: The early glucose-lowering effect of INI is likely due to spillover of insulin into the systemic circulation. In the presence of simultaneous portal and CNS hyperinsulinemia, portal insulin action is dominant. INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline. The potential physiological role and purpose of this pathway are discussed in this review. Because the effects of INI are attenuated in patients with type 2 diabetes and obesity, this is unlikely to be of therapeutic utility.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26020765/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.141304969787598,
+        "relevance_score": 0.984346866607666,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:31608542",
+        "document_id": "pubmed:31608542",
+        "title": "Evidence that the multiflorine-derived substituted quinazolidine 55P0251 augments insulin secretion and lowers blood glucose via antagonism at \u03b12 -adrenoceptors in mice.",
+        "text": "AIMS: To investigate the mechanism of action of 55P0251, a novel multiflorine-derived substituted quinazolidine that augments insulin release and lowers blood glucose in rodents, but does not act via mechanisms addressed by any antidiabetic agent in clinical use.\nMATERIALS AND METHODS: Using male mice, we determined the effects of 55P0251 on glucose tolerance, insulin secretion from isolated islets and blood oxygen saturation, including head-to-head comparison of 55P0251 to its inverted enantiomer 55P0250, as well as to other anti-hyperglycaemic multiflorine derivatives discovered in our programme.\nRESULTS: 55P0251 was clearly superior to its inverted enantiomer in the glucose tolerance test (area under the curve: 11.3 mg/kg 55P0251, 1.19\u2009\u00b1\u20090.04\u2009min*mol/L vs 55P0250, 1.80\u2009\u00b1\u20090.04\u2009min*mol/L; P\u2009<\u2009.0001). For insulin release in vitro, this superiority became visible only under concomitant adrenergic background stimulation (glucose-stimulated insulin release, fmol*islet-1 *30\u2009min-1 : without \u03b12 -adrenoceptor agonist: 500\u2009\u03bcmol/L 55P0251, 390\u2009\u00b1\u200934, vs 55P0250, 459\u2009\u00b1\u200940, nonsignificant; with \u03b12 -adrenoceptor agonist: 250\u2009\u03bcmol/L 55P0251, 138\u2009\u00b1\u20099, vs 55P0250, 21\u2009\u00b1\u20096; P\u2009<\u2009.0001). Since receptor binding assays suggested antagonism at \u03b12A -adrenoceptors as a potential mechanism of action, we measured oxygen saturation in capillary blood from the tail as a surrogate of vasoconstriction, which supported \u03b12 -antagonistic action in vivo (90\u2009mg/kg 55P0251, 83\u2009\u00b1\u20093%, vs 55P0250, 57\u2009\u00b1\u20093%; P\u2009<\u2009.0001). Lack of association between glucose-lowering activities and \u03b12A -adrenoceptor binding affinity arising from comparison of multiflorine derivatives was attributed to differences in their pharmacokinetic properties.\nCONCLUSIONS: Our findings suggest that 55P0251 and related multiflorine derivatives are to be categorized as \u03b12 -adrenoceptor antagonists with potential to lower blood glucose by blocking \u03b12A -adrenoceptors on pancreatic \u03b2 cells.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31608542/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.5220508575439453,
+        "relevance_score": 0.9713087677955627,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:11381d61aa044ddc0171",
+        "document_id": "web:11381d61aa044ddc0171",
+        "title": "Insulin: What It Is, What It Does, How To Take It & Side Effects",
+        "text": "Insulin: What It Is, What It Does, How To Take It & Side Effects\nHome /\nBody Systems & Organs /\nInsulin\nAdvertisement\nAdvertisement\nInsulin\nMedically Reviewed. Last updated on 01/17/2024 .\nInsulin is an essential hormone. It helps your body turn food into energy and manages your blood sugar levels. If you have diabetes, your body can\u2019t make enough insulin or can\u2019t use it properly. Your healthcare provider can prescribe manufactured insulin that you take through an injection (shot), injectable pen or pump. Inhalable insulin is also an option.\nAdvertisement\nOverview\nWhat is insulin?\nInsulin is a naturally occurring hormone your pancreas makes that\u2019s essential for allowing your body to use sugar (glucose) for energy. If your pancreas doesn\u2019t make enough insulin or your body doesn\u2019t use insulin properly, it leads to high blood sugar levels (hyperglycemia) . This results in diabetes .\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nThere are also manufactured types of insulin that people with diabetes use to manage the condition.\nCare at Cleveland Clinic\nFunction\nWhat does insulin do?\nInsulin moves glucose from your blood into cells all over your body. Glucose comes from both the food and drinks you consume and your body\u2019s natural release of stored glucose ( glycogen ). Glucose is your body\u2019s main \u2014 and preferred \u2014 source of energy.\nAll of your body\u2019s cells need energy. Think of insulin as the key that opens the doors of the cells in your body. Once insulin opens your cell doors, glucose can leave your bloodstream and move into your cells where you use it for energy.\nWithout enough insulin, glucose can\u2019t get into your cells and instead builds up in your blood. This leads to high blood sugar and diabetes. A total lack of insulin for a prolonged time leads to a life-threatening complication called diabetes-related ketoacidosis (DKA) .\nDoes insulin lower or raise blood sugar?\nInsulin lowers your blood sugar level. Glucagon (another hormone) naturally raises it. Your body uses these two hormones to balance out your blood sugar level to keep it in a healthy range.\nIf you have diabetes, too much (manufactured) insulin can lead to low blood sugar (hypoglycemia) . In this case, you may need to consume sugar to raise your blood sugar level. There are manufactured forms of glucagon available with a prescription for emergency use to treat severe low blood sugar. Talk to your healthcare provider or diabetes care and education specialist to find out if glucagon should be included in your treatment plan.\nAdvertisement\nAnatomy\nWhere is insulin produced?\nYour pancreas produces insulin. More specifically, beta cells in the islets of Langerhans in the pancreas make the hormone. This is the endocrine function of your pancreas, meaning it releases insulin directly into your bloodstream.\nYour pancreas also has an exocrine function \u2014 it releases enzymes into certain ducts to help with digestion .\nConditions and Disorders\nWhat conditions involve issues with insulin?\nMany conditions can develop when you have a lack of natural insulin or too much.\nDiabetes and a lack of insulin\nDiabetes results from a lack of functional insulin, which leads to high blood sugar.\nDamage to your pancreas causes certain types of diabetes, like:\nType 1 diabetes : This is an autoimmune condition in which your immune system attacks the insulin-producing cells in your pancreas. It eventually results in a total lack of natural insulin.\nType 3c diabetes (secondary or pancreatogenic diabetes) : This condition develops when your pancreas experiences damage that affects its ability to produce insulin. Conditions like chronic pancreatitis and cystic fibrosis can lead to pancreas damage that causes diabetes. Having your pancreas removed ( pancreatectomy ) also results in Type 3c diabetes.\nLatent autoimmune diabetes in adults (LADA) : Like Type 1 diabetes, LADA also results from an autoimmune reaction, but it develops much more slowly than Type 1. People diagnosed with LADA are usually over the age of 30.\nInsulin resistance is the other major cause of diabetes. This happens when cells in your muscles , fat and liver don\u2019t respond as they should to insulin. Insulin resistance can lead to conditions like:\nPrediabetes : Prediabetes happens when you have elevated blood sugar levels, but they\u2019re not high enough to be considered Type 2 diabetes. Insulin resistance is the main cause.\nType 2 diabetes : This condition happens when insulin resistance is too strong for your pancreas to overcome, resulting in high blood sugar.\nGestational diabetes : This condition can develop during pregnancy . Researchers believe the placenta releases hormones that cause insulin resistance. If your pancreas can\u2019t overcome this resistance, it leads to gestational diabetes. It typically goes away after you deliver your baby.\nThere\u2019s also a genetic form of diabetes called maturity-onset diabetes of the young (MODY) . MODY, also called monogenic diabetes, happens due to an inherited genetic mutation (change) that affects how your body makes and uses insulin.\nExcess insulin\nA rare tumor called an insulinoma makes your pancreas produce excess insulin. This causes you to have frequent \u2014 and sometimes severe \u2014 low blood sugar. Most insulinomas are curable with surgery.\nAdvertisement\nCare\nWhat are the types of insulin for diabetes?\nThere are many different types of insulin. Most types are injectable , either through a needle, pen or pump . There\u2019s also inhalable insulin . If you have diabetes, your provider will work with you to prescribe the right type(s) for you and adjust the dosage when your needs change.\nAdvertisement\nWhat are the side effects of insulin?\nThe most common complication of insulin treatment is low blood glucose levels (hypoglycemia) from taking too much insulin for your needs.\nOther possible side effects of insulin treatment, which are rare, include:\nAdvertisement\nSome people \u2014 but not all \u2014 with Type 2 diabetes need insulin to best manage the condition.\nThere are several other types of medications for Type 2 diabetes, like oral medications and GLP-1 agonist injections . These medications combat insulin resistance in different ways. If insulin resistance is severe, these medications may not be enough to maintain healthy blood sugar levels. This is when you\u2019d need insulin.\nHow long can a person with diabetes go without insulin?\nA note from Cleveland Clinic\nInsulin is an essential hormone that helps you stay healthy and keeps your body working like it should. If your body can\u2019t make enough insulin or use it properly, your healthcare provider can prescribe manufactured insulin as a diabetes treatment. Follow your provider\u2019s instructions carefully when giving yourself insulin. And be sure to seek medical help right away if you have signs of DKA or experience severe low blood sugar.\nBetter health starts here\nAd",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/body/22601-insulin",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 1.219064712524414,
+        "relevance_score": 0.7718988656997681,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Insulin does not lower blood glucose."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:33:18.589489Z",
+      "ended_at_utc": "2026-10-29T03:33:38.175513Z",
+      "latency_ms": 19585.787833999802
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:31608542",
+        "document_id": "pubmed:31608542",
+        "title": "Evidence that the multiflorine-derived substituted quinazolidine 55P0251 augments insulin secretion and lowers blood glucose via antagonism at \u03b12 -adrenoceptors in mice.",
+        "text": "AIMS: To investigate the mechanism of action of 55P0251, a novel multiflorine-derived substituted quinazolidine that augments insulin release and lowers blood glucose in rodents, but does not act via mechanisms addressed by any antidiabetic agent in clinical use.\nMATERIALS AND METHODS: Using male mice, we determined the effects of 55P0251 on glucose tolerance, insulin secretion from isolated islets and blood oxygen saturation, including head-to-head comparison of 55P0251 to its inverted enantiomer 55P0250, as well as to other anti-hyperglycaemic multiflorine derivatives discovered in our programme.\nRESULTS: 55P0251 was clearly superior to its inverted enantiomer in the glucose tolerance test (area under the curve: 11.3 mg/kg 55P0251, 1.19\u2009\u00b1\u20090.04\u2009min*mol/L vs 55P0250, 1.80\u2009\u00b1\u20090.04\u2009min*mol/L; P\u2009<\u2009.0001). For insulin release in vitro, this superiority became visible only under concomitant adrenergic background stimulation (glucose-stimulated insulin release, fmol*islet-1 *30\u2009min-1 : without \u03b12 -adrenoceptor agonist: 500\u2009\u03bcmol/L 55P0251, 390\u2009\u00b1\u200934, vs 55P0250, 459\u2009\u00b1\u200940, nonsignificant; with \u03b12 -adrenoceptor agonist: 250\u2009\u03bcmol/L 55P0251, 138\u2009\u00b1\u20099, vs 55P0250, 21\u2009\u00b1\u20096; P\u2009<\u2009.0001). Since receptor binding assays suggested antagonism at \u03b12A -adrenoceptors as a potential mechanism of action, we measured oxygen saturation in capillary blood from the tail as a surrogate of vasoconstriction, which supported \u03b12 -antagonistic action in vivo (90\u2009mg/kg 55P0251, 83\u2009\u00b1\u20093%, vs 55P0250, 57\u2009\u00b1\u20093%; P\u2009<\u2009.0001). Lack of association between glucose-lowering activities and \u03b12A -adrenoceptor binding affinity arising from comparison of multiflorine derivatives was attributed to differences in their pharmacokinetic properties.\nCONCLUSIONS: Our findings suggest that 55P0251 and related multiflorine derivatives are to be categorized as \u03b12 -adrenoceptor antagonists with potential to lower blood glucose by blocking \u03b12A -adrenoceptors on pancreatic \u03b2 cells.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31608542/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.5220508575439453,
+        "relevance_score": 0.9713087677955627,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.9713087677955627,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:26020765",
+        "document_id": "pubmed:26020765",
+        "title": "Is Insulin Action in the Brain Relevant in Regulating Blood Glucose in Humans?",
+        "text": "PURPOSE: In addition to its direct action on the liver to lower hepatic glucose production, insulin action in the central nervous system (CNS) also lowers hepatic glucose production in rodents after 4 hours. Although CNS insulin action (CNSIA) modulates hepatic glycogen synthesis in dogs, it has no net effect on hepatic glucose output over a 4-hour period. The role of CNSIA in regulating plasma glucose has recently been examined in humans and is the focus of this review.\nMETHODS AND RESULTS: Intransal insulin (INI) administration increases CNS insulin concentration. Hence, INI can address whether CNSIA regulates plasma glucose concentration in humans. We and three other groups have sought to answer this question, with differing conclusions. Here we will review the critical aspects of each study, including its design, which may explain these discordant conclusions.\nCONCLUSIONS: The early glucose-lowering effect of INI is likely due to spillover of insulin into the systemic circulation. In the presence of simultaneous portal and CNS hyperinsulinemia, portal insulin action is dominant. INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline. The potential physiological role and purpose of this pathway are discussed in this review. Because the effects of INI are attenuated in patients with type 2 diabetes and obesity, this is unlikely to be of therapeutic utility.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26020765/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 4.141304969787598,
+        "relevance_score": 0.984346866607666,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6890428066253662,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:11381d61aa044ddc0171",
+        "document_id": "web:11381d61aa044ddc0171",
+        "title": "Insulin: What It Is, What It Does, How To Take It & Side Effects",
+        "text": "Insulin: What It Is, What It Does, How To Take It & Side Effects\nHome /\nBody Systems & Organs /\nInsulin\nAdvertisement\nAdvertisement\nInsulin\nMedically Reviewed. Last updated on 01/17/2024 .\nInsulin is an essential hormone. It helps your body turn food into energy and manages your blood sugar levels. If you have diabetes, your body can\u2019t make enough insulin or can\u2019t use it properly. Your healthcare provider can prescribe manufactured insulin that you take through an injection (shot), injectable pen or pump. Inhalable insulin is also an option.\nAdvertisement\nOverview\nWhat is insulin?\nInsulin is a naturally occurring hormone your pancreas makes that\u2019s essential for allowing your body to use sugar (glucose) for energy. If your pancreas doesn\u2019t make enough insulin or your body doesn\u2019t use insulin properly, it leads to high blood sugar levels (hyperglycemia) . This results in diabetes .\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nThere are also manufactured types of insulin that people with diabetes use to manage the condition.\nCare at Cleveland Clinic\nFunction\nWhat does insulin do?\nInsulin moves glucose from your blood into cells all over your body. Glucose comes from both the food and drinks you consume and your body\u2019s natural release of stored glucose ( glycogen ). Glucose is your body\u2019s main \u2014 and preferred \u2014 source of energy.\nAll of your body\u2019s cells need energy. Think of insulin as the key that opens the doors of the cells in your body. Once insulin opens your cell doors, glucose can leave your bloodstream and move into your cells where you use it for energy.\nWithout enough insulin, glucose can\u2019t get into your cells and instead builds up in your blood. This leads to high blood sugar and diabetes. A total lack of insulin for a prolonged time leads to a life-threatening complication called diabetes-related ketoacidosis (DKA) .\nDoes insulin lower or raise blood sugar?\nInsulin lowers your blood sugar level. Glucagon (another hormone) naturally raises it. Your body uses these two hormones to balance out your blood sugar level to keep it in a healthy range.\nIf you have diabetes, too much (manufactured) insulin can lead to low blood sugar (hypoglycemia) . In this case, you may need to consume sugar to raise your blood sugar level. There are manufactured forms of glucagon available with a prescription for emergency use to treat severe low blood sugar. Talk to your healthcare provider or diabetes care and education specialist to find out if glucagon should be included in your treatment plan.\nAdvertisement\nAnatomy\nWhere is insulin produced?\nYour pancreas produces insulin. More specifically, beta cells in the islets of Langerhans in the pancreas make the hormone. This is the endocrine function of your pancreas, meaning it releases insulin directly into your bloodstream.\nYour pancreas also has an exocrine function \u2014 it releases enzymes into certain ducts to help with digestion .\nConditions and Disorders\nWhat conditions involve issues with insulin?\nMany conditions can develop when you have a lack of natural insulin or too much.\nDiabetes and a lack of insulin\nDiabetes results from a lack of functional insulin, which leads to high blood sugar.\nDamage to your pancreas causes certain types of diabetes, like:\nType 1 diabetes : This is an autoimmune condition in which your immune system attacks the insulin-producing cells in your pancreas. It eventually results in a total lack of natural insulin.\nType 3c diabetes (secondary or pancreatogenic diabetes) : This condition develops when your pancreas experiences damage that affects its ability to produce insulin. Conditions like chronic pancreatitis and cystic fibrosis can lead to pancreas damage that causes diabetes. Having your pancreas removed ( pancreatectomy ) also results in Type 3c diabetes.\nLatent autoimmune diabetes in adults (LADA) : Like Type 1 diabetes, LADA also results from an autoimmune reaction, but it develops much more slowly than Type 1. People diagnosed with LADA are usually over the age of 30.\nInsulin resistance is the other major cause of diabetes. This happens when cells in your muscles , fat and liver don\u2019t respond as they should to insulin. Insulin resistance can lead to conditions like:\nPrediabetes : Prediabetes happens when you have elevated blood sugar levels, but they\u2019re not high enough to be considered Type 2 diabetes. Insulin resistance is the main cause.\nType 2 diabetes : This condition happens when insulin resistance is too strong for your pancreas to overcome, resulting in high blood sugar.\nGestational diabetes : This condition can develop during pregnancy . Researchers believe the placenta releases hormones that cause insulin resistance. If your pancreas can\u2019t overcome this resistance, it leads to gestational diabetes. It typically goes away after you deliver your baby.\nThere\u2019s also a genetic form of diabetes called maturity-onset diabetes of the young (MODY) . MODY, also called monogenic diabetes, happens due to an inherited genetic mutation (change) that affects how your body makes and uses insulin.\nExcess insulin\nA rare tumor called an insulinoma makes your pancreas produce excess insulin. This causes you to have frequent \u2014 and sometimes severe \u2014 low blood sugar. Most insulinomas are curable with surgery.\nAdvertisement\nCare\nWhat are the types of insulin for diabetes?\nThere are many different types of insulin. Most types are injectable , either through a needle, pen or pump . There\u2019s also inhalable insulin . If you have diabetes, your provider will work with you to prescribe the right type(s) for you and adjust the dosage when your needs change.\nAdvertisement\nWhat are the side effects of insulin?\nThe most common complication of insulin treatment is low blood glucose levels (hypoglycemia) from taking too much insulin for your needs.\nOther possible side effects of insulin treatment, which are rare, include:\nAdvertisement\nSome people \u2014 but not all \u2014 with Type 2 diabetes need insulin to best manage the condition.\nThere are several other types of medications for Type 2 diabetes, like oral medications and GLP-1 agonist injections . These medications combat insulin resistance in different ways. If insulin resistance is severe, these medications may not be enough to maintain healthy blood sugar levels. This is when you\u2019d need insulin.\nHow long can a person with diabetes go without insulin?\nA note from Cleveland Clinic\nInsulin is an essential hormone that helps you stay healthy and keeps your body working like it should. If your body can\u2019t make enough insulin or use it properly, your healthcare provider can prescribe manufactured insulin as a diabetes treatment. Follow your provider\u2019s instructions carefully when giving yourself insulin. And be sure to seek medical help right away if you have signs of DKA or experience severe low blood sugar.\nBetter health starts here\nAd",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/body/22601-insulin",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 1.219064712524414,
+        "relevance_score": 0.7718988656997681,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.15437977313995363,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:33:38.175543Z",
+      "ended_at_utc": "2026-10-29T03:33:40.236722Z",
+      "latency_ms": 2061.1970830000246
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.9,
+      "nei": 0.01,
+      "supported": 0.09
+    },
+    "verifier_score": 0.9,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:31608542",
+      "pubmed:26020765",
+      "web:11381d61aa044ddc0171"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence suggests that insulin lowers blood glucose, which directly contradicts the claim that it does not lower blood glucose.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:26020765",
+              "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+            },
+            {
+              "evidence_id": "web:11381d61aa044ddc0171",
+              "quote": "Insulin moves glucose from your blood into cells all over your body."
+            },
+            {
+              "evidence_id": "web:11381d61aa044ddc0171",
+              "quote": "Does insulin lower or raise blood sugar?"
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:26020765",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:31608542",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:11381d61aa044ddc0171",
+              "relation": "REFUTES",
+              "concrete": true
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Insulin",
+              "relationship": "not",
+              "outcome": "lower blood glucose",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence discusses insulin as a hormone that helps manage blood sugar levels and is essential for the body to use glucose for energy.",
+                "sentence_ids": [
+                  "E1S10",
+                  "E3S30"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline.",
+                "claim_fragment": "Insulin",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26020765",
+                    "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+                  },
+                  {
+                    "evidence_id": "web:11381d61aa044ddc0171",
+                    "quote": "Insulin moves glucose from your blood into cells all over your body."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence suggests that insulin lowers blood glucose, which directly contradicts the claim that it does not lower blood glucose.",
+                "sentence_ids": [
+                  "E1S10",
+                  "E3S39"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline.",
+                "claim_fragment": "not",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26020765",
+                    "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+                  },
+                  {
+                    "evidence_id": "web:11381d61aa044ddc0171",
+                    "quote": "Does insulin lower or raise blood sugar?"
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence states that insulin helps move glucose from the blood into cells, which is a process that lowers blood glucose levels.",
+                "sentence_ids": [
+                  "E1S10",
+                  "E3S30"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline.",
+                "claim_fragment": "lower blood glucose",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:26020765",
+                    "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+                  },
+                  {
+                    "evidence_id": "web:11381d61aa044ddc0171",
+                    "quote": "Insulin moves glucose from your blood into cells all over your body."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:26020765",
+              "web:11381d61aa044ddc0171"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.09,
+            "REFUTED": 0.9,
+            "NEI": 0.01
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Evidence [E1] demonstrates that 55P0251, a multiflorine-derived substituted quinazolidine, lowers blood glucose in mice by antagonizing \u03b12-adrenoceptors. Evidence [E3] from Cleveland Clinic explains that insulin is essential for lowering blood sugar levels by moving glucose from the bloodstream into cells, supporting the claim that insulin does lower blood glucose. These findings contradict the claim that insulin does not lower blood glucose.",
+    "cited_evidence_ids": [
+      "pubmed:31608542",
+      "web:11381d61aa044ddc0171"
+    ],
+    "grounding": {
+      "semantic_score": 0.6622304320335388,
+      "coverage_score": 0.8469786047935486,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:34:10.089741Z",
+      "ended_at_utc": "2026-10-29T03:34:20.578125Z",
+      "latency_ms": 10488.245292000101
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.9,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:31608542",
+      "document_id": "pubmed:31608542",
+      "title": "Evidence that the multiflorine-derived substituted quinazolidine 55P0251 augments insulin secretion and lowers blood glucose via antagonism at \u03b12 -adrenoceptors in mice.",
+      "text": "AIMS: To investigate the mechanism of action of 55P0251, a novel multiflorine-derived substituted quinazolidine that augments insulin release and lowers blood glucose in rodents, but does not act via mechanisms addressed by any antidiabetic agent in clinical use.\nMATERIALS AND METHODS: Using male mice, we determined the effects of 55P0251 on glucose tolerance, insulin secretion from isolated islets and blood oxygen saturation, including head-to-head comparison of 55P0251 to its inverted enantiomer 55P0250, as well as to other anti-hyperglycaemic multiflorine derivatives discovered in our programme.\nRESULTS: 55P0251 was clearly superior to its inverted enantiomer in the glucose tolerance test (area under the curve: 11.3 mg/kg 55P0251, 1.19\u2009\u00b1\u20090.04\u2009min*mol/L vs 55P0250, 1.80\u2009\u00b1\u20090.04\u2009min*mol/L; P\u2009<\u2009.0001). For insulin release in vitro, this superiority became visible only under concomitant adrenergic background stimulation (glucose-stimulated insulin release, fmol*islet-1 *30\u2009min-1 : without \u03b12 -adrenoceptor agonist: 500\u2009\u03bcmol/L 55P0251, 390\u2009\u00b1\u200934, vs 55P0250, 459\u2009\u00b1\u200940, nonsignificant; with \u03b12 -adrenoceptor agonist: 250\u2009\u03bcmol/L 55P0251, 138\u2009\u00b1\u20099, vs 55P0250, 21\u2009\u00b1\u20096; P\u2009<\u2009.0001). Since receptor binding assays suggested antagonism at \u03b12A -adrenoceptors as a potential mechanism of action, we measured oxygen saturation in capillary blood from the tail as a surrogate of vasoconstriction, which supported \u03b12 -antagonistic action in vivo (90\u2009mg/kg 55P0251, 83\u2009\u00b1\u20093%, vs 55P0250, 57\u2009\u00b1\u20093%; P\u2009<\u2009.0001). Lack of association between glucose-lowering activities and \u03b12A -adrenoceptor binding affinity arising from comparison of multiflorine derivatives was attributed to differences in their pharmacokinetic properties.\nCONCLUSIONS: Our findings suggest that 55P0251 and related multiflorine derivatives are to be categorized as \u03b12 -adrenoceptor antagonists with potential to lower blood glucose by blocking \u03b12A -adrenoceptors on pancreatic \u03b2 cells.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31608542/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 3.5220508575439453,
+      "relevance_score": 0.9713087677955627,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.9713087677955627,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:26020765",
+      "document_id": "pubmed:26020765",
+      "title": "Is Insulin Action in the Brain Relevant in Regulating Blood Glucose in Humans?",
+      "text": "PURPOSE: In addition to its direct action on the liver to lower hepatic glucose production, insulin action in the central nervous system (CNS) also lowers hepatic glucose production in rodents after 4 hours. Although CNS insulin action (CNSIA) modulates hepatic glycogen synthesis in dogs, it has no net effect on hepatic glucose output over a 4-hour period. The role of CNSIA in regulating plasma glucose has recently been examined in humans and is the focus of this review.\nMETHODS AND RESULTS: Intransal insulin (INI) administration increases CNS insulin concentration. Hence, INI can address whether CNSIA regulates plasma glucose concentration in humans. We and three other groups have sought to answer this question, with differing conclusions. Here we will review the critical aspects of each study, including its design, which may explain these discordant conclusions.\nCONCLUSIONS: The early glucose-lowering effect of INI is likely due to spillover of insulin into the systemic circulation. In the presence of simultaneous portal and CNS hyperinsulinemia, portal insulin action is dominant. INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline. The potential physiological role and purpose of this pathway are discussed in this review. Because the effects of INI are attenuated in patients with type 2 diabetes and obesity, this is unlikely to be of therapeutic utility.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26020765/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 4.141304969787598,
+      "relevance_score": 0.984346866607666,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6890428066253662,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:11381d61aa044ddc0171",
+      "document_id": "web:11381d61aa044ddc0171",
+      "title": "Insulin: What It Is, What It Does, How To Take It & Side Effects",
+      "text": "Insulin: What It Is, What It Does, How To Take It & Side Effects\nHome /\nBody Systems & Organs /\nInsulin\nAdvertisement\nAdvertisement\nInsulin\nMedically Reviewed. Last updated on 01/17/2024 .\nInsulin is an essential hormone. It helps your body turn food into energy and manages your blood sugar levels. If you have diabetes, your body can\u2019t make enough insulin or can\u2019t use it properly. Your healthcare provider can prescribe manufactured insulin that you take through an injection (shot), injectable pen or pump. Inhalable insulin is also an option.\nAdvertisement\nOverview\nWhat is insulin?\nInsulin is a naturally occurring hormone your pancreas makes that\u2019s essential for allowing your body to use sugar (glucose) for energy. If your pancreas doesn\u2019t make enough insulin or your body doesn\u2019t use insulin properly, it leads to high blood sugar levels (hyperglycemia) . This results in diabetes .\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nThere are also manufactured types of insulin that people with diabetes use to manage the condition.\nCare at Cleveland Clinic\nFunction\nWhat does insulin do?\nInsulin moves glucose from your blood into cells all over your body. Glucose comes from both the food and drinks you consume and your body\u2019s natural release of stored glucose ( glycogen ). Glucose is your body\u2019s main \u2014 and preferred \u2014 source of energy.\nAll of your body\u2019s cells need energy. Think of insulin as the key that opens the doors of the cells in your body. Once insulin opens your cell doors, glucose can leave your bloodstream and move into your cells where you use it for energy.\nWithout enough insulin, glucose can\u2019t get into your cells and instead builds up in your blood. This leads to high blood sugar and diabetes. A total lack of insulin for a prolonged time leads to a life-threatening complication called diabetes-related ketoacidosis (DKA) .\nDoes insulin lower or raise blood sugar?\nInsulin lowers your blood sugar level. Glucagon (another hormone) naturally raises it. Your body uses these two hormones to balance out your blood sugar level to keep it in a healthy range.\nIf you have diabetes, too much (manufactured) insulin can lead to low blood sugar (hypoglycemia) . In this case, you may need to consume sugar to raise your blood sugar level. There are manufactured forms of glucagon available with a prescription for emergency use to treat severe low blood sugar. Talk to your healthcare provider or diabetes care and education specialist to find out if glucagon should be included in your treatment plan.\nAdvertisement\nAnatomy\nWhere is insulin produced?\nYour pancreas produces insulin. More specifically, beta cells in the islets of Langerhans in the pancreas make the hormone. This is the endocrine function of your pancreas, meaning it releases insulin directly into your bloodstream.\nYour pancreas also has an exocrine function \u2014 it releases enzymes into certain ducts to help with digestion .\nConditions and Disorders\nWhat conditions involve issues with insulin?\nMany conditions can develop when you have a lack of natural insulin or too much.\nDiabetes and a lack of insulin\nDiabetes results from a lack of functional insulin, which leads to high blood sugar.\nDamage to your pancreas causes certain types of diabetes, like:\nType 1 diabetes : This is an autoimmune condition in which your immune system attacks the insulin-producing cells in your pancreas. It eventually results in a total lack of natural insulin.\nType 3c diabetes (secondary or pancreatogenic diabetes) : This condition develops when your pancreas experiences damage that affects its ability to produce insulin. Conditions like chronic pancreatitis and cystic fibrosis can lead to pancreas damage that causes diabetes. Having your pancreas removed ( pancreatectomy ) also results in Type 3c diabetes.\nLatent autoimmune diabetes in adults (LADA) : Like Type 1 diabetes, LADA also results from an autoimmune reaction, but it develops much more slowly than Type 1. People diagnosed with LADA are usually over the age of 30.\nInsulin resistance is the other major cause of diabetes. This happens when cells in your muscles , fat and liver don\u2019t respond as they should to insulin. Insulin resistance can lead to conditions like:\nPrediabetes : Prediabetes happens when you have elevated blood sugar levels, but they\u2019re not high enough to be considered Type 2 diabetes. Insulin resistance is the main cause.\nType 2 diabetes : This condition happens when insulin resistance is too strong for your pancreas to overcome, resulting in high blood sugar.\nGestational diabetes : This condition can develop during pregnancy . Researchers believe the placenta releases hormones that cause insulin resistance. If your pancreas can\u2019t overcome this resistance, it leads to gestational diabetes. It typically goes away after you deliver your baby.\nThere\u2019s also a genetic form of diabetes called maturity-onset diabetes of the young (MODY) . MODY, also called monogenic diabetes, happens due to an inherited genetic mutation (change) that affects how your body makes and uses insulin.\nExcess insulin\nA rare tumor called an insulinoma makes your pancreas produce excess insulin. This causes you to have frequent \u2014 and sometimes severe \u2014 low blood sugar. Most insulinomas are curable with surgery.\nAdvertisement\nCare\nWhat are the types of insulin for diabetes?\nThere are many different types of insulin. Most types are injectable , either through a needle, pen or pump . There\u2019s also inhalable insulin . If you have diabetes, your provider will work with you to prescribe the right type(s) for you and adjust the dosage when your needs change.\nAdvertisement\nWhat are the side effects of insulin?\nThe most common complication of insulin treatment is low blood glucose levels (hypoglycemia) from taking too much insulin for your needs.\nOther possible side effects of insulin treatment, which are rare, include:\nAdvertisement\nSome people \u2014 but not all \u2014 with Type 2 diabetes need insulin to best manage the condition.\nThere are several other types of medications for Type 2 diabetes, like oral medications and GLP-1 agonist injections . These medications combat insulin resistance in different ways. If insulin resistance is severe, these medications may not be enough to maintain healthy blood sugar levels. This is when you\u2019d need insulin.\nHow long can a person with diabetes go without insulin?\nA note from Cleveland Clinic\nInsulin is an essential hormone that helps you stay healthy and keeps your body working like it should. If your body can\u2019t make enough insulin or use it properly, your healthcare provider can prescribe manufactured insulin as a diabetes treatment. Follow your provider\u2019s instructions carefully when giving yourself insulin. And be sure to seek medical help right away if you have signs of DKA or experience severe low blood sugar.\nBetter health starts here\nAd",
+      "source": "my.clevelandclinic.org",
+      "source_url": "https://my.clevelandclinic.org/health/body/22601-insulin",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 1.219064712524414,
+      "relevance_score": 0.7718988656997681,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.15437977313995363,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence suggests that insulin lowers blood glucose, which directly contradicts the claim that it does not lower blood glucose.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:26020765",
+                "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+              },
+              {
+                "evidence_id": "web:11381d61aa044ddc0171",
+                "quote": "Insulin moves glucose from your blood into cells all over your body."
+              },
+              {
+                "evidence_id": "web:11381d61aa044ddc0171",
+                "quote": "Does insulin lower or raise blood sugar?"
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:26020765",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:31608542",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:11381d61aa044ddc0171",
+                "relation": "REFUTES",
+                "concrete": true
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Insulin",
+                "relationship": "not",
+                "outcome": "lower blood glucose",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence discusses insulin as a hormone that helps manage blood sugar levels and is essential for the body to use glucose for energy.",
+                  "sentence_ids": [
+                    "E1S10",
+                    "E3S30"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline.",
+                  "claim_fragment": "Insulin",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26020765",
+                      "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+                    },
+                    {
+                      "evidence_id": "web:11381d61aa044ddc0171",
+                      "quote": "Insulin moves glucose from your blood into cells all over your body."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence suggests that insulin lowers blood glucose, which directly contradicts the claim that it does not lower blood glucose.",
+                  "sentence_ids": [
+                    "E1S10",
+                    "E3S39"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline.",
+                  "claim_fragment": "not",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26020765",
+                      "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+                    },
+                    {
+                      "evidence_id": "web:11381d61aa044ddc0171",
+                      "quote": "Does insulin lower or raise blood sugar?"
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence states that insulin helps move glucose from the blood into cells, which is a process that lowers blood glucose levels.",
+                  "sentence_ids": [
+                    "E1S10",
+                    "E3S30"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline.",
+                  "claim_fragment": "lower blood glucose",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:26020765",
+                      "quote": "INI administration does lower plasma glucose independent of peripheral insulin concentration (between \u223c3 and 6 h after administration), suggesting that CNSIA may play a role in glucose homeostasis in the late postprandial period when its action is likely greatest and portal insulin concentration is at baseline."
+                    },
+                    {
+                      "evidence_id": "web:11381d61aa044ddc0171",
+                      "quote": "Insulin moves glucose from your blood into cells all over your body."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:26020765",
+                "web:11381d61aa044ddc0171"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.09,
+              "REFUTED": 0.9,
+              "NEI": 0.01
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 62448.83454199998,
+  "completed_at_utc": "2026-10-29T03:34:20.579204Z"
+}

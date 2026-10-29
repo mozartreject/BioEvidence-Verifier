@@ -1,0 +1,7 @@
+Claim: Tuberculosis is not caused by bacteria.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 8d1611de-5d17-4ccb-9de1-f426d952c213
+Explanation status: QUARANTINED
+Quarantine reason: Explanation too short: 16 words; Explanation contains no evidence citation
+Raw response: ../raw/8d1611de-5d17-4ccb-9de1-f426d952c213.json

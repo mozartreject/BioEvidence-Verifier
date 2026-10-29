@@ -1,0 +1,7 @@
+Claim: Ultraviolet radiation does not increase skin cancer risk.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 5ea369b6-951e-4048-ba3a-11502494eaa7
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/5ea369b6-951e-4048-ba3a-11502494eaa7.json

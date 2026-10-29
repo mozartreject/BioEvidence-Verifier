@@ -1,0 +1,4 @@
+Claim: Eating seven almonds at bedtime increases lung capacity by exactly 11% in healthy violinists.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/4a355c59-193a-4fc9-9826-e49da48c6586.json

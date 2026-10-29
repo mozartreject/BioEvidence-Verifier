@@ -1,0 +1,786 @@
+{
+  "request": {
+    "request_id": "cc01cbe9-cf42-4252-8c1f-23efe2876e6a",
+    "claim": "Helicobacter pylori infection can cause peptic ulcers.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:43:01.512518Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:43:01.512597Z",
+      "ended_at_utc": "2026-10-29T02:43:02.010562Z",
+      "latency_ms": 497.98029199973826
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:34024441",
+        "document_id": "pubmed:34024441",
+        "title": "Helicobacter pylori Infection.",
+        "text": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers. This article provides a summary of the microbiology and pathogenesis of this bacterium, emphasizing the complex and protean effects of H pylori on gastric epithelial cells, including stem and progenitor populations, and evasion of host immune defenses. Increasing antibiotic resistance has made management more challenging. This article discusses the appropriate diagnostic modality for different clinical scenarios, and the evolving treatment of H pylori infections, including the use of antibiotic susceptibility testing to aid regimen selection.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34024441/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.192978382110596,
+        "relevance_score": 0.9992486834526062,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:16902931",
+        "document_id": "pubmed:16902931",
+        "title": "Helicobacter connections.",
+        "text": "After preliminary studies in 1981, Marshall and Warren conducted a study in which the new bacterium Helicobacter pylori was cultured. In that series, 100 % of 13 patients with duodenal ulcer were found to be infected. The hypothesis that peptic ulcer was caused by a bacterial infection was not accepted without a fight. Most experts believed that Helicobacter was a harmless commensal, infecting people who had ulcers for some other reason. In response, Marshall drank a culture of Helicobacter to prove that the bacteria could infect a healthy person and cause gastritis. The truth behind peptic ulcers was revealed; that is, very young children acquired the Helicobacter organism, leading to a chronic infection which caused a lifelong susceptibility to peptic ulcers. Marshall developed new treatments for the infection and diagnostic tests which allowed the hypothesis to be evaluated and proven. After 1994 Helicobacter was generally accepted as the cause of most gastroduodenal diseases including peptic ulcer and gastric cancer. As a result of this knowledge, treatment is a simple procedure, and stomach surgery has become a rarity.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/16902931/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.839062213897705,
+        "relevance_score": 0.998930037021637,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:36791443",
+        "document_id": "pubmed:36791443",
+        "title": "Peptic Ulcer Disease and H. pylori Infection: Common Questions and Answers.",
+        "text": "Peptic ulcer disease is common, affecting 1 out of 12 people in the United States. Approximately 1 in 5 peptic ulcers is associated with Helicobacter pylori infection, with most of the rest due to nonsteroidal anti-inflammatory drug (NSAID) use. The combination of H. pylori infection and NSAID use synergistically increases the risk of bleeding ulcers more than sixfold. The H. pylori test-and-treat strategy is the mainstay of outpatient management. Patients younger than 60 years who have dyspepsia without alarm symptoms should be tested and, if positive, treated to eradicate the infection. If negative, they should be treated empirically with a proton pump inhibitor (PPI). Esophagogastroduodenoscopy is recommended for patients 60 years and older with new symptoms and for anyone with alarm symptoms. Noninvasive testing for H. pylori using a urea breath test or stool antigen test is preferred. Bismuth quadruple therapy or concomitant therapy (nonbismuth quadruple therapy) is the preferred first-line treatment for eradication because of increasing clarithromycin resistance. To lower the risk of ulcers associated with long-term NSAID use, clinicians should consider coadministering a PPI or substituting an NSAID with less effect on gastric mucosa, such as celecoxib. Eradicating H. pylori in NSAID users reduces the likelihood of peptic ulcers by one-half. Potential risks of long-term PPI use include fractures, interaction with antiplatelet medications, chronic kidney disease, Clostridioides difficile infection, dementia, and magnesium, calcium, and vitamin B12 micronutrient deficiencies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/36791443/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.4924092292785645,
+        "relevance_score": 0.9984873533248901,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Helicobacter pylori infection can cause peptic ulcers."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:43:02.010665Z",
+      "ended_at_utc": "2026-10-29T02:43:21.832592Z",
+      "latency_ms": 19821.687707999445
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:16902931",
+        "document_id": "pubmed:16902931",
+        "title": "Helicobacter connections.",
+        "text": "After preliminary studies in 1981, Marshall and Warren conducted a study in which the new bacterium Helicobacter pylori was cultured. In that series, 100 % of 13 patients with duodenal ulcer were found to be infected. The hypothesis that peptic ulcer was caused by a bacterial infection was not accepted without a fight. Most experts believed that Helicobacter was a harmless commensal, infecting people who had ulcers for some other reason. In response, Marshall drank a culture of Helicobacter to prove that the bacteria could infect a healthy person and cause gastritis. The truth behind peptic ulcers was revealed; that is, very young children acquired the Helicobacter organism, leading to a chronic infection which caused a lifelong susceptibility to peptic ulcers. Marshall developed new treatments for the infection and diagnostic tests which allowed the hypothesis to be evaluated and proven. After 1994 Helicobacter was generally accepted as the cause of most gastroduodenal diseases including peptic ulcer and gastric cancer. As a result of this knowledge, treatment is a simple procedure, and stomach surgery has become a rarity.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/16902931/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.839062213897705,
+        "relevance_score": 0.998930037021637,
+        "authority_tier": "C",
+        "hierarchy_weight": 0.4,
+        "combined_score": 0.3995720148086548,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:34024441",
+        "document_id": "pubmed:34024441",
+        "title": "Helicobacter pylori Infection.",
+        "text": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers. This article provides a summary of the microbiology and pathogenesis of this bacterium, emphasizing the complex and protean effects of H pylori on gastric epithelial cells, including stem and progenitor populations, and evasion of host immune defenses. Increasing antibiotic resistance has made management more challenging. This article discusses the appropriate diagnostic modality for different clinical scenarios, and the evolving treatment of H pylori infections, including the use of antibiotic susceptibility testing to aid regimen selection.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34024441/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.192978382110596,
+        "relevance_score": 0.9992486834526062,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19984973669052125,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:36791443",
+        "document_id": "pubmed:36791443",
+        "title": "Peptic Ulcer Disease and H. pylori Infection: Common Questions and Answers.",
+        "text": "Peptic ulcer disease is common, affecting 1 out of 12 people in the United States. Approximately 1 in 5 peptic ulcers is associated with Helicobacter pylori infection, with most of the rest due to nonsteroidal anti-inflammatory drug (NSAID) use. The combination of H. pylori infection and NSAID use synergistically increases the risk of bleeding ulcers more than sixfold. The H. pylori test-and-treat strategy is the mainstay of outpatient management. Patients younger than 60 years who have dyspepsia without alarm symptoms should be tested and, if positive, treated to eradicate the infection. If negative, they should be treated empirically with a proton pump inhibitor (PPI). Esophagogastroduodenoscopy is recommended for patients 60 years and older with new symptoms and for anyone with alarm symptoms. Noninvasive testing for H. pylori using a urea breath test or stool antigen test is preferred. Bismuth quadruple therapy or concomitant therapy (nonbismuth quadruple therapy) is the preferred first-line treatment for eradication because of increasing clarithromycin resistance. To lower the risk of ulcers associated with long-term NSAID use, clinicians should consider coadministering a PPI or substituting an NSAID with less effect on gastric mucosa, such as celecoxib. Eradicating H. pylori in NSAID users reduces the likelihood of peptic ulcers by one-half. Potential risks of long-term PPI use include fractures, interaction with antiplatelet medications, chronic kidney disease, Clostridioides difficile infection, dementia, and magnesium, calcium, and vitamin B12 micronutrient deficiencies.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/36791443/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.4924092292785645,
+        "relevance_score": 0.9984873533248901,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19969747066497803,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:43:21.832623Z",
+      "ended_at_utc": "2026-10-29T02:43:25.048295Z",
+      "latency_ms": 3215.6782909996764
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "SUPPORTED",
+    "user_facing_verdict": "SUPPORTED",
+    "probabilities": {
+      "refuted": 0.02,
+      "nei": 0.03,
+      "supported": 0.95
+    },
+    "verifier_score": 0.95,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:16902931",
+      "pubmed:34024441",
+      "pubmed:36791443"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "SUPPORTED",
+          "reason": "The sentence directly states that Helicobacter pylori infection causes peptic ulcers. The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers. The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:34024441",
+              "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:16902931",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:34024441",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:36791443",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v1",
+            "claim_parts": {
+              "subject": "Helicobacter pylori infection",
+              "relationship": "cause",
+              "outcome": "peptic ulcers",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers.",
+                "reason": "The sentence directly states that Helicobacter pylori infection causes peptic ulcers.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "subject",
+                "claim_fragment": "Helicobacter pylori infection",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:34024441",
+                    "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers.",
+                "reason": "The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "relationship",
+                "claim_fragment": "cause",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:34024441",
+                    "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers.",
+                "reason": "The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "outcome",
+                "claim_fragment": "peptic ulcers",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:34024441",
+                    "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:34024441"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.95,
+            "REFUTED": 0.02,
+            "NEI": 0.03
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Evidence [E1] supports the claim that Helicobacter pylori infection can cause peptic ulcers. The study described in [E1] found that all 13 patients with duodenal ulcers were infected with Helicobacter pylori, providing strong evidence for its role in the pathogenesis of peptic ulcers.",
+    "cited_evidence_ids": [
+      "pubmed:16902931"
+    ],
+    "grounding": {
+      "semantic_score": 0.7996718883514404,
+      "coverage_score": 0.8107203841209412,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:43:39.802316Z",
+      "ended_at_utc": "2026-10-29T02:43:54.738384Z",
+      "latency_ms": 14935.87083300008
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "SUPPORTED",
+  "final_user_facing_verdict": "SUPPORTED",
+  "final_verifier_score": 0.95,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:16902931",
+      "document_id": "pubmed:16902931",
+      "title": "Helicobacter connections.",
+      "text": "After preliminary studies in 1981, Marshall and Warren conducted a study in which the new bacterium Helicobacter pylori was cultured. In that series, 100 % of 13 patients with duodenal ulcer were found to be infected. The hypothesis that peptic ulcer was caused by a bacterial infection was not accepted without a fight. Most experts believed that Helicobacter was a harmless commensal, infecting people who had ulcers for some other reason. In response, Marshall drank a culture of Helicobacter to prove that the bacteria could infect a healthy person and cause gastritis. The truth behind peptic ulcers was revealed; that is, very young children acquired the Helicobacter organism, leading to a chronic infection which caused a lifelong susceptibility to peptic ulcers. Marshall developed new treatments for the infection and diagnostic tests which allowed the hypothesis to be evaluated and proven. After 1994 Helicobacter was generally accepted as the cause of most gastroduodenal diseases including peptic ulcer and gastric cancer. As a result of this knowledge, treatment is a simple procedure, and stomach surgery has become a rarity.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16902931/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.839062213897705,
+      "relevance_score": 0.998930037021637,
+      "authority_tier": "C",
+      "hierarchy_weight": 0.4,
+      "combined_score": 0.3995720148086548,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:34024441",
+      "document_id": "pubmed:34024441",
+      "title": "Helicobacter pylori Infection.",
+      "text": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers. This article provides a summary of the microbiology and pathogenesis of this bacterium, emphasizing the complex and protean effects of H pylori on gastric epithelial cells, including stem and progenitor populations, and evasion of host immune defenses. Increasing antibiotic resistance has made management more challenging. This article discusses the appropriate diagnostic modality for different clinical scenarios, and the evolving treatment of H pylori infections, including the use of antibiotic susceptibility testing to aid regimen selection.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34024441/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.192978382110596,
+      "relevance_score": 0.9992486834526062,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19984973669052125,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:36791443",
+      "document_id": "pubmed:36791443",
+      "title": "Peptic Ulcer Disease and H. pylori Infection: Common Questions and Answers.",
+      "text": "Peptic ulcer disease is common, affecting 1 out of 12 people in the United States. Approximately 1 in 5 peptic ulcers is associated with Helicobacter pylori infection, with most of the rest due to nonsteroidal anti-inflammatory drug (NSAID) use. The combination of H. pylori infection and NSAID use synergistically increases the risk of bleeding ulcers more than sixfold. The H. pylori test-and-treat strategy is the mainstay of outpatient management. Patients younger than 60 years who have dyspepsia without alarm symptoms should be tested and, if positive, treated to eradicate the infection. If negative, they should be treated empirically with a proton pump inhibitor (PPI). Esophagogastroduodenoscopy is recommended for patients 60 years and older with new symptoms and for anyone with alarm symptoms. Noninvasive testing for H. pylori using a urea breath test or stool antigen test is preferred. Bismuth quadruple therapy or concomitant therapy (nonbismuth quadruple therapy) is the preferred first-line treatment for eradication because of increasing clarithromycin resistance. To lower the risk of ulcers associated with long-term NSAID use, clinicians should consider coadministering a PPI or substituting an NSAID with less effect on gastric mucosa, such as celecoxib. Eradicating H. pylori in NSAID users reduces the likelihood of peptic ulcers by one-half. Potential risks of long-term PPI use include fractures, interaction with antiplatelet medications, chronic kidney disease, Clostridioides difficile infection, dementia, and magnesium, calcium, and vitamin B12 micronutrient deficiencies.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36791443/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.4924092292785645,
+      "relevance_score": 0.9984873533248901,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19969747066497803,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v1",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "SUPPORTED",
+            "reason": "The sentence directly states that Helicobacter pylori infection causes peptic ulcers. The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers. The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:34024441",
+                "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:16902931",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:34024441",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:36791443",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v1",
+              "claim_parts": {
+                "subject": "Helicobacter pylori infection",
+                "relationship": "cause",
+                "outcome": "peptic ulcers",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers.",
+                  "reason": "The sentence directly states that Helicobacter pylori infection causes peptic ulcers.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "subject",
+                  "claim_fragment": "Helicobacter pylori infection",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:34024441",
+                      "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers.",
+                  "reason": "The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "relationship",
+                  "claim_fragment": "cause",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:34024441",
+                      "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers.",
+                  "reason": "The sentence explicitly states that Helicobacter pylori infection causes peptic ulcers.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "outcome",
+                  "claim_fragment": "peptic ulcers",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:34024441",
+                      "quote": "Helicobacter pylori infection remains one of the most prevalent infections worldwide, causing significant morbidity and mortality from gastric malignancies and peptic ulcers."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:34024441"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.95,
+              "REFUTED": 0.02,
+              "NEI": 0.03
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 53226.81433300022,
+  "completed_at_utc": "2026-10-29T02:43:54.740048Z"
+}

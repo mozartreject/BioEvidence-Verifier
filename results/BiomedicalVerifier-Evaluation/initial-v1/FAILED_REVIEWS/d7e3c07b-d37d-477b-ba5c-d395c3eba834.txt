@@ -1,0 +1,4 @@
+Claim: Eating one pear on alternate Tuesdays prevents rheumatoid arthritis in healthy adults.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.08, 'REFUTED': 0.72, 'NEI': 0.2}"}
+Raw response: ../raw/d7e3c07b-d37d-477b-ba5c-d395c3eba834.json

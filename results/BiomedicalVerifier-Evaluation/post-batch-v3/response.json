@@ -1,0 +1,836 @@
+{
+  "request": {
+    "request_id": "ad82d831-71ba-4944-8ed1-dd599797ef12",
+    "claim": "The liver does not produce bile.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:54:24.032951Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:54:24.033073Z",
+      "ended_at_utc": "2026-10-29T03:54:24.454752Z",
+      "latency_ms": 421.6761250000012
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:1940266",
+        "document_id": "pubmed:1940266",
+        "title": "Recovery of bile secretion following orthotopic liver transplantation.",
+        "text": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile. What constitutes adequate bile flow, however, has not previously been defined. The present study was undertaken to characterize biliary water and electrolyte secretion following hepatic transplantation. Bile was sampled from nine liver transplant recipients for 15-25 consecutive days during chronic t-tube biliary drainage. Liver biopsies and t-tube cholangiograms were unremarkable in all patients. During the first post-operative day mean bile flow, bile salt concentration, [BS], and bile salt output (BSO) were 60.0 microliters/min, 6.8 mM and 0.41 mumol/min, respectively. [BS] increased over days 1-5 and then plateaued at 12.2 mM over days 6-25 post-transplant. BSO and bile flow increased over days 1-12 before achieving steady-state values of 4.52 mumol/min and 334.7 microliters/min, respectively. In each patient bile flow increased linearly with increasing BSO. Choleretic index (CI), varied from 36.9-77.1 microliters/mumol (mean: 50.7 +/- 8.8). The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8). Only primary bile salts (82% cholate and 17% chenodeoxycholate), were observed in the bile of each patient. Biliary electrolyte concentrations were similar to that observed in plasma. Each was relatively unaffected by changes in bile flow and BSO. Electrolyte outputs increased linearly with respect to both BSO and bile flow. We conclude that recovery of bile secretion following orthotopic liver transplantation occurs gradually over a 10-12 day period and is strongly dependent upon bile salt secretion.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/1940266/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 0.9071463942527771,
+        "relevance_score": 0.712415874004364,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:32108995",
+        "document_id": "pubmed:32108995",
+        "title": "Bile Biochemistry Following Liver Reperfusion in the Recipient and Its Association With Cholangiopathy.",
+        "text": "Cholangiocytes secrete bicarbonate and absorb glucose, producing bile with alkaline pH and low glucose content. These functions of cholangiocytes have been suggested as a marker of bile duct viability during normothermic ex\u00a0situ liver perfusion, and they are now monitored routinely after reperfusion in our center. In this study, we reviewed the composition of bile immediately after reperfusion in liver transplant recipients to determine normal posttransplant parameters and the predictive value of bile biochemistry for the later development of cholangiopathy. After reperfusion of the liver graft, a cannula was placed in the bile duct to collect bile over a median 44-minute time period. The bile produced was analyzed using a point-of-care blood gas analyzer (Cobas b221, Roche Diagnostics, Indianapolis, IN). A total of 100 liver transplants (35 from donation after circulatory death and 65 from donation after brain death) were studied. Median bile pH was 7.82 (interquartile range [IQR], 7.67-7.98); median bile glucose was 2.1 (1.4-3.7) mmol/L; median blood-bile-blood pH difference was 0.50 (0.37-0.62); and median blood-bile glucose difference was 7.1 (5.6-9.1) mmol/L. There were 12 recipients who developed cholangiopathy over a median follow-up of 15 months (IQR, 11-20 months). Bile sodium (142 versus 147 mmol/L; P\u00a0=\u00a00.02) and blood-bile glucose concentration differences (5.2 versus 7.6 mmol/L; P\u00a0=\u00a00.001) were significantly lower and were associated with ischemic cholangiopathy. In conclusion, bile biochemistry may provide useful insights into cholangiocyte function and, hence, bile duct viability. Our results suggest bile glucose is the most sensitive predictor of cholangiopathy.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32108995/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -0.053485944867134094,
+        "relevance_score": 0.48663172125816345,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:07a13e59a5852d1776fb",
+        "document_id": "web:07a13e59a5852d1776fb",
+        "title": "Liver: Where It\u2019s Located, Function & Anatomy",
+        "text": "Liver: Where It\u2019s Located, Function & Anatomy\nHome /\nBody Systems & Organs /\nLiver\nAdvertisement\nAdvertisement\nLiver\nMedically Reviewed. Last updated on 09/26/2025 .\nYour liver performs more than 500 important functions, from filtering blood and processing nutrients to fighting infections. It creates bile and important proteins your body needs. You can\u2019t live without a liver: If your liver fails, you\u2019ll need an organ transplant to survive.\nAdvertisement\nCare at Cleveland Clinic\nLiver Care for Adults\nLiver Care for Children\nMake an Appointment\nImage content: This image is available to view online.\nView image online ( https://my.clevelandclinic.org/-/scassets/Images/org/health/articles/21481-liver.jpg )\nYour liver is your largest internal organ. It performs hundreds of important functions in your body.\nWhat is my liver?\nYour liver is the largest internal organ in your body and one of the only organs that can regenerate itself. The liver plays a crucial role in filtering blood, storing energy and producing bile for digestion.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nUnfortunately, hundreds of diseases and conditions can damage your liver so it can\u2019t work. Some of these can be life-threatening. Hepatologists , medical specialists who diagnose and treat liver disease, can treat and sometimes cure these diseases. And there are many things that you can do to keep your liver well and working as it should.\nCare at Cleveland Clinic\nLiver Care for Adults\nLiver Care for Children\nMake an Appointment\nView video online ( https://cdnapisec.kaltura.com/p/2207941/sp/220794100/playManifest/entryId/1_tvodsw7y/flavorId/1_5f3sgelj/format/url/protocol/https/a.mp4 )\nYour liver is the biggest organ in your body, and it performs hundreds of functions every day.\nYour liver is the biggest organ in your body, and it performs hundreds of functions every day.\nWhat is the liver\u2019s function?\nYour liver\u2019s biggest job is filtering harmful substances and waste from your blood. Every day, your liver filters more than 250 gallons of blood. If that wasn\u2019t enough, and among many other duties, your liver also:\nMakes cholesterol that your body uses in different ways\nHelps produce certain hormones, protects your cells and is a key ingredient in bile production\nMakes proteins \u2014 like clotting factors that manage bleeding and albumin, which manages fluid pressure in your bloodstream\nBreaks down toxins and germs so they safely leave your body in your pee and poop\nWorks by breaking down fats in your blood to produce energy, and if there are too many, they may get stored as extra fat\nAnatomy\nWhere is my liver located?\nYour liver is on the right side of your upper body. It\u2019s located under your ribs, just next to your stomach.\nAdvertisement\nWhat does my liver look like?\nYour liver looks like a spongy, reddish-brown wedge of tissue. The wedge, which may be about the size and shape of a football, may weigh between 3 and 5 pounds.\nThe liver has two lobes (sections). The lobe on the right is slightly larger than the lobe on the left. Both lobes contain many blood vessels and thousands of smaller lobes (lobules) that are tiny clusters of liver cells (hepatocytes).\nSome of the important parts of your liver anatomy include:\nLobules : These are tiny clusters of liver cells that connect with your bile ducts , the tubes that transport bile from your liver to your small intestine.\nHepatic veins : These are blood vessels in your liver\u2019s lobes that carry blood through your liver so it can remove waste and toxins that eventually leave your body through your pee and poop.\nBile ducts : Bile ducts carry the bile that your liver produces out to the rest of your body.\nConditions and Disorders\nWhat common conditions and disorders can affect my liver?\nThere are over 100 types of liver diseases , but they fall into a handful of subtypes. Examples include:\nAlcohol-induced hepatitis : Heavy alcohol use can cause acute or chronic hepatitis (inflammation in your liver). If it\u2019s frequent or lasts a long time, it can lead to cirrhosis and liver failure.\nBile duct obstruction : Conditions that block the flow of bile through your bile ducts can cause it to build up and injure your liver. Gallstones and biliary stricture (narrowing) are some common causes.\nInherited metabolic disorders : Some of these disorders can cause toxic products to build up in your blood. Hemochromatosis is one example.\nLiver lesions : These are abnormal growths in your liver. Most are benign (noncancerous), including liver cysts and liver hemangiomas. But some abnormal growths are liver cancer , including hepatocellular carcinoma, intrahepatic cholangiocarcinoma (bile duct cancer in your liver) and hepatoblastoma .\nSteatotic (fatty) liver disease : These are conditions that involve fat buildup in your liver. Condition types include alcohol-related liver disease, metabolic dysfunction-associated steatotic liver disease ( MASLD ) and non-alcohol-related steatohepatitis .\nToxic hepatitis : Chronic overexposure to toxins, like industrial chemicals or drugs, can cause acute or chronic hepatitis.\nViral hepatitis : Viral hepatitis infections can become chronic infections that cause chronic liver disease, including hepatitis B and hepatitis C. Hepatitis A is an acute (short-term) infection.\nWhat are common signs and symptoms of liver problems?\nCommon early symptoms of liver problems include:\nUpper abdominal pain\nNausea\nYour skin and eyes turning yellow ( jaundice )\nWhen liver disease is more advanced and your liver function declines, you may develop many other symptoms, like:\nConfusion or mild cognitive impairment\nSwollen belly or legs\nWhat tests can check my liver health?\nHealthcare providers may use a combination of tests to check on your liver or to diagnose liver diseases, like:\nBlood tests : Liver function tests measure substances in your blood that your liver produces, like liver enzymes , proteins and bilirubin . High or low levels may indicate liver disease.\nImaging tests : Imaging tests of your liver can show signs of inflammation, lesions or scarring. Examples include liver ultrasound , CT scan, nuclear liver scan and elastography .\nLiver biopsy : To diagnose some conditions, your healthcare provider might need to take a small tissue sample from your liver to examine in a lab. They can usually do this with a hollow needle.\nWhat are common treatments for liver conditions?\nDifferent treatments are available to treat different liver diseases, including medications and surgery. The most common \u2014 and important \u2014 treatment for liver disease is reducing stress on your liver through diet and lifestyle changes. If liver disease reaches the end stages, you\u2019ll need a liver transplant.\nAdvertisement\nCare\nHow can I take care of my liver?\nTo keep your liver healthy and functioning well, you can:\nWhen should I contact a healthcare provider?",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/body/21481-liver",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -0.8240872621536255,
+        "relevance_score": 0.304896742105484,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "The liver does not produce bile."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:54:24.454810Z",
+      "ended_at_utc": "2026-10-29T03:54:24.715760Z",
+      "latency_ms": 260.951167
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:1940266",
+        "document_id": "pubmed:1940266",
+        "title": "Recovery of bile secretion following orthotopic liver transplantation.",
+        "text": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile. What constitutes adequate bile flow, however, has not previously been defined. The present study was undertaken to characterize biliary water and electrolyte secretion following hepatic transplantation. Bile was sampled from nine liver transplant recipients for 15-25 consecutive days during chronic t-tube biliary drainage. Liver biopsies and t-tube cholangiograms were unremarkable in all patients. During the first post-operative day mean bile flow, bile salt concentration, [BS], and bile salt output (BSO) were 60.0 microliters/min, 6.8 mM and 0.41 mumol/min, respectively. [BS] increased over days 1-5 and then plateaued at 12.2 mM over days 6-25 post-transplant. BSO and bile flow increased over days 1-12 before achieving steady-state values of 4.52 mumol/min and 334.7 microliters/min, respectively. In each patient bile flow increased linearly with increasing BSO. Choleretic index (CI), varied from 36.9-77.1 microliters/mumol (mean: 50.7 +/- 8.8). The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8). Only primary bile salts (82% cholate and 17% chenodeoxycholate), were observed in the bile of each patient. Biliary electrolyte concentrations were similar to that observed in plasma. Each was relatively unaffected by changes in bile flow and BSO. Electrolyte outputs increased linearly with respect to both BSO and bile flow. We conclude that recovery of bile secretion following orthotopic liver transplantation occurs gradually over a 10-12 day period and is strongly dependent upon bile salt secretion.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/1940266/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 0.9071463942527771,
+        "relevance_score": 0.712415874004364,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.49869111180305475,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:32108995",
+        "document_id": "pubmed:32108995",
+        "title": "Bile Biochemistry Following Liver Reperfusion in the Recipient and Its Association With Cholangiopathy.",
+        "text": "Cholangiocytes secrete bicarbonate and absorb glucose, producing bile with alkaline pH and low glucose content. These functions of cholangiocytes have been suggested as a marker of bile duct viability during normothermic ex\u00a0situ liver perfusion, and they are now monitored routinely after reperfusion in our center. In this study, we reviewed the composition of bile immediately after reperfusion in liver transplant recipients to determine normal posttransplant parameters and the predictive value of bile biochemistry for the later development of cholangiopathy. After reperfusion of the liver graft, a cannula was placed in the bile duct to collect bile over a median 44-minute time period. The bile produced was analyzed using a point-of-care blood gas analyzer (Cobas b221, Roche Diagnostics, Indianapolis, IN). A total of 100 liver transplants (35 from donation after circulatory death and 65 from donation after brain death) were studied. Median bile pH was 7.82 (interquartile range [IQR], 7.67-7.98); median bile glucose was 2.1 (1.4-3.7) mmol/L; median blood-bile-blood pH difference was 0.50 (0.37-0.62); and median blood-bile glucose difference was 7.1 (5.6-9.1) mmol/L. There were 12 recipients who developed cholangiopathy over a median follow-up of 15 months (IQR, 11-20 months). Bile sodium (142 versus 147 mmol/L; P\u00a0=\u00a00.02) and blood-bile glucose concentration differences (5.2 versus 7.6 mmol/L; P\u00a0=\u00a00.001) were significantly lower and were associated with ischemic cholangiopathy. In conclusion, bile biochemistry may provide useful insights into cholangiocyte function and, hence, bile duct viability. Our results suggest bile glucose is the most sensitive predictor of cholangiopathy.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32108995/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -0.053485944867134094,
+        "relevance_score": 0.48663172125816345,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.3406422048807144,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "web:07a13e59a5852d1776fb",
+        "document_id": "web:07a13e59a5852d1776fb",
+        "title": "Liver: Where It\u2019s Located, Function & Anatomy",
+        "text": "Liver: Where It\u2019s Located, Function & Anatomy\nHome /\nBody Systems & Organs /\nLiver\nAdvertisement\nAdvertisement\nLiver\nMedically Reviewed. Last updated on 09/26/2025 .\nYour liver performs more than 500 important functions, from filtering blood and processing nutrients to fighting infections. It creates bile and important proteins your body needs. You can\u2019t live without a liver: If your liver fails, you\u2019ll need an organ transplant to survive.\nAdvertisement\nCare at Cleveland Clinic\nLiver Care for Adults\nLiver Care for Children\nMake an Appointment\nImage content: This image is available to view online.\nView image online ( https://my.clevelandclinic.org/-/scassets/Images/org/health/articles/21481-liver.jpg )\nYour liver is your largest internal organ. It performs hundreds of important functions in your body.\nWhat is my liver?\nYour liver is the largest internal organ in your body and one of the only organs that can regenerate itself. The liver plays a crucial role in filtering blood, storing energy and producing bile for digestion.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nUnfortunately, hundreds of diseases and conditions can damage your liver so it can\u2019t work. Some of these can be life-threatening. Hepatologists , medical specialists who diagnose and treat liver disease, can treat and sometimes cure these diseases. And there are many things that you can do to keep your liver well and working as it should.\nCare at Cleveland Clinic\nLiver Care for Adults\nLiver Care for Children\nMake an Appointment\nView video online ( https://cdnapisec.kaltura.com/p/2207941/sp/220794100/playManifest/entryId/1_tvodsw7y/flavorId/1_5f3sgelj/format/url/protocol/https/a.mp4 )\nYour liver is the biggest organ in your body, and it performs hundreds of functions every day.\nYour liver is the biggest organ in your body, and it performs hundreds of functions every day.\nWhat is the liver\u2019s function?\nYour liver\u2019s biggest job is filtering harmful substances and waste from your blood. Every day, your liver filters more than 250 gallons of blood. If that wasn\u2019t enough, and among many other duties, your liver also:\nMakes cholesterol that your body uses in different ways\nHelps produce certain hormones, protects your cells and is a key ingredient in bile production\nMakes proteins \u2014 like clotting factors that manage bleeding and albumin, which manages fluid pressure in your bloodstream\nBreaks down toxins and germs so they safely leave your body in your pee and poop\nWorks by breaking down fats in your blood to produce energy, and if there are too many, they may get stored as extra fat\nAnatomy\nWhere is my liver located?\nYour liver is on the right side of your upper body. It\u2019s located under your ribs, just next to your stomach.\nAdvertisement\nWhat does my liver look like?\nYour liver looks like a spongy, reddish-brown wedge of tissue. The wedge, which may be about the size and shape of a football, may weigh between 3 and 5 pounds.\nThe liver has two lobes (sections). The lobe on the right is slightly larger than the lobe on the left. Both lobes contain many blood vessels and thousands of smaller lobes (lobules) that are tiny clusters of liver cells (hepatocytes).\nSome of the important parts of your liver anatomy include:\nLobules : These are tiny clusters of liver cells that connect with your bile ducts , the tubes that transport bile from your liver to your small intestine.\nHepatic veins : These are blood vessels in your liver\u2019s lobes that carry blood through your liver so it can remove waste and toxins that eventually leave your body through your pee and poop.\nBile ducts : Bile ducts carry the bile that your liver produces out to the rest of your body.\nConditions and Disorders\nWhat common conditions and disorders can affect my liver?\nThere are over 100 types of liver diseases , but they fall into a handful of subtypes. Examples include:\nAlcohol-induced hepatitis : Heavy alcohol use can cause acute or chronic hepatitis (inflammation in your liver). If it\u2019s frequent or lasts a long time, it can lead to cirrhosis and liver failure.\nBile duct obstruction : Conditions that block the flow of bile through your bile ducts can cause it to build up and injure your liver. Gallstones and biliary stricture (narrowing) are some common causes.\nInherited metabolic disorders : Some of these disorders can cause toxic products to build up in your blood. Hemochromatosis is one example.\nLiver lesions : These are abnormal growths in your liver. Most are benign (noncancerous), including liver cysts and liver hemangiomas. But some abnormal growths are liver cancer , including hepatocellular carcinoma, intrahepatic cholangiocarcinoma (bile duct cancer in your liver) and hepatoblastoma .\nSteatotic (fatty) liver disease : These are conditions that involve fat buildup in your liver. Condition types include alcohol-related liver disease, metabolic dysfunction-associated steatotic liver disease ( MASLD ) and non-alcohol-related steatohepatitis .\nToxic hepatitis : Chronic overexposure to toxins, like industrial chemicals or drugs, can cause acute or chronic hepatitis.\nViral hepatitis : Viral hepatitis infections can become chronic infections that cause chronic liver disease, including hepatitis B and hepatitis C. Hepatitis A is an acute (short-term) infection.\nWhat are common signs and symptoms of liver problems?\nCommon early symptoms of liver problems include:\nUpper abdominal pain\nNausea\nYour skin and eyes turning yellow ( jaundice )\nWhen liver disease is more advanced and your liver function declines, you may develop many other symptoms, like:\nConfusion or mild cognitive impairment\nSwollen belly or legs\nWhat tests can check my liver health?\nHealthcare providers may use a combination of tests to check on your liver or to diagnose liver diseases, like:\nBlood tests : Liver function tests measure substances in your blood that your liver produces, like liver enzymes , proteins and bilirubin . High or low levels may indicate liver disease.\nImaging tests : Imaging tests of your liver can show signs of inflammation, lesions or scarring. Examples include liver ultrasound , CT scan, nuclear liver scan and elastography .\nLiver biopsy : To diagnose some conditions, your healthcare provider might need to take a small tissue sample from your liver to examine in a lab. They can usually do this with a hollow needle.\nWhat are common treatments for liver conditions?\nDifferent treatments are available to treat different liver diseases, including medications and surgery. The most common \u2014 and important \u2014 treatment for liver disease is reducing stress on your liver through diet and lifestyle changes. If liver disease reaches the end stages, you\u2019ll need a liver transplant.\nAdvertisement\nCare\nHow can I take care of my liver?\nTo keep your liver healthy and functioning well, you can:\nWhen should I contact a healthcare provider?",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/body/21481-liver",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -0.8240872621536255,
+        "relevance_score": 0.304896742105484,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.060979348421096806,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:54:24.715812Z",
+      "ended_at_utc": "2026-10-29T03:54:24.715940Z",
+      "latency_ms": 0.147584000000478
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.8,
+      "nei": 0.1,
+      "supported": 0.1
+    },
+    "verifier_score": 0.8,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:1940266",
+      "pubmed:32108995",
+      "web:07a13e59a5852d1776fb"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence states that the liver produces bile, which directly contradicts the claim that the liver does not produce bile.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:1940266",
+              "quote": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile."
+            },
+            {
+              "evidence_id": "pubmed:1940266",
+              "quote": "The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8)."
+            },
+            {
+              "evidence_id": "pubmed:1940266",
+              "quote": "Bile was sampled from nine liver transplant recipients for 15-25 consecutive days during chronic t-tube biliary drainage."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:1940266",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:32108995",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:07a13e59a5852d1776fb",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v3",
+            "claim_parts": {
+              "subject": "liver",
+              "relationship": "does not produce",
+              "outcome": "bile",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence consistently refers to the liver as the organ that produces bile. For example, 'The present study was undertaken to characterize biliary water and electrolyte secretion following hepatic transplantation' and",
+                "sentence_ids": [
+                  "E1S1",
+                  "E3S11"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile.",
+                "claim_fragment": "liver",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:1940266",
+                    "quote": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile."
+                  },
+                  {
+                    "evidence_id": "web:07a13e59a5852d1776fb",
+                    "quote": "It creates bile and important proteins your body needs."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence states that the liver produces bile, which directly contradicts the claim that the liver does not produce bile.",
+                "sentence_ids": [
+                  "E1S11",
+                  "E2S1"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8).",
+                "claim_fragment": "does not produce",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:1940266",
+                    "quote": "The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8)."
+                  },
+                  {
+                    "evidence_id": "pubmed:32108995",
+                    "quote": "Cholangiocytes secrete bicarbonate and absorb glucose, producing bile with alkaline pH and low glucose content."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence explicitly mentions bile production by the liver, such as 'The present study was undertaken to characterize biliary water and electrolyte secretion following hepatic transplantation' and 'Bile was sampled'.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E1S4"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile.",
+                "claim_fragment": "bile",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:1940266",
+                    "quote": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile."
+                  },
+                  {
+                    "evidence_id": "pubmed:1940266",
+                    "quote": "Bile was sampled from nine liver transplant recipients for 15-25 consecutive days during chronic t-tube biliary drainage."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:1940266"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.1,
+            "REFUTED": 0.8,
+            "NEI": 0.1
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The liver produces bile, as evidenced by [E1] where bile secretion was observed following liver transplantation, and [E2] where bile with specific characteristics was found immediately after liver reperfusion. [E3] further supports this by stating that the liver is responsible for producing bile, among other functions.",
+    "cited_evidence_ids": [
+      "pubmed:1940266",
+      "pubmed:32108995",
+      "web:07a13e59a5852d1776fb"
+    ],
+    "grounding": {
+      "semantic_score": 0.6169682741165161,
+      "coverage_score": 0.6686782836914062,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:54:56.144546Z",
+      "ended_at_utc": "2026-10-29T03:55:06.758828Z",
+      "latency_ms": 10614.142541999996
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.8,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:1940266",
+      "document_id": "pubmed:1940266",
+      "title": "Recovery of bile secretion following orthotopic liver transplantation.",
+      "text": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile. What constitutes adequate bile flow, however, has not previously been defined. The present study was undertaken to characterize biliary water and electrolyte secretion following hepatic transplantation. Bile was sampled from nine liver transplant recipients for 15-25 consecutive days during chronic t-tube biliary drainage. Liver biopsies and t-tube cholangiograms were unremarkable in all patients. During the first post-operative day mean bile flow, bile salt concentration, [BS], and bile salt output (BSO) were 60.0 microliters/min, 6.8 mM and 0.41 mumol/min, respectively. [BS] increased over days 1-5 and then plateaued at 12.2 mM over days 6-25 post-transplant. BSO and bile flow increased over days 1-12 before achieving steady-state values of 4.52 mumol/min and 334.7 microliters/min, respectively. In each patient bile flow increased linearly with increasing BSO. Choleretic index (CI), varied from 36.9-77.1 microliters/mumol (mean: 50.7 +/- 8.8). The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8). Only primary bile salts (82% cholate and 17% chenodeoxycholate), were observed in the bile of each patient. Biliary electrolyte concentrations were similar to that observed in plasma. Each was relatively unaffected by changes in bile flow and BSO. Electrolyte outputs increased linearly with respect to both BSO and bile flow. We conclude that recovery of bile secretion following orthotopic liver transplantation occurs gradually over a 10-12 day period and is strongly dependent upon bile salt secretion.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/1940266/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 0.9071463942527771,
+      "relevance_score": 0.712415874004364,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.49869111180305475,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:32108995",
+      "document_id": "pubmed:32108995",
+      "title": "Bile Biochemistry Following Liver Reperfusion in the Recipient and Its Association With Cholangiopathy.",
+      "text": "Cholangiocytes secrete bicarbonate and absorb glucose, producing bile with alkaline pH and low glucose content. These functions of cholangiocytes have been suggested as a marker of bile duct viability during normothermic ex\u00a0situ liver perfusion, and they are now monitored routinely after reperfusion in our center. In this study, we reviewed the composition of bile immediately after reperfusion in liver transplant recipients to determine normal posttransplant parameters and the predictive value of bile biochemistry for the later development of cholangiopathy. After reperfusion of the liver graft, a cannula was placed in the bile duct to collect bile over a median 44-minute time period. The bile produced was analyzed using a point-of-care blood gas analyzer (Cobas b221, Roche Diagnostics, Indianapolis, IN). A total of 100 liver transplants (35 from donation after circulatory death and 65 from donation after brain death) were studied. Median bile pH was 7.82 (interquartile range [IQR], 7.67-7.98); median bile glucose was 2.1 (1.4-3.7) mmol/L; median blood-bile-blood pH difference was 0.50 (0.37-0.62); and median blood-bile glucose difference was 7.1 (5.6-9.1) mmol/L. There were 12 recipients who developed cholangiopathy over a median follow-up of 15 months (IQR, 11-20 months). Bile sodium (142 versus 147 mmol/L; P\u00a0=\u00a00.02) and blood-bile glucose concentration differences (5.2 versus 7.6 mmol/L; P\u00a0=\u00a00.001) were significantly lower and were associated with ischemic cholangiopathy. In conclusion, bile biochemistry may provide useful insights into cholangiocyte function and, hence, bile duct viability. Our results suggest bile glucose is the most sensitive predictor of cholangiopathy.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32108995/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -0.053485944867134094,
+      "relevance_score": 0.48663172125816345,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.3406422048807144,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "web:07a13e59a5852d1776fb",
+      "document_id": "web:07a13e59a5852d1776fb",
+      "title": "Liver: Where It\u2019s Located, Function & Anatomy",
+      "text": "Liver: Where It\u2019s Located, Function & Anatomy\nHome /\nBody Systems & Organs /\nLiver\nAdvertisement\nAdvertisement\nLiver\nMedically Reviewed. Last updated on 09/26/2025 .\nYour liver performs more than 500 important functions, from filtering blood and processing nutrients to fighting infections. It creates bile and important proteins your body needs. You can\u2019t live without a liver: If your liver fails, you\u2019ll need an organ transplant to survive.\nAdvertisement\nCare at Cleveland Clinic\nLiver Care for Adults\nLiver Care for Children\nMake an Appointment\nImage content: This image is available to view online.\nView image online ( https://my.clevelandclinic.org/-/scassets/Images/org/health/articles/21481-liver.jpg )\nYour liver is your largest internal organ. It performs hundreds of important functions in your body.\nWhat is my liver?\nYour liver is the largest internal organ in your body and one of the only organs that can regenerate itself. The liver plays a crucial role in filtering blood, storing energy and producing bile for digestion.\nAdvertisement\nCleveland Clinic is a non-profit academic medical center. Advertising on our site helps support our mission. We do not endorse non-Cleveland Clinic products or services. Policy\nUnfortunately, hundreds of diseases and conditions can damage your liver so it can\u2019t work. Some of these can be life-threatening. Hepatologists , medical specialists who diagnose and treat liver disease, can treat and sometimes cure these diseases. And there are many things that you can do to keep your liver well and working as it should.\nCare at Cleveland Clinic\nLiver Care for Adults\nLiver Care for Children\nMake an Appointment\nView video online ( https://cdnapisec.kaltura.com/p/2207941/sp/220794100/playManifest/entryId/1_tvodsw7y/flavorId/1_5f3sgelj/format/url/protocol/https/a.mp4 )\nYour liver is the biggest organ in your body, and it performs hundreds of functions every day.\nYour liver is the biggest organ in your body, and it performs hundreds of functions every day.\nWhat is the liver\u2019s function?\nYour liver\u2019s biggest job is filtering harmful substances and waste from your blood. Every day, your liver filters more than 250 gallons of blood. If that wasn\u2019t enough, and among many other duties, your liver also:\nMakes cholesterol that your body uses in different ways\nHelps produce certain hormones, protects your cells and is a key ingredient in bile production\nMakes proteins \u2014 like clotting factors that manage bleeding and albumin, which manages fluid pressure in your bloodstream\nBreaks down toxins and germs so they safely leave your body in your pee and poop\nWorks by breaking down fats in your blood to produce energy, and if there are too many, they may get stored as extra fat\nAnatomy\nWhere is my liver located?\nYour liver is on the right side of your upper body. It\u2019s located under your ribs, just next to your stomach.\nAdvertisement\nWhat does my liver look like?\nYour liver looks like a spongy, reddish-brown wedge of tissue. The wedge, which may be about the size and shape of a football, may weigh between 3 and 5 pounds.\nThe liver has two lobes (sections). The lobe on the right is slightly larger than the lobe on the left. Both lobes contain many blood vessels and thousands of smaller lobes (lobules) that are tiny clusters of liver cells (hepatocytes).\nSome of the important parts of your liver anatomy include:\nLobules : These are tiny clusters of liver cells that connect with your bile ducts , the tubes that transport bile from your liver to your small intestine.\nHepatic veins : These are blood vessels in your liver\u2019s lobes that carry blood through your liver so it can remove waste and toxins that eventually leave your body through your pee and poop.\nBile ducts : Bile ducts carry the bile that your liver produces out to the rest of your body.\nConditions and Disorders\nWhat common conditions and disorders can affect my liver?\nThere are over 100 types of liver diseases , but they fall into a handful of subtypes. Examples include:\nAlcohol-induced hepatitis : Heavy alcohol use can cause acute or chronic hepatitis (inflammation in your liver). If it\u2019s frequent or lasts a long time, it can lead to cirrhosis and liver failure.\nBile duct obstruction : Conditions that block the flow of bile through your bile ducts can cause it to build up and injure your liver. Gallstones and biliary stricture (narrowing) are some common causes.\nInherited metabolic disorders : Some of these disorders can cause toxic products to build up in your blood. Hemochromatosis is one example.\nLiver lesions : These are abnormal growths in your liver. Most are benign (noncancerous), including liver cysts and liver hemangiomas. But some abnormal growths are liver cancer , including hepatocellular carcinoma, intrahepatic cholangiocarcinoma (bile duct cancer in your liver) and hepatoblastoma .\nSteatotic (fatty) liver disease : These are conditions that involve fat buildup in your liver. Condition types include alcohol-related liver disease, metabolic dysfunction-associated steatotic liver disease ( MASLD ) and non-alcohol-related steatohepatitis .\nToxic hepatitis : Chronic overexposure to toxins, like industrial chemicals or drugs, can cause acute or chronic hepatitis.\nViral hepatitis : Viral hepatitis infections can become chronic infections that cause chronic liver disease, including hepatitis B and hepatitis C. Hepatitis A is an acute (short-term) infection.\nWhat are common signs and symptoms of liver problems?\nCommon early symptoms of liver problems include:\nUpper abdominal pain\nNausea\nYour skin and eyes turning yellow ( jaundice )\nWhen liver disease is more advanced and your liver function declines, you may develop many other symptoms, like:\nConfusion or mild cognitive impairment\nSwollen belly or legs\nWhat tests can check my liver health?\nHealthcare providers may use a combination of tests to check on your liver or to diagnose liver diseases, like:\nBlood tests : Liver function tests measure substances in your blood that your liver produces, like liver enzymes , proteins and bilirubin . High or low levels may indicate liver disease.\nImaging tests : Imaging tests of your liver can show signs of inflammation, lesions or scarring. Examples include liver ultrasound , CT scan, nuclear liver scan and elastography .\nLiver biopsy : To diagnose some conditions, your healthcare provider might need to take a small tissue sample from your liver to examine in a lab. They can usually do this with a hollow needle.\nWhat are common treatments for liver conditions?\nDifferent treatments are available to treat different liver diseases, including medications and surgery. The most common \u2014 and important \u2014 treatment for liver disease is reducing stress on your liver through diet and lifestyle changes. If liver disease reaches the end stages, you\u2019ll need a liver transplant.\nAdvertisement\nCare\nHow can I take care of my liver?\nTo keep your liver healthy and functioning well, you can:\nWhen should I contact a healthcare provider?",
+      "source": "my.clevelandclinic.org",
+      "source_url": "https://my.clevelandclinic.org/health/body/21481-liver",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -0.8240872621536255,
+      "relevance_score": 0.304896742105484,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.060979348421096806,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v3",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence states that the liver produces bile, which directly contradicts the claim that the liver does not produce bile.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:1940266",
+                "quote": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile."
+              },
+              {
+                "evidence_id": "pubmed:1940266",
+                "quote": "The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8)."
+              },
+              {
+                "evidence_id": "pubmed:1940266",
+                "quote": "Bile was sampled from nine liver transplant recipients for 15-25 consecutive days during chronic t-tube biliary drainage."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:1940266",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:32108995",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:07a13e59a5852d1776fb",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v3",
+              "claim_parts": {
+                "subject": "liver",
+                "relationship": "does not produce",
+                "outcome": "bile",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence consistently refers to the liver as the organ that produces bile. For example, 'The present study was undertaken to characterize biliary water and electrolyte secretion following hepatic transplantation' and",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E3S11"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile.",
+                  "claim_fragment": "liver",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:1940266",
+                      "quote": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile."
+                    },
+                    {
+                      "evidence_id": "web:07a13e59a5852d1776fb",
+                      "quote": "It creates bile and important proteins your body needs."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence states that the liver produces bile, which directly contradicts the claim that the liver does not produce bile.",
+                  "sentence_ids": [
+                    "E1S11",
+                    "E2S1"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8).",
+                  "claim_fragment": "does not produce",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:1940266",
+                      "quote": "The y-intercept for this relationship ranged from 52.4-156.9 microliters/min (mean: 95.9 +/- 81.8)."
+                    },
+                    {
+                      "evidence_id": "pubmed:32108995",
+                      "quote": "Cholangiocytes secrete bicarbonate and absorb glucose, producing bile with alkaline pH and low glucose content."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence explicitly mentions bile production by the liver, such as 'The present study was undertaken to characterize biliary water and electrolyte secretion following hepatic transplantation' and 'Bile was sampled'.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E1S4"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile.",
+                  "claim_fragment": "bile",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:1940266",
+                      "quote": "Recovery of hepatic function following orthotopic liver transplantation includes the ability to produce 'adequate' bile."
+                    },
+                    {
+                      "evidence_id": "pubmed:1940266",
+                      "quote": "Bile was sampled from nine liver transplant recipients for 15-25 consecutive days during chronic t-tube biliary drainage."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:1940266"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.1,
+              "REFUTED": 0.8,
+              "NEI": 0.1
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 42726.666458,
+  "completed_at_utc": "2026-10-29T03:55:06.760252Z"
+}

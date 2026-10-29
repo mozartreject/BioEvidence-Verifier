@@ -1,0 +1,780 @@
+{
+  "request": {
+    "request_id": "0fbcd135-48be-43da-b2ca-6d2d63aa4810",
+    "claim": "Eating seven almonds at bedtime increases lung capacity by exactly 11% in healthy violinists.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:07:08.622162Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:07:08.622234Z",
+      "ended_at_utc": "2026-10-29T03:07:09.223937Z",
+      "latency_ms": 601.7002500000217
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "web:531abc4e44d3d5319319",
+        "document_id": "web:531abc4e44d3d5319319",
+        "title": "Healthy diet",
+        "text": "Healthy diet\nSkip to main content\nHealthy diet\nnutrition\nnutrition\n\u00a9\nCredits\nPhysical activity\nDigital health\nNo tobacco\nA healthy diet is essential for good health and nutrition.\nIt protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet.\nA healthy diet comprises a combination of different foods. These include:\nStaples like cereals (wheat, barley, rye, maize or rice) or starchy tubers or roots (potato, yam, taro or cassava).\nLegumes (lentils and beans).\nFruit and vegetables.\nFoods from animal sources (meat, fish, eggs and milk).\nHere is some useful information, based on WHO recommendations, to follow a healthy diet, and the benefits of doing so.\nBreastfeed babies and young children:\nA healthy diet starts early in life - breastfeeding fosters healthy growth, and may have longer-term health benefits, like reducing the risk of becoming overweight or obese and developing noncommunicable diseases later in life.\nFeeding babies exclusively with breast milk from birth to 6 months of life is important for a healthy diet. It is also important to introduce a variety of safe and nutritious complementary foods at 6 months of age, while continuing to breastfeed until your child is two years old and beyond.\nEat plenty of vegetables and fruit:\nThey are important sources of vitamins, minerals, dietary fibre, plant protein and antioxidants.\nPeople with diets rich in vegetables and fruit have a significantly lower risk of obesity, heart disease, stroke, diabetes and certain types of cancer.\nEat less fat:\nFats and oils and concentrated sources of energy. Eating too much, particularly the wrong kinds of fat, like saturated and industrially-produced trans-fat, can increase the risk of heart disease and stroke.\nUsing unsaturated vegetable oils (olive, soy, sunflower or corn oil) rather than animal fats or oils high in saturated fats (butter, ghee, lard, coconut and palm oil) will help consume healthier fats.\nTo avoid unhealthy weight gain, consumption of total fat should not exceed 30% of a person's overall energy intake.\nLimit intake of sugars:\nFor a healthy diet, sugars should represent less than 10% of your total energy intake. Reducing even further to under 5% has additional health benefits.\nChoosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars.\nLimiting intake of soft drinks, soda and other drinks high in sugars (fruit juices, cordials and syrups, flavoured milks and yogurt drinks) also helps reduce intake of sugars.\nReduce salt intake:\nKeeping your salt intake to less than 5g per day helps prevent hypertension and reduces the risk of heart disease and stroke in the adult population.\nLimiting the amount of salt and high-sodium condiments (soy sauce and fish sauce) when cooking and preparing foods helps reduce salt intake.\nMore information:\nWHO 5 keys to a healthy diet\nWHO healthy diet fact sheet\nWHO salt reduction fact sheet\nWHO obesity and overweight fact sheet\nKeep going!\nWhether you are a seasoned health advocate or just now committing to taking the first steps in becoming more healthy, share your progress and inspire your friends and family to do the same. While you are here, take a minute to sign up to our weekly updates and we'll be in touch with more health advice and latest findings to improve your health and wellbeing.\nStay connected\nSubscribe to our weekly updates\nShare your story\nInspire\nfriends on social media\nDo good\nBecome\na WHO volunteer",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.77357292175293,
+        "relevance_score": 2.0945350115653127e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:070058b0df8997e0add5",
+        "document_id": "web:070058b0df8997e0add5",
+        "title": "Healthy diet",
+        "text": "Key facts\nDiet plays a critical role in shaping the health and well-being of both individuals and populations, and unhealthy diets are a major risk factor for disease and disability.\nHealthy diets help to protect against malnutrition in all its forms, as well as noncommunicable diseases (NCDs), including diabetes, heart disease, stroke and cancer.\nHealthy dietary practices start early in life \u2013 breastfeeding fosters healthy growth and improves cognitive development.\nDietary behaviours and preferences established in childhood and adolescence often extend into adulthood.\nHealthy diets come in many forms, but the four core principles of adequacy, balance, moderation and diversity should be the foundation of any healthy diet.\nA diet must also be safe to be healthy, i.e. free from microbial and chemical contaminants.\nA variety of minimally processed and unprocessed foods low in unhealthy fats, free sugars and sodium are the foundation of any healthy diet.\nOverview\nConsuming a healthy diet throughout the life-course helps to prevent malnutrition in all its forms as well as a range of noncommunicable diseases (NCDs) and conditions.\nHowever, change in food production and food systems, rapid urbanization and changing lifestyles have led to a shift in dietary patterns. People are now consuming more highly processed foods high in unhealthy fats, free sugars and salt/sodium, and many people do not eat enough fruit and vegetables or consume sufficient dietary fibre.\nThe exact make-up of a diversified, balanced and healthy diet will vary depending on individual characteristics (e.g. age, gender, lifestyle and degree of physical activity), cultural context, locally-available foods and dietary customs.\nHowever, the basic principles of what constitutes a healthy diet remain the same and are described in four principles:\nadequacy : meets, without exceeding, micronutrient and macronutrient needs such that deficiencies are prevented;\nDiets embracing these four core principles promote health throughout the life course.\nWHO guidance on healthy diets\nCarbohydrates\nFresh fruit and vegetables are great choices but frozen and canned are also good, provided they don\u2019t have added sugars or excess sodium. While fruit juice can be consumed, most varieties including those without added sugars contain significant amounts of free sugars, the consumption of which should be limited.\nEveryone older than 10 years of age should aim for at least 400 grams of fruits and vegetables per day, with lesser amounts for children under 10: at least 250 or 350 grams for children 2\u20135 or 6\u20139 years of age, respectively.\nEveryone older than 10 years of age should also aim for a daily intake of at least 25 grams of naturally-occurring dietary fibre as found in foods, with lesser amounts for children under 10: at least 15 or 21 grams for children 2\u20135 or 6\u20139 years of age, respectively.\nSugars\nThe consumption of free sugars should be limited to less than 10% of total daily energy intake, which is equivalent to 50 g (or about 12 level teaspoons) for a person of healthy body weight consuming about 2000 calories per day. Limiting further to 5% or less of total daily energy intake may provide additional health benefits.\nConsumption of free sugars should be limited throughout the life course. Free sugars include monosaccharides and disaccharides (e.g. sucrose, fructose, glucose) added to foods and beverages by the manufacturer, cook or consumer, and sugars naturally present in honey, syrups, fruit juices and fruit juice concentrates.\nFats\nThe quality of dietary fat is important. Unsaturated fat (found in fish, avocado and nuts, and in sunflower, soybean, canola and olive oils) is preferable to saturated fat (found in fatty meat, butter, palm and coconut oil, cream, cheese, ghee and lard) and trans fat of all kinds, including both industrially-produced trans fat (found in baked and fried foods, and pre-packaged snacks and foods, such as frozen pizza, pies, cookies, biscuits, wafers, and cooking oils and spreads) and ruminant trans fat (found in meat and dairy foods from ruminant animals, such as cows, sheep, goats and camels).\nNo more than 10% of total energy intake should come from saturated fat and no more than 1% of total energy from trans fat of any type. Lower intakes of saturated and trans fat may have additional health benefits. Saturated and trans fat can be replaced with polyunsaturated fat or monounsaturated fat from plant sources. Saturated fat can also be replaced by carbohydrates from foods containing naturally-occurring dietary fibre, such as whole grains, fruits, vegetables and pulses. In particular, industrially-produced trans fats are not part of a healthy diet and should be avoided.\nFat intake, especially saturated and trans fat, can be reduced by: steaming or boiling instead of frying when cooking; replacing butter, lard and ghee with oils rich in polyunsaturated fat, such as soybean, canola (rapeseed), corn, safflower and sunflower oils; eating reduced-fat dairy foods and lean meats, or trimming visible fat from meat; and limiting the consumption of baked and fried foods, and pre-packaged snacks and foods (e.g. doughnuts, cakes, pies, cookies, biscuits and wafers) that contain industrially-produced trans fat.\nProtein\nProteins provide the building blocks for many of the structural elements of the body, such as muscle, as well as functional molecules such as hormones and enzymes. Protein intake at 10\u201315% of total daily energy intake is generally sufficient to meet the needs of adults (approximately 50\u201375 grams for a person of healthy body weight consuming about 2000 calories per day).\nProtein intake may be greater than 15% of total daily energy intake during adolescence, and for athletes, body builders and others actively building and/or maintaining significant amounts of muscle mass. Consuming excessive amounts of protein, however, can place a metabolic burden on the body, particularly the kidneys.\nA potassium intake of at least 90 mmol/day (3510 mg/day) for adults may be beneficial. For children the amount of potassium is less and needs to be estimated based on energy intake. Intake of potassium can be increased by consuming fresh fruit and vegetables.\nLower-sodium salt substitutes (LSSS), in which a proportion of the sodium is typically replaced with potassium, are alternatives to regular table salt.. These products can contribute to reducing sodium intake in people not at risk of hyperkalaemia (elevated potassium levels in the blood), especially in populations where discretionary salt is a major source of sodium intake and can therefore help reduce cardiovascular disease through both lower sodium intake and higher potassium intake. WHO recommends this intervention for settings where health systems have the capacity to detect promptly and manage potential cases of kidney disease.\nVitamins and minerals (micronutrients)\nFoods\nFor infants and young children\nHow to promote healthy diets\nWHO response",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.933053016662598,
+        "relevance_score": 1.785778658813797e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:cdc95d47602aef189b60",
+        "document_id": "web:cdc95d47602aef189b60",
+        "title": "Eating a balanced diet - NHS NHS",
+        "text": "Eating a balanced diet\nEating a healthy, balanced diet is an important part of maintaining good health and can help you feel your best.\nThis means eating a wide variety of foods in the right proportions, and consuming the right amount of food and drink to achieve and maintain a healthy body weight.\nThis page covers healthy eating advice for the general population.\nPeople with special dietary needs or a medical condition should ask their doctor or a registered dietitian for advice.\nFood groups in your diet\nThe Eatwell Guide shows that to have a healthy, balanced diet, people should try to:\neat at least 5 portions of a variety of fruit and vegetables every day (see 5 A Day )\nbase meals on higher-fibre starchy foods like potatoes, bread, rice or pasta\nhave some dairy or dairy alternatives (such as soya drinks)\neat some beans, pulses, fish, eggs, meat and other protein\nchoose unsaturated oils and spreads, and eat them in small amounts\ndrink at least 6 to 8 glasses of fluids a day \u2013 this can include tap and bottled water, tea, coffee and fruit juice\nIf you're having foods and drinks that are high in fat, salt and sugar, have these less often and in small amounts.\nTry to choose a variety of different foods from the 5 main food groups to get a wide range of nutrients.\nMost people in the UK eat and drink too many calories, too much saturated fat, sugar and salt, and not enough fruit, vegetables, oily fish or fibre .\nThe Eatwell Guide does not apply to children under the age of 2 because they have different nutritional needs.\nAfter the age of 2 years, children should move to eating the same foods as the rest of the family in the proportions shown in the Eatwell Guide.\nFruit and vegetables: are you getting your 5 A Day?\nFruit and vegetables are a good source of vitamins and minerals and fibre, and should make up just over a third of the food you eat each day.\nIt's recommended that you eat at least 5 portions of a variety of fruit and vegetables every day. They can be fresh, frozen, canned, dried or juiced.\nThere's evidence that people who eat at least 5 portions of fruit and vegetables a day can have a lower risk of heart disease, stroke and some cancers.\nEating 5 portions is not as hard as it sounds.\nA portion is:\n80g of fresh, canned or frozen fruit and vegetables\n80g of beans (kidney, soy and butter beans) and pulses (lentils and chickpeas)\n30g of dried fruit \u2013 which should be kept to mealtimes\n150ml glass of fruit juice or smoothie \u2013 but do not have more than 1 portion a day as these drinks are sugary and can damage teeth\nJust 1 apple, banana, pear or similar-sized fruit is 1 portion each.\nA slice of pineapple or melon is also 1 portion, and 3 heaped tablespoons of vegetables is another portion.\nAdding a tablespoon of dried fruit, such as raisins, to your morning cereal is an easy way to get 1 portion.\nYou could also swap your mid-morning biscuit for a banana and add a side salad to your lunch.\nIn the evening, have a portion of vegetables with dinner and fresh fruit with plain, lower-fat yoghurt for dessert to reach your 5 A Day.\nFind out more about what counts towards your 5 A Day\nStarchy foods in your diet\nStarchy foods should make up just over a third of everything you eat. This means your meals should be based on these foods.\nChoose wholegrain or wholemeal varieties of starchy foods, such as brown rice, wholewheat pasta, and brown, wholemeal or higher-fibre white bread.\nThey contain more fibre, and usually more vitamins and minerals, than white varieties.\nPotatoes with the skins on are a great source of fibre and vitamins. For example, when having boiled potatoes or a jacket potato, eat the skin too.\nFind out more about starchy foods\nMilk and dairy foods (and alternatives)\nMilk and dairy foods, such as cheese and yoghurt, are good sources of protein. They also contain calcium, which helps keep your bones healthy.\nGo for lower-fat and lower-sugar products where possible.\nChoose semi-skimmed, 1% fat or skimmed milk, as well as lower-fat hard cheeses or cottage cheese, and lower-fat, lower-sugar yoghurt.\nDairy alternatives, such as soya drinks, are also included in this food group.\nWhen buying alternatives, choose unsweetened versions that are fortified with vitamins and minerals, such as vitamin D and calcium.\nFind out more about milk and dairy foods\nBeans, pulses, fish, eggs, meat and other proteins\nThese foods are all good sources of protein, which is essential for the body to grow and repair itself.\nThey're also good sources of a range of vitamins and minerals.\nMeat is a good source of protein, vitamins and minerals, including iron, zinc and B vitamins. It's also one of the main sources of vitamin B12.\nChoose lean cuts of meat and skinless poultry whenever possible to cut down on fat. Always cook meat thoroughly.\nTry to eat less red and processed meat like bacon, ham and sausages as this may help reduce your risk of getting certain cancers, such as bowel cancer.\nYou should limit the amount of red meat you eat to 3 portions a week (350 to 500g of cooked meat per portion).\nFind out more about including meat in your diet\nEggs and fish are also good sources of protein, and contain many vitamins and minerals. Oily fish is particularly rich in omega-3 fatty acids.\nAim to eat at least 2 portions of fish a week, including 1 portion of oily fish.\nYou can choose from fresh, frozen or canned, but remember that canned and smoked fish can often be high in salt.\nPulses, including beans, peas and lentils, are naturally very low in fat and high in fibre, protein, vitamins and minerals.\nNuts are high in fibre, and unsalted nuts make a good snack. But they do still contain high levels of fat, so eat them in moderation.\nOils and spreads\nEat less saturated fat, sugar and salt\nToo much saturated fat can increase the amount of cholesterol in the blood, which increases your risk of developing heart disease .\nRegularly consuming foods and drinks high in sugar increases your risk of obesity and tooth decay .\nEating too much salt can raise your blood pressure, which increases your risk of getting heart disease or having a stroke.\nSee 8 tips for healthy eating to find out more about why you need to cut down on saturated fat, sugar and salt, which foods they're found in and how to make healthier choices.\nFind out more about how to eat less saturated fat\nNeed to lose weight?\nMost adults in England are overweight or obese. Check whether you're a healthy weight using the BMI calculator .\nIf you need to lose weight, you can use the NHS weight loss plan . It's a free 12-week diet and exercise plan to help you lose weight and develop healthier habits.\nTake the Healthy Choices quiz\nIf you want to improve your health and wellbeing but are not sure where to start, the Healthy Choices quiz on the NHS Better Health website can give you personalised advice about how to live a healthier life.\nVideo: Eating well on a budget\nIn this video, a dietitian gives advice on how to eat healthily on a budget\nMore in",
+        "source": "www.nhs.uk",
+        "source_url": "https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eating-a-balanced-diet/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.984851837158203,
+        "relevance_score": 1.6956339095486328e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Eating seven almonds at bedtime increases lung capacity by exactly 11% in healthy violinists."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:07:09.223994Z",
+      "ended_at_utc": "2026-10-29T03:07:09.267477Z",
+      "latency_ms": 43.48604200004047
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "web:531abc4e44d3d5319319",
+        "document_id": "web:531abc4e44d3d5319319",
+        "title": "Healthy diet",
+        "text": "Healthy diet\nSkip to main content\nHealthy diet\nnutrition\nnutrition\n\u00a9\nCredits\nPhysical activity\nDigital health\nNo tobacco\nA healthy diet is essential for good health and nutrition.\nIt protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet.\nA healthy diet comprises a combination of different foods. These include:\nStaples like cereals (wheat, barley, rye, maize or rice) or starchy tubers or roots (potato, yam, taro or cassava).\nLegumes (lentils and beans).\nFruit and vegetables.\nFoods from animal sources (meat, fish, eggs and milk).\nHere is some useful information, based on WHO recommendations, to follow a healthy diet, and the benefits of doing so.\nBreastfeed babies and young children:\nA healthy diet starts early in life - breastfeeding fosters healthy growth, and may have longer-term health benefits, like reducing the risk of becoming overweight or obese and developing noncommunicable diseases later in life.\nFeeding babies exclusively with breast milk from birth to 6 months of life is important for a healthy diet. It is also important to introduce a variety of safe and nutritious complementary foods at 6 months of age, while continuing to breastfeed until your child is two years old and beyond.\nEat plenty of vegetables and fruit:\nThey are important sources of vitamins, minerals, dietary fibre, plant protein and antioxidants.\nPeople with diets rich in vegetables and fruit have a significantly lower risk of obesity, heart disease, stroke, diabetes and certain types of cancer.\nEat less fat:\nFats and oils and concentrated sources of energy. Eating too much, particularly the wrong kinds of fat, like saturated and industrially-produced trans-fat, can increase the risk of heart disease and stroke.\nUsing unsaturated vegetable oils (olive, soy, sunflower or corn oil) rather than animal fats or oils high in saturated fats (butter, ghee, lard, coconut and palm oil) will help consume healthier fats.\nTo avoid unhealthy weight gain, consumption of total fat should not exceed 30% of a person's overall energy intake.\nLimit intake of sugars:\nFor a healthy diet, sugars should represent less than 10% of your total energy intake. Reducing even further to under 5% has additional health benefits.\nChoosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars.\nLimiting intake of soft drinks, soda and other drinks high in sugars (fruit juices, cordials and syrups, flavoured milks and yogurt drinks) also helps reduce intake of sugars.\nReduce salt intake:\nKeeping your salt intake to less than 5g per day helps prevent hypertension and reduces the risk of heart disease and stroke in the adult population.\nLimiting the amount of salt and high-sodium condiments (soy sauce and fish sauce) when cooking and preparing foods helps reduce salt intake.\nMore information:\nWHO 5 keys to a healthy diet\nWHO healthy diet fact sheet\nWHO salt reduction fact sheet\nWHO obesity and overweight fact sheet\nKeep going!\nWhether you are a seasoned health advocate or just now committing to taking the first steps in becoming more healthy, share your progress and inspire your friends and family to do the same. While you are here, take a minute to sign up to our weekly updates and we'll be in touch with more health advice and latest findings to improve your health and wellbeing.\nStay connected\nSubscribe to our weekly updates\nShare your story\nInspire\nfriends on social media\nDo good\nBecome\na WHO volunteer",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.77357292175293,
+        "relevance_score": 2.0945350115653127e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 4.189070023130626e-06,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:070058b0df8997e0add5",
+        "document_id": "web:070058b0df8997e0add5",
+        "title": "Healthy diet",
+        "text": "Key facts\nDiet plays a critical role in shaping the health and well-being of both individuals and populations, and unhealthy diets are a major risk factor for disease and disability.\nHealthy diets help to protect against malnutrition in all its forms, as well as noncommunicable diseases (NCDs), including diabetes, heart disease, stroke and cancer.\nHealthy dietary practices start early in life \u2013 breastfeeding fosters healthy growth and improves cognitive development.\nDietary behaviours and preferences established in childhood and adolescence often extend into adulthood.\nHealthy diets come in many forms, but the four core principles of adequacy, balance, moderation and diversity should be the foundation of any healthy diet.\nA diet must also be safe to be healthy, i.e. free from microbial and chemical contaminants.\nA variety of minimally processed and unprocessed foods low in unhealthy fats, free sugars and sodium are the foundation of any healthy diet.\nOverview\nConsuming a healthy diet throughout the life-course helps to prevent malnutrition in all its forms as well as a range of noncommunicable diseases (NCDs) and conditions.\nHowever, change in food production and food systems, rapid urbanization and changing lifestyles have led to a shift in dietary patterns. People are now consuming more highly processed foods high in unhealthy fats, free sugars and salt/sodium, and many people do not eat enough fruit and vegetables or consume sufficient dietary fibre.\nThe exact make-up of a diversified, balanced and healthy diet will vary depending on individual characteristics (e.g. age, gender, lifestyle and degree of physical activity), cultural context, locally-available foods and dietary customs.\nHowever, the basic principles of what constitutes a healthy diet remain the same and are described in four principles:\nadequacy : meets, without exceeding, micronutrient and macronutrient needs such that deficiencies are prevented;\nDiets embracing these four core principles promote health throughout the life course.\nWHO guidance on healthy diets\nCarbohydrates\nFresh fruit and vegetables are great choices but frozen and canned are also good, provided they don\u2019t have added sugars or excess sodium. While fruit juice can be consumed, most varieties including those without added sugars contain significant amounts of free sugars, the consumption of which should be limited.\nEveryone older than 10 years of age should aim for at least 400 grams of fruits and vegetables per day, with lesser amounts for children under 10: at least 250 or 350 grams for children 2\u20135 or 6\u20139 years of age, respectively.\nEveryone older than 10 years of age should also aim for a daily intake of at least 25 grams of naturally-occurring dietary fibre as found in foods, with lesser amounts for children under 10: at least 15 or 21 grams for children 2\u20135 or 6\u20139 years of age, respectively.\nSugars\nThe consumption of free sugars should be limited to less than 10% of total daily energy intake, which is equivalent to 50 g (or about 12 level teaspoons) for a person of healthy body weight consuming about 2000 calories per day. Limiting further to 5% or less of total daily energy intake may provide additional health benefits.\nConsumption of free sugars should be limited throughout the life course. Free sugars include monosaccharides and disaccharides (e.g. sucrose, fructose, glucose) added to foods and beverages by the manufacturer, cook or consumer, and sugars naturally present in honey, syrups, fruit juices and fruit juice concentrates.\nFats\nThe quality of dietary fat is important. Unsaturated fat (found in fish, avocado and nuts, and in sunflower, soybean, canola and olive oils) is preferable to saturated fat (found in fatty meat, butter, palm and coconut oil, cream, cheese, ghee and lard) and trans fat of all kinds, including both industrially-produced trans fat (found in baked and fried foods, and pre-packaged snacks and foods, such as frozen pizza, pies, cookies, biscuits, wafers, and cooking oils and spreads) and ruminant trans fat (found in meat and dairy foods from ruminant animals, such as cows, sheep, goats and camels).\nNo more than 10% of total energy intake should come from saturated fat and no more than 1% of total energy from trans fat of any type. Lower intakes of saturated and trans fat may have additional health benefits. Saturated and trans fat can be replaced with polyunsaturated fat or monounsaturated fat from plant sources. Saturated fat can also be replaced by carbohydrates from foods containing naturally-occurring dietary fibre, such as whole grains, fruits, vegetables and pulses. In particular, industrially-produced trans fats are not part of a healthy diet and should be avoided.\nFat intake, especially saturated and trans fat, can be reduced by: steaming or boiling instead of frying when cooking; replacing butter, lard and ghee with oils rich in polyunsaturated fat, such as soybean, canola (rapeseed), corn, safflower and sunflower oils; eating reduced-fat dairy foods and lean meats, or trimming visible fat from meat; and limiting the consumption of baked and fried foods, and pre-packaged snacks and foods (e.g. doughnuts, cakes, pies, cookies, biscuits and wafers) that contain industrially-produced trans fat.\nProtein\nProteins provide the building blocks for many of the structural elements of the body, such as muscle, as well as functional molecules such as hormones and enzymes. Protein intake at 10\u201315% of total daily energy intake is generally sufficient to meet the needs of adults (approximately 50\u201375 grams for a person of healthy body weight consuming about 2000 calories per day).\nProtein intake may be greater than 15% of total daily energy intake during adolescence, and for athletes, body builders and others actively building and/or maintaining significant amounts of muscle mass. Consuming excessive amounts of protein, however, can place a metabolic burden on the body, particularly the kidneys.\nA potassium intake of at least 90 mmol/day (3510 mg/day) for adults may be beneficial. For children the amount of potassium is less and needs to be estimated based on energy intake. Intake of potassium can be increased by consuming fresh fruit and vegetables.\nLower-sodium salt substitutes (LSSS), in which a proportion of the sodium is typically replaced with potassium, are alternatives to regular table salt.. These products can contribute to reducing sodium intake in people not at risk of hyperkalaemia (elevated potassium levels in the blood), especially in populations where discretionary salt is a major source of sodium intake and can therefore help reduce cardiovascular disease through both lower sodium intake and higher potassium intake. WHO recommends this intervention for settings where health systems have the capacity to detect promptly and manage potential cases of kidney disease.\nVitamins and minerals (micronutrients)\nFoods\nFor infants and young children\nHow to promote healthy diets\nWHO response",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.933053016662598,
+        "relevance_score": 1.785778658813797e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 3.571557317627594e-06,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:cdc95d47602aef189b60",
+        "document_id": "web:cdc95d47602aef189b60",
+        "title": "Eating a balanced diet - NHS NHS",
+        "text": "Eating a balanced diet\nEating a healthy, balanced diet is an important part of maintaining good health and can help you feel your best.\nThis means eating a wide variety of foods in the right proportions, and consuming the right amount of food and drink to achieve and maintain a healthy body weight.\nThis page covers healthy eating advice for the general population.\nPeople with special dietary needs or a medical condition should ask their doctor or a registered dietitian for advice.\nFood groups in your diet\nThe Eatwell Guide shows that to have a healthy, balanced diet, people should try to:\neat at least 5 portions of a variety of fruit and vegetables every day (see 5 A Day )\nbase meals on higher-fibre starchy foods like potatoes, bread, rice or pasta\nhave some dairy or dairy alternatives (such as soya drinks)\neat some beans, pulses, fish, eggs, meat and other protein\nchoose unsaturated oils and spreads, and eat them in small amounts\ndrink at least 6 to 8 glasses of fluids a day \u2013 this can include tap and bottled water, tea, coffee and fruit juice\nIf you're having foods and drinks that are high in fat, salt and sugar, have these less often and in small amounts.\nTry to choose a variety of different foods from the 5 main food groups to get a wide range of nutrients.\nMost people in the UK eat and drink too many calories, too much saturated fat, sugar and salt, and not enough fruit, vegetables, oily fish or fibre .\nThe Eatwell Guide does not apply to children under the age of 2 because they have different nutritional needs.\nAfter the age of 2 years, children should move to eating the same foods as the rest of the family in the proportions shown in the Eatwell Guide.\nFruit and vegetables: are you getting your 5 A Day?\nFruit and vegetables are a good source of vitamins and minerals and fibre, and should make up just over a third of the food you eat each day.\nIt's recommended that you eat at least 5 portions of a variety of fruit and vegetables every day. They can be fresh, frozen, canned, dried or juiced.\nThere's evidence that people who eat at least 5 portions of fruit and vegetables a day can have a lower risk of heart disease, stroke and some cancers.\nEating 5 portions is not as hard as it sounds.\nA portion is:\n80g of fresh, canned or frozen fruit and vegetables\n80g of beans (kidney, soy and butter beans) and pulses (lentils and chickpeas)\n30g of dried fruit \u2013 which should be kept to mealtimes\n150ml glass of fruit juice or smoothie \u2013 but do not have more than 1 portion a day as these drinks are sugary and can damage teeth\nJust 1 apple, banana, pear or similar-sized fruit is 1 portion each.\nA slice of pineapple or melon is also 1 portion, and 3 heaped tablespoons of vegetables is another portion.\nAdding a tablespoon of dried fruit, such as raisins, to your morning cereal is an easy way to get 1 portion.\nYou could also swap your mid-morning biscuit for a banana and add a side salad to your lunch.\nIn the evening, have a portion of vegetables with dinner and fresh fruit with plain, lower-fat yoghurt for dessert to reach your 5 A Day.\nFind out more about what counts towards your 5 A Day\nStarchy foods in your diet\nStarchy foods should make up just over a third of everything you eat. This means your meals should be based on these foods.\nChoose wholegrain or wholemeal varieties of starchy foods, such as brown rice, wholewheat pasta, and brown, wholemeal or higher-fibre white bread.\nThey contain more fibre, and usually more vitamins and minerals, than white varieties.\nPotatoes with the skins on are a great source of fibre and vitamins. For example, when having boiled potatoes or a jacket potato, eat the skin too.\nFind out more about starchy foods\nMilk and dairy foods (and alternatives)\nMilk and dairy foods, such as cheese and yoghurt, are good sources of protein. They also contain calcium, which helps keep your bones healthy.\nGo for lower-fat and lower-sugar products where possible.\nChoose semi-skimmed, 1% fat or skimmed milk, as well as lower-fat hard cheeses or cottage cheese, and lower-fat, lower-sugar yoghurt.\nDairy alternatives, such as soya drinks, are also included in this food group.\nWhen buying alternatives, choose unsweetened versions that are fortified with vitamins and minerals, such as vitamin D and calcium.\nFind out more about milk and dairy foods\nBeans, pulses, fish, eggs, meat and other proteins\nThese foods are all good sources of protein, which is essential for the body to grow and repair itself.\nThey're also good sources of a range of vitamins and minerals.\nMeat is a good source of protein, vitamins and minerals, including iron, zinc and B vitamins. It's also one of the main sources of vitamin B12.\nChoose lean cuts of meat and skinless poultry whenever possible to cut down on fat. Always cook meat thoroughly.\nTry to eat less red and processed meat like bacon, ham and sausages as this may help reduce your risk of getting certain cancers, such as bowel cancer.\nYou should limit the amount of red meat you eat to 3 portions a week (350 to 500g of cooked meat per portion).\nFind out more about including meat in your diet\nEggs and fish are also good sources of protein, and contain many vitamins and minerals. Oily fish is particularly rich in omega-3 fatty acids.\nAim to eat at least 2 portions of fish a week, including 1 portion of oily fish.\nYou can choose from fresh, frozen or canned, but remember that canned and smoked fish can often be high in salt.\nPulses, including beans, peas and lentils, are naturally very low in fat and high in fibre, protein, vitamins and minerals.\nNuts are high in fibre, and unsalted nuts make a good snack. But they do still contain high levels of fat, so eat them in moderation.\nOils and spreads\nEat less saturated fat, sugar and salt\nToo much saturated fat can increase the amount of cholesterol in the blood, which increases your risk of developing heart disease .\nRegularly consuming foods and drinks high in sugar increases your risk of obesity and tooth decay .\nEating too much salt can raise your blood pressure, which increases your risk of getting heart disease or having a stroke.\nSee 8 tips for healthy eating to find out more about why you need to cut down on saturated fat, sugar and salt, which foods they're found in and how to make healthier choices.\nFind out more about how to eat less saturated fat\nNeed to lose weight?\nMost adults in England are overweight or obese. Check whether you're a healthy weight using the BMI calculator .\nIf you need to lose weight, you can use the NHS weight loss plan . It's a free 12-week diet and exercise plan to help you lose weight and develop healthier habits.\nTake the Healthy Choices quiz\nIf you want to improve your health and wellbeing but are not sure where to start, the Healthy Choices quiz on the NHS Better Health website can give you personalised advice about how to live a healthier life.\nVideo: Eating well on a budget\nIn this video, a dietitian gives advice on how to eat healthily on a budget\nMore in",
+        "source": "www.nhs.uk",
+        "source_url": "https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eating-a-balanced-diet/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.984851837158203,
+        "relevance_score": 1.6956339095486328e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 3.391267819097266e-06,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:07:09.267507Z",
+      "ended_at_utc": "2026-10-29T03:07:09.267602Z",
+      "latency_ms": 0.10354200003348524
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.01,
+      "nei": 0.92,
+      "supported": 0.07
+    },
+    "verifier_score": 0.92,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "web:531abc4e44d3d5319319",
+      "web:070058b0df8997e0add5",
+      "web:cdc95d47602aef189b60"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cEating seven almonds at bedtime\u201d; relationship: \u201cincreases\u201d; outcome: \u201clung capacity\u201d; population: \u201chealthy violinists\u201d; qualifiers: \u201cexactly 11%\u201d. The evidence does not mention eating almonds or any specific number of almonds at any time of day, let alone at bedtime. The evidence discusses general dietary guidelines and does not address the specific intervention of The evidence does not discuss any specific intervention or its effects on lung capacity, making it impossible to establish a relationship. The evidence does not mention lung capacity or any specific percentage increase in lung capacity, making it impossible to establish an outcome. The evidence does not mention healthy violinists or any specific population, making it impossible to establish a population. The evidence does not mention any specific percentage increase in lung capacity, making it impossible to establish the qualifier.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "web:070058b0df8997e0add5",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:531abc4e44d3d5319319",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:cdc95d47602aef189b60",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Eating seven almonds at bedtime",
+              "relationship": "increases",
+              "outcome": "lung capacity",
+              "population": "healthy violinists",
+              "qualifiers": "exactly 11%"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention eating almonds or any specific number of almonds at any time of day, let alone at bedtime. The evidence discusses general dietary guidelines and does not address the specific intervention of",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Eating seven almonds at bedtime",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss any specific intervention or its effects on lung capacity, making it impossible to establish a relationship.",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "increases",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention lung capacity or any specific percentage increase in lung capacity, making it impossible to establish an outcome.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "lung capacity",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention healthy violinists or any specific population, making it impossible to establish a population.",
+                "sentence_ids": [],
+                "slot": "population",
+                "evidence_phrase": "",
+                "claim_fragment": "healthy violinists",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention any specific percentage increase in lung capacity, making it impossible to establish the qualifier.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly 11%",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "population",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.07,
+            "REFUTED": 0.01,
+            "NEI": 0.92
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "Verdict mismatch: expected NEI, got [empty]; Explanation too short: 0 words; Explanation contains no evidence citation; NEI explanation must explicitly communicate insufficient/inconclusive evidence; Semantic grounding 0.0000 below threshold 0.4500; Evidence coverage -0.0213 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:07:52.768652Z",
+      "ended_at_utc": "2026-10-29T03:08:39.152444Z",
+      "latency_ms": 46383.220582999915
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.92,
+  "evidence": [
+    {
+      "evidence_id": "web:531abc4e44d3d5319319",
+      "document_id": "web:531abc4e44d3d5319319",
+      "title": "Healthy diet",
+      "text": "Healthy diet\nSkip to main content\nHealthy diet\nnutrition\nnutrition\n\u00a9\nCredits\nPhysical activity\nDigital health\nNo tobacco\nA healthy diet is essential for good health and nutrition.\nIt protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet.\nA healthy diet comprises a combination of different foods. These include:\nStaples like cereals (wheat, barley, rye, maize or rice) or starchy tubers or roots (potato, yam, taro or cassava).\nLegumes (lentils and beans).\nFruit and vegetables.\nFoods from animal sources (meat, fish, eggs and milk).\nHere is some useful information, based on WHO recommendations, to follow a healthy diet, and the benefits of doing so.\nBreastfeed babies and young children:\nA healthy diet starts early in life - breastfeeding fosters healthy growth, and may have longer-term health benefits, like reducing the risk of becoming overweight or obese and developing noncommunicable diseases later in life.\nFeeding babies exclusively with breast milk from birth to 6 months of life is important for a healthy diet. It is also important to introduce a variety of safe and nutritious complementary foods at 6 months of age, while continuing to breastfeed until your child is two years old and beyond.\nEat plenty of vegetables and fruit:\nThey are important sources of vitamins, minerals, dietary fibre, plant protein and antioxidants.\nPeople with diets rich in vegetables and fruit have a significantly lower risk of obesity, heart disease, stroke, diabetes and certain types of cancer.\nEat less fat:\nFats and oils and concentrated sources of energy. Eating too much, particularly the wrong kinds of fat, like saturated and industrially-produced trans-fat, can increase the risk of heart disease and stroke.\nUsing unsaturated vegetable oils (olive, soy, sunflower or corn oil) rather than animal fats or oils high in saturated fats (butter, ghee, lard, coconut and palm oil) will help consume healthier fats.\nTo avoid unhealthy weight gain, consumption of total fat should not exceed 30% of a person's overall energy intake.\nLimit intake of sugars:\nFor a healthy diet, sugars should represent less than 10% of your total energy intake. Reducing even further to under 5% has additional health benefits.\nChoosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars.\nLimiting intake of soft drinks, soda and other drinks high in sugars (fruit juices, cordials and syrups, flavoured milks and yogurt drinks) also helps reduce intake of sugars.\nReduce salt intake:\nKeeping your salt intake to less than 5g per day helps prevent hypertension and reduces the risk of heart disease and stroke in the adult population.\nLimiting the amount of salt and high-sodium condiments (soy sauce and fish sauce) when cooking and preparing foods helps reduce salt intake.\nMore information:\nWHO 5 keys to a healthy diet\nWHO healthy diet fact sheet\nWHO salt reduction fact sheet\nWHO obesity and overweight fact sheet\nKeep going!\nWhether you are a seasoned health advocate or just now committing to taking the first steps in becoming more healthy, share your progress and inspire your friends and family to do the same. While you are here, take a minute to sign up to our weekly updates and we'll be in touch with more health advice and latest findings to improve your health and wellbeing.\nStay connected\nSubscribe to our weekly updates\nShare your story\nInspire\nfriends on social media\nDo good\nBecome\na WHO volunteer",
+      "source": "www.who.int",
+      "source_url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.77357292175293,
+      "relevance_score": 2.0945350115653127e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 4.189070023130626e-06,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:070058b0df8997e0add5",
+      "document_id": "web:070058b0df8997e0add5",
+      "title": "Healthy diet",
+      "text": "Key facts\nDiet plays a critical role in shaping the health and well-being of both individuals and populations, and unhealthy diets are a major risk factor for disease and disability.\nHealthy diets help to protect against malnutrition in all its forms, as well as noncommunicable diseases (NCDs), including diabetes, heart disease, stroke and cancer.\nHealthy dietary practices start early in life \u2013 breastfeeding fosters healthy growth and improves cognitive development.\nDietary behaviours and preferences established in childhood and adolescence often extend into adulthood.\nHealthy diets come in many forms, but the four core principles of adequacy, balance, moderation and diversity should be the foundation of any healthy diet.\nA diet must also be safe to be healthy, i.e. free from microbial and chemical contaminants.\nA variety of minimally processed and unprocessed foods low in unhealthy fats, free sugars and sodium are the foundation of any healthy diet.\nOverview\nConsuming a healthy diet throughout the life-course helps to prevent malnutrition in all its forms as well as a range of noncommunicable diseases (NCDs) and conditions.\nHowever, change in food production and food systems, rapid urbanization and changing lifestyles have led to a shift in dietary patterns. People are now consuming more highly processed foods high in unhealthy fats, free sugars and salt/sodium, and many people do not eat enough fruit and vegetables or consume sufficient dietary fibre.\nThe exact make-up of a diversified, balanced and healthy diet will vary depending on individual characteristics (e.g. age, gender, lifestyle and degree of physical activity), cultural context, locally-available foods and dietary customs.\nHowever, the basic principles of what constitutes a healthy diet remain the same and are described in four principles:\nadequacy : meets, without exceeding, micronutrient and macronutrient needs such that deficiencies are prevented;\nDiets embracing these four core principles promote health throughout the life course.\nWHO guidance on healthy diets\nCarbohydrates\nFresh fruit and vegetables are great choices but frozen and canned are also good, provided they don\u2019t have added sugars or excess sodium. While fruit juice can be consumed, most varieties including those without added sugars contain significant amounts of free sugars, the consumption of which should be limited.\nEveryone older than 10 years of age should aim for at least 400 grams of fruits and vegetables per day, with lesser amounts for children under 10: at least 250 or 350 grams for children 2\u20135 or 6\u20139 years of age, respectively.\nEveryone older than 10 years of age should also aim for a daily intake of at least 25 grams of naturally-occurring dietary fibre as found in foods, with lesser amounts for children under 10: at least 15 or 21 grams for children 2\u20135 or 6\u20139 years of age, respectively.\nSugars\nThe consumption of free sugars should be limited to less than 10% of total daily energy intake, which is equivalent to 50 g (or about 12 level teaspoons) for a person of healthy body weight consuming about 2000 calories per day. Limiting further to 5% or less of total daily energy intake may provide additional health benefits.\nConsumption of free sugars should be limited throughout the life course. Free sugars include monosaccharides and disaccharides (e.g. sucrose, fructose, glucose) added to foods and beverages by the manufacturer, cook or consumer, and sugars naturally present in honey, syrups, fruit juices and fruit juice concentrates.\nFats\nThe quality of dietary fat is important. Unsaturated fat (found in fish, avocado and nuts, and in sunflower, soybean, canola and olive oils) is preferable to saturated fat (found in fatty meat, butter, palm and coconut oil, cream, cheese, ghee and lard) and trans fat of all kinds, including both industrially-produced trans fat (found in baked and fried foods, and pre-packaged snacks and foods, such as frozen pizza, pies, cookies, biscuits, wafers, and cooking oils and spreads) and ruminant trans fat (found in meat and dairy foods from ruminant animals, such as cows, sheep, goats and camels).\nNo more than 10% of total energy intake should come from saturated fat and no more than 1% of total energy from trans fat of any type. Lower intakes of saturated and trans fat may have additional health benefits. Saturated and trans fat can be replaced with polyunsaturated fat or monounsaturated fat from plant sources. Saturated fat can also be replaced by carbohydrates from foods containing naturally-occurring dietary fibre, such as whole grains, fruits, vegetables and pulses. In particular, industrially-produced trans fats are not part of a healthy diet and should be avoided.\nFat intake, especially saturated and trans fat, can be reduced by: steaming or boiling instead of frying when cooking; replacing butter, lard and ghee with oils rich in polyunsaturated fat, such as soybean, canola (rapeseed), corn, safflower and sunflower oils; eating reduced-fat dairy foods and lean meats, or trimming visible fat from meat; and limiting the consumption of baked and fried foods, and pre-packaged snacks and foods (e.g. doughnuts, cakes, pies, cookies, biscuits and wafers) that contain industrially-produced trans fat.\nProtein\nProteins provide the building blocks for many of the structural elements of the body, such as muscle, as well as functional molecules such as hormones and enzymes. Protein intake at 10\u201315% of total daily energy intake is generally sufficient to meet the needs of adults (approximately 50\u201375 grams for a person of healthy body weight consuming about 2000 calories per day).\nProtein intake may be greater than 15% of total daily energy intake during adolescence, and for athletes, body builders and others actively building and/or maintaining significant amounts of muscle mass. Consuming excessive amounts of protein, however, can place a metabolic burden on the body, particularly the kidneys.\nA potassium intake of at least 90 mmol/day (3510 mg/day) for adults may be beneficial. For children the amount of potassium is less and needs to be estimated based on energy intake. Intake of potassium can be increased by consuming fresh fruit and vegetables.\nLower-sodium salt substitutes (LSSS), in which a proportion of the sodium is typically replaced with potassium, are alternatives to regular table salt.. These products can contribute to reducing sodium intake in people not at risk of hyperkalaemia (elevated potassium levels in the blood), especially in populations where discretionary salt is a major source of sodium intake and can therefore help reduce cardiovascular disease through both lower sodium intake and higher potassium intake. WHO recommends this intervention for settings where health systems have the capacity to detect promptly and manage potential cases of kidney disease.\nVitamins and minerals (micronutrients)\nFoods\nFor infants and young children\nHow to promote healthy diets\nWHO response",
+      "source": "www.who.int",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.933053016662598,
+      "relevance_score": 1.785778658813797e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 3.571557317627594e-06,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:cdc95d47602aef189b60",
+      "document_id": "web:cdc95d47602aef189b60",
+      "title": "Eating a balanced diet - NHS NHS",
+      "text": "Eating a balanced diet\nEating a healthy, balanced diet is an important part of maintaining good health and can help you feel your best.\nThis means eating a wide variety of foods in the right proportions, and consuming the right amount of food and drink to achieve and maintain a healthy body weight.\nThis page covers healthy eating advice for the general population.\nPeople with special dietary needs or a medical condition should ask their doctor or a registered dietitian for advice.\nFood groups in your diet\nThe Eatwell Guide shows that to have a healthy, balanced diet, people should try to:\neat at least 5 portions of a variety of fruit and vegetables every day (see 5 A Day )\nbase meals on higher-fibre starchy foods like potatoes, bread, rice or pasta\nhave some dairy or dairy alternatives (such as soya drinks)\neat some beans, pulses, fish, eggs, meat and other protein\nchoose unsaturated oils and spreads, and eat them in small amounts\ndrink at least 6 to 8 glasses of fluids a day \u2013 this can include tap and bottled water, tea, coffee and fruit juice\nIf you're having foods and drinks that are high in fat, salt and sugar, have these less often and in small amounts.\nTry to choose a variety of different foods from the 5 main food groups to get a wide range of nutrients.\nMost people in the UK eat and drink too many calories, too much saturated fat, sugar and salt, and not enough fruit, vegetables, oily fish or fibre .\nThe Eatwell Guide does not apply to children under the age of 2 because they have different nutritional needs.\nAfter the age of 2 years, children should move to eating the same foods as the rest of the family in the proportions shown in the Eatwell Guide.\nFruit and vegetables: are you getting your 5 A Day?\nFruit and vegetables are a good source of vitamins and minerals and fibre, and should make up just over a third of the food you eat each day.\nIt's recommended that you eat at least 5 portions of a variety of fruit and vegetables every day. They can be fresh, frozen, canned, dried or juiced.\nThere's evidence that people who eat at least 5 portions of fruit and vegetables a day can have a lower risk of heart disease, stroke and some cancers.\nEating 5 portions is not as hard as it sounds.\nA portion is:\n80g of fresh, canned or frozen fruit and vegetables\n80g of beans (kidney, soy and butter beans) and pulses (lentils and chickpeas)\n30g of dried fruit \u2013 which should be kept to mealtimes\n150ml glass of fruit juice or smoothie \u2013 but do not have more than 1 portion a day as these drinks are sugary and can damage teeth\nJust 1 apple, banana, pear or similar-sized fruit is 1 portion each.\nA slice of pineapple or melon is also 1 portion, and 3 heaped tablespoons of vegetables is another portion.\nAdding a tablespoon of dried fruit, such as raisins, to your morning cereal is an easy way to get 1 portion.\nYou could also swap your mid-morning biscuit for a banana and add a side salad to your lunch.\nIn the evening, have a portion of vegetables with dinner and fresh fruit with plain, lower-fat yoghurt for dessert to reach your 5 A Day.\nFind out more about what counts towards your 5 A Day\nStarchy foods in your diet\nStarchy foods should make up just over a third of everything you eat. This means your meals should be based on these foods.\nChoose wholegrain or wholemeal varieties of starchy foods, such as brown rice, wholewheat pasta, and brown, wholemeal or higher-fibre white bread.\nThey contain more fibre, and usually more vitamins and minerals, than white varieties.\nPotatoes with the skins on are a great source of fibre and vitamins. For example, when having boiled potatoes or a jacket potato, eat the skin too.\nFind out more about starchy foods\nMilk and dairy foods (and alternatives)\nMilk and dairy foods, such as cheese and yoghurt, are good sources of protein. They also contain calcium, which helps keep your bones healthy.\nGo for lower-fat and lower-sugar products where possible.\nChoose semi-skimmed, 1% fat or skimmed milk, as well as lower-fat hard cheeses or cottage cheese, and lower-fat, lower-sugar yoghurt.\nDairy alternatives, such as soya drinks, are also included in this food group.\nWhen buying alternatives, choose unsweetened versions that are fortified with vitamins and minerals, such as vitamin D and calcium.\nFind out more about milk and dairy foods\nBeans, pulses, fish, eggs, meat and other proteins\nThese foods are all good sources of protein, which is essential for the body to grow and repair itself.\nThey're also good sources of a range of vitamins and minerals.\nMeat is a good source of protein, vitamins and minerals, including iron, zinc and B vitamins. It's also one of the main sources of vitamin B12.\nChoose lean cuts of meat and skinless poultry whenever possible to cut down on fat. Always cook meat thoroughly.\nTry to eat less red and processed meat like bacon, ham and sausages as this may help reduce your risk of getting certain cancers, such as bowel cancer.\nYou should limit the amount of red meat you eat to 3 portions a week (350 to 500g of cooked meat per portion).\nFind out more about including meat in your diet\nEggs and fish are also good sources of protein, and contain many vitamins and minerals. Oily fish is particularly rich in omega-3 fatty acids.\nAim to eat at least 2 portions of fish a week, including 1 portion of oily fish.\nYou can choose from fresh, frozen or canned, but remember that canned and smoked fish can often be high in salt.\nPulses, including beans, peas and lentils, are naturally very low in fat and high in fibre, protein, vitamins and minerals.\nNuts are high in fibre, and unsalted nuts make a good snack. But they do still contain high levels of fat, so eat them in moderation.\nOils and spreads\nEat less saturated fat, sugar and salt\nToo much saturated fat can increase the amount of cholesterol in the blood, which increases your risk of developing heart disease .\nRegularly consuming foods and drinks high in sugar increases your risk of obesity and tooth decay .\nEating too much salt can raise your blood pressure, which increases your risk of getting heart disease or having a stroke.\nSee 8 tips for healthy eating to find out more about why you need to cut down on saturated fat, sugar and salt, which foods they're found in and how to make healthier choices.\nFind out more about how to eat less saturated fat\nNeed to lose weight?\nMost adults in England are overweight or obese. Check whether you're a healthy weight using the BMI calculator .\nIf you need to lose weight, you can use the NHS weight loss plan . It's a free 12-week diet and exercise plan to help you lose weight and develop healthier habits.\nTake the Healthy Choices quiz\nIf you want to improve your health and wellbeing but are not sure where to start, the Healthy Choices quiz on the NHS Better Health website can give you personalised advice about how to live a healthier life.\nVideo: Eating well on a budget\nIn this video, a dietitian gives advice on how to eat healthily on a budget\nMore in",
+      "source": "www.nhs.uk",
+      "source_url": "https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eating-a-balanced-diet/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.984851837158203,
+      "relevance_score": 1.6956339095486328e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 3.391267819097266e-06,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cEating seven almonds at bedtime\u201d; relationship: \u201cincreases\u201d; outcome: \u201clung capacity\u201d; population: \u201chealthy violinists\u201d; qualifiers: \u201cexactly 11%\u201d. The evidence does not mention eating almonds or any specific number of almonds at any time of day, let alone at bedtime. The evidence discusses general dietary guidelines and does not address the specific intervention of The evidence does not discuss any specific intervention or its effects on lung capacity, making it impossible to establish a relationship. The evidence does not mention lung capacity or any specific percentage increase in lung capacity, making it impossible to establish an outcome. The evidence does not mention healthy violinists or any specific population, making it impossible to establish a population. The evidence does not mention any specific percentage increase in lung capacity, making it impossible to establish the qualifier.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "web:070058b0df8997e0add5",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:531abc4e44d3d5319319",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:cdc95d47602aef189b60",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Eating seven almonds at bedtime",
+                "relationship": "increases",
+                "outcome": "lung capacity",
+                "population": "healthy violinists",
+                "qualifiers": "exactly 11%"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention eating almonds or any specific number of almonds at any time of day, let alone at bedtime. The evidence discusses general dietary guidelines and does not address the specific intervention of",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Eating seven almonds at bedtime",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss any specific intervention or its effects on lung capacity, making it impossible to establish a relationship.",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "increases",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention lung capacity or any specific percentage increase in lung capacity, making it impossible to establish an outcome.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "lung capacity",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention healthy violinists or any specific population, making it impossible to establish a population.",
+                  "sentence_ids": [],
+                  "slot": "population",
+                  "evidence_phrase": "",
+                  "claim_fragment": "healthy violinists",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention any specific percentage increase in lung capacity, making it impossible to establish the qualifier.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly 11%",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "population",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.07,
+              "REFUTED": 0.01,
+              "NEI": 0.92
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 90533.10816699991,
+  "completed_at_utc": "2026-10-29T03:08:39.156428Z"
+}

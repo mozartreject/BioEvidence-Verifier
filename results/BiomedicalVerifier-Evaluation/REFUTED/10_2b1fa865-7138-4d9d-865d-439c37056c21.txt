@@ -1,0 +1,7 @@
+Claim: Iron deficiency does not cause anemia.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 2b1fa865-7138-4d9d-865d-439c37056c21
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/2b1fa865-7138-4d9d-865d-439c37056c21.json

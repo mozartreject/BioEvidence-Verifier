@@ -1,0 +1,5 @@
+Claim: Insulin lowers blood glucose.
+Actual verdict: SUPPORTED
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Explanation contains no evidence citation
+Raw response: ../raw/ffcf576c-43bb-48f1-8ac7-96506ed32f20.json

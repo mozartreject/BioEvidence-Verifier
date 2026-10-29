@@ -1,0 +1,7 @@
+Claim: Asthma does not cause wheezing.
+Actual verdict: NEI
+Expected candidate label: REFUTED
+Request ID: 47a9bee9-8ae0-4741-aead-a605ca507479
+Explanation status: QUARANTINED
+Quarantine reason: Semantic grounding 0.3978 below threshold 0.4500
+Raw response: ../raw/47a9bee9-8ae0-4741-aead-a605ca507479.json

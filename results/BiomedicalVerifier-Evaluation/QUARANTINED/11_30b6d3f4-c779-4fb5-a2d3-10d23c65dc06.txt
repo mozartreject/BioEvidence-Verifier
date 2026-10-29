@@ -1,0 +1,5 @@
+Claim: Brushing teeth at exactly 6:40 a.m. reduces influenza infection risk by exactly 27%.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: NEI explanation must explicitly communicate insufficient/inconclusive evidence; Semantic grounding 0.3817 below threshold 0.4500
+Raw response: ../raw/30b6d3f4-c779-4fb5-a2d3-10d23c65dc06.json

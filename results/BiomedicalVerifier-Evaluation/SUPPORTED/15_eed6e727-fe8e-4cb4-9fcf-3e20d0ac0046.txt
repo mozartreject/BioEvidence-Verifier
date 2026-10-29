@@ -1,0 +1,7 @@
+Claim: The liver does not produce bile.
+Actual verdict: SUPPORTED
+Expected candidate label: REFUTED
+Request ID: eed6e727-fe8e-4cb4-9fcf-3e20d0ac0046
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/eed6e727-fe8e-4cb4-9fcf-3e20d0ac0046.json

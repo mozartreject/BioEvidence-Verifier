@@ -1,0 +1,7 @@
+Claim: Cigarette smoking does not cause lung cancer.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: c2157c3d-8b1a-4397-aebc-d55c05d271c2
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/c2157c3d-8b1a-4397-aebc-d55c05d271c2.json

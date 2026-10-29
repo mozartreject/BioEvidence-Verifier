@@ -1,0 +1,4 @@
+Claim: HIV attacks the immune system.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/3a9887ef-f9c9-4e66-ac09-b676f69bd192.json

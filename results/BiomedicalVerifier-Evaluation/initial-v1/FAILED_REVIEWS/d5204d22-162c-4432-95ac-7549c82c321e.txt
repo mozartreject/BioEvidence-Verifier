@@ -1,0 +1,4 @@
+Claim: Vitamin C deficiency causes rickets.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/d5204d22-162c-4432-95ac-7549c82c321e.json

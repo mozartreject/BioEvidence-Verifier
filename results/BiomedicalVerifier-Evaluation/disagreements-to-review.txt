@@ -1,0 +1,17 @@
+Candidate-label disagreements (manual review required; candidate labels are not independently adjudicated ground truth).
+
+44. The liver does not produce bile.
+Candidate: REFUTED | Actual: SUPPORTED
+Request: eed6e727-fe8e-4cb4-9fcf-3e20d0ac0046
+
+48. Clapping for three minutes before lunch improves iron absorption by exactly 17%.
+Candidate: NEI | Actual: FAILED_REVIEW
+Request: 1452e04a-b025-4efc-88eb-5c6406adb97d
+
+56. Asthma does not cause wheezing.
+Candidate: REFUTED | Actual: NEI
+Request: 47a9bee9-8ae0-4741-aead-a605ca507479
+
+60. Changing pillowcases every 36 hours prevents type 1 diabetes in adults.
+Candidate: NEI | Actual: FAILED_REVIEW
+Request: 51cba76b-fafd-41c7-9067-1c818ff2823b

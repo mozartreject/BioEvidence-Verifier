@@ -1,0 +1,7 @@
+Claim: Vitamin D deficiency does not cause rickets.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 82cd4e20-24ca-449d-a88e-b8f499703775
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/82cd4e20-24ca-449d-a88e-b8f499703775.json

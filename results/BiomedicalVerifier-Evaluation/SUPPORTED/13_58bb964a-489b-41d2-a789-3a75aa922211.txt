@@ -1,0 +1,7 @@
+Claim: Helicobacter pylori infection can cause peptic ulcers.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 58bb964a-489b-41d2-a789-3a75aa922211
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/58bb964a-489b-41d2-a789-3a75aa922211.json

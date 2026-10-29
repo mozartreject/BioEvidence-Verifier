@@ -1,0 +1,4 @@
+Claim: Walking for exactly 17 minutes each morning reduces Alzheimer disease incidence by exactly 23% in adults aged 41 to 43.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.06, 'REFUTED': 0.74, 'NEI': 0.2}"}
+Raw response: ../raw/b13a0b15-5e15-4f21-a442-e51e737bf921.json

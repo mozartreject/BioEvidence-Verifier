@@ -1,0 +1,7 @@
+Claim: Influenza is caused by bacteria.
+Actual verdict: NEI
+Expected candidate label: REFUTED
+Request ID: 56df3939-90b0-4057-b01f-61947f5b5b56
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/56df3939-90b0-4057-b01f-61947f5b5b56.json

@@ -1,0 +1,7 @@
+Claim: Anaphylaxis is not a severe allergic reaction.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 7fbfc14f-ceb2-4f52-926a-75efdfca3482
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/7fbfc14f-ceb2-4f52-926a-75efdfca3482.json

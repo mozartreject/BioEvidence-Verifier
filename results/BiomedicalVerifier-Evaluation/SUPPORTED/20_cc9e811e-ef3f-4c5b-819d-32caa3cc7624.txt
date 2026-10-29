@@ -1,0 +1,7 @@
+Claim: Obesity increases the risk of type 2 diabetes.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: cc9e811e-ef3f-4c5b-819d-32caa3cc7624
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/cc9e811e-ef3f-4c5b-819d-32caa3cc7624.json

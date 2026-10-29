@@ -1,0 +1,830 @@
+{
+  "request": {
+    "request_id": "7fbfc14f-ceb2-4f52-926a-75efdfca3482",
+    "claim": "Anaphylaxis is not a severe allergic reaction.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:17:16.185975Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:17:16.186061Z",
+      "ended_at_utc": "2026-10-29T03:17:16.867695Z",
+      "latency_ms": 681.6285419999986
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:36314094",
+        "document_id": "pubmed:36314094",
+        "title": "[Anaphylaxis: an update].",
+        "text": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline. We propose to review the different mechanisms underlying anaphylaxis, as well as the diagnostic criteria and its management regarding the 2020 guidelines of the World Allergy Organization (WAO).",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/36314094/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.053619384765625,
+        "relevance_score": 0.9996821880340576,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:18414282",
+        "document_id": "pubmed:18414282",
+        "title": "Severe allergic reaction: management of anaphylaxis in hospital.",
+        "text": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest. This reaction is sudden, severe, and involves the whole body. Common causes include foods such as nuts, shellfish, dairy products and eggs. Non-food causes include bee/wasp stings, latex and drugs, e.g. penicillin. Common clinical features include urticaria, angioedema, respiratory distress and shock. Summoning expert help, reclining the patient flat, administering high concentration oxygen, and administering intramuscular adrenaline are key aspects of the nursing management of anaphylaxis in hospital. The aim of this article is to understand the management of anaphylaxis in hospital, with particular reference to national consensus guidelines.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18414282/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.000785827636719,
+        "relevance_score": 0.9996649026870728,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:721ba60f1475bad2895e",
+        "document_id": "web:721ba60f1475bad2895e",
+        "title": "Anaphylaxis: Causes, Symptoms, Diagnosis & Treatment",
+        "text": "Home /\nAnaphylaxis\nMedically Reviewed. Last updated on 10/17/2023 .\nAnaphylaxis is when you have a severe allergic reaction. Most commonly, it happens after you eat certain foods or get stung by an insect. Going into anaphylactic shock can be life-threatening. If you notice symptoms of anaphylaxis, such as having trouble breathing, use an epinephrine injector. This anaphylaxis treatment can save your life.\nAdvertisement\nView image online ( https://my.clevelandclinic.org/-/scassets/images/org/health/articles/anaphylaxis )\nAnaphylaxis is a life-threatening allergic reaction. Signs include breathing difficulties, swelling, hives and a drop in blood pressure.\nWhat is anaphylaxis?\nAnaphylaxis (pronounced \u201can-ah-fi-LAK-sis\u201d) is a severe allergic reaction. It can be life-threatening if you don\u2019t get treatment right away. Food allergies are one of the main causes of anaphylaxis. Other causes include stinging insects, medications and latex.\nAdvertisement\nWhat happens during anaphylaxis?\nWhen you\u2019re allergic to something, your immune system overreacts by releasing chemicals like histamine . Symptoms of anaphylaxis include swelling, wheezing, shortness of breath and difficulty swallowing. An anaphylactic reaction may affect several areas of your body at once.\nCall 911 (or your emergency services number) and go to the nearest emergency room if you, or someone around you, are experiencing anaphylaxis, even if you\u2019ve already administered epinephrine.\nStage two : Moderate anaphylaxis happens when a person has more widespread and extensive symptoms like skin rash and hives that are spreading or mild swelling in their lips or tongue.\nStage three : Severe anaphylaxis happens next and involves a person displaying signs of difficulty breathing, extensive swelling, weak pulse or dizziness. A person in stage three anaphylaxis is experiencing a condition called anaphylactic shock .\nStage four : Life-threatening anaphylaxis is the last stage and involves a person losing consciousness, being unable to breathe and having inadequate blood flow to vital organs. A person in this stage needs immediate medical attention to avoid death.\nWhat are the symptoms of anaphylaxis?\nAnaphylaxis usually begins with skin symptoms of hives or itching. Within a few minutes, you may start experiencing more severe symptoms, including:\nSwelling in your throat, lips and tongue.\nWheezing .\nWhat are severe signs of anaphylaxis?\nIf you notice symptoms, get medical help right away or use your allergy medication. Without treatment, more severe, life-threatening anaphylaxis symptoms may occur:\nLight-headedness or confusion due to a drop in blood pressure ,\nWhat causes anaphylaxis?\nFood allergies are one of the main causes of anaphylaxis. Foods that can cause this severe anaphylactic reaction include:\nCow\u2019s milk .\nWho is at risk for anaphylaxis?\nPeople who have asthma and who have previously had a severe allergic reaction are most at risk for anaphylaxis.\nAllergic reactions can be unpredictable. Even if you don\u2019t experience severe symptoms the first time, the second allergic reaction could be life-threatening. That\u2019s why it\u2019s important to always have epinephrine with you.\nAdvertisement\nWhat are the complications of anaphylaxis?\nSevere anaphylaxis is potentially life-threatening, especially in people with underlying medical conditions like heart disease or lung disease (especially asthma). It\u2019s a medical emergency that should be taken seriously to minimize the risk of serious complications.\nDiagnosis and Tests\nHow is anaphylaxis diagnosed?\nIf you\u2019ve had an allergic reaction, or suspected allergic reaction, to food or insect stings (even a mild one), talk to a healthcare provider. A provider can often diagnose anaphylaxis based on your symptoms. They should refer you to an allergist , who can perform additional tests, determine triggers and teach you how to avoid those triggers.\nTaking this important step can protect your health and even save your life. It applies to anyone who\u2019s had any type of allergic reaction.\nWhat tests can diagnose anaphylaxis?\nAn allergist may recommend performing a skin test or a blood test to confirm an allergy and identify the specific allergic trigger. A skin test places a small amount of the allergen on your skin to see if it causes a reaction. A blood allergy test involves your provider taking a blood sample from a vein in your arm.\nAdvertisement\nCan Benadryl stop anaphylaxis?\nBenadryl\u00ae and other antihistamines can treat symptoms of mild, non-anaphylactic allergic reactions like hay fever. It\u2019s not a substitute for epinephrine when treating anaphylaxis.\nCare at Cleveland Clinic\nDoes anaphylaxis go away?\nUnfortunately, allergies that cause anaphylaxis last a lifetime. You can usually manage anaphylactic reactions with prompt use of epinephrine. But if you\u2019ve had a severe allergic reaction, you can anticipate having that allergy for life.\nPrevention\nWhat is oral immunotherapy for food allergies?\nThis newer therapy can decrease food sensitivities in people with severe allergies. An allergist with special expertise in food desensitization performs oral immunotherapy. The provider starts by giving you a small dose of the allergen, then slowly increases it over a period of several months. Food oral immunotherapy doesn\u2019t \u201ccure\u201d food allergies, but it can decrease the occurrence or severity of accidental ingestion of foods that cause anaphylaxis. People who have oral immunotherapy should still carry their epinephrine injector with them.\nLiving With\nTell your providers : If you have drug allergies, tell your healthcare provider before any test or treatment. That includes dental care.\nEducate loved ones : Tell family and friends about the allergy and your triggers. Make sure they know how to recognize anaphylaxis symptoms. Also explain how to use the injector, so they can help you in case of a reaction.\nWhen should I use my epinephrine injector?\nAn allergist is a healthcare provider specially trained to diagnose and treat people with allergies. If you experience or think you\u2019ve experienced an allergic/anaphylactic reaction, you should see an allergist. They can confirm if a reaction was due to an allergen and identify triggers. They can also help educate you on potential treatment options and avoidance of triggers. And they\u2019ll provide you with a plan to manage an anaphylactic reaction in case of an accidental exposure.\nA note from Cleveland Clinic\nIt can be scary knowing you can have an allergic reaction to an everyday food, but there are things you can do to lessen your chances of a severe reaction. If you notice anaphylaxis symptoms, inject yourself with epinephrine right away. Then, call 911 or get to the emergency room. Prompt anaphylaxis treatment can save your life. Make sure to carry your injector wherever you go. Try to avoid triggers. If you have allergy symptoms that are hard to manage or you think you went into anaphylactic shock, talk to your healthcare provider.\nBetter health starts here",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/diseases/8619-anaphylaxis",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.611536026000977,
+        "relevance_score": 0.9986569881439209,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Anaphylaxis is not a severe allergic reaction."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:17:16.867751Z",
+      "ended_at_utc": "2026-10-29T03:17:37.460000Z",
+      "latency_ms": 20591.999915999848
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:36314094",
+        "document_id": "pubmed:36314094",
+        "title": "[Anaphylaxis: an update].",
+        "text": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline. We propose to review the different mechanisms underlying anaphylaxis, as well as the diagnostic criteria and its management regarding the 2020 guidelines of the World Allergy Organization (WAO).",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/36314094/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.053619384765625,
+        "relevance_score": 0.9996821880340576,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19993643760681154,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:18414282",
+        "document_id": "pubmed:18414282",
+        "title": "Severe allergic reaction: management of anaphylaxis in hospital.",
+        "text": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest. This reaction is sudden, severe, and involves the whole body. Common causes include foods such as nuts, shellfish, dairy products and eggs. Non-food causes include bee/wasp stings, latex and drugs, e.g. penicillin. Common clinical features include urticaria, angioedema, respiratory distress and shock. Summoning expert help, reclining the patient flat, administering high concentration oxygen, and administering intramuscular adrenaline are key aspects of the nursing management of anaphylaxis in hospital. The aim of this article is to understand the management of anaphylaxis in hospital, with particular reference to national consensus guidelines.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18414282/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 8.000785827636719,
+        "relevance_score": 0.9996649026870728,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19993298053741457,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "web:721ba60f1475bad2895e",
+        "document_id": "web:721ba60f1475bad2895e",
+        "title": "Anaphylaxis: Causes, Symptoms, Diagnosis & Treatment",
+        "text": "Home /\nAnaphylaxis\nMedically Reviewed. Last updated on 10/17/2023 .\nAnaphylaxis is when you have a severe allergic reaction. Most commonly, it happens after you eat certain foods or get stung by an insect. Going into anaphylactic shock can be life-threatening. If you notice symptoms of anaphylaxis, such as having trouble breathing, use an epinephrine injector. This anaphylaxis treatment can save your life.\nAdvertisement\nView image online ( https://my.clevelandclinic.org/-/scassets/images/org/health/articles/anaphylaxis )\nAnaphylaxis is a life-threatening allergic reaction. Signs include breathing difficulties, swelling, hives and a drop in blood pressure.\nWhat is anaphylaxis?\nAnaphylaxis (pronounced \u201can-ah-fi-LAK-sis\u201d) is a severe allergic reaction. It can be life-threatening if you don\u2019t get treatment right away. Food allergies are one of the main causes of anaphylaxis. Other causes include stinging insects, medications and latex.\nAdvertisement\nWhat happens during anaphylaxis?\nWhen you\u2019re allergic to something, your immune system overreacts by releasing chemicals like histamine . Symptoms of anaphylaxis include swelling, wheezing, shortness of breath and difficulty swallowing. An anaphylactic reaction may affect several areas of your body at once.\nCall 911 (or your emergency services number) and go to the nearest emergency room if you, or someone around you, are experiencing anaphylaxis, even if you\u2019ve already administered epinephrine.\nStage two : Moderate anaphylaxis happens when a person has more widespread and extensive symptoms like skin rash and hives that are spreading or mild swelling in their lips or tongue.\nStage three : Severe anaphylaxis happens next and involves a person displaying signs of difficulty breathing, extensive swelling, weak pulse or dizziness. A person in stage three anaphylaxis is experiencing a condition called anaphylactic shock .\nStage four : Life-threatening anaphylaxis is the last stage and involves a person losing consciousness, being unable to breathe and having inadequate blood flow to vital organs. A person in this stage needs immediate medical attention to avoid death.\nWhat are the symptoms of anaphylaxis?\nAnaphylaxis usually begins with skin symptoms of hives or itching. Within a few minutes, you may start experiencing more severe symptoms, including:\nSwelling in your throat, lips and tongue.\nWheezing .\nWhat are severe signs of anaphylaxis?\nIf you notice symptoms, get medical help right away or use your allergy medication. Without treatment, more severe, life-threatening anaphylaxis symptoms may occur:\nLight-headedness or confusion due to a drop in blood pressure ,\nWhat causes anaphylaxis?\nFood allergies are one of the main causes of anaphylaxis. Foods that can cause this severe anaphylactic reaction include:\nCow\u2019s milk .\nWho is at risk for anaphylaxis?\nPeople who have asthma and who have previously had a severe allergic reaction are most at risk for anaphylaxis.\nAllergic reactions can be unpredictable. Even if you don\u2019t experience severe symptoms the first time, the second allergic reaction could be life-threatening. That\u2019s why it\u2019s important to always have epinephrine with you.\nAdvertisement\nWhat are the complications of anaphylaxis?\nSevere anaphylaxis is potentially life-threatening, especially in people with underlying medical conditions like heart disease or lung disease (especially asthma). It\u2019s a medical emergency that should be taken seriously to minimize the risk of serious complications.\nDiagnosis and Tests\nHow is anaphylaxis diagnosed?\nIf you\u2019ve had an allergic reaction, or suspected allergic reaction, to food or insect stings (even a mild one), talk to a healthcare provider. A provider can often diagnose anaphylaxis based on your symptoms. They should refer you to an allergist , who can perform additional tests, determine triggers and teach you how to avoid those triggers.\nTaking this important step can protect your health and even save your life. It applies to anyone who\u2019s had any type of allergic reaction.\nWhat tests can diagnose anaphylaxis?\nAn allergist may recommend performing a skin test or a blood test to confirm an allergy and identify the specific allergic trigger. A skin test places a small amount of the allergen on your skin to see if it causes a reaction. A blood allergy test involves your provider taking a blood sample from a vein in your arm.\nAdvertisement\nCan Benadryl stop anaphylaxis?\nBenadryl\u00ae and other antihistamines can treat symptoms of mild, non-anaphylactic allergic reactions like hay fever. It\u2019s not a substitute for epinephrine when treating anaphylaxis.\nCare at Cleveland Clinic\nDoes anaphylaxis go away?\nUnfortunately, allergies that cause anaphylaxis last a lifetime. You can usually manage anaphylactic reactions with prompt use of epinephrine. But if you\u2019ve had a severe allergic reaction, you can anticipate having that allergy for life.\nPrevention\nWhat is oral immunotherapy for food allergies?\nThis newer therapy can decrease food sensitivities in people with severe allergies. An allergist with special expertise in food desensitization performs oral immunotherapy. The provider starts by giving you a small dose of the allergen, then slowly increases it over a period of several months. Food oral immunotherapy doesn\u2019t \u201ccure\u201d food allergies, but it can decrease the occurrence or severity of accidental ingestion of foods that cause anaphylaxis. People who have oral immunotherapy should still carry their epinephrine injector with them.\nLiving With\nTell your providers : If you have drug allergies, tell your healthcare provider before any test or treatment. That includes dental care.\nEducate loved ones : Tell family and friends about the allergy and your triggers. Make sure they know how to recognize anaphylaxis symptoms. Also explain how to use the injector, so they can help you in case of a reaction.\nWhen should I use my epinephrine injector?\nAn allergist is a healthcare provider specially trained to diagnose and treat people with allergies. If you experience or think you\u2019ve experienced an allergic/anaphylactic reaction, you should see an allergist. They can confirm if a reaction was due to an allergen and identify triggers. They can also help educate you on potential treatment options and avoidance of triggers. And they\u2019ll provide you with a plan to manage an anaphylactic reaction in case of an accidental exposure.\nA note from Cleveland Clinic\nIt can be scary knowing you can have an allergic reaction to an everyday food, but there are things you can do to lessen your chances of a severe reaction. If you notice anaphylaxis symptoms, inject yourself with epinephrine right away. Then, call 911 or get to the emergency room. Prompt anaphylaxis treatment can save your life. Make sure to carry your injector wherever you go. Try to avoid triggers. If you have allergy symptoms that are hard to manage or you think you went into anaphylactic shock, talk to your healthcare provider.\nBetter health starts here",
+        "source": "my.clevelandclinic.org",
+        "source_url": "https://my.clevelandclinic.org/health/diseases/8619-anaphylaxis",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 6.611536026000977,
+        "relevance_score": 0.9986569881439209,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.1997313976287842,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:17:37.460028Z",
+      "ended_at_utc": "2026-10-29T03:17:43.000509Z",
+      "latency_ms": 5540.458459000092
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.7,
+      "nei": 0.2,
+      "supported": 0.1
+    },
+    "verifier_score": 0.7,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:36314094",
+      "pubmed:18414282",
+      "web:721ba60f1475bad2895e"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence explicitly states that anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal, which directly contradicts the claim that it is not severe.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:36314094",
+              "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+            },
+            {
+              "evidence_id": "pubmed:18414282",
+              "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:18414282",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:36314094",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "web:721ba60f1475bad2895e",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Anaphylaxis",
+              "relationship": "not",
+              "outcome": "severe allergic reaction",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "All evidence sources discuss anaphylaxis as a specific condition.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline.",
+                "claim_fragment": "Anaphylaxis",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:36314094",
+                    "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+                  },
+                  {
+                    "evidence_id": "pubmed:18414282",
+                    "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence explicitly states that anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal, which directly contradicts the claim that it is not severe.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline.",
+                "claim_fragment": "not",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:36314094",
+                    "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+                  },
+                  {
+                    "evidence_id": "pubmed:18414282",
+                    "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "All evidence sources describe anaphylaxis as a severe allergic reaction that can lead to life-threatening symptoms such as asphyxia, cardiovascular collapse, and cardiac arrest.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline.",
+                "claim_fragment": "severe allergic reaction",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:36314094",
+                    "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+                  },
+                  {
+                    "evidence_id": "pubmed:18414282",
+                    "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:18414282",
+              "pubmed:36314094"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.1,
+            "REFUTED": 0.7,
+            "NEI": 0.2
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Anaphylaxis is described as the most severe form of acute systemic allergic reaction and can be fatal if untreated, as stated in [E1]. The evidence further emphasizes that anaphylaxis is a severe allergic reaction that can lead to life-threatening symptoms such as asphyxia, cardiovascular collapse, and cardiac arrest, as detailed in [E2] and [E3].",
+    "cited_evidence_ids": [
+      "pubmed:36314094",
+      "pubmed:18414282",
+      "web:721ba60f1475bad2895e"
+    ],
+    "grounding": {
+      "semantic_score": 0.7889003753662109,
+      "coverage_score": 0.8079692125320435,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:18:10.037017Z",
+      "ended_at_utc": "2026-10-29T03:18:19.856740Z",
+      "latency_ms": 9819.594625000036
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.7,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:36314094",
+      "document_id": "pubmed:36314094",
+      "title": "[Anaphylaxis: an update].",
+      "text": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline. We propose to review the different mechanisms underlying anaphylaxis, as well as the diagnostic criteria and its management regarding the 2020 guidelines of the World Allergy Organization (WAO).",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36314094/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 8.053619384765625,
+      "relevance_score": 0.9996821880340576,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19993643760681154,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:18414282",
+      "document_id": "pubmed:18414282",
+      "title": "Severe allergic reaction: management of anaphylaxis in hospital.",
+      "text": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest. This reaction is sudden, severe, and involves the whole body. Common causes include foods such as nuts, shellfish, dairy products and eggs. Non-food causes include bee/wasp stings, latex and drugs, e.g. penicillin. Common clinical features include urticaria, angioedema, respiratory distress and shock. Summoning expert help, reclining the patient flat, administering high concentration oxygen, and administering intramuscular adrenaline are key aspects of the nursing management of anaphylaxis in hospital. The aim of this article is to understand the management of anaphylaxis in hospital, with particular reference to national consensus guidelines.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/18414282/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 8.000785827636719,
+      "relevance_score": 0.9996649026870728,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19993298053741457,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "web:721ba60f1475bad2895e",
+      "document_id": "web:721ba60f1475bad2895e",
+      "title": "Anaphylaxis: Causes, Symptoms, Diagnosis & Treatment",
+      "text": "Home /\nAnaphylaxis\nMedically Reviewed. Last updated on 10/17/2023 .\nAnaphylaxis is when you have a severe allergic reaction. Most commonly, it happens after you eat certain foods or get stung by an insect. Going into anaphylactic shock can be life-threatening. If you notice symptoms of anaphylaxis, such as having trouble breathing, use an epinephrine injector. This anaphylaxis treatment can save your life.\nAdvertisement\nView image online ( https://my.clevelandclinic.org/-/scassets/images/org/health/articles/anaphylaxis )\nAnaphylaxis is a life-threatening allergic reaction. Signs include breathing difficulties, swelling, hives and a drop in blood pressure.\nWhat is anaphylaxis?\nAnaphylaxis (pronounced \u201can-ah-fi-LAK-sis\u201d) is a severe allergic reaction. It can be life-threatening if you don\u2019t get treatment right away. Food allergies are one of the main causes of anaphylaxis. Other causes include stinging insects, medications and latex.\nAdvertisement\nWhat happens during anaphylaxis?\nWhen you\u2019re allergic to something, your immune system overreacts by releasing chemicals like histamine . Symptoms of anaphylaxis include swelling, wheezing, shortness of breath and difficulty swallowing. An anaphylactic reaction may affect several areas of your body at once.\nCall 911 (or your emergency services number) and go to the nearest emergency room if you, or someone around you, are experiencing anaphylaxis, even if you\u2019ve already administered epinephrine.\nStage two : Moderate anaphylaxis happens when a person has more widespread and extensive symptoms like skin rash and hives that are spreading or mild swelling in their lips or tongue.\nStage three : Severe anaphylaxis happens next and involves a person displaying signs of difficulty breathing, extensive swelling, weak pulse or dizziness. A person in stage three anaphylaxis is experiencing a condition called anaphylactic shock .\nStage four : Life-threatening anaphylaxis is the last stage and involves a person losing consciousness, being unable to breathe and having inadequate blood flow to vital organs. A person in this stage needs immediate medical attention to avoid death.\nWhat are the symptoms of anaphylaxis?\nAnaphylaxis usually begins with skin symptoms of hives or itching. Within a few minutes, you may start experiencing more severe symptoms, including:\nSwelling in your throat, lips and tongue.\nWheezing .\nWhat are severe signs of anaphylaxis?\nIf you notice symptoms, get medical help right away or use your allergy medication. Without treatment, more severe, life-threatening anaphylaxis symptoms may occur:\nLight-headedness or confusion due to a drop in blood pressure ,\nWhat causes anaphylaxis?\nFood allergies are one of the main causes of anaphylaxis. Foods that can cause this severe anaphylactic reaction include:\nCow\u2019s milk .\nWho is at risk for anaphylaxis?\nPeople who have asthma and who have previously had a severe allergic reaction are most at risk for anaphylaxis.\nAllergic reactions can be unpredictable. Even if you don\u2019t experience severe symptoms the first time, the second allergic reaction could be life-threatening. That\u2019s why it\u2019s important to always have epinephrine with you.\nAdvertisement\nWhat are the complications of anaphylaxis?\nSevere anaphylaxis is potentially life-threatening, especially in people with underlying medical conditions like heart disease or lung disease (especially asthma). It\u2019s a medical emergency that should be taken seriously to minimize the risk of serious complications.\nDiagnosis and Tests\nHow is anaphylaxis diagnosed?\nIf you\u2019ve had an allergic reaction, or suspected allergic reaction, to food or insect stings (even a mild one), talk to a healthcare provider. A provider can often diagnose anaphylaxis based on your symptoms. They should refer you to an allergist , who can perform additional tests, determine triggers and teach you how to avoid those triggers.\nTaking this important step can protect your health and even save your life. It applies to anyone who\u2019s had any type of allergic reaction.\nWhat tests can diagnose anaphylaxis?\nAn allergist may recommend performing a skin test or a blood test to confirm an allergy and identify the specific allergic trigger. A skin test places a small amount of the allergen on your skin to see if it causes a reaction. A blood allergy test involves your provider taking a blood sample from a vein in your arm.\nAdvertisement\nCan Benadryl stop anaphylaxis?\nBenadryl\u00ae and other antihistamines can treat symptoms of mild, non-anaphylactic allergic reactions like hay fever. It\u2019s not a substitute for epinephrine when treating anaphylaxis.\nCare at Cleveland Clinic\nDoes anaphylaxis go away?\nUnfortunately, allergies that cause anaphylaxis last a lifetime. You can usually manage anaphylactic reactions with prompt use of epinephrine. But if you\u2019ve had a severe allergic reaction, you can anticipate having that allergy for life.\nPrevention\nWhat is oral immunotherapy for food allergies?\nThis newer therapy can decrease food sensitivities in people with severe allergies. An allergist with special expertise in food desensitization performs oral immunotherapy. The provider starts by giving you a small dose of the allergen, then slowly increases it over a period of several months. Food oral immunotherapy doesn\u2019t \u201ccure\u201d food allergies, but it can decrease the occurrence or severity of accidental ingestion of foods that cause anaphylaxis. People who have oral immunotherapy should still carry their epinephrine injector with them.\nLiving With\nTell your providers : If you have drug allergies, tell your healthcare provider before any test or treatment. That includes dental care.\nEducate loved ones : Tell family and friends about the allergy and your triggers. Make sure they know how to recognize anaphylaxis symptoms. Also explain how to use the injector, so they can help you in case of a reaction.\nWhen should I use my epinephrine injector?\nAn allergist is a healthcare provider specially trained to diagnose and treat people with allergies. If you experience or think you\u2019ve experienced an allergic/anaphylactic reaction, you should see an allergist. They can confirm if a reaction was due to an allergen and identify triggers. They can also help educate you on potential treatment options and avoidance of triggers. And they\u2019ll provide you with a plan to manage an anaphylactic reaction in case of an accidental exposure.\nA note from Cleveland Clinic\nIt can be scary knowing you can have an allergic reaction to an everyday food, but there are things you can do to lessen your chances of a severe reaction. If you notice anaphylaxis symptoms, inject yourself with epinephrine right away. Then, call 911 or get to the emergency room. Prompt anaphylaxis treatment can save your life. Make sure to carry your injector wherever you go. Try to avoid triggers. If you have allergy symptoms that are hard to manage or you think you went into anaphylactic shock, talk to your healthcare provider.\nBetter health starts here",
+      "source": "my.clevelandclinic.org",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/8619-anaphylaxis",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 6.611536026000977,
+      "relevance_score": 0.9986569881439209,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.1997313976287842,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence explicitly states that anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal, which directly contradicts the claim that it is not severe.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:36314094",
+                "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+              },
+              {
+                "evidence_id": "pubmed:18414282",
+                "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:18414282",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:36314094",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "web:721ba60f1475bad2895e",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Anaphylaxis",
+                "relationship": "not",
+                "outcome": "severe allergic reaction",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "All evidence sources discuss anaphylaxis as a specific condition.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline.",
+                  "claim_fragment": "Anaphylaxis",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:36314094",
+                      "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+                    },
+                    {
+                      "evidence_id": "pubmed:18414282",
+                      "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence explicitly states that anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal, which directly contradicts the claim that it is not severe.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline.",
+                  "claim_fragment": "not",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:36314094",
+                      "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+                    },
+                    {
+                      "evidence_id": "pubmed:18414282",
+                      "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "All evidence sources describe anaphylaxis as a severe allergic reaction that can lead to life-threatening symptoms such as asphyxia, cardiovascular collapse, and cardiac arrest.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline.",
+                  "claim_fragment": "severe allergic reaction",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:36314094",
+                      "quote": "Anaphylaxis is the most severe form of acute systemic allergic reaction and can be fatal in the absence of adequate treatment with adrenaline."
+                    },
+                    {
+                      "evidence_id": "pubmed:18414282",
+                      "quote": "Anaphylaxis is an acute, severe, hypersensitivity reaction that can lead to asphyxia, cardiovascular collapse and cardiac arrest."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:18414282",
+                "pubmed:36314094"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.1,
+              "REFUTED": 0.7,
+              "NEI": 0.2
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 63670.54420800014,
+  "completed_at_utc": "2026-10-29T03:18:19.857372Z"
+}

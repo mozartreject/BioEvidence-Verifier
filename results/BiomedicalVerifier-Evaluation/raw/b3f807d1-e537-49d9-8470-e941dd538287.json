@@ -1,0 +1,760 @@
+{
+  "request": {
+    "request_id": "b3f807d1-e537-49d9-8470-e941dd538287",
+    "claim": "Taking medicine Zentarovil reduces migraine frequency by exactly 42%.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:29:08.223203Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:29:08.223272Z",
+      "ended_at_utc": "2026-10-29T03:29:08.792221Z",
+      "latency_ms": 568.9462499999536
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:33426113",
+        "document_id": "pubmed:33426113",
+        "title": "Comparison of self-medication practices with analgesics among undergraduate medical and paramedical students of a tertiary care teaching institute in Central India - A questionnaire-based study.",
+        "text": "CONTEXT: Inappropriate self-medication can increase chances of adverse drug reactions, disease aggravation, or drug interactions. Analgesics are most commonly used as self-medication.\nAIMS: The aim of this study was to evaluate and compare analgesic self-medication practices among medical and paramedical undergraduate students of a tertiary care teaching institute in Central India.\nMATERIALS AND METHODS: A cross-sectional, observational study was conducted in 216 undergraduate medical (MBBS and BDS) and paramedical (occupational therapy/physiotherapy and BSc nursing) students. A predesigned, self-developed, semi-structured questionnaire was used.\nSTATISTICAL ANALYSIS: The Chi-square test was used for testing statistical significance.\nRESULTS: The overall prevalence of self-medication with analgesics was 83.33%. Self-medication was significantly high among medical students as compared to paramedical students (P = 0.003). Significantly more medical students were aware about adverse drug reactions of analgesics as compared to paramedical students (P = 0.019). The most common source of information about drugs was previous prescription (58.33%), followed by media including the Internet (53.70%). The most dominant symptom compelling self-medication was found to be muscular pain (42.12%), followed by headache (36.57%). 54.16% of the students revealed that self-medication provides quick relief from pain. The most commonly used analgesic was paracetamol (82.40%), followed by diclofenac (22.68%). A significant number of paramedical students do not know exactly what precautions should be taken while taking analgesics (P = 0.002).\nCONCLUSIONS: Medical students are more indulged in self-medication practices with analgesics. Paramedical students need to be educated regarding safe use of analgesics.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33426113/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -5.414788722991943,
+        "relevance_score": 0.004430560860782862,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:26169960",
+        "document_id": "pubmed:26169960",
+        "title": "Adherence to cardiovascular prevention strategies in patients with rheumatoid arthritis.",
+        "text": "OBJECTIVES: Patients with rheumatoid arthritis (RA) have a high risk of cardiovascular disease (CVD). Recent national and international guidelines suggest strict treatment of CVD risk factors in RA. The aim of this study was to evaluate the self-reported adherence to CV prevention strategies in patients with RA.\nMETHOD: RA patients visiting an outpatient clinic for strict CVD risk management received a validated questionnaire to evaluate adherence to CV prevention strategies. Strict treatment targets were defined and lifestyle recommendations were given following a prespecified protocol. CVD risk was assessed using the SCORE algorithm.\nRESULTS: In total, 111 questionnaires were returned (response rate of 82%). A high 10-year CVD risk (\u2265 20%) was present in 53%, but only 3% thought they had an increased CVD risk. A total of 53% of patients reported that they 'follow the doctors' suggestions exactly' and 75% reported finding it 'easy to follow the suggestions'. Of the 69% of patients who were prescribed lipid- and/or blood pressure-lowering drugs, 90% reported taking all prescribed tablets. The advice to follow a diet was given to 42%, of whom 68% said they followed the advised diet. Physical exercise was advised to 67%, of whom 62% said they performed specific physical exercise on at least 3 days a week. The adherence to lifestyle recommendations was not significantly different across the CVD risk groups.\nCONCLUSIONS: RA patients tend to underestimate their CVD risk. The self-reported adherence of RA patients to CVD risk management was high concerning pharmaceutical interventions and moderate in the case of lifestyle interventions.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26169960/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.165065765380859,
+        "relevance_score": 0.0007725308532826602,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:16204391",
+        "document_id": "pubmed:16204391",
+        "title": "Adherence to medications by patients after acute coronary syndromes.",
+        "text": "BACKGROUND: Nonadherence to medication may lead to poor medical outcomes.\nOBJECTIVE: To describe medication-taking behavior of patients with a history of acute coronary syndromes (ACS) for 4 classes of drugs and determine the relationship between self-reported adherence and patient characteristics.\nMETHODS: Consenting patients with the diagnosis of ACS were interviewed by telephone approximately 10 months after discharge. The survey elicited data characterizing the patient, current medication regimens, beliefs about drug therapy, reasons for discontinuing medications, and adherence. The survey included the Beliefs About Medicine Questionnaire providing 4 scales: Specific Necessity, Specific Concerns, General Harm, and General Overuse, and the Medication Adherence Scale (MAS). Multivariate regression was used to determine the independent variables with the strongest association to the MAS. A p value < or = 0.05 was considered significant for all analyses.\nRESULTS: Two hundred eight patients were interviewed. Mean +/- SD age was 64.9 +/- 13.0 years, with 60.6% male, 95.7% white, 57.3% with a college education, 87.9% living with > or =1 other person, and 42% indicating excellent or very good health. The percentage of patients continuing on medication at the time of the survey category ranged from 87.4% (aspirin) to 66.0% (angiotensin-converting enzyme inhibitors). Reasons for stopping medication included physician discontinuation or adverse effects. Of patients still on drug therapy, the mean MAS was 1.3 +/- 0.4, with 53.8% indicating nonadherence (score >1). The final regression model showed R(2) = 0.132 and included heart-related health status and Specific Necessity as significant predictor variables.\nCONCLUSIONS: After ACS, not all patients continue their drugs or take them exactly as prescribed. Determining beliefs about illness and medication may be helpful in developing interventions aimed at improving adherence.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/16204391/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.416287899017334,
+        "relevance_score": 0.0006010159268043935,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Taking medicine Zentarovil reduces migraine frequency by exactly 42%."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:29:08.792283Z",
+      "ended_at_utc": "2026-10-29T03:29:26.921299Z",
+      "latency_ms": 18128.7972920004
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:33426113",
+        "document_id": "pubmed:33426113",
+        "title": "Comparison of self-medication practices with analgesics among undergraduate medical and paramedical students of a tertiary care teaching institute in Central India - A questionnaire-based study.",
+        "text": "CONTEXT: Inappropriate self-medication can increase chances of adverse drug reactions, disease aggravation, or drug interactions. Analgesics are most commonly used as self-medication.\nAIMS: The aim of this study was to evaluate and compare analgesic self-medication practices among medical and paramedical undergraduate students of a tertiary care teaching institute in Central India.\nMATERIALS AND METHODS: A cross-sectional, observational study was conducted in 216 undergraduate medical (MBBS and BDS) and paramedical (occupational therapy/physiotherapy and BSc nursing) students. A predesigned, self-developed, semi-structured questionnaire was used.\nSTATISTICAL ANALYSIS: The Chi-square test was used for testing statistical significance.\nRESULTS: The overall prevalence of self-medication with analgesics was 83.33%. Self-medication was significantly high among medical students as compared to paramedical students (P = 0.003). Significantly more medical students were aware about adverse drug reactions of analgesics as compared to paramedical students (P = 0.019). The most common source of information about drugs was previous prescription (58.33%), followed by media including the Internet (53.70%). The most dominant symptom compelling self-medication was found to be muscular pain (42.12%), followed by headache (36.57%). 54.16% of the students revealed that self-medication provides quick relief from pain. The most commonly used analgesic was paracetamol (82.40%), followed by diclofenac (22.68%). A significant number of paramedical students do not know exactly what precautions should be taken while taking analgesics (P = 0.002).\nCONCLUSIONS: Medical students are more indulged in self-medication practices with analgesics. Paramedical students need to be educated regarding safe use of analgesics.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33426113/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -5.414788722991943,
+        "relevance_score": 0.004430560860782862,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.003101392602548003,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:26169960",
+        "document_id": "pubmed:26169960",
+        "title": "Adherence to cardiovascular prevention strategies in patients with rheumatoid arthritis.",
+        "text": "OBJECTIVES: Patients with rheumatoid arthritis (RA) have a high risk of cardiovascular disease (CVD). Recent national and international guidelines suggest strict treatment of CVD risk factors in RA. The aim of this study was to evaluate the self-reported adherence to CV prevention strategies in patients with RA.\nMETHOD: RA patients visiting an outpatient clinic for strict CVD risk management received a validated questionnaire to evaluate adherence to CV prevention strategies. Strict treatment targets were defined and lifestyle recommendations were given following a prespecified protocol. CVD risk was assessed using the SCORE algorithm.\nRESULTS: In total, 111 questionnaires were returned (response rate of 82%). A high 10-year CVD risk (\u2265 20%) was present in 53%, but only 3% thought they had an increased CVD risk. A total of 53% of patients reported that they 'follow the doctors' suggestions exactly' and 75% reported finding it 'easy to follow the suggestions'. Of the 69% of patients who were prescribed lipid- and/or blood pressure-lowering drugs, 90% reported taking all prescribed tablets. The advice to follow a diet was given to 42%, of whom 68% said they followed the advised diet. Physical exercise was advised to 67%, of whom 62% said they performed specific physical exercise on at least 3 days a week. The adherence to lifestyle recommendations was not significantly different across the CVD risk groups.\nCONCLUSIONS: RA patients tend to underestimate their CVD risk. The self-reported adherence of RA patients to CVD risk management was high concerning pharmaceutical interventions and moderate in the case of lifestyle interventions.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26169960/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.165065765380859,
+        "relevance_score": 0.0007725308532826602,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.0005407715972978621,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:16204391",
+        "document_id": "pubmed:16204391",
+        "title": "Adherence to medications by patients after acute coronary syndromes.",
+        "text": "BACKGROUND: Nonadherence to medication may lead to poor medical outcomes.\nOBJECTIVE: To describe medication-taking behavior of patients with a history of acute coronary syndromes (ACS) for 4 classes of drugs and determine the relationship between self-reported adherence and patient characteristics.\nMETHODS: Consenting patients with the diagnosis of ACS were interviewed by telephone approximately 10 months after discharge. The survey elicited data characterizing the patient, current medication regimens, beliefs about drug therapy, reasons for discontinuing medications, and adherence. The survey included the Beliefs About Medicine Questionnaire providing 4 scales: Specific Necessity, Specific Concerns, General Harm, and General Overuse, and the Medication Adherence Scale (MAS). Multivariate regression was used to determine the independent variables with the strongest association to the MAS. A p value < or = 0.05 was considered significant for all analyses.\nRESULTS: Two hundred eight patients were interviewed. Mean +/- SD age was 64.9 +/- 13.0 years, with 60.6% male, 95.7% white, 57.3% with a college education, 87.9% living with > or =1 other person, and 42% indicating excellent or very good health. The percentage of patients continuing on medication at the time of the survey category ranged from 87.4% (aspirin) to 66.0% (angiotensin-converting enzyme inhibitors). Reasons for stopping medication included physician discontinuation or adverse effects. Of patients still on drug therapy, the mean MAS was 1.3 +/- 0.4, with 53.8% indicating nonadherence (score >1). The final regression model showed R(2) = 0.132 and included heart-related health status and Specific Necessity as significant predictor variables.\nCONCLUSIONS: After ACS, not all patients continue their drugs or take them exactly as prescribed. Determining beliefs about illness and medication may be helpful in developing interventions aimed at improving adherence.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/16204391/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -7.416287899017334,
+        "relevance_score": 0.0006010159268043935,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.00042071114876307547,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:29:26.921329Z",
+      "ended_at_utc": "2026-10-29T03:29:31.114757Z",
+      "latency_ms": 4193.416375000197
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:33426113",
+      "pubmed:26169960",
+      "pubmed:16204391"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cmedicine Zentarovil\u201d; relationship: \u201creduces\u201d; outcome: \u201cmigraine frequency\u201d; qualifiers: \u201cexactly 42%\u201d. The evidence does not mention medicine Zentarovil or any specific medication for migraines. The studies discuss self-medication practices, adherence to cardiovascular prevention strategies, and adherence to medications,  The evidence does not provide any information about the relationship between taking a specific medication and reducing migraine frequency. The evidence does not discuss the frequency of migraines or any reduction in migraine frequency. The evidence does not provide any specific percentage or exact number related to the reduction in migraine frequency.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:16204391",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:26169960",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:33426113",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "medicine Zentarovil",
+              "relationship": "reduces",
+              "outcome": "migraine frequency",
+              "population": "",
+              "qualifiers": "exactly 42%"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention medicine Zentarovil or any specific medication for migraines. The studies discuss self-medication practices, adherence to cardiovascular prevention strategies, and adherence to medications, ",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "medicine Zentarovil",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any information about the relationship between taking a specific medication and reducing migraine frequency.",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "reduces",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss the frequency of migraines or any reduction in migraine frequency.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "migraine frequency",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any specific percentage or exact number related to the reduction in migraine frequency.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly 42%",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "Semantic grounding 0.2857 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:29:51.537663Z",
+      "ended_at_utc": "2026-10-29T03:30:10.736801Z",
+      "latency_ms": 19198.90133400031
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:33426113",
+      "document_id": "pubmed:33426113",
+      "title": "Comparison of self-medication practices with analgesics among undergraduate medical and paramedical students of a tertiary care teaching institute in Central India - A questionnaire-based study.",
+      "text": "CONTEXT: Inappropriate self-medication can increase chances of adverse drug reactions, disease aggravation, or drug interactions. Analgesics are most commonly used as self-medication.\nAIMS: The aim of this study was to evaluate and compare analgesic self-medication practices among medical and paramedical undergraduate students of a tertiary care teaching institute in Central India.\nMATERIALS AND METHODS: A cross-sectional, observational study was conducted in 216 undergraduate medical (MBBS and BDS) and paramedical (occupational therapy/physiotherapy and BSc nursing) students. A predesigned, self-developed, semi-structured questionnaire was used.\nSTATISTICAL ANALYSIS: The Chi-square test was used for testing statistical significance.\nRESULTS: The overall prevalence of self-medication with analgesics was 83.33%. Self-medication was significantly high among medical students as compared to paramedical students (P = 0.003). Significantly more medical students were aware about adverse drug reactions of analgesics as compared to paramedical students (P = 0.019). The most common source of information about drugs was previous prescription (58.33%), followed by media including the Internet (53.70%). The most dominant symptom compelling self-medication was found to be muscular pain (42.12%), followed by headache (36.57%). 54.16% of the students revealed that self-medication provides quick relief from pain. The most commonly used analgesic was paracetamol (82.40%), followed by diclofenac (22.68%). A significant number of paramedical students do not know exactly what precautions should be taken while taking analgesics (P = 0.002).\nCONCLUSIONS: Medical students are more indulged in self-medication practices with analgesics. Paramedical students need to be educated regarding safe use of analgesics.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33426113/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -5.414788722991943,
+      "relevance_score": 0.004430560860782862,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.003101392602548003,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:26169960",
+      "document_id": "pubmed:26169960",
+      "title": "Adherence to cardiovascular prevention strategies in patients with rheumatoid arthritis.",
+      "text": "OBJECTIVES: Patients with rheumatoid arthritis (RA) have a high risk of cardiovascular disease (CVD). Recent national and international guidelines suggest strict treatment of CVD risk factors in RA. The aim of this study was to evaluate the self-reported adherence to CV prevention strategies in patients with RA.\nMETHOD: RA patients visiting an outpatient clinic for strict CVD risk management received a validated questionnaire to evaluate adherence to CV prevention strategies. Strict treatment targets were defined and lifestyle recommendations were given following a prespecified protocol. CVD risk was assessed using the SCORE algorithm.\nRESULTS: In total, 111 questionnaires were returned (response rate of 82%). A high 10-year CVD risk (\u2265 20%) was present in 53%, but only 3% thought they had an increased CVD risk. A total of 53% of patients reported that they 'follow the doctors' suggestions exactly' and 75% reported finding it 'easy to follow the suggestions'. Of the 69% of patients who were prescribed lipid- and/or blood pressure-lowering drugs, 90% reported taking all prescribed tablets. The advice to follow a diet was given to 42%, of whom 68% said they followed the advised diet. Physical exercise was advised to 67%, of whom 62% said they performed specific physical exercise on at least 3 days a week. The adherence to lifestyle recommendations was not significantly different across the CVD risk groups.\nCONCLUSIONS: RA patients tend to underestimate their CVD risk. The self-reported adherence of RA patients to CVD risk management was high concerning pharmaceutical interventions and moderate in the case of lifestyle interventions.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26169960/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -7.165065765380859,
+      "relevance_score": 0.0007725308532826602,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.0005407715972978621,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:16204391",
+      "document_id": "pubmed:16204391",
+      "title": "Adherence to medications by patients after acute coronary syndromes.",
+      "text": "BACKGROUND: Nonadherence to medication may lead to poor medical outcomes.\nOBJECTIVE: To describe medication-taking behavior of patients with a history of acute coronary syndromes (ACS) for 4 classes of drugs and determine the relationship between self-reported adherence and patient characteristics.\nMETHODS: Consenting patients with the diagnosis of ACS were interviewed by telephone approximately 10 months after discharge. The survey elicited data characterizing the patient, current medication regimens, beliefs about drug therapy, reasons for discontinuing medications, and adherence. The survey included the Beliefs About Medicine Questionnaire providing 4 scales: Specific Necessity, Specific Concerns, General Harm, and General Overuse, and the Medication Adherence Scale (MAS). Multivariate regression was used to determine the independent variables with the strongest association to the MAS. A p value < or = 0.05 was considered significant for all analyses.\nRESULTS: Two hundred eight patients were interviewed. Mean +/- SD age was 64.9 +/- 13.0 years, with 60.6% male, 95.7% white, 57.3% with a college education, 87.9% living with > or =1 other person, and 42% indicating excellent or very good health. The percentage of patients continuing on medication at the time of the survey category ranged from 87.4% (aspirin) to 66.0% (angiotensin-converting enzyme inhibitors). Reasons for stopping medication included physician discontinuation or adverse effects. Of patients still on drug therapy, the mean MAS was 1.3 +/- 0.4, with 53.8% indicating nonadherence (score >1). The final regression model showed R(2) = 0.132 and included heart-related health status and Specific Necessity as significant predictor variables.\nCONCLUSIONS: After ACS, not all patients continue their drugs or take them exactly as prescribed. Determining beliefs about illness and medication may be helpful in developing interventions aimed at improving adherence.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16204391/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -7.416287899017334,
+      "relevance_score": 0.0006010159268043935,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.00042071114876307547,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cmedicine Zentarovil\u201d; relationship: \u201creduces\u201d; outcome: \u201cmigraine frequency\u201d; qualifiers: \u201cexactly 42%\u201d. The evidence does not mention medicine Zentarovil or any specific medication for migraines. The studies discuss self-medication practices, adherence to cardiovascular prevention strategies, and adherence to medications,  The evidence does not provide any information about the relationship between taking a specific medication and reducing migraine frequency. The evidence does not discuss the frequency of migraines or any reduction in migraine frequency. The evidence does not provide any specific percentage or exact number related to the reduction in migraine frequency.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:16204391",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:26169960",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:33426113",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "medicine Zentarovil",
+                "relationship": "reduces",
+                "outcome": "migraine frequency",
+                "population": "",
+                "qualifiers": "exactly 42%"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention medicine Zentarovil or any specific medication for migraines. The studies discuss self-medication practices, adherence to cardiovascular prevention strategies, and adherence to medications, ",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "medicine Zentarovil",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any information about the relationship between taking a specific medication and reducing migraine frequency.",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "reduces",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss the frequency of migraines or any reduction in migraine frequency.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "migraine frequency",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any specific percentage or exact number related to the reduction in migraine frequency.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly 42%",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 62513.112375000215,
+  "completed_at_utc": "2026-10-29T03:30:10.737140Z"
+}

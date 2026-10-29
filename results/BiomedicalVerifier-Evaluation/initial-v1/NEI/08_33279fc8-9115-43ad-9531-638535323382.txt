@@ -1,0 +1,7 @@
+Claim: Vitamin D deficiency causes scurvy.
+Actual verdict: NEI
+Expected candidate label: REFUTED
+Request ID: 33279fc8-9115-43ad-9531-638535323382
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/33279fc8-9115-43ad-9531-638535323382.json

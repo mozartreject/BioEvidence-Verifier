@@ -1,0 +1,7 @@
+Claim: Cholera does not cause diarrhea.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: b4d38cf9-4159-49df-9605-3f88d7e3d57f
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/b4d38cf9-4159-49df-9605-3f88d7e3d57f.json

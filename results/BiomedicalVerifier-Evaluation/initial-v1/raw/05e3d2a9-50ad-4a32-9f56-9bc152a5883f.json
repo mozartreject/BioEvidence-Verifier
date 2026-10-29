@@ -1,0 +1,788 @@
+{
+  "request": {
+    "request_id": "05e3d2a9-50ad-4a32-9f56-9bc152a5883f",
+    "claim": "Obesity protects against type 2 diabetes.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:34:46.819481Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:34:46.819567Z",
+      "ended_at_utc": "2026-10-29T02:34:47.458630Z",
+      "latency_ms": 639.064167000015
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:32198214",
+        "document_id": "pubmed:32198214",
+        "title": "Potential Protection Against Type 2 Diabetes in Obesity Through Lower CD36 Expression and Improved Exocytosis in \u03b2-Cells.",
+        "text": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease. In this study, we aimed to investigate the cause of differential insulin secretion capacity of pancreatic islets from donors with T2D and non-T2D (ND), especially obese donors (BMI \u226530 kg/m2). Islets from obese donors with T2D had reduced insulin secretion, decreased \u03b2-cell exocytosis, and higher expression of fatty acid translocase CD36. We tested the hypothesis that CD36 is a key molecule in the reduced insulin secretion capacity. Indeed, CD36 overexpression led to decreased insulin secretion, impaired exocytosis, and reduced granule docking. This was accompanied by reduced expression of the exocytotic proteins SNAP25, STXBP1, and VAMP2, likely because CD36 induced downregulation of the insulin receptor substrate (IRS) proteins, suppressed the insulin-signaling phosphatidylinositol 3-kinase/AKT pathway, and increased nuclear localization of the transcription factor FoxO1. CD36 antibody treatment of the human \u03b2-cell line EndoC-\u03b2H1 increased IRS1 and exocytotic protein levels, improved granule docking, and enhanced insulin secretion. Our results demonstrate that \u03b2-cells from obese donors with T2D have dysfunctional exocytosis likely due to an abnormal lipid handling represented by differential CD36 expression. Hence, CD36 could be a key molecule to limit \u03b2-cell function in T2D associated with obesity.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32198214/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.988509178161621,
+        "relevance_score": 0.9996607303619385,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:38367902",
+        "document_id": "pubmed:38367902",
+        "title": "Preventing obesity, insulin resistance and type 2 diabetes by targeting MT1-MMP.",
+        "text": "Obesity is one of the predominant risk factors for type 2 diabetes. Despite all the modern advances in medicine, an effective drug treatment for obesity without overt side effects has not yet been found. The discovery of growth and differentiation factor 15 (GDF15), an appetite-regulating hormone, created hopes for the treatment of obesity. However, an insufficient understanding of the physiological regulation of GDF15 has been a major obstacle to mitigating GDF15-centric treatment of obesity. Our recent studies revealed how a series of proteolytic events predominantly mediated by membrane-type 1 matrix metalloproteinase (MT1-MMP/MMP14), a key cell-surface metalloproteinase involved in extracellular remodeling, contribute to the pathogenesis of metabolic disorders, including obesity and diabetes. The MT1-MMP-mediated cleavage of the GDNF family receptor-\u03b1-like (GFRAL), a key neuronal receptor of GDF15, controls the satiety center in the hindbrain, thereby regulating non-homeostatic appetite and bodyweight changes. Furthermore, increased activation of MT1-MMP does not only lead to increased risk of obesity, but also causes age-associated insulin resistance by cleaving Insulin Receptor in major metabolic tissues. Importantly, inhibition of MT1-MMP effectively protects against obesity and diabetes, revealing the therapeutic potential of targeting MT1-MMP for the management of metabolic disorders.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38367902/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.809455394744873,
+        "relevance_score": 0.9995942711830139,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:625ad628fc20edb2c0b4",
+        "document_id": "web:625ad628fc20edb2c0b4",
+        "title": "Obesity and overweight",
+        "text": "Key facts\nIn 2024, 1 in 7 people (1.1 billion) in the world were living with obesity.\nWorldwide adult obesity has more than doubled since 1990, and adolescent obesity has quadrupled.\nIn 2024, 45% of adults 18 years and over (2.6 billion) were overweight. Of these, 940 million were living with obesity (16% of all adults).\nIn 2024, 35 million children under the age of 5 were overweight.\nIn 2024, 400 million children and adolescents aged 5\u201319 years were overweight, including 170 million who were living with obesity.\nOverview\nObesity is a chronic disease affecting 1.1 billion people worldwide (1) .\nIt is driven by complex interactions between environmental, social, biological and behavioural determinants. The global rise of obesity is contributing to the increasing burden of type 2 diabetes, cardiovascular disease, liver and kidney disease, and several cancers (3) .\nObesity affects people in all regions of the world and has risen alongside improvements in food security, socioeconomic development and major changes in diets, physical activity patterns, and broader social and behavioural norms. Together, these shifts have created environments that promote unhealthy weight gain and make prevention and treatment more difficult. As a result, obesity has become a major global public health challenge.\nA diagnosis of overweight or obesity is made by measuring a person\u2019s weight and height and by calculating their body mass index (BMI): weight (kg)/height\u00b2 (m\u00b2). Other measures, such as waist circumference, can also be used to identify overweight or obesity.\nThe BMI categories for defining overweight and obesity vary by age and sex for adults, adolescents, children and infants.\nDefinition of overweight and obesity\nWHO defines overweight and obesity as outlined below.\nAdults\noverweight is a BMI greater than or equal to 25; and\nobesity is a BMI greater than or equal to 30.\nChildren\nFor children, age needs to be considered when defining overweight and obesity.\nChildren and adolescents aged 5\u201319 years\noverweight is BMI-for-age greater than 1 standard deviation above the WHO Growth Reference median; and\nobesity is greater than 2 standard deviations above the WHO Growth Reference median.\nCharts and tables: WHO growth reference for children aged between 5\u201319 years\nChildren under 5 years of age\noverweight is weight-for-height greater than 2 standard deviations above WHO Child Growth Standards median; and\nobesity is weight-for-height greater than 3 standard deviations above the WHO Child Growth Standards median.\nCharts and tables: WHO child growth standards for children aged under 5 years\nPrevalence of overweight and obesity\nIn 2024, 2.6 billion adults aged 18 years and older were overweight, including 940 million adults who were living with obesity (1) . This corresponds to 45% of adults aged 18 years and over (44% of men and 45% of women) who were overweight; this is an increase from 1990, when 25% of adults aged 18 years and over were overweight. Prevalence of overweight varied by region, from 32% in the WHO South-East Asia Region and the African Region to 68% in the Region of the Americas.\nAbout 16% of adults aged 18 years and older worldwide were living with obesity in 2024. The worldwide prevalence of obesity more than doubled between 1990 and 2024.\nIn 2024, an estimated 35 million children under the age of 5 years were overweight (2) . Once considered a high-income country problem, overweight is on the rise in low- and middle-income countries. In Africa, the number of overweight children under 5 years has increased by nearly 12% since 2000. Almost half of the children under 5 years who were overweight in 2024 lived in Asia.\nIn 2024, 400 million children and adolescents aged 5\u201319 years were overweight. The prevalence of overweight (including obesity) among children and adolescents aged 5\u201319 has risen dramatically from just 8% in 1990 to 20% in 2024. The rise has occurred similarly among both boys and girls: in 2024, 19% of girls and 21% of boys were overweight.\nWhile just 2% of children and adolescents aged 5\u201319 were living with obesity in 1990 (31 million young people), by 2024, 8% of children and adolescents were living with obesity (170 million young people).\nObesity prevalence is currently increasing faster in low- and middle-income countries and in many rural populations worldwide than in the urban populations and high-income countries it was once associated with.\nCauses of overweight and obesity\nObesity is a chronic disease resulting from complex interactions between environmental and psychosocial influences and biological susceptibility.\nThe global health challenge of obesity is driven by increasingly obesogenic environments that limit access to healthy, affordable and sustainably produced foods; constrain opportunities for safe physical activity; and are shaped by market forces and inadequate legal and regulatory frameworks. These drivers are compounded by insufficient health system capacity to prevent, identify and manage obesity early. Addressing the challenge requires coordinated action across food systems, the built environment, regulatory and fiscal policies, and health systems to strengthen prevention, early diagnosis and multimodal chronic care including treatment, care and ongoing support.\nHealth and economic consequences\nThe health risks caused by overweight and obesity are increasingly well documented and understood.\nIn 2023, higher-than-optimal BMI caused an estimated 3.7 million deaths by increasing the number of deaths from diseases such as cardiovascular diseases, diabetes and cancers (3) .\nOverweight and obesity in childhood and adolescence adversely affect physical, mental and social well-being and should be identified and addressed as early as possible. They are associated with stigma, discrimination, bullying, poorer quality of life and impaired school performance. Without timely intervention, obesity often persists into adulthood, increasing the risk and accelerating the onset of noncommunicable diseases (NCDs), including type 2 diabetes and cardiovascular disease. Early prevention and effective treatment can reduce these long-term health risks and improve outcomes across the life course.\nThe economic impact of obesity is also important. If nothing is done, the global costs of overweight and obesity are predicted to reach US$ 3 trillion per year by 2030 and more than US$ 18 trillion by 2060 (4) .\nFacing a double burden of malnutrition\nPrevention and management\nprovide evidence-based counselling on healthy diet, physical activity, sleep and other healthy behaviours to all;\nassess obesity-related complications, comorbidities, hypertension, diabetes, disability, mental health and other NCD risk factors;\ndeliver or refer people with obesity to comprehensive, person-centred multimodal chronic care, including behavioural interventions, nutritional counselling, psychological support, pharmacological treatment, and metabolic and bariatric surgery, as appropriate;",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -2.00894832611084,
+        "relevance_score": 0.11826659739017487,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Obesity protects against type 2 diabetes."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:34:47.458694Z",
+      "ended_at_utc": "2026-10-29T02:34:53.440695Z",
+      "latency_ms": 5981.95720800004
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:32198214",
+        "document_id": "pubmed:32198214",
+        "title": "Potential Protection Against Type 2 Diabetes in Obesity Through Lower CD36 Expression and Improved Exocytosis in \u03b2-Cells.",
+        "text": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease. In this study, we aimed to investigate the cause of differential insulin secretion capacity of pancreatic islets from donors with T2D and non-T2D (ND), especially obese donors (BMI \u226530 kg/m2). Islets from obese donors with T2D had reduced insulin secretion, decreased \u03b2-cell exocytosis, and higher expression of fatty acid translocase CD36. We tested the hypothesis that CD36 is a key molecule in the reduced insulin secretion capacity. Indeed, CD36 overexpression led to decreased insulin secretion, impaired exocytosis, and reduced granule docking. This was accompanied by reduced expression of the exocytotic proteins SNAP25, STXBP1, and VAMP2, likely because CD36 induced downregulation of the insulin receptor substrate (IRS) proteins, suppressed the insulin-signaling phosphatidylinositol 3-kinase/AKT pathway, and increased nuclear localization of the transcription factor FoxO1. CD36 antibody treatment of the human \u03b2-cell line EndoC-\u03b2H1 increased IRS1 and exocytotic protein levels, improved granule docking, and enhanced insulin secretion. Our results demonstrate that \u03b2-cells from obese donors with T2D have dysfunctional exocytosis likely due to an abnormal lipid handling represented by differential CD36 expression. Hence, CD36 could be a key molecule to limit \u03b2-cell function in T2D associated with obesity.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32198214/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.988509178161621,
+        "relevance_score": 0.9996607303619385,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6997625112533569,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:38367902",
+        "document_id": "pubmed:38367902",
+        "title": "Preventing obesity, insulin resistance and type 2 diabetes by targeting MT1-MMP.",
+        "text": "Obesity is one of the predominant risk factors for type 2 diabetes. Despite all the modern advances in medicine, an effective drug treatment for obesity without overt side effects has not yet been found. The discovery of growth and differentiation factor 15 (GDF15), an appetite-regulating hormone, created hopes for the treatment of obesity. However, an insufficient understanding of the physiological regulation of GDF15 has been a major obstacle to mitigating GDF15-centric treatment of obesity. Our recent studies revealed how a series of proteolytic events predominantly mediated by membrane-type 1 matrix metalloproteinase (MT1-MMP/MMP14), a key cell-surface metalloproteinase involved in extracellular remodeling, contribute to the pathogenesis of metabolic disorders, including obesity and diabetes. The MT1-MMP-mediated cleavage of the GDNF family receptor-\u03b1-like (GFRAL), a key neuronal receptor of GDF15, controls the satiety center in the hindbrain, thereby regulating non-homeostatic appetite and bodyweight changes. Furthermore, increased activation of MT1-MMP does not only lead to increased risk of obesity, but also causes age-associated insulin resistance by cleaving Insulin Receptor in major metabolic tissues. Importantly, inhibition of MT1-MMP effectively protects against obesity and diabetes, revealing the therapeutic potential of targeting MT1-MMP for the management of metabolic disorders.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38367902/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 7.809455394744873,
+        "relevance_score": 0.9995942711830139,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.1999188542366028,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "web:625ad628fc20edb2c0b4",
+        "document_id": "web:625ad628fc20edb2c0b4",
+        "title": "Obesity and overweight",
+        "text": "Key facts\nIn 2024, 1 in 7 people (1.1 billion) in the world were living with obesity.\nWorldwide adult obesity has more than doubled since 1990, and adolescent obesity has quadrupled.\nIn 2024, 45% of adults 18 years and over (2.6 billion) were overweight. Of these, 940 million were living with obesity (16% of all adults).\nIn 2024, 35 million children under the age of 5 were overweight.\nIn 2024, 400 million children and adolescents aged 5\u201319 years were overweight, including 170 million who were living with obesity.\nOverview\nObesity is a chronic disease affecting 1.1 billion people worldwide (1) .\nIt is driven by complex interactions between environmental, social, biological and behavioural determinants. The global rise of obesity is contributing to the increasing burden of type 2 diabetes, cardiovascular disease, liver and kidney disease, and several cancers (3) .\nObesity affects people in all regions of the world and has risen alongside improvements in food security, socioeconomic development and major changes in diets, physical activity patterns, and broader social and behavioural norms. Together, these shifts have created environments that promote unhealthy weight gain and make prevention and treatment more difficult. As a result, obesity has become a major global public health challenge.\nA diagnosis of overweight or obesity is made by measuring a person\u2019s weight and height and by calculating their body mass index (BMI): weight (kg)/height\u00b2 (m\u00b2). Other measures, such as waist circumference, can also be used to identify overweight or obesity.\nThe BMI categories for defining overweight and obesity vary by age and sex for adults, adolescents, children and infants.\nDefinition of overweight and obesity\nWHO defines overweight and obesity as outlined below.\nAdults\noverweight is a BMI greater than or equal to 25; and\nobesity is a BMI greater than or equal to 30.\nChildren\nFor children, age needs to be considered when defining overweight and obesity.\nChildren and adolescents aged 5\u201319 years\noverweight is BMI-for-age greater than 1 standard deviation above the WHO Growth Reference median; and\nobesity is greater than 2 standard deviations above the WHO Growth Reference median.\nCharts and tables: WHO growth reference for children aged between 5\u201319 years\nChildren under 5 years of age\noverweight is weight-for-height greater than 2 standard deviations above WHO Child Growth Standards median; and\nobesity is weight-for-height greater than 3 standard deviations above the WHO Child Growth Standards median.\nCharts and tables: WHO child growth standards for children aged under 5 years\nPrevalence of overweight and obesity\nIn 2024, 2.6 billion adults aged 18 years and older were overweight, including 940 million adults who were living with obesity (1) . This corresponds to 45% of adults aged 18 years and over (44% of men and 45% of women) who were overweight; this is an increase from 1990, when 25% of adults aged 18 years and over were overweight. Prevalence of overweight varied by region, from 32% in the WHO South-East Asia Region and the African Region to 68% in the Region of the Americas.\nAbout 16% of adults aged 18 years and older worldwide were living with obesity in 2024. The worldwide prevalence of obesity more than doubled between 1990 and 2024.\nIn 2024, an estimated 35 million children under the age of 5 years were overweight (2) . Once considered a high-income country problem, overweight is on the rise in low- and middle-income countries. In Africa, the number of overweight children under 5 years has increased by nearly 12% since 2000. Almost half of the children under 5 years who were overweight in 2024 lived in Asia.\nIn 2024, 400 million children and adolescents aged 5\u201319 years were overweight. The prevalence of overweight (including obesity) among children and adolescents aged 5\u201319 has risen dramatically from just 8% in 1990 to 20% in 2024. The rise has occurred similarly among both boys and girls: in 2024, 19% of girls and 21% of boys were overweight.\nWhile just 2% of children and adolescents aged 5\u201319 were living with obesity in 1990 (31 million young people), by 2024, 8% of children and adolescents were living with obesity (170 million young people).\nObesity prevalence is currently increasing faster in low- and middle-income countries and in many rural populations worldwide than in the urban populations and high-income countries it was once associated with.\nCauses of overweight and obesity\nObesity is a chronic disease resulting from complex interactions between environmental and psychosocial influences and biological susceptibility.\nThe global health challenge of obesity is driven by increasingly obesogenic environments that limit access to healthy, affordable and sustainably produced foods; constrain opportunities for safe physical activity; and are shaped by market forces and inadequate legal and regulatory frameworks. These drivers are compounded by insufficient health system capacity to prevent, identify and manage obesity early. Addressing the challenge requires coordinated action across food systems, the built environment, regulatory and fiscal policies, and health systems to strengthen prevention, early diagnosis and multimodal chronic care including treatment, care and ongoing support.\nHealth and economic consequences\nThe health risks caused by overweight and obesity are increasingly well documented and understood.\nIn 2023, higher-than-optimal BMI caused an estimated 3.7 million deaths by increasing the number of deaths from diseases such as cardiovascular diseases, diabetes and cancers (3) .\nOverweight and obesity in childhood and adolescence adversely affect physical, mental and social well-being and should be identified and addressed as early as possible. They are associated with stigma, discrimination, bullying, poorer quality of life and impaired school performance. Without timely intervention, obesity often persists into adulthood, increasing the risk and accelerating the onset of noncommunicable diseases (NCDs), including type 2 diabetes and cardiovascular disease. Early prevention and effective treatment can reduce these long-term health risks and improve outcomes across the life course.\nThe economic impact of obesity is also important. If nothing is done, the global costs of overweight and obesity are predicted to reach US$ 3 trillion per year by 2030 and more than US$ 18 trillion by 2060 (4) .\nFacing a double burden of malnutrition\nPrevention and management\nprovide evidence-based counselling on healthy diet, physical activity, sleep and other healthy behaviours to all;\nassess obesity-related complications, comorbidities, hypertension, diabetes, disability, mental health and other NCD risk factors;\ndeliver or refer people with obesity to comprehensive, person-centred multimodal chronic care, including behavioural interventions, nutritional counselling, psychological support, pharmacological treatment, and metabolic and bariatric surgery, as appropriate;",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -2.00894832611084,
+        "relevance_score": 0.11826659739017487,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.023653319478034975,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:34:53.440724Z",
+      "ended_at_utc": "2026-10-29T02:34:58.865849Z",
+      "latency_ms": 5425.125291000313
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.8,
+      "nei": 0.05,
+      "supported": 0.15
+    },
+    "verifier_score": 0.8,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:32198214",
+      "pubmed:38367902",
+      "web:625ad628fc20edb2c0b4"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The text explicitly states that obesity is a risk factor for type 2 diabetes, which contradicts the claim that obesity protects against type 2 diabetes.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:32198214",
+              "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:32198214",
+              "relation": "REFUTES",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:38367902",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:625ad628fc20edb2c0b4",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v1",
+            "claim_parts": {
+              "subject": "Obesity",
+              "relationship": "protects against",
+              "outcome": "type 2 diabetes",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease.",
+                "reason": "The text mentions that obesity is a risk factor for type 2 diabetes, which aligns with the claim that obesity can protect against type 2 diabetes.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "subject",
+                "claim_fragment": "Obesity",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:32198214",
+                    "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "evidence_phrase": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease.",
+                "reason": "The text explicitly states that obesity is a risk factor for type 2 diabetes, which contradicts the claim that obesity protects against type 2 diabetes.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "relationship",
+                "claim_fragment": "protects against",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:32198214",
+                    "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease.",
+                "reason": "The text mentions type 2 diabetes as the outcome related to obesity, which matches the claim.",
+                "sentence_ids": [
+                  "E1S1"
+                ],
+                "slot": "outcome",
+                "claim_fragment": "type 2 diabetes",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:32198214",
+                    "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:32198214"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.15,
+            "REFUTED": 0.8,
+            "NEI": 0.05
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The evidence [E1] indicates that obesity can lead to dysfunctional insulin secretion and exocytosis in \u03b2-cells, which may contribute to type 2 diabetes. [E2] further supports this by highlighting the role of MT1-MMP in obesity and diabetes, suggesting that obesity is a risk factor for these conditions. [E3] provides global statistics on the prevalence of obesity, emphasizing its widespread impact and the associated health risks, including type 2 diabetes.",
+    "cited_evidence_ids": [
+      "pubmed:32198214",
+      "pubmed:38367902",
+      "web:625ad628fc20edb2c0b4"
+    ],
+    "grounding": {
+      "semantic_score": 0.6802495121955872,
+      "coverage_score": 0.6954472064971924,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:35:32.557036Z",
+      "ended_at_utc": "2026-10-29T02:35:43.978772Z",
+      "latency_ms": 11421.635041000172
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.8,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:32198214",
+      "document_id": "pubmed:32198214",
+      "title": "Potential Protection Against Type 2 Diabetes in Obesity Through Lower CD36 Expression and Improved Exocytosis in \u03b2-Cells.",
+      "text": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease. In this study, we aimed to investigate the cause of differential insulin secretion capacity of pancreatic islets from donors with T2D and non-T2D (ND), especially obese donors (BMI \u226530 kg/m2). Islets from obese donors with T2D had reduced insulin secretion, decreased \u03b2-cell exocytosis, and higher expression of fatty acid translocase CD36. We tested the hypothesis that CD36 is a key molecule in the reduced insulin secretion capacity. Indeed, CD36 overexpression led to decreased insulin secretion, impaired exocytosis, and reduced granule docking. This was accompanied by reduced expression of the exocytotic proteins SNAP25, STXBP1, and VAMP2, likely because CD36 induced downregulation of the insulin receptor substrate (IRS) proteins, suppressed the insulin-signaling phosphatidylinositol 3-kinase/AKT pathway, and increased nuclear localization of the transcription factor FoxO1. CD36 antibody treatment of the human \u03b2-cell line EndoC-\u03b2H1 increased IRS1 and exocytotic protein levels, improved granule docking, and enhanced insulin secretion. Our results demonstrate that \u03b2-cells from obese donors with T2D have dysfunctional exocytosis likely due to an abnormal lipid handling represented by differential CD36 expression. Hence, CD36 could be a key molecule to limit \u03b2-cell function in T2D associated with obesity.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32198214/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.988509178161621,
+      "relevance_score": 0.9996607303619385,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6997625112533569,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:38367902",
+      "document_id": "pubmed:38367902",
+      "title": "Preventing obesity, insulin resistance and type 2 diabetes by targeting MT1-MMP.",
+      "text": "Obesity is one of the predominant risk factors for type 2 diabetes. Despite all the modern advances in medicine, an effective drug treatment for obesity without overt side effects has not yet been found. The discovery of growth and differentiation factor 15 (GDF15), an appetite-regulating hormone, created hopes for the treatment of obesity. However, an insufficient understanding of the physiological regulation of GDF15 has been a major obstacle to mitigating GDF15-centric treatment of obesity. Our recent studies revealed how a series of proteolytic events predominantly mediated by membrane-type 1 matrix metalloproteinase (MT1-MMP/MMP14), a key cell-surface metalloproteinase involved in extracellular remodeling, contribute to the pathogenesis of metabolic disorders, including obesity and diabetes. The MT1-MMP-mediated cleavage of the GDNF family receptor-\u03b1-like (GFRAL), a key neuronal receptor of GDF15, controls the satiety center in the hindbrain, thereby regulating non-homeostatic appetite and bodyweight changes. Furthermore, increased activation of MT1-MMP does not only lead to increased risk of obesity, but also causes age-associated insulin resistance by cleaving Insulin Receptor in major metabolic tissues. Importantly, inhibition of MT1-MMP effectively protects against obesity and diabetes, revealing the therapeutic potential of targeting MT1-MMP for the management of metabolic disorders.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/38367902/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 7.809455394744873,
+      "relevance_score": 0.9995942711830139,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.1999188542366028,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "web:625ad628fc20edb2c0b4",
+      "document_id": "web:625ad628fc20edb2c0b4",
+      "title": "Obesity and overweight",
+      "text": "Key facts\nIn 2024, 1 in 7 people (1.1 billion) in the world were living with obesity.\nWorldwide adult obesity has more than doubled since 1990, and adolescent obesity has quadrupled.\nIn 2024, 45% of adults 18 years and over (2.6 billion) were overweight. Of these, 940 million were living with obesity (16% of all adults).\nIn 2024, 35 million children under the age of 5 were overweight.\nIn 2024, 400 million children and adolescents aged 5\u201319 years were overweight, including 170 million who were living with obesity.\nOverview\nObesity is a chronic disease affecting 1.1 billion people worldwide (1) .\nIt is driven by complex interactions between environmental, social, biological and behavioural determinants. The global rise of obesity is contributing to the increasing burden of type 2 diabetes, cardiovascular disease, liver and kidney disease, and several cancers (3) .\nObesity affects people in all regions of the world and has risen alongside improvements in food security, socioeconomic development and major changes in diets, physical activity patterns, and broader social and behavioural norms. Together, these shifts have created environments that promote unhealthy weight gain and make prevention and treatment more difficult. As a result, obesity has become a major global public health challenge.\nA diagnosis of overweight or obesity is made by measuring a person\u2019s weight and height and by calculating their body mass index (BMI): weight (kg)/height\u00b2 (m\u00b2). Other measures, such as waist circumference, can also be used to identify overweight or obesity.\nThe BMI categories for defining overweight and obesity vary by age and sex for adults, adolescents, children and infants.\nDefinition of overweight and obesity\nWHO defines overweight and obesity as outlined below.\nAdults\noverweight is a BMI greater than or equal to 25; and\nobesity is a BMI greater than or equal to 30.\nChildren\nFor children, age needs to be considered when defining overweight and obesity.\nChildren and adolescents aged 5\u201319 years\noverweight is BMI-for-age greater than 1 standard deviation above the WHO Growth Reference median; and\nobesity is greater than 2 standard deviations above the WHO Growth Reference median.\nCharts and tables: WHO growth reference for children aged between 5\u201319 years\nChildren under 5 years of age\noverweight is weight-for-height greater than 2 standard deviations above WHO Child Growth Standards median; and\nobesity is weight-for-height greater than 3 standard deviations above the WHO Child Growth Standards median.\nCharts and tables: WHO child growth standards for children aged under 5 years\nPrevalence of overweight and obesity\nIn 2024, 2.6 billion adults aged 18 years and older were overweight, including 940 million adults who were living with obesity (1) . This corresponds to 45% of adults aged 18 years and over (44% of men and 45% of women) who were overweight; this is an increase from 1990, when 25% of adults aged 18 years and over were overweight. Prevalence of overweight varied by region, from 32% in the WHO South-East Asia Region and the African Region to 68% in the Region of the Americas.\nAbout 16% of adults aged 18 years and older worldwide were living with obesity in 2024. The worldwide prevalence of obesity more than doubled between 1990 and 2024.\nIn 2024, an estimated 35 million children under the age of 5 years were overweight (2) . Once considered a high-income country problem, overweight is on the rise in low- and middle-income countries. In Africa, the number of overweight children under 5 years has increased by nearly 12% since 2000. Almost half of the children under 5 years who were overweight in 2024 lived in Asia.\nIn 2024, 400 million children and adolescents aged 5\u201319 years were overweight. The prevalence of overweight (including obesity) among children and adolescents aged 5\u201319 has risen dramatically from just 8% in 1990 to 20% in 2024. The rise has occurred similarly among both boys and girls: in 2024, 19% of girls and 21% of boys were overweight.\nWhile just 2% of children and adolescents aged 5\u201319 were living with obesity in 1990 (31 million young people), by 2024, 8% of children and adolescents were living with obesity (170 million young people).\nObesity prevalence is currently increasing faster in low- and middle-income countries and in many rural populations worldwide than in the urban populations and high-income countries it was once associated with.\nCauses of overweight and obesity\nObesity is a chronic disease resulting from complex interactions between environmental and psychosocial influences and biological susceptibility.\nThe global health challenge of obesity is driven by increasingly obesogenic environments that limit access to healthy, affordable and sustainably produced foods; constrain opportunities for safe physical activity; and are shaped by market forces and inadequate legal and regulatory frameworks. These drivers are compounded by insufficient health system capacity to prevent, identify and manage obesity early. Addressing the challenge requires coordinated action across food systems, the built environment, regulatory and fiscal policies, and health systems to strengthen prevention, early diagnosis and multimodal chronic care including treatment, care and ongoing support.\nHealth and economic consequences\nThe health risks caused by overweight and obesity are increasingly well documented and understood.\nIn 2023, higher-than-optimal BMI caused an estimated 3.7 million deaths by increasing the number of deaths from diseases such as cardiovascular diseases, diabetes and cancers (3) .\nOverweight and obesity in childhood and adolescence adversely affect physical, mental and social well-being and should be identified and addressed as early as possible. They are associated with stigma, discrimination, bullying, poorer quality of life and impaired school performance. Without timely intervention, obesity often persists into adulthood, increasing the risk and accelerating the onset of noncommunicable diseases (NCDs), including type 2 diabetes and cardiovascular disease. Early prevention and effective treatment can reduce these long-term health risks and improve outcomes across the life course.\nThe economic impact of obesity is also important. If nothing is done, the global costs of overweight and obesity are predicted to reach US$ 3 trillion per year by 2030 and more than US$ 18 trillion by 2060 (4) .\nFacing a double burden of malnutrition\nPrevention and management\nprovide evidence-based counselling on healthy diet, physical activity, sleep and other healthy behaviours to all;\nassess obesity-related complications, comorbidities, hypertension, diabetes, disability, mental health and other NCD risk factors;\ndeliver or refer people with obesity to comprehensive, person-centred multimodal chronic care, including behavioural interventions, nutritional counselling, psychological support, pharmacological treatment, and metabolic and bariatric surgery, as appropriate;",
+      "source": "www.who.int",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -2.00894832611084,
+      "relevance_score": 0.11826659739017487,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.023653319478034975,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v1",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The text explicitly states that obesity is a risk factor for type 2 diabetes, which contradicts the claim that obesity protects against type 2 diabetes.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:32198214",
+                "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:32198214",
+                "relation": "REFUTES",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:38367902",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:625ad628fc20edb2c0b4",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v1",
+              "claim_parts": {
+                "subject": "Obesity",
+                "relationship": "protects against",
+                "outcome": "type 2 diabetes",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease.",
+                  "reason": "The text mentions that obesity is a risk factor for type 2 diabetes, which aligns with the claim that obesity can protect against type 2 diabetes.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "subject",
+                  "claim_fragment": "Obesity",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:32198214",
+                      "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "evidence_phrase": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease.",
+                  "reason": "The text explicitly states that obesity is a risk factor for type 2 diabetes, which contradicts the claim that obesity protects against type 2 diabetes.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "relationship",
+                  "claim_fragment": "protects against",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:32198214",
+                      "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease.",
+                  "reason": "The text mentions type 2 diabetes as the outcome related to obesity, which matches the claim.",
+                  "sentence_ids": [
+                    "E1S1"
+                  ],
+                  "slot": "outcome",
+                  "claim_fragment": "type 2 diabetes",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:32198214",
+                      "quote": "Obesity is a risk factor for type 2 diabetes (T2D); however, not all obese individuals develop the disease."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:32198214"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.15,
+              "REFUTED": 0.8,
+              "NEI": 0.05
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 57159.15141699997,
+  "completed_at_utc": "2026-10-29T02:35:43.979147Z"
+}

@@ -1,0 +1,7 @@
+Claim: Coronary artery disease does not increase heart attack risk.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 8802601a-52d9-4bed-9934-de4f839c2cf2
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/8802601a-52d9-4bed-9934-de4f839c2cf2.json

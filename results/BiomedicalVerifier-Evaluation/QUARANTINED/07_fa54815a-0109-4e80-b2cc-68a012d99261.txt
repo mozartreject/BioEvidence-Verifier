@@ -1,0 +1,5 @@
+Claim: Sleeping on the left side increases antibody responses to influenza vaccination by exactly 14% in adults aged 30 to 35.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: Semantic grounding 0.3206 below threshold 0.4500
+Raw response: ../raw/fa54815a-0109-4e80-b2cc-68a012d99261.json

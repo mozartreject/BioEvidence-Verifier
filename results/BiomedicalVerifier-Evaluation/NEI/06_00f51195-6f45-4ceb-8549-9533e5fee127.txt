@@ -1,0 +1,7 @@
+Claim: Taking oral probiotics prevents Parkinson disease in healthy adults who have never used antibiotics.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: 00f51195-6f45-4ceb-8549-9533e5fee127
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/00f51195-6f45-4ceb-8549-9533e5fee127.json

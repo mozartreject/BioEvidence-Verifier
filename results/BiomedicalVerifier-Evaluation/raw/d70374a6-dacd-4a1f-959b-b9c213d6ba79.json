@@ -1,0 +1,802 @@
+{
+  "request": {
+    "request_id": "d70374a6-dacd-4a1f-959b-b9c213d6ba79",
+    "claim": "Eating one pear on alternate Tuesdays prevents rheumatoid arthritis in healthy adults.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:21:36.657812Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:21:36.657908Z",
+      "ended_at_utc": "2026-10-29T03:21:37.176871Z",
+      "latency_ms": 518.960375000006
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:35718313",
+        "document_id": "pubmed:35718313",
+        "title": "Healthy versus unhealthy comfort eating for psychophysiological stress recovery in low-income Black and Latinx adults.",
+        "text": "Low-income Black and Latinx individuals are disproportionately vulnerable to chronic stress and metabolic disease. Evidence suggests that these populations engage in elevated levels of comfort eating (i.e., eating comforting food to alleviate stress), which can harm diet quality. For this reason, many interventions discourage comfort eating. However, if comfort eating does indeed buffer stress, it may be a protective health behavior, particularly if healthy foods (e.g., strawberries) buffer stress as effectively as traditional unhealthy comfort foods (e.g., brownies). By choosing healthy foods, people may be able to simultaneously improve their nutrition and reduce their stress levels, both of which have the potential to reduce health disparities among chronically stressed populations. The present study tested the efficacy of healthy and unhealthy comfort eating for improving psychophysiological stress recovery. A sample of low-income Black and Latinx individuals (N\u00a0=\u00a0129) were randomly assigned to consume a healthy food (e.g., grapes), unhealthy comfort food (e.g., chips), or no food after exposure to a laboratory stressor. Throughout, we measured participants' psychophysiological stress responses, including self-reported stress, rumination, autonomic nervous system activation (i.e., electrodermal activity (EDA), heart rate variability (HRV)) and neuroendocrine responses (i.e., salivary cortisol). We compared participants' stress recovery trajectories by condition and found no significant group differences (p\u00a0=\u00a00.12 for self-reported stress; p\u00a0=\u00a00.92 for EDA; p\u00a0=\u00a00.22 for HRV, p\u00a0=\u00a01.00 for cortisol). Participants in all conditions showed decreases in self-reported stress and in cortisol post-stressor (ps\u00a0<\u00a00.01), but rates of decline did not differ by condition (i.e., healthy or unhealthy comfort food, brief no-food waiting period). Although null, these results are important because they challenge the widely-held assumption that comfort foods help people decrease stress.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35718313/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.094552993774414,
+        "relevance_score": 0.0003051039238926023,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:31906271",
+        "document_id": "pubmed:31906271",
+        "title": "Fruit and Vegetable Intake and Mental Health in Adults: A Systematic Review.",
+        "text": "The role of a properly balanced diet in the prevention and treatment of mental disorders has been suggested, while vegetables and fruits have a high content of nutrients that may be of importance in the case of depressive disorders. The aim of the study was to conduct a systematic review of the observational studies analyzing association between fruit and vegetable intake and mental health in adults. The search adhered to the guidelines of Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA), and the review was registered in the International Prospective Register of Systematic Reviews (PROSPERO) database (CRD42019138148). A search for peer-reviewed observational studies published until June 2019 was performed in PubMed and Web of Science databases, followed by an additional manual search for publications conducted via analyzing the references of the found studies. With respect to the intake of fruit and/or vegetable, studies that assessed the intake of fruits and/or vegetables, or their processed products (e.g., juices), as a measure expressed in grams or as the number of portions were included. Those studies that assessed the general dietary patterns were not included in the present analysis. With respect to mental health, studies that assessed all the aspects of mental health in both healthy participants and subjects with physical health problems were included, but those conducted in groups of patients with intellectual disabilities, dementia, and eating disorders were excluded. To assess bias, the Newcastle-Ottawa Scale (NOS) was applied. A total of 5911 studies were independently extracted by 2 researchers and verified if they met the inclusion criteria using a 2-stage procedure (based on the title, based on the abstract). After reviewing the full text, a total of 61 studies were selected. A narrative synthesis of the findings from the included studies was performed, which was structured around the type of outcome. The studies included mainly focused on depression and depressive symptoms, but also other characteristics ranging from general and mental well-being, quality of life, sleep quality, life satisfaction, flourishing, mood, self-efficacy, curiosity, creativity, optimism, self-esteem, stress, nervousness, or happiness, to anxiety, minor psychiatric disorders, distress, or attempted suicide, were analyzed. The most prominent results indicated that high total intake of fruits and vegetables, and some of their specific subgroups including berries, citrus, and green leafy vegetables, may promote higher levels of optimism and self-efficacy, as well as reduce the level of psychological distress, ambiguity, and cancer fatalism, and protect against depressive symptoms. However, it must be indicated that the studies included were conducted using various methodologies and in different populations, so their results were not always sufficiently comparable, which is a limitation. Taken together, it can be concluded that fruits and/or vegetables, and some of their specific subgroups, as well as processed fruits and vegetables, seems to have a positive influence on mental health, as stated in the vast majority of the included studies. Therefore, the general recommendation to consume at least 5 portions of fruit and vegetables a day may be beneficial also for mental health.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31906271/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.382490158081055,
+        "relevance_score": 0.00022878704476170242,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:531abc4e44d3d5319319",
+        "document_id": "web:531abc4e44d3d5319319",
+        "title": "Healthy diet",
+        "text": "Healthy diet\nSkip to main content\nHealthy diet\nnutrition\nnutrition\n\u00a9\nCredits\nPhysical activity\nDigital health\nNo tobacco\nA healthy diet is essential for good health and nutrition.\nIt protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet.\nA healthy diet comprises a combination of different foods. These include:\nStaples like cereals (wheat, barley, rye, maize or rice) or starchy tubers or roots (potato, yam, taro or cassava).\nLegumes (lentils and beans).\nFruit and vegetables.\nFoods from animal sources (meat, fish, eggs and milk).\nHere is some useful information, based on WHO recommendations, to follow a healthy diet, and the benefits of doing so.\nBreastfeed babies and young children:\nA healthy diet starts early in life - breastfeeding fosters healthy growth, and may have longer-term health benefits, like reducing the risk of becoming overweight or obese and developing noncommunicable diseases later in life.\nFeeding babies exclusively with breast milk from birth to 6 months of life is important for a healthy diet. It is also important to introduce a variety of safe and nutritious complementary foods at 6 months of age, while continuing to breastfeed until your child is two years old and beyond.\nEat plenty of vegetables and fruit:\nThey are important sources of vitamins, minerals, dietary fibre, plant protein and antioxidants.\nPeople with diets rich in vegetables and fruit have a significantly lower risk of obesity, heart disease, stroke, diabetes and certain types of cancer.\nEat less fat:\nFats and oils and concentrated sources of energy. Eating too much, particularly the wrong kinds of fat, like saturated and industrially-produced trans-fat, can increase the risk of heart disease and stroke.\nUsing unsaturated vegetable oils (olive, soy, sunflower or corn oil) rather than animal fats or oils high in saturated fats (butter, ghee, lard, coconut and palm oil) will help consume healthier fats.\nTo avoid unhealthy weight gain, consumption of total fat should not exceed 30% of a person's overall energy intake.\nLimit intake of sugars:\nFor a healthy diet, sugars should represent less than 10% of your total energy intake. Reducing even further to under 5% has additional health benefits.\nChoosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars.\nLimiting intake of soft drinks, soda and other drinks high in sugars (fruit juices, cordials and syrups, flavoured milks and yogurt drinks) also helps reduce intake of sugars.\nReduce salt intake:\nKeeping your salt intake to less than 5g per day helps prevent hypertension and reduces the risk of heart disease and stroke in the adult population.\nLimiting the amount of salt and high-sodium condiments (soy sauce and fish sauce) when cooking and preparing foods helps reduce salt intake.\nMore information:\nWHO 5 keys to a healthy diet\nWHO healthy diet fact sheet\nWHO salt reduction fact sheet\nWHO obesity and overweight fact sheet\nKeep going!\nWhether you are a seasoned health advocate or just now committing to taking the first steps in becoming more healthy, share your progress and inspire your friends and family to do the same. While you are here, take a minute to sign up to our weekly updates and we'll be in touch with more health advice and latest findings to improve your health and wellbeing.\nStay connected\nSubscribe to our weekly updates\nShare your story\nInspire\nfriends on social media\nDo good\nBecome\na WHO volunteer",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.576556205749512,
+        "relevance_score": 2.5506386009510607e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Eating one pear on alternate Tuesdays prevents rheumatoid arthritis in healthy adults."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:21:37.176917Z",
+      "ended_at_utc": "2026-10-29T03:21:37.424442Z",
+      "latency_ms": 247.5269169999592
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:35718313",
+        "document_id": "pubmed:35718313",
+        "title": "Healthy versus unhealthy comfort eating for psychophysiological stress recovery in low-income Black and Latinx adults.",
+        "text": "Low-income Black and Latinx individuals are disproportionately vulnerable to chronic stress and metabolic disease. Evidence suggests that these populations engage in elevated levels of comfort eating (i.e., eating comforting food to alleviate stress), which can harm diet quality. For this reason, many interventions discourage comfort eating. However, if comfort eating does indeed buffer stress, it may be a protective health behavior, particularly if healthy foods (e.g., strawberries) buffer stress as effectively as traditional unhealthy comfort foods (e.g., brownies). By choosing healthy foods, people may be able to simultaneously improve their nutrition and reduce their stress levels, both of which have the potential to reduce health disparities among chronically stressed populations. The present study tested the efficacy of healthy and unhealthy comfort eating for improving psychophysiological stress recovery. A sample of low-income Black and Latinx individuals (N\u00a0=\u00a0129) were randomly assigned to consume a healthy food (e.g., grapes), unhealthy comfort food (e.g., chips), or no food after exposure to a laboratory stressor. Throughout, we measured participants' psychophysiological stress responses, including self-reported stress, rumination, autonomic nervous system activation (i.e., electrodermal activity (EDA), heart rate variability (HRV)) and neuroendocrine responses (i.e., salivary cortisol). We compared participants' stress recovery trajectories by condition and found no significant group differences (p\u00a0=\u00a00.12 for self-reported stress; p\u00a0=\u00a00.92 for EDA; p\u00a0=\u00a00.22 for HRV, p\u00a0=\u00a01.00 for cortisol). Participants in all conditions showed decreases in self-reported stress and in cortisol post-stressor (ps\u00a0<\u00a00.01), but rates of decline did not differ by condition (i.e., healthy or unhealthy comfort food, brief no-food waiting period). Although null, these results are important because they challenge the widely-held assumption that comfort foods help people decrease stress.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35718313/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.094552993774414,
+        "relevance_score": 0.0003051039238926023,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.0003051039238926023,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:31906271",
+        "document_id": "pubmed:31906271",
+        "title": "Fruit and Vegetable Intake and Mental Health in Adults: A Systematic Review.",
+        "text": "The role of a properly balanced diet in the prevention and treatment of mental disorders has been suggested, while vegetables and fruits have a high content of nutrients that may be of importance in the case of depressive disorders. The aim of the study was to conduct a systematic review of the observational studies analyzing association between fruit and vegetable intake and mental health in adults. The search adhered to the guidelines of Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA), and the review was registered in the International Prospective Register of Systematic Reviews (PROSPERO) database (CRD42019138148). A search for peer-reviewed observational studies published until June 2019 was performed in PubMed and Web of Science databases, followed by an additional manual search for publications conducted via analyzing the references of the found studies. With respect to the intake of fruit and/or vegetable, studies that assessed the intake of fruits and/or vegetables, or their processed products (e.g., juices), as a measure expressed in grams or as the number of portions were included. Those studies that assessed the general dietary patterns were not included in the present analysis. With respect to mental health, studies that assessed all the aspects of mental health in both healthy participants and subjects with physical health problems were included, but those conducted in groups of patients with intellectual disabilities, dementia, and eating disorders were excluded. To assess bias, the Newcastle-Ottawa Scale (NOS) was applied. A total of 5911 studies were independently extracted by 2 researchers and verified if they met the inclusion criteria using a 2-stage procedure (based on the title, based on the abstract). After reviewing the full text, a total of 61 studies were selected. A narrative synthesis of the findings from the included studies was performed, which was structured around the type of outcome. The studies included mainly focused on depression and depressive symptoms, but also other characteristics ranging from general and mental well-being, quality of life, sleep quality, life satisfaction, flourishing, mood, self-efficacy, curiosity, creativity, optimism, self-esteem, stress, nervousness, or happiness, to anxiety, minor psychiatric disorders, distress, or attempted suicide, were analyzed. The most prominent results indicated that high total intake of fruits and vegetables, and some of their specific subgroups including berries, citrus, and green leafy vegetables, may promote higher levels of optimism and self-efficacy, as well as reduce the level of psychological distress, ambiguity, and cancer fatalism, and protect against depressive symptoms. However, it must be indicated that the studies included were conducted using various methodologies and in different populations, so their results were not always sufficiently comparable, which is a limitation. Taken together, it can be concluded that fruits and/or vegetables, and some of their specific subgroups, as well as processed fruits and vegetables, seems to have a positive influence on mental health, as stated in the vast majority of the included studies. Therefore, the general recommendation to consume at least 5 portions of fruit and vegetables a day may be beneficial also for mental health.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31906271/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -8.382490158081055,
+        "relevance_score": 0.00022878704476170242,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.00022878704476170242,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:531abc4e44d3d5319319",
+        "document_id": "web:531abc4e44d3d5319319",
+        "title": "Healthy diet",
+        "text": "Healthy diet\nSkip to main content\nHealthy diet\nnutrition\nnutrition\n\u00a9\nCredits\nPhysical activity\nDigital health\nNo tobacco\nA healthy diet is essential for good health and nutrition.\nIt protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet.\nA healthy diet comprises a combination of different foods. These include:\nStaples like cereals (wheat, barley, rye, maize or rice) or starchy tubers or roots (potato, yam, taro or cassava).\nLegumes (lentils and beans).\nFruit and vegetables.\nFoods from animal sources (meat, fish, eggs and milk).\nHere is some useful information, based on WHO recommendations, to follow a healthy diet, and the benefits of doing so.\nBreastfeed babies and young children:\nA healthy diet starts early in life - breastfeeding fosters healthy growth, and may have longer-term health benefits, like reducing the risk of becoming overweight or obese and developing noncommunicable diseases later in life.\nFeeding babies exclusively with breast milk from birth to 6 months of life is important for a healthy diet. It is also important to introduce a variety of safe and nutritious complementary foods at 6 months of age, while continuing to breastfeed until your child is two years old and beyond.\nEat plenty of vegetables and fruit:\nThey are important sources of vitamins, minerals, dietary fibre, plant protein and antioxidants.\nPeople with diets rich in vegetables and fruit have a significantly lower risk of obesity, heart disease, stroke, diabetes and certain types of cancer.\nEat less fat:\nFats and oils and concentrated sources of energy. Eating too much, particularly the wrong kinds of fat, like saturated and industrially-produced trans-fat, can increase the risk of heart disease and stroke.\nUsing unsaturated vegetable oils (olive, soy, sunflower or corn oil) rather than animal fats or oils high in saturated fats (butter, ghee, lard, coconut and palm oil) will help consume healthier fats.\nTo avoid unhealthy weight gain, consumption of total fat should not exceed 30% of a person's overall energy intake.\nLimit intake of sugars:\nFor a healthy diet, sugars should represent less than 10% of your total energy intake. Reducing even further to under 5% has additional health benefits.\nChoosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars.\nLimiting intake of soft drinks, soda and other drinks high in sugars (fruit juices, cordials and syrups, flavoured milks and yogurt drinks) also helps reduce intake of sugars.\nReduce salt intake:\nKeeping your salt intake to less than 5g per day helps prevent hypertension and reduces the risk of heart disease and stroke in the adult population.\nLimiting the amount of salt and high-sodium condiments (soy sauce and fish sauce) when cooking and preparing foods helps reduce salt intake.\nMore information:\nWHO 5 keys to a healthy diet\nWHO healthy diet fact sheet\nWHO salt reduction fact sheet\nWHO obesity and overweight fact sheet\nKeep going!\nWhether you are a seasoned health advocate or just now committing to taking the first steps in becoming more healthy, share your progress and inspire your friends and family to do the same. While you are here, take a minute to sign up to our weekly updates and we'll be in touch with more health advice and latest findings to improve your health and wellbeing.\nStay connected\nSubscribe to our weekly updates\nShare your story\nInspire\nfriends on social media\nDo good\nBecome\na WHO volunteer",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.576556205749512,
+        "relevance_score": 2.5506386009510607e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 5.101277201902122e-06,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:21:37.424475Z",
+      "ended_at_utc": "2026-10-29T03:21:37.424568Z",
+      "latency_ms": 0.10083399979521346
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:35718313",
+      "pubmed:31906271",
+      "web:531abc4e44d3d5319319"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cEating one pear on alternate Tuesdays\u201d; relationship: \u201cprevents\u201d; outcome: \u201crheumatoid arthritis\u201d; qualifiers: \u201cone pear on alternate Tuesdays\u201d. The evidence does not mention eating one pear on alternate Tuesdays or any specific dietary intervention related to rheumatoid arthritis prevention. The evidence does not discuss the relationship between eating pears or any other dietary intervention and the prevention of rheumatoid arthritis. The evidence does not mention rheumatoid arthritis or any specific outcomes related to this condition. The evidence does not specify the frequency or type of pear consumption, nor does it mention Tuesday or alternate Tuesdays.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:31906271",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:35718313",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:531abc4e44d3d5319319",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Eating one pear on alternate Tuesdays",
+              "relationship": "prevents",
+              "outcome": "rheumatoid arthritis",
+              "population": "healthy adults",
+              "qualifiers": "one pear on alternate Tuesdays"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention eating one pear on alternate Tuesdays or any specific dietary intervention related to rheumatoid arthritis prevention.",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Eating one pear on alternate Tuesdays",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss the relationship between eating pears or any other dietary intervention and the prevention of rheumatoid arthritis.",
+                "sentence_ids": [],
+                "slot": "relationship",
+                "evidence_phrase": "",
+                "claim_fragment": "prevents",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention rheumatoid arthritis or any specific outcomes related to this condition.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "rheumatoid arthritis",
+                "citations": []
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence discusses low-income Black and Latinx adults, which can be considered a healthy population in the context of the claim.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E1S2"
+                ],
+                "slot": "population",
+                "evidence_phrase": "Low-income Black and Latinx individuals are disproportionately vulnerable to chronic stress and metabolic disease.",
+                "claim_fragment": "healthy adults",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:35718313",
+                    "quote": "Low-income Black and Latinx individuals are disproportionately vulnerable to chronic stress and metabolic disease."
+                  },
+                  {
+                    "evidence_id": "pubmed:35718313",
+                    "quote": "Evidence suggests that these populations engage in elevated levels of comfort eating (i.e., eating comforting food to alleviate stress), which can harm diet quality."
+                  }
+                ]
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not specify the frequency or type of pear consumption, nor does it mention Tuesday or alternate Tuesdays.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "one pear on alternate Tuesdays",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "relationship",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "QUARANTINED",
+    "explanation": null,
+    "cited_evidence_ids": [],
+    "grounding": {
+      "semantic_score": null,
+      "coverage_score": null,
+      "semantic_pass": null,
+      "coverage_pass": null,
+      "citations_valid": null,
+      "unsupported_numbers_free": null,
+      "verdict_match": null,
+      "suspicious_identifiers_free": null
+    },
+    "repair_attempts_used": 2,
+    "quarantine_reason": "Semantic grounding 0.3967 below threshold 0.4500",
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:22:03.196816Z",
+      "ended_at_utc": "2026-10-29T03:22:27.233303Z",
+      "latency_ms": 24036.194667000018
+    },
+    "warnings": [
+      "Phase 4 verdict remains locked; only the Phase 5 explanation was quarantined."
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:35718313",
+      "document_id": "pubmed:35718313",
+      "title": "Healthy versus unhealthy comfort eating for psychophysiological stress recovery in low-income Black and Latinx adults.",
+      "text": "Low-income Black and Latinx individuals are disproportionately vulnerable to chronic stress and metabolic disease. Evidence suggests that these populations engage in elevated levels of comfort eating (i.e., eating comforting food to alleviate stress), which can harm diet quality. For this reason, many interventions discourage comfort eating. However, if comfort eating does indeed buffer stress, it may be a protective health behavior, particularly if healthy foods (e.g., strawberries) buffer stress as effectively as traditional unhealthy comfort foods (e.g., brownies). By choosing healthy foods, people may be able to simultaneously improve their nutrition and reduce their stress levels, both of which have the potential to reduce health disparities among chronically stressed populations. The present study tested the efficacy of healthy and unhealthy comfort eating for improving psychophysiological stress recovery. A sample of low-income Black and Latinx individuals (N\u00a0=\u00a0129) were randomly assigned to consume a healthy food (e.g., grapes), unhealthy comfort food (e.g., chips), or no food after exposure to a laboratory stressor. Throughout, we measured participants' psychophysiological stress responses, including self-reported stress, rumination, autonomic nervous system activation (i.e., electrodermal activity (EDA), heart rate variability (HRV)) and neuroendocrine responses (i.e., salivary cortisol). We compared participants' stress recovery trajectories by condition and found no significant group differences (p\u00a0=\u00a00.12 for self-reported stress; p\u00a0=\u00a00.92 for EDA; p\u00a0=\u00a00.22 for HRV, p\u00a0=\u00a01.00 for cortisol). Participants in all conditions showed decreases in self-reported stress and in cortisol post-stressor (ps\u00a0<\u00a00.01), but rates of decline did not differ by condition (i.e., healthy or unhealthy comfort food, brief no-food waiting period). Although null, these results are important because they challenge the widely-held assumption that comfort foods help people decrease stress.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35718313/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -8.094552993774414,
+      "relevance_score": 0.0003051039238926023,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.0003051039238926023,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "pubmed:31906271",
+      "document_id": "pubmed:31906271",
+      "title": "Fruit and Vegetable Intake and Mental Health in Adults: A Systematic Review.",
+      "text": "The role of a properly balanced diet in the prevention and treatment of mental disorders has been suggested, while vegetables and fruits have a high content of nutrients that may be of importance in the case of depressive disorders. The aim of the study was to conduct a systematic review of the observational studies analyzing association between fruit and vegetable intake and mental health in adults. The search adhered to the guidelines of Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA), and the review was registered in the International Prospective Register of Systematic Reviews (PROSPERO) database (CRD42019138148). A search for peer-reviewed observational studies published until June 2019 was performed in PubMed and Web of Science databases, followed by an additional manual search for publications conducted via analyzing the references of the found studies. With respect to the intake of fruit and/or vegetable, studies that assessed the intake of fruits and/or vegetables, or their processed products (e.g., juices), as a measure expressed in grams or as the number of portions were included. Those studies that assessed the general dietary patterns were not included in the present analysis. With respect to mental health, studies that assessed all the aspects of mental health in both healthy participants and subjects with physical health problems were included, but those conducted in groups of patients with intellectual disabilities, dementia, and eating disorders were excluded. To assess bias, the Newcastle-Ottawa Scale (NOS) was applied. A total of 5911 studies were independently extracted by 2 researchers and verified if they met the inclusion criteria using a 2-stage procedure (based on the title, based on the abstract). After reviewing the full text, a total of 61 studies were selected. A narrative synthesis of the findings from the included studies was performed, which was structured around the type of outcome. The studies included mainly focused on depression and depressive symptoms, but also other characteristics ranging from general and mental well-being, quality of life, sleep quality, life satisfaction, flourishing, mood, self-efficacy, curiosity, creativity, optimism, self-esteem, stress, nervousness, or happiness, to anxiety, minor psychiatric disorders, distress, or attempted suicide, were analyzed. The most prominent results indicated that high total intake of fruits and vegetables, and some of their specific subgroups including berries, citrus, and green leafy vegetables, may promote higher levels of optimism and self-efficacy, as well as reduce the level of psychological distress, ambiguity, and cancer fatalism, and protect against depressive symptoms. However, it must be indicated that the studies included were conducted using various methodologies and in different populations, so their results were not always sufficiently comparable, which is a limitation. Taken together, it can be concluded that fruits and/or vegetables, and some of their specific subgroups, as well as processed fruits and vegetables, seems to have a positive influence on mental health, as stated in the vast majority of the included studies. Therefore, the general recommendation to consume at least 5 portions of fruit and vegetables a day may be beneficial also for mental health.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31906271/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -8.382490158081055,
+      "relevance_score": 0.00022878704476170242,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.00022878704476170242,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    },
+    {
+      "evidence_id": "web:531abc4e44d3d5319319",
+      "document_id": "web:531abc4e44d3d5319319",
+      "title": "Healthy diet",
+      "text": "Healthy diet\nSkip to main content\nHealthy diet\nnutrition\nnutrition\n\u00a9\nCredits\nPhysical activity\nDigital health\nNo tobacco\nA healthy diet is essential for good health and nutrition.\nIt protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet.\nA healthy diet comprises a combination of different foods. These include:\nStaples like cereals (wheat, barley, rye, maize or rice) or starchy tubers or roots (potato, yam, taro or cassava).\nLegumes (lentils and beans).\nFruit and vegetables.\nFoods from animal sources (meat, fish, eggs and milk).\nHere is some useful information, based on WHO recommendations, to follow a healthy diet, and the benefits of doing so.\nBreastfeed babies and young children:\nA healthy diet starts early in life - breastfeeding fosters healthy growth, and may have longer-term health benefits, like reducing the risk of becoming overweight or obese and developing noncommunicable diseases later in life.\nFeeding babies exclusively with breast milk from birth to 6 months of life is important for a healthy diet. It is also important to introduce a variety of safe and nutritious complementary foods at 6 months of age, while continuing to breastfeed until your child is two years old and beyond.\nEat plenty of vegetables and fruit:\nThey are important sources of vitamins, minerals, dietary fibre, plant protein and antioxidants.\nPeople with diets rich in vegetables and fruit have a significantly lower risk of obesity, heart disease, stroke, diabetes and certain types of cancer.\nEat less fat:\nFats and oils and concentrated sources of energy. Eating too much, particularly the wrong kinds of fat, like saturated and industrially-produced trans-fat, can increase the risk of heart disease and stroke.\nUsing unsaturated vegetable oils (olive, soy, sunflower or corn oil) rather than animal fats or oils high in saturated fats (butter, ghee, lard, coconut and palm oil) will help consume healthier fats.\nTo avoid unhealthy weight gain, consumption of total fat should not exceed 30% of a person's overall energy intake.\nLimit intake of sugars:\nFor a healthy diet, sugars should represent less than 10% of your total energy intake. Reducing even further to under 5% has additional health benefits.\nChoosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars.\nLimiting intake of soft drinks, soda and other drinks high in sugars (fruit juices, cordials and syrups, flavoured milks and yogurt drinks) also helps reduce intake of sugars.\nReduce salt intake:\nKeeping your salt intake to less than 5g per day helps prevent hypertension and reduces the risk of heart disease and stroke in the adult population.\nLimiting the amount of salt and high-sodium condiments (soy sauce and fish sauce) when cooking and preparing foods helps reduce salt intake.\nMore information:\nWHO 5 keys to a healthy diet\nWHO healthy diet fact sheet\nWHO salt reduction fact sheet\nWHO obesity and overweight fact sheet\nKeep going!\nWhether you are a seasoned health advocate or just now committing to taking the first steps in becoming more healthy, share your progress and inspire your friends and family to do the same. While you are here, take a minute to sign up to our weekly updates and we'll be in touch with more health advice and latest findings to improve your health and wellbeing.\nStay connected\nSubscribe to our weekly updates\nShare your story\nInspire\nfriends on social media\nDo good\nBecome\na WHO volunteer",
+      "source": "www.who.int",
+      "source_url": "https://www.who.int/initiatives/behealthy/healthy-diet",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.576556205749512,
+      "relevance_score": 2.5506386009510607e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 5.101277201902122e-06,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": false
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cEating one pear on alternate Tuesdays\u201d; relationship: \u201cprevents\u201d; outcome: \u201crheumatoid arthritis\u201d; qualifiers: \u201cone pear on alternate Tuesdays\u201d. The evidence does not mention eating one pear on alternate Tuesdays or any specific dietary intervention related to rheumatoid arthritis prevention. The evidence does not discuss the relationship between eating pears or any other dietary intervention and the prevention of rheumatoid arthritis. The evidence does not mention rheumatoid arthritis or any specific outcomes related to this condition. The evidence does not specify the frequency or type of pear consumption, nor does it mention Tuesday or alternate Tuesdays.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:31906271",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:35718313",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:531abc4e44d3d5319319",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Eating one pear on alternate Tuesdays",
+                "relationship": "prevents",
+                "outcome": "rheumatoid arthritis",
+                "population": "healthy adults",
+                "qualifiers": "one pear on alternate Tuesdays"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention eating one pear on alternate Tuesdays or any specific dietary intervention related to rheumatoid arthritis prevention.",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Eating one pear on alternate Tuesdays",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss the relationship between eating pears or any other dietary intervention and the prevention of rheumatoid arthritis.",
+                  "sentence_ids": [],
+                  "slot": "relationship",
+                  "evidence_phrase": "",
+                  "claim_fragment": "prevents",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention rheumatoid arthritis or any specific outcomes related to this condition.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "rheumatoid arthritis",
+                  "citations": []
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence discusses low-income Black and Latinx adults, which can be considered a healthy population in the context of the claim.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E1S2"
+                  ],
+                  "slot": "population",
+                  "evidence_phrase": "Low-income Black and Latinx individuals are disproportionately vulnerable to chronic stress and metabolic disease.",
+                  "claim_fragment": "healthy adults",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:35718313",
+                      "quote": "Low-income Black and Latinx individuals are disproportionately vulnerable to chronic stress and metabolic disease."
+                    },
+                    {
+                      "evidence_id": "pubmed:35718313",
+                      "quote": "Evidence suggests that these populations engage in elevated levels of comfort eating (i.e., eating comforting food to alleviate stress), which can harm diet quality."
+                    }
+                  ]
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not specify the frequency or type of pear consumption, nor does it mention Tuesday or alternate Tuesdays.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "one pear on alternate Tuesdays",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "relationship",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 50576.53358399989,
+  "completed_at_utc": "2026-10-29T03:22:27.235050Z"
+}

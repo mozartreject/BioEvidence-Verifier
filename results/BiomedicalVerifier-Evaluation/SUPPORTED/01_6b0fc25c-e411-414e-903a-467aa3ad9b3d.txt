@@ -1,0 +1,7 @@
+Claim: Malaria is caused by Plasmodium parasites.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: 6b0fc25c-e411-414e-903a-467aa3ad9b3d
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/6b0fc25c-e411-414e-903a-467aa3ad9b3d.json

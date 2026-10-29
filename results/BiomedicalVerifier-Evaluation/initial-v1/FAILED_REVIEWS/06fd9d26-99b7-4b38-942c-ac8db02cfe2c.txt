@@ -1,0 +1,4 @@
+Claim: Antibiotics kill the viruses that cause the common cold.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': 'Evidence audit could not be validated: Claim-slot match has no exact source witness'}
+Raw response: ../raw/06fd9d26-99b7-4b38-942c-ac8db02cfe2c.json

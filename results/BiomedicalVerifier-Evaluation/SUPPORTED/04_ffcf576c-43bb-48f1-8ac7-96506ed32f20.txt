@@ -1,0 +1,7 @@
+Claim: Insulin lowers blood glucose.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: ffcf576c-43bb-48f1-8ac7-96506ed32f20
+Explanation status: QUARANTINED
+Quarantine reason: Explanation contains no evidence citation
+Raw response: ../raw/ffcf576c-43bb-48f1-8ac7-96506ed32f20.json

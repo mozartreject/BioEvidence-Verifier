@@ -1,0 +1,6 @@
+{
+  "detail": {
+    "error": "INFERENCE_FAILED",
+    "message": "No readable evidence was retrieved from the enabled search sources. Try a more specific claim or retry later."
+  }
+}

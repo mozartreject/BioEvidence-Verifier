@@ -1,0 +1,776 @@
+{
+  "request": {
+    "request_id": "74329192-7af7-4789-9ce8-3ad93506b001",
+    "claim": "Sitting facing north improves influenza vaccine effectiveness by exactly 21%.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:37:16.936652Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:37:16.936755Z",
+      "ended_at_utc": "2026-10-29T03:37:17.669550Z",
+      "latency_ms": 732.7950829999281
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:905338",
+        "document_id": "pubmed:905338",
+        "title": "[Sclerosing of varicose veins: radiographic control].",
+        "text": "The events during a sclerosant injection were controlled radiographically. Vistarine forte containing 21.5% of total iodine makes the distribution of fluid clearly visible, both opacifying and sclerosing. 1 ml of air precedes the injection of 0.5 ml of sclerosant. This has shown that the \"air-block\", as found in the syringe, is not exactly a cushion of air separating the vessel wall from contact with the circulating blood. The air is distributed like a collar of pearls along the vein walls. These bubbles of air remain visible for a long time in the varicose convultions and this tend to hinder contact between the sclerosant and the intima of the varicose vein. As the slides show, it is a well demarcated segment of the varicose vein which comes into effective contact with the sclerosant. It is precisely this segment which subsequently becomes sclerosed. The sclerosant seeks a centripetal pathway in all positions, lying standing and sitting. The therapeutic effect is the same, and is independent of the position of the patient at the time of the injection of sclerosant.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/905338/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.639488220214844,
+        "relevance_score": 6.510212551802397e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:33742675",
+        "document_id": "pubmed:33742675",
+        "title": "In People With COPD, There Is Limited Evidence That Exercise Training Reduces Sedentary Time, and Behavior Change Techniques Are Poorly Reported: Systematic Review and Meta-Analysis.",
+        "text": "OBJECTIVE: In people with chronic obstructive pulmonary disease (COPD), the authors sought to explore (1) the effect of any intervention on the time spent in sedentary behavior and, (2) which behavior change techniques (BCTs) have shown promise in achieving this lifestyle target.\nMETHODS: Five electronic databases were searched on January 7, 2021. Studies were included if they (1) recruited people with stable COPD, (2) applied an intervention \u22654\u00a0weeks, and (3) measure sedentary time (ST) before and after the intervention period using wearable technology or via self-reports of television viewing. The primary analyses were restricted to data reported in randomized controlled trials (RCTs). All BCTs described during the intervention periods were mapped using an established taxonomy.\nRESULTS: Of the 1142 records identified, 8 were RCTs, of which 6 had exercise training as the intervention. Random effects meta-analysis of data from 4 of these 6 trials that implemented exercise training showed no clear effect on ST (mean difference, -3.4\u00a0minutes; 95% CI,\u00a0-27.9-21.0\u00a0minutes). Commonly mapped BCTs in the majority of studies included action planning and instruction on how to perform the behavior. Of all the BCTs mapped, 25% were reported with sufficient information to be graded \"beyond reasonable doubt.\"\nCONCLUSION: Despite robust evidence that exercise training improves functional outcomes and reduces dyspnea, this intervention does not seem to translate into behavior change. The primary analysis demonstrated that, in adults with COPD, the effect of exercise training on ST was, at best, uncertain. The BCTs embedded within the interventions were often poorly reported. Future RCTs are required that appropriately report BCT and ST to improve the precision of our estimate of the effect exercise training may have on ST, and BCTs used during intervention periods need to be reported with greater specificity.\nIMPACT: In people with COPD, there is currently limited evidence to suggest that exercise training will reduce sedentary behavior. To move this area of research forward, BCTs embedded within these interventions need to be described with greater precision.\nLAY SUMMARY: In people with COPD, interventions such as exercise training do not seem to produce a reduction in sedentary behavior (ie, time spent sitting or lying down) during daily life. The techniques used to help people change their sedentary behavior were poorly reported, so we do not know what exactly was done and therefore cannot know what may have worked well.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33742675/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.883474349975586,
+        "relevance_score": 5.100813723402098e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:2596281",
+        "document_id": "pubmed:2596281",
+        "title": "Trunk asymmetry and scoliosis, Anthropometric measurements in prepuberal school children.",
+        "text": "A total of 1060 children (515 girls, 545 boys) were examined for screening of trunk asymmetry ans scoliosis at an average age of 10.8 years. The physical examination consisted of height, sitting height, total arm length and leg length inequality determinations and moir\u00e9 topography. Trunk asymmetry was measured by forward bending test and a posteroanterior standing radiograph of the spine was taken of those 188 (17.7%) children who had a trunk hump greater than or equal to 6 mm. Only 20.1% of the children were found to be exactly symmetric in the forward bending test, 47.3% had a right-sided hump and 32.6% had a left-side hump. Humps of 6 mm or more were significantly (p = 0.03) more prevalent among girls (21.7%) than boys (16.3%). Mor\u00e9 fringe asymmetry was provided to be common: only 9% of the material was totally symmetric, two thirds has asymmetry of less than or equal to 1 fringe, 26.6% has asymmetry greater than 1 and less than or equal or 2 and 5.4% greater than 2. The prevalence of scoliosis (trunk hump greater than or equal to 6 mm and Cobb angle less than or equal to 10 degree) was 4.1%. The majority (72.1%) of the curves were left convex.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/2596281/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.31852912902832,
+        "relevance_score": 3.301455217297189e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Sitting facing north improves influenza vaccine effectiveness by exactly 21%."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:37:17.669662Z",
+      "ended_at_utc": "2026-10-29T03:37:36.764687Z",
+      "latency_ms": 19094.79474999989
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:33742675",
+        "document_id": "pubmed:33742675",
+        "title": "In People With COPD, There Is Limited Evidence That Exercise Training Reduces Sedentary Time, and Behavior Change Techniques Are Poorly Reported: Systematic Review and Meta-Analysis.",
+        "text": "OBJECTIVE: In people with chronic obstructive pulmonary disease (COPD), the authors sought to explore (1) the effect of any intervention on the time spent in sedentary behavior and, (2) which behavior change techniques (BCTs) have shown promise in achieving this lifestyle target.\nMETHODS: Five electronic databases were searched on January 7, 2021. Studies were included if they (1) recruited people with stable COPD, (2) applied an intervention \u22654\u00a0weeks, and (3) measure sedentary time (ST) before and after the intervention period using wearable technology or via self-reports of television viewing. The primary analyses were restricted to data reported in randomized controlled trials (RCTs). All BCTs described during the intervention periods were mapped using an established taxonomy.\nRESULTS: Of the 1142 records identified, 8 were RCTs, of which 6 had exercise training as the intervention. Random effects meta-analysis of data from 4 of these 6 trials that implemented exercise training showed no clear effect on ST (mean difference, -3.4\u00a0minutes; 95% CI,\u00a0-27.9-21.0\u00a0minutes). Commonly mapped BCTs in the majority of studies included action planning and instruction on how to perform the behavior. Of all the BCTs mapped, 25% were reported with sufficient information to be graded \"beyond reasonable doubt.\"\nCONCLUSION: Despite robust evidence that exercise training improves functional outcomes and reduces dyspnea, this intervention does not seem to translate into behavior change. The primary analysis demonstrated that, in adults with COPD, the effect of exercise training on ST was, at best, uncertain. The BCTs embedded within the interventions were often poorly reported. Future RCTs are required that appropriately report BCT and ST to improve the precision of our estimate of the effect exercise training may have on ST, and BCTs used during intervention periods need to be reported with greater specificity.\nIMPACT: In people with COPD, there is currently limited evidence to suggest that exercise training will reduce sedentary behavior. To move this area of research forward, BCTs embedded within these interventions need to be described with greater precision.\nLAY SUMMARY: In people with COPD, interventions such as exercise training do not seem to produce a reduction in sedentary behavior (ie, time spent sitting or lying down) during daily life. The techniques used to help people change their sedentary behavior were poorly reported, so we do not know what exactly was done and therefore cannot know what may have worked well.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33742675/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.883474349975586,
+        "relevance_score": 5.100813723402098e-05,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 5.100813723402098e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:2596281",
+        "document_id": "pubmed:2596281",
+        "title": "Trunk asymmetry and scoliosis, Anthropometric measurements in prepuberal school children.",
+        "text": "A total of 1060 children (515 girls, 545 boys) were examined for screening of trunk asymmetry ans scoliosis at an average age of 10.8 years. The physical examination consisted of height, sitting height, total arm length and leg length inequality determinations and moir\u00e9 topography. Trunk asymmetry was measured by forward bending test and a posteroanterior standing radiograph of the spine was taken of those 188 (17.7%) children who had a trunk hump greater than or equal to 6 mm. Only 20.1% of the children were found to be exactly symmetric in the forward bending test, 47.3% had a right-sided hump and 32.6% had a left-side hump. Humps of 6 mm or more were significantly (p = 0.03) more prevalent among girls (21.7%) than boys (16.3%). Mor\u00e9 fringe asymmetry was provided to be common: only 9% of the material was totally symmetric, two thirds has asymmetry of less than or equal to 1 fringe, 26.6% has asymmetry greater than 1 and less than or equal or 2 and 5.4% greater than 2. The prevalence of scoliosis (trunk hump greater than or equal to 6 mm and Cobb angle less than or equal to 10 degree) was 4.1%. The majority (72.1%) of the curves were left convex.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/2596281/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.31852912902832,
+        "relevance_score": 3.301455217297189e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 2.311018652108032e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:905338",
+        "document_id": "pubmed:905338",
+        "title": "[Sclerosing of varicose veins: radiographic control].",
+        "text": "The events during a sclerosant injection were controlled radiographically. Vistarine forte containing 21.5% of total iodine makes the distribution of fluid clearly visible, both opacifying and sclerosing. 1 ml of air precedes the injection of 0.5 ml of sclerosant. This has shown that the \"air-block\", as found in the syringe, is not exactly a cushion of air separating the vessel wall from contact with the circulating blood. The air is distributed like a collar of pearls along the vein walls. These bubbles of air remain visible for a long time in the varicose convultions and this tend to hinder contact between the sclerosant and the intima of the varicose vein. As the slides show, it is a well demarcated segment of the varicose vein which comes into effective contact with the sclerosant. It is precisely this segment which subsequently becomes sclerosed. The sclerosant seeks a centripetal pathway in all positions, lying standing and sitting. The therapeutic effect is the same, and is independent of the position of the patient at the time of the injection of sclerosant.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/905338/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.639488220214844,
+        "relevance_score": 6.510212551802397e-05,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 1.3020425103604794e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:37:36.764717Z",
+      "ended_at_utc": "2026-10-29T03:37:40.676094Z",
+      "latency_ms": 3911.3795829998708
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:33742675",
+      "pubmed:2596281",
+      "pubmed:905338"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cSitting facing north\u201d; outcome: \u201cinfluenza vaccine effectiveness\u201d; qualifiers: \u201cexactly 21%\u201d. The evidence does not mention sitting facing north or any related behavior or position. The evidence does not discuss the outcome of influenza vaccine effectiveness or any related outcomes. The evidence does not provide any specific percentage or exact number related to the claim.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:2596281",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:33742675",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:905338",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Sitting facing north",
+              "relationship": "improves",
+              "outcome": "influenza vaccine effectiveness",
+              "population": "",
+              "qualifiers": "exactly 21%"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention sitting facing north or any related behavior or position.",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Sitting facing north",
+                "citations": []
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence discusses the effect of exercise training on sedentary time, which is unrelated to the claim about sitting facing north. The evidence also does not support any relationship between sitting facing north and a",
+                "sentence_ids": [
+                  "E2S7"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Random effects meta-analysis of data from 4 of these 6 trials that implemented exercise training showed no clear effect on ST (mean difference, -3.4\u00a0minutes; 95% CI,\u00a0-27.9-21.0\u00a0minutes).",
+                "claim_fragment": "improves",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:33742675",
+                    "quote": "Random effects meta-analysis of data from 4 of these 6 trials that implemented exercise training showed no clear effect on ST (mean difference, -3.4\u00a0minutes; 95% CI,\u00a0-27.9-21.0\u00a0minutes)."
+                  }
+                ]
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not discuss the outcome of influenza vaccine effectiveness or any related outcomes.",
+                "sentence_ids": [],
+                "slot": "outcome",
+                "evidence_phrase": "",
+                "claim_fragment": "influenza vaccine effectiveness",
+                "citations": []
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any specific percentage or exact number related to the claim.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly 21%",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "outcome",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The provided evidence does not address the claim about sitting facing north and influenza vaccine effectiveness. [E1] discusses the effect of exercise training on sedentary behavior in COPD patients, [E2] examines trunk asymmetry and scoliosis in school children, and [E3] describes the radiographic control of sclerosant injection for varicose veins. None of these studies pertain to the claim in question.",
+    "cited_evidence_ids": [
+      "pubmed:33742675",
+      "pubmed:2596281",
+      "pubmed:905338"
+    ],
+    "grounding": {
+      "semantic_score": 0.6312329173088074,
+      "coverage_score": 0.5382522344589233,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:38:00.577957Z",
+      "ended_at_utc": "2026-10-29T03:38:08.588314Z",
+      "latency_ms": 8010.255541999868
+    },
+    "warnings": [
+      "NEI semantic validation excluded explicit evidence-absence/insufficiency sentence(s); raw semantic metrics are preserved"
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:33742675",
+      "document_id": "pubmed:33742675",
+      "title": "In People With COPD, There Is Limited Evidence That Exercise Training Reduces Sedentary Time, and Behavior Change Techniques Are Poorly Reported: Systematic Review and Meta-Analysis.",
+      "text": "OBJECTIVE: In people with chronic obstructive pulmonary disease (COPD), the authors sought to explore (1) the effect of any intervention on the time spent in sedentary behavior and, (2) which behavior change techniques (BCTs) have shown promise in achieving this lifestyle target.\nMETHODS: Five electronic databases were searched on January 7, 2021. Studies were included if they (1) recruited people with stable COPD, (2) applied an intervention \u22654\u00a0weeks, and (3) measure sedentary time (ST) before and after the intervention period using wearable technology or via self-reports of television viewing. The primary analyses were restricted to data reported in randomized controlled trials (RCTs). All BCTs described during the intervention periods were mapped using an established taxonomy.\nRESULTS: Of the 1142 records identified, 8 were RCTs, of which 6 had exercise training as the intervention. Random effects meta-analysis of data from 4 of these 6 trials that implemented exercise training showed no clear effect on ST (mean difference, -3.4\u00a0minutes; 95% CI,\u00a0-27.9-21.0\u00a0minutes). Commonly mapped BCTs in the majority of studies included action planning and instruction on how to perform the behavior. Of all the BCTs mapped, 25% were reported with sufficient information to be graded \"beyond reasonable doubt.\"\nCONCLUSION: Despite robust evidence that exercise training improves functional outcomes and reduces dyspnea, this intervention does not seem to translate into behavior change. The primary analysis demonstrated that, in adults with COPD, the effect of exercise training on ST was, at best, uncertain. The BCTs embedded within the interventions were often poorly reported. Future RCTs are required that appropriately report BCT and ST to improve the precision of our estimate of the effect exercise training may have on ST, and BCTs used during intervention periods need to be reported with greater specificity.\nIMPACT: In people with COPD, there is currently limited evidence to suggest that exercise training will reduce sedentary behavior. To move this area of research forward, BCTs embedded within these interventions need to be described with greater precision.\nLAY SUMMARY: In people with COPD, interventions such as exercise training do not seem to produce a reduction in sedentary behavior (ie, time spent sitting or lying down) during daily life. The techniques used to help people change their sedentary behavior were poorly reported, so we do not know what exactly was done and therefore cannot know what may have worked well.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33742675/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.883474349975586,
+      "relevance_score": 5.100813723402098e-05,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 5.100813723402098e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:2596281",
+      "document_id": "pubmed:2596281",
+      "title": "Trunk asymmetry and scoliosis, Anthropometric measurements in prepuberal school children.",
+      "text": "A total of 1060 children (515 girls, 545 boys) were examined for screening of trunk asymmetry ans scoliosis at an average age of 10.8 years. The physical examination consisted of height, sitting height, total arm length and leg length inequality determinations and moir\u00e9 topography. Trunk asymmetry was measured by forward bending test and a posteroanterior standing radiograph of the spine was taken of those 188 (17.7%) children who had a trunk hump greater than or equal to 6 mm. Only 20.1% of the children were found to be exactly symmetric in the forward bending test, 47.3% had a right-sided hump and 32.6% had a left-side hump. Humps of 6 mm or more were significantly (p = 0.03) more prevalent among girls (21.7%) than boys (16.3%). Mor\u00e9 fringe asymmetry was provided to be common: only 9% of the material was totally symmetric, two thirds has asymmetry of less than or equal to 1 fringe, 26.6% has asymmetry greater than 1 and less than or equal or 2 and 5.4% greater than 2. The prevalence of scoliosis (trunk hump greater than or equal to 6 mm and Cobb angle less than or equal to 10 degree) was 4.1%. The majority (72.1%) of the curves were left convex.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/2596281/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.31852912902832,
+      "relevance_score": 3.301455217297189e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 2.311018652108032e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:905338",
+      "document_id": "pubmed:905338",
+      "title": "[Sclerosing of varicose veins: radiographic control].",
+      "text": "The events during a sclerosant injection were controlled radiographically. Vistarine forte containing 21.5% of total iodine makes the distribution of fluid clearly visible, both opacifying and sclerosing. 1 ml of air precedes the injection of 0.5 ml of sclerosant. This has shown that the \"air-block\", as found in the syringe, is not exactly a cushion of air separating the vessel wall from contact with the circulating blood. The air is distributed like a collar of pearls along the vein walls. These bubbles of air remain visible for a long time in the varicose convultions and this tend to hinder contact between the sclerosant and the intima of the varicose vein. As the slides show, it is a well demarcated segment of the varicose vein which comes into effective contact with the sclerosant. It is precisely this segment which subsequently becomes sclerosed. The sclerosant seeks a centripetal pathway in all positions, lying standing and sitting. The therapeutic effect is the same, and is independent of the position of the patient at the time of the injection of sclerosant.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/905338/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.639488220214844,
+      "relevance_score": 6.510212551802397e-05,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 1.3020425103604794e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cSitting facing north\u201d; outcome: \u201cinfluenza vaccine effectiveness\u201d; qualifiers: \u201cexactly 21%\u201d. The evidence does not mention sitting facing north or any related behavior or position. The evidence does not discuss the outcome of influenza vaccine effectiveness or any related outcomes. The evidence does not provide any specific percentage or exact number related to the claim.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:2596281",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:33742675",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:905338",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Sitting facing north",
+                "relationship": "improves",
+                "outcome": "influenza vaccine effectiveness",
+                "population": "",
+                "qualifiers": "exactly 21%"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention sitting facing north or any related behavior or position.",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Sitting facing north",
+                  "citations": []
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence discusses the effect of exercise training on sedentary time, which is unrelated to the claim about sitting facing north. The evidence also does not support any relationship between sitting facing north and a",
+                  "sentence_ids": [
+                    "E2S7"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Random effects meta-analysis of data from 4 of these 6 trials that implemented exercise training showed no clear effect on ST (mean difference, -3.4\u00a0minutes; 95% CI,\u00a0-27.9-21.0\u00a0minutes).",
+                  "claim_fragment": "improves",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:33742675",
+                      "quote": "Random effects meta-analysis of data from 4 of these 6 trials that implemented exercise training showed no clear effect on ST (mean difference, -3.4\u00a0minutes; 95% CI,\u00a0-27.9-21.0\u00a0minutes)."
+                    }
+                  ]
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not discuss the outcome of influenza vaccine effectiveness or any related outcomes.",
+                  "sentence_ids": [],
+                  "slot": "outcome",
+                  "evidence_phrase": "",
+                  "claim_fragment": "influenza vaccine effectiveness",
+                  "citations": []
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any specific percentage or exact number related to the claim.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly 21%",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "outcome",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 51651.25112499982,
+  "completed_at_utc": "2026-10-29T03:38:08.588625Z"
+}

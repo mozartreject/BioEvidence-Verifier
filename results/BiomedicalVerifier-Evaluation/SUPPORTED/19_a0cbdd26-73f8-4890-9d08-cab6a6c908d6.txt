@@ -1,0 +1,7 @@
+Claim: Coronary artery disease can cause a heart attack.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: a0cbdd26-73f8-4890-9d08-cab6a6c908d6
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/a0cbdd26-73f8-4890-9d08-cab6a6c908d6.json

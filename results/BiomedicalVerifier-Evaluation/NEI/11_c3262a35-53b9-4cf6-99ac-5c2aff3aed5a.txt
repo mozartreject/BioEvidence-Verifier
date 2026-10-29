@@ -1,0 +1,7 @@
+Claim: Sleeping with the bedroom door open reduces migraine frequency by exactly 19% in left-handed adults.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: c3262a35-53b9-4cf6-99ac-5c2aff3aed5a
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/c3262a35-53b9-4cf6-99ac-5c2aff3aed5a.json

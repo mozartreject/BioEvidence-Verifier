@@ -1,0 +1,7 @@
+Claim: Vitamin C deficiency causes scurvy.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: eee1ff27-0519-4cd2-9400-9b00e6e65267
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/eee1ff27-0519-4cd2-9400-9b00e6e65267.json

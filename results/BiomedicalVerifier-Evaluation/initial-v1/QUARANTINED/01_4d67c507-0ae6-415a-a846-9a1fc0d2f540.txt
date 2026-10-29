@@ -1,0 +1,5 @@
+Claim: Cigarette smoking causes lung cancer.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: NEI explanation must explicitly communicate insufficient/inconclusive evidence
+Raw response: ../raw/4d67c507-0ae6-415a-a846-9a1fc0d2f540.json

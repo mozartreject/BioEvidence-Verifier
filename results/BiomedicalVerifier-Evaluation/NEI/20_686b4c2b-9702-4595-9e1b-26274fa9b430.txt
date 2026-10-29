@@ -1,0 +1,7 @@
+Claim: Drinking warm water from a glass cup reverses insulin resistance within exactly five days.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: 686b4c2b-9702-4595-9e1b-26274fa9b430
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/686b4c2b-9702-4595-9e1b-26274fa9b430.json

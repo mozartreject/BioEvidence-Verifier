@@ -1,0 +1,7 @@
+Claim: Vitamin C deficiency does not cause scurvy.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: b74d8d16-ae3f-4900-86be-f5432e891ea0
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/b74d8d16-ae3f-4900-86be-f5432e891ea0.json

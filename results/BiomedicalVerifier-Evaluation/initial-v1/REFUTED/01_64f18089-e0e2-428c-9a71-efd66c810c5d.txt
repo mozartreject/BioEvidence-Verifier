@@ -1,0 +1,7 @@
+Claim: HIV strengthens the immune system.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: 64f18089-e0e2-428c-9a71-efd66c810c5d
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/64f18089-e0e2-428c-9a71-efd66c810c5d.json

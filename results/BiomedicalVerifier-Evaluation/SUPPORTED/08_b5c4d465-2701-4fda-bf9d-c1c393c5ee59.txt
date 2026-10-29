@@ -1,0 +1,7 @@
+Claim: HIV attacks the immune system.
+Actual verdict: SUPPORTED
+Expected candidate label: SUPPORTED
+Request ID: b5c4d465-2701-4fda-bf9d-c1c393c5ee59
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/b5c4d465-2701-4fda-bf9d-c1c393c5ee59.json

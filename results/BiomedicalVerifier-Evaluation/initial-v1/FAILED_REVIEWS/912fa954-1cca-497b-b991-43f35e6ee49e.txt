@@ -1,0 +1,4 @@
+Claim: Rabies is caused by bacteria.
+No accepted class result.
+Error: {'error': 'INFERENCE_FAILED', 'message': "AI class estimates failed validation: The evidence-validated verdict is NEI; its class_scores entry must exceed both others. Your scores were {'SUPPORTED': 0.06, 'REFUTED': 0.74, 'NEI': 0.2}"}
+Raw response: ../raw/912fa954-1cca-497b-b991-43f35e6ee49e.json

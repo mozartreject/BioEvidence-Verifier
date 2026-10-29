@@ -1,0 +1,7 @@
+Claim: Walking barefoot on indoor tiles for eight minutes reduces asthma attacks by exactly 13%.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: 8bf7e9ff-8255-4903-a07f-f6d95f6bd588
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/8bf7e9ff-8255-4903-a07f-f6d95f6bd588.json

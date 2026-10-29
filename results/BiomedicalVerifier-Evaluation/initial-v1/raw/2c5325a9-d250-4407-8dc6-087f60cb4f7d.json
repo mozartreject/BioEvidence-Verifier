@@ -1,0 +1,828 @@
+{
+  "request": {
+    "request_id": "2c5325a9-d250-4407-8dc6-087f60cb4f7d",
+    "claim": "Measles is caused by bacteria.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T02:43:54.750440Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T02:43:54.750837Z",
+      "ended_at_utc": "2026-10-29T02:43:55.304693Z",
+      "latency_ms": 553.8530000003448
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:19445268",
+        "document_id": "pubmed:19445268",
+        "title": "[Measles].",
+        "text": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family. Typically, the disease is characterized by a two-phase course. After an average incubation period of 8 to 11 days, initial symptoms such as fever, cough, coryza and conjunctivitis appear. Two thirds of the patients shows a white-marked enanthema on the buccal mucosa (Koplik's spots). After disappearance of these symptoms, a second increase of temperature and the typical measles exanthema, a brownish-red maculopapular rash, appear. Infection with measles virus induces transient immunodeficiency that favours the formation of several complications. Some of them, e. g. encephalitic diseases, are severe and associated with a high mortality. Measles are world-wide distributed and belong to the ten most frequent infectious diseases in some less developed countries. The disease is associated with a high mortality in some African and South-East Asian countries, in particular in children aged less than 12 months. Of particular note, measles are the most important cause of blindness in children in population with borderline vitamin A status. In Germany, the number of reported measles cases has been declined dramatically since the introduction of a vaccine more than four decades ago. However, regional outbreaks or small epidemics still occur. Because there is no specific antiviral treatment, therapy of measles is symptomatic and depends on the manifestation of the disease. The most important prevention strategy is immunization with a life-attenuated vaccine that can be applied as monovaccination or in combination with mumps and rubella virus (MMR vaccination) or mumps, rubella and varicella virus (MMRV vaccination).",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/19445268/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 5.043155670166016,
+        "relevance_score": 0.9935879707336426,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:35093206",
+        "document_id": "pubmed:35093206",
+        "title": "Measles.",
+        "text": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus. Symptoms include fever, maculopapular rash, and at least one of cough, coryza, or conjunctivitis, although vaccinated individuals can have milder or even no symptoms. Laboratory diagnosis relies largely on the detection of specific IgM antibodies in serum, dried blood spots, or oral fluid, or the detection of viral RNA in throat or nasopharyngeal swabs, urine, or oral fluid. Complications can affect many organs and often include otitis media, laryngotracheobronchitis, pneumonia, stomatitis, and diarrhoea. Neurological complications are uncommon but serious, and can occur during or soon after the acute disease (eg, acute disseminated encephalomyelitis) or months or even years later (eg, measles inclusion body encephalitis and subacute sclerosing panencephalitis). Patient management mainly involves supportive therapy, such as vitamin A supplementation, monitoring for and treatment of secondary bacterial infections with antibiotics, and rehydration in the case of severe diarrhoea. There is no specific antiviral therapy for the treatment of measles, and disease control largely depends on prevention. However, despite the availability of a safe and effective vaccine, measles is still endemic in many countries and causes considerable morbidity and mortality, especially among children in resource-poor settings. The low case numbers reported in 2020, after a worldwide resurgence of measles between 2017 and 2019, have to be interpreted cautiously, owing to the effect of the COVID-19 pandemic on disease surveillance. Disrupted vaccination activities during the pandemic increase the potential for another resurgence of measles in the near future, and effective, timely catch-up vaccination campaigns, strong commitment and leadership, and sufficient resources will be required to mitigate this threat.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35093206/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.981816291809082,
+        "relevance_score": 0.9816898107528687,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:2e5c0caa92638e0629f5",
+        "document_id": "web:2e5c0caa92638e0629f5",
+        "title": "Measles",
+        "text": "Key facts\nMeasles is a highly contagious, serious airborne disease caused by a virus that can lead to severe complications and death.\nMeasles vaccination averted nearly 59 million deaths between 2000 and 2024.\nEven though a safe and cost-effective vaccine is available, in 2024, there were an estimated 95 000 measles deaths globally, mostly among unvaccinated or under vaccinated children under the age of 5 years.\nThe proportion of children receiving a first dose of measles vaccine was 84% in 2025, slightly below the 2019 level of 86%.\nOverview\nMeasles is a highly contagious disease caused by a virus. It spreads easily when an infected person breathes, coughs or sneezes. It can cause severe disease, complications, and even death.\nMeasles can affect anyone but is most common in children.\nMeasles infects the respiratory tract and then spreads throughout the body. Symptoms include a high fever, cough, runny nose and a rash all over the body.\nBeing vaccinated is the best way to prevent getting sick with measles or spreading it to other people. The vaccine is safe and helps your body fight off the virus.\nBefore the introduction of measles vaccine in 1963 and widespread vaccination, major epidemics occurred approximately every two to three years and caused an estimated 2.6 million deaths each year.\nAn estimated 95 000 people died from measles in 2024 \u2013 mostly children under the age of five years, despite the availability of a safe and cost-effective vaccine.\nAccelerated immunization activities by countries, WHO, the Measles & Rubella Partnership, and other international partners successfully prevented an estimated 59 million deaths between 2000 and 2024. Vaccination decreased an estimated measles deaths from 780 000 in 2000 to 95 000 in 2024 (1) .\nSigns and symptoms\nSymptoms of measles usually begin 7\u201314 days after exposure to the virus. A prominent rash is the most visible symptom.\nEarly symptoms usually last 4\u20137 days. They include:\nfever\nrunning nose\ncough\nred and watery eyes\nsmall white spots inside the cheeks.\nThe rash appears 3 to 5 days after the first symptoms, usually on the face and upper neck. It spreads over about 3 days, eventually downward to the trunk, arms, legs and feet. It usually lasts 4\u20138 days before fading.\nMost deaths from measles are from complications related to the disease.\nComplications can include:\nblindness\nsevere breathing problems including pneumonia.\nIf a woman catches measles during pregnancy, this can be dangerous for the mother and can result in miscarriage or her baby being born prematurely with a low birth weight.\nComplications are most common in children under 5 years and adults over age 30. They are more likely in children who are malnourished, especially those without enough vitamin A or with a weak immune system from HIV or other diseases. Measles itself also weakens the immune system and can make the body \u201cforget\u201d how to protect itself against infections, leaving children extremely vulnerable.\nWho is at risk?\nAny non-immune person (not vaccinated or vaccinated but did not develop immunity) can become infected. Unvaccinated young children and pregnant persons are at highest risk of severe measles complications.\nMeasles is still common, particularly in parts of Africa, the Middle East and Asia. The overwhelming majority of measles deaths occur in countries with low per capita incomes or weak health infrastructures that struggle to reach all children with immunization.\nDamaged health infrastructure and health services in countries experiencing or recovering from a natural disaster or conflict interrupt routine immunization and overcrowding in residential camps increases the risk of infection. Children with malnutrition or other causes of a weak immune system are at highest risk of death from measles.\nTransmission\nMeasles is one of the world\u2019s most contagious diseases, spread by contact with infected nasal or throat secretions (coughing or sneezing) or breathing the air that was breathed by someone with measles. The virus remains active and contagious in the air or on infected surfaces for up to two hours. For this reason, it is very infectious. One person infected by measles can generate up to 18 secondary infections.\nIt can be transmitted by an infected person from four days prior to the onset of the rash to four days after the rash erupts.\nMeasles outbreaks can result in severe complications and deaths, especially among young, malnourished children. In countries close to measles elimination, cases imported from other countries remain an important source of infection.\nTreatment\nThere is no specific treatment for measles. Caregiving should focus on relieving symptoms, making the person comfortable and preventing complications.\nDrinking enough water and treatments for dehydration can replace fluids lost to diarrhoea or vomiting. Eating a healthy diet is also important.\nDoctors may use antibiotics to treat pneumonia and ear and eye infections.\nTwo doses of vitamin A are recommended for all suspected measles cases in children under 5 years of age, immediately on diagnosis and repeated the next day, according to the dosing indicated by the health practitioner. A third dose is recommended for any clinical signs of vitamin A deficiency with eye complications and should be given 4\u20136 weeks later. This restores low levels of vitamin A that occur even in well-nourished children. It can help prevent other complications from measles, including eye damage and blindness. Vitamin A supplements may also reduce the number of measles deaths.\nPrevention\nCommunity-wide vaccination is the most effective way to prevent measles. All children should be vaccinated against measles. The vaccine is safe, effective and inexpensive.\nChildren should receive two doses of the vaccine to ensure they are immune. The first dose is usually given at 9 months of age in countries where measles is common and 12\u201315 months in other countries. A second dose should be given later in childhood, usually at 15\u201318 months.\nThe measles vaccine is given alone or often combined with vaccines for mumps, rubella and/or varicella.\nRoutine measles vaccination, combined with mass immunization campaigns in countries with high case rates are crucial for reducing global measles deaths. The measles vaccine has been in use for about 60 years and costs less than US$ 1 per child. The measles vaccine is also used in emergencies to stop outbreaks from spreading. The risk of measles outbreaks is particularly high amongst refugees, who should be vaccinated as soon as possible.\nCombining vaccines slightly increases the cost but allows for shared delivery and administration costs and importantly, adds the benefit of protection against rubella, the most common vaccine preventable infection that can infect babies in the womb.\nApproximately 29 million infants remained under-protected against measles in 2025, according to WHO and UNICEF estimates.\nWHO response\nThe IA2030 Measles & Rubella Partnership\nReferences",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/measles",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.747642993927002,
+        "relevance_score": 0.9397801160812378,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Measles is caused by bacteria."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T02:43:55.304755Z",
+      "ended_at_utc": "2026-10-29T02:44:23.227445Z",
+      "latency_ms": 27922.35116700067
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:19445268",
+        "document_id": "pubmed:19445268",
+        "title": "[Measles].",
+        "text": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family. Typically, the disease is characterized by a two-phase course. After an average incubation period of 8 to 11 days, initial symptoms such as fever, cough, coryza and conjunctivitis appear. Two thirds of the patients shows a white-marked enanthema on the buccal mucosa (Koplik's spots). After disappearance of these symptoms, a second increase of temperature and the typical measles exanthema, a brownish-red maculopapular rash, appear. Infection with measles virus induces transient immunodeficiency that favours the formation of several complications. Some of them, e. g. encephalitic diseases, are severe and associated with a high mortality. Measles are world-wide distributed and belong to the ten most frequent infectious diseases in some less developed countries. The disease is associated with a high mortality in some African and South-East Asian countries, in particular in children aged less than 12 months. Of particular note, measles are the most important cause of blindness in children in population with borderline vitamin A status. In Germany, the number of reported measles cases has been declined dramatically since the introduction of a vaccine more than four decades ago. However, regional outbreaks or small epidemics still occur. Because there is no specific antiviral treatment, therapy of measles is symptomatic and depends on the manifestation of the disease. The most important prevention strategy is immunization with a life-attenuated vaccine that can be applied as monovaccination or in combination with mumps and rubella virus (MMR vaccination) or mumps, rubella and varicella virus (MMRV vaccination).",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/19445268/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 5.043155670166016,
+        "relevance_score": 0.9935879707336426,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19871759414672852,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:35093206",
+        "document_id": "pubmed:35093206",
+        "title": "Measles.",
+        "text": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus. Symptoms include fever, maculopapular rash, and at least one of cough, coryza, or conjunctivitis, although vaccinated individuals can have milder or even no symptoms. Laboratory diagnosis relies largely on the detection of specific IgM antibodies in serum, dried blood spots, or oral fluid, or the detection of viral RNA in throat or nasopharyngeal swabs, urine, or oral fluid. Complications can affect many organs and often include otitis media, laryngotracheobronchitis, pneumonia, stomatitis, and diarrhoea. Neurological complications are uncommon but serious, and can occur during or soon after the acute disease (eg, acute disseminated encephalomyelitis) or months or even years later (eg, measles inclusion body encephalitis and subacute sclerosing panencephalitis). Patient management mainly involves supportive therapy, such as vitamin A supplementation, monitoring for and treatment of secondary bacterial infections with antibiotics, and rehydration in the case of severe diarrhoea. There is no specific antiviral therapy for the treatment of measles, and disease control largely depends on prevention. However, despite the availability of a safe and effective vaccine, measles is still endemic in many countries and causes considerable morbidity and mortality, especially among children in resource-poor settings. The low case numbers reported in 2020, after a worldwide resurgence of measles between 2017 and 2019, have to be interpreted cautiously, owing to the effect of the COVID-19 pandemic on disease surveillance. Disrupted vaccination activities during the pandemic increase the potential for another resurgence of measles in the near future, and effective, timely catch-up vaccination campaigns, strong commitment and leadership, and sufficient resources will be required to mitigate this threat.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35093206/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.981816291809082,
+        "relevance_score": 0.9816898107528687,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.19633796215057375,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "web:2e5c0caa92638e0629f5",
+        "document_id": "web:2e5c0caa92638e0629f5",
+        "title": "Measles",
+        "text": "Key facts\nMeasles is a highly contagious, serious airborne disease caused by a virus that can lead to severe complications and death.\nMeasles vaccination averted nearly 59 million deaths between 2000 and 2024.\nEven though a safe and cost-effective vaccine is available, in 2024, there were an estimated 95 000 measles deaths globally, mostly among unvaccinated or under vaccinated children under the age of 5 years.\nThe proportion of children receiving a first dose of measles vaccine was 84% in 2025, slightly below the 2019 level of 86%.\nOverview\nMeasles is a highly contagious disease caused by a virus. It spreads easily when an infected person breathes, coughs or sneezes. It can cause severe disease, complications, and even death.\nMeasles can affect anyone but is most common in children.\nMeasles infects the respiratory tract and then spreads throughout the body. Symptoms include a high fever, cough, runny nose and a rash all over the body.\nBeing vaccinated is the best way to prevent getting sick with measles or spreading it to other people. The vaccine is safe and helps your body fight off the virus.\nBefore the introduction of measles vaccine in 1963 and widespread vaccination, major epidemics occurred approximately every two to three years and caused an estimated 2.6 million deaths each year.\nAn estimated 95 000 people died from measles in 2024 \u2013 mostly children under the age of five years, despite the availability of a safe and cost-effective vaccine.\nAccelerated immunization activities by countries, WHO, the Measles & Rubella Partnership, and other international partners successfully prevented an estimated 59 million deaths between 2000 and 2024. Vaccination decreased an estimated measles deaths from 780 000 in 2000 to 95 000 in 2024 (1) .\nSigns and symptoms\nSymptoms of measles usually begin 7\u201314 days after exposure to the virus. A prominent rash is the most visible symptom.\nEarly symptoms usually last 4\u20137 days. They include:\nfever\nrunning nose\ncough\nred and watery eyes\nsmall white spots inside the cheeks.\nThe rash appears 3 to 5 days after the first symptoms, usually on the face and upper neck. It spreads over about 3 days, eventually downward to the trunk, arms, legs and feet. It usually lasts 4\u20138 days before fading.\nMost deaths from measles are from complications related to the disease.\nComplications can include:\nblindness\nsevere breathing problems including pneumonia.\nIf a woman catches measles during pregnancy, this can be dangerous for the mother and can result in miscarriage or her baby being born prematurely with a low birth weight.\nComplications are most common in children under 5 years and adults over age 30. They are more likely in children who are malnourished, especially those without enough vitamin A or with a weak immune system from HIV or other diseases. Measles itself also weakens the immune system and can make the body \u201cforget\u201d how to protect itself against infections, leaving children extremely vulnerable.\nWho is at risk?\nAny non-immune person (not vaccinated or vaccinated but did not develop immunity) can become infected. Unvaccinated young children and pregnant persons are at highest risk of severe measles complications.\nMeasles is still common, particularly in parts of Africa, the Middle East and Asia. The overwhelming majority of measles deaths occur in countries with low per capita incomes or weak health infrastructures that struggle to reach all children with immunization.\nDamaged health infrastructure and health services in countries experiencing or recovering from a natural disaster or conflict interrupt routine immunization and overcrowding in residential camps increases the risk of infection. Children with malnutrition or other causes of a weak immune system are at highest risk of death from measles.\nTransmission\nMeasles is one of the world\u2019s most contagious diseases, spread by contact with infected nasal or throat secretions (coughing or sneezing) or breathing the air that was breathed by someone with measles. The virus remains active and contagious in the air or on infected surfaces for up to two hours. For this reason, it is very infectious. One person infected by measles can generate up to 18 secondary infections.\nIt can be transmitted by an infected person from four days prior to the onset of the rash to four days after the rash erupts.\nMeasles outbreaks can result in severe complications and deaths, especially among young, malnourished children. In countries close to measles elimination, cases imported from other countries remain an important source of infection.\nTreatment\nThere is no specific treatment for measles. Caregiving should focus on relieving symptoms, making the person comfortable and preventing complications.\nDrinking enough water and treatments for dehydration can replace fluids lost to diarrhoea or vomiting. Eating a healthy diet is also important.\nDoctors may use antibiotics to treat pneumonia and ear and eye infections.\nTwo doses of vitamin A are recommended for all suspected measles cases in children under 5 years of age, immediately on diagnosis and repeated the next day, according to the dosing indicated by the health practitioner. A third dose is recommended for any clinical signs of vitamin A deficiency with eye complications and should be given 4\u20136 weeks later. This restores low levels of vitamin A that occur even in well-nourished children. It can help prevent other complications from measles, including eye damage and blindness. Vitamin A supplements may also reduce the number of measles deaths.\nPrevention\nCommunity-wide vaccination is the most effective way to prevent measles. All children should be vaccinated against measles. The vaccine is safe, effective and inexpensive.\nChildren should receive two doses of the vaccine to ensure they are immune. The first dose is usually given at 9 months of age in countries where measles is common and 12\u201315 months in other countries. A second dose should be given later in childhood, usually at 15\u201318 months.\nThe measles vaccine is given alone or often combined with vaccines for mumps, rubella and/or varicella.\nRoutine measles vaccination, combined with mass immunization campaigns in countries with high case rates are crucial for reducing global measles deaths. The measles vaccine has been in use for about 60 years and costs less than US$ 1 per child. The measles vaccine is also used in emergencies to stop outbreaks from spreading. The risk of measles outbreaks is particularly high amongst refugees, who should be vaccinated as soon as possible.\nCombining vaccines slightly increases the cost but allows for shared delivery and administration costs and importantly, adds the benefit of protection against rubella, the most common vaccine preventable infection that can infect babies in the womb.\nApproximately 29 million infants remained under-protected against measles in 2025, according to WHO and UNICEF estimates.\nWHO response\nThe IA2030 Measles & Rubella Partnership\nReferences",
+        "source": "www.who.int",
+        "source_url": "https://www.who.int/news-room/fact-sheets/detail/measles",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.747642993927002,
+        "relevance_score": 0.9397801160812378,
+        "authority_tier": "D",
+        "hierarchy_weight": 0.2,
+        "combined_score": 0.18795602321624758,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T02:44:23.227475Z",
+      "ended_at_utc": "2026-10-29T02:44:29.006967Z",
+      "latency_ms": 5779.445959000441
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "SUPPORTED",
+    "user_facing_verdict": "SUPPORTED",
+    "probabilities": {
+      "refuted": 0.08,
+      "nei": 0.07,
+      "supported": 0.85
+    },
+    "verifier_score": 0.85,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:19445268",
+      "pubmed:35093206",
+      "web:2e5c0caa92638e0629f5"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "SUPPORTED",
+          "reason": "The source text explicitly states that measles is caused by a virus, specifically the measles virus. The source text directly states that measles is caused by a virus, establishing a causal relationship. The source text explicitly identifies the virus as the cause of measles, which is the outcome in this context.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:19445268",
+              "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+            },
+            {
+              "evidence_id": "pubmed:35093206",
+              "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:19445268",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "pubmed:35093206",
+              "relation": "SUPPORTS",
+              "concrete": true
+            },
+            {
+              "evidence_id": "web:2e5c0caa92638e0629f5",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v1",
+            "claim_parts": {
+              "subject": "Measles",
+              "relationship": "caused by",
+              "outcome": "bacteria",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus.",
+                "reason": "The source text explicitly states that measles is caused by a virus, specifically the measles virus.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "subject",
+                "claim_fragment": "Measles",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:19445268",
+                    "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+                  },
+                  {
+                    "evidence_id": "pubmed:35093206",
+                    "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus.",
+                "reason": "The source text directly states that measles is caused by a virus, establishing a causal relationship.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "relationship",
+                "claim_fragment": "caused by",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:19445268",
+                    "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+                  },
+                  {
+                    "evidence_id": "pubmed:35093206",
+                    "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "evidence_phrase": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus.",
+                "reason": "The source text explicitly identifies the virus as the cause of measles, which is the outcome in this context.",
+                "sentence_ids": [
+                  "E1S1",
+                  "E2S1"
+                ],
+                "slot": "outcome",
+                "claim_fragment": "bacteria",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:19445268",
+                    "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+                  },
+                  {
+                    "evidence_id": "pubmed:35093206",
+                    "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:19445268",
+              "pubmed:35093206"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.85,
+            "REFUTED": 0.08,
+            "NEI": 0.07
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The evidence clearly states that measles is caused by a virus, specifically the measles virus, not bacteria. [E1], [E2], and [E3] all provide information that measles is a viral infection, with symptoms and complications described in detail.",
+    "cited_evidence_ids": [
+      "pubmed:19445268",
+      "pubmed:35093206",
+      "web:2e5c0caa92638e0629f5"
+    ],
+    "grounding": {
+      "semantic_score": 0.6521829962730408,
+      "coverage_score": 0.6604209542274475,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 1,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T02:44:54.912061Z",
+      "ended_at_utc": "2026-10-29T02:45:13.414211Z",
+      "latency_ms": 18501.917499999763
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "SUPPORTED",
+  "final_user_facing_verdict": "SUPPORTED",
+  "final_verifier_score": 0.85,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:19445268",
+      "document_id": "pubmed:19445268",
+      "title": "[Measles].",
+      "text": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family. Typically, the disease is characterized by a two-phase course. After an average incubation period of 8 to 11 days, initial symptoms such as fever, cough, coryza and conjunctivitis appear. Two thirds of the patients shows a white-marked enanthema on the buccal mucosa (Koplik's spots). After disappearance of these symptoms, a second increase of temperature and the typical measles exanthema, a brownish-red maculopapular rash, appear. Infection with measles virus induces transient immunodeficiency that favours the formation of several complications. Some of them, e. g. encephalitic diseases, are severe and associated with a high mortality. Measles are world-wide distributed and belong to the ten most frequent infectious diseases in some less developed countries. The disease is associated with a high mortality in some African and South-East Asian countries, in particular in children aged less than 12 months. Of particular note, measles are the most important cause of blindness in children in population with borderline vitamin A status. In Germany, the number of reported measles cases has been declined dramatically since the introduction of a vaccine more than four decades ago. However, regional outbreaks or small epidemics still occur. Because there is no specific antiviral treatment, therapy of measles is symptomatic and depends on the manifestation of the disease. The most important prevention strategy is immunization with a life-attenuated vaccine that can be applied as monovaccination or in combination with mumps and rubella virus (MMR vaccination) or mumps, rubella and varicella virus (MMRV vaccination).",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19445268/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 5.043155670166016,
+      "relevance_score": 0.9935879707336426,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19871759414672852,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:35093206",
+      "document_id": "pubmed:35093206",
+      "title": "Measles.",
+      "text": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus. Symptoms include fever, maculopapular rash, and at least one of cough, coryza, or conjunctivitis, although vaccinated individuals can have milder or even no symptoms. Laboratory diagnosis relies largely on the detection of specific IgM antibodies in serum, dried blood spots, or oral fluid, or the detection of viral RNA in throat or nasopharyngeal swabs, urine, or oral fluid. Complications can affect many organs and often include otitis media, laryngotracheobronchitis, pneumonia, stomatitis, and diarrhoea. Neurological complications are uncommon but serious, and can occur during or soon after the acute disease (eg, acute disseminated encephalomyelitis) or months or even years later (eg, measles inclusion body encephalitis and subacute sclerosing panencephalitis). Patient management mainly involves supportive therapy, such as vitamin A supplementation, monitoring for and treatment of secondary bacterial infections with antibiotics, and rehydration in the case of severe diarrhoea. There is no specific antiviral therapy for the treatment of measles, and disease control largely depends on prevention. However, despite the availability of a safe and effective vaccine, measles is still endemic in many countries and causes considerable morbidity and mortality, especially among children in resource-poor settings. The low case numbers reported in 2020, after a worldwide resurgence of measles between 2017 and 2019, have to be interpreted cautiously, owing to the effect of the COVID-19 pandemic on disease surveillance. Disrupted vaccination activities during the pandemic increase the potential for another resurgence of measles in the near future, and effective, timely catch-up vaccination campaigns, strong commitment and leadership, and sufficient resources will be required to mitigate this threat.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35093206/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 3.981816291809082,
+      "relevance_score": 0.9816898107528687,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.19633796215057375,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "web:2e5c0caa92638e0629f5",
+      "document_id": "web:2e5c0caa92638e0629f5",
+      "title": "Measles",
+      "text": "Key facts\nMeasles is a highly contagious, serious airborne disease caused by a virus that can lead to severe complications and death.\nMeasles vaccination averted nearly 59 million deaths between 2000 and 2024.\nEven though a safe and cost-effective vaccine is available, in 2024, there were an estimated 95 000 measles deaths globally, mostly among unvaccinated or under vaccinated children under the age of 5 years.\nThe proportion of children receiving a first dose of measles vaccine was 84% in 2025, slightly below the 2019 level of 86%.\nOverview\nMeasles is a highly contagious disease caused by a virus. It spreads easily when an infected person breathes, coughs or sneezes. It can cause severe disease, complications, and even death.\nMeasles can affect anyone but is most common in children.\nMeasles infects the respiratory tract and then spreads throughout the body. Symptoms include a high fever, cough, runny nose and a rash all over the body.\nBeing vaccinated is the best way to prevent getting sick with measles or spreading it to other people. The vaccine is safe and helps your body fight off the virus.\nBefore the introduction of measles vaccine in 1963 and widespread vaccination, major epidemics occurred approximately every two to three years and caused an estimated 2.6 million deaths each year.\nAn estimated 95 000 people died from measles in 2024 \u2013 mostly children under the age of five years, despite the availability of a safe and cost-effective vaccine.\nAccelerated immunization activities by countries, WHO, the Measles & Rubella Partnership, and other international partners successfully prevented an estimated 59 million deaths between 2000 and 2024. Vaccination decreased an estimated measles deaths from 780 000 in 2000 to 95 000 in 2024 (1) .\nSigns and symptoms\nSymptoms of measles usually begin 7\u201314 days after exposure to the virus. A prominent rash is the most visible symptom.\nEarly symptoms usually last 4\u20137 days. They include:\nfever\nrunning nose\ncough\nred and watery eyes\nsmall white spots inside the cheeks.\nThe rash appears 3 to 5 days after the first symptoms, usually on the face and upper neck. It spreads over about 3 days, eventually downward to the trunk, arms, legs and feet. It usually lasts 4\u20138 days before fading.\nMost deaths from measles are from complications related to the disease.\nComplications can include:\nblindness\nsevere breathing problems including pneumonia.\nIf a woman catches measles during pregnancy, this can be dangerous for the mother and can result in miscarriage or her baby being born prematurely with a low birth weight.\nComplications are most common in children under 5 years and adults over age 30. They are more likely in children who are malnourished, especially those without enough vitamin A or with a weak immune system from HIV or other diseases. Measles itself also weakens the immune system and can make the body \u201cforget\u201d how to protect itself against infections, leaving children extremely vulnerable.\nWho is at risk?\nAny non-immune person (not vaccinated or vaccinated but did not develop immunity) can become infected. Unvaccinated young children and pregnant persons are at highest risk of severe measles complications.\nMeasles is still common, particularly in parts of Africa, the Middle East and Asia. The overwhelming majority of measles deaths occur in countries with low per capita incomes or weak health infrastructures that struggle to reach all children with immunization.\nDamaged health infrastructure and health services in countries experiencing or recovering from a natural disaster or conflict interrupt routine immunization and overcrowding in residential camps increases the risk of infection. Children with malnutrition or other causes of a weak immune system are at highest risk of death from measles.\nTransmission\nMeasles is one of the world\u2019s most contagious diseases, spread by contact with infected nasal or throat secretions (coughing or sneezing) or breathing the air that was breathed by someone with measles. The virus remains active and contagious in the air or on infected surfaces for up to two hours. For this reason, it is very infectious. One person infected by measles can generate up to 18 secondary infections.\nIt can be transmitted by an infected person from four days prior to the onset of the rash to four days after the rash erupts.\nMeasles outbreaks can result in severe complications and deaths, especially among young, malnourished children. In countries close to measles elimination, cases imported from other countries remain an important source of infection.\nTreatment\nThere is no specific treatment for measles. Caregiving should focus on relieving symptoms, making the person comfortable and preventing complications.\nDrinking enough water and treatments for dehydration can replace fluids lost to diarrhoea or vomiting. Eating a healthy diet is also important.\nDoctors may use antibiotics to treat pneumonia and ear and eye infections.\nTwo doses of vitamin A are recommended for all suspected measles cases in children under 5 years of age, immediately on diagnosis and repeated the next day, according to the dosing indicated by the health practitioner. A third dose is recommended for any clinical signs of vitamin A deficiency with eye complications and should be given 4\u20136 weeks later. This restores low levels of vitamin A that occur even in well-nourished children. It can help prevent other complications from measles, including eye damage and blindness. Vitamin A supplements may also reduce the number of measles deaths.\nPrevention\nCommunity-wide vaccination is the most effective way to prevent measles. All children should be vaccinated against measles. The vaccine is safe, effective and inexpensive.\nChildren should receive two doses of the vaccine to ensure they are immune. The first dose is usually given at 9 months of age in countries where measles is common and 12\u201315 months in other countries. A second dose should be given later in childhood, usually at 15\u201318 months.\nThe measles vaccine is given alone or often combined with vaccines for mumps, rubella and/or varicella.\nRoutine measles vaccination, combined with mass immunization campaigns in countries with high case rates are crucial for reducing global measles deaths. The measles vaccine has been in use for about 60 years and costs less than US$ 1 per child. The measles vaccine is also used in emergencies to stop outbreaks from spreading. The risk of measles outbreaks is particularly high amongst refugees, who should be vaccinated as soon as possible.\nCombining vaccines slightly increases the cost but allows for shared delivery and administration costs and importantly, adds the benefit of protection against rubella, the most common vaccine preventable infection that can infect babies in the womb.\nApproximately 29 million infants remained under-protected against measles in 2025, according to WHO and UNICEF estimates.\nWHO response\nThe IA2030 Measles & Rubella Partnership\nReferences",
+      "source": "www.who.int",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/measles",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 2.747642993927002,
+      "relevance_score": 0.9397801160812378,
+      "authority_tier": "D",
+      "hierarchy_weight": 0.2,
+      "combined_score": 0.18795602321624758,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v1",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "SUPPORTED",
+            "reason": "The source text explicitly states that measles is caused by a virus, specifically the measles virus. The source text directly states that measles is caused by a virus, establishing a causal relationship. The source text explicitly identifies the virus as the cause of measles, which is the outcome in this context.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:19445268",
+                "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+              },
+              {
+                "evidence_id": "pubmed:35093206",
+                "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:19445268",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "pubmed:35093206",
+                "relation": "SUPPORTS",
+                "concrete": true
+              },
+              {
+                "evidence_id": "web:2e5c0caa92638e0629f5",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v1",
+              "claim_parts": {
+                "subject": "Measles",
+                "relationship": "caused by",
+                "outcome": "bacteria",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus.",
+                  "reason": "The source text explicitly states that measles is caused by a virus, specifically the measles virus.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "subject",
+                  "claim_fragment": "Measles",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:19445268",
+                      "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+                    },
+                    {
+                      "evidence_id": "pubmed:35093206",
+                      "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus.",
+                  "reason": "The source text directly states that measles is caused by a virus, establishing a causal relationship.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "relationship",
+                  "claim_fragment": "caused by",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:19445268",
+                      "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+                    },
+                    {
+                      "evidence_id": "pubmed:35093206",
+                      "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "evidence_phrase": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus.",
+                  "reason": "The source text explicitly identifies the virus as the cause of measles, which is the outcome in this context.",
+                  "sentence_ids": [
+                    "E1S1",
+                    "E2S1"
+                  ],
+                  "slot": "outcome",
+                  "claim_fragment": "bacteria",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:19445268",
+                      "quote": "Measles are a systemic infectious disease caused by a single stranded ribonucleic acid virus (measles virus) from the paramyxovirus family."
+                    },
+                    {
+                      "evidence_id": "pubmed:35093206",
+                      "quote": "Measles is a highly contagious, potentially fatal, but vaccine-preventable disease caused by measles virus."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:19445268",
+                "pubmed:35093206"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.85,
+              "REFUTED": 0.08,
+              "NEI": 0.07
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 78664.54958299983,
+  "completed_at_utc": "2026-10-29T02:45:13.416314Z"
+}

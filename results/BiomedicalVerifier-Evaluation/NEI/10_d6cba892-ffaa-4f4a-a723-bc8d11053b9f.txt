@@ -1,0 +1,7 @@
+Claim: Wearing blue socks improves insulin sensitivity by exactly 12% after six weeks.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: d6cba892-ffaa-4f4a-a723-bc8d11053b9f
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/d6cba892-ffaa-4f4a-a723-bc8d11053b9f.json

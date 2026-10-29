@@ -1,0 +1,5 @@
+Claim: insulin resistance causes the neck to get dark.
+Actual verdict: NEI
+Explanation quarantined. This does not mean that the verdict was quarantined.
+Reason: RuntimeError('Ollama failed after retries: Unterminated string starting at: line 39 column 20 (char 1855)')
+Raw response: ../raw/822c82bd-4847-4005-ad5f-4b96ff037657.json

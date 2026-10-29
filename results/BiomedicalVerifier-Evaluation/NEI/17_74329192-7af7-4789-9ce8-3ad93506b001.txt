@@ -1,0 +1,7 @@
+Claim: Sitting facing north improves influenza vaccine effectiveness by exactly 21%.
+Actual verdict: NEI
+Expected candidate label: NEI
+Request ID: 74329192-7af7-4789-9ce8-3ad93506b001
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/74329192-7af7-4789-9ce8-3ad93506b001.json

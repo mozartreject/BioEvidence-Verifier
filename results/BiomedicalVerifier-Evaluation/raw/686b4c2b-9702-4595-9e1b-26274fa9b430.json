@@ -1,0 +1,808 @@
+{
+  "request": {
+    "request_id": "686b4c2b-9702-4595-9e1b-26274fa9b430",
+    "claim": "Drinking warm water from a glass cup reverses insulin resistance within exactly five days.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:45:38.621049Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:45:38.621138Z",
+      "ended_at_utc": "2026-10-29T03:45:39.384483Z",
+      "latency_ms": 763.340375000098
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:39256902",
+        "document_id": "pubmed:39256902",
+        "title": "Sex differences in neural networks recruited by frontloaded binge alcohol drinking.",
+        "text": "Frontloading is an alcohol drinking pattern where intake is skewed towards the onset of access. This study aimed to identify brain regions involved in frontloading. Whole brain imaging was performed in 63 C57Bl/6J (32 female, 31 male) mice that underwent 8\u2009days of binge drinking using drinking-in-the-dark (DID). On Days 1-7 mice received 20% (v/v) alcohol or water for 2\u2009h. Intake was measured in 1-min bins using volumetric sippers. On Day 8 mice were perfused 80\u2009min into the DID session and brains were extracted. Brains were processed to stain for Fos protein using iDISCO+. Following light sheet imaging, ClearMap2.1 was used to register brains to the Allen Brain Atlas and detect Fos+ cells. For network analyses, Day 8 drinking patterns were used to characterize mice as frontloaders or non-frontloaders using a change-point analysis. Functional correlation matrices were calculated for each group from log10 Fos values. Euclidean distances were calculated from these R values and clustering was used to determine modules (highly connected groups of brain regions). In males, alcohol access decreased modularity (three modules in both frontloaders and non-frontloaders) as compared to water (seven modules). In females, an opposite effect was observed. Alcohol access (nine modules for frontloaders) increased modularity as compared to water (five modules). Further, different brain regions served as hubs in frontloaders as compared to control groups. In conclusion, alcohol consumption led to fewer, but more densely connected, groups of brain regions in males but not females and we identify several brain-wide signatures of frontloading.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/39256902/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.769563674926758,
+        "relevance_score": 5.7162022130796686e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:41390010",
+        "document_id": "pubmed:41390010",
+        "title": "3,3'-Diindolylmethane attenuates recognition memory impairment induced by binge ethanol exposure in mice.",
+        "text": "Binge drinking, defined as excessive alcohol consumption over a short period, is most common at ages that are particularly vulnerable to the harmful effects of alcohol. Cognitive functions are severely affected, and there is a concern that the consequences of alcohol consumption in early life stages can perpetuate into adulthood. 3,3'-Diindolylmethane (DIM) has recently been found to have neuroprotective activity. We aimed to investigate whether DIM could mitigate binge ethanol-induced memory deficits, and to explore the underlying mechanisms. Mice underwent four binge episodes spaced five days apart. Each episode consisted of three intraperitoneal ethanol injections (2.5, 2.5 and 2\u00a0g/kg) given at two-hour intervals. DIM (50\u00a0mg/kg/day, i.p) was administered during the last four days of the protocol, with the final dose being given 30\u00a0min prior to the first ethanol injection of the last binge episode. DIM attenuates the object recognition memory deficit induced by ethanol 20\u00a0h after the last exposure, an effect that can be sustained until 7\u00a0days if dosing is continued until testing. DIM increases the expression of the glutamate transporter EAAT2 and reduces the ethanol-induced disruption of the GluN2A/GluN2B receptor ratio but does not alter the ethanol-induced increase in AMPA receptor membrane trafficking. DIM reduces the ethanol induced-increase in MMP-9 activity and facilitates the survival of immature neurons without modifying the ethanol-induced decrease in mature neurons nor the increase in microglia. DIM may be a promising therapeutic candidate for ethanol-induced memory deficits through modulation of glutamatergic neurotransmission, hippocampal neurogenesis and MMP-9 activity.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41390010/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.810211181640625,
+        "relevance_score": 5.488524038810283e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "web:e8581c80c271d5ec58be",
+        "document_id": "web:e8581c80c271d5ec58be",
+        "title": "Alcohol's Effects on the Body | National Institute on Alcohol Abuse and Alcoholism (NIAAA) Lock",
+        "text": "Alcohol's Effects on the Body\nDrinking too much \u2013 on a single occasion or over time \u2013 can take a serious toll on your health. The whole body is affected by alcohol use--not just the liver, but also the brain, gut, pancreas, lungs, cardiovascular system, immune system, and more.\nCurrent research points to health risks even at low amounts of alcohol consumption, regardless of beverage type. Keep reading for more information on how alcohol can affect your body.\nBrain/Neurological System\nAlcohol interferes with the brain\u2019s communication pathways and can affect the way the brain looks and works. These disruptions can change mood and behavior and make it harder to think clearly and move with coordination. Drinking alcohol can also increase the risk of stroke. More information about alcohol\u2019s effects on the brain is available on NIAAA\u2019s topic page on Alcohol and The Brain .\nIn addition to its effects on the brain, alcohol also affects the peripheral nervous system, which comprises the nerves outside the brain and spinal cord. For example, alcohol misuse is linked to peripheral neuropathy, a condition that commonly occurs in people with severe alcohol use disorder (AUD) and can cause numbness in the arms and legs and painful burning in the feet. Alcohol-related damage to nerves may also cause heart arrythmias (irregular heartbeat), postural or orthostatic hypotension (a drop in blood pressure due to a change in body position), diarrhea, and erectile dysfunction.\nEndocrine System\nHeavy alcohol use can disturb the endocrine system, disrupting the hormones that help maintain the body\u2019s stability and health. Because these disturbances permeate every organ and tissue in the body, they can contribute to endocrine-related health conditions including thyroid diseases, dyslipidemia (abnormal cholesterol levels in the blood), reproductive dysfunction, and stress intolerance, and diabetes. There is also evidence that alcohol can disrupt or delay puberty.\nIn patients with diabetes, any alcohol intake may reduce their ability to control blood glucose levels adequately and contribute to diabetes-associated cardiovascular and neurologic complications. Furthermore, heavy drinking may increase the risk for developing type 2 diabetes due to increased body weight, blood triglyceride levels, or blood pressure, and decreased insulin sensitivity, for example.\nGastrointestinal System and Oral Cavity\nDrinking alcohol can contribute to a \u2018leaky gut\u2019 allowing the intestines to permit substances like toxins into the body, which can change the composition of the microbiota or microorganisms living in the gastrointestinal (GI) tract, and increase the risk of colorectal cancer (see Cancer section below for more detail). Alcohol can damage the epithelial lining of the GI tract, promote inflammation within and beyond the GI system, and cause GI bleeding. Alcohol is also associated with an increased risk of gastroesophageal reflux disease. And drinking is associated with an increased risk of esophageal cancer and oral cavity cancer. (See below Cancer section for more information.)\nHeart and Circulatory System\nAlcohol misuse can damage the heart. Research has demonstrated that long-term heavy drinking weakens the heart muscle, causing cardiomyopathy. Alcohol misuse can also lead to high blood pressure, an irregular heartbeat (arrhythmia), or increased heart rate. Chronic, heavy drinking raises the risk for ischemic heart disease (heart problems caused by narrowed arteries) and myocardial infarction (heart attack). Even low drinking levels may confer risk. Heavy alcohol use can cause deficiencies in specific components of the blood, including anemia (low red blood cell levels), leukopenia (low white blood cell levels), thrombocytopenia (low platelet levels), and macrocytosis (enlarged red blood cells) .\nImmune System\nDrinking too much alcohol can weaken the immune system, making the body a much easier target for disease. Drinking a lot on a single occasion slows the body\u2019s ability to ward off infections\u2013even up to 24 hours later. Both acute and chronic heavy use of alcohol can interfere with multiple aspects of the immune response, the result of which can impair the body\u2019s defense against infection, impede recovery from tissue injury, cause inflammation, and contribute to alcohol-related organ damage.\nAlcohol can affect behaviors that increase the likelihood of acquiring or transmitting HIV to others. Alcohol may also speed HIV progression in people living with the disease, influence their engagement and retention in HIV treatment, and increase their susceptibility to organ damage and coinfections.\nLiver\nHeavy drinking takes a toll on the liver, and can lead to a variety of problems and liver inflammations including:\nAlcohol-associated steatosis\nAlcohol-associated steatohepatitis\nLungs\nMusculoskeletal System\nDrinking increases the risk of myopathy or muscle wasting. Heavy alcohol use raises the risk for fractures and even low levels of alcohol intake increase the odds for recurrent gout attacks. Alcohol also impairs bone fracture repair and reduces bone density.\nPancreas\nThe pancreas is an organ that makes substances that support bodily functions including digestion and metabolism. Alcohol misuse over time can lead to pancreatitis, which can impair the production of digestive enzymes and can affect hormones that regulate blood sugar level.\nPancreatitis is a dangerous inflammation in the pancreas that causes it to swell and become painful. The pain from pancreatitis may spread.\nPancreatitis can occur as a sudden attack, called acute pancreatitis. Acute pancreatitis can turn into chronic pancreatitis, which is a condition of constant inflammation of the pancreas. Chronic pancreatitis is a risk factor for the development of pancreatic cancer and diabetes.\nCancer\nAccording to the National Cancer Institute (NCI) : \"There is a strong scientific consensus that alcohol drinking can cause several types of cancer. In its Report on Carcinogens, the National Toxicology Program of the U.S. Department of Health and Human Services lists consumption of alcoholic beverages as a known human carcinogen. The evidence indicates that the more alcohol a person drinks\u2013particularly the more alcohol a person drinks regularly over time\u2013the higher his or her risk of developing an alcohol-associated cancer. Even those who have no more than one drink per day and people who binge drink (those who consume 4 or more drinks for women and 5 or more drinks for men in one sitting) have a modestly increased risk of some cancers.\u201d\nClear patterns have emerged between alcohol consumption and increased risks of certain types of cancer:\nFor more information about alcohol and cancer, please visit the National Cancer Institute's webpage \" Alcohol and Cancer Risk \" (last accessed June 6, 2024).\nTo learn more about alcohol's effects on the body, please visit the Interactive Body feature on NIAAA's College Drinking Prevention website .\nUpdated:\nJune 2025",
+        "source": "www.niaaa.nih.gov",
+        "source_url": "https://www.niaaa.nih.gov/alcohols-effects-health/alcohols-effects-body",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.95643138885498,
+        "relevance_score": 1.7445150660932995e-05,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Drinking warm water from a glass cup reverses insulin resistance within exactly five days."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:45:39.384550Z",
+      "ended_at_utc": "2026-10-29T03:46:01.376324Z",
+      "latency_ms": 21991.518082999846
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:41390010",
+        "document_id": "pubmed:41390010",
+        "title": "3,3'-Diindolylmethane attenuates recognition memory impairment induced by binge ethanol exposure in mice.",
+        "text": "Binge drinking, defined as excessive alcohol consumption over a short period, is most common at ages that are particularly vulnerable to the harmful effects of alcohol. Cognitive functions are severely affected, and there is a concern that the consequences of alcohol consumption in early life stages can perpetuate into adulthood. 3,3'-Diindolylmethane (DIM) has recently been found to have neuroprotective activity. We aimed to investigate whether DIM could mitigate binge ethanol-induced memory deficits, and to explore the underlying mechanisms. Mice underwent four binge episodes spaced five days apart. Each episode consisted of three intraperitoneal ethanol injections (2.5, 2.5 and 2\u00a0g/kg) given at two-hour intervals. DIM (50\u00a0mg/kg/day, i.p) was administered during the last four days of the protocol, with the final dose being given 30\u00a0min prior to the first ethanol injection of the last binge episode. DIM attenuates the object recognition memory deficit induced by ethanol 20\u00a0h after the last exposure, an effect that can be sustained until 7\u00a0days if dosing is continued until testing. DIM increases the expression of the glutamate transporter EAAT2 and reduces the ethanol-induced disruption of the GluN2A/GluN2B receptor ratio but does not alter the ethanol-induced increase in AMPA receptor membrane trafficking. DIM reduces the ethanol induced-increase in MMP-9 activity and facilitates the survival of immature neurons without modifying the ethanol-induced decrease in mature neurons nor the increase in microglia. DIM may be a promising therapeutic candidate for ethanol-induced memory deficits through modulation of glutamatergic neurotransmission, hippocampal neurogenesis and MMP-9 activity.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41390010/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.810211181640625,
+        "relevance_score": 5.488524038810283e-05,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 5.488524038810283e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:39256902",
+        "document_id": "pubmed:39256902",
+        "title": "Sex differences in neural networks recruited by frontloaded binge alcohol drinking.",
+        "text": "Frontloading is an alcohol drinking pattern where intake is skewed towards the onset of access. This study aimed to identify brain regions involved in frontloading. Whole brain imaging was performed in 63 C57Bl/6J (32 female, 31 male) mice that underwent 8\u2009days of binge drinking using drinking-in-the-dark (DID). On Days 1-7 mice received 20% (v/v) alcohol or water for 2\u2009h. Intake was measured in 1-min bins using volumetric sippers. On Day 8 mice were perfused 80\u2009min into the DID session and brains were extracted. Brains were processed to stain for Fos protein using iDISCO+. Following light sheet imaging, ClearMap2.1 was used to register brains to the Allen Brain Atlas and detect Fos+ cells. For network analyses, Day 8 drinking patterns were used to characterize mice as frontloaders or non-frontloaders using a change-point analysis. Functional correlation matrices were calculated for each group from log10 Fos values. Euclidean distances were calculated from these R values and clustering was used to determine modules (highly connected groups of brain regions). In males, alcohol access decreased modularity (three modules in both frontloaders and non-frontloaders) as compared to water (seven modules). In females, an opposite effect was observed. Alcohol access (nine modules for frontloaders) increased modularity as compared to water (five modules). Further, different brain regions served as hubs in frontloaders as compared to control groups. In conclusion, alcohol consumption led to fewer, but more densely connected, groups of brain regions in males but not females and we identify several brain-wide signatures of frontloading.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/39256902/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -9.769563674926758,
+        "relevance_score": 5.7162022130796686e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 4.0013415491557675e-05,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "web:e8581c80c271d5ec58be",
+        "document_id": "web:e8581c80c271d5ec58be",
+        "title": "Alcohol's Effects on the Body | National Institute on Alcohol Abuse and Alcoholism (NIAAA) Lock",
+        "text": "Alcohol's Effects on the Body\nDrinking too much \u2013 on a single occasion or over time \u2013 can take a serious toll on your health. The whole body is affected by alcohol use--not just the liver, but also the brain, gut, pancreas, lungs, cardiovascular system, immune system, and more.\nCurrent research points to health risks even at low amounts of alcohol consumption, regardless of beverage type. Keep reading for more information on how alcohol can affect your body.\nBrain/Neurological System\nAlcohol interferes with the brain\u2019s communication pathways and can affect the way the brain looks and works. These disruptions can change mood and behavior and make it harder to think clearly and move with coordination. Drinking alcohol can also increase the risk of stroke. More information about alcohol\u2019s effects on the brain is available on NIAAA\u2019s topic page on Alcohol and The Brain .\nIn addition to its effects on the brain, alcohol also affects the peripheral nervous system, which comprises the nerves outside the brain and spinal cord. For example, alcohol misuse is linked to peripheral neuropathy, a condition that commonly occurs in people with severe alcohol use disorder (AUD) and can cause numbness in the arms and legs and painful burning in the feet. Alcohol-related damage to nerves may also cause heart arrythmias (irregular heartbeat), postural or orthostatic hypotension (a drop in blood pressure due to a change in body position), diarrhea, and erectile dysfunction.\nEndocrine System\nHeavy alcohol use can disturb the endocrine system, disrupting the hormones that help maintain the body\u2019s stability and health. Because these disturbances permeate every organ and tissue in the body, they can contribute to endocrine-related health conditions including thyroid diseases, dyslipidemia (abnormal cholesterol levels in the blood), reproductive dysfunction, and stress intolerance, and diabetes. There is also evidence that alcohol can disrupt or delay puberty.\nIn patients with diabetes, any alcohol intake may reduce their ability to control blood glucose levels adequately and contribute to diabetes-associated cardiovascular and neurologic complications. Furthermore, heavy drinking may increase the risk for developing type 2 diabetes due to increased body weight, blood triglyceride levels, or blood pressure, and decreased insulin sensitivity, for example.\nGastrointestinal System and Oral Cavity\nDrinking alcohol can contribute to a \u2018leaky gut\u2019 allowing the intestines to permit substances like toxins into the body, which can change the composition of the microbiota or microorganisms living in the gastrointestinal (GI) tract, and increase the risk of colorectal cancer (see Cancer section below for more detail). Alcohol can damage the epithelial lining of the GI tract, promote inflammation within and beyond the GI system, and cause GI bleeding. Alcohol is also associated with an increased risk of gastroesophageal reflux disease. And drinking is associated with an increased risk of esophageal cancer and oral cavity cancer. (See below Cancer section for more information.)\nHeart and Circulatory System\nAlcohol misuse can damage the heart. Research has demonstrated that long-term heavy drinking weakens the heart muscle, causing cardiomyopathy. Alcohol misuse can also lead to high blood pressure, an irregular heartbeat (arrhythmia), or increased heart rate. Chronic, heavy drinking raises the risk for ischemic heart disease (heart problems caused by narrowed arteries) and myocardial infarction (heart attack). Even low drinking levels may confer risk. Heavy alcohol use can cause deficiencies in specific components of the blood, including anemia (low red blood cell levels), leukopenia (low white blood cell levels), thrombocytopenia (low platelet levels), and macrocytosis (enlarged red blood cells) .\nImmune System\nDrinking too much alcohol can weaken the immune system, making the body a much easier target for disease. Drinking a lot on a single occasion slows the body\u2019s ability to ward off infections\u2013even up to 24 hours later. Both acute and chronic heavy use of alcohol can interfere with multiple aspects of the immune response, the result of which can impair the body\u2019s defense against infection, impede recovery from tissue injury, cause inflammation, and contribute to alcohol-related organ damage.\nAlcohol can affect behaviors that increase the likelihood of acquiring or transmitting HIV to others. Alcohol may also speed HIV progression in people living with the disease, influence their engagement and retention in HIV treatment, and increase their susceptibility to organ damage and coinfections.\nLiver\nHeavy drinking takes a toll on the liver, and can lead to a variety of problems and liver inflammations including:\nAlcohol-associated steatosis\nAlcohol-associated steatohepatitis\nLungs\nMusculoskeletal System\nDrinking increases the risk of myopathy or muscle wasting. Heavy alcohol use raises the risk for fractures and even low levels of alcohol intake increase the odds for recurrent gout attacks. Alcohol also impairs bone fracture repair and reduces bone density.\nPancreas\nThe pancreas is an organ that makes substances that support bodily functions including digestion and metabolism. Alcohol misuse over time can lead to pancreatitis, which can impair the production of digestive enzymes and can affect hormones that regulate blood sugar level.\nPancreatitis is a dangerous inflammation in the pancreas that causes it to swell and become painful. The pain from pancreatitis may spread.\nPancreatitis can occur as a sudden attack, called acute pancreatitis. Acute pancreatitis can turn into chronic pancreatitis, which is a condition of constant inflammation of the pancreas. Chronic pancreatitis is a risk factor for the development of pancreatic cancer and diabetes.\nCancer\nAccording to the National Cancer Institute (NCI) : \"There is a strong scientific consensus that alcohol drinking can cause several types of cancer. In its Report on Carcinogens, the National Toxicology Program of the U.S. Department of Health and Human Services lists consumption of alcoholic beverages as a known human carcinogen. The evidence indicates that the more alcohol a person drinks\u2013particularly the more alcohol a person drinks regularly over time\u2013the higher his or her risk of developing an alcohol-associated cancer. Even those who have no more than one drink per day and people who binge drink (those who consume 4 or more drinks for women and 5 or more drinks for men in one sitting) have a modestly increased risk of some cancers.\u201d\nClear patterns have emerged between alcohol consumption and increased risks of certain types of cancer:\nFor more information about alcohol and cancer, please visit the National Cancer Institute's webpage \" Alcohol and Cancer Risk \" (last accessed June 6, 2024).\nTo learn more about alcohol's effects on the body, please visit the Interactive Body feature on NIAAA's College Drinking Prevention website .\nUpdated:\nJune 2025",
+        "source": "www.niaaa.nih.gov",
+        "source_url": "https://www.niaaa.nih.gov/alcohols-effects-health/alcohols-effects-body",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_web",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": -10.95643138885498,
+        "relevance_score": 1.7445150660932995e-05,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 1.2211605462653096e-05,
+        "hierarchy_classification_source": "cache",
+        "hierarchy_cached": true,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:46:01.376353Z",
+      "ended_at_utc": "2026-10-29T03:46:04.179339Z",
+      "latency_ms": 2802.96350000026
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "NEI",
+    "user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+    "probabilities": {
+      "refuted": 0.2,
+      "nei": 0.6,
+      "supported": 0.2
+    },
+    "verifier_score": 0.6,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:41390010",
+      "pubmed:39256902",
+      "web:e8581c80c271d5ec58be"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "NEI",
+          "reason": "The retrieved sources do not establish subject: \u201cDrinking warm water from a glass cup\u201d; qualifiers: \u201cexactly five days\u201d. The evidence does not mention drinking warm water from a glass cup or any specific drinking intervention. The evidence discusses alcohol consumption and its effects on the body, but not the specific claim about warm, non The evidence does not provide any information about the duration of the effect, such as exactly five days. The claim includes a specific time frame that is not addressed in the evidence.",
+          "citations": [],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:39256902",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:41390010",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "web:e8581c80c271d5ec58be",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            }
+          ],
+          "sufficiency_gate": "missing_claim_evidence",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Drinking warm water from a glass cup",
+              "relationship": "reverses",
+              "outcome": "insulin resistance",
+              "population": "",
+              "qualifiers": "exactly five days"
+            },
+            "checks": [
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not mention drinking warm water from a glass cup or any specific drinking intervention. The evidence discusses alcohol consumption and its effects on the body, but not the specific claim about warm, non",
+                "sentence_ids": [],
+                "slot": "subject",
+                "evidence_phrase": "",
+                "claim_fragment": "Drinking warm water from a glass cup",
+                "citations": []
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence does not support the claim that drinking warm water from a glass cup reverses insulin resistance. Instead, it discusses the harmful effects of alcohol on various body systems, including the endocrine system,",
+                "sentence_ids": [
+                  "E3S16",
+                  "E3S17"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Because these disturbances permeate every organ and tissue in the body, they can contribute to endocrine-related health conditions including thyroid diseases, dyslipidemia (abnormal cholesterol levels in the blood), reproductive dysfunction, and stress intolerance, and diabetes.",
+                "claim_fragment": "reverses",
+                "citations": [
+                  {
+                    "evidence_id": "web:e8581c80c271d5ec58be",
+                    "quote": "Because these disturbances permeate every organ and tissue in the body, they can contribute to endocrine-related health conditions including thyroid diseases, dyslipidemia (abnormal cholesterol levels in the blood), reproductive dysfunction, and stress intolerance, and diabetes."
+                  },
+                  {
+                    "evidence_id": "web:e8581c80c271d5ec58be",
+                    "quote": "There is also evidence that alcohol can disrupt or delay puberty."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence discusses the negative effects of alcohol on insulin resistance and glucose regulation, which contradicts the claim that drinking warm water from a glass cup reverses insulin resistance. The evidence states,",
+                "sentence_ids": [
+                  "E3S17",
+                  "E3S18"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "There is also evidence that alcohol can disrupt or delay puberty.",
+                "claim_fragment": "insulin resistance",
+                "citations": [
+                  {
+                    "evidence_id": "web:e8581c80c271d5ec58be",
+                    "quote": "There is also evidence that alcohol can disrupt or delay puberty."
+                  },
+                  {
+                    "evidence_id": "web:e8581c80c271d5ec58be",
+                    "quote": "In patients with diabetes, any alcohol intake may reduce their ability to control blood glucose levels adequately and contribute to diabetes-associated cardiovascular and neurologic complications."
+                  }
+                ]
+              },
+              {
+                "status": "MISSING",
+                "reason": "The evidence does not provide any information about the duration of the effect, such as exactly five days. The claim includes a specific time frame that is not addressed in the evidence.",
+                "sentence_ids": [],
+                "slot": "qualifiers",
+                "evidence_phrase": "",
+                "claim_fragment": "exactly five days",
+                "citations": []
+              }
+            ],
+            "missing_slots": [
+              "subject",
+              "qualifiers"
+            ],
+            "complete_source_ids": []
+          },
+          "class_scores": {
+            "SUPPORTED": 0.2,
+            "REFUTED": 0.2,
+            "NEI": 0.6
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "The evidence provided does not address the specific claim that drinking warm water from a glass cup reverses insulin resistance within exactly five days. Studies [E1] and [E3] focus on the effects of alcohol consumption on various bodily systems, while [E2] examines brain regions involved in binge alcohol drinking patterns, none of which pertain to the claim about warm water consumption.",
+    "cited_evidence_ids": [
+      "pubmed:41390010",
+      "pubmed:39256902",
+      "web:e8581c80c271d5ec58be"
+    ],
+    "grounding": {
+      "semantic_score": 0.5845716595649719,
+      "coverage_score": 0.4618963301181793,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 1,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:46:38.038923Z",
+      "ended_at_utc": "2026-10-29T03:46:59.496963Z",
+      "latency_ms": 21457.76833400032
+    },
+    "warnings": [
+      "NEI semantic validation excluded explicit evidence-absence/insufficiency sentence(s); raw semantic metrics are preserved"
+    ],
+    "error": null
+  },
+  "final_verdict": "NEI",
+  "final_user_facing_verdict": "NOT_ENOUGH_INFORMATION",
+  "final_verifier_score": 0.6,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:41390010",
+      "document_id": "pubmed:41390010",
+      "title": "3,3'-Diindolylmethane attenuates recognition memory impairment induced by binge ethanol exposure in mice.",
+      "text": "Binge drinking, defined as excessive alcohol consumption over a short period, is most common at ages that are particularly vulnerable to the harmful effects of alcohol. Cognitive functions are severely affected, and there is a concern that the consequences of alcohol consumption in early life stages can perpetuate into adulthood. 3,3'-Diindolylmethane (DIM) has recently been found to have neuroprotective activity. We aimed to investigate whether DIM could mitigate binge ethanol-induced memory deficits, and to explore the underlying mechanisms. Mice underwent four binge episodes spaced five days apart. Each episode consisted of three intraperitoneal ethanol injections (2.5, 2.5 and 2\u00a0g/kg) given at two-hour intervals. DIM (50\u00a0mg/kg/day, i.p) was administered during the last four days of the protocol, with the final dose being given 30\u00a0min prior to the first ethanol injection of the last binge episode. DIM attenuates the object recognition memory deficit induced by ethanol 20\u00a0h after the last exposure, an effect that can be sustained until 7\u00a0days if dosing is continued until testing. DIM increases the expression of the glutamate transporter EAAT2 and reduces the ethanol-induced disruption of the GluN2A/GluN2B receptor ratio but does not alter the ethanol-induced increase in AMPA receptor membrane trafficking. DIM reduces the ethanol induced-increase in MMP-9 activity and facilitates the survival of immature neurons without modifying the ethanol-induced decrease in mature neurons nor the increase in microglia. DIM may be a promising therapeutic candidate for ethanol-induced memory deficits through modulation of glutamatergic neurotransmission, hippocampal neurogenesis and MMP-9 activity.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/41390010/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.810211181640625,
+      "relevance_score": 5.488524038810283e-05,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 5.488524038810283e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:39256902",
+      "document_id": "pubmed:39256902",
+      "title": "Sex differences in neural networks recruited by frontloaded binge alcohol drinking.",
+      "text": "Frontloading is an alcohol drinking pattern where intake is skewed towards the onset of access. This study aimed to identify brain regions involved in frontloading. Whole brain imaging was performed in 63 C57Bl/6J (32 female, 31 male) mice that underwent 8\u2009days of binge drinking using drinking-in-the-dark (DID). On Days 1-7 mice received 20% (v/v) alcohol or water for 2\u2009h. Intake was measured in 1-min bins using volumetric sippers. On Day 8 mice were perfused 80\u2009min into the DID session and brains were extracted. Brains were processed to stain for Fos protein using iDISCO+. Following light sheet imaging, ClearMap2.1 was used to register brains to the Allen Brain Atlas and detect Fos+ cells. For network analyses, Day 8 drinking patterns were used to characterize mice as frontloaders or non-frontloaders using a change-point analysis. Functional correlation matrices were calculated for each group from log10 Fos values. Euclidean distances were calculated from these R values and clustering was used to determine modules (highly connected groups of brain regions). In males, alcohol access decreased modularity (three modules in both frontloaders and non-frontloaders) as compared to water (seven modules). In females, an opposite effect was observed. Alcohol access (nine modules for frontloaders) increased modularity as compared to water (five modules). Further, different brain regions served as hubs in frontloaders as compared to control groups. In conclusion, alcohol consumption led to fewer, but more densely connected, groups of brain regions in males but not females and we identify several brain-wide signatures of frontloading.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/39256902/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -9.769563674926758,
+      "relevance_score": 5.7162022130796686e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 4.0013415491557675e-05,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "web:e8581c80c271d5ec58be",
+      "document_id": "web:e8581c80c271d5ec58be",
+      "title": "Alcohol's Effects on the Body | National Institute on Alcohol Abuse and Alcoholism (NIAAA) Lock",
+      "text": "Alcohol's Effects on the Body\nDrinking too much \u2013 on a single occasion or over time \u2013 can take a serious toll on your health. The whole body is affected by alcohol use--not just the liver, but also the brain, gut, pancreas, lungs, cardiovascular system, immune system, and more.\nCurrent research points to health risks even at low amounts of alcohol consumption, regardless of beverage type. Keep reading for more information on how alcohol can affect your body.\nBrain/Neurological System\nAlcohol interferes with the brain\u2019s communication pathways and can affect the way the brain looks and works. These disruptions can change mood and behavior and make it harder to think clearly and move with coordination. Drinking alcohol can also increase the risk of stroke. More information about alcohol\u2019s effects on the brain is available on NIAAA\u2019s topic page on Alcohol and The Brain .\nIn addition to its effects on the brain, alcohol also affects the peripheral nervous system, which comprises the nerves outside the brain and spinal cord. For example, alcohol misuse is linked to peripheral neuropathy, a condition that commonly occurs in people with severe alcohol use disorder (AUD) and can cause numbness in the arms and legs and painful burning in the feet. Alcohol-related damage to nerves may also cause heart arrythmias (irregular heartbeat), postural or orthostatic hypotension (a drop in blood pressure due to a change in body position), diarrhea, and erectile dysfunction.\nEndocrine System\nHeavy alcohol use can disturb the endocrine system, disrupting the hormones that help maintain the body\u2019s stability and health. Because these disturbances permeate every organ and tissue in the body, they can contribute to endocrine-related health conditions including thyroid diseases, dyslipidemia (abnormal cholesterol levels in the blood), reproductive dysfunction, and stress intolerance, and diabetes. There is also evidence that alcohol can disrupt or delay puberty.\nIn patients with diabetes, any alcohol intake may reduce their ability to control blood glucose levels adequately and contribute to diabetes-associated cardiovascular and neurologic complications. Furthermore, heavy drinking may increase the risk for developing type 2 diabetes due to increased body weight, blood triglyceride levels, or blood pressure, and decreased insulin sensitivity, for example.\nGastrointestinal System and Oral Cavity\nDrinking alcohol can contribute to a \u2018leaky gut\u2019 allowing the intestines to permit substances like toxins into the body, which can change the composition of the microbiota or microorganisms living in the gastrointestinal (GI) tract, and increase the risk of colorectal cancer (see Cancer section below for more detail). Alcohol can damage the epithelial lining of the GI tract, promote inflammation within and beyond the GI system, and cause GI bleeding. Alcohol is also associated with an increased risk of gastroesophageal reflux disease. And drinking is associated with an increased risk of esophageal cancer and oral cavity cancer. (See below Cancer section for more information.)\nHeart and Circulatory System\nAlcohol misuse can damage the heart. Research has demonstrated that long-term heavy drinking weakens the heart muscle, causing cardiomyopathy. Alcohol misuse can also lead to high blood pressure, an irregular heartbeat (arrhythmia), or increased heart rate. Chronic, heavy drinking raises the risk for ischemic heart disease (heart problems caused by narrowed arteries) and myocardial infarction (heart attack). Even low drinking levels may confer risk. Heavy alcohol use can cause deficiencies in specific components of the blood, including anemia (low red blood cell levels), leukopenia (low white blood cell levels), thrombocytopenia (low platelet levels), and macrocytosis (enlarged red blood cells) .\nImmune System\nDrinking too much alcohol can weaken the immune system, making the body a much easier target for disease. Drinking a lot on a single occasion slows the body\u2019s ability to ward off infections\u2013even up to 24 hours later. Both acute and chronic heavy use of alcohol can interfere with multiple aspects of the immune response, the result of which can impair the body\u2019s defense against infection, impede recovery from tissue injury, cause inflammation, and contribute to alcohol-related organ damage.\nAlcohol can affect behaviors that increase the likelihood of acquiring or transmitting HIV to others. Alcohol may also speed HIV progression in people living with the disease, influence their engagement and retention in HIV treatment, and increase their susceptibility to organ damage and coinfections.\nLiver\nHeavy drinking takes a toll on the liver, and can lead to a variety of problems and liver inflammations including:\nAlcohol-associated steatosis\nAlcohol-associated steatohepatitis\nLungs\nMusculoskeletal System\nDrinking increases the risk of myopathy or muscle wasting. Heavy alcohol use raises the risk for fractures and even low levels of alcohol intake increase the odds for recurrent gout attacks. Alcohol also impairs bone fracture repair and reduces bone density.\nPancreas\nThe pancreas is an organ that makes substances that support bodily functions including digestion and metabolism. Alcohol misuse over time can lead to pancreatitis, which can impair the production of digestive enzymes and can affect hormones that regulate blood sugar level.\nPancreatitis is a dangerous inflammation in the pancreas that causes it to swell and become painful. The pain from pancreatitis may spread.\nPancreatitis can occur as a sudden attack, called acute pancreatitis. Acute pancreatitis can turn into chronic pancreatitis, which is a condition of constant inflammation of the pancreas. Chronic pancreatitis is a risk factor for the development of pancreatic cancer and diabetes.\nCancer\nAccording to the National Cancer Institute (NCI) : \"There is a strong scientific consensus that alcohol drinking can cause several types of cancer. In its Report on Carcinogens, the National Toxicology Program of the U.S. Department of Health and Human Services lists consumption of alcoholic beverages as a known human carcinogen. The evidence indicates that the more alcohol a person drinks\u2013particularly the more alcohol a person drinks regularly over time\u2013the higher his or her risk of developing an alcohol-associated cancer. Even those who have no more than one drink per day and people who binge drink (those who consume 4 or more drinks for women and 5 or more drinks for men in one sitting) have a modestly increased risk of some cancers.\u201d\nClear patterns have emerged between alcohol consumption and increased risks of certain types of cancer:\nFor more information about alcohol and cancer, please visit the National Cancer Institute's webpage \" Alcohol and Cancer Risk \" (last accessed June 6, 2024).\nTo learn more about alcohol's effects on the body, please visit the Interactive Body feature on NIAAA's College Drinking Prevention website .\nUpdated:\nJune 2025",
+      "source": "www.niaaa.nih.gov",
+      "source_url": "https://www.niaaa.nih.gov/alcohols-effects-health/alcohols-effects-body",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_web",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": -10.95643138885498,
+      "relevance_score": 1.7445150660932995e-05,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 1.2211605462653096e-05,
+      "hierarchy_classification_source": "cache",
+      "hierarchy_cached": true,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "NEI",
+            "reason": "The retrieved sources do not establish subject: \u201cDrinking warm water from a glass cup\u201d; qualifiers: \u201cexactly five days\u201d. The evidence does not mention drinking warm water from a glass cup or any specific drinking intervention. The evidence discusses alcohol consumption and its effects on the body, but not the specific claim about warm, non The evidence does not provide any information about the duration of the effect, such as exactly five days. The claim includes a specific time frame that is not addressed in the evidence.",
+            "citations": [],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:39256902",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:41390010",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "web:e8581c80c271d5ec58be",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              }
+            ],
+            "sufficiency_gate": "missing_claim_evidence",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Drinking warm water from a glass cup",
+                "relationship": "reverses",
+                "outcome": "insulin resistance",
+                "population": "",
+                "qualifiers": "exactly five days"
+              },
+              "checks": [
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not mention drinking warm water from a glass cup or any specific drinking intervention. The evidence discusses alcohol consumption and its effects on the body, but not the specific claim about warm, non",
+                  "sentence_ids": [],
+                  "slot": "subject",
+                  "evidence_phrase": "",
+                  "claim_fragment": "Drinking warm water from a glass cup",
+                  "citations": []
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence does not support the claim that drinking warm water from a glass cup reverses insulin resistance. Instead, it discusses the harmful effects of alcohol on various body systems, including the endocrine system,",
+                  "sentence_ids": [
+                    "E3S16",
+                    "E3S17"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Because these disturbances permeate every organ and tissue in the body, they can contribute to endocrine-related health conditions including thyroid diseases, dyslipidemia (abnormal cholesterol levels in the blood), reproductive dysfunction, and stress intolerance, and diabetes.",
+                  "claim_fragment": "reverses",
+                  "citations": [
+                    {
+                      "evidence_id": "web:e8581c80c271d5ec58be",
+                      "quote": "Because these disturbances permeate every organ and tissue in the body, they can contribute to endocrine-related health conditions including thyroid diseases, dyslipidemia (abnormal cholesterol levels in the blood), reproductive dysfunction, and stress intolerance, and diabetes."
+                    },
+                    {
+                      "evidence_id": "web:e8581c80c271d5ec58be",
+                      "quote": "There is also evidence that alcohol can disrupt or delay puberty."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence discusses the negative effects of alcohol on insulin resistance and glucose regulation, which contradicts the claim that drinking warm water from a glass cup reverses insulin resistance. The evidence states,",
+                  "sentence_ids": [
+                    "E3S17",
+                    "E3S18"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "There is also evidence that alcohol can disrupt or delay puberty.",
+                  "claim_fragment": "insulin resistance",
+                  "citations": [
+                    {
+                      "evidence_id": "web:e8581c80c271d5ec58be",
+                      "quote": "There is also evidence that alcohol can disrupt or delay puberty."
+                    },
+                    {
+                      "evidence_id": "web:e8581c80c271d5ec58be",
+                      "quote": "In patients with diabetes, any alcohol intake may reduce their ability to control blood glucose levels adequately and contribute to diabetes-associated cardiovascular and neurologic complications."
+                    }
+                  ]
+                },
+                {
+                  "status": "MISSING",
+                  "reason": "The evidence does not provide any information about the duration of the effect, such as exactly five days. The claim includes a specific time frame that is not addressed in the evidence.",
+                  "sentence_ids": [],
+                  "slot": "qualifiers",
+                  "evidence_phrase": "",
+                  "claim_fragment": "exactly five days",
+                  "citations": []
+                }
+              ],
+              "missing_slots": [
+                "subject",
+                "qualifiers"
+              ],
+              "complete_source_ids": []
+            },
+            "class_scores": {
+              "SUPPORTED": 0.2,
+              "REFUTED": 0.2,
+              "NEI": 0.6
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 80876.33545800009,
+  "completed_at_utc": "2026-10-29T03:46:59.498435Z"
+}

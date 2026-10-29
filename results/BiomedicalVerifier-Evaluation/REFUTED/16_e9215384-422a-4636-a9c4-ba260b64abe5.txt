@@ -1,0 +1,7 @@
+Claim: The kidneys do not filter waste from blood.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: e9215384-422a-4636-a9c4-ba260b64abe5
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/e9215384-422a-4636-a9c4-ba260b64abe5.json

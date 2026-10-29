@@ -1,0 +1,7 @@
+Claim: Exposure to ultraviolet radiation increases the risk of skin cancer.
+Actual verdict: NEI
+Expected candidate label: SUPPORTED
+Request ID: d3a8dd1a-44e7-4f6c-a75e-6f987662d1e9
+Explanation status: QUARANTINED
+Quarantine reason: Semantic grounding 0.4159 below threshold 0.4500
+Raw response: ../raw/d3a8dd1a-44e7-4f6c-a75e-6f987662d1e9.json

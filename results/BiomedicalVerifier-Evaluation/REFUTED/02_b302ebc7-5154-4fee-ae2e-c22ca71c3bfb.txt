@@ -1,0 +1,7 @@
+Claim: Insulin raises blood glucose.
+Actual verdict: REFUTED
+Expected candidate label: REFUTED
+Request ID: b302ebc7-5154-4fee-ae2e-c22ca71c3bfb
+Explanation status: ACCEPTED
+Quarantine reason: None
+Raw response: ../raw/b302ebc7-5154-4fee-ae2e-c22ca71c3bfb.json

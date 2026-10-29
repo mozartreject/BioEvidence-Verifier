@@ -1,0 +1,836 @@
+{
+  "request": {
+    "request_id": "8802601a-52d9-4bed-9934-de4f839c2cf2",
+    "claim": "Coronary artery disease does not increase heart attack risk.",
+    "image_path": null,
+    "created_at_utc": "2026-10-29T03:22:59.681176Z"
+  },
+  "phase1": {
+    "status": "SUCCESS",
+    "has_image": false,
+    "modality": "TEXT_ONLY",
+    "text_embedding_dim": 768,
+    "image_embedding_dim": 768,
+    "fused_embedding_dim": 768,
+    "text_embedding": null,
+    "image_embedding": null,
+    "fused_embedding": null,
+    "auxiliary_probability": null,
+    "auxiliary_prediction": null,
+    "auxiliary_threshold": 0.7500000000000001,
+    "auxiliary_label": null,
+    "model": {
+      "component": "phase1_multimodal_encoder",
+      "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+      "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+      "checkpoint_epoch": 2,
+      "version": null,
+      "metadata": {
+        "fusion_type": "concat",
+        "hidden_dim": 768,
+        "binary_threshold": 0.7500000000000001,
+        "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+        "checkpoint_metrics": {
+          "loss": 0.029269885945032877,
+          "threshold": 0.7500000000000001,
+          "accuracy": 0.9871665827881227,
+          "precision": 0.924924924924925,
+          "recall": 0.9221556886227545,
+          "f1": 0.9235382308845578,
+          "auc": 0.9876447654142265,
+          "precision_fake": 0.924924924924925,
+          "recall_fake": 0.9221556886227545,
+          "precision_real": 0.992859104641582,
+          "recall_real": 0.9931318681318682,
+          "per_source": {
+            "honest_ooc": 0.9931318681318682,
+            "recovery": 0.9435897435897436,
+            "fakehealth": 0.8920863309352518
+          }
+        },
+        "device": "cpu",
+        "binary_label_mapping": {
+          "0": "REAL",
+          "1": "FAKE"
+        },
+        "phase1_affects_phase4_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase1",
+      "started_at_utc": "2026-10-29T03:22:59.681252Z",
+      "ended_at_utc": "2026-10-29T03:23:00.230242Z",
+      "latency_ms": 548.9859580000029
+    },
+    "warnings": [
+      "Phase 1 text-only path used the model's no_image_token to create a diagnostic fused representation. The audited binary training forward path always used real images, so no Phase 1 binary probability/prediction is reported for text-only input."
+    ],
+    "error": null
+  },
+  "phase2": {
+    "status": "SUCCESS",
+    "evidence": [
+      {
+        "evidence_id": "pubmed:32391638",
+        "document_id": "pubmed:32391638",
+        "title": "Coronary artery disease in patients with congenital heart defects.",
+        "text": "The prognosis of patients with congenital heart defects has improved significantly: more and more patients reach adulthood and old age. At the same time, the possibility of cardiovascular morbidity increases. The conventional risk factors for coronary artery disease are at least as high or even higher in patients than in the general population. Obesity and sedentary life style are more common in adults with congenital heart defect (ACHD) than in general population. In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased. In some patients with cyanotic heart defects (e.g. Fontan), the incidence of CAD might be lower, but it usually returns to the average level or higher after correction of the defect. Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer. There should be a paradigm shift from operative mortality and short-term outcome to long-term morbidity and prevention of cardiovascular disease - a task that often has been forgotten during follow-up visits.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32391638/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.5069375038146973,
+        "relevance_score": 0.9708845019340515,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:24894512",
+        "document_id": "pubmed:24894512",
+        "title": "Hepatitis C virus infection and coronary artery disease risk: a systematic review of the literature.",
+        "text": "BACKGROUND AND AIMS: While hepatitis C virus (HCV) infection has been implicated in increasing the risk of coronary artery disease (CAD), conflicting reports exist regarding this association. We performed a systematic review to further investigate this association.\nMETHODS: We conducted a PubMed search of original research articles from January 1, 1995 to June 30, 2013 to identify case-control and cohort studies evaluating the association between HCV and CAD using keyword terms [\"hepatitis c\" or \"HCV\"] and [\"coronary artery disease\" or \"heart disease\" or \"atherosclerosis.\"] The primary CAD-related endpoints included myocardial infarction, congestive heart failure, need for coronary artery bypass grafting, or transluminal percutaneous coronary angioplasty. Binary outcomes are reported as odds ratios (OR) with 95 % confidence interval (CI).\nRESULTS: We identified five studies (four cohort studies and one case-control study) that met our inclusion criteria. A significant association between HCV and CAD was demonstrated in one cohort study (adjusted HR 1.27; 95 % CI 1.22-1.31). One cohort study demonstrated a decreased risk of CAD associated with HCV (adjusted OR 0.74; 95 % CI 0.71-0.76). The remaining studies did not find a significant association between HCV and risk of CAD.\nCONCLUSIONS: The current systematic review demonstrates that the association between HCV and CAD remains unclear. We need more large, long-term cohort studies with clear definitions of patient population and endpoints to better ascertain the association between HCV and CAD.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/24894512/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.6977081298828125,
+        "relevance_score": 0.9368913173675537,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      },
+      {
+        "evidence_id": "pubmed:28804899",
+        "document_id": "pubmed:28804899",
+        "title": "Coronary artery disease and risk of adverse cardiac events and stroke.",
+        "text": "BACKGROUND: Patients with acute myocardial infarction are at increased risk of ischaemic stroke. Previous myocardial infarction is an important part of risk assessment for ischaemic stroke. However, there is a lack of information regarding the association between the severity and extent of coronary artery disease and long-term risk of ischaemic stroke.\nMATERIALS AND METHODS: A cohort study of coronary angiographies performed in western Denmark from 1 January 2003 to 31 December 2012. Patients were stratified according to the number of vessels affected by obstructive coronary artery disease (lumen narrowing \u226550%) at the time of angiography: zero-, one-, two- or three-vessel disease and diffuse vessel disease. We followed patients for a maximum of 7 years. Endpoints were all-cause death, cardiac death, myocardial infarction and ischaemic stroke. Cumulative risks and crude and adjusted rate ratios were estimated.\nRESULTS: The study population included 78 195 patients. Of these, 32 061 (41\u00b70%) had zero-vessel disease, 6205 (7\u00b79%) had diffuse vessel disease, 20 202 (25\u00b78%) had one-vessel disease, 10 675 (13\u00b77%) had two-vessel disease, and 9038 (11\u00b76%) had three-vessel disease. Median follow-up was 3\u00b76 years (interquartile range 1\u00b77-6\u00b70 years). Increasing severity of obstructive coronary artery disease was associated with an increasing risk of all-cause death, cardiac death, myocardial infarction (MI) and ischaemic stroke during follow-up.\nCONCLUSIONS: The presence and extent of coronary artery disease was associated with an incremental risk of not only death, cardiac death, myocardial infarction, but also ischaemic stroke over a 7-year period.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/28804899/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.5803656578063965,
+        "relevance_score": 0.929587185382843,
+        "authority_tier": null,
+        "hierarchy_weight": null,
+        "combined_score": null,
+        "hierarchy_classification_source": null,
+        "hierarchy_cached": null,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": null,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": false,
+          "cited_by_phase5": false
+        }
+      }
+    ],
+    "queries_executed": [
+      "Coronary artery disease does not increase heart attack risk."
+    ],
+    "retrieval_trace": [],
+    "hop_count": 0,
+    "stop_reason": "Up to three fetched research sources ranked for AI review.",
+    "evidence_found": true,
+    "retriever_name": "PubMed + medical web search",
+    "reranker_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "agent_model": null,
+    "timing": {
+      "phase": "phase2",
+      "started_at_utc": "2026-10-29T03:23:00.230282Z",
+      "ended_at_utc": "2026-10-29T03:23:21.099607Z",
+      "latency_ms": 20869.07362499983
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase3": {
+    "status": "SUCCESS",
+    "ranked_evidence": [
+      {
+        "evidence_id": "pubmed:24894512",
+        "document_id": "pubmed:24894512",
+        "title": "Hepatitis C virus infection and coronary artery disease risk: a systematic review of the literature.",
+        "text": "BACKGROUND AND AIMS: While hepatitis C virus (HCV) infection has been implicated in increasing the risk of coronary artery disease (CAD), conflicting reports exist regarding this association. We performed a systematic review to further investigate this association.\nMETHODS: We conducted a PubMed search of original research articles from January 1, 1995 to June 30, 2013 to identify case-control and cohort studies evaluating the association between HCV and CAD using keyword terms [\"hepatitis c\" or \"HCV\"] and [\"coronary artery disease\" or \"heart disease\" or \"atherosclerosis.\"] The primary CAD-related endpoints included myocardial infarction, congestive heart failure, need for coronary artery bypass grafting, or transluminal percutaneous coronary angioplasty. Binary outcomes are reported as odds ratios (OR) with 95 % confidence interval (CI).\nRESULTS: We identified five studies (four cohort studies and one case-control study) that met our inclusion criteria. A significant association between HCV and CAD was demonstrated in one cohort study (adjusted HR 1.27; 95 % CI 1.22-1.31). One cohort study demonstrated a decreased risk of CAD associated with HCV (adjusted OR 0.74; 95 % CI 0.71-0.76). The remaining studies did not find a significant association between HCV and risk of CAD.\nCONCLUSIONS: The current systematic review demonstrates that the association between HCV and CAD remains unclear. We need more large, long-term cohort studies with clear definitions of patient population and endpoints to better ascertain the association between HCV and CAD.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/24894512/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.6977081298828125,
+        "relevance_score": 0.9368913173675537,
+        "authority_tier": "A",
+        "hierarchy_weight": 1.0,
+        "combined_score": 0.9368913173675537,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 1,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:32391638",
+        "document_id": "pubmed:32391638",
+        "title": "Coronary artery disease in patients with congenital heart defects.",
+        "text": "The prognosis of patients with congenital heart defects has improved significantly: more and more patients reach adulthood and old age. At the same time, the possibility of cardiovascular morbidity increases. The conventional risk factors for coronary artery disease are at least as high or even higher in patients than in the general population. Obesity and sedentary life style are more common in adults with congenital heart defect (ACHD) than in general population. In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased. In some patients with cyanotic heart defects (e.g. Fontan), the incidence of CAD might be lower, but it usually returns to the average level or higher after correction of the defect. Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer. There should be a paradigm shift from operative mortality and short-term outcome to long-term morbidity and prevention of cardiovascular disease - a task that often has been forgotten during follow-up visits.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32391638/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 3.5069375038146973,
+        "relevance_score": 0.9708845019340515,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.679619151353836,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 2,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      },
+      {
+        "evidence_id": "pubmed:28804899",
+        "document_id": "pubmed:28804899",
+        "title": "Coronary artery disease and risk of adverse cardiac events and stroke.",
+        "text": "BACKGROUND: Patients with acute myocardial infarction are at increased risk of ischaemic stroke. Previous myocardial infarction is an important part of risk assessment for ischaemic stroke. However, there is a lack of information regarding the association between the severity and extent of coronary artery disease and long-term risk of ischaemic stroke.\nMATERIALS AND METHODS: A cohort study of coronary angiographies performed in western Denmark from 1 January 2003 to 31 December 2012. Patients were stratified according to the number of vessels affected by obstructive coronary artery disease (lumen narrowing \u226550%) at the time of angiography: zero-, one-, two- or three-vessel disease and diffuse vessel disease. We followed patients for a maximum of 7 years. Endpoints were all-cause death, cardiac death, myocardial infarction and ischaemic stroke. Cumulative risks and crude and adjusted rate ratios were estimated.\nRESULTS: The study population included 78 195 patients. Of these, 32 061 (41\u00b70%) had zero-vessel disease, 6205 (7\u00b79%) had diffuse vessel disease, 20 202 (25\u00b78%) had one-vessel disease, 10 675 (13\u00b77%) had two-vessel disease, and 9038 (11\u00b76%) had three-vessel disease. Median follow-up was 3\u00b76 years (interquartile range 1\u00b77-6\u00b70 years). Increasing severity of obstructive coronary artery disease was associated with an increasing risk of all-cause death, cardiac death, myocardial infarction (MI) and ischaemic stroke during follow-up.\nCONCLUSIONS: The presence and extent of coronary artery disease was associated with an incremental risk of not only death, cardiac death, myocardial infarction, but also ischaemic stroke over a 7-year period.",
+        "source": "pubmed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/28804899/",
+        "publication_date": null,
+        "retrieved_at_utc": null,
+        "retrieval_origin": "live_pubmed",
+        "bm25_score": 0.0,
+        "crossencoder_raw_score": 2.5803656578063965,
+        "relevance_score": 0.929587185382843,
+        "authority_tier": "B",
+        "hierarchy_weight": 0.7,
+        "combined_score": 0.6507110297679901,
+        "hierarchy_classification_source": "qwen2.5:7b",
+        "hierarchy_cached": false,
+        "lineage": {
+          "bm25_rank": null,
+          "crossencoder_rank": null,
+          "phase2_rank": null,
+          "phase3_rank": 3,
+          "retrieval_query": null,
+          "retrieval_hop": null,
+          "used_by_phase4": true,
+          "cited_by_phase5": true
+        }
+      }
+    ],
+    "input_evidence_count": 3,
+    "output_evidence_count": 3,
+    "top_k": 3,
+    "hierarchy_model": "qwen2.5:7b",
+    "ranking_formula": "relevance_score * hierarchy_weight",
+    "timing": {
+      "phase": "phase3",
+      "started_at_utc": "2026-10-29T03:23:21.099637Z",
+      "ended_at_utc": "2026-10-29T03:23:24.736980Z",
+      "latency_ms": 3637.348917000054
+    },
+    "warnings": [],
+    "error": null
+  },
+  "phase4": {
+    "status": "SUCCESS",
+    "verdict": "REFUTED",
+    "user_facing_verdict": "REFUTED",
+    "probabilities": {
+      "refuted": 0.7000000000000001,
+      "nei": 0.10000000000000002,
+      "supported": 0.20000000000000004
+    },
+    "verifier_score": 0.7000000000000001,
+    "pairwise_predictions": [],
+    "evidence_used_ids": [
+      "pubmed:24894512",
+      "pubmed:32391638",
+      "pubmed:28804899"
+    ],
+    "aggregation_method": "Retrieved PubMed/web evidence followed by quoted-evidence AI review",
+    "label_mapping": {
+      "0": "REFUTED",
+      "1": "NEI",
+      "2": "SUPPORTED"
+    },
+    "model": {
+      "component": "live_pubmed_ai_decider",
+      "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "qwen2.5:7b",
+      "metadata": {
+        "experimental": true,
+        "calibrated": false,
+        "development_accuracy": null,
+        "development_cases": 300,
+        "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+        "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+        "relation_review": null,
+        "external_api_review": {
+          "verdict": "REFUTED",
+          "reason": "The evidence suggests that coronary artery disease is associated with an increased risk of heart attack, contradicting the claim that it does not increase heart attack risk.",
+          "citations": [
+            {
+              "evidence_id": "pubmed:32391638",
+              "quote": "In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased."
+            },
+            {
+              "evidence_id": "pubmed:32391638",
+              "quote": "Fontan), the incidence of CAD might be lower, but it usually returns to the average level or higher after correction of the defect."
+            },
+            {
+              "evidence_id": "pubmed:32391638",
+              "quote": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer."
+            }
+          ],
+          "evidence_assessments": [
+            {
+              "evidence_id": "pubmed:24894512",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:28804899",
+              "relation": "IRRELEVANT",
+              "concrete": false
+            },
+            {
+              "evidence_id": "pubmed:32391638",
+              "relation": "REFUTES",
+              "concrete": true
+            }
+          ],
+          "sufficiency_gate": "passed",
+          "sufficiency_audit": {
+            "version": "claim-slots-v2",
+            "claim_parts": {
+              "subject": "Coronary artery disease",
+              "relationship": "not increase",
+              "outcome": "heart attack risk",
+              "population": "",
+              "qualifiers": ""
+            },
+            "checks": [
+              {
+                "status": "MATCH",
+                "reason": "The evidence discusses coronary artery disease (CAD) in the context of patients with congenital heart defects and other conditions.",
+                "sentence_ids": [
+                  "E1S5",
+                  "E1S7"
+                ],
+                "slot": "subject",
+                "evidence_phrase": "In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased.",
+                "claim_fragment": "Coronary artery disease",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:32391638",
+                    "quote": "In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased."
+                  },
+                  {
+                    "evidence_id": "pubmed:32391638",
+                    "quote": "Fontan), the incidence of CAD might be lower, but it usually returns to the average level or higher after correction of the defect."
+                  }
+                ]
+              },
+              {
+                "status": "CONTRADICTED",
+                "reason": "The evidence suggests that coronary artery disease is associated with an increased risk of heart attack, contradicting the claim that it does not increase heart attack risk.",
+                "sentence_ids": [
+                  "E1S8",
+                  "E3S12"
+                ],
+                "slot": "relationship",
+                "evidence_phrase": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer.",
+                "claim_fragment": "not increase",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:32391638",
+                    "quote": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer."
+                  },
+                  {
+                    "evidence_id": "pubmed:28804899",
+                    "quote": "Increasing severity of obstructive coronary artery disease was associated with an increasing risk of all-cause death, cardiac death, myocardial infarction (MI) and ischaemic stroke during follow-up."
+                  }
+                ]
+              },
+              {
+                "status": "MATCH",
+                "reason": "The evidence mentions myocardial infarction (heart attack) as an endpoint in the studies.",
+                "sentence_ids": [
+                  "E1S8",
+                  "E3S12"
+                ],
+                "slot": "outcome",
+                "evidence_phrase": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer.",
+                "claim_fragment": "heart attack risk",
+                "citations": [
+                  {
+                    "evidence_id": "pubmed:32391638",
+                    "quote": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer."
+                  },
+                  {
+                    "evidence_id": "pubmed:28804899",
+                    "quote": "Increasing severity of obstructive coronary artery disease was associated with an increasing risk of all-cause death, cardiac death, myocardial infarction (MI) and ischaemic stroke during follow-up."
+                  }
+                ]
+              }
+            ],
+            "missing_slots": [],
+            "complete_source_ids": [
+              "pubmed:32391638"
+            ]
+          },
+          "class_scores": {
+            "SUPPORTED": 0.20000000000000004,
+            "REFUTED": 0.7000000000000001,
+            "NEI": 0.10000000000000002
+          },
+          "model": "qwen2.5:7b",
+          "purpose": "Claim-slot evidence audit and AI estimates",
+          "score_method": "ai_selected_discrete_distribution_v2"
+        },
+        "decision_source": "live_pubmed_ai_review",
+        "final_decision_accuracy_validated": false,
+        "score_source": "ai_evidence_estimates",
+        "score_calibration": "uncalibrated"
+      }
+    },
+    "verdict_locked": true,
+    "timing": null,
+    "warnings": [
+      "Experimental AI decision over live PubMed candidates; accuracy has not been measured on a held-out set.",
+      "Percentages are uncalibrated AI estimates based on retrieved evidence."
+    ],
+    "error": null
+  },
+  "phase5": {
+    "status": "SUCCESS",
+    "explanation_status": "ACCEPTED",
+    "explanation": "Evidence [E1] suggests that while the association between hepatitis C virus and coronary artery disease remains unclear, it does not support the claim that coronary artery disease does not increase heart attack risk. Evidence [E2] indicates that conventional risk factors for coronary artery disease are at least as high or even higher in patients with congenital heart defects than in the general population, and the incidence of coronary artery disease is clearly increased in some patients. Evidence [E3] demonstrates that the presence and extent of coronary artery disease are associated with an incremental risk of not only death, cardiac death, and myocardial infarction but also ischaemic stroke over a 7-year period, refuting the claim.",
+    "cited_evidence_ids": [
+      "pubmed:24894512",
+      "pubmed:32391638",
+      "pubmed:28804899"
+    ],
+    "grounding": {
+      "semantic_score": 0.7654626965522766,
+      "coverage_score": 0.7688552141189575,
+      "semantic_pass": true,
+      "coverage_pass": true,
+      "citations_valid": true,
+      "unsupported_numbers_free": true,
+      "verdict_match": true,
+      "suspicious_identifiers_free": true
+    },
+    "repair_attempts_used": 0,
+    "quarantine_reason": null,
+    "model": {
+      "component": "phase5_explanation_generator",
+      "model_name": "qwen2.5:7b",
+      "checkpoint_path": null,
+      "checkpoint_epoch": null,
+      "version": "legacy-phase5-production",
+      "metadata": {
+        "provider": "ollama",
+        "ollama_url": "http://localhost:11434/api/chat",
+        "temperature": 0.0,
+        "top_p": 0.9,
+        "num_predict": 420,
+        "timeout_seconds": 180,
+        "request_retries": 3,
+        "repair_attempts": 2,
+        "min_words": 25,
+        "max_words": 150,
+        "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "semantic_threshold": 0.45,
+        "coverage_threshold": 0.45,
+        "fail_on_unsupported_numbers": true,
+        "fail_on_invalid_citations": true,
+        "fail_on_verdict_mismatch": true,
+        "fail_on_suspicious_identifiers": true,
+        "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+        "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+        "verdict_source": "phase4_locked_verdict",
+        "phase5_can_change_verdict": false
+      }
+    },
+    "timing": {
+      "phase": "phase5",
+      "started_at_utc": "2026-10-29T03:23:43.494982Z",
+      "ended_at_utc": "2026-10-29T03:23:52.519879Z",
+      "latency_ms": 9024.777000000086
+    },
+    "warnings": [],
+    "error": null
+  },
+  "final_verdict": "REFUTED",
+  "final_user_facing_verdict": "REFUTED",
+  "final_verifier_score": 0.7000000000000001,
+  "evidence": [
+    {
+      "evidence_id": "pubmed:24894512",
+      "document_id": "pubmed:24894512",
+      "title": "Hepatitis C virus infection and coronary artery disease risk: a systematic review of the literature.",
+      "text": "BACKGROUND AND AIMS: While hepatitis C virus (HCV) infection has been implicated in increasing the risk of coronary artery disease (CAD), conflicting reports exist regarding this association. We performed a systematic review to further investigate this association.\nMETHODS: We conducted a PubMed search of original research articles from January 1, 1995 to June 30, 2013 to identify case-control and cohort studies evaluating the association between HCV and CAD using keyword terms [\"hepatitis c\" or \"HCV\"] and [\"coronary artery disease\" or \"heart disease\" or \"atherosclerosis.\"] The primary CAD-related endpoints included myocardial infarction, congestive heart failure, need for coronary artery bypass grafting, or transluminal percutaneous coronary angioplasty. Binary outcomes are reported as odds ratios (OR) with 95 % confidence interval (CI).\nRESULTS: We identified five studies (four cohort studies and one case-control study) that met our inclusion criteria. A significant association between HCV and CAD was demonstrated in one cohort study (adjusted HR 1.27; 95 % CI 1.22-1.31). One cohort study demonstrated a decreased risk of CAD associated with HCV (adjusted OR 0.74; 95 % CI 0.71-0.76). The remaining studies did not find a significant association between HCV and risk of CAD.\nCONCLUSIONS: The current systematic review demonstrates that the association between HCV and CAD remains unclear. We need more large, long-term cohort studies with clear definitions of patient population and endpoints to better ascertain the association between HCV and CAD.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/24894512/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 2.6977081298828125,
+      "relevance_score": 0.9368913173675537,
+      "authority_tier": "A",
+      "hierarchy_weight": 1.0,
+      "combined_score": 0.9368913173675537,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 1,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:32391638",
+      "document_id": "pubmed:32391638",
+      "title": "Coronary artery disease in patients with congenital heart defects.",
+      "text": "The prognosis of patients with congenital heart defects has improved significantly: more and more patients reach adulthood and old age. At the same time, the possibility of cardiovascular morbidity increases. The conventional risk factors for coronary artery disease are at least as high or even higher in patients than in the general population. Obesity and sedentary life style are more common in adults with congenital heart defect (ACHD) than in general population. In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased. In some patients with cyanotic heart defects (e.g. Fontan), the incidence of CAD might be lower, but it usually returns to the average level or higher after correction of the defect. Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer. There should be a paradigm shift from operative mortality and short-term outcome to long-term morbidity and prevention of cardiovascular disease - a task that often has been forgotten during follow-up visits.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32391638/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 3.5069375038146973,
+      "relevance_score": 0.9708845019340515,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.679619151353836,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 2,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    },
+    {
+      "evidence_id": "pubmed:28804899",
+      "document_id": "pubmed:28804899",
+      "title": "Coronary artery disease and risk of adverse cardiac events and stroke.",
+      "text": "BACKGROUND: Patients with acute myocardial infarction are at increased risk of ischaemic stroke. Previous myocardial infarction is an important part of risk assessment for ischaemic stroke. However, there is a lack of information regarding the association between the severity and extent of coronary artery disease and long-term risk of ischaemic stroke.\nMATERIALS AND METHODS: A cohort study of coronary angiographies performed in western Denmark from 1 January 2003 to 31 December 2012. Patients were stratified according to the number of vessels affected by obstructive coronary artery disease (lumen narrowing \u226550%) at the time of angiography: zero-, one-, two- or three-vessel disease and diffuse vessel disease. We followed patients for a maximum of 7 years. Endpoints were all-cause death, cardiac death, myocardial infarction and ischaemic stroke. Cumulative risks and crude and adjusted rate ratios were estimated.\nRESULTS: The study population included 78 195 patients. Of these, 32 061 (41\u00b70%) had zero-vessel disease, 6205 (7\u00b79%) had diffuse vessel disease, 20 202 (25\u00b78%) had one-vessel disease, 10 675 (13\u00b77%) had two-vessel disease, and 9038 (11\u00b76%) had three-vessel disease. Median follow-up was 3\u00b76 years (interquartile range 1\u00b77-6\u00b70 years). Increasing severity of obstructive coronary artery disease was associated with an increasing risk of all-cause death, cardiac death, myocardial infarction (MI) and ischaemic stroke during follow-up.\nCONCLUSIONS: The presence and extent of coronary artery disease was associated with an incremental risk of not only death, cardiac death, myocardial infarction, but also ischaemic stroke over a 7-year period.",
+      "source": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28804899/",
+      "publication_date": null,
+      "retrieved_at_utc": null,
+      "retrieval_origin": "live_pubmed",
+      "bm25_score": 0.0,
+      "crossencoder_raw_score": 2.5803656578063965,
+      "relevance_score": 0.929587185382843,
+      "authority_tier": "B",
+      "hierarchy_weight": 0.7,
+      "combined_score": 0.6507110297679901,
+      "hierarchy_classification_source": "qwen2.5:7b",
+      "hierarchy_cached": false,
+      "lineage": {
+        "bm25_rank": null,
+        "crossencoder_rank": null,
+        "phase2_rank": null,
+        "phase3_rank": 3,
+        "retrieval_query": null,
+        "retrieval_hop": null,
+        "used_by_phase4": true,
+        "cited_by_phase5": true
+      }
+    }
+  ],
+  "provenance": {
+    "pipeline_version": "ai-evidence-review-v2",
+    "mode": "enhanced",
+    "models": [
+      {
+        "component": "phase1_multimodal_encoder",
+        "model_name": "dmis-lab/biobert-base-cased-v1.1 + google/vit-base-patch16-224",
+        "checkpoint_path": "/Users/joshua/Downloads/BiomedicalVerifier/models/phase1_converted.pt",
+        "checkpoint_epoch": 2,
+        "version": null,
+        "metadata": {
+          "fusion_type": "concat",
+          "hidden_dim": 768,
+          "binary_threshold": 0.7500000000000001,
+          "checkpoint_sha256": "6210db8ac07c09c6ab3d52a509ecaf5761c51817a03c4a41899a3e688b1c98b7",
+          "checkpoint_metrics": {
+            "loss": 0.029269885945032877,
+            "threshold": 0.7500000000000001,
+            "accuracy": 0.9871665827881227,
+            "precision": 0.924924924924925,
+            "recall": 0.9221556886227545,
+            "f1": 0.9235382308845578,
+            "auc": 0.9876447654142265,
+            "precision_fake": 0.924924924924925,
+            "recall_fake": 0.9221556886227545,
+            "precision_real": 0.992859104641582,
+            "recall_real": 0.9931318681318682,
+            "per_source": {
+              "honest_ooc": 0.9931318681318682,
+              "recovery": 0.9435897435897436,
+              "fakehealth": 0.8920863309352518
+            }
+          },
+          "device": "cpu",
+          "binary_label_mapping": {
+            "0": "REAL",
+            "1": "FAKE"
+          },
+          "phase1_affects_phase4_verdict": false
+        }
+      },
+      {
+        "component": "live_pubmed_ai_decider",
+        "model_name": "qwen2.5:7b over PubMed and medical web evidence",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "qwen2.5:7b",
+        "metadata": {
+          "experimental": true,
+          "calibrated": false,
+          "development_accuracy": null,
+          "development_cases": 300,
+          "scope": "Retrieval-inclusive reused-development classification score; not a score for images or explanations.",
+          "hierarchy_policy": "Phase 3 provides contextual authority metadata; classifier uses fixed relevance-ranked passage features, not hierarchy weights.",
+          "relation_review": null,
+          "external_api_review": {
+            "verdict": "REFUTED",
+            "reason": "The evidence suggests that coronary artery disease is associated with an increased risk of heart attack, contradicting the claim that it does not increase heart attack risk.",
+            "citations": [
+              {
+                "evidence_id": "pubmed:32391638",
+                "quote": "In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased."
+              },
+              {
+                "evidence_id": "pubmed:32391638",
+                "quote": "Fontan), the incidence of CAD might be lower, but it usually returns to the average level or higher after correction of the defect."
+              },
+              {
+                "evidence_id": "pubmed:32391638",
+                "quote": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer."
+              }
+            ],
+            "evidence_assessments": [
+              {
+                "evidence_id": "pubmed:24894512",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:28804899",
+                "relation": "IRRELEVANT",
+                "concrete": false
+              },
+              {
+                "evidence_id": "pubmed:32391638",
+                "relation": "REFUTES",
+                "concrete": true
+              }
+            ],
+            "sufficiency_gate": "passed",
+            "sufficiency_audit": {
+              "version": "claim-slots-v2",
+              "claim_parts": {
+                "subject": "Coronary artery disease",
+                "relationship": "not increase",
+                "outcome": "heart attack risk",
+                "population": "",
+                "qualifiers": ""
+              },
+              "checks": [
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence discusses coronary artery disease (CAD) in the context of patients with congenital heart defects and other conditions.",
+                  "sentence_ids": [
+                    "E1S5",
+                    "E1S7"
+                  ],
+                  "slot": "subject",
+                  "evidence_phrase": "In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased.",
+                  "claim_fragment": "Coronary artery disease",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:32391638",
+                      "quote": "In some patients, for example those with coarctation of the aorta or patients with operated coronary arteries in the infancy, the incidence of coronary artery disease (CAD) is clearly increased."
+                    },
+                    {
+                      "evidence_id": "pubmed:32391638",
+                      "quote": "Fontan), the incidence of CAD might be lower, but it usually returns to the average level or higher after correction of the defect."
+                    }
+                  ]
+                },
+                {
+                  "status": "CONTRADICTED",
+                  "reason": "The evidence suggests that coronary artery disease is associated with an increased risk of heart attack, contradicting the claim that it does not increase heart attack risk.",
+                  "sentence_ids": [
+                    "E1S8",
+                    "E3S12"
+                  ],
+                  "slot": "relationship",
+                  "evidence_phrase": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer.",
+                  "claim_fragment": "not increase",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:32391638",
+                      "quote": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer."
+                    },
+                    {
+                      "evidence_id": "pubmed:28804899",
+                      "quote": "Increasing severity of obstructive coronary artery disease was associated with an increasing risk of all-cause death, cardiac death, myocardial infarction (MI) and ischaemic stroke during follow-up."
+                    }
+                  ]
+                },
+                {
+                  "status": "MATCH",
+                  "reason": "The evidence mentions myocardial infarction (heart attack) as an endpoint in the studies.",
+                  "sentence_ids": [
+                    "E1S8",
+                    "E3S12"
+                  ],
+                  "slot": "outcome",
+                  "evidence_phrase": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer.",
+                  "claim_fragment": "heart attack risk",
+                  "citations": [
+                    {
+                      "evidence_id": "pubmed:32391638",
+                      "quote": "Coronary artery disease is one of the most important reasons for mortality also in ACHD patients, and the consequences of a coronary event might be more fateful in a patient with a corrected congenital heart defect than in her/his peer."
+                    },
+                    {
+                      "evidence_id": "pubmed:28804899",
+                      "quote": "Increasing severity of obstructive coronary artery disease was associated with an increasing risk of all-cause death, cardiac death, myocardial infarction (MI) and ischaemic stroke during follow-up."
+                    }
+                  ]
+                }
+              ],
+              "missing_slots": [],
+              "complete_source_ids": [
+                "pubmed:32391638"
+              ]
+            },
+            "class_scores": {
+              "SUPPORTED": 0.20000000000000004,
+              "REFUTED": 0.7000000000000001,
+              "NEI": 0.10000000000000002
+            },
+            "model": "qwen2.5:7b",
+            "purpose": "Claim-slot evidence audit and AI estimates",
+            "score_method": "ai_selected_discrete_distribution_v2"
+          },
+          "decision_source": "live_pubmed_ai_review",
+          "final_decision_accuracy_validated": false,
+          "score_source": "ai_evidence_estimates",
+          "score_calibration": "uncalibrated"
+        }
+      },
+      {
+        "component": "phase5_explanation_generator",
+        "model_name": "qwen2.5:7b",
+        "checkpoint_path": null,
+        "checkpoint_epoch": null,
+        "version": "legacy-phase5-production",
+        "metadata": {
+          "provider": "ollama",
+          "ollama_url": "http://localhost:11434/api/chat",
+          "temperature": 0.0,
+          "top_p": 0.9,
+          "num_predict": 420,
+          "timeout_seconds": 180,
+          "request_retries": 3,
+          "repair_attempts": 2,
+          "min_words": 25,
+          "max_words": 150,
+          "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "semantic_threshold": 0.45,
+          "coverage_threshold": 0.45,
+          "fail_on_unsupported_numbers": true,
+          "fail_on_invalid_citations": true,
+          "fail_on_verdict_mismatch": true,
+          "fail_on_suspicious_identifiers": true,
+          "config_path": "/Users/joshua/Downloads/Phase5-main/config.yaml",
+          "config_sha256": "ae9598214dc9e2cc085600dd281767101afa51ad44d37a8dc04d907a3c075ad8",
+          "verdict_source": "phase4_locked_verdict",
+          "phase5_can_change_verdict": false
+        }
+      }
+    ],
+    "notes": [
+      "Final verdict is the locked Phase 4 verdict.",
+      "Phase 5 is an evidence-grounded explanation component and cannot change the Phase 4 verdict.",
+      "Phase 1 is executed as a multimodal diagnostic component. Its output does not alter the Phase 4 verdict in either deployment mode.",
+      "Phase 2 uses claim-anchored retrieval. Index: /Users/joshua/Downloads/phase2/data/faiss_index_35k; live PubMed enabled: False. See evidence source URLs and Phase 2 warnings for retrieval provenance.",
+      "Phase 3 reranks retrieved evidence using authority hierarchy weighting.",
+      "Phase 4 performs the authoritative three-class REFUTED/NEI/SUPPORTED verification."
+    ]
+  },
+  "total_latency_ms": 52838.36183400013,
+  "completed_at_utc": "2026-10-29T03:23:52.520249Z"
+}

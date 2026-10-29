@@ -1,0 +1,9 @@
+{
+  "request_id": "ad82d831-71ba-4944-8ed1-dd599797ef12",
+  "claim": "The liver does not produce bile.",
+  "http_status": 201,
+  "actual_verdict": "REFUTED",
+  "pipeline_version": "ai-evidence-review-v3",
+  "error": null,
+  "explanation_status": "ACCEPTED"
+}
